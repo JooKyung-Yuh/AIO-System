@@ -39,6 +39,101 @@ assembly, first graph) -> belief tally -> static world-model SVG. Query mode com
 - `scripts/`: validate / belief / viz
 - `docs/`: key ideas & decision log
 
+## AIO factor annotation format (v0.1)
+
+Format file: `schema/factor.v0.1.annotation_format.jsonc`.
+Machine-checkable schema: `schema/factor.v0.1.schema.json`.
+
+```jsonc
+{
+  "factor_id": INT,
+  "hypothesis": "...",
+  "mechanisms": [
+    {
+      "text": "...",
+      "mechanism_id": "M_xxx",
+      "belief_update": [
+        {
+          "direction": "strengthen",
+          "source": { "context_id": "C_xxx", "intervention_id": "I_xxx", "observable_id": "O_xxx" },
+          "reason": {
+            "assumption_id": ["A_xxx"],
+            "mechanism_id": ["M_yyy"],
+            "additional_text": "..."
+          }
+        }
+      ]
+    },
+    {
+      "text": "...",
+      "mechanism_id": "M_yyy",
+      "belief_update": [
+        {
+          "direction": "weaken",
+          "source": { "context_id": "C_xxx", "intervention_id": "I_xxx", "observable_id": "O_xxx" },
+          "reason": {
+            "assumption_id": ["A_xxx"],
+            "mechanism_id": ["M_xxx"],
+            "additional_text": "..."
+          }
+        }
+      ]
+    }
+  ],
+  "assumptions": [
+    {
+      "text": "...",
+      "assumption_id": "A_xxx",
+      "belief_update": [
+        {
+          "direction": "weaken",
+          "source": { "context_id": "C_xxx", "intervention_id": "I_xxx", "observable_id": "O_xxx" },
+          "reason": {
+            "assumption_id": ["A_yyy"],
+            "mechanism_id": ["M_xxx"],
+            "additional_text": "..."
+          }
+        }
+      ]
+    },
+    {
+      "text": "...",
+      "assumption_id": "A_yyy",
+      "belief_update": [
+        {
+          "direction": "strengthen",
+          "source": { "context_id": "C_xxx", "intervention_id": "I_xxx", "observable_id": "O_xxx" },
+          "reason": {
+            "assumption_id": ["A_xxx"],
+            "mechanism_id": ["M_xxx"],
+            "additional_text": "..."
+          }
+        }
+      ]
+    }
+  ],
+  "context": "...",
+  "intervention": "...",
+  "observable": {
+    "eval_metric": "E_xxx",
+    "pattern": "P_xxx",
+    "ref": "Table.2"
+  },
+  "expected_observable": {
+    "eval_metric": "E_zzz",
+    "pattern": "P_zzz"
+  },
+  "canonical_nodes": {
+    "assumption_id": "A_xxx", "A_yyy",
+    "mechanism_id": "M_xxx", "M_yyy",
+    "context_id": "C_xxx",
+    "intervention_id": "I_xxx",
+    "observable_id": "O[E_xxx, P_xxx]"
+  },
+  "provenance": ["published_date", "paper_id", "section", "span/table"]
+}
+```
+
 ## Pipeline
 
 extract (LLM, refs required, ambiguity flagged) -> **human check** -> canonicalize ->
