@@ -1,0 +1,7 @@
+# 줄바꿈 통일: 모든 텍스트 파일은 저장소에 LF로 — Windows(autocrlf) 협업자의 CRLF 커밋 오염 방지
+* text=auto eol=lf
+
+# 바이너리는 줄바꿈 변환 제외
+*.pdf binary
+*.png binary
+*.jpg binary
