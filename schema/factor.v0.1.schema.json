@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "aio/factor.v0.1.schema.json",
+  "title": "AIO factor annotation format (v0.1)",
+  "description": "docs/key_ideas.md §2 확정 스키마를 JSON Schema로 옮긴 것. 의미 변경 없음. 수정은 새 버전 파일로만.",
+  "type": "object",
+  "required": [
+    "factor_id",
+    "hypothesis",
+    "mechanisms",
+    "assumptions",
+    "context",
+    "intervention",
+    "observable",
+    "expected_observable",
+    "canonical_nodes",
+    "provenance"
+  ],
+  "properties": {
+    "factor_id": { "type": "string" },
+    "hypothesis": { "type": "null", "description": "H는 서랍 — 슬롯만 유지, 기본 null" },
+    "mechanisms": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/nodeGroup" }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/nodeGroup" }
+    },
+    "context": { "type": "string", "description": "무대 — 실험자가 정한 조건 (텍스트)" },
+    "intervention": { "type": "string", "description": "행동 — 기준팔을 '(vs 기준)' 텍스트 관례로 포함" },
+    "observable": {
+      "type": "object",
+      "required": ["eval_metric", "pattern", "ref"],
+      "properties": {
+        "eval_metric": { "type": "string", "description": "자: 어떻게 쟀나 (E_xxx)" },
+        "pattern": { "type": "string", "description": "눈금: up/down/flat, aligned/diverging, ... (P_xxx)" },
+        "ref": { "type": "string", "description": "원문 위치 — 수치는 참조로만" }
+      }
+    },
+    "expected_observable": {
+      "description": "논문이 명시(인용 가능)했을 때만 — 아니면 null",
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "required": ["eval_metric", "pattern"],
+          "properties": {
+            "eval_metric": { "type": "string" },
+            "pattern": { "type": "string" }
+          }
+        }
+      ]
+    },
+    "canonical_nodes": {
+      "type": "object",
+      "required": ["assumption_ids", "mechanism_ids", "context_id", "intervention_id", "observable_id"],
+      "properties": {
+        "assumption_ids": { "type": "array", "items": { "type": "string" } },
+        "mechanism_ids": { "type": "array", "items": { "type": "string" } },
+        "context_id": { "type": "string" },
+        "intervention_id": { "type": "string" },
+        "observable_id": { "type": "string", "description": "자+눈금 합성 키: O[E_xxx, P_xxx]" }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["published_date", "paper_id", "section", "span_or_table"],
+      "properties": {
+        "published_date": { "type": "string", "description": "시간축 — 오염 통제와 '그때의 믿음' 보존에 사용" },
+        "paper_id": { "type": "string" },
+        "section": { "type": "string" },
+        "span_or_table": { "type": "string" }
+      }
+    },
+    "ambiguity_flags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "애매하면 값 대신 여기에 — HC1에서 연구원이 판정"
+    }
+  },
+  "definitions": {
+    "nodeGroup": {
+      "type": "object",
+      "required": ["text"],
+      "properties": {
+        "text": { "type": "string" },
+        "mechanism_id": { "type": "string" },
+        "assumption_id": { "type": "string" },
+        "belief_update": {
+          "type": "array",
+          "description": "이 factor가 M/A에 던지는 표(들) — 개표 라벨은 registry에만",
+          "items": { "$ref": "#/definitions/beliefUpdate" }
+        }
+      }
+    },
+    "beliefUpdate": {
+      "type": "object",
+      "required": ["direction", "source", "reason"],
+      "properties": {
+        "direction": { "enum": ["strengthen", "weaken"] },
+        "source": {
+          "type": "object",
+          "description": "표의 근거가 된 관측 셋업 (canonical id)",
+          "properties": {
+            "context_id": { "type": "string" },
+            "intervention_id": { "type": "string" },
+            "observable_id": { "type": "string" }
+          }
+        },
+        "reason": {
+          "type": "object",
+          "description": "왜 이 방향인가",
+          "properties": {
+            "assumption_id": { "type": "array", "items": { "type": "string" } },
+            "mechanism_id": { "type": "array", "items": { "type": "string" } },
+            "additional_text": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

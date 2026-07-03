@@ -1,0 +1,17 @@
+name: aio-ci                                   # 워크플로 이름
+on: [pull_request]                             # 모든 PR에서 실행
+jobs:
+  json-sanity:
+    runs-on: ubuntu-latest                     # CI는 리눅스 (로컬은 Mac 그대로)
+    steps:
+      - uses: actions/checkout@v4              # 체크아웃
+      - run: |                                 # records의 모든 JSON이 파싱되는지만 검사 (Stage 0)
+          python3 - <<'PY'
+          import json, glob, sys
+          bad = []                                        # 실패 목록
+          for f in glob.glob("data/records/*.json"):      # 카드 전수
+              try: json.load(open(f))                     # 파싱 시도
+              except Exception as e: bad.append((f, e))   # 실패 기록
+          for f, e in bad: print(f"FAIL {f}: {e}")
+          sys.exit(1 if bad else 0)                       # 하나라도 깨지면 PR 차단
+          PY
