@@ -1,0 +1,97 @@
+{
+  "run_id": "2026-07-05_12-09-45_PXX_gemini-2-5-flash",
+  "mode": "sync",
+  "timestamp": "2026-07-05T12:09:45.265196+00:00",
+  "paper_id": "PXX",
+  "paper_title_hint": "unknown",
+  "pdf_path": "docs/VARC.pdf",
+  "pdf_sha256": "16b7b3f71e7d081929704b43f540a6dd56719ee3f850877d98de80d0f2dc9e0b",
+  "pdf_size_bytes": 37485467,
+  "model": "gemini-2.5-flash",
+  "temperature": 0.0,
+  "prompt_version": "aiocm_debug_v5",
+  "prompt_path": "prompts/aiocm_debug_v5.md",
+  "pages_per_chunk": 4,
+  "n_chunks": 5,
+  "status": "success",
+  "span_count": 451,
+  "any_salvaged": false,
+  "chunks": [
+    {
+      "chunk_index": 1,
+      "page_range": "1-4",
+      "span_count": 162,
+      "finish_reason": "FinishReason.STOP",
+      "salvaged": false,
+      "parse_error": null,
+      "usage": {
+        "prompt_token_count": 4114,
+        "thoughts_token_count": 15823,
+        "candidates_token_count": 21941,
+        "total_token_count": 41878
+      }
+    },
+    {
+      "chunk_index": 2,
+      "page_range": "5-8",
+      "span_count": 168,
+      "finish_reason": "FinishReason.STOP",
+      "salvaged": false,
+      "parse_error": null,
+      "usage": {
+        "prompt_token_count": 4114,
+        "thoughts_token_count": 12920,
+        "candidates_token_count": 23466,
+        "total_token_count": 40500
+      }
+    },
+    {
+      "chunk_index": 3,
+      "page_range": "9-12",
+      "span_count": 77,
+      "finish_reason": "FinishReason.STOP",
+      "salvaged": false,
+      "parse_error": null,
+      "usage": {
+        "prompt_token_count": 4114,
+        "thoughts_token_count": 8030,
+        "candidates_token_count": 10984,
+        "total_token_count": 23128
+      }
+    },
+    {
+      "chunk_index": 4,
+      "page_range": "13-16",
+      "span_count": 33,
+      "finish_reason": "FinishReason.STOP",
+      "salvaged": false,
+      "parse_error": null,
+      "usage": {
+        "prompt_token_count": 4114,
+        "thoughts_token_count": 6188,
+        "candidates_token_count": 4499,
+        "total_token_count": 14801
+      }
+    },
+    {
+      "chunk_index": 5,
+      "page_range": "17-17",
+      "span_count": 11,
+      "finish_reason": "FinishReason.STOP",
+      "salvaged": false,
+      "parse_error": null,
+      "usage": {
+        "prompt_token_count": 3340,
+        "thoughts_token_count": 3619,
+        "candidates_token_count": 1870,
+        "total_token_count": 8829
+      }
+    }
+  ],
+  "usage": {
+    "prompt_token_count": 19796,
+    "thoughts_token_count": 46580,
+    "candidates_token_count": 62760,
+    "total_token_count": 129136
+  }
+}

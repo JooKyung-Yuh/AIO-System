@@ -1,0 +1,33 @@
+Traceback (most recent call last):
+  File "/home/ubuntu/JooKyung/AIO-System/Layer 1/test_gemini/main.py", line 72, in <module>
+    interaction = client.interactions.create(
+        model=MODEL_NAME,
+    ...<13 lines>...
+        ),
+    )
+  File "/home/ubuntu/JooKyung/AIO-System/Layer 1/test_gemini/.venv/lib/python3.13/site-packages/google/genai/_gaos/google_genai.py", line 271, in create
+    response = wrap_sdk_call(
+        super().create,
+    ...<5 lines>...
+        timeout=timeout,
+    )
+  File "/home/ubuntu/JooKyung/AIO-System/Layer 1/test_gemini/.venv/lib/python3.13/site-packages/google/genai/_gaos/lib/compat_errors.py", line 348, in wrap_sdk_call
+    return fn(*args, **kwargs)
+  File "/home/ubuntu/JooKyung/AIO-System/Layer 1/test_gemini/.venv/lib/python3.13/site-packages/google/genai/_gaos/interactions.py", line 418, in create
+    utils.unmarshal(_request_kwargs, models.CreateInteractionRequest),
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/JooKyung/AIO-System/Layer 1/test_gemini/.venv/lib/python3.13/site-packages/google/genai/_gaos/utils/serializers.py", line 144, in unmarshal
+    m = unmarshaller(body=val)
+  File "/home/ubuntu/JooKyung/AIO-System/Layer 1/test_gemini/.venv/lib/python3.13/site-packages/pydantic/main.py", line 263, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Unmarshaller
+body.body.CreateAgentInteraction.agent
+  Field required [type=missing, input_value={'model': 'gemini-2.5-fla...ig(
+  temperature=0.0
+)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+body.body.CreateModelInteraction.generation_config
+  Input should be a valid dictionary or instance of GenerationConfig [type=model_type, input_value=GenerateContentConfig(
+  temperature=0.0
+), input_type=GenerateContentConfig]
+    For further information visit https://errors.pydantic.dev/2.13/v/model_type

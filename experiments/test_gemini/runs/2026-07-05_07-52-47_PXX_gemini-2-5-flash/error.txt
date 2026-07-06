@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/ubuntu/JooKyung/AIO-System/Layer 1/test_gemini/main.py", line 162, in <module>
+    interaction = client.interactions.create(
+        model=MODEL_NAME,
+    ...<13 lines>...
+        ),
+    )
+  File "/home/ubuntu/JooKyung/AIO-System/Layer 1/test_gemini/.venv/lib/python3.13/site-packages/google/genai/_gaos/google_genai.py", line 270, in create
+    body = _normalize_create_body(body)
+  File "/home/ubuntu/JooKyung/AIO-System/Layer 1/test_gemini/.venv/lib/python3.13/site-packages/google/genai/_gaos/google_genai.py", line 812, in _normalize_create_body
+    raise TypeError(
+    ...<3 lines>...
+    )
+TypeError: create() got unexpected keyword argument(s): config. Use extra_body=... to send additional request body fields.

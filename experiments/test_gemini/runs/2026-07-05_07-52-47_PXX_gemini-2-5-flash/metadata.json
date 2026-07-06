@@ -1,0 +1,16 @@
+{
+  "run_id": "2026-07-05_07-52-47_PXX_gemini-2-5-flash",
+  "timestamp": "2026-07-05T07:52:47.484935+00:00",
+  "paper_id": "PXX",
+  "paper_title_hint": "unknown",
+  "pdf_path": "docs/2409.16118v3.pdf",
+  "pdf_sha256": "1107700b5eb303f669ed5ec9c7d21a2d3c35d1cc400b94a24c2413bd5b82eccd",
+  "pdf_size_bytes": 4929588,
+  "model": "gemini-2.5-flash",
+  "temperature": 0.0,
+  "prompt_sha256": "d0498e9689b9873bcb1fad2a62b31358b8556b696c1da664c6d9467cd55b0d99",
+  "prompt_chars": 3175,
+  "status": "error",
+  "error_type": "TypeError",
+  "error_message": "create() got unexpected keyword argument(s): config. Use extra_body=... to send additional request body fields."
+}

@@ -1,0 +1,18 @@
+{
+  "run_id": "2026-07-05_08-37-04_PXX_gemini-2-5-flash",
+  "timestamp": "2026-07-05T08:37:04.961380+00:00",
+  "paper_id": "PXX",
+  "paper_title_hint": "unknown",
+  "pdf_path": "docs/2409.16118v3.pdf",
+  "pdf_sha256": "1107700b5eb303f669ed5ec9c7d21a2d3c35d1cc400b94a24c2413bd5b82eccd",
+  "pdf_size_bytes": 4929588,
+  "model": "gemini-2.5-flash",
+  "temperature": 0.0,
+  "prompt_version": "aiocm_debug_v2",
+  "prompt_path": "prompts/aiocm_debug_v2.md",
+  "prompt_sha256": "257f713056b06db4dd75eafd9a31e95935450cb2e74e74adadf106ec153ab98c",
+  "prompt_chars": 4050,
+  "status": "error",
+  "error_type": "ValidationError",
+  "error_message": "2 validation errors for Unmarshaller\nbody.body.CreateAgentInteraction.agent\n  Field required [type=missing, input_value={'model': 'gemini-2.5-fla...ig(\n  temperature=0.0\n)}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nbody.body.CreateModelInteraction.generation_config\n  Input should be a valid dictionary or instance of GenerationConfig [type=model_type, input_value=GenerateContentConfig(\n  temperature=0.0\n), input_type=GenerateContentConfig]\n    For further information visit https://errors.pydantic.dev/2.13/v/model_type"
+}

@@ -1,0 +1,8 @@
+run_id: 2026-07-05_12-09-45_PXX_gemini-2-5-flash
+mode: sync
+timestamp: 2026-07-05T12:09:45.265196+00:00
+model: gemini-2.5-flash
+prompt_version: aiocm_debug_v5
+n_chunks: 5
+span_count: 451
+tokens (summed over chunks): prompt=19796 thoughts=46580 output=62760 total=129136

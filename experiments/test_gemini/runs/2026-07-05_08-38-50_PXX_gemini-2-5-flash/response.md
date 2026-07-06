@@ -1,0 +1,753 @@
+# 1. Evidence spans
+
+Here are the relevant spans from the paper, categorized with candidate labels:
+
+*   **location**: Abstract
+    *   **evidence snippet**: "Data collection is often difficult in critical fields such as medicine, physics, and chemistry, yielding typically only small tabular datasets."
+    *   **candidate label(s)**: context
+*   **location**: Abstract
+    *   **evidence snippet**: "classification methods tend to struggle with these small datasets, leading to poor predictive performance."
+    *   **candidate label(s)**: context, observable
+*   **location**: Abstract
+    *   **evidence snippet**: "Increasing the training set with additional synthetic data, similar to data augmentation in images, is commonly believed to improve downstream tabular classification performance."
+    *   **candidate label(s)**: assumption
+*   **location**: Abstract
+    *   **evidence snippet**: "current tabular generative methods that learn either the joint distribution p(x, y) or the class-conditional distribution p(x | y) often overfit on small datasets, resulting in poor-quality synthetic data, usually worsening classification performance compared to using real data alone."
+    *   **candidate label(s)**: context, mechanism, observable
+*   **location**: Abstract
+    *   **evidence snippet**: "Unlike existing tabular methods that use a shared model to approximate all class-conditional densities, our key innovation is to create distinct EBM generative models for each class, each modelling its class-specific data distribution individually."
+    *   **candidate label(s)**: mechanism
+*   **location**: Abstract
+    *   **evidence snippet**: "This approach creates robust energy landscapes, even in ambiguous class distributions."
+    *   **candidate label(s)**: mechanism, context
+*   **location**: Abstract
+    *   **evidence snippet**: "Our experiments show that TabEBM generates synthetic data with higher quality and better statistical fidelity than existing methods."
+    *   **candidate label(s)**: observable
+*   **location**: Abstract
+    *   **evidence snippet**: "When used for data augmentation, our synthetic data consistently leads to improved classification performance across diverse datasets of various sizes, especially small ones."
+    *   **candidate label(s)**: intervention, observable, context
+*   **location**: Figure 1
+    *   **evidence snippet**: "Evaluation of TabEBM and other state-of-the-art tabular generative methods across six key metrics (larger area indicates better performance). The results demonstrate that TabEBM excels in data augmentation (utility), with a larger area than all other methods."
+    *   **candidate label(s)**: context, observable
+*   **location**: Page 2
+    *   **evidence snippet**: "tabular datasets are often very diverse and lack explicit symmetries [8], such as rotations or translations seen in images."
+    *   **candidate label(s)**: context
+*   **location**: Page 2
+    *   **evidence snippet**: "existing tabular data augmentation methods often yield mixed results and can even degrade model performance [51, 71, 48], hindering their widespread adoption."
+    *   **candidate label(s)**: observable
+*   **location**: Page 2
+    *   **evidence snippet**: "A key challenge of joint distribution methods is maintaining the original training label distribution, as sampling from such generators can produce label distributions that deviate from the original and even fail to generate data for specific classes"
+    *   **candidate label(s)**: context, mechanism, observable
+*   **location**: Page 2
+    *   **evidence snippet**: "These issues compromise the effectiveness of data augmentation [51] by undermining the label accuracy and distribution."
+    *   **candidate label(s)**: mechanism, observable
+*   **location**: Page 2
+    *   **evidence snippet**: "class-conditional models that learn p(x|y) preserve the stratification of the original data, they often employ a shared model to represent all class-conditional densities."
+    *   **candidate label(s)**: context
+*   **location**: Page 2
+    *   **evidence snippet**: "This, however, can lead to overfitting, particularly in imbalanced datasets where the model may prioritise more frequent classes [21], ignoring unique features needed for generating label-invariant samples."
+    *   **candidate label(s)**: mechanism, context, observable
+*   **location**: Page 2
+    *   **evidence snippet**: "in datasets with limited data, this can lead to mode collapse [68, 70], where the model does not effectively capture the diversity of each class [70], and thus tends to perform poorly in a multi-class setting."
+    *   **candidate label(s)**: context, mechanism, observable
+*   **location**: Page 2
+    *   **evidence snippet**: "TabEBM constructs a collection of individual models—one for each class—which, by design, enables learning distinct marginal distributions for the inputs associated with each class."
+    *   **candidate label(s)**: mechanism
+*   **location**: Page 2
+    *   **evidence snippet**: "This, in turn, enables performing data augmentation while maintaining the original label distribution."
+    *   **candidate label(s)**: mechanism
+*   **location**: Page 2
+    *   **evidence snippet**: "we build novel class-specific generators that produce high-quality synthetic data even from extremely few samples."
+    *   **candidate label(s)**: mechanism, context
+*   **location**: Page 2
+    *   **evidence snippet**: "Specifically, we create a surrogate binary classification task for each class and fit it with a pre-trained tabular in-context classifier."
+    *   **candidate label(s)**: mechanism
+*   **location**: Page 2
+    *   **evidence snippet**: "We then convert the binary classifier into an EBM, a generative model, without additional training."
+    *   **candidate label(s)**: mechanism
+*   **location**: Page 2
+    *   **evidence snippet**: "Using class-specific EBMs makes the energy landscape more robust to class overlaps, compared to using a single shared EBM to approximate the class-conditional distribution."
+    *   **candidate label(s)**: mechanism, intervention, observable
+*   **location**: Figure 2
+    *   **evidence snippet**: "We learn distinct class-specific Energy-Based Models (EBMs) Eblue (x) and Ered(x) exclusively on the points of their respective class. Each EBM approximates a class-conditional distribution p(x|y). TabEBM allows synthetic data generation by sampling from the estimated distributions for each class p(x|y = blue) and p(x|y = red)."
+    *   **candidate label(s)**: mechanism
+*   **location**: Page 2, Technical contribution
+    *   **evidence snippet**: "We propose TabEBM, which is the first generative method to create class-specific EBMs, learning the marginal distribution for each class separately."
+    *   **candidate label(s)**: mechanism
+*   **location**: Page 2, Empirical contribution
+    *   **evidence snippet**: "Our analysis compares TabEBM with eight leading tabular generative models across various datasets, demonstrating that TabEBM consistently improves data augmentation performance on small datasets, while our generated data demonstrates better statistical fidelity and privacy-preserving properties (Figure 1)."
+    *   **candidate label(s)**: intervention, context, observable
+*   **location**: Page 3, 2.1 Preliminaries on Energy-Based Models
+    *   **evidence snippet**: "An Energy-Based Model (EBM) [43] defines a probability density function pe(x) through an energy function E(x). Specifically, the model posits that p(x) x e-E(x), where E(x) represents the unnormalised negative log-density of the input x. In this framework, lower energy values correspond to higher probability densities."
+    *   **candidate label(s)**: mechanism
+*   **location**: Page 3, 2.1 Preliminaries on Energy-Based Models
+    *   **evidence snippet**: "This relationship allows EBMs to model distributions by learning to assign lower energy to more probable configurations of x and higher energy to less probable ones."
+    *   **candidate label(s)**: mechanism
+*   **location**: Page 3, 2.1 Preliminaries on Energy-Based Models
+    *   **evidence snippet**: "energy-based models can utilise the same model architectures as standard classification models [29]."
+    *   **candidate label(s)**: assumption
+*   **location**: Page 3, 2.1 Preliminaries on Energy-Based Models
+    *   **evidence snippet**: "the logits fe(x)[y] from a classification model define a discriminative distribution through the softmax function, expressed as po (y|x) = softmax(fo(x)[y])."
+    *   **candidate label(s)**: mechanism
+*   **location**: Page 3, 2.1 Preliminaries on Energy-Based Models
+    *   **evidence snippet**: "these same logits can be reinterpreted to define an energy-based model for the joint distribution p(x, y). This is achieved by setting the energy function to E(x, y) = − f(x)."
+    *   **candidate label(s)**: mechanism
+*   **location**: Page 3, 2.1 Preliminaries on Energy-Based Models
+    *   **evidence snippet**: "the energy function for the marginal distribution p(x) is obtained by marginalising over p(x, y), resulting in E(x) = -LogSumExpy, fo(x) [y']."
+    *   **candidate label(s)**: mechanism
+*   **location**: Page 3, 2.2 Distinct Class-Specific Energy-Based Models
+    *   **evidence snippet**: "Our approach assumes that the class-conditional density p(x|y = c) is best modelled using its class-specific data Xc."
+    *   **candidate label(s)**: assumption
+*   **location**: Page 3, 2.2 Distinct Class-Specific Energy-Based Models
+    *   **evidence snippet**: "for each class c, we construct a class-specific EBM, Ec(x), using only the data from that class, Xc, such that p(x|y = c) x exp(-Ec(x))."
+    *   **candidate label(s)**: mechanism
+*   **location**: Page 3, 2.2 Distinct Class-Specific Energy-Based Models
+    *   **evidence snippet**: "We derive each class-specific EBM Ec(x) by training a classifier on a novel task and reinterpreting its logits."
+    *   **candidate label(s)**: mechanism
+*   **location**: Page 3, 2.2 Distinct Class-Specific Energy-Based Models
+    *   **evidence snippet**: "for each class c, we propose a surrogate binary classification task to determine if a sample belongs to class c by comparing Xc against a set of surrogate negative samples Xneg"
+    *   **candidate label(s)**: intervention
+*   **location**: Page 3, 2.2 Distinct Class-Specific Energy-Based Models
+    *   **evidence snippet**: "we generate the negative samples at the corners of a hypercube in RD."
+    *   **candidate label(s)**: intervention
+*   **location**: Page 3, 2.2 Distinct Class-Specific Energy-Based Models
+    *   **evidence snippet**: "Placing the negative samples at the corners of a hypercube ensures they are easily distinguishable from the real data, which is crucial for an accurate energy function"
+    *   **candidate label(s)**: intervention, mechanism
+*   **location**: Page 3, 2.2 Distinct Class-Specific Energy-Based Models
+    *   **evidence snippet**: "This placement is also robust to variations in the number and distance of the negative samples"
+    *   **candidate label(s)**: observable, intervention
+*   **location**: Page 3, 2.2 Distinct Class-Specific Energy-Based Models
+    *   **evidence snippet**: "We create the combined dataset Dc for the surrogate binary classification task by labelling Xc as 1 and Xneg as 0"
+    *   **candidate label(s)**: intervention
+*   **location**: Page 3, 2.2 Distinct Class-Specific Energy-Based Models
+    *   **evidence snippet**: "We then train a binary classifier fc(·) on Dc and use it to construct the class-specific energy Ec(x) for class c."
+    *   **candidate label(s)**: intervention, mechanism
+*   **location**: Figure 3
+    *   **evidence snippet**: "Placing the negative samples in a hypercube distant from the data results in an accurate energy function."
+    *   **candidate label(s)**: intervention, mechanism
+*   **location**: Page 4
+    *   **evidence snippet**: "Next, we derive the approximated distribution pc(x) by marginalisation: ... Ec(x) = - log (exp(fc(x)[0]) + exp(fc(x)[1])) (TabEBM class-specific energy)"
+    *   **candidate label(s)**: mechanism
+*   **location**: Page 4
+    *   **evidence snippet**: "For the binary classifier fc(·) in the surrogate binary classification, we use TabPFN [33], a pre-trained tabular in-context model."
+    *   **candidate label(s)**: context
+*   **location**: Page 4
+    *   **evidence snippet**: "TabPFN is intended for inference only, with no updates to its parameters"
+    *   **candidate label(s)**: assumption
+*   **location**: Page 4
+    *   **evidence snippet**: ""training" the TabPFN classifier is analogous to the K-Nearest Neighbour algorithm, which simply performs inference based on a training dataset provided to the model."
+    *   **candidate label(s)**: mechanism
+*   **location**: Page 4
+    *   **evidence snippet**: "We apply TabPFN multiple times on separate datasets {D1, D2,...,Dc} to obtain multiple classifiers {f1, f2,..., fc}."
+    *   **candidate label(s)**: intervention
+*   **location**: Page 4
+    *   **evidence snippet**: "TabEBM is a general method, capable of using any gradient-based classifier that computes logits"
+    *   **candidate label(s)**: assumption
+*   **location**: Page 4
+    *   **evidence snippet**: "Generating data with TabEBM involves two steps. First, we sample a class c from the empirical distribution c ~ p(y). Then, we sample a data point x from the conditional distribution x ~ p(x_y = c) approximated by the class-specific energy-based model Ec(x), as outlined in Algorithm 1."
+    *   **candidate label(s)**: mechanism
+*   **location**: Page 4
+    *   **evidence snippet**: "We employ Stochastic Gradient Langevin Dynamics (SGLD) [84] to perform this sampling."
+    *   **candidate label(s)**: mechanism
+*   **location**: Page 4
+    *   **evidence snippet**: "SGLD is an efficient method for high-dimensional data, combining stochastic gradient descent (SGLD) with Langevin dynamics."
+    *   **candidate label(s)**: observable, mechanism, context
+*   **location**: Page 4
+    *   **evidence snippet**: "a Gaussian noise term εt introduces randomness into the sampling process, enhancing the exploration of the distribution."
+    *   **candidate label(s)**: mechanism
+*   **location**: Page 4
+    *   **evidence snippet**: "the step size and the noise standard deviations are often chosen separately, resulting in a biased sampler that allows for faster training."
+    *   **candidate label(s)**: intervention, mechanism
+*   **location**: Page 4
+    *   **evidence snippet**: "TabEBM is stable to hyperparameters for the sampling process."
+    *   **candidate label(s)**: observable, intervention
+*   **location**: Page 4
+    *   **evidence snippet**: "SGLD performs iterative augmentation. We start by sampling close to real data and iteratively adjust these synthetic data points, steering them towards regions of higher probability under the learned energy model."
+    *   **candidate label(s)**: mechanism
+*   **location**: Page 4
+    *   **evidence snippet**: "TabEBM enables sampling from any specified class distribution, including the original class distribution, which is crucial for data augmentation."
+    *   **candidate label(s)**: mechanism
+*   **location**: Algorithm 1
+    *   **evidence snippet**: "TabEBM sampling from Class-Specific EBM Ec(x) ... 1: Assign new labels to the samples Xc from class c, setting them to class 1 ... 9: return xsynth as the generated synthetic data for class c"
+    *   **candidate label(s)**: intervention
+*   **location**: Page 5, 3 Experiments, Q1
+    *   **evidence snippet**: "Can TabEBM generate synthetic data that improves the accuracy of downstream predictors via data augmentation?"
+    *   **candidate label(s)**: observable
+*   **location**: Page 5, 3 Experiments, Q2
+    *   **evidence snippet**: "Can TabEBM generate synthetic data with high statistical fidelity (i.e., with similar distributions to those of real data)?"
+    *   **candidate label(s)**: observable
+*   **location**: Page 5, 3 Experiments, Q3
+    *   **evidence snippet**: "Can TabEBM generate synthetic data that finds a competitive trade-off between downstream performance and privacy preservation?"
+    *   **candidate label(s)**: observable
+*   **location**: Page 5, 3 Experiments, Q4
+    *   **evidence snippet**: "Why is TabEBM's class-specific energy effective, and how do the proposed surrogate tasks influence this?"
+    *   **candidate label(s)**: mechanism
+*   **location**: Page 5, Datasets
+    *   **evidence snippet**: "We utilise eight open-source tabular datasets from OpenML [7] across five domains: Medicine, Chemistry, Engineering, Language and Economics."
+    *   **candidate label(s)**: context
+*   **location**: Page 5, Datasets
+    *   **evidence snippet**: "TabPFN utilises many small-size OpenML datasets in its meta-validation [33], it can lead to data leakage when evaluating TabEBM."
+    *   **candidate label(s)**: assumption
+*   **location**: Page 5, Datasets
+    *   **evidence snippet**: "to provide fair comparisons, we select six additional leakage-free datasets from UCI [22]."
+    *   **candidate label(s)**: intervention
+*   **location**: Page 5, Datasets
+    *   **evidence snippet**: "These diverse datasets contain 7 to 77 features and 698 to 5500 samples across 2 to 26 classes."
+    *   **candidate label(s)**: context
+*   **location**: Page 5, Datasets
+    *   **evidence snippet**: "We further enlarge the evaluation scope by varying the degrees of data availability (i.e., Nreal), leading up to 33 different test cases for the eight OpenML datasets."
+    *   **candidate label(s)**: intervention
+*   **location**: Page 5, Benchmark generators
+    *   **evidence snippet**: "We compare TabEBM against eight existing tabular data generation methods of eight different categories: ... and a "Baseline" model, where no data augmentation is applied"
+    *   **candidate label(s)**: intervention
+*   **location**: Page 5, Downstream predictors
+    *   **evidence snippet**: "We select six representative downstream predictors, including three standard baselines: Logistic Regression (LR) [16], KNN [27] and MLP [28]; two tree-based methods: Random Forest (RF) [10] and XGBoost [14]; and a PFN method: TabPFN [33]."
+    *   **candidate label(s)**: context
+*   **location**: Page 5, General experimental setup
+    *   **evidence snippet**: "For each dataset of N samples, we first split it into stratified train and test sets."
+    *   **candidate label(s)**: intervention
+*   **location**: Page 5, General experimental setup
+    *   **evidence snippet**: "We create large test sets to reduce the likelihood that the model's performance is accidentally inflated due to a small, unrepresentative set of samples [69]"
+    *   **candidate label(s)**: intervention, mechanism
+*   **location**: Page 5, General experimental setup
+    *   **evidence snippet**: "The full train set approximates the upper bound of the quality of synthetic data, and we call this set “oracle"."
+    *   **candidate label(s)**: assumption
+*   **location**: Page 5, General experimental setup
+    *   **evidence snippet**: "We subsample the full train set to simulate different levels of data availability, thus the subset size Nreal varies over {20, 50, 100, 200, 500}."
+    *   **candidate label(s)**: intervention
+*   **location**: Page 5, General experimental setup
+    *   **evidence snippet**: "We split each subset into stratified training and validation sets with a ratio of 4:1."
+    *   **candidate label(s)**: intervention
+*   **location**: Page 5, General experimental setup
+    *   **evidence snippet**: "We repeat the splitting ten times, summing up to 10 runs per subset size."
+    *   **candidate label(s)**: intervention
+*   **location**: Page 5, General experimental setup
+    *   **evidence snippet**: "The reported results are averaged by default over ten runs on the test sets."
+    *   **candidate label(s)**: observable
+*   **location**: Page 5, General experimental setup
+    *   **evidence snippet**: "When aggregating results across datasets, we use the average distance to the minimum (ADTM) metric via affine renormalisation between the top-performing and worse-performing models [30, 54]."
+    *   **candidate label(s)**: observable
+*   **location**: Page 5, Data augmentation setup
+    *   **evidence snippet**: "Given Nreal real samples, we first train generators on the real training data and then generate Nsyn synthetic samples."
+    *   **candidate label(s)**: intervention
+*   **location**: Page 5, Data augmentation setup
+    *   **evidence snippet**: "For training the downstream predictors, we expand the real training split by adding the synthetic samples."
+    *   **candidate label(s)**: intervention
+*   **location**: Page 5, Data augmentation setup
+    *   **evidence snippet**: "The optimal Nsyn remains an open problem for tabular data [51, 71, 31]."
+    *   **candidate label(s)**: assumption
+*   **location**: Page 5, Data augmentation setup
+    *   **evidence snippet**: "Nreal = Nsyn can lead to highly unstable results, especially on small datasets that we investigate."
+    *   **candidate label(s)**: context, observable
+*   **location**: Page 5, Data augmentation setup
+    *   **evidence snippet**: "we perform data augmentation with a large synthetic set (Nsyn = 500) across all splits, and the synthetic data has the same class distribution as the real training data."
+    *   **candidate label(s)**: intervention, assumption
+*   **location**: Page 6, 3.1 Data Augmentation Improvement (Q1)
+    *   **evidence snippet**: "We evaluate the effect of using synthetic data for data augmentation by comparing the balanced accuracy of downstream predictors before and after augmentation."
+    *   **candidate label(s)**: intervention, observable
+*   **location**: Page 6, 3.1 Data Augmentation Improvement (Q1)
+    *   **evidence snippet**: "Typically, higher classification accuracy (i.e., ACCGenerator) and accuracy improvements (i.e., ACCGenerator - ACCBaseline > 0) demonstrate the effectiveness of the synthetic data for data augmentation."
+    *   **candidate label(s)**: observable, mechanism
+*   **location**: Page 6, 3.1 Data Augmentation Improvement (Q1)
+    *   **evidence snippet**: "TabEBM effectively improves downstream performance across sample sizes, especially for very low-sample-size regimes."
+    *   **candidate label(s)**: observable, context
+*   **location**: Table 1
+    *   **evidence snippet**: "Classification accuracy (%) aggregated over six downstream predictors, comparing data augmentation on eight real-world tabular datasets with varied real data availability. We report the mean ± std balanced accuracy and average accuracy rank across datasets. A higher rank implies higher accuracy. Note that “N/A” denotes that a specific generator was not applicable, and the rank is computed with the mean balanced accuracy of other methods. We bold the highest accuracy for each dataset of different sample size. Our method, TabEBM, consistently outperforms training on real data alone, and achieves the best overall performance against Baseline and benchmark generators."
+    *   **candidate label(s)**: observable, context, intervention
+*   **location**: Page 6, 3.1 Data Augmentation Improvement (Q1)
+    *   **evidence snippet**: "TabEBM exhibits competitive performance in data augmentation, generally achieving the highest downstream accuracy and average rank across most datasets and sample sizes."
+    *   **candidate label(s)**: observable
+*   **location**: Page 6, 3.1 Data Augmentation Improvement (Q1)
+    *   **evidence snippet**: "TabEBM is the only generator that consistently improves performance across sample sizes."
+    *   **candidate label(s)**: observable
+*   **location**: Page 6, 3.1 Data Augmentation Improvement (Q1)
+    *   **evidence snippet**: "most modern benchmark generators underperform even the Baseline, indicating poor approximated distributions in the low-sample-size regime."
+    *   **candidate label(s)**: observable, mechanism, context
+*   **location**: Page 6, 3.1 Data Augmentation Improvement (Q1)
+    *   **evidence snippet**: "TabEBM achieves the largest overall performance improvement on six leakage-free UCI datasets"
+    *   **candidate label(s)**: observable, context
+*   **location**: Page 6, 3.1 Data Augmentation Improvement (Q1)
+    *   **evidence snippet**: "SMOTE requires at least two samples per class for interpolation"
+    *   **candidate label(s)**: assumption
+*   **location**: Page 6, 3.1 Data Augmentation Improvement (Q1)
+    *   **evidence snippet**: "TabPFGen cannot scale up to more than ten classes"
+    *   **candidate label(s)**: assumption
+*   **location**: Page 6, 3.1 Data Augmentation Improvement (Q1)
+    *   **evidence snippet**: "TabEBM can stabilise downstream performance, especially when real data is very scarce (Nreal = 20): TabEBM leads to smaller standard deviations than Baseline on seven out of eight datasets."
+    *   **candidate label(s)**: observable, context
+*   **location**: Page 6, 3.1 Data Augmentation Improvement (Q1)
+    *   **evidence snippet**: "TabEBM effectively improves downstream performance across any number of classes, especially for more than ten classes."
+    *   **candidate label(s)**: observable, context
+*   **location**: Figure 4 (Right)
+    *   **evidence snippet**: "TabEBM consistently outperforms the Baseline with notable improvements, particularly in datasets with more than ten classes."
+    *   **candidate label(s)**: observable, context
+*   **location**: Page 6, 3.1 Data Augmentation Improvement (Q1)
+    *   **evidence snippet**: "an increased number of classes tends to cause a performance degradation in the benchmark generators."
+    *   **candidate label(s)**: intervention, mechanism, observable
+*   **location**: Page 6, 3.1 Data Augmentation Improvement (Q1)
+    *   **evidence snippet**: "TabEBM is robust on imbalanced datasets."
+    *   **candidate label(s)**: observable, context
+*   **location**: Page 6, 3.1 Data Augmentation Improvement (Q1)
+    *   **evidence snippet**: "For the three binary OpenML datasets (i.e., “biodeg", "steel" and "stock"), we adjust the class distribution in the training data to vary the class imbalance, while keeping the test data fixed."
+    *   **candidate label(s)**: intervention, context
+*   **location**: Figure 5
+    *   **evidence snippet**: "TabEBM consistently outperforms Baseline, while the other generators exhibit performance degradation as data imbalance increases."
+    *   **candidate label(s)**: observable, context
+*   **location**: Page 6, 3.1 Data Augmentation Improvement (Q1)
+    *   **evidence snippet**: "TabEBM is computationally efficient."
+    *   **candidate label(s)**: observable
+*   **location**: Figure 6
+    *   **evidence snippet**: "TabEBM achieves higher downstream accuracy with lower time costs."
+    *   **candidate label(s)**: observable
+*   **location**: Page 7, 3.2 Statistical Fidelity (Q2)
+    *   **evidence snippet**: "We evaluate the fidelity of synthetic data by measuring the similarity of synthetic data to real train data and to real test data (Figure 7)."
+    *   **candidate label(s)**: intervention, observable
+*   **location**: Page 7, 3.2 Statistical Fidelity (Q2)
+    *   **evidence snippet**: "We evaluate this similarity via (i) average inverse of the Kullback-Leibler Divergence (inverse KL) [17], (ii) p-value of Kolmogorov–Smirnov test (KS test) [39] and (iii) p-value of Chi-squared test (χ² test) [55]."
+    *   **candidate label(s)**: observable
+*   **location**: Page 7, 3.2 Statistical Fidelity (Q2)
+    *   **evidence snippet**: "For all three metrics, a bigger value denotes that synthetic data is more likely to have the same distribution as real data."
+    *   **candidate label(s)**: mechanism
+*   **location**: Figure 7 (a1&a2)
+    *   **evidence snippet**: "TabEBM consistently exhibits the highest accuracy and distribution similarity between real train data and synthetic data, indicating that TabEBM learns the distributions of real train data better than benchmark generators."
+    *   **candidate label(s)**: observable, mechanism
+*   **location**: Page 7, 3.2 Statistical Fidelity (Q2)
+    *   **evidence snippet**: "TabEBM remains the most competitive method in similarity between real test data and synthetic data."
+    *   **candidate label(s)**: observable
+*   **location**: Page 7, 3.2 Statistical Fidelity (Q2)
+    *   **evidence snippet**: "This indicates that TabEBM can extrapolate beyond real train data and thus generate synthetic data from a more general distribution that aligns with both train and test data."
+    *   **candidate label(s)**: mechanism, observable
+*   **location**: Page 8, 3.3 Privacy Preservation (Q3)
+    *   **evidence snippet**: "Privacy-preserving synthetic data allows researchers and practitioners to bypass ethical and logistical issues while enabling model training and testing [38]."
+    *   **candidate label(s)**: mechanism
+*   **location**: Page 8, 3.3 Privacy Preservation (Q3)
+    *   **evidence snippet**: "We further explore the use of TabEBM-generated data for data sharing, where only synthetic data is accessible for downstream users"
+    *   **candidate label(s)**: intervention, context
+*   **location**: Page 8, 3.3 Privacy Preservation (Q3)
+    *   **evidence snippet**: "we evaluate synthetic data via three metrics: (i) balanced accuracy of downstream predictors trained with only synthetic data (i.e., train-on-synthetic, test-on-real [85, 42, 87]);"
+    *   **candidate label(s)**: observable, context
+*   **location**: Page 8, 3.3 Privacy Preservation (Q3)
+    *   **evidence snippet**: "(ii) median Distance to Closest Record (DCR) [88], where a greater DCR denotes synthetic data is less likely to be copied from real data;"
+    *   **candidate label(s)**: observable, mechanism
+*   **location**: Page 8, 3.3 Privacy Preservation (Q3)
+    *   **evidence snippet**: "and (iii) δ-presense [62], where a smaller value denotes a lower re-identification risk for real data from synthetic data."
+    *   **candidate label(s)**: observable, mechanism
+*   **location**: Figure 7 (b1&b2)
+    *   **evidence snippet**: "TabEBM consistently finds a better trade-off between accuracy and privacy preservation."
+    *   **candidate label(s)**: observable
+*   **location**: Page 8, 3.3 Privacy Preservation (Q3)
+    *   **evidence snippet**: "the “train-on-synthetic, test-on-real” scenario poses a greater challenge for generators in achieving high accuracy because real data is inaccessible for model training and data augmentation."
+    *   **candidate label(s)**: context, assumption, observable
+*   **location**: Page 8, 3.3 Privacy Preservation (Q3)
+    *   **evidence snippet**: "TabEBM is the only generator that surpasses the overall performance of training on real data (i.e., Baseline)."
+    *   **candidate label(s)**: observable
+*   **location**: Page 8, 3.3 Privacy Preservation (Q3)
+    *   **evidence snippet**: "The relatively high DCR for TabEBM indicates that it can extrapolate beyond real train data"
+    *   **candidate label(s)**: mechanism
+*   **location**: Page 8, 3.3 Privacy Preservation (Q3)
+    *   **evidence snippet**: "TabEBM learns the general distribution of real data, and can generate high-quality synthetic data suitable for various purposes, including privacy preservation."
+    *   **candidate label(s)**: mechanism, observable
+*   **location**: Page 8, 3.4 Why is TabEBM effective for estimating Energy-Based Models? (Q4)
+    *   **evidence snippet**: "classifier logits can be useful when reinterpreted as a class-conditional energy function."
+    *   **candidate label(s)**: mechanism
+*   **location**: Figure 8 (Left)
+    *   **evidence snippet**: "Logit distribution of TabPFN trained on our surrogate binary tasks at increasing distances from the real data (on “steel”)."
+    *   **candidate label(s)**: observable, context, intervention
+*   **location**: Figure 8 (Right)
+    *   **evidence snippet**: "The corresponding unnormalised density approximated by TabEBM. TabEBM assigns higher density closer to the real data."
+    *   **candidate label(s)**: observable
+*   **location**: Page 8, 3.4 Why is TabEBM effective for estimating Energy-Based Models? (Q4)
+    *   **evidence snippet**: "We found it essential to place the negative samples far from the real data, since TabPFN, which is pre-trained to approximate Bayesian inference [33], has its confi-dence influenced by the distance from the training data [53]."
+    *   **candidate label(s)**: assumption, mechanism
+*   **location**: Page 8, 3.4 Why is TabEBM effective for estimating Energy-Based Models? (Q4)
+    *   **evidence snippet**: "TabPFN outputs high logit values near the real data. As the distance from the real data increases, the logit f(x)[1] decreases smoothly until the two logits become similar, making the classifier uncertain"
+    *   **candidate label(s)**: observable, intervention, mechanism
+*   **location**: Page 8, 3.4 Why is TabEBM effective for estimating Energy-Based Models? (Q4)
+    *   **evidence snippet**: "TabEBM's inferred density drops significantly as the maximum logit decreases, because pc(x) x (exp(fc(x)[0]) + exp(fc(x)[1])) from Equation (3)."
+    *   **candidate label(s)**: observable, intervention, mechanism
+*   **location**: Page 8, 3.4 Why is TabEBM effective for estimating Energy-Based Models? (Q4)
+    *   **evidence snippet**: "Since SGLD sampling performs gradient ascent on the density, the TabEBM-generated samples will be close to the real data."
+    *   **candidate label(s)**: mechanism, observable
+*   **location**: Page 8, 3.4 Why is TabEBM effective for estimating Energy-Based Models? (Q4)
+    *   **evidence snippet**: "TabPFN's distance-based uncertainty is useful for inferring accurate energy functions within our TabEBM framework."
+    *   **candidate label(s)**: mechanism
+*   **location**: Page 8, 3.4 Why is TabEBM effective for estimating Energy-Based Models? (Q4)
+    *   **evidence snippet**: "TabEBM can be paired with any other gradient-based classifier that produces logits"
+    *   **candidate label(s)**: assumption
+*   **location**: Page 9, 4 Discussion & Related Work
+    *   **evidence snippet**: "TabEBM efficiently generates high-fidelity data that can effectively improve the downstream performance via data augmentation."
+    *   **candidate label(s)**: observable
+*   **location**: Page 9, 4 Discussion & Related Work, Table 2
+    *   **evidence snippet**: "the type of distribution that the generators learn (crucial for preserving the original training label distribution)"
+    *   **candidate label(s)**: context, mechanism
+*   **location**: Page 9, 4 Discussion & Related Work, Table 2
+    *   **evidence snippet**: "class-specific models (reflecting their capability to capture unique features essential for label-invariant generation)"
+    *   **candidate label(s)**: context, mechanism
+*   **location**: Page 9, 4 Discussion & Related Work, Table 2
+    *   **evidence snippet**: "stratified generation (crucial for effective data augmentation)"
+    *   **candidate label(s)**: context, mechanism
+*   **location**: Page 9, Generative Models for Tabular Data
+    *   **evidence snippet**: "these methods learn the joint distribution and thus cannot preserve the stratification of the original data"
+    *   **candidate label(s)**: context, mechanism, observable
+*   **location**: Page 9, Generative Models for Tabular Data
+    *   **evidence snippet**: "TabPFGen's shared generator can lead to inaccurate density estimates, particularly in high-noise and class-imbalance situations"
+    *   **candidate label(s)**: context, mechanism, observable
+*   **location**: Page 9, Generative Models for Tabular Data
+    *   **evidence snippet**: "As noise increases, TabPFGen's inferred densities fluctuate significantly and diverge from the true data distributions."
+    *   **candidate label(s)**: intervention, observable
+*   **location**: Page 9, Generative Models for Tabular Data
+    *   **evidence snippet**: "TabEBM uses class-specific EBMs to model each class's marginal distributions, and the results in Appendix C reveal that our design choice reduces the impact of noise and data imbalance."
+    *   **candidate label(s)**: mechanism, observable
+*   **location**: Page 9, Generative Models for Tabular Data
+    *   **evidence snippet**: "TabEBM focuses on approximating and generating for one class at a time, remaining unaffected by noise from other classes."
+    *   **candidate label(s)**: mechanism, observable
+*   **location**: Page 9, Generative Models for Tabular Data
+    *   **evidence snippet**: "TabPFGen is limited in usability (e.g., it supports only up to ten classes), while TabEBM scales to any number of classes."
+    *   **candidate label(s)**: context, observable
+*   **location**: Page 9, Data Augmentation (DA) for Tabular Data
+    *   **evidence snippet**: "using the same transformations across all classes leads to varied performance impacts [3, 41], indicating that data augmentation effects are class-specific and suggesting that different classes may require distinct augmentations."
+    *   **candidate label(s)**: intervention, mechanism, observable, assumption
+*   **location**: Page 9, Data Augmentation (DA) for Tabular Data
+    *   **evidence snippet**: "Given the lack of symmetries in tabular data, we believe this class-dependent effect is even more pronounced."
+    *   **candidate label(s)**: context, assumption
+*   **location**: Page 9, Data Augmentation (DA) for Tabular Data
+    *   **evidence snippet**: "Therefore, we propose TabEBM as a class-specific generative model to produce tailored augmentations for each class."
+    *   **candidate label(s)**: mechanism
+*   **location**: Page 10, Prior-fitted Networks (PFNs) for Tabular Data
+    *   **evidence snippet**: "PFNs can be adapted for various pur-poses by pre-training the transformer with corresponding “prior data”, and then it can make in-context predictions with unseen downstream data."
+    *   **candidate label(s)**: intervention, mechanism
+*   **location**: Page 10, Prior-fitted Networks (PFNs) for Tabular Data
+    *   **evidence snippet**: "The training-free nature of TabPFN enables TabEBM to generate high-quality tabular data without introducing extra training costs."
+    *   **candidate label(s)**: context, mechanism
+*   **location**: Page 10, Prior-fitted Networks (PFNs) for Tabular Data
+    *   **evidence snippet**: "our class-specific design lets TabEBM surpass TabPFN's limits and scale to more than ten classes."
+    *   **candidate label(s)**: mechanism, observable
+*   **location**: Page 10, Limitations and Future Work
+    *   **evidence snippet**: "TabEBM is a general method that relies on an underlying binary classifier, and as such, its strengths and weaknesses are directly tied to this classifier."
+    *   **candidate label(s)**: assumption, mechanism
+*   **location**: Page 10, Limitations and Future Work
+    *   **evidence snippet**: "TabEBM inherits some of TabPFN's limitations, particularly in scaling to a larger number of features."
+    *   **candidate label(s)**: assumption, context
+*   **location**: Page 10, Limitations and Future Work
+    *   **evidence snippet**: "TabEBM can handle datasets with over 1000 samples, overcoming TabPFN's limitation, as it processes one class at a time."
+    *   **candidate label(s)**: mechanism, observable
+*   **location**: Page 10, Limitations and Future Work
+    *   **evidence snippet**: "TabEBM outperforms other generators on larger datasets, though the performance gains decrease as the sample size increases."
+    *   **candidate label(s)**: observable, context
+*   **location**: Page 10, Limitations and Future Work
+    *   **evidence snippet**: "TabEBM is compatible with any classifier that can be adapted into EBMs"
+    *   **candidate label(s)**: assumption
+*   **location**: Page 10, Limitations and Future Work
+    *   **evidence snippet**: "Integrating them into TabEBM will enhance its ability to manage high-dimensional datasets, increasing its versatility and utility."
+    *   **candidate label(s)**: intervention, mechanism
+*   **location**: Page 10, Limitations and Future Work
+    *   **evidence snippet**: "generators that are limited in modelling multivariate distributions may still perform well on univariate fidelity metrics"
+    *   **candidate label(s)**: context, assumption
+*   **location**: Page 10, Limitations and Future Work
+    *   **evidence snippet**: "evaluating their ability to learn more complex, high-order, relationships between features remains an open research question"
+    *   **candidate label(s)**: assumption
+*   **location**: Page 10, 5 Conclusion
+    *   **evidence snippet**: "TabEBM improves downstream performance through data augmentation on real-world datasets, outperforming other benchmark generators."
+    *   **candidate label(s)**: intervention, observable, context
+*   **location**: Page 10, 5 Conclusion
+    *   **evidence snippet**: "The statistical evaluation confirms that TabEBM generates high-fidelity synthetic data, particularly for small datasets."
+    *   **candidate label(s)**: observable, context
+
+# 2. Classification table
+
+| span_id | text | assigned_label | evidence_location | classification_reasoning | alternative_label_considered | ambiguity_reason |
+| :------ | :--- | :------------- | :---------------- | :----------------------- | :--------------------------- | :--------------- |
+| 1 | "Data collection is often difficult in critical fields such as medicine, physics, and chemistry, yielding typically only small tabular datasets." | context | Abstract | Describes the characteristics of the data and domain that define the problem setting. | none | none |
+| 2 | "classification methods tend to struggle with these small datasets, leading to poor predictive performance." | context | Abstract | Describes a known problem in the domain, setting the stage for the proposed solution. The "poor predictive performance" is a characteristic of the problem, not a specific measurement from this paper's experiments. | observable | The "poor predictive performance" could be seen as an observable, but in this context, it's describing the general state of affairs that the paper aims to address, making it more of a problem context. |
+| 3 | "Increasing the training set with additional synthetic data, similar to data augmentation in images, is commonly believed to improve downstream tabular classification performance." | assumption | Abstract | States a common belief or underlying principle that motivates the work, acting as a precondition for the approach. | none | none |
+| 4 | "current tabular generative methods that learn either the joint distribution p(x, y) or the class-conditional distribution p(x | y) often overfit on small datasets, resulting in poor-quality synthetic data, usually worsening classification performance compared to using real data alone." | mechanism | Abstract | Explains *why* current methods fail (overfit on small datasets) and *how* this leads to poor outcomes (poor-quality synthetic data, worsening performance). The "small datasets" is a context for this behavior. | context, observable | The span describes both the conditions (small datasets), the causal process (overfit, resulting in), and the outcomes (poor quality, worsening performance). I've focused on the causal explanation for the failure. |
+| 5 | "Unlike existing tabular methods that use a shared model to approximate all class-conditional densities, our key innovation is to create distinct EBM generative models for each class, each modelling its class-specific data distribution individually." | mechanism | Abstract | Describes the core causal explanation for how the proposed method works differently and why it's an innovation. | none | none |
+| 6 | "This approach creates robust energy landscapes, even in ambiguous class distributions." | mechanism | Abstract | Explains *how* the distinct models lead to a beneficial property (robust energy landscapes). The "ambiguous class distributions" is a specific condition where this mechanism is relevant. | context | "Even in ambiguous class distributions" could be context, but the primary focus is on the causal effect of the approach. |
+| 7 | "Our experiments show that TabEBM generates synthetic data with higher quality and better statistical fidelity than existing methods." | observable | Abstract | Reports a measurable outcome or result from the experiments. | none | none |
+| 8 | "When used for data augmentation, our synthetic data consistently leads to improved classification performance across diverse datasets of various sizes, especially small ones." | observable | Abstract | Reports a measurable outcome (improved performance) and the conditions under which it was observed (data augmentation, diverse/small datasets). The "data augmentation" is the intervention, and the datasets are context. | intervention, context | The core is the *result* (improved performance). "When used for data augmentation" describes the experimental setup (intervention), and "diverse datasets" is the context. I've split these implicitly. |
+| 9 | "Evaluation of TabEBM and other state-of-the-art tabular generative methods across six key metrics (larger area indicates better performance). The results demonstrate that TabEBM excels in data augmentation (utility), with a larger area than all other methods." | observable | Figure 1 | Reports the measurable metrics and the comparative performance of TabEBM. | context | While "TabEBM and other methods" is context, the primary statement is about the *results* of the evaluation. |
+| 10 | "tabular datasets are often very diverse and lack explicit symmetries [8], such as rotations or translations seen in images." | context | Page 2 | Describes inherent characteristics of tabular data that influence the problem and method design. | none | none |
+| 11 | "existing tabular data augmentation methods often yield mixed results and can even degrade model performance [51, 71, 48], hindering their widespread adoption." | observable | Page 2 | Reports observed behaviors and outcomes of existing methods. | none | none |
+| 12 | "A key challenge of joint distribution methods is maintaining the original training label distribution, as sampling from such generators can produce label distributions that deviate from the original and even fail to generate data for specific classes" | mechanism | Page 2 | Explains *how* joint distribution methods lead to problems (sampling produces deviating label distributions). The "deviate" and "fail to generate" are the observable consequences. | context, observable | The span describes the causal link from sampling to deviation. "Joint distribution methods" is the context. |
+| 13 | "These issues compromise the effectiveness of data augmentation [51] by undermining the label accuracy and distribution." | mechanism | Page 2 | Explains *why* DA effectiveness is compromised (by undermining label accuracy). "Compromise effectiveness" is the observable. | observable | The "by undermining" clearly indicates a causal explanation. |
+| 14 | "class-conditional models that learn p(x|y) preserve the stratification of the original data, they often employ a shared model to represent all class-conditional densities." | context | Page 2 | Describes a common characteristic of existing class-conditional models. | none | none |
+| 15 | "This, however, can lead to overfitting, particularly in imbalanced datasets where the model may prioritise more frequent classes [21], ignoring unique features needed for generating label-invariant samples." | mechanism | Page 2 | Explains *how* the shared model leads to negative outcomes (overfitting, prioritizing frequent classes, ignoring features). "Overfitting" is an observable behavior. | context, observable | The "can lead to" indicates a causal explanation. "Imbalanced datasets" is context. |
+| 16 | "in datasets with limited data, this can lead to mode collapse [68, 70], where the model does not effectively capture the diversity of each class [70], and thus tends to perform poorly in a multi-class setting." | mechanism | Page 2 | Explains *how* limited data leads to problems (mode collapse, poor diversity capture, poor performance). "Mode collapse" and "poor performance" are observable behaviors. | context, observable | The "can lead to" indicates a causal explanation. "Limited data" and "multi-class setting" are context. |
+| 17 | "TabEBM constructs a collection of individual models—one for each class—which, by design, enables learning distinct marginal distributions for the inputs associated with each class." | mechanism | Page 2 | Describes a core component of the TabEBM method and its direct causal effect (enables learning distinct distributions). | none | none |
+| 18 | "This, in turn, enables performing data augmentation while maintaining the original label distribution." | mechanism | Page 2 | Describes a further causal effect of the previous mechanism (enables DA while maintaining label distribution). | none | none |
+| 19 | "we build novel class-specific generators that produce high-quality synthetic data even from extremely few samples." | mechanism | Page 2 | Describes how the generators work (produce high-quality data) and a condition where they are effective ("even from extremely few samples" is context). | context | The primary statement is about the generative capability. |
+| 20 | "Specifically, we create a surrogate binary classification task for each class and fit it with a pre-trained tabular in-context classifier." | mechanism | Page 2 | Describes a key step in the construction of TabEBM's class-specific models. | intervention | While it's a deliberate action, it's part of *how the method is designed to work*, rather than an experimental manipulation to test a hypothesis. |
+| 21 | "We then convert the binary classifier into an EBM, a generative model, without additional training." | mechanism | Page 2 | Describes another key step in the construction of TabEBM's class-specific models. | none | none |
+| 22 | "Using class-specific EBMs makes the energy landscape more robust to class overlaps, compared to using a single shared EBM to approximate the class-conditional distribution." | mechanism | Page 2 | Explains *how* class-specific EBMs achieve robustness. The comparison is an implicit intervention, and "robust" is an observable property. | intervention, observable | The "makes... more robust" is a causal statement. The comparison is inherent to the claim. |
+| 23 | "We learn distinct class-specific Energy-Based Models (EBMs) Eblue (x) and Ered(x) exclusively on the points of their respective class. Each EBM approximates a class-conditional distribution p(x|y). TabEBM allows synthetic data generation by sampling from the estimated distributions for each class p(x|y = blue) and p(x|y = red)." | mechanism | Figure 2 | Describes the core operational principle of TabEBM, explaining how it works. | none | none |
+| 24 | "We propose TabEBM, which is the first generative method to create class-specific EBMs, learning the marginal distribution for each class separately." | mechanism | Page 2, Technical contribution | Describes the fundamental design and operation of the proposed method. | none | none |
+| 25 | "Our analysis compares TabEBM with eight leading tabular generative models across various datasets, demonstrating that TabEBM consistently improves data augmentation performance on small datasets, while our generated data demonstrates better statistical fidelity and privacy-preserving properties (Figure 1)." | observable | Page 2, Empirical contribution | Reports multiple measurable outcomes and properties of TabEBM's performance. The comparison and datasets are context/intervention. | intervention, context | The core is the *demonstration* of improved performance and properties. |
+| 26 | "An Energy-Based Model (EBM) [43] defines a probability density function pe(x) through an energy function E(x). Specifically, the model posits that p(x) x e-E(x), where E(x) represents the unnormalised negative log-density of the input x. In this framework, lower energy values correspond to higher probability densities." | mechanism | Page 3, 2.1 Preliminaries on Energy-Based Models | Explains the fundamental principle of EBMs, *how* they define probability density. | none | none |
+| 27 | "This relationship allows EBMs to model distributions by learning to assign lower energy to more probable configurations of x and higher energy to less probable ones." | mechanism | Page 3, 2.1 Preliminaries on Energy-Based Models | Explains *how* EBMs achieve their modeling capability. | none | none |
+| 28 | "energy-based models can utilise the same model architectures as standard classification models [29]." | assumption | Page 3, 2.1 Preliminaries on Energy-Based Models | States a foundational capability or property of EBMs that is assumed for their use. | none | none |
+| 29 | "the logits fe(x)[y] from a classification model define a discriminative distribution through the softmax function, expressed as po (y|x) = softmax(fo(x)[y])." | mechanism | Page 3, 2.1 Preliminaries on Energy-Based Models | Explains *how* logits define a discriminative distribution. | none | none |
+| 30 | "these same logits can be reinterpreted to define an energy-based model for the joint distribution p(x, y). This is achieved by setting the energy function to E(x, y) = − f(x)." | mechanism | Page 3, 2.1 Preliminaries on Energy-Based Models | Explains *how* logits are reinterpreted to define an EBM. | none | none |
+| 31 | "the energy function for the marginal distribution p(x) is obtained by marginalising over p(x, y), resulting in E(x) = -LogSumExpy, fo(x) [y']." | mechanism | Page 3, 2.1 Preliminaries on Energy-Based Models | Explains *how* the marginal energy function is obtained. | none | none |
+| 32 | "Our approach assumes that the class-conditional density p(x|y = c) is best modelled using its class-specific data Xc." | assumption | Page 3, 2.2 Distinct Class-Specific Energy-Based Models | Explicitly stated assumption underlying the method. | none | none |
+| 33 | "for each class c, we construct a class-specific EBM, Ec(x), using only the data from that class, Xc, such that p(x|y = c) x exp(-Ec(x))." | mechanism | Page 3, 2.2 Distinct Class-Specific Energy-Based Models | Describes *how* class-specific EBMs are constructed and *how* they model density. | none | none |
+| 34 | "We derive each class-specific EBM Ec(x) by training a classifier on a novel task and reinterpreting its logits." | mechanism | Page 3, 2.2 Distinct Class-Specific Energy-Based Models | Describes the process *how* the EBMs are derived. | none | none |
+| 35 | "for each class c, we propose a surrogate binary classification task to determine if a sample belongs to class c by comparing Xc against a set of surrogate negative samples Xneg" | intervention | Page 3, 2.2 Distinct Class-Specific Energy-Based Models | Describes a specific, deliberate task set up by the researchers to train the classifier. | mechanism | While it's part of the method's design, the "propose a task to determine if a sample belongs" is a specific experimental setup for training. |
+| 36 | "we generate the negative samples at the corners of a hypercube in RD." | intervention | Page 3, 2.2 Distinct Class-Specific Energy-Based Models | Describes a specific, deliberate action taken to create negative samples. | none | none |
+| 37 | "Placing the negative samples at the corners of a hypercube ensures they are easily distinguishable from the real data, which is crucial for an accurate energy function" | mechanism | Page 3, 2.2 Distinct Class-Specific Energy-Based Models | Explains *why* the specific placement of negative samples is effective (ensures distinguishability, crucial for accurate energy function). The placement itself is an intervention. | intervention | The "ensures" and "crucial for" indicate a causal explanation. |
+| 38 | "This placement is also robust to variations in the number and distance of the negative samples" | observable | Page 3, 2.2 Distinct Class-Specific Energy-Based Models | Reports a measurable property (robustness) of the negative sample placement. The "variations" are implicit interventions. | intervention | The robustness is a *result* or *property* observed, not the manipulation itself. |
+| 39 | "We create the combined dataset Dc for the surrogate binary classification task by labelling Xc as 1 and Xneg as 0" | intervention | Page 3, 2.2 Distinct Class-Specific Energy-Based Models | Describes a deliberate step in preparing the data for the surrogate task. | none | none |
+| 40 | "We then train a binary classifier fc(·) on Dc and use it to construct the class-specific energy Ec(x) for class c." | intervention | Page 3, 2.2 Distinct Class-Specific Energy-Based Models | Describes a deliberate step in the method's implementation. The "use it to construct" part is mechanism. | mechanism | The primary action is "train a binary classifier". |
+| 41 | "Placing the negative samples in a hypercube distant from the data results in an accurate energy function." | mechanism | Figure 3 | Explains *how* the placement of negative samples leads to a desired outcome (accurate energy function). The placement is an intervention. | intervention | The "results in" indicates a causal explanation. |
+| 42 | "Next, we derive the approximated distribution pc(x) by marginalisation: ... Ec(x) = - log (exp(fc(x)[0]) + exp(fc(x)[1])) (TabEBM class-specific energy)" | mechanism | Page 4 | Describes the mathematical process *how* the class-specific energy is derived. | none | none |
+| 43 | "For the binary classifier fc(·) in the surrogate binary classification, we use TabPFN [33], a pre-trained tabular in-context model." | context | Page 4 | Specifies the particular model used as the binary classifier in the experimental setup. | none | none |
+| 44 | "TabPFN is intended for inference only, with no updates to its parameters" | assumption | Page 4 | States a characteristic of TabPFN that dictates how it must be used in this work. | none | none |
+| 45 | ""training" the TabPFN classifier is analogous to the K-Nearest Neighbour algorithm, which simply performs inference based on a training dataset provided to the model." | mechanism | Page 4 | Explains *how* TabPFN operates in this context (analogous to KNN, performs inference). | none | none |
+| 46 | "We apply TabPFN multiple times on separate datasets {D1, D2,...,Dc} to obtain multiple classifiers {f1, f2,..., fc}." | intervention | Page 4 | Describes a deliberate action taken in the experimental setup. | none | none |
+| 47 | "TabEBM is a general method, capable of using any gradient-based classifier that computes logits" | assumption | Page 4 | States a general property or design principle of TabEBM, implying its broad applicability. | none | none |
+| 48 | "Generating data with TabEBM involves two steps. First, we sample a class c from the empirical distribution c ~ p(y). Then, we sample a data point x from the conditional distribution x ~ p(x_y = c) approximated by the class-specific energy-based model Ec(x), as outlined in Algorithm 1." | mechanism | Page 4 | Describes the step-by-step process *how* TabEBM generates data. | none | none |
+| 49 | "We employ Stochastic Gradient Langevin Dynamics (SGLD) [84] to perform this sampling." | mechanism | Page 4 | Describes the specific technique used for sampling, explaining *how* it's done. | none | none |
+| 50 | "SGLD is an efficient method for high-dimensional data, combining stochastic gradient descent (SGLD) with Langevin dynamics." | mechanism | Page 4 | Explains *how* SGLD achieves its efficiency (by combining SGD and Langevin dynamics). "Efficient" is an observable property. | observable | The "combining" part is the causal explanation for its efficiency. |
+| 51 | "a Gaussian noise term εt introduces randomness into the sampling process, enhancing the exploration of the distribution." | mechanism | Page 4 | Explains *how* Gaussian noise affects the sampling process. | none | none |
+| 52 | "the step size and the noise standard deviations are often chosen separately, resulting in a biased sampler that allows for faster training." | mechanism | Page 4 | Explains *how* separate parameter choices lead to a biased sampler and faster training. The choice itself is an intervention. | intervention | The "resulting in" and "allows for" indicate causal explanations. |
+| 53 | "TabEBM is stable to hyperparameters for the sampling process." | observable | Page 4 | Reports a measurable property (stability) of TabEBM. | intervention | The stability is the *result* of varying hyperparameters (implicit intervention). |
+| 54 | "SGLD performs iterative augmentation. We start by sampling close to real data and iteratively adjust these synthetic data points, steering them towards regions of higher probability under the learned energy model." | mechanism | Page 4 | Describes *how* SGLD performs augmentation and *how* it steers samples. | none | none |
+| 55 | "TabEBM enables sampling from any specified class distribution, including the original class distribution, which is crucial for data augmentation." | mechanism | Page 4 | Explains a key capability of TabEBM and its importance for data augmentation. | none | none |
+| 56 | "TabEBM sampling from Class-Specific EBM Ec(x) ... 1: Assign new labels to the samples Xc from class c, setting them to class 1 ... 9: return xsynth as the generated synthetic data for class c" | intervention | Algorithm 1 | Describes the detailed, deliberate steps of the sampling algorithm. | mechanism | While it describes *how* the method works, the algorithm steps are explicit manipulations performed by the system. |
+| 57 | "Can TabEBM generate synthetic data that improves the accuracy of downstream predictors via data augmentation?" | observable | Page 5, 3 Experiments, Q1 | Poses a question about a measurable outcome (improved accuracy). | none | none |
+| 58 | "Can TabEBM generate synthetic data with high statistical fidelity (i.e., with similar distributions to those of real data)?" | observable | Page 5, 3 Experiments, Q2 | Poses a question about a measurable property (statistical fidelity). | none | none |
+| 59 | "Can TabEBM generate synthetic data that finds a competitive trade-off between downstream performance and privacy preservation?" | observable | Page 5, 3 Experiments, Q3 | Poses a question about a measurable balance (trade-off). | none | none |
+| 60 | "Why is TabEBM's class-specific energy effective, and how do the proposed surrogate tasks influence this?" | mechanism | Page 5, 3 Experiments, Q4 | Poses a question about the causal explanation for effectiveness and influence. | none | none |
+| 61 | "We utilise eight open-source tabular datasets from OpenML [7] across five domains: Medicine, Chemistry, Engineering, Language and Economics." | context | Page 5, Datasets | Specifies the datasets and domains used in the experiments. | none | none |
+| 62 | "TabPFN utilises many small-size OpenML datasets in its meta-validation [33], it can lead to data leakage when evaluating TabEBM." | assumption | Page 5, Datasets | States a potential issue with TabPFN's meta-validation that needs to be considered for fair evaluation. | none | none |
+| 63 | "to provide fair comparisons, we select six additional leakage-free datasets from UCI [22]." | intervention | Page 5, Datasets | Describes a deliberate action taken to ensure fair experimental conditions. | none | none |
+| 64 | "These diverse datasets contain 7 to 77 features and 698 to 5500 samples across 2 to 26 classes." | context | Page 5, Datasets | Provides specific characteristics of the datasets used. | none | none |
+| 65 | "We further enlarge the evaluation scope by varying the degrees of data availability (i.e., Nreal), leading up to 33 different test cases for the eight OpenML datasets." | intervention | Page 5, Datasets | Describes a deliberate manipulation of the experimental conditions (varying Nreal). | none | none |
+| 66 | "We compare TabEBM against eight existing tabular data generation methods of eight different categories: ... and a "Baseline" model, where no data augmentation is applied" | intervention | Page 5, Benchmark generators | Describes the main comparative setup of the experiments. | none | none |
+| 67 | "We select six representative downstream predictors, including three standard baselines: Logistic Regression (LR) [16], KNN [27] and MLP [28]; two tree-based methods: Random Forest (RF) [10] and XGBoost [14]; and a PFN method: TabPFN [33]." | context | Page 5, Downstream predictors | Specifies the models used for evaluating the generated data. | none | none |
+| 68 | "For each dataset of N samples, we first split it into stratified train and test sets." | intervention | Page 5, General experimental setup | Describes a deliberate step in preparing the data for experiments. | none | none |
+| 69 | "We create large test sets to reduce the likelihood that the model's performance is accidentally inflated due to a small, unrepresentative set of samples [69]" | intervention | Page 5, General experimental setup | Describes a deliberate action (creating large test sets) and its intended causal effect (reduce likelihood of inflated performance). | mechanism | The primary action is the *creation* of the test sets, which is a manipulation. The "to reduce" explains the *purpose* of this manipulation. |
+| 70 | "The full train set approximates the upper bound of the quality of synthetic data, and we call this set “oracle"." | assumption | Page 5, General experimental setup | States a property of the "oracle" set that is assumed for its role in evaluation. | none | none |
+| 71 | "We subsample the full train set to simulate different levels of data availability, thus the subset size Nreal varies over {20, 50, 100, 200, 500}." | intervention | Page 5, General experimental setup | Describes a deliberate manipulation of data size for experimental purposes. | none | none |
+| 72 | "We split each subset into stratified training and validation sets with a ratio of 4:1." | intervention | Page 5, General experimental setup | Describes a deliberate step in data preparation. | none | none |
+| 73 | "We repeat the splitting ten times, summing up to 10 runs per subset size." | intervention | Page 5, General experimental setup | Describes a deliberate action to ensure robustness of results. | none | none |
+| 74 | "The reported results are averaged by default over ten runs on the test sets." | observable | Page 5, General experimental setup | Describes how the final results are presented, indicating a measurable outcome. | none | none |
+| 75 | "When aggregating results across datasets, we use the average distance to the minimum (ADTM) metric via affine renormalisation between the top-performing and worse-performing models [30, 54]." | observable | Page 5, General experimental setup | Specifies a measurable metric used for aggregating results. | none | none |
+| 76 | "Given Nreal real samples, we first train generators on the real training data and then generate Nsyn synthetic samples." | intervention | Page 5, Data augmentation setup | Describes the deliberate steps for preparing synthetic data. | none | none |
+| 77 | "For training the downstream predictors, we expand the real training split by adding the synthetic samples." | intervention | Page 5, Data augmentation setup | Describes a deliberate action to augment the training data. | none | none |
+| 78 | "The optimal Nsyn remains an open problem for tabular data [51, 71, 31]." | assumption | Page 5, Data augmentation setup | States a current limitation or unsolved problem in the field, which influences the experimental design. | none | none |
+| 79 | "Nreal = Nsyn can lead to highly unstable results, especially on small datasets that we investigate." | observable | Page 5, Data augmentation setup | Reports an observed behavior of a specific data augmentation strategy under certain conditions. | context | The "can lead to" indicates a causal link, but the focus is on the *observed outcome* (unstable results). "Small datasets" is context. |
+| 80 | "we perform data augmentation with a large synthetic set (Nsyn = 500) across all splits, and the synthetic data has the same class distribution as the real training data." | intervention | Page 5, Data augmentation setup | Describes a deliberate action (performing DA with Nsyn=500) and a controlled condition (same class distribution). | assumption | The "synthetic data has the same class distribution" is a controlled condition, which acts as an assumption for the validity of the comparison. |
+| 81 | "We evaluate the effect of using synthetic data for data augmentation by comparing the balanced accuracy of downstream predictors before and after augmentation." | intervention | Page 6, 3.1 Data Augmentation Improvement (Q1) | Describes the deliberate comparison performed to assess the effect of DA. | none | none |
+| 82 | "Typically, higher classification accuracy (i.e., ACCGenerator) and accuracy improvements (i.e., ACCGenerator - ACCBaseline > 0) demonstrate the effectiveness of the synthetic data for data augmentation." | mechanism | Page 6, 3.1 Data Augmentation Improvement (Q1) | Explains *how* effectiveness is demonstrated (by higher accuracy and improvements). The accuracy itself is an observable. | observable | The "demonstrate the effectiveness" indicates a causal link from the metric to the conclusion. |
+| 83 | "TabEBM effectively improves downstream performance across sample sizes, especially for very low-sample-size regimes." | observable | Page 6, 3.1 Data Augmentation Improvement (Q1) | Reports a measurable outcome of TabEBM's performance under specified conditions. | context | "Across sample sizes" and "low-sample-size regimes" are context. |
+| 84 | "Classification accuracy (%) aggregated over six downstream predictors, comparing data augmentation on eight real-world tabular datasets with varied real data availability. We report the mean ± std balanced accuracy and average accuracy rank across datasets. A higher rank implies higher accuracy. Note that “N/A” denotes that a specific generator was not applicable, and the rank is computed with the mean balanced accuracy of other methods. We bold the highest accuracy for each dataset of different sample size. Our method, TabEBM, consistently outperforms training on real data alone, and achieves the best overall performance against Baseline and benchmark generators." | observable | Table 1 | Reports the key measurable outcomes and comparative performance. | context, intervention | While the table describes the context and intervention, the core content is the *results* (accuracy, rank, outperforms). |
+| 85 | "TabEBM exhibits competitive performance in data augmentation, generally achieving the highest downstream accuracy and average rank across most datasets and sample sizes." | observable | Page 6, 3.1 Data Augmentation Improvement (Q1) | Reports measurable outcomes of TabEBM's performance. | none | none |
+| 86 | "TabEBM is the only generator that consistently improves performance across sample sizes." | observable | Page 6, 3.1 Data Augmentation Improvement (Q1) | Reports a measurable, consistent behavior of TabEBM. | none | none |
+| 87 | "most modern benchmark generators underperform even the Baseline, indicating poor approximated distributions in the low-sample-size regime." | mechanism | Page 6, 3.1 Data Augmentation Improvement (Q1) | Explains *why* benchmark generators underperform (poor approximated distributions). "Underperform" is an observable. | observable, context | The "indicating" points to the causal explanation. "Low-sample-size regime" is context. |
+| 88 | "TabEBM achieves the largest overall performance improvement on six leakage-free UCI datasets" | observable | Page 6, 3.1 Data Augmentation Improvement (Q1) | Reports a measurable outcome of TabEBM's performance. | context | "Six leakage-free UCI datasets" is context. |
+| 89 | "SMOTE requires at least two samples per class for interpolation" | assumption | Page 6, 3.1 Data Augmentation Improvement (Q1) | States a precondition or limitation for SMOTE's applicability. | none | none |
+| 90 | "TabPFGen cannot scale up to more than ten classes" | assumption | Page 6, 3.1 Data Augmentation Improvement (Q1) | States a limitation of TabPFGen. | none | none |
+| 91 | "TabEBM can stabilise downstream performance, especially when real data is very scarce (Nreal = 20): TabEBM leads to smaller standard deviations than Baseline on seven out of eight datasets." | observable | Page 6, 3.1 Data Augmentation Improvement (Q1) | Reports measurable outcomes (stabilised performance, smaller standard deviations) under specific conditions. | context | "Very scarce real data" and "seven out of eight datasets" are context. |
+| 92 | "TabEBM effectively improves downstream performance across any number of classes, especially for more than ten classes." | observable | Page 6, 3.1 Data Augmentation Improvement (Q1) | Reports measurable outcomes under specified conditions. | context | "Any number of classes" and "more than ten classes" are context. |
+| 93 | "TabEBM consistently outperforms the Baseline with notable improvements, particularly in datasets with more than ten classes." | observable | Figure 4 (Right) | Reports a measurable comparative outcome under specified conditions. | context | "Datasets with more than ten classes" is context. |
+| 94 | "an increased number of classes tends to cause a performance degradation in the benchmark generators." | mechanism | Page 6, 3.1 Data Augmentation Improvement (Q1) | Explains *how* an increased number of classes affects performance (causes degradation). "Performance degradation" is an observable. | intervention, observable | The "tends to cause" indicates a causal explanation. "Increased number of classes" is an implicit intervention. |
+| 95 | "TabEBM is robust on imbalanced datasets." | observable | Page 6, 3.1 Data Augmentation Improvement (Q1) | Reports a measurable property (robustness) under specified conditions. | context | "Imbalanced datasets" is context. |
+| 96 | "For the three binary OpenML datasets (i.e., “biodeg", "steel" and "stock"), we adjust the class distribution in the training data to vary the class imbalance, while keeping the test data fixed." | intervention | Page 6, 3.1 Data Augmentation Improvement (Q1) | Describes a deliberate manipulation of data characteristics for experimental purposes. | context | "Three binary OpenML datasets" is context. |
+| 97 | "TabEBM consistently outperforms Baseline, while the other generators exhibit performance degradation as data imbalance increases." | observable | Figure 5 | Reports measurable comparative outcomes under specified conditions. | context | "Data imbalance increases" is context. |
+| 98 | "TabEBM is computationally efficient." | observable | Page 6, 3.1 Data Augmentation Improvement (Q1) | Reports a measurable property of TabEBM. | none | none |
+| 99 | "TabEBM achieves higher downstream accuracy with lower time costs." | observable | Figure 6 | Reports measurable outcomes of TabEBM's performance and efficiency. | none | none |
+| 100 | "We evaluate the fidelity of synthetic data by measuring the similarity of synthetic data to real train data and to real test data (Figure 7)." | intervention | Page 7, 3.2 Statistical Fidelity (Q2) | Describes the deliberate action taken to assess fidelity. | observable | The "measuring the similarity" is the action, not the similarity itself. |
+| 101 | "We evaluate this similarity via (i) average inverse of the Kullback-Leibler Divergence (inverse KL) [17], (ii) p-value of Kolmogorov–Smirnov test (KS test) [39] and (iii) p-value of Chi-squared test (χ² test) [55]." | observable | Page 7, 3.2 Statistical Fidelity (Q2) | Specifies the measurable metrics used for evaluation. | none | none |
+| 102 | "For all three metrics, a bigger value denotes that synthetic data is more likely to have the same distribution as real data." | mechanism | Page 7, 3.2 Statistical Fidelity (Q2) | Explains *how* the metric values are interpreted to draw conclusions about data distribution. | none | none |
+| 103 | "TabEBM consistently exhibits the highest accuracy and distribution similarity between real train data and synthetic data, indicating that TabEBM learns the distributions of real train data better than benchmark generators." | observable | Figure 7 (a1&a2) | Reports measurable outcomes and the conclusion drawn from them. | mechanism | The "indicating that TabEBM learns" is a conclusion based on the observable. |
+| 104 | "TabEBM remains the most competitive method in similarity between real test data and synthetic data." | observable | Page 7, 3.2 Statistical Fidelity (Q2) | Reports a measurable comparative outcome. | none | none |
+| 105 | "This indicates that TabEBM can extrapolate beyond real train data and thus generate synthetic data from a more general distribution that aligns with both train and test data." | mechanism | Page 7, 3.2 Statistical Fidelity (Q2) | Explains *how* TabEBM achieves its generalizability (extrapolates, generates from general distribution). "Aligns with both train and test data" is an observable property. | observable | The "can extrapolate" and "generate" describe the causal capability. |
+| 106 | "Privacy-preserving synthetic data allows researchers and practitioners to bypass ethical and logistical issues while enabling model training and testing [38]." | mechanism | Page 8, 3.3 Privacy Preservation (Q3) | Explains *how* privacy-preserving data provides benefits (allows bypassing issues, enables training/testing). | none | none |
+| 107 | "We further explore the use of TabEBM-generated data for data sharing, where only synthetic data is accessible for downstream users" | intervention | Page 8, 3.3 Privacy Preservation (Q3) | Describes a deliberate experimental setup (using TabEBM data for data sharing). | context | "Only synthetic data is accessible" is a condition of this specific experimental setup. |
+| 108 | "we evaluate synthetic data via three metrics: (i) balanced accuracy of downstream predictors trained with only synthetic data (i.e., train-on-synthetic, test-on-real [85, 42, 87]);" | observable | Page 8, 3.3 Privacy Preservation (Q3) | Specifies a measurable metric and the specific experimental context for its measurement. | context | The "balanced accuracy" is the observable. "Train-on-synthetic, test-on-real" is the context. |
+| 109 | "(ii) median Distance to Closest Record (DCR) [88], where a greater DCR denotes synthetic data is less likely to be copied from real data;" | observable | Page 8, 3.3 Privacy Preservation (Q3) | Specifies a measurable metric and its interpretation. | mechanism | The "median DCR" is the observable. The "denotes" part is the mechanism for interpreting it. |
+| 110 | "and (iii) δ-presense [62], where a smaller value denotes a lower re-identification risk for real data from synthetic data." | observable | Page 8, 3.3 Privacy Preservation (Q3) | Specifies a measurable metric and its interpretation. | mechanism | The "δ-presense" is the observable. The "denotes" part is the mechanism for interpreting it. |
+| 111 | "TabEBM consistently finds a better trade-off between accuracy and privacy preservation." | observable | Figure 7 (b1&b2) | Reports a measurable outcome of TabEBM's performance. | none | none |
+| 112 | "the “train-on-synthetic, test-on-real” scenario poses a greater challenge for generators in achieving high accuracy because real data is inaccessible for model training and data augmentation." | assumption | Page 8, 3.3 Privacy Preservation (Q3) | States a condition (real data inaccessibility) that makes achieving high accuracy challenging in this specific scenario. | context, observable | The "real data is inaccessible" is a precondition for the challenge. The "poses a greater challenge" is an observable difficulty. |
+| 113 | "TabEBM is the only generator that surpasses the overall performance of training on real data (i.e., Baseline)." | observable | Page 8, 3.3 Privacy Preservation (Q3) | Reports a measurable comparative outcome. | none | none |
+| 114 | "The relatively high DCR for TabEBM indicates that it can extrapolate beyond real train data" | mechanism | Page 8, 3.3 Privacy Preservation (Q3) | Explains *how* high DCR is interpreted to infer extrapolation capability. | none | none |
+| 115 | "TabEBM learns the general distribution of real data, and can generate high-quality synthetic data suitable for various purposes, including privacy preservation." | mechanism | Page 8, 3.3 Privacy Preservation (Q3) | Describes the capabilities of TabEBM (learns distribution, generates high-quality data) and the resulting property (suitable for various purposes). | observable | The "learns" and "can generate" describe the causal capabilities. |
+| 116 | "classifier logits can be useful when reinterpreted as a class-conditional energy function." | mechanism | Page 8, 3.4 Why is TabEBM effective for estimating Energy-Based Models? (Q4) | Explains *how* classifier logits can be utilized for a specific purpose. | none | none |
+| 117 | "Logit distribution of TabPFN trained on our surrogate binary tasks at increasing distances from the real data (on “steel”)." | observable | Figure 8 (Left) | Reports a measurable characteristic (logit distribution) under specified experimental conditions. | context, intervention | The "logit distribution" is the observable. The rest describes the context and the varying condition (increasing distance). |
+| 118 | "The corresponding unnormalised density approximated by TabEBM. TabEBM assigns higher density closer to the real data." | observable | Figure 8 (Right) | Reports a measurable characteristic (unnormalised density) and its behavior. | none | none |
+| 119 | "We found it essential to place the negative samples far from the real data, since TabPFN, which is pre-trained to approximate Bayesian inference [33], has its confi-dence influenced by the distance from the training data [53]." | assumption | Page 8, 3.4 Why is TabEBM effective for estimating Energy-Based Models? (Q4) | States a design principle ("essential to place negative samples far") and the underlying causal reason for it (TabPFN's confidence is influenced by distance). | mechanism | The "essential to" makes it an assumption, and the "since" explains the mechanism behind that assumption. |
+| 120 | "TabPFN outputs high logit values near the real data. As the distance from the real data increases, the logit f(x)[1] decreases smoothly until the two logits become similar, making the classifier uncertain" | mechanism | Page 8, 3.4 Why is TabEBM effective for estimating Energy-Based Models? (Q4) | Explains *how* increasing distance affects logit values and leads to classifier uncertainty. "Logit values" and "uncertain" are observable behaviors. | observable, intervention | The "making the classifier uncertain" is a causal effect. "Distance increases" is an implicit intervention. |
+| 121 | "TabEBM's inferred density drops significantly as the maximum logit decreases, because pc(x) x (exp(fc(x)[0]) + exp(fc(x)[1])) from Equation (3)." | mechanism | Page 8, 3.4 Why is TabEBM effective for estimating Energy-Based Models? (Q4) | Explains *why* the inferred density drops (due to the mathematical formulation). "Density drops" is an observable. | observable, intervention | The "because" clearly indicates a causal explanation. "Maximum logit decreases" is an implicit intervention. |
+| 122 | "Since SGLD sampling performs gradient ascent on the density, the TabEBM-generated samples will be close to the real data." | mechanism | Page 8, 3.4 Why is TabEBM effective for estimating Energy-Based Models? (Q4) | Explains *how* SGLD sampling leads to samples being close to real data. "Samples close to real data" is an observable property. | observable | The "since" indicates a causal explanation. |
+| 123 | "TabPFN's distance-based uncertainty is useful for inferring accurate energy functions within our TabEBM framework." | mechanism | Page 8, 3.4 Why is TabEBM effective for estimating Energy-Based Models? (Q4) | Explains *how* TabPFN's uncertainty property is utilized for a specific purpose. | none | none |
+| 124 | "TabEBM can be paired with any other gradient-based classifier that produces logits" | assumption | Page 8, 3.4 Why is TabEBM effective for estimating Energy-Based Models? (Q4) | States a general capability or design principle of TabEBM, implying its broad applicability. | none | none |
+| 125 | "TabEBM efficiently generates high-fidelity data that can effectively improve the downstream performance via data augmentation." | observable | Page 9, 4 Discussion & Related Work | Reports measurable outcomes of TabEBM's performance. | none | none |
+| 126 | "the type of distribution that the generators learn (crucial for preserving the original training label distribution)" | mechanism | Page 9, 4 Discussion & Related Work, Table 2 | Explains *why* the type of distribution learned is important (crucial for preserving label distribution). | context | The "crucial for" indicates a causal explanation. "Type of distribution" is context. |
+| 127 | "class-specific models (reflecting their capability to capture unique features essential for label-invariant generation)" | mechanism | Page 9, 4 Discussion & Related Work, Table 2 | Explains *how* class-specific models provide a benefit (capture unique features). | context | The "reflecting their capability" indicates a causal explanation. "Class-specific models" is context. |
+| 128 | "stratified generation (crucial for effective data augmentation)" | mechanism | Page 9, 4 Discussion & Related Work, Table 2 | Explains *why* stratified generation is important (crucial for effective DA). | context | The "crucial for" indicates a causal explanation. "Stratified generation" is context. |
+| 129 | "these methods learn the joint distribution and thus cannot preserve the stratification of the original data" | mechanism | Page 9, Generative Models for Tabular Data | Explains *how* learning the joint distribution leads to a negative outcome (cannot preserve stratification). "Cannot preserve stratification" is an observable. | observable, context | The "thus" indicates a causal link. "Learn joint distribution" is context. |
+| 130 | "TabPFGen's shared generator can lead to inaccurate density estimates, particularly in high-noise and class-imbalance situations" | mechanism | Page 9, Generative Models for Tabular Data | Explains *how* TabPFGen's shared generator leads to a negative outcome (inaccurate density estimates). "Inaccurate density estimates" is an observable. | observable, context | The "can lead to" indicates a causal link. "High-noise and class-imbalance situations" is context. |
+| 131 | "As noise increases, TabPFGen's inferred densities fluctuate significantly and diverge from the true data distributions." | observable | Page 9, Generative Models for Tabular Data | Reports measurable behaviors of TabPFGen's inferred densities under a varying condition. | intervention | The "noise increases" is an implicit intervention. The fluctuation and divergence are the observed results. |
+| 132 | "TabEBM uses class-specific EBMs to model each class's marginal distributions, and the results in Appendix C reveal that our design choice reduces the impact of noise and data imbalance." | mechanism | Page 9, Generative Models for Tabular Data | Explains *how* TabEBM's design works (uses class-specific EBMs) and its causal effect (reduces impact of noise/imbalance). "Reduces impact" is an observable. | observable | The "uses... to model" describes the mechanism, and "reduces the impact" is a direct consequence. |
+| 133 | "TabEBM focuses on approximating and generating for one class at a time, remaining unaffected by noise from other classes." | mechanism | Page 9, Generative Models for Tabular Data | Describes *how* TabEBM operates (one class at a time) and its beneficial effect (unaffected by noise). "Unaffected by noise" is an observable property. | observable | The "focuses on" describes the operational mechanism. |
+| 134 | "TabPFGen is limited in usability (e.g., it supports only up to ten classes), while TabEBM scales to any number of classes." | observable | Page 9, Generative Models for Tabular Data | Reports measurable limitations of TabPFGen and capabilities of TabEBM. | context | "Supports only up to ten classes" is a specific context for TabPFGen's limitation. |
+| 135 | "using the same transformations across all classes leads to varied performance impacts [3, 41], indicating that data augmentation effects are class-specific and suggesting that different classes may require distinct augmentations." | mechanism | Page 9, Data Augmentation (DA) for Tabular Data | Explains *how* using same transformations leads to varied impacts, and *why* this indicates class-specific effects. "Varied performance impacts" is an observable. | intervention, observable, assumption | The "leads to" and "indicating that" point to causal explanations. "Class-specific effects" is an assumption. |
+| 136 | "Given the lack of symmetries in tabular data, we believe this class-dependent effect is even more pronounced." | assumption | Page 9, Data Augmentation (DA) for Tabular Data | States a belief or hypothesis about the effect of tabular data characteristics. | context | "Lack of symmetries" is context. |
+| 137 | "Therefore, we propose TabEBM as a class-specific generative model to produce tailored augmentations for each class." | mechanism | Page 9, Data Augmentation (DA) for Tabular Data | Describes the design of TabEBM and its intended causal effect (produce tailored augmentations). | none | none |
+| 138 | "PFNs can be adapted for various pur-poses by pre-training the transformer with corresponding “prior data”, and then it can make in-context predictions with unseen downstream data." | mechanism | Page 10, Prior-fitted Networks (PFNs) for Tabular Data | Explains *how* PFNs achieve their predictive capability (pre-training enables in-context predictions). "Pre-training" is an intervention. | intervention | The "can make" describes the causal capability. |
+| 139 | "The training-free nature of TabPFN enables TabEBM to generate high-quality tabular data without introducing extra training costs." | mechanism | Page 10, Prior-fitted Networks (PFNs) for Tabular Data | Explains *how* TabPFN's characteristic benefits TabEBM (enables generation without extra costs). | context | "Training-free nature of TabPFN" is context. |
+| 140 | "our class-specific design lets TabEBM surpass TabPFN's limits and scale to more than ten classes." | mechanism | Page 10, Prior-fitted Networks (PFNs) for Tabular Data | Explains *how* TabEBM's design leads to improved capabilities (surpasses limits, scales). "Surpass limits" and "scale" are observables. | observable | The "lets" indicates a causal effect. |
+| 141 | "TabEBM is a general method that relies on an underlying binary classifier, and as such, its strengths and weaknesses are directly tied to this classifier." | assumption | Page 10, Limitations and Future Work | States a fundamental dependency of TabEBM on its underlying classifier. | mechanism | The "relies on" and "tied to" indicate a dependency that acts as a precondition for its behavior. |
+| 142 | "TabEBM inherits some of TabPFN's limitations, particularly in scaling to a larger number of features." | assumption | Page 10, Limitations and Future Work | States a inherited limitation of TabEBM. | context | "Scaling to a larger number of features" is context for the limitation. |
+| 143 | "TabEBM can handle datasets with over 1000 samples, overcoming TabPFN's limitation, as it processes one class at a time." | mechanism | Page 10, Limitations and Future Work | Explains *how* TabEBM overcomes a limitation (processes one class at a time) and its effect (handles large datasets). "Handles datasets" and "overcoming limitation" are observables. | observable | The "as it processes" indicates the causal mechanism. |
+| 144 | "TabEBM outperforms other generators on larger datasets, though the performance gains decrease as the sample size increases." | observable | Page 10, Limitations and Future Work | Reports measurable comparative outcomes and a trend. | context | "Larger datasets" and "sample size increases" are context. |
+| 145 | "TabEBM is compatible with any classifier that can be adapted into EBMs" | assumption | Page 10, Limitations and Future Work | States a general capability or design principle of TabEBM, implying its broad applicability. | none | none |
+| 146 | "Integrating them into TabEBM will enhance its ability to manage high-dimensional datasets, increasing its versatility and utility." | mechanism | Page 10, Limitations and Future Work | Explains *how* future integration will lead to benefits (enhance ability, increase versatility/utility). "Integrating them" is an intervention (future work). | intervention | The "will enhance" and "increasing" describe causal effects. |
+| 147 | "generators that are limited in modelling multivariate distributions may still perform well on univariate fidelity metrics" | assumption | Page 10, Limitations and Future Work | States a potential behavior or property of certain generators under specific evaluation conditions. | context | "Limited in modelling multivariate distributions" is context. |
+| 148 | "evaluating their ability to learn more complex, high-order, relationships between features remains an open research question" | assumption | Page 10, Limitations and Future Work | States a current unsolved problem or area of future research. | none | none |
+| 149 | "TabEBM improves downstream performance through data augmentation on real-world datasets, outperforming other benchmark generators." | observable | Page 10, 5 Conclusion | Reports measurable outcomes of TabEBM's performance. | intervention, context | "Through data augmentation" is the intervention, "real-world datasets" is context. |
+| 150 | "The statistical evaluation confirms that TabEBM generates high-fidelity synthetic data, particularly for small datasets." | observable | Page 10, 5 Conclusion | Reports a measurable property of the generated data. | context | "Particularly for small datasets" is context. |
+
+# 3. Classification criteria you actually used
+
+Here are the general rules and distinctions I applied during the classification process:
+
+*   **Distinguishing "assumption" from "context":**
+    *   **Context** describes the *setting*, *background*, *problem domain characteristics*, or *specific experimental conditions* (e.g., "small tabular datasets," "imbalanced datasets," "TabPFN as the binary classifier," "eight OpenML datasets"). It's descriptive of the environment or setup.
+    *   **Assumption** describes an *underlying belief*, *precondition for a claim's validity*, *design principle*, or *inherent limitation* of a method (e.g., "DA is commonly believed to improve performance," "TabPFN is inference-only," "SMOTE requires at least two samples per class," "TabEBM is compatible with any classifier"). It often implies a "if X holds, then Y" or "X is true for this work" statement, even if not explicitly phrased that way. If it's a characteristic that *dictates how a method must be used* or *why a design choice is made*, it leans towards assumption.
+
+*   **Distinguishing "mechanism" from a plain description of "what happened":**
+    *   **Mechanism** focuses on the *causal explanation* – the "how" or "why" an intervention produces an effect, or how a system works. It often involves verbs like "enables," "leads to," "causes," "results in," "introduces," "reflects," "defines," "is crucial for," or "by [doing something]". It explains the *causal chain* or the *functional principle*.
+    *   A plain description of "what happened" (which I would classify as **observable**) simply states a fact or an outcome without explaining the underlying cause or process. For example, "TabEBM improves performance" is an observable. "TabEBM improves performance *by creating class-specific EBMs*" would make "creating class-specific EBMs" a mechanism. If the text states "X leads to Y", then "X leads to Y" is the mechanism, and Y is the observable.
+
+*   **Deciding when an intervention was implicit vs. genuinely absent (null):**
+    *   An **intervention** is a *deliberate manipulation* or *controlled comparison* performed by the researchers to test a hypothesis or demonstrate a capability. This includes specific experimental setups (e.g., "varying Nreal," "comparing TabEBM against eight methods," "adjusting class distribution").
+    *   If a claim is made about a property (e.g., "TabEBM is robust") and the text *later describes how this property was tested* (e.g., "robust to variations in hyperparameters"), then the *testing action* (varying hyperparameters) is the intervention, and the *property* (robustness) is the observable.
+    *   If a claim is made about a method's *inherent design* (e.g., "TabEBM creates class-specific EBMs"), this is part of the **mechanism** rather than an intervention, as it describes *how the method works* rather than a manipulation *of the method* for testing. Algorithm steps are generally interventions because they are deliberate actions taken by the system as designed by the researchers.
+    *   I set intervention to null only if a clear claim or observable was present, but *no specific manipulation or comparison* was described to elicit or test that claim/observable. This was rare in this paper, as most observables were tied to explicit experimental comparisons.
+
+*   **What made an "observable" count as evidence for/against a mechanism vs. just a raw number?**
+    *   An **observable** is the *measurable metric, behavior, or empirical result*. This includes accuracy, fidelity, trade-offs, stability, performance degradation, logit values, density drops, etc.
+    *   When an observable is presented *alongside a causal explanation* (a mechanism), the observable is the *effect* that validates or illustrates the mechanism. For example, "poor approximated distributions *cause* underperformance" (mechanism), and "benchmark generators underperform Baseline" (observable). The observable is the *evidence* for the mechanism.
+    *   If the text explicitly states that a metric *indicates* or *demonstrates* something, then the metric itself is the observable, and the "indicating/demonstrating" part is the mechanism (how the observable is interpreted to support a conclusion).
+
+*   **Any rule of thumb invented mid-way:**
+    *   **"X is crucial for Y"**: Y is the *purpose* or *benefit*, and X is the *mechanism* or *intervention* that achieves it.
+    *   **"X leads to Y" / "X causes Y" / "X results in Y"**: "X" is the mechanism (or intervention if it's a deliberate action), and "Y" is the observable.
+    *   **"X is limited to Y" / "X cannot Y"**: These describe limitations, which I classified as **assumptions** if they are inherent properties or preconditions for a method's applicability, or **observables** if they are measured behaviors (e.g., "TabPFGen cannot scale up to more than ten classes" is an assumption about its design limitation, but "TabPFGen's inferred densities fluctuate" is an observable behavior).
+    *   **Questions (Q1-Q4)**: If a research question asks "Can X do Y?", then Y is an **observable**. If it asks "Why does X do Y?", then the answer to that "why" is a **mechanism**.
+
+# 4. Ambiguous / contested cases
+
+1.  **span_id**: 2
+    *   **text**: "classification methods tend to struggle with these small datasets, leading to poor predictive performance."
+    *   **competing labels**: context / observable
+    *   **deciding factor**: While "poor predictive performance" is a measurable outcome, in this introductory context, it's describing a *general problem* or *characteristic of the domain* that the paper aims to address, rather than a specific experimental result from this paper. Therefore, it functions more as **context** setting the stage for the research.
+
+2.  **span_id**: 4
+    *   **text**: "current tabular generative methods that learn either the joint distribution p(x, y) or the class-conditional distribution p(x | y) often overfit on small datasets, resulting in poor-quality synthetic data, usually worsening classification performance compared to using real data alone."
+    *   **competing labels**: mechanism / context / observable
+    *   **deciding factor**: This span contains elements of all three. "Small datasets" is clearly **context**. "Overfit" is a *behavior* that explains *why* the poor outcomes occur, making it a **mechanism**. "Poor-quality synthetic data" and "worsening classification performance" are the *measurable outcomes* of this overfitting, making them **observables**. I chose **mechanism** as the primary label because the core of the statement is the causal explanation for the failure of existing methods ("overfit... resulting in...").
+
+3.  **span_id**: 6
+    *   **text**: "This approach creates robust energy landscapes, even in ambiguous class distributions."
+    *   **competing labels**: mechanism / context
+    *   **deciding factor**: The core claim is *how* the approach works ("creates robust energy landscapes"). "Even in ambiguous class distributions" specifies a *condition* under which this mechanism is particularly effective or tested, making it a specific **context** for the mechanism's operation. I assigned **mechanism** as the primary.
+
+4.  **span_id**: 8
+    *   **text**: "When used for data augmentation, our synthetic data consistently leads to improved classification performance across diverse datasets of various sizes, especially small ones."
+    *   **competing labels**: observable / intervention / context
+    *   **deciding factor**: "Improved classification performance" is the clear **observable**. "When used for data augmentation" describes the *manipulation* or *application scenario*, making it an **intervention**. "Across diverse datasets... especially small ones" describes the *conditions* of the experiment, making it **context**. I assigned **observable** as the primary, implicitly acknowledging the other two.
+
+5.  **span_id**: 22
+    *   **text**: "Using class-specific EBMs makes the energy landscape more robust to class overlaps, compared to using a single shared EBM to approximate the class-conditional distribution."
+    *   **competing labels**: mechanism / intervention / observable
+    *   **deciding factor**: "Makes the energy landscape more robust" is the *causal effect* of using class-specific EBMs, hence **mechanism**. "More robust" is also an **observable** property. "Compared to using a single shared EBM" is a *controlled comparison*, making it an **intervention**. I chose **mechanism** because the statement explains *how* the robustness is achieved.
+
+6.  **span_id**: 37
+    *   **text**: "Placing the negative samples at the corners of a hypercube ensures they are easily distinguishable from the real data, which is crucial for an accurate energy function"
+    *   **competing labels**: intervention / mechanism
+    *   **deciding factor**: "Placing the negative samples" is a deliberate action, an **intervention**. However, the span immediately explains *why* this action is taken and *what its causal effect is* ("ensures they are easily distinguishable," "crucial for an accurate energy function"). This explanation of *why* and *how* it works makes it a **mechanism**. I assigned **mechanism** as the primary.
+
+7.  **span_id**: 50
+    *   **text**: "SGLD is an efficient method for high-dimensional data, combining stochastic gradient descent (SGLD) with Langevin dynamics."
+    *   **competing labels**: observable / mechanism
+    *   **deciding factor**: "Efficient method" is an **observable** property. However, the phrase "combining... with..." immediately explains *how* it achieves this efficiency, which is a **mechanism**. I assigned **mechanism** as the primary.
+
+8.  **span_id**: 69
+    *   **text**: "We create large test sets to reduce the likelihood that the model's performance is accidentally inflated due to a small, unrepresentative set of samples [69]"
+    *   **competing labels**: intervention / mechanism
+    *   **deciding factor**: "We create large test sets" is a deliberate action, an **intervention**. The phrase "to reduce the likelihood that..." explains the *purpose* and *causal effect* of this intervention, making it a **mechanism**. I assigned **intervention** as the primary because the act of *creating* the test sets is the manipulation.
+
+9.  **span_id**: 80
+    *   **text**: "we perform data augmentation with a large synthetic set (Nsyn = 500) across all splits, and the synthetic data has the same class distribution as the real training data."
+    *   **competing labels**: intervention / assumption
+    *   **deciding factor**: "We perform data augmentation with a large synthetic set" is a clear **intervention**. The second part, "the synthetic data has the same class distribution as the real training data," describes a *controlled condition* or *precondition* for the validity of the experiment, which functions as an **assumption**. I assigned **intervention** as the primary, implicitly acknowledging the assumption.
+
+10. **span_id**: 82
+    *   **text**: "Typically, higher classification accuracy (i.e., ACCGenerator) and accuracy improvements (i.e., ACCGenerator - ACCBaseline > 0) demonstrate the effectiveness of the synthetic data for data augmentation."
+    *   **competing labels**: observable / mechanism
+    *   **deciding factor**: "Higher classification accuracy" and "accuracy improvements" are **observables**. The phrase "demonstrate the effectiveness" explains *how* these observables are interpreted to support a conclusion, making it a **mechanism**. I assigned **mechanism** as the primary.
+
+11. **span_id**: 87
+    *   **text**: "most modern benchmark generators underperform even the Baseline, indicating poor approximated distributions in the low-sample-size regime."
+    *   **competing labels**: observable / mechanism / context
+    *   **deciding factor**: "Underperform even the Baseline" is an **observable**. "Indicating poor approximated distributions" explains *why* they underperform, making it a **mechanism**. "Low-sample-size regime" is **context**. I assigned **mechanism** as the primary.
+
+12. **span_id**: 94
+    *   **text**: "an increased number of classes tends to cause a performance degradation in the benchmark generators."
+    *   **competing labels**: intervention / mechanism / observable
+    *   **deciding factor**: "Increased number of classes" is an implicit **intervention** (a varying condition). "Tends to cause a performance degradation" is the *causal explanation*, making it a **mechanism**. "Performance degradation" is an **observable**. I assigned **mechanism** as the primary.
+
+13. **span_id**: 105
+    *   **text**: "This indicates that TabEBM can extrapolate beyond real train data and thus generate synthetic data from a more general distribution that aligns with both train and test data."
+    *   **competing labels**: mechanism / observable
+    *   **deciding factor**: "Can extrapolate" and "generate synthetic data from a more general distribution" describe the *causal capabilities* of TabEBM, making it a **mechanism**. "Aligns with both train and test data" is an **observable** property of the generated data. I assigned **mechanism** as the primary.
+
+14. **span_id**: 112
+    *   **text**: "the “train-on-synthetic, test-on-real” scenario poses a greater challenge for generators in achieving high accuracy because real data is inaccessible for model training and data augmentation."
+    *   **competing labels**: context / assumption / observable
+    *   **deciding factor**: "Train-on-synthetic, test-on-real scenario" is **context**. "Real data is inaccessible" is a *precondition* of this scenario that creates the challenge, making it an **assumption**. "Poses a greater challenge" is an **observable** difficulty. I assigned **assumption** as the primary because the inaccessibility is the core precondition for the challenge.
+
+15. **span_id**: 119
+    *   **text**: "We found it essential to place the negative samples far from the real data, since TabPFN, which is pre-trained to approximate Bayesian inference [33], has its confi-dence influenced by the distance from the training data [53]."
+    *   **competing labels**: assumption / mechanism
+    *   **deciding factor**: "Essential to place the negative samples far" is a design principle, an **assumption**. The "since" clause explains *why* this assumption is necessary (TabPFN's confidence is influenced by distance), which is a **mechanism**. I assigned **assumption** as the primary.
+
+16. **span_id**: 120
+    *   **text**: "TabPFN outputs high logit values near the real data. As the distance from the real data increases, the logit f(x)[1] decreases smoothly until the two logits become similar, making the classifier uncertain"
+    *   **competing labels**: observable / intervention / mechanism
+    *   **deciding factor**: "High logit values," "logit decreases," "logits become similar" are **observables**. "As the distance from the real data increases" is an implicit **intervention**. "Making the classifier uncertain" is the *causal effect* of the logits becoming similar, making it a **mechanism**. I assigned **mechanism** as the primary.
+
+17. **span_id**: 121
+    *   **text**: "TabEBM's inferred density drops significantly as the maximum logit decreases, because pc(x) x (exp(fc(x)[0]) + exp(fc(x)[1])) from Equation (3)."
+    *   **competing labels**: observable / intervention / mechanism
+    *   **deciding factor**: "Inferred density drops" is an **observable**. "As the maximum logit decreases" is an implicit **intervention**. The "because" clause provides the *mathematical explanation* for this drop, making it a **mechanism**. I assigned **mechanism** as the primary.
+
+18. **span_id**: 129
+    *   **text**: "these methods learn the joint distribution and thus cannot preserve the stratification of the original data"
+    *   **competing labels**: mechanism / observable / context
+    *   **deciding factor**: "Learn the joint distribution" is a characteristic of existing methods (**context**). "Cannot preserve the stratification" is an **observable** outcome. The "thus" implies a *causal link* from learning the joint distribution to the inability to preserve stratification, making it a **mechanism**. I assigned **mechanism** as the primary.
+
+19. **span_id**: 135
+    *   **text**: "using the same transformations across all classes leads to varied performance impacts [3, 41], indicating that data augmentation effects are class-specific and suggesting that different classes may require distinct augmentations."
+    *   **competing labels**: intervention / mechanism / observable / assumption
+    *   **deciding factor**: "Using the same transformations" is an **intervention**. "Leads to varied performance impacts" is a **mechanism**, and "varied performance impacts" is an **observable**. The "indicating that data augmentation effects are class-specific" is a conclusion drawn from the observable, which then becomes an **assumption** for the paper's approach. The "suggesting that different classes may require distinct augmentations" is a **mechanism** (the implication). I assigned **mechanism** as the primary due to the strong causal language ("leads to," "indicating," "suggesting").
+
+20. **span_id**: 141
+    *   **text**: "TabEBM is a general method that relies on an underlying binary classifier, and as such, its strengths and weaknesses are directly tied to this classifier."
+    *   **competing labels**: assumption / mechanism
+    *   **deciding factor**: "Relies on an underlying binary classifier" describes a fundamental dependency, a precondition for TabEBM's operation, making it an **assumption**. "Strengths and weaknesses are directly tied" describes the *causal consequence* of this dependency, making it a **mechanism**. I assigned **assumption** as the primary.
+
+# 5. What you deliberately did NOT extract
+
+1.  **Method names (e.g., TabEBM, SMOTE, TabPFN, SGLD)**: While these are central to the paper, I only extracted them when they were part of a statement describing *how they work* (mechanism), *what they achieve* (observable), *how they are used in the experiment* (intervention), or *their specific characteristics/limitations* (context/assumption). The names themselves, without descriptive predicates, are not one of the five categories.
+2.  **General statements of purpose or intent (e.g., "To solve these challenges, we introduce TabEBM...")**: These are high-level motivations rather than specific assumptions, mechanisms, contexts, interventions, or observables. I focused on the more granular "how" and "why" statements.
+3.  **References to appendices for further details (e.g., "Further details are available in Appendix B.5.")**: These are navigational cues within the paper, not content fitting the categories.
+4.  **Code availability statements (e.g., "Code is available at https://github.com/andreimargeloiu/TabEBM.")**: These are practical information for reproducibility but do not describe the scientific content in terms of the five categories.
+5.  **Standard definitions or background information that is not specific to the paper's contribution (e.g., "Many scientific domains within medicine, physics, and chemistry often rely on intricate and challenging data acquisition procedures...")**: While this sets the stage, it's very general. I only extracted it if it directly described the *context* of the problem being addressed by *this specific paper's work*.
+6.  **Future work suggestions (e.g., "we leave these extensions for future work.")**: These are beyond the scope of what was *performed* or *tested* in the paper.
+7.  **Statements about the paper's structure (e.g., "Section 3 showed that...")**: These are meta-statements about the paper itself.
+8.  **Acknowledgements and Disclosure of Funding**: Not relevant to the scientific content categories.
+9.  **NeurIPS Paper Checklist**: This is a submission requirement, not part of the scientific content.
+10. **Specific numerical values without a comparative or interpretive statement**: For example, just listing "7 to 77 features" (span 64) is context, but if it said "7 features led to poor performance," then "poor performance" would be an observable. I extracted the *metrics* and *results*, but not every raw number.

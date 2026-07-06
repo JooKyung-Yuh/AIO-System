@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-07-05_12-01-45_PXX_gemini-2-5-flash",
+  "timestamp": "2026-07-05T12:01:45.029707+00:00",
+  "paper_id": "PXX",
+  "paper_title_hint": "unknown",
+  "pdf_path": "docs/VARC.pdf",
+  "pdf_sha256": "16b7b3f71e7d081929704b43f540a6dd56719ee3f850877d98de80d0f2dc9e0b",
+  "pdf_size_bytes": 37485467,
+  "model": "gemini-2.5-flash",
+  "temperature": 0.0,
+  "prompt_version": "aiocm_debug_v5",
+  "prompt_path": "prompts/aiocm_debug_v5.md",
+  "prompt_sha256": "53e11f23f17fa545ab19c3137b77652faf67f6057361052b941e62cd700c7a26",
+  "prompt_chars": 12206,
+  "status": "success",
+  "output_chars": 133592,
+  "finish_reason": "FinishReason.MAX_TOKENS",
+  "span_count": null,
+  "spans_parse_error": "no fenced JSON block found at the start of the response",
+  "usage": {
+    "prompt_token_count": 7468,
+    "thoughts_token_count": 23423,
+    "candidates_token_count": 42109,
+    "total_token_count": 73000
+  }
+}

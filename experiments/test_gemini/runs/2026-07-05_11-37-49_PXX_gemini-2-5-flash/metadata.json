@@ -1,0 +1,20 @@
+{
+  "run_id": "2026-07-05_11-37-49_PXX_gemini-2-5-flash",
+  "timestamp": "2026-07-05T11:37:49.835681+00:00",
+  "paper_id": "PXX",
+  "paper_title_hint": "unknown",
+  "pdf_path": "docs/2409.16118v3.pdf",
+  "pdf_sha256": "1107700b5eb303f669ed5ec9c7d21a2d3c35d1cc400b94a24c2413bd5b82eccd",
+  "pdf_size_bytes": 4929588,
+  "model": "gemini-2.5-flash",
+  "temperature": 0.0,
+  "prompt_version": "aiocm_debug_v4",
+  "prompt_path": "prompts/aiocm_debug_v4.md",
+  "prompt_sha256": "196e3fc7f0ae4dbbc9e2d723463924bf2ffec9e4b2b887718b40784714bdb53c",
+  "prompt_chars": 5688,
+  "status": "success",
+  "output_chars": 165386,
+  "finish_reason": "FinishReason.MAX_TOKENS",
+  "span_count": null,
+  "spans_parse_error": "no fenced JSON block found at the start of the response"
+}
