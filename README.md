@@ -25,9 +25,14 @@ and which beliefs each observation supports or weakens*.
 
 ## Status
 
-Bootstrap (base 0). Pilot paper: Batch Normalization (arXiv:1502.03167).
-Current scope: Layer 1 (node extraction) -> Layer 2 (canonicalize, table-first factor
-assembly, first graph) -> belief tally -> static world-model SVG. Query mode comes later.
+Bootstrap. The base-0 skeleton (schema, stub scripts, CI) is in place, and a working
+Layer-1 extraction harness lives under `experiments/test_gemini/` (Gemini 2.5 Flash): it
+turns a paper PDF into atomic AIO nodes (`spans.json`), then assembles flat factor records
+(`factors.json`). Downstream stages - canonicalization, belief tally, and the static
+world-model SVG - are not built yet. Query mode comes later.
+
+Pilot paper: Batch Normalization (arXiv:1502.03167). Harness development ran on VARC
+(Vision ARC) and TabEBM (arXiv:2409.16118).
 
 ## Layout
 
@@ -38,6 +43,7 @@ assembly, first graph) -> belief tally -> static world-model SVG. Query mode com
 - `prompts/`: versioned extraction prompts
 - `scripts/`: validate / belief / viz
 - `docs/`: key ideas & decision log
+- `experiments/`: standalone extraction harnesses (see `experiments/test_gemini/`)
 
 ## AIO factor annotation format (v0.1)
 
@@ -142,3 +148,68 @@ tally beliefs -> render graph -> **human check**
 
 Every stage gates on researcher review (PR approval). CI grows with the repo:
 JSON sanity -> schema validation -> registry freshness -> viz artifact.
+
+## Model
+
+Target model. The harness today covers the top of this flow (extract -> nodes -> flat
+factor); mechanism clusters, expectation-vs-factor branching, and belief updates are the
+design to build toward.
+
+```mermaid
+flowchart TD
+    PAPER["paper (e.g. Batch Normalization)"] --> EXT["extract 5 node types<br/>with refs, flag ambiguity"]
+
+    subgraph NODEDB["1. Node DB (canonical, no belief)"]
+        M["Mechanisms<br/>abstract mechanism only"]
+        subgraph OBS["Observables (box in box)"]
+            EM["eval_metric<br/>how measured"]
+            PAT["pattern<br/>up/down/flat"]
+        end
+        subgraph ASM["Assumptions (box in box)"]
+            SUB["substantive<br/>phenomenon claim"]
+            CNF["confound_control<br/>isolation claim"]
+        end
+        CTX["Contexts"]
+        INT["Interventions"]
+    end
+
+    EXT --> M
+    EXT --> OBS
+    EXT --> ASM
+    EXT --> CTX
+    EXT --> INT
+
+    M --> SEP["separate combined mechanisms<br/>one paper-experiment may bundle M1+M2+M3"]
+
+    SEP --> CL["2. MechanismClusters<br/>combination_type: joint | isolated"]
+    SUB --> CL
+    CNF --> CL
+
+    CL --> BRANCH{"was this cluster<br/>directly run?"}
+
+    BRANCH -->|"no, not isolated-tested"| EXP["3. Expectation<br/>cluster + C + eval_metric filled<br/>I and pattern LEFT EMPTY"]
+    BRANCH -->|"yes, has evidence"| FAC["4. Factor<br/>cluster + full C,I,O connected"]
+
+    CTX --> EXP
+    EM --> EXP
+    CTX --> FAC
+    INT --> FAC
+    OBS --> FAC
+
+    FAC --> BUP{"belief update:<br/>expected vs observed"}
+
+    CNF -.->|"confound broken"| VOID["verification_status = void<br/>direction = discarded<br/>belief UNCHANGED"]
+    BUP --> GATE{"confound_control<br/>intact?"}
+    GATE -->|"no"| VOID
+    GATE -->|"yes"| CMP{"pattern match?<br/>expected == observed"}
+    CMP -->|"match"| STR["direction = strengthen"]
+    CMP -->|"mismatch"| WK["direction = weaken<br/>blame substantive assumption<br/>(Duhem-Quine)"]
+
+    VOID --> BU[(5. BeliefUpdates<br/>append-only event log)]
+    STR --> BU
+    WK --> BU
+
+    BU -.->|"derived as view,<br/>never stored"| BELIEF["mechanism_belief(M)<br/>weighted by joint/isolated"]
+
+    EXP -.->|"Expectation exists<br/>but no matching Factor"| MISS["auto missing test<br/>slot to be filled later"]
+```
