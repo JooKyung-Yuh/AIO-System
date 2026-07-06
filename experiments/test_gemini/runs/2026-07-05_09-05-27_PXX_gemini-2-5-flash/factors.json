@@ -1,0 +1,370 @@
+[
+  {
+    "assumption": "ARC Is a Vision Problem!",
+    "mechanism": "It naturally enables the adaptation of visual frameworks and yields strong few-shot generalization competitive with recent approaches, while remaining orders of magnitude smaller than most LLM-based models.",
+    "context": "we formulate ARC within a vision paradigm, framing it as an image-to-image translation problem.",
+    "intervention": null,
+    "observable": "VARC achieves 60.4% accuracy on the ARC-1 benchmark, substantially outperforming existing methods that are also trained from scratch.",
+    "source_spans": {
+      "assumption": "S1",
+      "mechanism": "S114",
+      "context": "S4",
+      "intervention": null,
+      "observable": "S8"
+    },
+    "status": "observed",
+    "provenance": "VARC achieves 60.4% accuracy on the ARC-1 benchmark, substantially outperforming existing methods that are also trained from scratch."
+  },
+  {
+    "assumption": "incorporating visual priors is crucial. These priors include 2D spatial locality, translation invariance, and scale invariance.",
+    "mechanism": "if we naïvely treat each raw pixel as a token, there would be only C distinct tokens. In contrast, our canvas formulation supports a much larger set of local, patch-level configurations... This formulation is important for improving generalization performance.",
+    "context": "We define the concept of a \"canvas\". A canvas has a predefined and sufficiently large size, e.g., 64×64. The raw input is transformed and placed onto this canvas.",
+    "intervention": null,
+    "observable": "Fig. 7 summarizes the effects of visual priors, starting from a baseline (a) without the other components in this figure. These priors jointly have a gain of 27.7 points, where the canvas-based designs (c-f) has a gain of 11.5 points.",
+    "source_spans": {
+      "assumption": "S17",
+      "mechanism": "S37",
+      "context": "S34",
+      "intervention": null,
+      "observable": "S76"
+    },
+    "status": "observed",
+    "provenance": "Fig. 7 summarizes the effects of visual priors, starting from a baseline (a) without the other components in this figure. These priors jointly have a gain of 27.7 points, where the canvas-based designs (c-f) has a gain of 11.5 points."
+  },
+  {
+    "assumption": "the ARC protocol, whose essence lies precisely in few-shot, cross-task generalization.",
+    "mechanism": "At inference time, when presented with a new, unseen task, we perform test-time training [9, 24, 49, 1, 53, 27] to adapt the model to the task, enabling it to generalize from only a few examples.",
+    "context": "At inference time, we are given Ddemo={(xi, Yi)}m i=1 with both input and output accessible; the model is required to make prediction for a given Xinfer in this new task T.",
+    "intervention": null,
+    "observable": "even without offline training, our TTT strategy can achieve nontrivial accuracy (26.4), suggesting that some tasks in this benchmark can be solved tabula rasa.",
+    "source_spans": {
+      "assumption": "S27",
+      "mechanism": "S20",
+      "context": "S55",
+      "intervention": null,
+      "observable": "S95"
+    },
+    "status": "observed",
+    "provenance": "even without offline training, our TTT strategy can achieve nontrivial accuracy (26.4), suggesting that some tasks in this benchmark can be solved tabula rasa."
+  },
+  {
+    "assumption": "the ARC protocol, whose essence lies precisely in few-shot, cross-task generalization.",
+    "mechanism": "As expected, offline training greatly improves the performance of TTT, suggesting that common sense about the visual world can be learned from the training set.",
+    "context": "At inference time, we are given Ddemo={(xi, Yi)}m i=1 with both input and output accessible; the model is required to make prediction for a given Xinfer in this new task T.",
+    "intervention": "In Fig. 9(b), we study TTT with and without offline training, and TTT performed jointly on all test tasks vs. independently for each test task.",
+    "observable": "As expected, offline training greatly improves the performance of TTT, suggesting that common sense about the visual world can be learned from the training set.",
+    "source_spans": {
+      "assumption": "S27",
+      "mechanism": "S94",
+      "context": "S55",
+      "intervention": "S93",
+      "observable": "S94"
+    },
+    "status": "observed",
+    "provenance": "As expected, offline training greatly improves the performance of TTT, suggesting that common sense about the visual world can be learned from the training set."
+  },
+  {
+    "assumption": "the ARC protocol, whose essence lies precisely in few-shot, cross-task generalization.",
+    "mechanism": "We hypothesize that overtraining on the test tasks may cause the model to forget the knowledge acquired during offline training.",
+    "context": "At inference time, we are given Ddemo={(xi, Yi)}m i=1 with both input and output accessible; the model is required to make prediction for a given Xinfer in this new task T.",
+    "intervention": "In Fig. 9(b), we study TTT with and without offline training, and TTT performed jointly on all test tasks vs. independently for each test task.",
+    "observable": "Surprisingly, performing TTT independently for each test task yields substantially better performance (by ~10 points) than doing so jointly across all test tasks, even though the latter relies on a stronger assumption about the availability of multiple test tasks at once.",
+    "source_spans": {
+      "assumption": "S27",
+      "mechanism": "S97",
+      "context": "S55",
+      "intervention": "S93",
+      "observable": "S96"
+    },
+    "status": "observed",
+    "provenance": "Surprisingly, performing TTT independently for each test task yields substantially better performance (by ~10 points) than doing so jointly across all test tasks, even though the latter relies on a stronger assumption about the availability of multiple test tasks at once."
+  },
+  {
+    "assumption": null,
+    "mechanism": "Unlike typical computer vision applications such as semantic segmentation, in ARC, a mistake on even a single pixel renders the entire prediction incorrect. This may explain the large gain seen here.",
+    "context": "The ARC benchmark by default adopts the pass@2 accuracy metric: i.e., two different solutions can be produced for evaluation, and a task is considered correct if one is correct.",
+    "intervention": "we adopt multi-view inference to improve accuracy, where the views are sampled with different augmentations.",
+    "observable": "Single-view inference has a decent pass@1 accuracy of 35.9; multi-view inference further boosts to 49.8, thanks to majority voting.",
+    "source_spans": {
+      "assumption": null,
+      "mechanism": "S99",
+      "context": "S63",
+      "intervention": "S60",
+      "observable": "S98"
+    },
+    "status": "observed",
+    "provenance": "Single-view inference has a decent pass@1 accuracy of 35.9; multi-view inference further boosts to 49.8, thanks to majority voting."
+  },
+  {
+    "assumption": "We empirically show that explicitly modeling positions in 2D is essential.",
+    "mechanism": "Extending from 1D positional embedding to its 2D counterpart is beneficial: see Fig. 7(b)(c). This is observed in both (b) absolute and (c) relative positional embeddings.",
+    "context": "the input canvas is divided into non-overlapping patches (e.g., 2×2), projected by a linear embedding, added with positional embedding [52], and processed by a stack of Transformer blocks [52].",
+    "intervention": "To demonstrate this effect on a stronger baseline, we replace the 2D ROPE in Fig. 7(f) with a 1D ROPE and observe a degradation of 3.5 points, from 54.5 to 51.0.",
+    "observable": "To demonstrate this effect on a stronger baseline, we replace the 2D ROPE in Fig. 7(f) with a 1D ROPE and observe a degradation of 3.5 points, from 54.5 to 51.0.",
+    "source_spans": {
+      "assumption": "S49",
+      "mechanism": "S77",
+      "context": "S45",
+      "intervention": "S78",
+      "observable": "S78"
+    },
+    "status": "observed",
+    "provenance": "To demonstrate this effect on a stronger baseline, we replace the 2D ROPE in Fig. 7(f) with a 1D ROPE and observe a degradation of 3.5 points, from 54.5 to 51.0."
+  },
+  {
+    "assumption": null,
+    "mechanism": "each patch can cover multiple colors (as in natural images), which substantially enriches the data space for learning.",
+    "context": "In our best-performing model, the canvas size is 64×64. In the case of ViT, the patch size is 2×2, resulting in a sequence length of 32^2.",
+    "intervention": "In Fig. 7(d), we advance from 1×1 patches on a 32×32 canvas to 2×2 patches on a 64×64 canvas. Doing so does not increase the computational cost of the Transformer.",
+    "observable": "Even so, the 2×2 patchification leads to a noticeable gain of 2.4 points, improving from 43.0 to 45.4; see Fig. 7(c,d).",
+    "source_spans": {
+      "assumption": null,
+      "mechanism": "S84",
+      "context": "S65",
+      "intervention": "S80",
+      "observable": "S83"
+    },
+    "status": "observed",
+    "provenance": "Even so, the 2×2 patchification leads to a noticeable gain of 2.4 points, improving from 43.0 to 45.4; see Fig. 7(c,d)."
+  },
+  {
+    "assumption": "In image recognition, even highly capable network architectures still benefit greatly from translation and scale augmentations.",
+    "mechanism": "These data augmentations encourage the model to learn underlying mappings invariant to geometric transformations grounded in the visual world.",
+    "context": "For scale augmentation, an integer scaling ratio is randomly sampled, such that the scaled grid is no larger than the canvas size. For translation augmentation, the upper-left corner is randomly sampled under the constraint that the placed image is fully visible.",
+    "intervention": "In Fig. 7(e), we apply fully flexible translation augmentation on the canvas. Compared with the \"one-pixel\" augmentation in Fig. 7(d), this setting yields an additional gain of 2.9 points (from 45.4 to 48.3).",
+    "observable": "In Fig. 7(e), we apply fully flexible translation augmentation on the canvas. Compared with the \"one-pixel\" augmentation in Fig. 7(d), this setting yields an additional gain of 2.9 points (from 45.4 to 48.3).",
+    "source_spans": {
+      "assumption": "S85",
+      "mechanism": "S39",
+      "context": "S66",
+      "intervention": "S86",
+      "observable": "S86"
+    },
+    "status": "observed",
+    "provenance": "In Fig. 7(e), we apply fully flexible translation augmentation on the canvas. Compared with the \"one-pixel\" augmentation in Fig. 7(d), this setting yields an additional gain of 2.9 points (from 45.4 to 48.3)."
+  },
+  {
+    "assumption": "In image recognition, even highly capable network architectures still benefit greatly from translation and scale augmentations.",
+    "mechanism": "Unlike translation invariance, which can be partially addressed by patchification (i.e., a special form of convolution), the ViT architecture has little to no inductive bias about scale invariance. This can explain why scale augmentation yields a substantial gain.",
+    "context": "For scale augmentation, an integer scaling ratio is randomly sampled, such that the scaled grid is no larger than the canvas size. For translation augmentation, the upper-left corner is randomly sampled under the constraint that the placed image is fully visible.",
+    "intervention": "In Fig. 7(f), we further apply the scale augmentation enabled by the concept of canvas. Scale augmentation yields a substantial gain of 6.2 points.",
+    "observable": "In Fig. 7(f), we further apply the scale augmentation enabled by the concept of canvas. Scale augmentation yields a substantial gain of 6.2 points.",
+    "source_spans": {
+      "assumption": "S85",
+      "mechanism": "S88",
+      "context": "S66",
+      "intervention": "S87",
+      "observable": "S87"
+    },
+    "status": "observed",
+    "provenance": "In Fig. 7(f), we further apply the scale augmentation enabled by the concept of canvas. Scale augmentation yields a substantial gain of 6.2 points."
+  },
+  {
+    "assumption": "The original U-Net was proposed precisely for the image-to-image translation problem of segmentation [46], making it a natural candidate for the problem we consider.",
+    "mechanism": "Although ViTs consistently perform better, all U-Net variants achieve decent accuracy, suggesting that this problem can also be effectively addressed by classical vision backbones.",
+    "context": "We frame the problem as per-pixel classification, analogous to the semantic segmentation problem [38].",
+    "intervention": "In Tab. 1, we compare ViT with U-Nets, a type of convolutional network. We evaluate three model sizes for each architecture.",
+    "observable": "Although ViTs consistently perform better, all U-Net variants achieve decent accuracy, suggesting that this problem can also be effectively addressed by classical vision backbones.",
+    "source_spans": {
+      "assumption": "S52",
+      "mechanism": "S90",
+      "context": "S31",
+      "intervention": "S89",
+      "observable": "S90"
+    },
+    "status": "observed",
+    "provenance": "Although ViTs consistently perform better, all U-Net variants achieve decent accuracy, suggesting that this problem can also be effectively addressed by classical vision backbones."
+  },
+  {
+    "assumption": null,
+    "mechanism": "In this regime, our method demonstrates good scalability: increasing depth and/or width leads to higher accuracy as a result of better fitting.",
+    "context": "By default, we use a ViT [17].",
+    "intervention": null,
+    "observable": "In Fig. 8, we show ViTs with varying depths and widths. In this regime, our method demonstrates good scalability: increasing depth and/or width leads to higher accuracy as a result of better fitting.",
+    "source_spans": {
+      "assumption": null,
+      "mechanism": "S91",
+      "context": "S44",
+      "intervention": null,
+      "observable": "S91"
+    },
+    "status": "observed",
+    "provenance": "In Fig. 8, we show ViTs with varying depths and widths. In this regime, our method demonstrates good scalability: increasing depth and/or width leads to higher accuracy as a result of better fitting."
+  },
+  {
+    "assumption": null,
+    "mechanism": null,
+    "context": "By default, we use a ViT [17].",
+    "intervention": null,
+    "observable": "Going beyond this regime can lead to overfitting in our current setting, as shown in Tab. 1 for the 66M ViT model. We observe that this larger model achieves higher training accuracy, suggesting that future research should focus on generalization.",
+    "source_spans": {
+      "assumption": null,
+      "mechanism": null,
+      "context": "S44",
+      "intervention": null,
+      "observable": "S92"
+    },
+    "status": "observed",
+    "provenance": "Going beyond this regime can lead to overfitting in our current setting, as shown in Tab. 1 for the 66M ViT model. We observe that this larger model achieves higher training accuracy, suggesting that future research should focus on generalization."
+  },
+  {
+    "assumption": null,
+    "mechanism": "This comparison suggests that increasing the amount of offline training data is beneficial, although the returns diminish beyond a certain point.",
+    "context": "We use the standard ARC-1 training set Ttrain for training: it has 400 tasks with 2-4 demo pairs each.",
+    "intervention": "Following common practice on ARC, we also expand our training set with the RE-ARC set [22], from which we sample 1,000 additional demo pairs per task.",
+    "observable": "Using only the original ARC training data, without any RE-ARC data, our method achieves a decent accuracy of 31.5. By adding 10, 100, and 1,000 pairs per task from RE-ARC, the accuracy increases to 38.6, 52.3, and 54.0, respectively.",
+    "source_spans": {
+      "assumption": null,
+      "mechanism": "S126",
+      "context": "S67",
+      "intervention": "S67",
+      "observable": "S125"
+    },
+    "status": "observed",
+    "provenance": "Using only the original ARC training data, without any RE-ARC data, our method achieves a decent accuracy of 31.5. By adding 10, 100, and 1,000 pairs per task from RE-ARC, the accuracy increases to 38.6, 52.3, and 54.0, respectively."
+  },
+  {
+    "assumption": null,
+    "mechanism": "When trained on 0, 16, 80, and 400 tasks, the accuracy increases from 26.4 to 43.1, 49.6, and 54.5, respectively, suggesting that the diversity of training tasks is helpful for generalization.",
+    "context": "We train one model fθ jointly for all k training tasks (e.g., k=400), based on the loss in Eq. (1). All tasks share the same parameters, only except that each task has its own task-conditional token.",
+    "intervention": null,
+    "observable": "When trained on 0, 16, 80, and 400 tasks, the accuracy increases from 26.4 to 43.1, 49.6, and 54.5, respectively, suggesting that the diversity of training tasks is helpful for generalization.",
+    "source_spans": {
+      "assumption": null,
+      "mechanism": "S127",
+      "context": "S54",
+      "intervention": null,
+      "observable": "S127"
+    },
+    "status": "observed",
+    "provenance": "When trained on 0, 16, 80, and 400 tasks, the accuracy increases from 26.4 to 43.1, 49.6, and 54.5, respectively, suggesting that the diversity of training tasks is helpful for generalization."
+  },
+  {
+    "assumption": null,
+    "mechanism": "This result indicates that our model produces correct predictions in some of the many views, although such correct cases are not sufficiently populated to be retained after voting.",
+    "context": "We further examine the pass@k accuracy, thanks to our multi-view inference with many views (510). This metric reflects whether at least one of the k predicted solutions is correct. It can be viewed as a recall-like measure.",
+    "intervention": null,
+    "observable": "As expected, as the number of proposals (k) increases, the pass@k accuracy increases. On ARC-1, the pass@k accuracy is 49.8, 54.5, and 66.3, when k is 1, 2, and 300, respectively (Fig. 16, top-left).",
+    "source_spans": {
+      "assumption": null,
+      "mechanism": "S130",
+      "context": "S128",
+      "intervention": null,
+      "observable": "S129"
+    },
+    "status": "observed",
+    "provenance": "As expected, as the number of proposals (k) increases, the pass@k accuracy increases. On ARC-1, the pass@k accuracy is 49.8, 54.5, and 66.3, when k is 1, 2, and 300, respectively (Fig. 16, top-left)."
+  },
+  {
+    "assumption": null,
+    "mechanism": null,
+    "context": "By default, we use a ViT [17].",
+    "intervention": null,
+    "observable": "Fig. 10 shows the attention patterns of our ViT model in a test task. These attention maps show that our model can correctly reason about the relationship between a source pixel and its target pixel to copy from.",
+    "source_spans": {
+      "assumption": null,
+      "mechanism": null,
+      "context": "S44",
+      "intervention": null,
+      "observable": "S107"
+    },
+    "status": "observed",
+    "provenance": "Fig. 10 shows the attention patterns of our ViT model in a test task. These attention maps show that our model can correctly reason about the relationship between a source pixel and its target pixel to copy from."
+  },
+  {
+    "assumption": null,
+    "mechanism": "This visualization suggests that our method attempts to learn the relations between different tasks, which is an essential ability for abstraction and reasoning.",
+    "context": "Our model is conditioned on a task token, with an embedding learned to represent each task. With 400 training tasks in ARC-1, our model learns 400 distinct task embeddings in offline training.",
+    "intervention": null,
+    "observable": "Interestingly, we observe that nearby points in the task embedding space exhibit similar semantics. For example, the top-left corner in Fig. 12 shows two tasks related to coloring; the bottom-left corner shows two tasks related to generalized logic operations (i.e., AND/OR/XOR).",
+    "source_spans": {
+      "assumption": null,
+      "mechanism": "S113",
+      "context": "S110",
+      "intervention": null,
+      "observable": "S112"
+    },
+    "status": "observed",
+    "provenance": "Interestingly, we observe that nearby points in the task embedding space exhibit similar semantics. For example, the top-left corner in Fig. 12 shows two tasks related to coloring; the bottom-left corner shows two tasks related to generalized logic operations (i.e., AND/OR/XOR)."
+  },
+  {
+    "assumption": null,
+    "mechanism": "Unlike standard semantic segmentation, in ARC, the raw input and output sizes are not always identical (e.g., see Fig. 3, Test Set, Task 1). This issue can be addressed on the canvas in a unified framework.",
+    "context": "In our method, the input/output canvas always has a fixed size and is filled with a background token [BG]. In addition, when the raw output is placed on the canvas (serving as the ground truth during training), we always use an extra border token, [BD], to indicate the right and bottom edges.",
+    "intervention": null,
+    "observable": null,
+    "source_spans": {
+      "assumption": null,
+      "mechanism": "S118",
+      "context": "S119",
+      "intervention": null,
+      "observable": null
+    },
+    "status": "inferred",
+    "provenance": "Unlike standard semantic segmentation, in ARC, the raw input and output sizes are not always identical (e.g., see Fig. 3, Test Set, Task 1). This issue can be addressed on the canvas in a unified framework."
+  },
+  {
+    "assumption": null,
+    "mechanism": "These designs encourage the model to pay more attention to foregrounds and therefore improve accuracy, although we note that even without them, our method still performs competitively, as observed in our preliminary experiments.",
+    "context": "In our method, the input/output canvas always has a fixed size and is filled with a background token [BG]. In addition, when the raw output is placed on the canvas (serving as the ground truth during training), we always use an extra border token, [BD], to indicate the right and bottom edges.",
+    "intervention": "Since the number of background pixels [BG] can dominate in some examples, we apply attention masks in the self-attention blocks to encourage the model to focus on the foreground pixels.",
+    "observable": null,
+    "source_spans": {
+      "assumption": null,
+      "mechanism": "S124",
+      "context": "S119",
+      "intervention": "S121",
+      "observable": null
+    },
+    "status": "inferred",
+    "provenance": "These designs encourage the model to pay more attention to foregrounds and therefore improve accuracy, although we note that even without them, our method still performs competitively, as observed in our preliminary experiments."
+  },
+  {
+    "assumption": "ARC Is a Vision Problem!",
+    "mechanism": "It naturally enables the adaptation of visual frameworks and yields strong few-shot generalization competitive with recent approaches, while remaining orders of magnitude smaller than most LLM-based models.",
+    "context": "LLMs are pre-trained on internet-scale data, and some may also incorporate multimodal data that include images.",
+    "intervention": null,
+    "observable": "Our model compares favorably with some of the most powerful LLMs at the time their results were reported: including Deepseek, Claude, o3, and GPT-5",
+    "source_spans": {
+      "assumption": "S1",
+      "mechanism": "S114",
+      "context": "S101",
+      "intervention": null,
+      "observable": "S100"
+    },
+    "status": "observed",
+    "provenance": "Our model compares favorably with some of the most powerful LLMs at the time their results were reported: including Deepseek, Claude, o3, and GPT-5"
+  },
+  {
+    "assumption": "ARC Is a Vision Problem!",
+    "mechanism": "It naturally enables the adaptation of visual frameworks and yields strong few-shot generalization competitive with recent approaches, while remaining orders of magnitude smaller than most LLM-based models.",
+    "context": "In the controlled setting of training from scratch on ARC data, our method substantially outperforms the recurrent models: HRM [53] and TRM [27].",
+    "intervention": null,
+    "observable": "In the controlled setting of training from scratch on ARC data, our method substantially outperforms the recurrent models: HRM [53] and TRM [27]. Our VARC with 18M parameters is ~10 points better than TRM on ARC-1, a >20% relative improvement.",
+    "source_spans": {
+      "assumption": "S1",
+      "mechanism": "S114",
+      "context": "S103",
+      "intervention": null,
+      "observable": "S103"
+    },
+    "status": "observed",
+    "provenance": "In the controlled setting of training from scratch on ARC data, our method substantially outperforms the recurrent models: HRM [53] and TRM [27]. Our VARC with 18M parameters is ~10 points better than TRM on ARC-1, a >20% relative improvement."
+  },
+  {
+    "assumption": null,
+    "mechanism": null,
+    "context": "In our best-performing model, the canvas size is 64×64. In the case of ViT, the patch size is 2×2, resulting in a sequence length of 32^2.",
+    "intervention": "Following the classical ensembling practice in vision (e.g., AlexNet [29]), we ensemble one ViT and one U-Net, each with test-time training run four times.",
+    "observable": "Following the classical ensembling practice in vision (e.g., AlexNet [29]), we ensemble one ViT and one U-Net, each with test-time training run four times. Doing so boosts our result to 60.4.",
+    "source_spans": {
+      "assumption": null,
+      "mechanism": null,
+      "context": "S65",
+      "intervention": "S105",
+      "observable": "S105"
+    },
+    "status": "observed",
+    "provenance": "Following the classical ensembling practice in vision (e.g., AlexNet [29]), we ensemble one ViT and one U-Net, each with test-time training run four times. Doing so boosts our result to 60.4."
+  }
+]

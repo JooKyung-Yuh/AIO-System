@@ -1,0 +1,14 @@
+{
+  "source_run_dir": "runs/2026-07-05_09-05-27_PXX_gemini-2-5-flash",
+  "timestamp": "2026-07-05T09:22:44.011941+00:00",
+  "paper_id": "PXX",
+  "paper_title_hint": "unknown",
+  "model": "gemini-2.5-flash",
+  "temperature": 0.0,
+  "prompt_version": "factor_merge_v2",
+  "prompt_path": "prompts/factor_merge_v2.md",
+  "prompt_sha256": "f63d714b1d6697a04e058263667e968a7e55c927424767d0aa48762488e2522f",
+  "prompt_chars": 86156,
+  "status": "success",
+  "factor_count": 23
+}

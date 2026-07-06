@@ -1,0 +1,3 @@
+2026-07-05T12:01:45.029707+00:00	extract_aio	aiocm_debug_v5	2026-07-05_12-01-45_PXX_gemini-2-5-flash	prompt=7468 thoughts=23423 output=42109 total=73000	finish=FinishReason.MAX_TOKENS
+2026-07-05T12:09:45.265196+00:00	extract_aio	aiocm_debug_v5	2026-07-05_12-09-45_PXX_gemini-2-5-flash	prompt=19796 thoughts=46580 output=62760 total=129136	chunks=5
+2026-07-05T12:19:00.548681+00:00	build_factors	factor_merge_v3	2026-07-05_12-19-00_factor_merge_v3	prompt=77895 thoughts=14487 output=2269 total=94651	finish=FinishReason.STOP

@@ -1,0 +1,17 @@
+{
+  "run_id": "2026-07-05_08-38-50_PXX_gemini-2-5-flash",
+  "timestamp": "2026-07-05T08:38:50.746169+00:00",
+  "paper_id": "PXX",
+  "paper_title_hint": "unknown",
+  "pdf_path": "docs/2409.16118v3.pdf",
+  "pdf_sha256": "1107700b5eb303f669ed5ec9c7d21a2d3c35d1cc400b94a24c2413bd5b82eccd",
+  "pdf_size_bytes": 4929588,
+  "model": "gemini-2.5-flash",
+  "temperature": 0.0,
+  "prompt_version": "aiocm_debug_v2",
+  "prompt_path": "prompts/aiocm_debug_v2.md",
+  "prompt_sha256": "257f713056b06db4dd75eafd9a31e95935450cb2e74e74adadf106ec153ab98c",
+  "prompt_chars": 4050,
+  "status": "success",
+  "output_chars": 114988
+}

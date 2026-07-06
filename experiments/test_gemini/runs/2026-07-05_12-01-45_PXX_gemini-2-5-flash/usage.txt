@@ -1,0 +1,6 @@
+run_id: 2026-07-05_12-01-45_PXX_gemini-2-5-flash
+timestamp: 2026-07-05T12:01:45.029707+00:00
+model: gemini-2.5-flash
+prompt_version: aiocm_debug_v5
+finish_reason: FinishReason.MAX_TOKENS
+tokens: prompt=7468 thoughts=23423 output=42109 total=73000

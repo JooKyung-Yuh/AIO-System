@@ -1,0 +1,22 @@
+{
+  "build_id": "2026-07-05_12-19-00_factor_merge_v3",
+  "source_run_dir": "runs/2026-07-05_12-09-45_PXX_gemini-2-5-flash",
+  "timestamp": "2026-07-05T12:19:00.548681+00:00",
+  "paper_id": "PXX",
+  "paper_title_hint": "unknown",
+  "model": "gemini-2.5-flash",
+  "temperature": 0.0,
+  "prompt_version": "factor_merge_v3",
+  "prompt_path": "prompts/factor_merge_v3.md",
+  "prompt_sha256": "fbfc8c237981e9da61b7d34499667add8a9288215c8ec4d11a05e76fd38acd3c",
+  "prompt_chars": 230251,
+  "status": "success",
+  "finish_reason": "FinishReason.STOP",
+  "factor_count": 28,
+  "usage": {
+    "prompt_token_count": 77895,
+    "thoughts_token_count": 14487,
+    "candidates_token_count": 2269,
+    "total_token_count": 94651
+  }
+}

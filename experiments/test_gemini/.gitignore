@@ -1,0 +1,12 @@
+# secrets — never commit
+.env
+
+# virtualenv
+.venv/
+
+# python caches
+__pycache__/
+*.pyc
+
+# source papers (large binaries; fetch from arXiv — see docs/README.md)
+docs/*.pdf
