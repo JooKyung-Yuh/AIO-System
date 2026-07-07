@@ -62,6 +62,26 @@ def filled(card, slot):
     return bool(v) if slot != "context" else bool(v)
 
 
+def location_order(run_dir: Path):
+    """location -> its position in evidence_units.json's true document reading order (that
+    file's entries are already in page order - see group_evidence_units.py). Keyed on
+    provenance.location rather than a card's own 'unit' tag: Call 1 occasionally mistags
+    'unit' on a card built around a borrowed pattern from elsewhere, but still writes that
+    pattern's real location correctly - so location is the more trustworthy anchor. Falls
+    back to an empty mapping (everything ties, order becomes whatever the input gave) if
+    evidence_units.json is missing."""
+    path = run_dir / "evidence_units.json"
+    if not path.exists():
+        return {}
+    units = json.loads(path.read_text(encoding="utf-8"))
+    return {u["location"]: i for i, u in enumerate(units)}
+
+
+def _loc_rank(card, loc_order):
+    loc = (card.get("provenance") or {}).get("location", "?")
+    return loc_order.get(loc, 10**9)
+
+
 # ---------------------------------------------------------------- belief tally
 def plot_belief_tally(am, tally, out):
     import matplotlib.pyplot as plt
@@ -96,10 +116,10 @@ def plot_belief_tally(am, tally, out):
 
 
 # ------------------------------------------------------- CIO completeness heat
-def plot_completeness(cio, out):
+def plot_completeness(cio, loc_order, out):
     import matplotlib.pyplot as plt
     from matplotlib.patches import Rectangle
-    cards = sorted(cio, key=lambda c: ((c.get("provenance") or {}).get("location", "~"), c["cio_id"]))
+    cards = sorted(cio, key=lambda c: (_loc_rank(c, loc_order), c["cio_id"]))
     n = len(cards)
     fig, ax = plt.subplots(figsize=(8.5, 0.17 * n + 2.2))
     gap = 0.12
@@ -172,11 +192,11 @@ def plot_coverage(cov, out):
 
 
 # ----------------------------------------------------------------- graph
-def plot_graph(cio, am, links, tally, out):
+def plot_graph(cio, am, links, tally, loc_order, out):
     import matplotlib.pyplot as plt
     from matplotlib.patches import FancyArrowPatch, Patch
 
-    cio_sorted = sorted(cio, key=lambda c: ((c.get("provenance") or {}).get("location", "~"), c["cio_id"]))
+    cio_sorted = sorted(cio, key=lambda c: (_loc_rank(c, loc_order), c["cio_id"]))
     am_sorted = sorted(am, key=lambda a: -(tally[a["am_id"]]["strengthen"] + tally[a["am_id"]]["weaken"]))
     locs = []
     for c in cio_sorted:
@@ -254,6 +274,7 @@ def main():
     am = json.loads((build / "am_cards.json").read_text(encoding="utf-8"))
     links = json.loads((build / "links.json").read_text(encoding="utf-8"))
     cov = json.loads((build / "coverage.json").read_text(encoding="utf-8"))
+    loc_order = location_order(run_dir)
 
     tally = collections.defaultdict(lambda: {"strengthen": 0, "weaken": 0})
     for e in links:
@@ -270,9 +291,9 @@ def main():
 
     outputs = {
         "belief_tally.png": lambda p: plot_belief_tally(am, tally, p),
-        "cio_completeness.png": lambda p: plot_completeness(cio, p),
+        "cio_completeness.png": lambda p: plot_completeness(cio, loc_order, p),
         "node_coverage.png": lambda p: plot_coverage(cov, p),
-        "factor_graph.png": lambda p: plot_graph(cio, am, links, tally, p),
+        "factor_graph.png": lambda p: plot_graph(cio, am, links, tally, loc_order, p),
     }
     for name, fn in outputs.items():
         fn(build / name)
