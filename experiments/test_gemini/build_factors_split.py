@@ -38,8 +38,13 @@ if not GEMINI_API_KEY:
 client = genai.Client(api_key=GEMINI_API_KEY)
 
 MODEL_NAME = "gemini-2.5-flash"
-BUILD_TAG = "factor_split_v1"
 PROMPTS = Path("./prompts")
+# Per-call prompt versions. Bump one and re-run to create a new, separately tagged cohort
+# (build_dir carries BUILD_TAG) so runs on different prompts never mix in one ensemble vote.
+CIO_PROMPT = "extract_cio_v1"
+AM_PROMPT = "extract_am_v2"
+LINK_PROMPT = "link_factors_v1"
+BUILD_TAG = f"factor_split_{CIO_PROMPT.rsplit('_', 1)[-1]}_{AM_PROMPT.rsplit('_', 1)[-1]}_{LINK_PROMPT.rsplit('_', 1)[-1]}"
 AM_LABELS = ("assumption", "mechanism")
 PREFIX_CAT = {"A": "assumption", "M": "mechanism", "C": "context",
               "I": "intervention", "E": "eval_metric", "P": "pattern"}
@@ -183,15 +188,16 @@ def main():
             "paper_text": paper_text, "assets": assets}
     metadata = {"build_id": build_id, "source_run_dir": str(run_dir), "timestamp": now.isoformat(),
                 "model": MODEL_NAME, "build_tag": BUILD_TAG,
+                "prompts": {"cio": CIO_PROMPT, "am": AM_PROMPT, "link": LINK_PROMPT},
                 "paper_text_path": args.paper_text, "assets_path": args.assets}
     total_usage = None
 
     try:
-        cio_cards, u1 = call(PROMPTS / "extract_cio_v1.md",
+        cio_cards, u1 = call(PROMPTS / f"{CIO_PROMPT}.md",
                              {**base, "evidence_units": evidence_units}, build_dir, "cio_cards")
-        am_cards, u2 = call(PROMPTS / "extract_am_v1.md",
+        am_cards, u2 = call(PROMPTS / f"{AM_PROMPT}.md",
                             {**base, "am_spans": am_spans}, build_dir, "am_cards")
-        links, u3 = call(PROMPTS / "link_factors_v1.md",
+        links, u3 = call(PROMPTS / f"{LINK_PROMPT}.md",
                          {**base,
                           "cio_cards": json.dumps(cio_cards, ensure_ascii=False, indent=2),
                           "am_cards": json.dumps(am_cards, ensure_ascii=False, indent=2)},
