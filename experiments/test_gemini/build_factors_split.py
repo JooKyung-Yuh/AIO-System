@@ -42,7 +42,7 @@ PROMPTS = Path("./prompts")
 # Per-call prompt versions. Bump one and re-run to create a new, separately tagged cohort
 # (build_dir carries BUILD_TAG) so runs on different prompts never mix in one ensemble vote.
 CIO_PROMPT = "extract_cio_v1"
-AM_PROMPT = "extract_am_v2"
+AM_PROMPT = "extract_am_v3"
 LINK_PROMPT = "link_factors_v1"
 BUILD_TAG = f"factor_split_{CIO_PROMPT.rsplit('_', 1)[-1]}_{AM_PROMPT.rsplit('_', 1)[-1]}_{LINK_PROMPT.rsplit('_', 1)[-1]}"
 AM_LABELS = ("assumption", "mechanism")
