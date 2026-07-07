@@ -1,0 +1,289 @@
+[
+  {
+    "source_cio": "CIO_007",
+    "target_am": "AM_026",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "During test-time training, the prediction... becomes progressively more accurate, with the model finally generating the correct prediction."
+  },
+  {
+    "source_cio": "CIO_008",
+    "target_am": "AM_011",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "all U-Net variants achieve decent accuracy, suggesting that this problem can also be effectively addressed by classical vision backbones."
+  },
+  {
+    "source_cio": "CIO_009",
+    "target_am": "AM_007",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Extending from 1D positional embedding to its 2D counterpart is beneficial: see Fig. 7(b)(c)."
+  },
+  {
+    "source_cio": "CIO_010",
+    "target_am": "AM_007",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "we replace the 2D ROPE... with a 1D ROPE and observe a degradation of 3.5 points"
+  },
+  {
+    "source_cio": "CIO_011",
+    "target_am": "AM_002",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "the 2×2 patchification leads to a noticeable gain of 2.4 points... which substantially enriches the data space for learning."
+  },
+  {
+    "source_cio": "CIO_012",
+    "target_am": "AM_002",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "each patch can cover multiple colors... which substantially enriches the data space for learning."
+  },
+  {
+    "source_cio": "CIO_013",
+    "target_am": "AM_004",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "fully flexible translation augmentation on the canvas... yields an additional gain of 2.9 points"
+  },
+  {
+    "source_cio": "CIO_014",
+    "target_am": "AM_004",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Scale augmentation yields a substantial gain of 6.2 points."
+  },
+  {
+    "source_cio": "CIO_015",
+    "target_am": "AM_004",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "ViT architecture has little to no inductive bias about scale invariance. This can explain why scale augmentation yields a substantial gain."
+  },
+  {
+    "source_cio": "CIO_018",
+    "target_am": "AM_012",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "this larger model achieves higher training accuracy, suggesting that future research should focus on generalization."
+  },
+  {
+    "source_cio": "CIO_019",
+    "target_am": "AM_013",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "offline training greatly improves the performance of TTT, suggesting that common sense about the visual world can be learned."
+  },
+  {
+    "source_cio": "CIO_020",
+    "target_am": "AM_014",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "even without offline training, our TTT strategy can achieve nontrivial accuracy... suggesting that some tasks... can be solved tabula rasa."
+  },
+  {
+    "source_cio": "CIO_023",
+    "target_am": "AM_008",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "multi-view inference further boosts to 49.8, thanks to majority voting."
+  },
+  {
+    "source_cio": "CIO_024",
+    "target_am": "AM_015",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "in ARC, a mistake on even a single pixel renders the entire prediction incorrect."
+  },
+  {
+    "source_cio": "CIO_030",
+    "target_am": "AM_016",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "These attention maps show that our model can correctly reason about the relationship between a source pixel and its target pixel."
+  },
+  {
+    "source_cio": "CIO_031",
+    "target_am": "AM_025",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "different layers exhibit different specialties: some layers attend to the pixels that are to be copied, and some layers attend to the target lines."
+  },
+  {
+    "source_cio": "CIO_032",
+    "target_am": "AM_017",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "nearby points in the task embedding space exhibit similar semantics... This visualization suggests that our method attempts to learn the relations between different tasks."
+  },
+  {
+    "source_cio": "CIO_033",
+    "target_am": "AM_017",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This visualization suggests that our method attempts to learn the relations between different tasks, which is an essential ability for abstraction and reasoning."
+  },
+  {
+    "source_cio": "CIO_037",
+    "target_am": "AM_018",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This issue can be addressed on the canvas in a unified framework."
+  },
+  {
+    "source_cio": "CIO_039",
+    "target_am": "AM_019",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "we apply attention masks... to encourage the model to focus on the foreground pixels."
+  },
+  {
+    "source_cio": "CIO_040",
+    "target_am": "AM_019",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "These designs encourage the model to pay more attention to foregrounds and therefore improve accuracy"
+  },
+  {
+    "source_cio": "CIO_042",
+    "target_am": "AM_020",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "By adding 10, 100, and 1,000 pairs per task from RE-ARC, the accuracy increases."
+  },
+  {
+    "source_cio": "CIO_043",
+    "target_am": "AM_020",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "increasing the amount of offline training data is beneficial, although the returns diminish beyond a certain point."
+  },
+  {
+    "source_cio": "CIO_044",
+    "target_am": "AM_021",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "the accuracy increases... suggesting that the diversity of training tasks is helpful for generalization."
+  },
+  {
+    "source_cio": "CIO_045",
+    "target_am": "AM_021",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Increasing task diversity is beneficial."
+  },
+  {
+    "source_cio": "CIO_046",
+    "target_am": "AM_021",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "suggesting that the diversity of training tasks is helpful for generalization."
+  },
+  {
+    "source_cio": "CIO_048",
+    "target_am": "AM_022",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This result indicates that our model produces correct predictions in some of the many views, although such correct cases are not sufficiently populated to be retained after voting."
+  },
+  {
+    "source_cio": "CIO_049",
+    "target_am": "AM_022",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This result indicates that our model produces correct predictions in some of the many views, although such correct cases are not sufficiently populated to be retained after voting."
+  },
+  {
+    "source_cio": "CIO_052",
+    "target_am": "AM_024",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Although most ARC tasks are unambiguous, some may admit multiple plausible explanations or rules."
+  },
+  {
+    "source_cio": "CIO_053",
+    "target_am": "AM_023",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "some may admit multiple plausible explanations or rules."
+  },
+  {
+    "source_cio": "CIO_054",
+    "target_am": "AM_023",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "our method uncovers different solutions that are plausible."
+  },
+  {
+    "source_cio": "CIO_055",
+    "target_am": "AM_023",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "the rule can be interpreted as... 'go through the box' (our method's first guess)"
+  },
+  {
+    "source_cio": "CIO_056",
+    "target_am": "AM_023",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "the rule can be interpreted as... 'touch the box in any form' (our method's second guess)."
+  },
+  {
+    "source_cio": "CIO_057",
+    "target_am": "AM_026",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "As the test-time training progresses, the model's predictions gradually converge toward the correct output."
+  },
+  {
+    "source_cio": "CIO_058",
+    "target_am": "AM_026",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "In early epochs, the model produces coarse and imprecise structures"
+  },
+  {
+    "source_cio": "CIO_059",
+    "target_am": "AM_026",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "in later epochs, the model can improve the solutions, e.g., by refining color and spatial arrangement."
+  },
+  {
+    "source_cio": "CIO_060",
+    "target_am": "AM_026",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This visualization illustrates the model's behavior of adapting to task-specific transformations through few-shot test-time training."
+  },
+  {
+    "source_cio": "CIO_069",
+    "target_am": "AM_025",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Layers at different depths tend to focus on different structures. Early layers... local transformations... deep layers... task-specialized."
+  },
+  {
+    "source_cio": "CIO_070",
+    "target_am": "AM_026",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "As the test-time training progresses, the model's predictions gradually converge toward the correct output."
+  },
+  {
+    "source_cio": "CIO_071",
+    "target_am": "AM_026",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "In early epochs, the model produces coarse and imprecise structures"
+  },
+  {
+    "source_cio": "CIO_072",
+    "target_am": "AM_026",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "in later epochs, the model can improve the solutions, e.g., by refining color and spatial arrangement."
+  }
+]

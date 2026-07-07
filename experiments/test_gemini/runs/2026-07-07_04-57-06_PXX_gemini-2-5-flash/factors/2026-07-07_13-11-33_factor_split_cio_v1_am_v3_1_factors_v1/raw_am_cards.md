@@ -1,0 +1,212 @@
+```json
+[
+  {
+    "am_id": "AM_001",
+    "kind": "mechanism",
+    "node": "M7",
+    "aliases": ["M50"],
+    "gloss": "Abstraction and inference arise directly from visual learning, without language.",
+    "provenance": { "location": "Section 1" }
+  },
+  {
+    "am_id": "AM_002",
+    "kind": "mechanism",
+    "node": "M10",
+    "aliases": ["M17", "M34", "M36"],
+    "gloss": "Canvas patchification enriches data space, reduces overfitting, and learns spatial priors.",
+    "provenance": { "location": "Section 1" }
+  },
+  {
+    "am_id": "AM_003",
+    "kind": "mechanism",
+    "node": "M15",
+    "aliases": [],
+    "gloss": "New demo pairs at inference enable test-time training.",
+    "provenance": { "location": "Section 3.1" }
+  },
+  {
+    "am_id": "AM_004",
+    "kind": "mechanism",
+    "node": "M16",
+    "aliases": ["M19", "M20"],
+    "gloss": "Canvas enables augmentations, fostering translation and scale invariance.",
+    "provenance": { "location": "Section 3.3" }
+  },
+  {
+    "am_id": "AM_005",
+    "kind": "assumption",
+    "node": "A6",
+    "aliases": [],
+    "gloss": "ARC colors do not correspond to real-world colors.",
+    "provenance": { "location": "Section 3.3" }
+  },
+  {
+    "am_id": "AM_006",
+    "kind": "mechanism",
+    "node": "M23",
+    "aliases": [],
+    "gloss": "Patchification incorporates inductive biases: locality and translation invariance.",
+    "provenance": { "location": "Section 3.3" }
+  },
+  {
+    "am_id": "AM_007",
+    "kind": "mechanism",
+    "node": "M24",
+    "aliases": [],
+    "gloss": "2D positional embeddings preserve image structure, preventing loss from 1D sequences.",
+    "provenance": { "location": "Section 3.3" }
+  },
+  {
+    "am_id": "AM_008",
+    "kind": "mechanism",
+    "node": "M27",
+    "aliases": ["M28", "M33"],
+    "gloss": "Multi-view predictions are consolidated by majority voting for pass@2.",
+    "provenance": { "location": "Section 3.5" }
+  },
+  {
+    "am_id": "AM_009",
+    "kind": "mechanism",
+    "node": "M29",
+    "aliases": [],
+    "gloss": "Predictions from canvas pixels are aggregated by average pooling.",
+    "provenance": { "location": "Section 3.5" }
+  },
+  {
+    "am_id": "AM_010",
+    "kind": "assumption",
+    "node": "A12",
+    "aliases": [],
+    "gloss": "Auxiliary tasks are assumed translation and scale invariant.",
+    "provenance": { "location": "Section 4" }
+  },
+  {
+    "am_id": "AM_011",
+    "kind": "mechanism",
+    "node": "M38",
+    "aliases": [],
+    "gloss": "Classical vision backbones can effectively address the ARC problem.",
+    "provenance": { "location": "Section 5.2" }
+  },
+  {
+    "am_id": "AM_012",
+    "kind": "assumption",
+    "node": "A15",
+    "aliases": [],
+    "gloss": "Larger models risk overfitting in the current setting.",
+    "provenance": { "location": "Section 5.2" }
+  },
+  {
+    "am_id": "AM_013",
+    "kind": "mechanism",
+    "node": "M40",
+    "aliases": [],
+    "gloss": "Offline training enables learning visual common sense.",
+    "provenance": { "location": "Section 5.2" }
+  },
+  {
+    "am_id": "AM_014",
+    "kind": "mechanism",
+    "node": "M41",
+    "aliases": [],
+    "gloss": "Some ARC tasks are solvable without prior offline training.",
+    "provenance": { "location": "Section 5.2" }
+  },
+  {
+    "am_id": "AM_015",
+    "kind": "assumption",
+    "node": "A18",
+    "aliases": [],
+    "gloss": "Single pixel errors render entire ARC predictions incorrect.",
+    "provenance": { "location": "Section 5.2" }
+  },
+  {
+    "am_id": "AM_016",
+    "kind": "mechanism",
+    "node": "M44",
+    "aliases": [],
+    "gloss": "Attention maps reveal pixel-to-pixel reasoning for copying.",
+    "provenance": { "location": "Section 6" }
+  },
+  {
+    "am_id": "AM_017",
+    "kind": "mechanism",
+    "node": "M48",
+    "aliases": [],
+    "gloss": "Task embedding visualization suggests learning relations between tasks.",
+    "provenance": { "location": "Section 6" }
+  },
+  {
+    "am_id": "AM_018",
+    "kind": "mechanism",
+    "node": "M51",
+    "aliases": [],
+    "gloss": "Canvas unifies handling of variable input/output sizes.",
+    "provenance": { "location": "Section A.3" }
+  },
+  {
+    "am_id": "AM_019",
+    "kind": "mechanism",
+    "node": "M53",
+    "aliases": ["M54"],
+    "gloss": "Attention masks focus model on foreground pixels, improving accuracy.",
+    "provenance": { "location": "Section A.3" }
+  },
+  {
+    "am_id": "AM_020",
+    "kind": "mechanism",
+    "node": "M55",
+    "aliases": [],
+    "gloss": "Increasing offline training data is beneficial, with diminishing returns.",
+    "provenance": { "location": "Section B.1" }
+  },
+  {
+    "am_id": "AM_021",
+    "kind": "mechanism",
+    "node": "M56",
+    "aliases": [],
+    "gloss": "Diversity of training tasks improves generalization.",
+    "provenance": { "location": "Section B.1" }
+  },
+  {
+    "am_id": "AM_022",
+    "kind": "mechanism",
+    "node": "M57",
+    "aliases": [],
+    "gloss": "Model produces correct predictions in many views, but voting filters some.",
+    "provenance": { "location": "Section B.2" }
+  },
+  {
+    "am_id": "AM_023",
+    "kind": "assumption",
+    "node": "A20",
+    "aliases": [],
+    "gloss": "Some ARC tasks admit multiple plausible rules.",
+    "provenance": { "location": "Section C.2" }
+  },
+  {
+    "am_id": "AM_024",
+    "kind": "assumption",
+    "node": "A21",
+    "aliases": [],
+    "gloss": "Most ARC tasks are unambiguous.",
+    "provenance": { "location": "Figure 19" }
+  },
+  {
+    "am_id": "AM_025",
+    "kind": "mechanism",
+    "node": "M59",
+    "aliases": ["M60", "M61", "M62"],
+    "gloss": "Different layers specialize in focusing on distinct structures and contexts.",
+    "provenance": { "location": "Figure 20" }
+  },
+  {
+    "am_id": "AM_026",
+    "kind": "mechanism",
+    "node": "M70",
+    "aliases": [],
+    "gloss": "Test-time training adapts model to task-specific transformations.",
+    "provenance": { "location": "Figure 22 caption" }
+  }
+]
+```

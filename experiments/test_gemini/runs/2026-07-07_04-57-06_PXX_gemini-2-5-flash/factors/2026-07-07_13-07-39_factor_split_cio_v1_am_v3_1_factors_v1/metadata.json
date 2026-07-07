@@ -1,0 +1,77 @@
+{
+  "build_id": "2026-07-07_13-07-39_factor_split_cio_v1_am_v3_1_factors_v1",
+  "source_run_dir": "runs/2026-07-07_04-57-06_PXX_gemini-2-5-flash",
+  "timestamp": "2026-07-07T13:07:39.567794+00:00",
+  "model": "gemini-2.5-flash",
+  "build_tag": "factor_split_cio_v1_am_v3_1_factors_v1",
+  "prompts": {
+    "cio": "extract_cio_v1",
+    "am": "extract_am_v3_1",
+    "link": "link_factors_v1"
+  },
+  "paper_text_path": "./docs/VARC.txt",
+  "assets_path": "./docs/VARC.assets.json",
+  "status": "success",
+  "cio_count": 67,
+  "am_count": 26,
+  "link_count": 58,
+  "factor_count": 67,
+  "usage_total": {
+    "prompt_token_count": 142396,
+    "thoughts_token_count": 38161,
+    "candidates_token_count": 16572,
+    "total_token_count": 197129
+  },
+  "coverage": {
+    "cio_count": 67,
+    "am_count": 26,
+    "link_count": 58,
+    "cio_with_reference": 13,
+    "pattern_class": {
+      "primary_result": 43,
+      "comparison": 24
+    },
+    "link_direction": {
+      "strengthen": 58
+    },
+    "orphan_cio": 12,
+    "orphan_am": 5,
+    "node_coverage": {
+      "context": {
+        "covered": 102,
+        "total": 280,
+        "coverage_pct": 36.4
+      },
+      "intervention": {
+        "covered": 33,
+        "total": 93,
+        "coverage_pct": 35.5
+      },
+      "mechanism": {
+        "covered": 32,
+        "total": 70,
+        "coverage_pct": 45.7
+      },
+      "eval_metric": {
+        "covered": 20,
+        "total": 39,
+        "coverage_pct": 51.3
+      },
+      "pattern": {
+        "covered": 67,
+        "total": 87,
+        "coverage_pct": 77.0
+      },
+      "assumption": {
+        "covered": 7,
+        "total": 22,
+        "coverage_pct": 31.8
+      }
+    },
+    "node_coverage_total": {
+      "covered": 261,
+      "total": 591,
+      "coverage_pct": 44.2
+    }
+  }
+}

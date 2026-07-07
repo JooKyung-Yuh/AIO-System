@@ -1,0 +1,53 @@
+{
+  "cio_count": 67,
+  "am_count": 16,
+  "link_count": 52,
+  "cio_with_reference": 13,
+  "pattern_class": {
+    "primary_result": 43,
+    "comparison": 24
+  },
+  "link_direction": {
+    "strengthen": 51,
+    "weaken": 1
+  },
+  "orphan_cio": 17,
+  "orphan_am": 4,
+  "node_coverage": {
+    "context": {
+      "covered": 102,
+      "total": 280,
+      "coverage_pct": 36.4
+    },
+    "intervention": {
+      "covered": 33,
+      "total": 93,
+      "coverage_pct": 35.5
+    },
+    "mechanism": {
+      "covered": 27,
+      "total": 70,
+      "coverage_pct": 38.6
+    },
+    "eval_metric": {
+      "covered": 20,
+      "total": 39,
+      "coverage_pct": 51.3
+    },
+    "pattern": {
+      "covered": 67,
+      "total": 87,
+      "coverage_pct": 77.0
+    },
+    "assumption": {
+      "covered": 9,
+      "total": 22,
+      "coverage_pct": 40.9
+    }
+  },
+  "node_coverage_total": {
+    "covered": 258,
+    "total": 591,
+    "coverage_pct": 43.7
+  }
+}
