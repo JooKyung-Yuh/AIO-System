@@ -10,6 +10,8 @@ import sys
 import traceback
 from pathlib import Path
 
+from aio_common import factor_coverage_report, factor_coverage_line
+
 load_dotenv()
 
 GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
@@ -20,7 +22,7 @@ client = genai.Client(api_key=GEMINI_API_KEY)
 
 MODEL_NAME = "gemini-2.5-flash"
 
-PROMPT_VERSION = "factor_merge_v3"
+PROMPT_VERSION = "factor_merge_v4"
 PROMPT_PATH = Path("./prompts") / f"{PROMPT_VERSION}.md"
 
 
@@ -100,6 +102,21 @@ def main():
             json.dumps(factors, indent=2, ensure_ascii=False), encoding="utf-8"
         )
 
+        spans = json.loads(spans_text)
+        coverage = factor_coverage_report(spans, factors)
+        (build_dir / "coverage.json").write_text(
+            json.dumps(coverage, indent=2, ensure_ascii=False), encoding="utf-8"
+        )
+        cov_line = factor_coverage_line(coverage)
+        with (Path("./runs") / "coverage.log").open("a", encoding="utf-8") as f:
+            f.write(f"{now.isoformat()}\tbuild_factors\t{PROMPT_VERSION}\t{build_id}\t{cov_line}\n")
+        if coverage["category_mismatches"]:
+            print(f"  [WARN] {len(coverage['category_mismatches'])} category mismatch(es): "
+                  f"{coverage['category_mismatches']}", file=sys.stderr)
+        if coverage["factor_count"] == 0:
+            print("  [ERROR] model returned 0 factors -- likely an empty/flaky response, not a "
+                  "genuine empty paper. Consider re-running.", file=sys.stderr)
+
         usage = response.usage_metadata
         usage_dict = {
             "prompt_token_count": getattr(usage, "prompt_token_count", None),
@@ -112,6 +129,7 @@ def main():
         metadata["finish_reason"] = str(finish_reason)
         metadata["factor_count"] = len(factors)
         metadata["usage"] = usage_dict
+        metadata["coverage"] = coverage
 
         if usage_dict:
             token_line = (
@@ -140,6 +158,7 @@ def main():
 
         print(json.dumps(factors, indent=2, ensure_ascii=False))
         print(f"\nSaved factors to: {build_dir / 'factors.json'}", file=sys.stderr)
+        print(f"Coverage: {cov_line}", file=sys.stderr)
         if usage_dict:
             print(f"Tokens: {token_line}", file=sys.stderr)
 

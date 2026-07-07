@@ -16,6 +16,8 @@ from pathlib import Path
 
 import networkx as nx
 
+from aio_common import factor_coverage_report
+
 SLOTS = ["assumption", "mechanism", "context", "intervention", "eval_metric", "pattern"]
 
 PREFIX = {
@@ -91,11 +93,13 @@ def main():
     factors_path = locate_factors(run_dir, args.factors_json)
 
     spans = json.loads(spans_path.read_text(encoding="utf-8"))
-    factors = json.loads(factors_path.read_text(encoding="utf-8"))
+    all_factors = json.loads(factors_path.read_text(encoding="utf-8"))
     text_of = {s["node_id"]: s.get("text", "") for s in spans}
 
-    if args.limit is not None:
-        factors = factors[: args.limit]
+    # node coverage is a property of the whole run, not of whatever --limit trims for display
+    full_coverage = factor_coverage_report(spans, all_factors)
+
+    factors = all_factors[: args.limit] if args.limit is not None else all_factors
 
     G = nx.Graph()
     for i, f in enumerate(factors):
@@ -134,13 +138,20 @@ def main():
         if args.no_show:
             matplotlib.use("Agg")
         import matplotlib.pyplot as plt
+        import matplotlib.colors
         from matplotlib.patches import Patch
+        import numpy as np
     except ImportError:
         sys.exit("matplotlib is not installed. Run: pip install matplotlib")
 
     pos = nx.multipartite_layout(G, subset_key="subset")
 
-    fig, ax = plt.subplots(figsize=(16, 11))
+    fig = plt.figure(figsize=(22, 11))
+    gs = fig.add_gridspec(2, 2, width_ratios=[2.4, 1], height_ratios=[2, 1], wspace=0.25, hspace=0.35)
+    ax = fig.add_subplot(gs[:, 0])
+    ax_matrix = fig.add_subplot(gs[0, 1])
+    ax_bar = fig.add_subplot(gs[1, 1])
+
     nx.draw_networkx_edges(G, pos, ax=ax, alpha=0.25, width=0.6)
     for kind in LAYER:
         nodes = [n for n, d in G.nodes(data=True) if d["kind"] == kind]
@@ -159,10 +170,48 @@ def main():
     ax.legend(handles=legend, loc="upper right", fontsize=8, framealpha=0.9)
     ax.set_title(f"factor graph: {run_dir.name}", fontsize=11)
     ax.axis("off")
-    fig.tight_layout()
+
+    # --- completeness matrix: one row per factor, one column per slot, colored if filled ---
+    n = len(factors)
+    grid = np.ones((max(n, 1), len(SLOTS), 3))  # white = empty
+    for i, f in enumerate(factors):
+        for j, slot in enumerate(SLOTS):
+            if not is_empty(f.get(slot)):
+                grid[i, j] = matplotlib.colors.to_rgb(COLORS[slot])
+    ax_matrix.imshow(grid, aspect="auto", interpolation="none")
+    ax_matrix.set_xticks(range(len(SLOTS)))
+    ax_matrix.set_xticklabels([s[:4] for s in SLOTS], fontsize=7, rotation=45, ha="right")
+    step = max(1, n // 25)
+    ax_matrix.set_yticks(range(0, n, step))
+    ax_matrix.set_yticklabels([f"F{i}" for i in range(0, n, step)], fontsize=6)
+    ax_matrix.set_title("factor completeness (row = factor, white = null)", fontsize=9)
+
+    # --- per-category node coverage: what fraction of spans.json nodes each category
+    #     actually ends up referenced by >=1 factor (the orphan-rate breakdown). Computed
+    #     over ALL factors regardless of --limit, since coverage is a whole-run property.
+    cov = full_coverage
+    pcts = [cov["node_coverage"][slot]["coverage_pct"] or 0 for slot in SLOTS]
+    labels = [
+        f"{cov['node_coverage'][slot]['covered']}/{cov['node_coverage'][slot]['total']}"
+        for slot in SLOTS
+    ]
+    bars = ax_bar.bar(range(len(SLOTS)), pcts, color=[COLORS[s] for s in SLOTS], edgecolor="#333333")
+    ax_bar.set_xticks(range(len(SLOTS)))
+    ax_bar.set_xticklabels([s[:4] for s in SLOTS], fontsize=7, rotation=45, ha="right")
+    ax_bar.set_ylim(0, 100)
+    ax_bar.set_ylabel("% of nodes covered", fontsize=8)
+    total = cov["node_coverage_total"]
+    ax_bar.set_title(
+        f"node coverage by category (total {total['covered']}/{total['total']} = "
+        f"{total['coverage_pct']}%)", fontsize=9,
+    )
+    for bar, label in zip(bars, labels):
+        ax_bar.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 2, label,
+                    ha="center", va="bottom", fontsize=6)
 
     fig.savefig(out_path, dpi=150, bbox_inches="tight")
     print(f"\nsaved: {out_path}")
+    print(f"node coverage (whole run): {full_coverage['node_coverage_total']}")
     if not args.no_show:
         plt.show()
 

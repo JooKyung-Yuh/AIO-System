@@ -310,3 +310,74 @@ def coverage_line(cov):
         f"tables={p(tb['coverage_pct'])} ({tb['covered']}/{tb['total']})  "
         f"spans={s['total_spans']} sentences={s['distinct_source_sentences']}"
     )
+
+
+FACTOR_SLOTS = ["assumption", "mechanism", "context", "intervention", "eval_metric", "pattern"]
+
+
+def factor_coverage_report(spans, factors):
+    """Assemble a Layer-2 (factor merge) coverage dict: for each of the 6 slots, (1) what
+    fraction of factors have that slot filled, and (2) what fraction of that category's
+    Layer-1 nodes are referenced by at least one factor (the node-level "orphan rate"). Also
+    flags any factor whose slot value points to a node of the wrong category (a merge bug,
+    not a coverage gap)."""
+    cat_total = category_counts(spans)
+    referenced_by_slot = {slot: set() for slot in FACTOR_SLOTS}
+    mismatches = []
+
+    for i, f in enumerate(factors):
+        for slot in FACTOR_SLOTS:
+            v = f.get(slot)
+            if not v:
+                continue
+            referenced_by_slot[slot].add(v)
+            actual_prefix = "".join(ch for ch in v if ch.isalpha())[:1]
+            expected_prefix = CATEGORY_PREFIX.get(slot)
+            if actual_prefix != expected_prefix:
+                mismatches.append({"factor_index": i, "slot": slot, "node_id": v})
+
+    n_factors = len(factors)
+    slot_fill = {
+        slot: {"filled": sum(1 for f in factors if f.get(slot)), "total": n_factors}
+        for slot in FACTOR_SLOTS
+    }
+    node_coverage = {
+        slot: {
+            "covered": len(referenced_by_slot[slot]),
+            "total": cat_total.get(slot, 0),
+            "coverage_pct": _pct(len(referenced_by_slot[slot]), cat_total.get(slot, 0)),
+        }
+        for slot in FACTOR_SLOTS
+    }
+    total_referenced = set().union(*referenced_by_slot.values()) if referenced_by_slot else set()
+    total_nodes = sum(cat_total.get(slot, 0) for slot in FACTOR_SLOTS)
+
+    return {
+        "factor_count": n_factors,
+        "slot_fill": slot_fill,
+        "node_coverage": node_coverage,
+        "node_coverage_total": {
+            "covered": len(total_referenced),
+            "total": total_nodes,
+            "coverage_pct": _pct(len(total_referenced), total_nodes),
+        },
+        "category_mismatches": mismatches,
+    }
+
+
+def factor_coverage_line(cov):
+    """One-line human-readable summary of factor slot-fill and node-coverage."""
+    fill = ",".join(
+        f"{slot}={cov['slot_fill'][slot]['filled']}/{cov['slot_fill'][slot]['total']}"
+        for slot in FACTOR_SLOTS
+    )
+    nodecov = ",".join(
+        f"{slot}={cov['node_coverage'][slot]['covered']}/{cov['node_coverage'][slot]['total']}"
+        for slot in FACTOR_SLOTS
+    )
+    t = cov["node_coverage_total"]
+    return (
+        f"factors={cov['factor_count']}  slot_fill({fill})  "
+        f"node_coverage({nodecov},total={t['covered']}/{t['total']})  "
+        f"mismatches={len(cov['category_mismatches'])}"
+    )
