@@ -42,9 +42,20 @@ PROMPTS = Path("./prompts")
 # Per-call prompt versions. Bump one and re-run to create a new, separately tagged cohort
 # (build_dir carries BUILD_TAG) so runs on different prompts never mix in one ensemble vote.
 CIO_PROMPT = "extract_cio_v1"
-AM_PROMPT = "extract_am_v3"
+AM_PROMPT = "extract_am_v3_1"
 LINK_PROMPT = "link_factors_v1"
-BUILD_TAG = f"factor_split_{CIO_PROMPT.rsplit('_', 1)[-1]}_{AM_PROMPT.rsplit('_', 1)[-1]}_{LINK_PROMPT.rsplit('_', 1)[-1]}"
+
+
+def _ver(prompt_name):
+    """'extract_am_v3_1' -> 'am_v3_1'. Strips only the 'extract_'/'link_' verb prefix so
+    multi-part versions (v3_1) stay intact — a bare rsplit('_') would keep only '1'."""
+    for prefix in ("extract_", "link_"):
+        if prompt_name.startswith(prefix):
+            return prompt_name[len(prefix):]
+    return prompt_name
+
+
+BUILD_TAG = f"factor_split_{_ver(CIO_PROMPT)}_{_ver(AM_PROMPT)}_{_ver(LINK_PROMPT)}"
 AM_LABELS = ("assumption", "mechanism")
 PREFIX_CAT = {"A": "assumption", "M": "mechanism", "C": "context",
               "I": "intervention", "E": "eval_metric", "P": "pattern"}
