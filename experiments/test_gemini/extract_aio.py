@@ -24,6 +24,10 @@ from aio_common import (
     add_usage,
     token_line,
     merge_spans,
+    quote_char_coverage,
+    load_asset_ids,
+    coverage_report,
+    coverage_line,
 )
 
 load_dotenv()
@@ -44,8 +48,15 @@ pages_per_chunk = 4
 pdf_bytes = pdf_path.read_bytes()
 pdf_sha256 = hashlib.sha256(pdf_bytes).hexdigest()
 
-PROMPT_VERSION = "aiocm_debug_v5"
+PROMPT_VERSION = "aiocm_debug_v7"
 PROMPT_PATH = Path("./prompts") / f"{PROMPT_VERSION}.md"
+
+# Coverage denominators, both produced once per paper by extract_text.py:
+#   <pdf>.txt          — prose transcription (text-coverage denominator)
+#   <pdf>.assets.json  — enumerated figures/tables (figure- and table-coverage denominators)
+# Absent -> that coverage dimension is null; extraction still runs.
+SOURCE_TEXT_PATH = pdf_path.with_suffix(".txt")
+SOURCE_ASSETS_PATH = pdf_path.with_suffix(".assets.json")
 
 
 def extract_chunk(chunk):
@@ -138,6 +149,14 @@ try:
         })
 
     merged = merge_spans(chunk_results)
+    n_pages = chunks[-1]["page_end"] if chunks else 0
+
+    # Coverage denominators come from extract_text.py's cached artifacts (no local PDF parsing):
+    #   text  -> <pdf>.txt (prose)      figures/tables -> <pdf>.assets.json (enumerated ids)
+    source_text = SOURCE_TEXT_PATH.read_text(encoding="utf-8") if SOURCE_TEXT_PATH.exists() else ""
+    cov_covered, cov_total = quote_char_coverage(source_text, merged)
+    figure_ids, table_ids = load_asset_ids(SOURCE_ASSETS_PATH)
+    coverage = coverage_report(merged, n_pages, cov_covered, cov_total, figure_ids, table_ids)
     (run_dir / "spans.json").write_text(
         json.dumps(merged, indent=2, ensure_ascii=False), encoding="utf-8"
     )
@@ -151,6 +170,14 @@ try:
     metadata["any_salvaged"] = any_salvaged
     metadata["chunks"] = per_chunk_meta
     metadata["usage"] = total_usage
+    metadata["coverage"] = coverage
+
+    cl = coverage_line(coverage)
+    (run_dir / "coverage.json").write_text(
+        json.dumps(coverage, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
+    with (Path("./runs") / "coverage.log").open("a", encoding="utf-8") as f:
+        f.write(f"{now.isoformat()}\textract_aio\t{PROMPT_VERSION}\t{run_id}\t{cl}\n")
 
     tl = token_line(total_usage)
     (run_dir / "usage.txt").write_text(
@@ -164,6 +191,7 @@ try:
         f.write(f"{now.isoformat()}\textract_aio\t{PROMPT_VERSION}\t{run_id}\t{tl}\tchunks={len(chunks)}\n")
 
     print(f"\nSaved {len(merged)} spans to: {run_dir / 'spans.json'}", file=sys.stderr)
+    print(f"Coverage: {cl}", file=sys.stderr)
     print(f"Tokens (summed over {len(chunks)} chunks): {tl}", file=sys.stderr)
 
 except Exception as e:
