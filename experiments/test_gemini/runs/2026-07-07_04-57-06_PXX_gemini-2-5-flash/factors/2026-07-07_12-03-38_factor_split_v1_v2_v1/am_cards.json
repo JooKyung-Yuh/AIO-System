@@ -1,0 +1,494 @@
+[
+  {
+    "am_id": "AM_001",
+    "kind": "mechanism",
+    "node": "M2",
+    "aliases": [],
+    "gloss": "LLMs learn transferable common sense from internet-scale data.",
+    "provenance": {
+      "location": "Section 1"
+    }
+  },
+  {
+    "am_id": "AM_002",
+    "kind": "mechanism",
+    "node": "M7",
+    "aliases": [
+      "M50"
+    ],
+    "gloss": "Abstraction and inference can arise directly from visual learning.",
+    "provenance": {
+      "location": "Section 1"
+    }
+  },
+  {
+    "am_id": "AM_003",
+    "kind": "mechanism",
+    "node": "M9",
+    "aliases": [],
+    "gloss": "Canvas allows inputs to be processed like natural images, facilitating prior learning.",
+    "provenance": {
+      "location": "Section 1"
+    }
+  },
+  {
+    "am_id": "AM_004",
+    "kind": "mechanism",
+    "node": "M10",
+    "aliases": [],
+    "gloss": "Canvas patches with many color combinations reduce overfitting and encourage spatial priors.",
+    "provenance": {
+      "location": "Section 1"
+    }
+  },
+  {
+    "am_id": "AM_005",
+    "kind": "mechanism",
+    "node": "M15",
+    "aliases": [],
+    "gloss": "Demo pairs at inference time enable test-time training.",
+    "provenance": {
+      "location": "Section 3.1"
+    }
+  },
+  {
+    "am_id": "AM_006",
+    "kind": "mechanism",
+    "node": "M16",
+    "aliases": [
+      "M19"
+    ],
+    "gloss": "Canvas formulation accommodates augmentations, introducing translation and scale invariance.",
+    "provenance": {
+      "location": "Section 3.3"
+    }
+  },
+  {
+    "am_id": "AM_007",
+    "kind": "mechanism",
+    "node": "M17",
+    "aliases": [],
+    "gloss": "Canvas formulation supports larger set of local, patch-level configurations.",
+    "provenance": {
+      "location": "Section 3.3"
+    }
+  },
+  {
+    "am_id": "AM_008",
+    "kind": "mechanism",
+    "node": "M20",
+    "aliases": [],
+    "gloss": "Data augmentations encourage learning mappings invariant to geometric transformations.",
+    "provenance": {
+      "location": "Section 3.3"
+    }
+  },
+  {
+    "am_id": "AM_009",
+    "kind": "mechanism",
+    "node": "M21",
+    "aliases": [],
+    "gloss": "Other interpolations are not meaningful because ARC colors are not real-world.",
+    "provenance": {
+      "location": "Section 3.3"
+    }
+  },
+  {
+    "am_id": "AM_010",
+    "kind": "mechanism",
+    "node": "M23",
+    "aliases": [],
+    "gloss": "Patchification incorporates locality and translation invariance inductive biases.",
+    "provenance": {
+      "location": "Section 3.3"
+    }
+  },
+  {
+    "am_id": "AM_011",
+    "kind": "mechanism",
+    "node": "M24",
+    "aliases": [],
+    "gloss": "Naively treating patches as 1D sequence loses 2D structure.",
+    "provenance": {
+      "location": "Section 3.3"
+    }
+  },
+  {
+    "am_id": "AM_012",
+    "kind": "mechanism",
+    "node": "M27",
+    "aliases": [
+      "M28",
+      "M33",
+      "M42"
+    ],
+    "gloss": "Majority voting consolidates predictions from different views to improve accuracy.",
+    "provenance": {
+      "location": "Section 3.5"
+    }
+  },
+  {
+    "am_id": "AM_013",
+    "kind": "mechanism",
+    "node": "M29",
+    "aliases": [],
+    "gloss": "Average pooling aggregates predictions from multiple pixels on canvas to one location.",
+    "provenance": {
+      "location": "Section 3.5"
+    }
+  },
+  {
+    "am_id": "AM_014",
+    "kind": "mechanism",
+    "node": "M34",
+    "aliases": [],
+    "gloss": "Patchification expands token set to exponentially large number.",
+    "provenance": {
+      "location": "Section 5.1"
+    }
+  },
+  {
+    "am_id": "AM_015",
+    "kind": "mechanism",
+    "node": "M36",
+    "aliases": [],
+    "gloss": "Patches covering multiple colors enrich data space for learning.",
+    "provenance": {
+      "location": "Section 5.1"
+    }
+  },
+  {
+    "am_id": "AM_016",
+    "kind": "mechanism",
+    "node": "M37",
+    "aliases": [],
+    "gloss": "ViT's lack of scale invariance bias explains scale augmentation gain.",
+    "provenance": {
+      "location": "Section 5.1"
+    }
+  },
+  {
+    "am_id": "AM_017",
+    "kind": "mechanism",
+    "node": "M39",
+    "aliases": [],
+    "gloss": "Increasing model size leads to higher accuracy due to better fitting.",
+    "provenance": {
+      "location": "Section 5.2"
+    }
+  },
+  {
+    "am_id": "AM_018",
+    "kind": "mechanism",
+    "node": "M40",
+    "aliases": [],
+    "gloss": "Offline training enables learning visual common sense.",
+    "provenance": {
+      "location": "Section 5.2"
+    }
+  },
+  {
+    "am_id": "AM_019",
+    "kind": "mechanism",
+    "node": "M41",
+    "aliases": [],
+    "gloss": "Some tasks can be solved from scratch without offline training.",
+    "provenance": {
+      "location": "Section 5.2"
+    }
+  },
+  {
+    "am_id": "AM_020",
+    "kind": "mechanism",
+    "node": "M44",
+    "aliases": [],
+    "gloss": "Attention maps show model reasons about source-target pixel relationships for copying.",
+    "provenance": {
+      "location": "Section 6"
+    }
+  },
+  {
+    "am_id": "AM_021",
+    "kind": "mechanism",
+    "node": "M46",
+    "aliases": [],
+    "gloss": "Attention patterns reflect influence of pattern's core.",
+    "provenance": {
+      "location": "Section 6"
+    }
+  },
+  {
+    "am_id": "AM_022",
+    "kind": "mechanism",
+    "node": "M47",
+    "aliases": [],
+    "gloss": "Attention patterns correspond to rules extending colored pixels.",
+    "provenance": {
+      "location": "Section 6"
+    }
+  },
+  {
+    "am_id": "AM_023",
+    "kind": "mechanism",
+    "node": "M48",
+    "aliases": [],
+    "gloss": "Task embedding visualization suggests learning relations between tasks.",
+    "provenance": {
+      "location": "Section 6"
+    }
+  },
+  {
+    "am_id": "AM_024",
+    "kind": "mechanism",
+    "node": "M49",
+    "aliases": [],
+    "gloss": "Vision-centric framing enables adaptation of visual frameworks.",
+    "provenance": {
+      "location": "Section 7"
+    }
+  },
+  {
+    "am_id": "AM_025",
+    "kind": "mechanism",
+    "node": "M51",
+    "aliases": [],
+    "gloss": "Canvas provides unified framework for shape handling.",
+    "provenance": {
+      "location": "Section A.3"
+    }
+  },
+  {
+    "am_id": "AM_026",
+    "kind": "mechanism",
+    "node": "M53",
+    "aliases": [],
+    "gloss": "Attention masks set softmax attention scores to zero for background pixels.",
+    "provenance": {
+      "location": "Section A.3"
+    }
+  },
+  {
+    "am_id": "AM_027",
+    "kind": "mechanism",
+    "node": "M54",
+    "aliases": [],
+    "gloss": "Attention masks encourage focus on foregrounds, improving accuracy.",
+    "provenance": {
+      "location": "Section A.3"
+    }
+  },
+  {
+    "am_id": "AM_028",
+    "kind": "mechanism",
+    "node": "M58",
+    "aliases": [],
+    "gloss": "Model generates multiple plausible rule interpretations for ambiguous tasks.",
+    "provenance": {
+      "location": "Section C.2"
+    }
+  },
+  {
+    "am_id": "AM_029",
+    "kind": "mechanism",
+    "node": "M59",
+    "aliases": [],
+    "gloss": "Different layers focus on different structures.",
+    "provenance": {
+      "location": "Figure 20"
+    }
+  },
+  {
+    "am_id": "AM_030",
+    "kind": "mechanism",
+    "node": "M60",
+    "aliases": [],
+    "gloss": "Early layers focus on local transformations and context.",
+    "provenance": {
+      "location": "Figure 20"
+    }
+  },
+  {
+    "am_id": "AM_031",
+    "kind": "mechanism",
+    "node": "M61",
+    "aliases": [],
+    "gloss": "Middle layers perform non-local connections.",
+    "provenance": {
+      "location": "Figure 20"
+    }
+  },
+  {
+    "am_id": "AM_032",
+    "kind": "mechanism",
+    "node": "M62",
+    "aliases": [],
+    "gloss": "Deep layers are more task-specialized.",
+    "provenance": {
+      "location": "Figure 20"
+    }
+  },
+  {
+    "am_id": "AM_033",
+    "kind": "mechanism",
+    "node": "M63",
+    "aliases": [
+      "M67"
+    ],
+    "gloss": "Attention focuses on endpoints of lines.",
+    "provenance": {
+      "location": "Figure 20"
+    }
+  },
+  {
+    "am_id": "AM_034",
+    "kind": "mechanism",
+    "node": "M64",
+    "aliases": [],
+    "gloss": "Attention focuses within the rectangle.",
+    "provenance": {
+      "location": "Figure 20"
+    }
+  },
+  {
+    "am_id": "AM_035",
+    "kind": "mechanism",
+    "node": "M65",
+    "aliases": [],
+    "gloss": "Attention focuses on corresponding cell in lower grid part.",
+    "provenance": {
+      "location": "Figure 20"
+    }
+  },
+  {
+    "am_id": "AM_036",
+    "kind": "mechanism",
+    "node": "M66",
+    "aliases": [],
+    "gloss": "Attention focuses on cells in same relative position.",
+    "provenance": {
+      "location": "Figure 20"
+    }
+  },
+  {
+    "am_id": "AM_037",
+    "kind": "mechanism",
+    "node": "M68",
+    "aliases": [],
+    "gloss": "Attention focuses on nearby, relevant lines.",
+    "provenance": {
+      "location": "Figure 20"
+    }
+  },
+  {
+    "am_id": "AM_038",
+    "kind": "mechanism",
+    "node": "M69",
+    "aliases": [],
+    "gloss": "TTT refines color and spatial arrangement.",
+    "provenance": {
+      "location": "Figure 22 caption"
+    }
+  },
+  {
+    "am_id": "AM_039",
+    "kind": "mechanism",
+    "node": "M70",
+    "aliases": [],
+    "gloss": "TTT adapts model to task-specific transformations.",
+    "provenance": {
+      "location": "Figure 22 caption"
+    }
+  },
+  {
+    "am_id": "AM_040",
+    "kind": "assumption",
+    "node": "A6",
+    "aliases": [],
+    "gloss": "ARC colors do not correspond to real-world colors.",
+    "provenance": {
+      "location": "Section 3.3"
+    }
+  },
+  {
+    "am_id": "AM_041",
+    "kind": "assumption",
+    "node": "A8",
+    "aliases": [
+      "A9"
+    ],
+    "gloss": "Very few demo pairs are available for test-time training.",
+    "provenance": {
+      "location": "Section 3.5"
+    }
+  },
+  {
+    "am_id": "AM_042",
+    "kind": "assumption",
+    "node": "A10",
+    "aliases": [],
+    "gloss": "Rescaling on canvas can cause multiple pixels to predict one output location.",
+    "provenance": {
+      "location": "Section 3.5"
+    }
+  },
+  {
+    "am_id": "AM_043",
+    "kind": "assumption",
+    "node": "A12",
+    "aliases": [],
+    "gloss": "All auxiliary tasks are translation and scale invariant.",
+    "provenance": {
+      "location": "Section 4"
+    }
+  },
+  {
+    "am_id": "AM_044",
+    "kind": "assumption",
+    "node": "A16",
+    "aliases": [],
+    "gloss": "Joint TTT assumes availability of multiple test tasks at once.",
+    "provenance": {
+      "location": "Section 5.2"
+    }
+  },
+  {
+    "am_id": "AM_045",
+    "kind": "assumption",
+    "node": "A19",
+    "aliases": [],
+    "gloss": "Multiple unseen tasks cannot be assumed to be presented at once.",
+    "provenance": {
+      "location": "Footnote 3"
+    }
+  },
+  {
+    "am_id": "AM_046",
+    "kind": "assumption",
+    "node": "A20",
+    "aliases": [],
+    "gloss": "Some ARC tasks admit multiple plausible explanations.",
+    "provenance": {
+      "location": "Section C.2"
+    }
+  },
+  {
+    "am_id": "AM_047",
+    "kind": "assumption",
+    "node": "A21",
+    "aliases": [],
+    "gloss": "Most ARC tasks are unambiguous.",
+    "provenance": {
+      "location": "Figure 19"
+    }
+  },
+  {
+    "am_id": "AM_048",
+    "kind": "assumption",
+    "node": "A22",
+    "aliases": [],
+    "gloss": "Ambiguity exists in specific task rules (e.g., \"touching\" vs. \"going through\").",
+    "provenance": {
+      "location": "Figure 19"
+    }
+  }
+]
