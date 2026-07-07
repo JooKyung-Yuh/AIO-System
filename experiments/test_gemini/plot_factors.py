@@ -1,219 +1,282 @@
-"""Plot the factor graph from one run as a plain multipartite graph.
+"""Render the two-layer AIO factor graph from a split build as SEPARATE figures.
 
-Joins factors.json (flat factor records) with spans.json (node id -> text) and draws a
-bipartite factor graph: factor nodes on a center column, the A/M/C/I/E/P nodes they
-reference in category columns on either side. Node labels are node ids only; the id -> text
-mapping is printed to the console so long span quotes do not clutter the plot.
+build_factors_split.py emits cio_cards.json + am_cards.json + links.json. This draws four
+standalone PNGs, each doing one job (no crowding a single canvas):
 
-This is a structural view. The flat factor format carries no belief direction, so no
-strengthen/weaken coloring is drawn here.
+  belief_tally.png     diverging bars: which mechanisms/assumptions the paper's own results
+                       strengthen (blue) vs weaken (red)
+  cio_completeness.png heatmap: which slots each observation card fills; a comparison card
+                       missing its reference arm is flagged red
+  node_coverage.png    bars: share of Layer-1 nodes (per category) that reached a card
+  factor_graph.png     provenance -> observation -> belief, curved edges colored by vote
+
+Colors follow a CVD-validated palette (blue<->red diverging for votes; aqua/orange categorical
+for pattern_class). Pass an old flat-format build and it will error clearly.
 """
 import argparse
+import collections
 import glob
 import json
 import sys
 from pathlib import Path
 
-import networkx as nx
+# CVD-validated palette (light surface)
+SURFACE, INK, SECOND, MUTED = "#fcfcfb", "#0b0b0b", "#52514e", "#898781"
+GRID, BASELINE = "#e1e0d9", "#c3c2b7"
+STRENGTHEN, WEAKEN = "#2a78d6", "#e34948"        # diverging pair (votes)
+PRIMARY_CLS, COMPARISON_CLS = "#1baf7a", "#eb6834"  # categorical (pattern_class)
+FILLED, EMPTY = "#5b5f66", "#eeede9"             # presence
+SLOTS = ["context", "intervention", "reference", "eval_metric", "pattern"]
 
-from aio_common import factor_coverage_report
 
-SLOTS = ["assumption", "mechanism", "context", "intervention", "eval_metric", "pattern"]
-
-PREFIX = {
-    "A": "assumption",
-    "M": "mechanism",
-    "C": "context",
-    "I": "intervention",
-    "E": "eval_metric",
-    "P": "pattern",
-}
-
-# left-to-right column order; factor sits in the middle
-LAYER = {
-    "assumption": 0,
-    "mechanism": 1,
-    "context": 2,
-    "factor": 3,
-    "intervention": 4,
-    "eval_metric": 5,
-    "pattern": 6,
-}
-
-COLORS = {
-    "assumption": "#e41a1c",
-    "mechanism": "#377eb8",
-    "context": "#4daf4a",
-    "intervention": "#ff7f00",
-    "eval_metric": "#984ea3",
-    "pattern": "#a65628",
-    "factor": "#bbbbbb",
-}
+def rc():
+    import matplotlib.pyplot as plt
+    plt.rcParams.update({
+        "figure.facecolor": SURFACE, "axes.facecolor": SURFACE, "savefig.facecolor": SURFACE,
+        "axes.edgecolor": BASELINE, "axes.labelcolor": SECOND, "text.color": INK,
+        "xtick.color": MUTED, "ytick.color": MUTED, "axes.spines.top": False,
+        "axes.spines.right": False, "font.size": 11,
+        "font.family": "sans-serif", "font.sans-serif": ["DejaVu Sans"],
+    })
 
 
 def parse_args():
-    p = argparse.ArgumentParser(description="Plot the factor graph of one extraction run.")
-    p.add_argument("--run-dir", required=True, help="runs/<run_id> directory that contains spans.json")
-    p.add_argument("--factors-json", default=None, help="path to factors.json (default: newest under <run-dir>/factors/*/)")
-    p.add_argument("--out", default=None, help="PNG path (default: factor_graph.png next to the factors.json used)")
-    p.add_argument("--no-show", action="store_true", help="save only, do not open a window (headless)")
-    p.add_argument("--limit", type=int, default=None, help="plot only the first N factors (readability)")
+    p = argparse.ArgumentParser(description="Render split-build factor graphs as separate PNGs.")
+    p.add_argument("--run-dir", required=True)
+    p.add_argument("--build-dir", default=None, help="factors/<build> (default: newest split build)")
+    p.add_argument("--no-show", action="store_true")
     return p.parse_args()
 
 
-def locate_factors(run_dir: Path, override: str | None) -> Path:
+def locate_build(run_dir: Path, override):
     if override:
         return Path(override)
-    candidates = sorted(glob.glob(str(run_dir / "factors" / "*" / "factors.json")))
-    if not candidates:
-        sys.exit(f"no factors.json found under {run_dir / 'factors'}; pass --factors-json")
-    return Path(candidates[-1])
+    hits = sorted(glob.glob(str(run_dir / "factors" / "*" / "cio_cards.json")))
+    if not hits:
+        sys.exit(f"no split build (cio_cards.json) under {run_dir/'factors'}; run build_factors_split.py")
+    return Path(hits[-1]).parent
 
 
-def is_empty(v) -> bool:
-    return v in (None, "", "null")
+def filled(card, slot):
+    v = card.get(slot)
+    return bool(v) if slot != "context" else bool(v)
 
 
-def category_of(node_id: str) -> str:
-    return PREFIX.get(node_id[:1], "context")
+# ---------------------------------------------------------------- belief tally
+def plot_belief_tally(am, tally, out):
+    import matplotlib.pyplot as plt
+    ranked = [a for a in am if tally[a["am_id"]]["strengthen"] + tally[a["am_id"]]["weaken"] > 0]
+    ranked.sort(key=lambda a: -(tally[a["am_id"]]["strengthen"] + tally[a["am_id"]]["weaken"]))
+    n = len(ranked)
+    fig, ax = plt.subplots(figsize=(11, 0.46 * n + 1.8))
+    ys = range(n)
+    for i, a in enumerate(ranked):
+        t = tally[a["am_id"]]
+        ax.barh(i, t["strengthen"], color=STRENGTHEN, height=0.66, zorder=3)
+        ax.barh(i, -t["weaken"], color=WEAKEN, height=0.66, zorder=3)
+        if t["strengthen"]:
+            ax.text(t["strengthen"] + 0.15, i, str(t["strengthen"]), va="center", ha="left",
+                    fontsize=8, color=SECOND)
+        if t["weaken"]:
+            ax.text(-t["weaken"] - 0.15, i, str(t["weaken"]), va="center", ha="right",
+                    fontsize=8, color=SECOND)
+    ax.axvline(0, color=BASELINE, lw=1.0, zorder=4)
+    ax.set_yticks(list(ys))
+    ax.set_yticklabels([f"{a['node']}  {a.get('gloss','')[:44]}" for a in ranked], fontsize=8.5)
+    ax.invert_yaxis()
+    ax.set_xlabel("weaken  ←   votes cast by observations   →  strengthen", fontsize=9)
+    ax.tick_params(length=0)
+    ax.xaxis.grid(True, color=GRID, lw=0.6)
+    ax.set_axisbelow(True)
+    ax.set_title("Belief tally — which claims the paper's own results support vs contest",
+                 fontsize=13, color=INK, loc="left", pad=12)
+    fig.tight_layout()
+    fig.savefig(out, dpi=150, bbox_inches="tight")
+    plt.close(fig)
 
 
-def num_of(node_id: str) -> int:
-    digits = "".join(ch for ch in node_id[1:] if ch.isdigit())
-    return int(digits) if digits else 0
+# ------------------------------------------------------- CIO completeness heat
+def plot_completeness(cio, out):
+    import matplotlib.pyplot as plt
+    from matplotlib.patches import Rectangle
+    cards = sorted(cio, key=lambda c: ((c.get("provenance") or {}).get("location", "~"), c["cio_id"]))
+    n = len(cards)
+    fig, ax = plt.subplots(figsize=(8.5, 0.17 * n + 2.2))
+    gap = 0.12
+    for i, c in enumerate(cards):
+        is_cmp = c.get("pattern_class") == "comparison"
+        # pattern_class strip
+        ax.add_patch(Rectangle((-1 + gap, i + gap), 1 - 2 * gap, 1 - 2 * gap,
+                     facecolor=COMPARISON_CLS if is_cmp else PRIMARY_CLS, edgecolor="none"))
+        for j, slot in enumerate(SLOTS):
+            if filled(c, slot):
+                fc = FILLED
+            elif slot == "reference" and is_cmp:
+                fc = WEAKEN                       # comparison missing its reference arm
+            else:
+                fc = EMPTY
+            ax.add_patch(Rectangle((j + gap, i + gap), 1 - 2 * gap, 1 - 2 * gap,
+                         facecolor=fc, edgecolor="none"))
+    # provenance group labels
+    prev = None
+    for i, c in enumerate(cards):
+        loc = (c.get("provenance") or {}).get("location", "?")
+        if loc != prev:
+            ax.text(-1.25, i + 0.5, loc[:20], va="center", ha="right", fontsize=6.5, color=MUTED)
+            if i:
+                ax.axhline(i, color=GRID, lw=0.5)
+            prev = loc
+    ax.set_xlim(-1.3, len(SLOTS))
+    ax.set_ylim(n, 0)
+    ax.set_xticks([-0.5] + [j + 0.5 for j in range(len(SLOTS))])
+    ax.set_xticklabels(["class"] + [s.replace("_", "\n") for s in SLOTS], fontsize=8)
+    ax.xaxis.set_ticks_position("top")
+    ax.set_yticks([])
+    for s in ax.spines.values():
+        s.set_visible(False)
+    ax.tick_params(length=0)
+    ax.set_title("Observation completeness — filled slots per card\n"
+                 "(red = comparison missing its reference arm)",
+                 fontsize=12, color=INK, loc="left", pad=10)
+    fig.tight_layout()
+    fig.savefig(out, dpi=150, bbox_inches="tight")
+    plt.close(fig)
+
+
+# ------------------------------------------------------------- node coverage
+def plot_coverage(cov, out):
+    import matplotlib.pyplot as plt
+    nc = cov["node_coverage"]
+    cats = ["context", "intervention", "mechanism", "eval_metric", "pattern", "assumption"]
+    cats = [c for c in cats if c in nc]
+    pcts = [nc[c]["coverage_pct"] or 0 for c in cats]
+    fig, ax = plt.subplots(figsize=(9, 5))
+    bars = ax.bar(range(len(cats)), pcts, color=STRENGTHEN, width=0.66, zorder=3)
+    for b, c in zip(bars, cats):
+        ax.text(b.get_x() + b.get_width() / 2, b.get_height() + 1.5,
+                f"{nc[c]['covered']}/{nc[c]['total']}", ha="center", va="bottom",
+                fontsize=8, color=SECOND)
+    ax.set_xticks(range(len(cats)))
+    ax.set_xticklabels([c.replace("_", "\n") for c in cats], fontsize=9)
+    ax.set_ylim(0, 100)
+    ax.set_ylabel("% of Layer-1 nodes referenced by ≥1 card", fontsize=9)
+    ax.yaxis.grid(True, color=GRID, lw=0.6)
+    ax.set_axisbelow(True)
+    ax.tick_params(length=0)
+    tot = cov["node_coverage_total"]
+    ax.set_title(f"Node coverage by category — total {tot['covered']}/{tot['total']} "
+                 f"= {tot['coverage_pct']}%", fontsize=12, color=INK, loc="left", pad=10)
+    fig.tight_layout()
+    fig.savefig(out, dpi=150, bbox_inches="tight")
+    plt.close(fig)
+
+
+# ----------------------------------------------------------------- graph
+def plot_graph(cio, am, links, tally, out):
+    import matplotlib.pyplot as plt
+    from matplotlib.patches import FancyArrowPatch, Patch
+
+    cio_sorted = sorted(cio, key=lambda c: ((c.get("provenance") or {}).get("location", "~"), c["cio_id"]))
+    am_sorted = sorted(am, key=lambda a: -(tally[a["am_id"]]["strengthen"] + tally[a["am_id"]]["weaken"]))
+    locs = []
+    for c in cio_sorted:
+        loc = (c.get("provenance") or {}).get("location", "?")
+        if loc not in locs:
+            locs.append(loc)
+
+    def spaced(k):
+        return [1 - (i + 0.5) / k for i in range(k)]  # top->bottom in [0,1]
+
+    y_loc = {l: y for l, y in zip(locs, spaced(len(locs)))}
+    y_cio = {c["cio_id"]: y for c, y in zip(cio_sorted, spaced(len(cio_sorted)))}
+    y_am = {a["am_id"]: y for a, y in zip(am_sorted, spaced(len(am_sorted)))}
+    X_LOC, X_CIO, X_AM = 0.0, 1.0, 2.0
+
+    fig, ax = plt.subplots(figsize=(15, 13))
+
+    # edges: provenance->cio faint grey; cio->am blue/red by vote
+    for c in cio_sorted:
+        loc = (c.get("provenance") or {}).get("location", "?")
+        ax.add_patch(FancyArrowPatch((X_LOC, y_loc[loc]), (X_CIO, y_cio[c["cio_id"]]),
+                     connectionstyle="arc3,rad=0.12", arrowstyle="-", lw=0.4,
+                     color=MUTED, alpha=0.18, zorder=1))
+    for e in links:
+        cid, aid = e.get("source_cio"), e.get("target_am")
+        if cid in y_cio and aid in y_am:
+            col = STRENGTHEN if e.get("direction") == "strengthen" else WEAKEN
+            ax.add_patch(FancyArrowPatch((X_CIO, y_cio[cid]), (X_AM, y_am[aid]),
+                         connectionstyle="arc3,rad=0.12", arrowstyle="-", lw=0.7,
+                         color=col, alpha=0.45, zorder=2))
+
+    # nodes
+    for l, y in y_loc.items():
+        ax.scatter(X_LOC, y, s=60, marker="s", color=BASELINE, edgecolors=MUTED, linewidths=0.5, zorder=3)
+        ax.text(X_LOC - 0.03, y, l[:20], va="center", ha="right", fontsize=6.5, color=MUTED)
+    for c in cio_sorted:
+        cls = c.get("pattern_class")
+        ax.scatter(X_CIO, y_cio[c["cio_id"]], s=42,
+                   color=COMPARISON_CLS if cls == "comparison" else PRIMARY_CLS,
+                   edgecolors=WEAKEN if (cls == "comparison" and not c.get("reference")) else "white",
+                   linewidths=1.0 if (cls == "comparison" and not c.get("reference")) else 0.4, zorder=3)
+    for a in am_sorted:
+        t = tally[a["am_id"]]
+        v = t["strengthen"] + t["weaken"]
+        ax.scatter(X_AM, y_am[a["am_id"]], s=90 + 130 * (v ** 0.5),  # sqrt: keep big beliefs bounded
+                   color="#e9e8e3" if v == 0 else INK, edgecolors=MUTED, linewidths=0.6, zorder=3)
+        ax.text(X_AM + 0.08, y_am[a["am_id"]], f"{a['node']} {a.get('gloss','')[:28]}",
+                va="center", ha="left", fontsize=6.5, color=INK if v else MUTED)
+
+    for x, lab in ((X_LOC, "paper location"), (X_CIO, "observation (CIO)"), (X_AM, "belief (M/A)")):
+        ax.text(x, 1.03, lab, ha="center", va="bottom", fontsize=10, color=SECOND, weight="bold")
+    legend = [
+        Patch(facecolor=PRIMARY_CLS, edgecolor="none", label="primary_result"),
+        Patch(facecolor=COMPARISON_CLS, edgecolor="none", label="comparison"),
+        Patch(facecolor="white", edgecolor=WEAKEN, label="comparison missing reference"),
+        Patch(facecolor=STRENGTHEN, edgecolor="none", label="strengthen vote"),
+        Patch(facecolor=WEAKEN, edgecolor="none", label="weaken vote"),
+    ]
+    ax.legend(handles=legend, loc="lower center", bbox_to_anchor=(0.5, -0.06),
+              ncol=5, fontsize=8, frameon=False)
+    ax.set_xlim(-0.55, 2.95)
+    ax.set_ylim(-0.05, 1.1)
+    ax.axis("off")
+    ax.set_title("AIO factor graph — paper location → observation → belief",
+                 fontsize=13, color=INK, pad=6)
+    fig.savefig(out, dpi=150, bbox_inches="tight")
+    plt.close(fig)
 
 
 def main():
     args = parse_args()
     run_dir = Path(args.run_dir)
+    build = locate_build(run_dir, args.build_dir)
+    cio = json.loads((build / "cio_cards.json").read_text(encoding="utf-8"))
+    am = json.loads((build / "am_cards.json").read_text(encoding="utf-8"))
+    links = json.loads((build / "links.json").read_text(encoding="utf-8"))
+    cov = json.loads((build / "coverage.json").read_text(encoding="utf-8"))
 
-    spans_path = run_dir / "spans.json"
-    if not spans_path.exists():
-        sys.exit(f"spans.json not found in {run_dir}")
-    factors_path = locate_factors(run_dir, args.factors_json)
-
-    spans = json.loads(spans_path.read_text(encoding="utf-8"))
-    all_factors = json.loads(factors_path.read_text(encoding="utf-8"))
-    text_of = {s["node_id"]: s.get("text", "") for s in spans}
-
-    # node coverage is a property of the whole run, not of whatever --limit trims for display
-    full_coverage = factor_coverage_report(spans, all_factors)
-
-    factors = all_factors[: args.limit] if args.limit is not None else all_factors
-
-    G = nx.Graph()
-    for i, f in enumerate(factors):
-        fid = f"F{i}"
-        G.add_node(fid, kind="factor")
-        for slot in SLOTS:
-            v = f.get(slot)
-            if is_empty(v):
-                continue
-            G.add_node(v, kind=category_of(v))
-            G.add_edge(fid, v)
-
-    for n, data in G.nodes(data=True):
-        data["subset"] = LAYER[data["kind"]]
-
-    # console legend: node id -> text, so the plot can stay label-light
-    referenced = sorted(
-        (n for n, d in G.nodes(data=True) if d["kind"] != "factor"),
-        key=lambda n: (LAYER[category_of(n)], num_of(n)),
-    )
-    print(f"factors plotted: {sum(1 for _, d in G.nodes(data=True) if d['kind'] == 'factor')}")
-    print(f"variable nodes:  {len(referenced)}")
-    print("-" * 72)
-    for n in referenced:
-        t = text_of.get(n, "(not in spans.json)").replace("\n", " ")
-        print(f"{n:5} [{G.nodes[n]['kind']:12}] {t[:80]}")
-
-    if args.out:
-        out_path = Path(args.out)
-    else:
-        default_name = f"factor_graph{('_limit%d' % args.limit) if args.limit else ''}.png"
-        out_path = factors_path.parent / default_name
+    tally = collections.defaultdict(lambda: {"strengthen": 0, "weaken": 0})
+    for e in links:
+        if e.get("direction") in ("strengthen", "weaken"):
+            tally[e["target_am"]][e["direction"]] += 1
 
     try:
         import matplotlib
         if args.no_show:
             matplotlib.use("Agg")
-        import matplotlib.pyplot as plt
-        import matplotlib.colors
-        from matplotlib.patches import Patch
-        import numpy as np
+        rc()
     except ImportError:
         sys.exit("matplotlib is not installed. Run: pip install matplotlib")
 
-    pos = nx.multipartite_layout(G, subset_key="subset")
-
-    fig = plt.figure(figsize=(22, 11))
-    gs = fig.add_gridspec(2, 2, width_ratios=[2.4, 1], height_ratios=[2, 1], wspace=0.25, hspace=0.35)
-    ax = fig.add_subplot(gs[:, 0])
-    ax_matrix = fig.add_subplot(gs[0, 1])
-    ax_bar = fig.add_subplot(gs[1, 1])
-
-    nx.draw_networkx_edges(G, pos, ax=ax, alpha=0.25, width=0.6)
-    for kind in LAYER:
-        nodes = [n for n, d in G.nodes(data=True) if d["kind"] == kind]
-        if not nodes:
-            continue
-        nx.draw_networkx_nodes(
-            G, pos, ax=ax, nodelist=nodes,
-            node_color=COLORS[kind],
-            node_shape="s" if kind == "factor" else "o",
-            node_size=320 if kind == "factor" else 220,
-            linewidths=0.5, edgecolors="#333333",
-        )
-    nx.draw_networkx_labels(G, pos, ax=ax, font_size=6)
-
-    legend = [Patch(facecolor=COLORS[k], edgecolor="#333333", label=k) for k in LAYER]
-    ax.legend(handles=legend, loc="upper right", fontsize=8, framealpha=0.9)
-    ax.set_title(f"factor graph: {run_dir.name}", fontsize=11)
-    ax.axis("off")
-
-    # --- completeness matrix: one row per factor, one column per slot, colored if filled ---
-    n = len(factors)
-    grid = np.ones((max(n, 1), len(SLOTS), 3))  # white = empty
-    for i, f in enumerate(factors):
-        for j, slot in enumerate(SLOTS):
-            if not is_empty(f.get(slot)):
-                grid[i, j] = matplotlib.colors.to_rgb(COLORS[slot])
-    ax_matrix.imshow(grid, aspect="auto", interpolation="none")
-    ax_matrix.set_xticks(range(len(SLOTS)))
-    ax_matrix.set_xticklabels([s[:4] for s in SLOTS], fontsize=7, rotation=45, ha="right")
-    step = max(1, n // 25)
-    ax_matrix.set_yticks(range(0, n, step))
-    ax_matrix.set_yticklabels([f"F{i}" for i in range(0, n, step)], fontsize=6)
-    ax_matrix.set_title("factor completeness (row = factor, white = null)", fontsize=9)
-
-    # --- per-category node coverage: what fraction of spans.json nodes each category
-    #     actually ends up referenced by >=1 factor (the orphan-rate breakdown). Computed
-    #     over ALL factors regardless of --limit, since coverage is a whole-run property.
-    cov = full_coverage
-    pcts = [cov["node_coverage"][slot]["coverage_pct"] or 0 for slot in SLOTS]
-    labels = [
-        f"{cov['node_coverage'][slot]['covered']}/{cov['node_coverage'][slot]['total']}"
-        for slot in SLOTS
-    ]
-    bars = ax_bar.bar(range(len(SLOTS)), pcts, color=[COLORS[s] for s in SLOTS], edgecolor="#333333")
-    ax_bar.set_xticks(range(len(SLOTS)))
-    ax_bar.set_xticklabels([s[:4] for s in SLOTS], fontsize=7, rotation=45, ha="right")
-    ax_bar.set_ylim(0, 100)
-    ax_bar.set_ylabel("% of nodes covered", fontsize=8)
-    total = cov["node_coverage_total"]
-    ax_bar.set_title(
-        f"node coverage by category (total {total['covered']}/{total['total']} = "
-        f"{total['coverage_pct']}%)", fontsize=9,
-    )
-    for bar, label in zip(bars, labels):
-        ax_bar.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 2, label,
-                    ha="center", va="bottom", fontsize=6)
-
-    fig.savefig(out_path, dpi=150, bbox_inches="tight")
-    print(f"\nsaved: {out_path}")
-    print(f"node coverage (whole run): {full_coverage['node_coverage_total']}")
-    if not args.no_show:
-        plt.show()
+    outputs = {
+        "belief_tally.png": lambda p: plot_belief_tally(am, tally, p),
+        "cio_completeness.png": lambda p: plot_completeness(cio, p),
+        "node_coverage.png": lambda p: plot_coverage(cov, p),
+        "factor_graph.png": lambda p: plot_graph(cio, am, links, tally, p),
+    }
+    for name, fn in outputs.items():
+        fn(build / name)
+        print(f"saved: {build / name}")
 
 
 if __name__ == "__main__":
