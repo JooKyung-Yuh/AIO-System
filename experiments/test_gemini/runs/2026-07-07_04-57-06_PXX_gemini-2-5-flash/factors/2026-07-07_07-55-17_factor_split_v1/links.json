@@ -1,0 +1,492 @@
+[
+  {
+    "source_cio": "CIO_001",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Our work... naturally enables the adaptation of visual frameworks and yields strong few-shot generalization competitive with recent approaches."
+  },
+  {
+    "source_cio": "CIO_002",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "VARC correctly solves these challenging tasks."
+  },
+  {
+    "source_cio": "CIO_003",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "VARC achieves 54.5% accuracy on the ARC-1 benchmark, using a small model with only 18 million parameters."
+  },
+  {
+    "source_cio": "CIO_004",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This result substantially surpasses the best recurrent methods... that are also trained from scratch on ARC."
+  },
+  {
+    "source_cio": "CIO_005",
+    "target_am": "AM_006",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Combining VARC models through ensembling [29] further improves accuracy to 60.4%..."
+  },
+  {
+    "source_cio": "CIO_006",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Combining VARC models through ensembling... matching the reported average human performance."
+  },
+  {
+    "source_cio": "CIO_006",
+    "target_am": "AM_006",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Combining VARC models through ensembling [29] further improves accuracy to 60.4%..."
+  },
+  {
+    "source_cio": "CIO_007",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "VARC correctly solves these challenging tasks."
+  },
+  {
+    "source_cio": "CIO_008",
+    "target_am": "AM_006",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "As the multi-view inference cost is negligible... it is virtually nearly free to use many views."
+  },
+  {
+    "source_cio": "CIO_009",
+    "target_am": "AM_013",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "the prediction from Xinfer becomes progressively more accurate, with the model finally generating the correct prediction."
+  },
+  {
+    "source_cio": "CIO_010",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "all U-Net variants achieve decent accuracy, suggesting that this problem can also be effectively addressed by classical vision backbones."
+  },
+  {
+    "source_cio": "CIO_011",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Extending from 1D positional embedding to its 2D counterpart is beneficial"
+  },
+  {
+    "source_cio": "CIO_012",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Extending from 1D positional embedding to its 2D counterpart is beneficial"
+  },
+  {
+    "source_cio": "CIO_013",
+    "target_am": "AM_002",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "each patch can cover multiple colors... which substantially enriches the data space for learning."
+  },
+  {
+    "source_cio": "CIO_013",
+    "target_am": "AM_005",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "patchification... incorporates several critical inductive biases in vision: most notably, locality... and translation invariance."
+  },
+  {
+    "source_cio": "CIO_014",
+    "target_am": "AM_002",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "each patch can cover multiple colors... which substantially enriches the data space for learning."
+  },
+  {
+    "source_cio": "CIO_015",
+    "target_am": "AM_002",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This formulation is important for improving generalization performance."
+  },
+  {
+    "source_cio": "CIO_016",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "we replace the 2D ROPE... and observe a degradation of 3.5 points"
+  },
+  {
+    "source_cio": "CIO_017",
+    "target_am": "AM_003",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "we apply fully flexible translation augmentation on the canvas... yields an additional gain of 2.9 points"
+  },
+  {
+    "source_cio": "CIO_017",
+    "target_am": "AM_004",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "this setting yields an additional gain of 2.9 points"
+  },
+  {
+    "source_cio": "CIO_018",
+    "target_am": "AM_003",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "we further apply the scale augmentation enabled by the concept of canvas. Scale augmentation yields a substantial gain of 6.2 points."
+  },
+  {
+    "source_cio": "CIO_018",
+    "target_am": "AM_004",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Scale augmentation yields a substantial gain of 6.2 points."
+  },
+  {
+    "source_cio": "CIO_019",
+    "target_am": "AM_004",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This can explain why scale augmentation yields a substantial gain."
+  },
+  {
+    "source_cio": "CIO_020",
+    "target_am": "AM_004",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This can explain why scale augmentation yields a substantial gain."
+  },
+  {
+    "source_cio": "CIO_021",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "increasing depth and/or width leads to higher accuracy as a result of better fitting."
+  },
+  {
+    "source_cio": "CIO_022",
+    "target_am": "AM_009",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "offline training greatly improves the performance of TTT, suggesting that common sense about the visual world can be learned from the training set."
+  },
+  {
+    "source_cio": "CIO_024",
+    "target_am": "AM_010",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "performing TTT independently for each test task yields substantially better performance... even though the latter relies on a stronger assumption"
+  },
+  {
+    "source_cio": "CIO_025",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Single-view inference has a decent pass@1 accuracy of 35.9"
+  },
+  {
+    "source_cio": "CIO_026",
+    "target_am": "AM_006",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "multi-view inference further boosts to 49.8, thanks to majority voting."
+  },
+  {
+    "source_cio": "CIO_027",
+    "target_am": "AM_006",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This may explain the large gain seen here."
+  },
+  {
+    "source_cio": "CIO_028",
+    "target_am": "AM_006",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This may explain the large gain seen here."
+  },
+  {
+    "source_cio": "CIO_029",
+    "target_am": "AM_006",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "multi-view inference further boosts to 49.8, thanks to majority voting."
+  },
+  {
+    "source_cio": "CIO_030",
+    "target_am": "AM_006",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "To support this metric, we adopt majority voting in multi-view inference and retain the top-2 most populated output solutions."
+  },
+  {
+    "source_cio": "CIO_031",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Our single-model result is based on ViT, with mean±std of 54.5±0.7 (ARC-1) and 8.3±0.4 (ARC-2)"
+  },
+  {
+    "source_cio": "CIO_032",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Our VARC with 18M parameters is ~10 points better than TRM on ARC-1, a >20% relative improvement."
+  },
+  {
+    "source_cio": "CIO_033",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Doing so boosts our result to 60.4."
+  },
+  {
+    "source_cio": "CIO_033",
+    "target_am": "AM_006",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Following the classical ensembling practice in vision... Doing so boosts our result to 60.4."
+  },
+  {
+    "source_cio": "CIO_034",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This result closes the gap with the reported average human performance (60.2 [31])."
+  },
+  {
+    "source_cio": "CIO_035",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Our method does not rely on such data and uses a model that is several orders of magnitude smaller."
+  },
+  {
+    "source_cio": "CIO_036",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "our model performs fully feedforward inference, with no recurrence involved in reasoning."
+  },
+  {
+    "source_cio": "CIO_037",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Our method does not rely on such data and uses a model that is several orders of magnitude smaller."
+  },
+  {
+    "source_cio": "CIO_038",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "VARC (ensemble) 73M 60.4 11.1"
+  },
+  {
+    "source_cio": "CIO_038",
+    "target_am": "AM_006",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "VARC (ensemble) 73M 60.4 11.1"
+  },
+  {
+    "source_cio": "CIO_039",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "VARC 18M 54.5 8.3"
+  },
+  {
+    "source_cio": "CIO_040",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "These attention maps show that our model can correctly reason about the relationship between a source pixel and its target pixel"
+  },
+  {
+    "source_cio": "CIO_041",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "A layer-wise map... reveals which pixels receive the most attention in that layer. In this task, different layers exhibit different specialties"
+  },
+  {
+    "source_cio": "CIO_042",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This visualization suggests that our method attempts to learn the relations between different tasks, which is an essential ability for abstraction and reasoning."
+  },
+  {
+    "source_cio": "CIO_043",
+    "target_am": "AM_009",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This comparison suggests that increasing the amount of offline training data is beneficial"
+  },
+  {
+    "source_cio": "CIO_044",
+    "target_am": "AM_009",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "suggesting that the diversity of training tasks is helpful for generalization."
+  },
+  {
+    "source_cio": "CIO_045",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "On ARC-1, the pass@k accuracy is 49.8, 54.5, and 66.3, when k is 1, 2, and 300, respectively"
+  },
+  {
+    "source_cio": "CIO_046",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "On ARC-1, the pass@k accuracy is 49.8, 54.5, and 66.3, when k is 1, 2, and 300, respectively"
+  },
+  {
+    "source_cio": "CIO_046",
+    "target_am": "AM_006",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "To support this metric, we adopt majority voting in multi-view inference and retain the top-2 most populated output solutions."
+  },
+  {
+    "source_cio": "CIO_047",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "On ARC-1, the pass@k accuracy is 49.8, 54.5, and 66.3, when k is 1, 2, and 300, respectively"
+  },
+  {
+    "source_cio": "CIO_047",
+    "target_am": "AM_006",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This result indicates that our model produces correct predictions in some of the many views"
+  },
+  {
+    "source_cio": "CIO_048",
+    "target_am": "AM_006",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "As expected, as the number of proposals (k) increases, the pass@k accuracy increases."
+  },
+  {
+    "source_cio": "CIO_049",
+    "target_am": "AM_006",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This result indicates that our model produces correct predictions in some of the many views, although such correct cases are not sufficiently populated to be retained after voting."
+  },
+  {
+    "source_cio": "CIO_050",
+    "target_am": "AM_012",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "our method uncovers different solutions that are plausible."
+  },
+  {
+    "source_cio": "CIO_051",
+    "target_am": "AM_012",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "our model attempts to interpret the rule as either 'going-through-only' (attempt 1) or 'touching' (attempt 2)."
+  },
+  {
+    "source_cio": "CIO_052",
+    "target_am": "AM_012",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "our model attempts to interpret the rule as either 'going-through-only' (attempt 1) or 'touching' (attempt 2)."
+  },
+  {
+    "source_cio": "CIO_053",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Examples of test tasks successfully solved by VARC."
+  },
+  {
+    "source_cio": "CIO_054",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Examples of test tasks successfully solved by VARC."
+  },
+  {
+    "source_cio": "CIO_055",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Examples of test tasks successfully solved by VARC."
+  },
+  {
+    "source_cio": "CIO_058",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Examples of test tasks successfully solved by VARC."
+  },
+  {
+    "source_cio": "CIO_059",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Examples of test tasks successfully solved by VARC."
+  },
+  {
+    "source_cio": "CIO_060",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Examples of test tasks successfully solved by VARC."
+  },
+  {
+    "source_cio": "CIO_063",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Early layers tend to focus on local transformations and context."
+  },
+  {
+    "source_cio": "CIO_064",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "different layers exhibit different specialties: some layers attend to the pixels that are to be copied"
+  },
+  {
+    "source_cio": "CIO_065",
+    "target_am": "AM_013",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "As the test-time training progresses, the model's predictions gradually converge toward the correct output."
+  },
+  {
+    "source_cio": "CIO_066",
+    "target_am": "AM_013",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "In early epochs, the model produces coarse and imprecise structures"
+  },
+  {
+    "source_cio": "CIO_067",
+    "target_am": "AM_013",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "in later epochs, the model can improve the solutions, e.g., by refining color and spatial arrangement."
+  }
+]

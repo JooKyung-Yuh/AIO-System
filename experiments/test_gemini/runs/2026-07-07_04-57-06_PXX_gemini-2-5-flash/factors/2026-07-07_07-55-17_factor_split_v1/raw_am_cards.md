@@ -1,0 +1,144 @@
+```json
+[
+  {
+    "am_id": "AM_001",
+    "kind": "mechanism",
+    "node": "M7",
+    "aliases": [],
+    "gloss": "Abstraction and inference arise directly from visual learning.",
+    "provenance": {
+      "location": "Section 1"
+    }
+  },
+  {
+    "am_id": "AM_002",
+    "kind": "mechanism",
+    "node": "M10",
+    "aliases": [
+      "M17",
+      "M34",
+      "M36"
+    ],
+    "gloss": "Canvas patches with many color combinations reduce overfitting and learn spatial priors.",
+    "provenance": {
+      "location": "Section 1"
+    }
+  },
+  {
+    "am_id": "AM_003",
+    "kind": "mechanism",
+    "node": "M16",
+    "aliases": [
+      "M19"
+    ],
+    "gloss": "Canvas accommodates augmentations, introducing translation and scale invariance in vision.",
+    "provenance": {
+      "location": "Section 3.3"
+    }
+  },
+  {
+    "am_id": "AM_004",
+    "kind": "mechanism",
+    "node": "M20",
+    "aliases": [],
+    "gloss": "Data augmentations encourage learning mappings invariant to geometric transformations.",
+    "provenance": {
+      "location": "Section 3.3"
+    }
+  },
+  {
+    "am_id": "AM_005",
+    "kind": "mechanism",
+    "node": "M23",
+    "aliases": [],
+    "gloss": "Patchification incorporates inductive biases: locality and translation invariance.",
+    "provenance": {
+      "location": "Section 3.3"
+    }
+  },
+  {
+    "am_id": "AM_006",
+    "kind": "mechanism",
+    "node": "M27",
+    "aliases": [
+      "M28",
+      "M33",
+      "M42"
+    ],
+    "gloss": "Multi-view predictions are consolidated by majority voting for top-2 solutions.",
+    "provenance": {
+      "location": "Section 3.5"
+    }
+  },
+  {
+    "am_id": "AM_007",
+    "kind": "mechanism",
+    "node": "M29",
+    "aliases": [],
+    "gloss": "Predictions from multiple canvas pixels are aggregated by average pooling.",
+    "provenance": {
+      "location": "Section 3.5"
+    }
+  },
+  {
+    "am_id": "AM_008",
+    "kind": "assumption",
+    "node": "A12",
+    "aliases": [],
+    "gloss": "Auxiliary tasks are translation and scale invariant.",
+    "provenance": {
+      "location": "Section 4"
+    }
+  },
+  {
+    "am_id": "AM_009",
+    "kind": "mechanism",
+    "node": "M40",
+    "aliases": [],
+    "gloss": "Common sense about the visual world can be learned from training data.",
+    "provenance": {
+      "location": "Section 5.2"
+    }
+  },
+  {
+    "am_id": "AM_010",
+    "kind": "assumption",
+    "node": "A19",
+    "aliases": [],
+    "gloss": "Multiple unseen tasks cannot be assumed available simultaneously.",
+    "provenance": {
+      "location": "Footnote 3"
+    }
+  },
+  {
+    "am_id": "AM_011",
+    "kind": "mechanism",
+    "node": "M54",
+    "aliases": [],
+    "gloss": "Attention masks encourage focus on foreground pixels, improving accuracy.",
+    "provenance": {
+      "location": "Section A.3"
+    }
+  },
+  {
+    "am_id": "AM_012",
+    "kind": "mechanism",
+    "node": "M58",
+    "aliases": [],
+    "gloss": "Model interprets ambiguous rules by proposing multiple plausible solutions.",
+    "provenance": {
+      "location": "Section C.2"
+    }
+  },
+  {
+    "am_id": "AM_013",
+    "kind": "mechanism",
+    "node": "M69",
+    "aliases": [],
+    "gloss": "Test-time training refines predictions by improving color and spatial arrangement.",
+    "provenance": {
+      "location": "Figure 22 caption"
+    }
+  }
+]
+```
