@@ -116,7 +116,16 @@ def main():
 
     run_dir = Path(args.run_dir)
     if args.builds:
-        build_dirs = [Path(b) for b in args.builds]
+        # Accept either a bare build name (resolved under run-dir/factors/) or a full path.
+        def resolve(b):
+            p = Path(b)
+            if (p / "cio_cards.json").exists():
+                return p
+            cand = run_dir / "factors" / b
+            if (cand / "cio_cards.json").exists():
+                return cand
+            sys.exit(f"build not found: {b} (looked at {p} and {cand})")
+        build_dirs = [resolve(b) for b in args.builds]
     else:
         all_dirs = sorted(glob.glob(str(run_dir / "factors" / "*" / "cio_cards.json")))
         build_dirs = [Path(p).parent for p in all_dirs]
@@ -130,9 +139,14 @@ def main():
         p = b["meta"].get("prompts")
         return tuple(sorted(p.items())) if p else ("legacy",)
     if args.auto:
-        newest = max(builds, key=lambda b: b["meta"].get("timestamp", ""))
-        want = prompt_key(newest)
-        builds = [b for b in builds if prompt_key(b) == want]
+        # Pool the LARGEST same-prompt cohort (ties broken by the most recent build), so a
+        # stray one-off build on a different prompt never shrinks the vote to itself.
+        groups = collections.defaultdict(list)
+        for b in builds:
+            groups[prompt_key(b)].append(b)
+        want = max(groups, key=lambda k: (len(groups[k]),
+                                          max(b["meta"].get("timestamp", "") for b in groups[k])))
+        builds = groups[want]
     else:
         keys = {prompt_key(b) for b in builds}
         if len(keys) > 1:
