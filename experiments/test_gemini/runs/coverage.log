@@ -1,0 +1,2 @@
+2026-07-07T04:13:26.452023+00:00	extract_aio	aiocm_debug_v7	2026-07-07_04-13-26_PXX_gemini-2-5-flash	text=32.6% (13780/42236 chars)  figures=100.0% (15/15)  tables=100.0% (4/4)  spans=585 sentences=444
+2026-07-07T04:57:06.862079+00:00	extract_aio	aiocm_debug_v7	2026-07-07_04-57-06_PXX_gemini-2-5-flash	text=34.5% (21143/61236 chars)  figures=100.0% (22/22)  tables=100.0% (7/7)  spans=591 sentences=426

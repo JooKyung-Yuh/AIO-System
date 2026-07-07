@@ -1,0 +1,131 @@
+{
+  "run_id": "2026-07-07_04-51-41_PXX_transcribe_gemini-2-5-flash",
+  "task": "transcribe",
+  "timestamp": "2026-07-07T04:51:41.538374+00:00",
+  "paper_id": "PXX",
+  "pdf_path": "docs/VARC.pdf",
+  "pdf_sha256": "16b7b3f71e7d081929704b43f540a6dd56719ee3f850877d98de80d0f2dc9e0b",
+  "pdf_size_bytes": 37485467,
+  "model": "gemini-2.5-flash",
+  "temperature": 0.0,
+  "pages_per_chunk": 4,
+  "n_chunks": 5,
+  "out_text_path": "docs/VARC.txt",
+  "out_assets_path": "docs/VARC.assets.json",
+  "status": "success",
+  "char_count": 61289,
+  "n_figures": 23,
+  "n_tables": 7,
+  "any_truncated": false,
+  "any_empty_chunks": false,
+  "empty_chunks": [],
+  "chunks": [
+    {
+      "chunk_index": 1,
+      "page_range": "1-4",
+      "prose_chars": 18229,
+      "n_figures": 5,
+      "n_tables": 0,
+      "finish_reason": "FinishReason.STOP",
+      "attempts": 1,
+      "empty": false,
+      "split": false,
+      "sub_ranges": [
+        "pages 1-4"
+      ],
+      "usage": {
+        "prompt_token_count": 1248,
+        "thoughts_token_count": 0,
+        "candidates_token_count": 5278,
+        "total_token_count": 6526
+      }
+    },
+    {
+      "chunk_index": 2,
+      "page_range": "5-8",
+      "prose_chars": 19069,
+      "n_figures": 8,
+      "n_tables": 3,
+      "finish_reason": "FinishReason.STOP",
+      "attempts": 2,
+      "empty": false,
+      "split": true,
+      "sub_ranges": [
+        "pages 5-6",
+        "pages 7-8"
+      ],
+      "usage": {
+        "prompt_token_count": 1464,
+        "thoughts_token_count": 0,
+        "candidates_token_count": 6724,
+        "total_token_count": 8188
+      }
+    },
+    {
+      "chunk_index": 3,
+      "page_range": "9-12",
+      "prose_chars": 18591,
+      "n_figures": 10,
+      "n_tables": 4,
+      "finish_reason": "FinishReason.STOP",
+      "attempts": 1,
+      "empty": false,
+      "split": false,
+      "sub_ranges": [
+        "pages 9-12"
+      ],
+      "usage": {
+        "prompt_token_count": 1248,
+        "thoughts_token_count": 0,
+        "candidates_token_count": 7054,
+        "total_token_count": 8302
+      }
+    },
+    {
+      "chunk_index": 4,
+      "page_range": "13-16",
+      "prose_chars": 4466,
+      "n_figures": 5,
+      "n_tables": 0,
+      "finish_reason": "FinishReason.STOP",
+      "attempts": 1,
+      "empty": false,
+      "split": false,
+      "sub_ranges": [
+        "pages 13-16"
+      ],
+      "usage": {
+        "prompt_token_count": 1248,
+        "thoughts_token_count": 0,
+        "candidates_token_count": 2970,
+        "total_token_count": 4218
+      }
+    },
+    {
+      "chunk_index": 5,
+      "page_range": "17-17",
+      "prose_chars": 805,
+      "n_figures": 1,
+      "n_tables": 0,
+      "finish_reason": "FinishReason.STOP",
+      "attempts": 1,
+      "empty": false,
+      "split": false,
+      "sub_ranges": [
+        "pages 17-17"
+      ],
+      "usage": {
+        "prompt_token_count": 474,
+        "thoughts_token_count": 0,
+        "candidates_token_count": 514,
+        "total_token_count": 988
+      }
+    }
+  ],
+  "usage": {
+    "prompt_token_count": 5682,
+    "thoughts_token_count": 0,
+    "candidates_token_count": 22540,
+    "total_token_count": 28222
+  }
+}

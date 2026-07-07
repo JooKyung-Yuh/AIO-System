@@ -1,0 +1,58 @@
+{
+  "text": {
+    "coverage_pct": 32.6,
+    "chars_covered": 13780,
+    "chars_total": 42236,
+    "extractable": true
+  },
+  "figures": {
+    "coverage_pct": 100.0,
+    "covered": 15,
+    "total": 15,
+    "covered_ids": [
+      "figure 1",
+      "figure 13",
+      "figure 14",
+      "figure 15",
+      "figure 16",
+      "figure 17",
+      "figure 18",
+      "figure 19",
+      "figure 2",
+      "figure 20",
+      "figure 21",
+      "figure 22",
+      "figure 3",
+      "figure 4",
+      "figure 5"
+    ],
+    "missing_ids": []
+  },
+  "tables": {
+    "coverage_pct": 100.0,
+    "covered": 4,
+    "total": 4,
+    "covered_ids": [
+      "table 4",
+      "table 5",
+      "table 6",
+      "table 7"
+    ],
+    "missing_ids": []
+  },
+  "structural": {
+    "total_spans": 585,
+    "by_category": {
+      "assumption": 21,
+      "context": 271,
+      "mechanism": 71,
+      "intervention": 94,
+      "eval_metric": 38,
+      "pattern": 90,
+      "unresolved": 0
+    },
+    "distinct_source_sentences": 444,
+    "n_pages": 17,
+    "spans_per_page": 34.41
+  }
+}

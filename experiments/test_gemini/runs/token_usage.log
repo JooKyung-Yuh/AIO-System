@@ -1,3 +1,9 @@
 2026-07-05T12:01:45.029707+00:00	extract_aio	aiocm_debug_v5	2026-07-05_12-01-45_PXX_gemini-2-5-flash	prompt=7468 thoughts=23423 output=42109 total=73000	finish=FinishReason.MAX_TOKENS
 2026-07-05T12:09:45.265196+00:00	extract_aio	aiocm_debug_v5	2026-07-05_12-09-45_PXX_gemini-2-5-flash	prompt=19796 thoughts=46580 output=62760 total=129136	chunks=5
 2026-07-05T12:19:00.548681+00:00	build_factors	factor_merge_v3	2026-07-05_12-19-00_factor_merge_v3	prompt=77895 thoughts=14487 output=2269 total=94651	finish=FinishReason.STOP
+2026-07-07T03:53:02.198802+00:00	extract_text	transcribe	2026-07-07_03-53-02_PXX_transcribe_gemini-2-5-flash	prompt=5466 thoughts=0 output=21164 total=26630	chunks=5
+2026-07-07T04:13:26.452023+00:00	extract_aio	aiocm_debug_v7	2026-07-07_04-13-26_PXX_gemini-2-5-flash	prompt=23871 thoughts=61486 output=83978 total=169335	chunks=5
+2026-07-07T04:40:03.838581+00:00	extract_text	transcribe	2026-07-07_04-40-03_PXX_transcribe_gemini-2-5-flash	prompt=7962 thoughts=0 output=31826 total=39788	chunks=5
+2026-07-07T04:45:47.152253+00:00	extract_text	transcribe	2026-07-07_04-45-47_PXX_transcribe_gemini-2-5-flash	prompt=9210 thoughts=0 output=37330 total=46540	chunks=5
+2026-07-07T04:51:41.538374+00:00	extract_text	transcribe	2026-07-07_04-51-41_PXX_transcribe_gemini-2-5-flash	prompt=5682 thoughts=0 output=22540 total=28222	chunks=5
+2026-07-07T04:57:06.862079+00:00	extract_aio	aiocm_debug_v7	2026-07-07_04-57-06_PXX_gemini-2-5-flash	prompt=23871 thoughts=65733 output=84953 total=174557	chunks=5

@@ -1,0 +1,9 @@
+run_id: 2026-07-07_03-53-02_PXX_transcribe_gemini-2-5-flash
+task: transcribe
+timestamp: 2026-07-07T03:53:02.198802+00:00
+model: gemini-2.5-flash
+n_chunks: 5
+char_count: 42260
+figures: 15
+tables: 4
+tokens (summed over chunks): prompt=5466 thoughts=0 output=21164 total=26630

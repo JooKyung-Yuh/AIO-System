@@ -1,0 +1,126 @@
+{
+  "figures": [
+    {
+      "id": "Figure 1",
+      "description": "The top part shows the ARC benchmark structure with training tasks (X, y pairs) and test tasks (X, ? pairs). The bottom part illustrates the proposed Vision ARC (VARC) framework, showing how an input task (X, y pairs for training, X, ? for inference) is processed by a VARC network to produce a model prediction. The example tasks are visually represented with grids of colored squares, demonstrating concepts like reflection, symmetry, and gravity. The VARC network takes the task as input and outputs a model prediction, indicating an image-to-image translation approach."
+    },
+    {
+      "id": "Figure 2",
+      "description": "This figure presents three examples of unseen ARC tasks solved by VARC. Each panel shows a task with a few demonstration input-output pairs (X, y) at the top, and an inference input (Xinfer) with the model's predicted output (model prediction) at the bottom. The tasks involve transforming grids of colored squares. For instance, ARC-1 shows a task where the input grid is reflected and colored, ARC-2 shows a task where objects are moved and colored based on a pattern, and the third task (unlabeled) shows a transformation involving object selection and coloring. The model's predictions accurately match the expected outputs for these challenging tasks."
+    },
+    {
+      "id": "Figure 3",
+      "description": "This figure illustrates the ARC problem definition. It shows a 'Training Set Ttrain' and a 'Test Set Ttest', each containing multiple tasks (e.g., Task 1, Task 400). For each task, there are demonstration pairs (X, y) and inference pairs (Xinfer, Yinfer). In the training set, both X and y are known for demonstrations, and Xinfer is given for inference, with Yinfer to be predicted. In the test set, only demonstration pairs (X, y) and Xinfer are given, and the model must infer Yinfer. The figure uses grids of colored squares to represent the inputs and outputs, with question marks indicating unknown outputs to be predicted."
+    },
+    {
+      "id": "Figure 4",
+      "description": "This figure demonstrates the 'canvas' concept and data augmentations used in VARC. The left panel shows 'Scale' augmentation: a raw input grid (e.g., a 2x2 pattern of colored squares) is scaled up by duplicating pixels (e.g., into a 4x4 grid). The right panel shows 'Translation' augmentation: the scaled grid is randomly placed on a larger fixed-size 'canvas' (represented by a gray background). Both transformations are applied to the raw input before it is processed by the model."
+    },
+    {
+      "id": "Figure 5",
+      "description": "This figure illustrates the Vision Transformer (ViT) architecture used in VARC. The input is first randomly placed on a 'canvas' (shown in gray). This canvas is then divided into non-overlapping 'patch embeddings'. These embeddings, along with a 'task' token, are fed into a stack of 'Transformer blocks'. The output from the Transformer blocks is then passed through a 'predictor' layer, which generates the final output grid. The 'off canvas' area is also shown, indicating the background color."
+    },
+    {
+      "id": "Figure 6",
+      "description": "The top row shows demonstration examples for a task, with input and output grids. The bottom left shows an inference example input grid. The bottom right shows a sequence of grids illustrating the test-time training process, where an initial incorrect prediction for the inference example gradually becomes more accurate through training steps, eventually leading to the correct output grid."
+    },
+    {
+      "id": "Figure 7",
+      "description": "A bar chart showing the accuracy (in percentage) of different visual priors on the ARC-1 evaluation set. It starts with a 'naïve baseline' at 26.8%, then shows cumulative improvements with 'w/ 2D absolute pos embed' (32.8%), 'w/ 2D ROPE' (43.0%), '1x1 patch on 32x32 → 2x2 patch on 64x64' (45.4%), 'w/ translation aug. on canvas' (48.3%), and finally 'w/ scale aug. on canvas' (54.5%). Each bar represents an incremental improvement over the previous one."
+    },
+    {
+      "id": "Figure 8",
+      "description": "A scatter plot showing the scalability of ViT models with varying width (x-axis, 256 to 512) and depth (indicated by different colored circles, Depth=5 and Depth=10) against accuracy (y-axis, 35% to 60%). The circle areas denote model sizes (3M to 18M). Generally, increasing width and depth leads to higher accuracy, with larger models achieving better performance."
+    },
+    {
+      "id": "Figure 9",
+      "description": "A bar chart comparing TTT strategies. It shows accuracy (y-axis, 0% to 80%) for 'TTT jointly' and 'TTT independently' strategies, both with and without offline training. 'w/ offline training' consistently yields higher accuracy (54.5% for both joint and independent) compared to 'wo/ offline training' (44.8% for joint, 29.1% for independent). The 'TTT jointly' strategy performs better than 'TTT independently' when offline training is not used, but they are equal when offline training is used."
+    },
+    {
+      "id": "Figure 9(b)",
+      "description": "This figure is referenced but not shown on the page. It is described as studying TTT with and without offline training, and TTT performed jointly on all test tasks vs. independently for each test task."
+    },
+    {
+      "id": "Figure 10",
+      "description": "This figure visualizes pixel-to-pixel attention for an ARC-1 eval test task. The top panel shows demo pairs, inference input, and model prediction. The middle panel shows attention maps for a single pixel across different layers, with pre-softmax logits. Different layers exhibit different behaviors. The bottom panel shows attention maps in layer 8 with other query pixels, all correctly attending to their corresponding palette pixel."
+    },
+    {
+      "id": "Figure 11",
+      "description": "This figure visualizes layer-wise attention maps for an ARC-1 eval test task. For each layer, pixel-to-pixel attention is computed and then averaged across all pixels to obtain a single map per layer. Some layers exhibit strong attention to the 3x3 neighborhood, reflecting the influence of the pattern's core. Other layers (e.g., layers 7-9) focus on outward-radiating rays, corresponding to the rule that extends colored pixels along eight directions."
+    },
+    {
+      "id": "Figure 12",
+      "description": "This figure shows a t-SNE visualization of task embeddings for the 400 task tokens learned from the ARC-1 training set. Each point represents a single task. Human-written descriptions are provided for some tasks to aid understanding. The visualization shows that nearby points in the embedding space exhibit similar semantics, e.g., top-left corner shows two coloring tasks, bottom-left corner shows two generalized logic operations (AND/OR/XOR)."
+    },
+    {
+      "id": "Figure 13",
+      "description": "Two pairs of input/output grids demonstrating shape handling. The left pair shows a 1x scaling ratio, with a small input grid and a slightly larger output grid. The right pair shows a 2x scaling ratio, with a larger input grid and an even larger output grid. In both cases, gray pixels denote background tokens, and white pixels denote border tokens indicating the output shape."
+    },
+    {
+      "id": "Figure 14",
+      "description": "A line graph showing the evaluation accuracy (%) on the ARC-1 eval set as a function of the number of offline training RE-ARC pairs per task (log-scaled). Accuracy increases from around 30% with 0 pairs to over 50% with 1000 pairs, showing diminishing returns."
+    },
+    {
+      "id": "Figure 15",
+      "description": "A line graph showing the evaluation accuracy (%) on the ARC-1 eval set as a function of offline training task diversity (log-scaled). Accuracy increases from around 25% with 0 tasks to over 50% with 400 tasks, indicating that diversity is beneficial."
+    },
+    {
+      "id": "Figure 16",
+      "description": "Four line graphs showing Pass@k (Cumulative Success Rate) on ARC-1 (left) and ARC-2 (right) evaluation sets, for both a single ViT-18M model (top) and an ensemble (bottom). In all graphs, Pass@k increases with k, showing that more proposals lead to higher success rates. The ensemble generally achieves higher Pass@k values than the single model."
+    },
+    {
+      "id": "Figure 17",
+      "description": "A grid of successful and failed examples from ARC-1. Each example shows an input grid, a ground truth output grid, and the model's predicted output grid. Successful examples show the model's prediction matching the ground truth, while failed examples show discrepancies."
+    },
+    {
+      "id": "Figure 18",
+      "description": "A grid of successful and failed examples from ARC-2. Similar to Figure 17, each example shows input, ground truth, and predicted output grids, highlighting both correct and incorrect predictions."
+    },
+    {
+      "id": "Figure 19",
+      "description": "An example of an ambiguous ARC task showing an input grid, a ground truth output grid, and two plausible solutions generated by the model. The first solution interprets the rule as 'turn red box blue only if extended blue lines go through the box,' while the second interprets it as 'turn red box blue if extended blue lines touch the box in any form.'"
+    },
+    {
+      "id": "Figure 20",
+      "description": "A visualization of pixel-wise attention maps. For a specified query pixel, the map shows the attention weights across the input grid, highlighting which input regions the model focuses on."
+    },
+    {
+      "id": "Figure 21",
+      "description": "A visualization of layer-wise attention maps. For different layers of the model, the attention maps averaged across all pixels are shown, indicating the overall focus of the model at different processing stages."
+    },
+    {
+      "id": "Figure 22",
+      "description": "A visualization of test-time training evolution. Each row represents a distinct test task, showing the model's predicted output grid at different stages of test-time training, demonstrating how predictions are progressively refined."
+    }
+  ],
+  "tables": [
+    {
+      "id": "Table 1",
+      "description": "A table comparing different ViT and U-Net models based on their width, depth, number of parameters (#params), Gflops, and accuracy (acc.). ViT models (384 width, 5 depth; 512 width, 10 depth; 768 width, 20 depth) show increasing #params, Gflops, and accuracy (44.4% to 54.5%) with larger sizes. U-Net models (setting (a), (b), (c)) also show increasing #params, Gflops, and accuracy (42.8% to 48.3%) with larger sizes, but ViT models consistently achieve higher accuracy for comparable sizes."
+    },
+    {
+      "id": "Table 2",
+      "description": "This table compares single-view and multi-view inference accuracy (pass@1). Single-view achieves 35.9, while multi-view achieves 49.8 and 54.5 (pass@2), showing a significant boost from multi-view inference due to majority voting."
+    },
+    {
+      "id": "Table 3",
+      "description": "This table provides system-level comparisons on ARC-1 and ARC-2 benchmarks, comparing large language models (LLMs), recurrent models, and vision models (VARC) against human performance. LLMs show a wide range of performance, with Grok-4-thinking and Bespoke (Grok-4) achieving the highest ARC-1 scores (66.7 and 79.6 respectively). Recurrent models (HRM, TRM) achieve ARC-1 scores around 40-45. VARC (18M) achieves 54.5 on ARC-1 and 8.3 on ARC-2, and VARC (ensemble, 73M) achieves 60.4 on ARC-1 and 11.1 on ARC-2. The VARC ensemble result (60.4) closes the gap with average human performance (60.2). Best human performance is 98.0 on ARC-1 and 100.0 on ARC-2."
+    },
+    {
+      "id": "Table 4",
+      "description": "Compares configurations for offline training and test-time training, detailing epochs (100 for both), warmup epochs (10 for both), optimizer (Adam for both), batch size (32 for offline, 8 for test-time), learning rate (3e-4 for both), learning rate scheduler (cosine for both), weight decay (0 for both), and dropout (0.1 for both)."
+    },
+    {
+      "id": "Table 5",
+      "description": "Reports the running time of the ViT-18M model for both offline and test-time training. Offline training uses 8 H100 GPUs for 4.8 hours, while test-time training uses 1 H100 GPU for 0.7 seconds per epoch."
+    },
+    {
+      "id": "Table 6",
+      "description": "Details the configurations for three ViT architectures (6M, 18M, 66M), specifying hidden dimension (384, 512, 768), Transformer blocks (5, 10, 20), number of heads (8, 8, 12), MLP block hidden dimension (512 for all), dropout (0.1 for all), patch size (2x2 for all), and canvas size (64x64 for all)."
+    },
+    {
+      "id": "Table 7",
+      "description": "Details the configurations for three U-Net architectures (7M, 17M, 55M), specifying the number of stages (3 for all), layers per stage (1, 1, 2), channels at resolution 1 (80, 120, 160), attention at resolution 1 (No for all), channels at resolution 2 (160, 240, 320), attention at resolution 2 (Yes for all), channels at resolution 3 (160, 240, 320), attention at resolution 3 (Yes for all), and mid block (No for all)."
+    }
+  ]
+}

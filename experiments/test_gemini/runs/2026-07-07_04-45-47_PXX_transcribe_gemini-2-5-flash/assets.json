@@ -1,0 +1,82 @@
+{
+  "figures": [
+    {
+      "id": "Figure 1",
+      "description": "The top part shows the ARC benchmark structure with training tasks (X, y pairs) and test tasks (X, ? pairs). The bottom part illustrates the proposed Vision ARC (VARC) framework, showing how an input X is processed through a VARC network to produce a model prediction y. Three example tasks are shown: reflection, symmetry, and gravity, with their respective input-output pairs for training and an input for inference. The VARC network takes a task token and an input image, processing them to generate a prediction."
+    },
+    {
+      "id": "Figure 2",
+      "description": "This figure displays three unseen test tasks solved by VARC. Each task (ARC-1, ARC-2, ARC-3) shows a set of demonstration input-output pairs (X, y) at the top, followed by an inference input (Xinfer) and the model's predicted output (model prediction) at the bottom. For ARC-1, the task involves filling a square with a specific color based on the input pattern. For ARC-2, the task involves mirroring or reflecting a pattern. For ARC-3, the task involves moving a colored block downwards until it hits another block or the bottom edge, simulating gravity. In all cases, the model's prediction matches the expected output."
+    },
+    {
+      "id": "Figure 3",
+      "description": "This figure illustrates the ARC problem definition. It shows a 'Training Set Ttrain' with two example tasks (Task 1 and Task 400), each having demonstration pairs (X, y) and inference pairs (Xinfer, Linfer). Similarly, a 'Test Set Ttest' is shown with two new tasks (Task 1 and Task 400), each having demonstration pairs (X, y) and an inference input (Xinfer) for which the model needs to predict the output (?). The arrows indicate that the model uses the demonstration pairs to infer the output for the inference input. The overall structure highlights the few-shot, many-task nature of ARC."
+    },
+    {
+      "id": "Figure 4",
+      "description": "This figure demonstrates the 'canvas' concept and data augmentations. The left panel shows 'Scale' augmentation: a small input grid is scaled up by duplicating pixels to create a larger grid. The right panel shows 'Translation' augmentation: the scaled grid is randomly placed on a larger gray 'canvas'. Both transformations are applied to the raw input before it is processed by the model."
+    },
+    {
+      "id": "Figure 5",
+      "description": "This figure illustrates the Vision Transformer (ViT) architecture used in VARC. The input, which is randomly placed on a canvas, is first processed by a 'patch embedding' layer. This embedded representation, along with a 'task' token, is then fed into a stack of 'Transformer block' layers. Finally, a 'predictor' layer generates the output, which is then mapped back to the 'off canvas' representation. The diagram shows the flow from input canvas to patch embeddings, through multiple transformer blocks, to the predictor, and finally to the output."
+    },
+    {
+      "id": "Figure 13",
+      "description": "Two examples of shape handling. The left example shows a pair (x, y) with a scaling ratio of 1x, where the input grid has a 3x3 red square and the output grid has a 3x3 blue square. The right example shows a pair (x, y) with a scaling ratio of 2x, where the input grid has a 2x2 red square and the output grid has a 4x4 blue square. In both examples, gray pixels denote background tokens and white pixels denote border tokens, indicating the output shape."
+    },
+    {
+      "id": "Figure 14",
+      "description": "A line graph showing the evaluation accuracy (%) on the ARC-1 eval set as a function of the number of offline training RE-ARC pairs per task (log-scaled). The accuracy increases from 31.5% with 0 pairs to 54.0% with 1000 pairs, showing diminishing returns."
+    },
+    {
+      "id": "Figure 15",
+      "description": "A line graph showing the evaluation accuracy (%) on the ARC-1 eval set as a function of offline training task diversity (log-scaled). The accuracy increases from 26.4% with 0 tasks to 54.5% with 400 tasks, indicating that diversity is beneficial."
+    },
+    {
+      "id": "Figure 16",
+      "description": "Four line graphs showing Pass@k (Cumulative Success Rate) results for ARC-1 and ARC-2 evaluation sets. The top-left graph shows Pass@k for ARC-1 using a single ViT-18M model, increasing from 49.8% at k=1 to 66.3% at k=300. The top-right graph shows Pass@k for ARC-2 using a single ViT-18M model, increasing from 10.5% at k=1 to 15.0% at k=300. The bottom-left graph shows Pass@k for ARC-1 using an ensemble model, increasing from 57.5% at k=1 to 70.0% at k=300. The bottom-right graph shows Pass@k for ARC-2 using an ensemble model, increasing from 12.5% at k=1 to 17.5% at k=300. In all cases, Pass@k increases with k, and ensemble models perform better than single models."
+    },
+    {
+      "id": "Figure 17",
+      "description": "The figure presents examples of ARC-1 tasks, divided into 'Solved' (top) and 'Unsolved' (bottom) categories by VARC. For each task, two demonstration example pairs (input-output) are shown on the left. On the right, the inference input is displayed along with the first and second solutions proposed by VARC, each with a vote count. A green box indicates the correct output. In the 'Solved' section, VARC successfully identifies the correct output for four tasks, demonstrating abilities like pattern replication, object transformation, and color filling. In the 'Unsolved' section, VARC fails to produce the correct output for four tasks, with its proposed solutions differing from the ground truth, often missing key transformations or object manipulations."
+    },
+    {
+      "id": "Figure 18",
+      "description": "The figure displays examples of ARC-2 tasks, categorized into 'Solved' (top) and 'Unsolved' (bottom) by VARC. Similar to Figure 17, each task shows two demonstration example pairs (input-output) on the left, and the inference input with VARC's top two proposed solutions (and their votes) on the right. A green box highlights the correct output. The 'Solved' section shows VARC successfully solving four tasks, involving operations like object extraction, pattern completion, and color manipulation. The 'Unsolved' section illustrates four tasks where VARC's proposed solutions do not match the ground truth, indicating challenges in understanding complex spatial relationships, object transformations, or specific rule applications."
+    },
+    {
+      "id": "Figure 19",
+      "description": "The figure illustrates ambiguous ARC tasks and pixel-level attention maps. The top panel shows a task with three demonstration examples, an inference input, and two attempts (Attempt 1 and Attempt 2) along with the ground truth. The ambiguity lies in whether a blue line 'touching' a red rectangle should turn it blue, or only 'going through' it. Attempt 1 interprets 'going-through-only', while Attempt 2 interprets 'touching'. The bottom panel shows intermediate heatmaps for four different tasks (09c534e7*, 506d28a5, 0607ce86, 070dd51e) across 'Early', 'Mid', and 'Late' Transformer blocks. Each heatmap highlights attention for a query pixel (red-yellow border). Early layers show local focus (e.g., Block 2 for 09c534e7* focuses on the rectangle interior). Middle layers show non-local connections (e.g., Block 4 for 506d28a5 focuses on corresponding cells). Deep layers are task-specialized (e.g., Block 7 for 070dd51e focuses on relevant lines). Task 09c534e7* is marked with a red asterisk, indicating it was not correctly solved."
+    },
+    {
+      "id": "Figure 20",
+      "description": "The figure displays pixel-level attention maps for four ARC tasks (09c534e7*, 506d28a5, 0607ce86, 070dd51e) across 'Early', 'Mid', and 'Late' Transformer blocks. Each heatmap highlights attention for a query pixel (red-yellow border). Early layers (e.g., Block 2 for 09c534e7*) tend to focus on local transformations and context, such as the interior of connected boxes. Middle layers (e.g., Block 4 for 506d28a5) show more non-local connections, like logical OR operations between upper and lower parts. Deep layers (e.g., Block 7 for 070dd51e) are more task-specialized, focusing on specific features like endpoints of lines or relevant lines for connection. The red asterisk indicates that task 09c534e7* was not correctly solved."
+    },
+    {
+      "id": "Figure 21",
+      "description": "The figure presents layer-wise attention maps for four ARC tasks (0607ce86, 0bb8deee, 1c56ad9f, 1d0a4b61). For each task, demonstration examples (input-output pairs) are shown on the left, and the inference input with its output/ground truth is shown on the right. The main part of the figure consists of a grid of attention maps, showing the per-pixel softmax attention averaged across all pixels in each layer (Layer 0 to Layer 9). The color bar on the right indicates attention intensity from 0.0 (blue) to 1.0 (yellow). The maps show how attention patterns evolve through the layers, from more diffuse or local attention in early layers to more focused and structured attention in deeper layers, highlighting relevant regions or patterns for solving the task. For example, in 0607ce86, attention becomes more concentrated on the grid pattern as layers progress."
+    },
+    {
+      "id": "Figure 22",
+      "description": "The figure visualizes the test-time training (TTT) process for three different tasks, identified by IDs 55059096, 0c786b71, and ac3e2b04. For each task, two demonstrations (Demonstration 1 and Demonstration 2) are shown, followed by an 'Input' grid, the 'TTT process' showing intermediate prediction states, and the final 'Ground truth' grid. The 'TTT process' for each task displays a sequence of grids, illustrating how the model's predictions evolve and refine over time. For task 55059096, the model starts with coarse green crosses and gradually refines them into a specific pattern of green and red cells, matching the ground truth. For task 0c786b71, the model initially predicts a block of orange and purple, then refines the pattern to include blue and yellow cells in a specific arrangement. For task ac3e2b04, the model starts with a scattered pattern of blue and red cells and refines it into a structured grid of alternating blue and red blocks, matching the ground truth. The visualization demonstrates that as training progresses, the model's predictions converge from coarse, imprecise structures to accurate, refined solutions in terms of color and spatial arrangement."
+    }
+  ],
+  "tables": [
+    {
+      "id": "Table 4",
+      "description": "A table comparing the configurations for offline training and test-time training. Both use Adam optimizer with betas=(0.9, 0.999) and cosine learning rate scheduler, and 0 weight decay. Offline training uses 100 epochs, 10 warmup epochs, batch size 32, learning rate 3e-4, and dropout 0.1. Test-time training uses 100 epochs, 10 warmup epochs, batch size 8, learning rate 3e-4, and dropout 0.1."
+    },
+    {
+      "id": "Table 5",
+      "description": "A table showing the running time of the ViT-18M model for offline and test-time training. Offline training uses 8 H100 GPUs for 4.8 hours. Test-time training uses 1 H100 GPU for 0.7 seconds per epoch."
+    },
+    {
+      "id": "Table 6",
+      "description": "A table detailing the configurations for ViT models of sizes 6M, 18M, and 66M. Hidden dimension increases from 384 to 768, Transformer blocks from 5 to 20, and # heads from 8 to 12 as model size increases. MLP block hidden dim is fixed at 512, dropout at 0.1, patch size at 2x2, and canvas size at 64x64 for all models."
+    },
+    {
+      "id": "Table 7",
+      "description": "A table detailing the configurations for U-Net architectures of sizes 7M, 17M, and 55M. All models have 3 stages and 1 layer per stage (except 55M with 2 layers per stage). As model size increases, # channels at resolution 1 increases from 80 to 160, and # channels at resolution 2 and 3 increase from 160 to 320. Attention is not used at resolution 1 for any model, but is used at resolutions 2 and 3 for all models. Mid block is not used for any model."
+    }
+  ]
+}
