@@ -205,9 +205,15 @@ def category_counts(spans):
 
 
 # --- Figure / Table references: coverage is measured on THREE denominators, not one ---------
-# text coverage    = chars of the prose transcript spanned by verbatim quotes
-# figure coverage  = distinct figures cited by >=1 span / total figures in the paper
-# table coverage   = distinct tables cited by >=1 span / total tables in the paper
+# text coverage     = chars of the prose transcript spanned by verbatim quotes
+# figure/table cov. = each has TWO signals, not one:
+#   cited      = the figure/table's number is merely mentioned somewhere in the extracted
+#                spans' text (e.g. a Section-6 span saying "Fig. 10 shows..." counts) - weak,
+#                just means the paper passed by it, says nothing about what got extracted.
+#   dedicated  = at least one span's OWN location names that figure/table - the paper's
+#                actual content there was pulled into a role-labeled node. This is the signal
+#                that matters for Layer-2 (a figure with only "cited" coverage has nothing a
+#                factor card can select from).
 # The figure/table denominators come from <pdf>.assets.json (enumerated by extract_text.py).
 
 _FIG_RE = re.compile(r"\bfig(?:ure)?\.?\s*([0-9]+[a-z]?)", re.I)
@@ -222,7 +228,8 @@ def ref_ids(text):
 
 
 def cited_figures_tables(spans):
-    """Union of figure/table ids that the extracted spans are grounded in (location + text)."""
+    """Union of figure/table ids merely mentioned (location + text) across all spans - the
+    weak 'cited' signal. See dedicated_asset_ids() for the stronger one."""
     figs, tabs = set(), set()
     for s in spans or []:
         f, t = ref_ids(f"{s.get('location', '')} {s.get('text', '')}")
@@ -231,13 +238,37 @@ def cited_figures_tables(spans):
     return figs, tabs
 
 
-def _asset_set(asset_list, kind):
-    """Normalize an assets.json figures/tables list into a set of 'figure N' / 'table N' ids."""
+def _normalize_asset_id(s):
+    """Alnum-lowercase key, e.g. 'Figure 9(b)' -> 'figure9b'. Used (instead of the citation
+    regex) wherever an asset's OWN id must stay distinct from a same-numbered sibling -
+    _FIG_RE's 'Figure 9(b)' -> 'figure 9' collapse would otherwise silently merge them."""
+    return re.sub(r"[^a-z0-9]", "", (s or "").lower())
+
+
+def dedicated_asset_ids(spans):
+    """Figure/table ids with >=1 span whose OWN location names them - see module comment."""
+    figs, tabs = set(), set()
+    for s in spans or []:
+        for piece in (s.get("location") or "").split("|"):
+            n = _normalize_asset_id(piece)
+            if not n:
+                continue
+            if n.startswith("figure") or n.startswith("fig"):
+                figs.add(n)
+            elif n.startswith("table") or n.startswith("tab"):
+                tabs.add(n)
+    return figs, tabs
+
+
+def _asset_set(asset_list):
+    """Raw id strings from an assets.json figures/tables list (e.g. 'Figure 9(b)', 'Table 1').
+    Left unnormalized here - coverage_report() normalizes at comparison time so distinct
+    labels like 'Figure 9' and 'Figure 9(b)' are never collapsed into one denominator slot."""
     out = set()
     for a in asset_list or []:
         raw = a.get("id", "") if isinstance(a, dict) else str(a)
-        figs, tabs = ref_ids(raw)
-        out |= (figs if kind == "figure" else tabs)
+        if raw:
+            out.add(raw)
     return out
 
 
@@ -247,23 +278,45 @@ def load_asset_ids(assets_path):
         data = json.loads(Path(assets_path).read_text(encoding="utf-8"))
     except Exception:
         return set(), set()
-    return _asset_set(data.get("figures"), "figure"), _asset_set(data.get("tables"), "table")
+    return _asset_set(data.get("figures")), _asset_set(data.get("tables"))
 
 
 def _pct(n, d):
     return round(100 * n / d, 1) if d else None
 
 
+def _asset_dim(raw_ids, cited_ids, dedicated_ids):
+    """One figures/tables coverage dict: cited vs dedicated, both against the same
+    normalized-id denominator (see _normalize_asset_id)."""
+    by_norm = {}
+    for raw in raw_ids:
+        by_norm.setdefault(_normalize_asset_id(raw), raw)
+    cited_norm = {_normalize_asset_id(x) for x in cited_ids}
+    dedicated_norm = {_normalize_asset_id(x) for x in dedicated_ids}
+
+    def _slice(hit_norm):
+        hit = set(by_norm) & hit_norm
+        return {
+            "coverage_pct": _pct(len(hit), len(by_norm)),
+            "covered": len(hit),
+            "total": len(by_norm),
+            "covered_ids": sorted(by_norm[k] for k in hit),
+            "missing_ids": sorted(by_norm[k] for k in set(by_norm) - hit),
+        }
+
+    return {"cited": _slice(cited_norm), "dedicated": _slice(dedicated_norm)}
+
+
 def coverage_report(merged_spans, n_pages, char_covered, char_total,
                     figure_ids=None, table_ids=None):
     """Assemble the per-run coverage dict with three separate denominators (text/figure/table)
     plus structural counts. figure_ids/table_ids are the paper's full sets (from assets.json);
-    when empty, that dimension's coverage_pct is null."""
+    when empty, that dimension's coverage_pct is null. figures/tables each carry both a
+    'cited' and a 'dedicated' reading - see the module comment above."""
     figure_ids = set(figure_ids or ())
     table_ids = set(table_ids or ())
     cited_figs, cited_tabs = cited_figures_tables(merged_spans)
-    fig_hit = cited_figs & figure_ids
-    tab_hit = cited_tabs & table_ids
+    dedicated_figs, dedicated_tabs = dedicated_asset_ids(merged_spans)
     distinct_sentences = len({s.get("source_span") for s in merged_spans
                               if s.get("source_span")})
     return {
@@ -273,20 +326,8 @@ def coverage_report(merged_spans, n_pages, char_covered, char_total,
             "chars_total": char_total,
             "extractable": char_total > 0,
         },
-        "figures": {
-            "coverage_pct": _pct(len(fig_hit), len(figure_ids)),
-            "covered": len(fig_hit),
-            "total": len(figure_ids),
-            "covered_ids": sorted(fig_hit),
-            "missing_ids": sorted(figure_ids - cited_figs),
-        },
-        "tables": {
-            "coverage_pct": _pct(len(tab_hit), len(table_ids)),
-            "covered": len(tab_hit),
-            "total": len(table_ids),
-            "covered_ids": sorted(tab_hit),
-            "missing_ids": sorted(table_ids - cited_tabs),
-        },
+        "figures": _asset_dim(figure_ids, cited_figs, dedicated_figs),
+        "tables": _asset_dim(table_ids, cited_tabs, dedicated_tabs),
         "structural": {
             "total_spans": len(merged_spans),
             "by_category": category_counts(merged_spans),
@@ -298,16 +339,20 @@ def coverage_report(merged_spans, n_pages, char_covered, char_total,
 
 
 def coverage_line(cov):
-    """One-line human-readable summary of the three coverage dimensions."""
+    """One-line human-readable summary of the coverage dimensions (both figure/table signals)."""
     t, f, tb, s = cov["text"], cov["figures"], cov["tables"], cov["structural"]
 
     def p(x):
         return f"{x}%" if x is not None else "n/a"
 
+    def dim(d):
+        return f"cited={p(d['cited']['coverage_pct'])}({d['cited']['covered']}/{d['cited']['total']})," \
+               f"dedicated={p(d['dedicated']['coverage_pct'])}({d['dedicated']['covered']}/{d['dedicated']['total']})"
+
     return (
         f"text={p(t['coverage_pct'])} ({t['chars_covered']}/{t['chars_total']} chars)  "
-        f"figures={p(f['coverage_pct'])} ({f['covered']}/{f['total']})  "
-        f"tables={p(tb['coverage_pct'])} ({tb['covered']}/{tb['total']})  "
+        f"figures=[{dim(f)}]  "
+        f"tables=[{dim(tb)}]  "
         f"spans={s['total_spans']} sentences={s['distinct_source_sentences']}"
     )
 
