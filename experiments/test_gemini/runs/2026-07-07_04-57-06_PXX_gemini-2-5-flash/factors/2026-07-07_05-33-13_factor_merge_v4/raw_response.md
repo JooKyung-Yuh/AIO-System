@@ -1,0 +1,524 @@
+```json
+[
+  {
+    "assumption": "A1",
+    "mechanism": "M11",
+    "context": "C26",
+    "intervention": "I3",
+    "eval_metric": "E2",
+    "pattern": "P8",
+    "status": "observed",
+    "provenance": "P8"
+  },
+  {
+    "assumption": "A2",
+    "mechanism": "M7",
+    "context": "C26",
+    "intervention": "I3",
+    "eval_metric": "E2",
+    "pattern": "P9",
+    "status": "observed",
+    "provenance": "P9"
+  },
+  {
+    "assumption": "A2",
+    "mechanism": "M7",
+    "context": "C26",
+    "intervention": "I3",
+    "eval_metric": "E2",
+    "pattern": "P10",
+    "status": "observed",
+    "provenance": "P10"
+  },
+  {
+    "assumption": "A1",
+    "mechanism": "M30",
+    "context": "C7",
+    "intervention": "I13",
+    "eval_metric": "E1",
+    "pattern": "P11",
+    "status": "observed",
+    "provenance": "P11"
+  },
+  {
+    "assumption": "A1",
+    "mechanism": "M30",
+    "context": "C9",
+    "intervention": "I13",
+    "eval_metric": "E1",
+    "pattern": "P12",
+    "status": "observed",
+    "provenance": "P12"
+  },
+  {
+    "assumption": "A2",
+    "mechanism": null,
+    "context": "C34",
+    "intervention": null,
+    "eval_metric": null,
+    "pattern": "P15",
+    "status": "observed",
+    "provenance": "P15"
+  },
+  {
+    "assumption": "A4",
+    "mechanism": "M11",
+    "context": "C83",
+    "intervention": "I39",
+    "eval_metric": null,
+    "pattern": "P17",
+    "status": "observed",
+    "provenance": "P17"
+  },
+  {
+    "assumption": "A9",
+    "mechanism": null,
+    "context": "C86",
+    "intervention": "I39",
+    "eval_metric": null,
+    "pattern": "P18",
+    "status": "observed",
+    "provenance": "P18"
+  },
+  {
+    "assumption": null,
+    "mechanism": null,
+    "context": "C115",
+    "intervention": "I49",
+    "eval_metric": "E8",
+    "pattern": "P19",
+    "status": "observed",
+    "provenance": "P19"
+  },
+  {
+    "assumption": null,
+    "mechanism": "M8",
+    "context": "C119",
+    "intervention": "I51",
+    "eval_metric": "E9",
+    "pattern": "P20",
+    "status": "observed",
+    "provenance": "P20"
+  },
+  {
+    "assumption": null,
+    "mechanism": "M10",
+    "context": "C119",
+    "intervention": "I50",
+    "eval_metric": "E9",
+    "pattern": "P21",
+    "status": "observed",
+    "provenance": "P21"
+  },
+  {
+    "assumption": null,
+    "mechanism": "M25",
+    "context": "C121",
+    "intervention": "I53",
+    "eval_metric": "E9",
+    "pattern": "P25",
+    "status": "observed",
+    "provenance": "P25"
+  },
+  {
+    "assumption": "A14",
+    "mechanism": "M36",
+    "context": "C125",
+    "intervention": "I55",
+    "eval_metric": "E9",
+    "pattern": "P28",
+    "status": "observed",
+    "provenance": "P28"
+  },
+  {
+    "assumption": "A15",
+    "mechanism": "M39",
+    "context": "C126",
+    "intervention": "I56",
+    "eval_metric": "E10",
+    "pattern": "P29",
+    "status": "observed",
+    "provenance": "P29"
+  },
+  {
+    "assumption": null,
+    "mechanism": "M40",
+    "context": "C133",
+    "intervention": "I57",
+    "eval_metric": "E11",
+    "pattern": "P30",
+    "status": "observed",
+    "provenance": "P30"
+  },
+  {
+    "assumption": "A16",
+    "mechanism": null,
+    "context": "C133",
+    "intervention": "I57",
+    "eval_metric": "E11",
+    "pattern": "P31",
+    "status": "observed",
+    "provenance": "P31"
+  },
+  {
+    "assumption": null,
+    "mechanism": "M20",
+    "context": "C127",
+    "intervention": "I58",
+    "eval_metric": "E9",
+    "pattern": "P34",
+    "status": "observed",
+    "provenance": "P34"
+  },
+  {
+    "assumption": null,
+    "mechanism": "M37",
+    "context": "C128",
+    "intervention": "I59",
+    "eval_metric": "E9",
+    "pattern": "P35",
+    "status": "observed",
+    "provenance": "P35"
+  },
+  {
+    "assumption": "A17",
+    "mechanism": "M42",
+    "context": "C135",
+    "intervention": "I63",
+    "eval_metric": "E14",
+    "pattern": "P45",
+    "status": "observed",
+    "provenance": "P45"
+  },
+  {
+    "assumption": null,
+    "mechanism": "M30",
+    "context": "C141",
+    "intervention": "I65",
+    "eval_metric": "E16",
+    "pattern": "P46",
+    "status": "observed",
+    "provenance": "P46"
+  },
+  {
+    "assumption": null,
+    "mechanism": "M30",
+    "context": "C9",
+    "intervention": "I65",
+    "eval_metric": "E16",
+    "pattern": "P47",
+    "status": "observed",
+    "provenance": "P47"
+  },
+  {
+    "assumption": null,
+    "mechanism": "M49",
+    "context": "C144",
+    "intervention": "I64",
+    "eval_metric": "E16",
+    "pattern": "P48",
+    "status": "observed",
+    "provenance": "P48"
+  },
+  {
+    "assumption": null,
+    "mechanism": "M7",
+    "context": "C145",
+    "intervention": "I64",
+    "eval_metric": "E16",
+    "pattern": "P49",
+    "status": "observed",
+    "provenance": "P49"
+  },
+  {
+    "assumption": null,
+    "mechanism": "M7",
+    "context": "C145",
+    "intervention": "I64",
+    "eval_metric": "E16",
+    "pattern": "P50",
+    "status": "observed",
+    "provenance": "P50"
+  },
+  {
+    "assumption": null,
+    "mechanism": "M46",
+    "context": "C151",
+    "intervention": null,
+    "eval_metric": null,
+    "pattern": "P53",
+    "status": "observed",
+    "provenance": "P53"
+  },
+  {
+    "assumption": null,
+    "mechanism": "M47",
+    "context": "C151",
+    "intervention": null,
+    "eval_metric": null,
+    "pattern": "P54",
+    "status": "observed",
+    "provenance": "P54"
+  },
+  {
+    "assumption": null,
+    "mechanism": "M48",
+    "context": "C154",
+    "intervention": "I66",
+    "eval_metric": null,
+    "pattern": "P56",
+    "status": "observed",
+    "provenance": "P56"
+  },
+  {
+    "assumption": null,
+    "mechanism": "M55",
+    "context": "C215",
+    "intervention": "I78",
+    "eval_metric": "E22",
+    "pattern": "P59",
+    "status": "observed",
+    "provenance": "P59"
+  },
+  {
+    "assumption": null,
+    "mechanism": "M56",
+    "context": "C217",
+    "intervention": "I79",
+    "eval_metric": "E24",
+    "pattern": "P60",
+    "status": "observed",
+    "provenance": "P60"
+  },
+  {
+    "assumption": null,
+    "mechanism": null,
+    "context": "C218",
+    "intervention": "I77",
+    "eval_metric": "E21",
+    "pattern": "P61",
+    "status": "observed",
+    "provenance": "P61"
+  },
+  {
+    "assumption": null,
+    "mechanism": "M55",
+    "context": "C218",
+    "intervention": "I78",
+    "eval_metric": "E22",
+    "pattern": "P62",
+    "status": "observed",
+    "provenance": "P62"
+  },
+  {
+    "assumption": null,
+    "mechanism": "M56",
+    "context": "C217",
+    "intervention": "I79",
+    "eval_metric": "E24",
+    "pattern": "P63",
+    "status": "observed",
+    "provenance": "P63"
+  },
+  {
+    "assumption": null,
+    "mechanism": "M57",
+    "context": "C221",
+    "intervention": "I80",
+    "eval_metric": "E30",
+    "pattern": "P64",
+    "status": "observed",
+    "provenance": "P64"
+  },
+  {
+    "assumption": null,
+    "mechanism": "M57",
+    "context": "C222",
+    "intervention": "I80",
+    "eval_metric": "E31",
+    "pattern": "P66",
+    "status": "observed",
+    "provenance": "P66"
+  },
+  {
+    "assumption": null,
+    "mechanism": null,
+    "context": "C223",
+    "intervention": null,
+    "eval_metric": null,
+    "pattern": "P67",
+    "status": "observed",
+    "provenance": "P67"
+  },
+  {
+    "assumption": "A20",
+    "mechanism": "M58",
+    "context": "C259",
+    "intervention": "I90",
+    "eval_metric": "E36",
+    "pattern": "P68",
+    "status": "observed",
+    "provenance": "P68"
+  },
+  {
+    "assumption": null,
+    "mechanism": "M70",
+    "context": "C229",
+    "intervention": "I83",
+    "eval_metric": null,
+    "pattern": "P69",
+    "status": "observed",
+    "provenance": "P69"
+  },
+  {
+    "assumption": null,
+    "mechanism": null,
+    "context": "C238",
+    "intervention": "I86",
+    "eval_metric": "E33",
+    "pattern": "P73",
+    "status": "observed",
+    "provenance": "P73"
+  },
+  {
+    "assumption": null,
+    "mechanism": null,
+    "context": "C242",
+    "intervention": "I86",
+    "eval_metric": "E33",
+    "pattern": "P74",
+    "status": "observed",
+    "provenance": "P74"
+  },
+  {
+    "assumption": null,
+    "mechanism": null,
+    "context": "C251",
+    "intervention": "I89",
+    "eval_metric": "E35",
+    "pattern": "P78",
+    "status": "observed",
+    "provenance": "P78"
+  },
+  {
+    "assumption": null,
+    "mechanism": null,
+    "context": "C255",
+    "intervention": "I89",
+    "eval_metric": "E35",
+    "pattern": "P79",
+    "status": "observed",
+    "provenance": "P79"
+  },
+  {
+    "assumption": null,
+    "mechanism": null,
+    "context": "C263",
+    "intervention": "I81",
+    "eval_metric": "E37",
+    "pattern": "P83",
+    "status": "observed",
+    "provenance": "P83"
+  },
+  {
+    "assumption": null,
+    "mechanism": null,
+    "context": "C278",
+    "intervention": "I92",
+    "eval_metric": "E39",
+    "pattern": "P86",
+    "status": "observed",
+    "provenance": "P86"
+  },
+  {
+    "assumption": null,
+    "mechanism": "M69",
+    "context": "C279",
+    "intervention": "I92",
+    "eval_metric": "E39",
+    "pattern": "P87",
+    "status": "observed",
+    "provenance": "P87"
+  },
+  {
+    "assumption": null,
+    "mechanism": null,
+    "context": "C122",
+    "intervention": "I54",
+    "eval_metric": null,
+    "pattern": "P27",
+    "status": "observed",
+    "provenance": "P27"
+  },
+  {
+    "assumption": "A15",
+    "mechanism": "M39",
+    "context": "C132",
+    "intervention": "I61",
+    "eval_metric": "E8",
+    "pattern": "P39",
+    "status": "observed",
+    "provenance": "P39"
+  },
+  {
+    "assumption": null,
+    "mechanism": "M41",
+    "context": "C133",
+    "intervention": "I62",
+    "eval_metric": "E11",
+    "pattern": "P41",
+    "status": "observed",
+    "provenance": "P41"
+  },
+  {
+    "assumption": null,
+    "mechanism": "M41",
+    "context": "C134",
+    "intervention": "I62",
+    "eval_metric": "E11",
+    "pattern": "P42",
+    "status": "observed",
+    "provenance": "P42"
+  },
+  {
+    "assumption": "A17",
+    "mechanism": null,
+    "context": "C135",
+    "intervention": "I63",
+    "eval_metric": "E13",
+    "pattern": "P44",
+    "status": "observed",
+    "provenance": "P44"
+  },
+  {
+    "assumption": null,
+    "mechanism": "M51",
+    "context": "C208",
+    "intervention": "I73",
+    "eval_metric": null,
+    "pattern": null,
+    "status": "inferred",
+    "provenance": "M51"
+  },
+  {
+    "assumption": null,
+    "mechanism": "M54",
+    "context": "C212",
+    "intervention": "I76",
+    "eval_metric": null,
+    "pattern": null,
+    "status": "inferred",
+    "provenance": "M54"
+  },
+  {
+    "assumption": null,
+    "mechanism": "M59",
+    "context": "C263",
+    "intervention": "I81",
+    "eval_metric": null,
+    "pattern": null,
+    "status": "inferred",
+    "provenance": "M59"
+  }
+]
+```

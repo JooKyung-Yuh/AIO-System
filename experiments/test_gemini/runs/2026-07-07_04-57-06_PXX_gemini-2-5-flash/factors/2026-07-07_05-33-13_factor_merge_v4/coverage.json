@@ -1,0 +1,67 @@
+{
+  "factor_count": 52,
+  "slot_fill": {
+    "assumption": {
+      "filled": 15,
+      "total": 52
+    },
+    "mechanism": {
+      "filled": 38,
+      "total": 52
+    },
+    "context": {
+      "filled": 52,
+      "total": 52
+    },
+    "intervention": {
+      "filled": 48,
+      "total": 52
+    },
+    "eval_metric": {
+      "filled": 40,
+      "total": 52
+    },
+    "pattern": {
+      "filled": 49,
+      "total": 52
+    }
+  },
+  "node_coverage": {
+    "assumption": {
+      "covered": 9,
+      "total": 22,
+      "coverage_pct": 40.9
+    },
+    "mechanism": {
+      "covered": 26,
+      "total": 70,
+      "coverage_pct": 37.1
+    },
+    "context": {
+      "covered": 40,
+      "total": 280,
+      "coverage_pct": 14.3
+    },
+    "intervention": {
+      "covered": 31,
+      "total": 93,
+      "coverage_pct": 33.3
+    },
+    "eval_metric": {
+      "covered": 19,
+      "total": 39,
+      "coverage_pct": 48.7
+    },
+    "pattern": {
+      "covered": 49,
+      "total": 87,
+      "coverage_pct": 56.3
+    }
+  },
+  "node_coverage_total": {
+    "covered": 174,
+    "total": 591,
+    "coverage_pct": 29.4
+  },
+  "category_mismatches": []
+}

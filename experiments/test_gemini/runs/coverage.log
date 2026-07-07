@@ -1,2 +1,3 @@
 2026-07-07T04:13:26.452023+00:00	extract_aio	aiocm_debug_v7	2026-07-07_04-13-26_PXX_gemini-2-5-flash	text=32.6% (13780/42236 chars)  figures=100.0% (15/15)  tables=100.0% (4/4)  spans=585 sentences=444
 2026-07-07T04:57:06.862079+00:00	extract_aio	aiocm_debug_v7	2026-07-07_04-57-06_PXX_gemini-2-5-flash	text=34.5% (21143/61236 chars)  figures=100.0% (22/22)  tables=100.0% (7/7)  spans=591 sentences=426
+2026-07-07T05:33:13+00:00	build_factors	factor_merge_v4	2026-07-07_05-33-13_factor_merge_v4	factors=52  slot_fill(assumption=15/52,mechanism=38/52,context=52/52,intervention=48/52,eval_metric=40/52,pattern=49/52)  node_coverage(assumption=9/22,mechanism=26/70,context=40/280,intervention=31/93,eval_metric=19/39,pattern=49/87,total=174/591)  mismatches=0
