@@ -10,6 +10,7 @@ from google.genai import types
 from dotenv import load_dotenv
 import os
 import sys
+import time
 import datetime
 from pathlib import Path
 import hashlib
@@ -19,6 +20,7 @@ import traceback
 from aio_common import (
     load_prompt,
     page_chunks,
+    pdf_page_slice,
     parse_json_array,
     usage_of,
     add_usage,
@@ -59,18 +61,19 @@ SOURCE_TEXT_PATH = pdf_path.with_suffix(".txt")
 SOURCE_ASSETS_PATH = pdf_path.with_suffix(".assets.json")
 
 
-def extract_chunk(chunk):
-    """Call the model on one page-chunk sub-PDF. Returns (spans, raw_text, usage, finish_reason)."""
+def extract_bytes(pdf_slice_bytes, page_range):
+    """Call the model on one page-range sub-PDF. Returns (spans, raw_text, usage, finish_reason,
+    salvaged, parse_error)."""
     prompt = load_prompt(
         PROMPT_PATH,
         paper_id=paper_id,
         paper_title_hint=paper_title_hint,
-        page_range=chunk["page_range"],
+        page_range=page_range,
     )
     response = client.models.generate_content(
         model=MODEL_NAME,
         contents=[
-            types.Part.from_bytes(data=chunk["bytes"], mime_type="application/pdf"),
+            types.Part.from_bytes(data=pdf_slice_bytes, mime_type="application/pdf"),
             prompt,
         ],
         config=types.GenerateContentConfig(temperature=0.0, max_output_tokens=65536),
@@ -87,6 +90,96 @@ def extract_chunk(chunk):
     except json.JSONDecodeError as e:
         parse_error = str(e)
     return spans, text, usage, str(finish_reason), salvaged, parse_error
+
+
+MAX_EMPTY_RETRIES = 3
+EMPTY_RETRY_BACKOFF_SECONDS = 5  # base delay; doubles each retry (transient API flake, not content-driven)
+MAX_SPLIT_DEPTH = 3  # 4 pages -> 2 pages -> 1 page floor
+
+
+def _attempt_range(pdf_slice_bytes, page_range, label):
+    """Retry-with-backoff loop for one page-range slice. A real page range should never come
+    back with zero spans AND a clean parse, so treat that as a suspected empty/flaky response
+    (mirrors the same non-determinism seen in extract_text.py) and retry before giving up.
+    Returns (spans, raw_text, usage, finish_reason, salvaged, parse_error, attempts, is_empty)."""
+    spans, raw_text, finish_reason, salvaged, parse_error = [], "", None, False, None
+    for attempt in range(1, MAX_EMPTY_RETRIES + 2):
+        spans, raw_text, usage, finish_reason, salvaged, parse_error = extract_bytes(pdf_slice_bytes, page_range)
+        is_empty = not spans and not parse_error
+        if not is_empty:
+            return spans, raw_text, usage, finish_reason, salvaged, parse_error, attempt, False
+        print(
+            f"  [WARN] {label} returned EMPTY (0 spans, finish_reason={finish_reason}) on "
+            f"attempt {attempt}/{MAX_EMPTY_RETRIES + 1}",
+            file=sys.stderr,
+        )
+        if attempt <= MAX_EMPTY_RETRIES:
+            delay = EMPTY_RETRY_BACKOFF_SECONDS * (2 ** (attempt - 1))
+            print(f"  retrying {label} in {delay}s ...", file=sys.stderr)
+            time.sleep(delay)
+    return spans, raw_text, usage, finish_reason, salvaged, parse_error, attempt, True
+
+
+def _retag(spans, tag):
+    """Prefix source_span/parent with a half-local tag so two independently re-numbered halves
+    (each restarting at S1) can never collide when later concatenated into one chunk_result for
+    merge_spans."""
+    out = []
+    for s in spans:
+        s2 = dict(s)
+        if s2.get("source_span") is not None:
+            s2["source_span"] = f"{tag}{s2['source_span']}"
+        if s2.get("parent") is not None:
+            s2["parent"] = f"{tag}{s2['parent']}"
+        out.append(s2)
+    return out
+
+
+def extract_range(pdf_bytes, page_start, page_end, depth=0):
+    """Extract spans for a page range. If it keeps coming back empty after retries and still
+    spans more than one page (and we haven't hit MAX_SPLIT_DEPTH), split it in half and extract
+    each half independently, merging results. Returns a dict: spans, raw_text, usage,
+    finish_reason, salvaged, parse_error, attempts, empty, page_ranges, split."""
+    label = f"pages {page_start}-{page_end}"
+    sub_bytes = pdf_page_slice(pdf_bytes, page_start, page_end)
+    spans, raw_text, usage, finish_reason, salvaged, parse_error, attempts, is_empty = _attempt_range(
+        sub_bytes, label, label
+    )
+
+    if not is_empty or page_start == page_end or depth >= MAX_SPLIT_DEPTH:
+        if is_empty:
+            print(
+                f"  [ERROR] {label} is STILL EMPTY after {attempts} attempt(s) and cannot be "
+                f"split further -- this page range contributes 0 spans.",
+                file=sys.stderr,
+            )
+        return {
+            "spans": spans, "raw_text": raw_text, "usage": usage, "finish_reason": finish_reason,
+            "salvaged": salvaged, "parse_error": parse_error, "attempts": attempts,
+            "empty": is_empty, "page_ranges": [label], "split": False,
+        }
+
+    mid = (page_start + page_end) // 2
+    print(
+        f"  [SPLIT] {label} still empty after {attempts} attempt(s) -- splitting into "
+        f"{page_start}-{mid} and {mid + 1}-{page_end}",
+        file=sys.stderr,
+    )
+    left = extract_range(pdf_bytes, page_start, mid, depth + 1)
+    right = extract_range(pdf_bytes, mid + 1, page_end, depth + 1)
+
+    return {
+        "spans": _retag(left["spans"], "A::") + _retag(right["spans"], "B::"),
+        "raw_text": (left["raw_text"] + "\n\n" + right["raw_text"]).strip(),
+        "usage": add_usage(left["usage"], right["usage"]),
+        "finish_reason": right["finish_reason"],
+        "salvaged": left["salvaged"] or right["salvaged"],
+        "parse_error": left["parse_error"] or right["parse_error"],
+        "attempts": left["attempts"] + right["attempts"],
+        "empty": left["empty"] and right["empty"],
+        "page_ranges": left["page_ranges"] + right["page_ranges"],
+        "split": True,
+    }
 
 
 chunks = page_chunks(pdf_bytes, pages_per_chunk)
@@ -124,7 +217,9 @@ try:
     for c in chunks:
         idx = c["chunk_index"]
         print(f"[chunk {idx}/{len(chunks)}] pages {c['page_range']} ...", file=sys.stderr)
-        spans, raw_text, usage, finish_reason, salvaged, parse_error = extract_chunk(c)
+        result = extract_range(pdf_bytes, c["page_start"], c["page_end"])
+        spans, raw_text, usage = result["spans"], result["raw_text"], result["usage"]
+        finish_reason, salvaged, parse_error = result["finish_reason"], result["salvaged"], result["parse_error"]
 
         (chunks_dir / f"chunk_{idx:02d}_p{c['page_range']}.md").write_text(raw_text, encoding="utf-8")
         total_usage = add_usage(total_usage, usage)
@@ -136,6 +231,14 @@ try:
             print(f"  [WARN] chunk {idx} salvaged from truncation ({len(spans)} spans)", file=sys.stderr)
         if parse_error:
             print(f"  [WARN] chunk {idx} JSON parse failed: {parse_error}", file=sys.stderr)
+        if result["empty"]:
+            print(
+                f"  [ERROR] chunk {idx} (pages {c['page_range']}) is STILL EMPTY after "
+                f"{result['attempts']} attempt(s) across {result['page_ranges']} -- contributes 0 spans.",
+                file=sys.stderr,
+            )
+        elif result["split"]:
+            print(f"  [OK] chunk {idx} recovered via split: {result['page_ranges']}", file=sys.stderr)
 
         chunk_results.append({"chunk_index": idx, "page_range": c["page_range"], "spans": spans})
         per_chunk_meta.append({
@@ -145,6 +248,10 @@ try:
             "finish_reason": finish_reason,
             "salvaged": salvaged,
             "parse_error": parse_error,
+            "attempts": result["attempts"],
+            "empty": result["empty"],
+            "split": result["split"],
+            "sub_ranges": result["page_ranges"],
             "usage": usage,
         })
 
