@@ -15,6 +15,18 @@ def load_prompt(prompt_path, **subs):
     return text
 
 
+def pdf_page_slice(pdf_bytes, page_start, page_end):
+    """Return a fresh sub-PDF's bytes covering 1-indexed pages [page_start, page_end]
+    (inclusive) of pdf_bytes."""
+    reader = PdfReader(BytesIO(pdf_bytes))
+    writer = PdfWriter()
+    for i in range(page_start - 1, page_end):
+        writer.add_page(reader.pages[i])
+    buf = BytesIO()
+    writer.write(buf)
+    return buf.getvalue()
+
+
 def page_chunks(pdf_bytes, pages_per_chunk):
     """Split a PDF into page-range sub-PDFs. Returns a list of dicts with a fresh
     sub-PDF's bytes plus its 1-indexed page range, in reading order."""
@@ -23,17 +35,12 @@ def page_chunks(pdf_bytes, pages_per_chunk):
     chunks = []
     for start in range(0, n, pages_per_chunk):
         end = min(start + pages_per_chunk, n)
-        writer = PdfWriter()
-        for i in range(start, end):
-            writer.add_page(reader.pages[i])
-        buf = BytesIO()
-        writer.write(buf)
         chunks.append({
             "chunk_index": len(chunks) + 1,
             "page_start": start + 1,
             "page_end": end,
             "page_range": f"{start + 1}-{end}",
-            "bytes": buf.getvalue(),
+            "bytes": pdf_page_slice(pdf_bytes, start + 1, end),
         })
     return chunks
 
