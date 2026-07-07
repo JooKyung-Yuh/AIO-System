@@ -24,10 +24,10 @@ def load_json(p):
     return json.loads(Path(p).read_text(encoding="utf-8"))
 
 
-def load_builds(run_dir, build_names):
+def load_builds(builds_dir, build_names):
     out = []
     for name in build_names:
-        d = run_dir / "factors" / name
+        d = builds_dir / name
         out.append({
             "name": name,
             "cio": load_json(d / "cio_cards.json"),
@@ -238,16 +238,20 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--run-dir", required=True)
     ap.add_argument("--ensemble", default=None, help="default run-dir/ensemble/ensemble_N5.json")
+    ap.add_argument("--builds-dir", default=None,
+                    help="directory holding the build folders named in the ensemble (default: <run-dir>/factors)")
+    ap.add_argument("--out-dir", default=None, help="where to write canonical/ output (default: <run-dir>/canonical)")
     ap.add_argument("--ctx-min", type=int, default=3, help="context kept if in >= this many builds")
     args = ap.parse_args()
 
     run_dir = Path(args.run_dir)
     ens = load_json(args.ensemble or run_dir / "ensemble" / "ensemble_N5.json")
-    builds = load_builds(run_dir, ens["builds"])
+    builds_dir = Path(args.builds_dir) if args.builds_dir else run_dir / "factors"
+    builds = load_builds(builds_dir, ens["builds"])
     spans = load_json(run_dir / "spans.json")
     byspan = {s["node_id"]: s for s in spans}
 
-    out_dir = run_dir / "canonical"
+    out_dir = Path(args.out_dir) if args.out_dir else run_dir / "canonical"
     out_dir.mkdir(parents=True, exist_ok=True)
     cache_path = out_dir / "merge_decisions.json"
     cache = load_json(cache_path) if cache_path.exists() else {}

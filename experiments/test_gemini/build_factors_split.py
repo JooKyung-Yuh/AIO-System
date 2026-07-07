@@ -174,6 +174,9 @@ def parse_args():
     p.add_argument("--paper-title-hint", default="unknown")
     p.add_argument("--paper-text", default="./docs/VARC.txt", help="prose transcription fed to every call")
     p.add_argument("--assets", default="./docs/VARC.assets.json", help="figure/table descriptions fed to every call")
+    p.add_argument("--builds-dir", default=None,
+                   help="where to write this build's folder (default: <run-dir>/factors). "
+                        "run_cohort.py points this at <cohort>/builds so an ensemble stays self-contained.")
     return p.parse_args()
 
 
@@ -192,7 +195,8 @@ def main():
 
     now = datetime.datetime.now().astimezone()
     build_id = f"{now.strftime('%Y-%m-%d_%H-%M-%S')}_{BUILD_TAG}"
-    build_dir = run_dir / "factors" / build_id
+    builds_root = Path(args.builds_dir) if args.builds_dir else run_dir / "factors"
+    build_dir = builds_root / build_id
     build_dir.mkdir(parents=True, exist_ok=False)
 
     base = {"paper_id": args.paper_id, "paper_title_hint": args.paper_title_hint,

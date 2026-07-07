@@ -104,9 +104,12 @@ def vote(counter, n, threshold):
 def main():
     ap = argparse.ArgumentParser(description="k-of-N deterministic ensemble over split builds.")
     ap.add_argument("--run-dir", required=True)
-    ap.add_argument("--builds", nargs="*", help="explicit factors/<build> dirs to pool")
+    ap.add_argument("--builds-dir", default=None,
+                    help="directory holding the build folders to pool (default: <run-dir>/factors). "
+                         "Point this at one cohort's builds/ so cohorts never cross-pool.")
+    ap.add_argument("--builds", nargs="*", help="explicit build dirs/names to pool (overrides --builds-dir scan)")
     ap.add_argument("--auto", action="store_true",
-                    help="pool every build under run-dir sharing the newest build's prompt set")
+                    help="pool the largest same-prompt cohort under --builds-dir")
     ap.add_argument("--cio-threshold", type=int, default=None, help="default: majority ceil(N/2)+... -> 3 for N=5")
     ap.add_argument("--mech-threshold", type=int, default=None)
     ap.add_argument("--assum-threshold", type=int, default=None, help="default one higher than mech")
@@ -115,22 +118,23 @@ def main():
     args = ap.parse_args()
 
     run_dir = Path(args.run_dir)
+    builds_dir = Path(args.builds_dir) if args.builds_dir else run_dir / "factors"
     if args.builds:
-        # Accept either a bare build name (resolved under run-dir/factors/) or a full path.
+        # Accept either a bare build name (resolved under builds_dir) or a full path.
         def resolve(b):
             p = Path(b)
             if (p / "cio_cards.json").exists():
                 return p
-            cand = run_dir / "factors" / b
+            cand = builds_dir / b
             if (cand / "cio_cards.json").exists():
                 return cand
             sys.exit(f"build not found: {b} (looked at {p} and {cand})")
         build_dirs = [resolve(b) for b in args.builds]
     else:
-        all_dirs = sorted(glob.glob(str(run_dir / "factors" / "*" / "cio_cards.json")))
+        all_dirs = sorted(glob.glob(str(builds_dir / "*" / "cio_cards.json")))
         build_dirs = [Path(p).parent for p in all_dirs]
         if not build_dirs:
-            sys.exit(f"no split builds under {run_dir/'factors'}")
+            sys.exit(f"no split builds under {builds_dir}")
 
     builds = [load_build(d) for d in build_dirs]
 
