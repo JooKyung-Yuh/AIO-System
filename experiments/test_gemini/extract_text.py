@@ -19,13 +19,14 @@ from google.genai import types
 from dotenv import load_dotenv
 import os
 import sys
+import time
 import datetime
 from pathlib import Path
 import hashlib
 import json
 import traceback
 
-from aio_common import page_chunks, usage_of, add_usage, token_line
+from aio_common import page_chunks, pdf_page_slice, usage_of, add_usage, token_line
 
 load_dotenv()
 
@@ -84,12 +85,17 @@ def split_assets_and_prose(text):
     return figures, tables, prose
 
 
-def transcribe_chunk(chunk):
-    """Transcribe one page-chunk sub-PDF. Returns (figures, tables, prose, usage, finish)."""
+MAX_EMPTY_RETRIES = 3
+EMPTY_RETRY_BACKOFF_SECONDS = 5  # base delay; doubles each retry (transient API flake, not content-driven)
+MAX_SPLIT_DEPTH = 3  # 4 pages -> 2 pages -> 1 page floor
+
+
+def _transcribe_bytes_once(pdf_slice_bytes):
+    """Transcribe one page-range sub-PDF. Returns (figures, tables, prose, usage, finish)."""
     response = client.models.generate_content(
         model=MODEL_NAME,
         contents=[
-            types.Part.from_bytes(data=chunk["bytes"], mime_type="application/pdf"),
+            types.Part.from_bytes(data=pdf_slice_bytes, mime_type="application/pdf"),
             TRANSCRIBE_PROMPT,
         ],
         config=types.GenerateContentConfig(temperature=0.0, max_output_tokens=65536),
@@ -98,6 +104,79 @@ def transcribe_chunk(chunk):
     finish_reason = response.candidates[0].finish_reason if response.candidates else None
     figures, tables, prose = split_assets_and_prose(text)
     return figures, tables, prose, usage_of(response), str(finish_reason)
+
+
+def _attempt_range(pdf_slice_bytes, label):
+    """Retry-with-backoff loop for one page-range slice. Returns (figures, tables, prose,
+    usage, finish_reason, attempts, is_empty)."""
+    total_usage = None
+    figures, tables, prose, finish_reason = [], [], "", None
+    for attempt in range(1, MAX_EMPTY_RETRIES + 2):
+        figures, tables, prose, usage, finish_reason = _transcribe_bytes_once(pdf_slice_bytes)
+        total_usage = add_usage(total_usage, usage)
+        is_empty = not prose.strip() and not figures and not tables
+        if not is_empty:
+            return figures, tables, prose, total_usage, finish_reason, attempt, False
+        print(
+            f"  [WARN] {label} returned EMPTY (prose/figures/tables all blank, "
+            f"finish_reason={finish_reason}) on attempt {attempt}/{MAX_EMPTY_RETRIES + 1}",
+            file=sys.stderr,
+        )
+        if attempt <= MAX_EMPTY_RETRIES:
+            delay = EMPTY_RETRY_BACKOFF_SECONDS * (2 ** (attempt - 1))
+            print(f"  retrying {label} in {delay}s ...", file=sys.stderr)
+            time.sleep(delay)
+    return figures, tables, prose, total_usage, finish_reason, attempt, True
+
+
+def transcribe_range(pdf_bytes, page_start, page_end, depth=0):
+    """Transcribe a page range. If it keeps coming back empty after retries and still spans
+    more than one page (and we haven't hit MAX_SPLIT_DEPTH), split it in half and transcribe
+    each half independently, merging results. This targets image-dense page ranges that seem
+    to trigger occasional empty completions, without paying per-page overhead everywhere else.
+    Returns a dict: figures, tables, prose, usage, finish_reason, attempts, empty, page_ranges,
+    split (bool, whether this range required splitting)."""
+    label = f"pages {page_start}-{page_end}"
+    sub_bytes = pdf_page_slice(pdf_bytes, page_start, page_end)
+    figures, tables, prose, usage, finish_reason, attempts, is_empty = _attempt_range(sub_bytes, label)
+
+    if not is_empty or page_start == page_end or depth >= MAX_SPLIT_DEPTH:
+        if is_empty:
+            print(
+                f"  [ERROR] {label} is STILL EMPTY after {attempts} attempt(s) and cannot be "
+                f"split further -- this page is missing from the caches.",
+                file=sys.stderr,
+            )
+        return {
+            "figures": figures, "tables": tables, "prose": prose, "usage": usage,
+            "finish_reason": finish_reason, "attempts": attempts, "empty": is_empty,
+            "page_ranges": [label], "split": False,
+        }
+
+    mid = (page_start + page_end) // 2
+    print(
+        f"  [SPLIT] {label} still empty after {attempts} attempt(s) -- splitting into "
+        f"{page_start}-{mid} and {mid + 1}-{page_end}",
+        file=sys.stderr,
+    )
+    left = transcribe_range(pdf_bytes, page_start, mid, depth + 1)
+    right = transcribe_range(pdf_bytes, mid + 1, page_end, depth + 1)
+
+    merged_figures = list(left["figures"])
+    _merge_assets(merged_figures, right["figures"])
+    merged_tables = list(left["tables"])
+    _merge_assets(merged_tables, right["tables"])
+    return {
+        "figures": merged_figures,
+        "tables": merged_tables,
+        "prose": (left["prose"] + "\n\n" + right["prose"]).strip(),
+        "usage": add_usage(left["usage"], right["usage"]),
+        "finish_reason": right["finish_reason"],
+        "attempts": left["attempts"] + right["attempts"],
+        "empty": left["empty"] and right["empty"],
+        "page_ranges": left["page_ranges"] + right["page_ranges"],
+        "split": True,
+    }
 
 
 def _merge_assets(existing, new_items):
@@ -140,16 +219,30 @@ try:
     per_chunk_meta = []
     total_usage = None
     any_truncated = False
+    empty_chunks = []
 
     for c in chunks:
         idx = c["chunk_index"]
         print(f"[chunk {idx}/{len(chunks)}] pages {c['page_range']} ...", file=sys.stderr)
-        figures, tables, prose, usage, finish_reason = transcribe_chunk(c)
-        total_usage = add_usage(total_usage, usage)
+        result = transcribe_range(pdf_bytes, c["page_start"], c["page_end"])
+        figures, tables, prose = result["figures"], result["tables"], result["prose"]
+        finish_reason, attempts, is_empty = result["finish_reason"], result["attempts"], result["empty"]
+        total_usage = add_usage(total_usage, result["usage"])
 
         if finish_reason != "FinishReason.STOP":
             any_truncated = True
             print(f"  [WARN] chunk {idx} finish_reason={finish_reason} (may be truncated)", file=sys.stderr)
+
+        if is_empty:
+            empty_chunks.append({"chunk_index": idx, "page_range": c["page_range"]})
+            print(
+                f"  [ERROR] chunk {idx} (pages {c['page_range']}) is STILL EMPTY after "
+                f"{attempts} attempt(s) across {result['page_ranges']} -- this page range is "
+                f"missing from {out_text_path} and {out_assets_path}.",
+                file=sys.stderr,
+            )
+        elif result["split"]:
+            print(f"  [OK] chunk {idx} recovered via split: {result['page_ranges']}", file=sys.stderr)
 
         _merge_assets(all_figures, figures)
         _merge_assets(all_tables, tables)
@@ -161,7 +254,11 @@ try:
             "n_figures": len(figures),
             "n_tables": len(tables),
             "finish_reason": finish_reason,
-            "usage": usage,
+            "attempts": attempts,
+            "empty": is_empty,
+            "split": result["split"],
+            "sub_ranges": result["page_ranges"],
+            "usage": result["usage"],
         })
 
     full_text = "".join(prose_parts).strip() + "\n"
@@ -177,6 +274,8 @@ try:
     metadata["n_figures"] = len(all_figures)
     metadata["n_tables"] = len(all_tables)
     metadata["any_truncated"] = any_truncated
+    metadata["any_empty_chunks"] = bool(empty_chunks)
+    metadata["empty_chunks"] = empty_chunks
     metadata["chunks"] = per_chunk_meta
     metadata["usage"] = total_usage
 
@@ -194,6 +293,14 @@ try:
     print(f"\nSaved transcript ({len(full_text)} chars) to: {out_text_path}", file=sys.stderr)
     print(f"Saved {len(all_figures)} figures + {len(all_tables)} tables to: {out_assets_path}", file=sys.stderr)
     print(f"Tokens (summed over {len(chunks)} chunks): {tl}", file=sys.stderr)
+    if empty_chunks:
+        ranges = ", ".join(f"pages {ec['page_range']}" for ec in empty_chunks)
+        print(
+            f"\n[ERROR] {len(empty_chunks)}/{len(chunks)} chunk(s) came back empty after "
+            f"retries and are MISSING from the caches: {ranges}. Coverage numbers computed "
+            f"against these caches will overstate figure/table/text coverage.",
+            file=sys.stderr,
+        )
 
 except Exception as e:
     metadata["status"] = "error"
