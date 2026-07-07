@@ -1,5 +1,6 @@
 """Shared helpers for the AIO Layer-1 extraction pipeline (sync + batch)."""
 import json
+import re
 from io import BytesIO
 from pathlib import Path
 
@@ -142,3 +143,163 @@ def merge_spans(chunk_results):
             new["page_range"] = cr["page_range"]
             merged.append(new)
     return merged
+
+
+# --- Coverage: how much of the paper did the extracted spans actually capture? -------------
+# Two complementary signals are recorded per run:
+#   1. text_char_coverage_pct — fraction of the paper's characters that fall inside a verbatim
+#      span quote. This is the closest thing to "% of the paper covered". The denominator is a
+#      full-text transcription of the paper produced *by Gemini* (see extract_text.py) and
+#      cached next to the PDF as <name>.txt — we do NOT parse the PDF text layer locally
+#      (pypdf is slow and empty on scanned/image PDFs). It is null when no such .txt exists.
+#   2. structural counts — total spans, per-category counts, distinct source sentences.
+# Coverage is diagnostic only; a failure here must never abort an extraction run.
+
+CATEGORY_LABELS = ("assumption", "context", "mechanism", "intervention",
+                   "eval_metric", "pattern", "unresolved")
+
+
+def _norm(s):
+    """Collapse whitespace and lowercase, so quote-vs-source matching is robust to reflow."""
+    return re.sub(r"\s+", " ", (s or "")).strip().lower()
+
+
+def quote_char_coverage(source_text, spans):
+    """(covered_chars, total_chars): how many normalized characters of the paper's full text
+    are spanned by the extracted verbatim quotes. Paraphrased spans (marked '(paraphrase)')
+    and very short quotes (< 8 chars) are ignored. Returns (0, 0) when source_text is empty."""
+    norm_text = _norm(source_text)
+    total = len(norm_text)
+    if total == 0:
+        return 0, 0
+    covered = bytearray(total)
+    for s in spans or []:
+        txt = s.get("text") or ""
+        if "(paraphrase)" in txt:
+            continue
+        q = _norm(txt)
+        if len(q) < 8:
+            continue
+        start = norm_text.find(q)
+        if start == -1:
+            continue
+        for i in range(start, start + len(q)):
+            covered[i] = 1
+    return sum(covered), total
+
+
+def category_counts(spans):
+    """Per-category span counts keyed by full label (assumption/context/.../unresolved)."""
+    counts = {label: 0 for label in CATEGORY_LABELS}
+    for s in spans or []:
+        label = s.get("assigned_label") or "unresolved"
+        counts[label] = counts.get(label, 0) + 1
+    return counts
+
+
+# --- Figure / Table references: coverage is measured on THREE denominators, not one ---------
+# text coverage    = chars of the prose transcript spanned by verbatim quotes
+# figure coverage  = distinct figures cited by >=1 span / total figures in the paper
+# table coverage   = distinct tables cited by >=1 span / total tables in the paper
+# The figure/table denominators come from <pdf>.assets.json (enumerated by extract_text.py).
+
+_FIG_RE = re.compile(r"\bfig(?:ure)?\.?\s*([0-9]+[a-z]?)", re.I)
+_TAB_RE = re.compile(r"\btab(?:le)?\.?\s*([0-9]+[a-z]?)", re.I)
+
+
+def ref_ids(text):
+    """(figure_ids, table_ids) mentioned in a string, normalized to 'figure N' / 'table N'."""
+    figs = {f"figure {m.group(1).lower()}" for m in _FIG_RE.finditer(text or "")}
+    tabs = {f"table {m.group(1).lower()}" for m in _TAB_RE.finditer(text or "")}
+    return figs, tabs
+
+
+def cited_figures_tables(spans):
+    """Union of figure/table ids that the extracted spans are grounded in (location + text)."""
+    figs, tabs = set(), set()
+    for s in spans or []:
+        f, t = ref_ids(f"{s.get('location', '')} {s.get('text', '')}")
+        figs |= f
+        tabs |= t
+    return figs, tabs
+
+
+def _asset_set(asset_list, kind):
+    """Normalize an assets.json figures/tables list into a set of 'figure N' / 'table N' ids."""
+    out = set()
+    for a in asset_list or []:
+        raw = a.get("id", "") if isinstance(a, dict) else str(a)
+        figs, tabs = ref_ids(raw)
+        out |= (figs if kind == "figure" else tabs)
+    return out
+
+
+def load_asset_ids(assets_path):
+    """Read <pdf>.assets.json -> (figure_ids, table_ids). Missing/bad file -> (set(), set())."""
+    try:
+        data = json.loads(Path(assets_path).read_text(encoding="utf-8"))
+    except Exception:
+        return set(), set()
+    return _asset_set(data.get("figures"), "figure"), _asset_set(data.get("tables"), "table")
+
+
+def _pct(n, d):
+    return round(100 * n / d, 1) if d else None
+
+
+def coverage_report(merged_spans, n_pages, char_covered, char_total,
+                    figure_ids=None, table_ids=None):
+    """Assemble the per-run coverage dict with three separate denominators (text/figure/table)
+    plus structural counts. figure_ids/table_ids are the paper's full sets (from assets.json);
+    when empty, that dimension's coverage_pct is null."""
+    figure_ids = set(figure_ids or ())
+    table_ids = set(table_ids or ())
+    cited_figs, cited_tabs = cited_figures_tables(merged_spans)
+    fig_hit = cited_figs & figure_ids
+    tab_hit = cited_tabs & table_ids
+    distinct_sentences = len({s.get("source_span") for s in merged_spans
+                              if s.get("source_span")})
+    return {
+        "text": {
+            "coverage_pct": _pct(char_covered, char_total),
+            "chars_covered": char_covered,
+            "chars_total": char_total,
+            "extractable": char_total > 0,
+        },
+        "figures": {
+            "coverage_pct": _pct(len(fig_hit), len(figure_ids)),
+            "covered": len(fig_hit),
+            "total": len(figure_ids),
+            "covered_ids": sorted(fig_hit),
+            "missing_ids": sorted(figure_ids - cited_figs),
+        },
+        "tables": {
+            "coverage_pct": _pct(len(tab_hit), len(table_ids)),
+            "covered": len(tab_hit),
+            "total": len(table_ids),
+            "covered_ids": sorted(tab_hit),
+            "missing_ids": sorted(table_ids - cited_tabs),
+        },
+        "structural": {
+            "total_spans": len(merged_spans),
+            "by_category": category_counts(merged_spans),
+            "distinct_source_sentences": distinct_sentences,
+            "n_pages": n_pages,
+            "spans_per_page": round(len(merged_spans) / n_pages, 2) if n_pages else None,
+        },
+    }
+
+
+def coverage_line(cov):
+    """One-line human-readable summary of the three coverage dimensions."""
+    t, f, tb, s = cov["text"], cov["figures"], cov["tables"], cov["structural"]
+
+    def p(x):
+        return f"{x}%" if x is not None else "n/a"
+
+    return (
+        f"text={p(t['coverage_pct'])} ({t['chars_covered']}/{t['chars_total']} chars)  "
+        f"figures={p(f['coverage_pct'])} ({f['covered']}/{f['total']})  "
+        f"tables={p(tb['coverage_pct'])} ({tb['covered']}/{tb['total']})  "
+        f"spans={s['total_spans']} sentences={s['distinct_source_sentences']}"
+    )
