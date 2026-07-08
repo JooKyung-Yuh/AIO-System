@@ -1,0 +1,2960 @@
+[
+  {
+    "factor_id": "F001",
+    "cio": {
+      "context": [
+        {
+          "id": "C6",
+          "text": "Our framework, termed Vision ARC (VARC)"
+        },
+        {
+          "id": "C7",
+          "text": "on the ARC-1 benchmark"
+        }
+      ],
+      "intervention": {
+        "id": "I1",
+        "text": "formulate ARC within a vision paradigm, framing it as an image-to-image translation problem."
+      },
+      "reference": null,
+      "eval_metric": {
+        "id": "E1",
+        "text": "accuracy"
+      },
+      "pattern": {
+        "id": "P1",
+        "text": "achieves accuracy"
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 1",
+        "source_span": "S8"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M7",
+          "text": "Abstraction and inference can arise directly from visual learning, without explicit linguistic intermediates."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Visual learning directly enables abstraction and inference without language.",
+        "evidence": "It naturally enables the adaptation of visual frameworks and yields strong few-shot generalization competitive with recent approaches..."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F002",
+    "cio": {
+      "context": [
+        {
+          "id": "C23",
+          "text": "Our framework, termed Vision ARC (VARC)"
+        }
+      ],
+      "intervention": {
+        "id": "I8",
+        "text": "approach ARC from a vision-centric perspective."
+      },
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P7",
+        "text": "shows strong performance on the ARC benchmarks (e.g., Fig. 2)."
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 1",
+        "source_span": "S37"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M7",
+          "text": "Abstraction and inference can arise directly from visual learning, without explicit linguistic intermediates."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Visual learning directly enables abstraction and inference without language.",
+        "evidence": "VARC achieves 54.5% accuracy on the ARC-1 benchmark... This result substantially surpasses the best recurrent methods..."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F003",
+    "cio": {
+      "context": [
+        {
+          "id": "C24",
+          "text": "VARC"
+        },
+        {
+          "id": "C25",
+          "text": "on the ARC-1 benchmark"
+        },
+        {
+          "id": "C26",
+          "text": "using a small model with only 18 million parameters."
+        }
+      ],
+      "intervention": {
+        "id": "I8",
+        "text": "approach ARC from a vision-centric perspective."
+      },
+      "reference": null,
+      "eval_metric": {
+        "id": "E2",
+        "text": "accuracy"
+      },
+      "pattern": {
+        "id": "P8",
+        "text": "achieves accuracy"
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 1",
+        "source_span": "S38"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M7",
+          "text": "Abstraction and inference can arise directly from visual learning, without explicit linguistic intermediates."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Visual learning directly enables abstraction and inference without language.",
+        "evidence": "Combining VARC models through ensembling... further improves accuracy to 60.4%, matching the reported average human performance..."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F004",
+    "cio": {
+      "context": [
+        {
+          "id": "C24",
+          "text": "VARC"
+        },
+        {
+          "id": "C25",
+          "text": "on the ARC-1 benchmark"
+        },
+        {
+          "id": "C26",
+          "text": "using a small model with only 18 million parameters."
+        }
+      ],
+      "intervention": {
+        "id": "I8",
+        "text": "approach ARC from a vision-centric perspective."
+      },
+      "reference": {
+        "id": "C13",
+        "text": "recurrent models [53, 27]"
+      },
+      "eval_metric": {
+        "id": "E2",
+        "text": "accuracy"
+      },
+      "pattern": {
+        "id": "P9",
+        "text": "substantially surpasses the best recurrent methods [53, 27] that are also trained from scratch on ARC."
+      },
+      "direction": "up",
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 1",
+        "source_span": "S39"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M7",
+          "text": "Abstraction and inference can arise directly from visual learning, without explicit linguistic intermediates."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Visual learning directly enables abstraction and inference without language.",
+        "evidence": "Our results are competitive with those of leading LLMs and close the gap to average human performance."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F005",
+    "cio": {
+      "context": [
+        {
+          "id": "C24",
+          "text": "VARC"
+        },
+        {
+          "id": "C25",
+          "text": "on the ARC-1 benchmark"
+        }
+      ],
+      "intervention": {
+        "id": "I13",
+        "text": "Combining VARC models through ensembling [29]"
+      },
+      "reference": {
+        "id": "P8",
+        "text": "achieves accuracy"
+      },
+      "eval_metric": {
+        "id": "E2",
+        "text": "accuracy"
+      },
+      "pattern": {
+        "id": "P11",
+        "text": "further improves accuracy"
+      },
+      "direction": "up",
+      "pattern_class": "comparison",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 1",
+        "source_span": "S41"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M27",
+          "text": "Predictions from different views are consolidated by majority voting [1]."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Majority voting consolidates multi-view predictions to improve accuracy.",
+        "evidence": "Combining VARC models through ensembling [29] further improves accuracy to 60.4%..."
+      }
+    ],
+    "field_mismatches": [
+      {
+        "field": "reference",
+        "bad_ids": [
+          "P8"
+        ]
+      }
+    ]
+  },
+  {
+    "factor_id": "F006",
+    "cio": {
+      "context": [
+        {
+          "id": "C24",
+          "text": "VARC"
+        },
+        {
+          "id": "C25",
+          "text": "on the ARC-1 benchmark"
+        }
+      ],
+      "intervention": {
+        "id": "I13",
+        "text": "Combining VARC models through ensembling [29]"
+      },
+      "reference": null,
+      "eval_metric": {
+        "id": "E2",
+        "text": "accuracy"
+      },
+      "pattern": {
+        "id": "P12",
+        "text": "matching the reported average human performance [31] on the ARC-1 dataset."
+      },
+      "direction": "flat",
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 1",
+        "source_span": "S41"
+      }
+    },
+    "beliefs": [],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F007",
+    "cio": {
+      "context": [
+        {
+          "id": "C35",
+          "text": "VARC"
+        }
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P16",
+        "text": "correctly solves these challenging tasks."
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Figure 2",
+        "source_span": "S55"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M7",
+          "text": "Abstraction and inference can arise directly from visual learning, without explicit linguistic intermediates."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Visual learning directly enables abstraction and inference without language.",
+        "evidence": "VARC correctly solves these challenging tasks."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F008",
+    "cio": {
+      "context": [
+        {
+          "id": "C81",
+          "text": "Test-time training (TTT)."
+        },
+        {
+          "id": "C83",
+          "text": "At inference time, we are given Demo={(xi, Yi)}m=1 with both input and output accessible; the model is required to make prediction for a given Xinfer in this new task T."
+        },
+        {
+          "id": "C86",
+          "text": "at inference time, the model is initialized from offline training, fine-tuned with test-time training only for the single new task T, and then performs inference on Xinfer."
+        },
+        {
+          "id": "A9",
+          "text": "As the new demo pairs in Demo are very few"
+        }
+      ],
+      "intervention": {
+        "id": "I39",
+        "text": "We perform test-time training for each new task T independently."
+      },
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P18",
+        "text": "this test-time training process remains reasonably fast"
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 3.5",
+        "source_span": "S148"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M27",
+          "text": "Predictions from different views are consolidated by majority voting [1]."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Majority voting consolidates multi-view predictions to improve accuracy.",
+        "evidence": "As the multi-view inference cost is negligible... it is virtually nearly free to use many views."
+      }
+    ],
+    "field_mismatches": [
+      {
+        "field": "context",
+        "bad_ids": [
+          "A9"
+        ]
+      }
+    ]
+  },
+  {
+    "factor_id": "F009",
+    "cio": {
+      "context": [],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P17",
+        "text": "During test-time training, the prediction from Xinfer becomes progressively more accurate, with the model finally generating the correct prediction."
+      },
+      "direction": "up",
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Figure 6",
+        "source_span": "S139"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M69",
+          "text": "by refining color and spatial arrangement"
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Test-time training refines color and spatial arrangement, adapting to tasks.",
+        "evidence": "During test-time training, the prediction from Xinfer becomes progressively more accurate, with the model finally generating the correct prediction."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F010",
+    "cio": {
+      "context": [
+        {
+          "id": "C110",
+          "text": "ViT"
+        },
+        {
+          "id": "C111",
+          "text": "ViT"
+        },
+        {
+          "id": "C112",
+          "text": "ViT"
+        },
+        {
+          "id": "C113",
+          "text": "U-Net"
+        },
+        {
+          "id": "C114",
+          "text": "U-Net"
+        },
+        {
+          "id": "C115",
+          "text": "U-Net"
+        }
+      ],
+      "intervention": {
+        "id": "I49",
+        "text": "We compare variants of ViTs and U-Nets of similar sizes."
+      },
+      "reference": {
+        "id": "C113",
+        "text": "U-Net"
+      },
+      "eval_metric": {
+        "id": "E8",
+        "text": "acc."
+      },
+      "pattern": {
+        "id": "P19",
+        "text": "ViT models show higher accuracy than U-Net models"
+      },
+      "direction": "up",
+      "pattern_class": "comparison",
+      "status": "observed",
+      "provenance": {
+        "location": "Table 1",
+        "source_span": "S191"
+      }
+    },
+    "beliefs": [],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F011",
+    "cio": {
+      "context": [
+        {
+          "id": "C116",
+          "text": "Effects of visual priors in VARC."
+        },
+        {
+          "id": "C117",
+          "text": "ARC-1 evaluation set."
+        },
+        {
+          "id": "C118",
+          "text": "The model used is ViT-18M."
+        }
+      ],
+      "intervention": {
+        "id": "I50",
+        "text": "Entries (a-c) use a patch size of 1×1 on a 32×32 canvas, whereas entries (d-f) use a patch size of 2×2 on a 64×64 canvas."
+      },
+      "reference": {
+        "id": "I51",
+        "text": "We start from a naïve baseline with components (b-f) removed."
+      },
+      "eval_metric": {
+        "id": "E9",
+        "text": "Accuracy"
+      },
+      "pattern": {
+        "id": "P20",
+        "text": "These vision priors cumulatively yield improvement (a→f)"
+      },
+      "direction": "up",
+      "pattern_class": "comparison",
+      "status": "observed",
+      "provenance": {
+        "location": "Figure 7",
+        "source_span": "S198"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M10",
+          "text": "A patch on the canvas can consist of exponentially many color combinations, which helps reduce overfitting and encourages the model to learn spatial priors rather than merely memorize."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Canvas patchification enriches data space, reduces overfitting, learns spatial priors.",
+        "evidence": "These priors cumulatively yield 27.7 improvement... The entries Fig. 7(d-f) all benefit from this design."
+      },
+      {
+        "node": {
+          "id": "M16",
+          "text": "This formulation naturally accommodates translation and scale augmentations, which are common strategies for introducing translation and scale invariance in vision"
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Canvas enables augmentations to learn geometric transformation invariance.",
+        "evidence": "These priors cumulatively yield 27.7 improvement... the canvas-based designs (cf) contribute an 11.5 gain."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F012",
+    "cio": {
+      "context": [
+        {
+          "id": "C116",
+          "text": "Effects of visual priors in VARC."
+        },
+        {
+          "id": "C117",
+          "text": "ARC-1 evaluation set."
+        },
+        {
+          "id": "C118",
+          "text": "The model used is ViT-18M."
+        }
+      ],
+      "intervention": {
+        "id": "I50",
+        "text": "Entries (a-c) use a patch size of 1×1 on a 32×32 canvas, whereas entries (d-f) use a patch size of 2×2 on a 64×64 canvas."
+      },
+      "reference": null,
+      "eval_metric": {
+        "id": "E9",
+        "text": "Accuracy"
+      },
+      "pattern": {
+        "id": "P21",
+        "text": "the canvas-based designs (c→f) contribute an gain."
+      },
+      "direction": "up",
+      "pattern_class": "comparison",
+      "status": "observed",
+      "provenance": {
+        "location": "Figure 7",
+        "source_span": "S198"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M10",
+          "text": "A patch on the canvas can consist of exponentially many color combinations, which helps reduce overfitting and encourages the model to learn spatial priors rather than merely memorize."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Canvas patchification enriches data space, reduces overfitting, learns spatial priors.",
+        "evidence": "canvas-based designs (cf) contribute an 11.5 gain."
+      },
+      {
+        "node": {
+          "id": "M16",
+          "text": "This formulation naturally accommodates translation and scale augmentations, which are common strategies for introducing translation and scale invariance in vision"
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Canvas enables augmentations to learn geometric transformation invariance.",
+        "evidence": "canvas-based designs (cf) contribute an 11.5 gain."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F013",
+    "cio": {
+      "context": [
+        {
+          "id": "C120",
+          "text": "2D positional embedding."
+        },
+        {
+          "id": "C122",
+          "text": "Patchification."
+        },
+        {
+          "id": "C127",
+          "text": "Translation and scale augmentation."
+        }
+      ],
+      "intervention": {
+        "id": "I52",
+        "text": "starting from a baseline (a) without the other components in this figure."
+      },
+      "reference": {
+        "id": "I52",
+        "text": "starting from a baseline (a) without the other components in this figure."
+      },
+      "eval_metric": null,
+      "pattern": {
+        "id": "P22",
+        "text": "These priors jointly have a gain"
+      },
+      "direction": "up",
+      "pattern_class": "comparison",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 5.1",
+        "source_span": "S200"
+      }
+    },
+    "beliefs": [],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F014",
+    "cio": {
+      "context": [
+        {
+          "id": "C122",
+          "text": "Patchification."
+        },
+        {
+          "id": "C127",
+          "text": "Translation and scale augmentation."
+        }
+      ],
+      "intervention": {
+        "id": "I54",
+        "text": "we advance from 1×1 patches on a 32×32 canvas to 2×2 patches on a 64×64 canvas."
+      },
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P23",
+        "text": "the canvas-based designs (c–f) has a gain."
+      },
+      "direction": "up",
+      "pattern_class": "comparison",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 5.1",
+        "source_span": "S200"
+      }
+    },
+    "beliefs": [],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F015",
+    "cio": {
+      "context": [
+        {
+          "id": "C120",
+          "text": "2D positional embedding."
+        },
+        {
+          "id": "C121",
+          "text": "This is observed in both (b) absolute and (c) relative positional embeddings."
+        }
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P24",
+        "text": "Extending from 1D posi-tional embedding to its 2D counterpart is beneficial"
+      },
+      "direction": "up",
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 5.1",
+        "source_span": "S202"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M10",
+          "text": "A patch on the canvas can consist of exponentially many color combinations, which helps reduce overfitting and encourages the model to learn spatial priors rather than merely memorize."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Canvas patchification enriches data space, reduces overfitting, learns spatial priors.",
+        "evidence": "the 2×2 patchification leads to a noticeable gain of 2.4 points... which substantially enriches the data space for learning."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F016",
+    "cio": {
+      "context": [
+        {
+          "id": "C120",
+          "text": "2D positional embedding."
+        }
+      ],
+      "intervention": {
+        "id": "I53",
+        "text": "we re-place the 2D ROPE in Fig. 7(f) with a 1D ROPE"
+      },
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P25",
+        "text": "observe a degradation"
+      },
+      "direction": "down",
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 5.1",
+        "source_span": "S204"
+      }
+    },
+    "beliefs": [],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F017",
+    "cio": {
+      "context": [
+        {
+          "id": "C122",
+          "text": "Patchification."
+        },
+        {
+          "id": "C123",
+          "text": "A key design principle of our method is to prepare the input as a natural image."
+        }
+      ],
+      "intervention": {
+        "id": "I54",
+        "text": "we advance from 1×1 patches on a 32×32 canvas to 2×2 patches on a 64×64 canvas."
+      },
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P26",
+        "text": "The entries Fig. 7(d-f) all benefit from this design."
+      },
+      "direction": "up",
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 5.1",
+        "source_span": "S208"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M16",
+          "text": "This formulation naturally accommodates translation and scale augmentations, which are common strategies for introducing translation and scale invariance in vision"
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Canvas enables augmentations to learn geometric transformation invariance.",
+        "evidence": "we apply fully flexible translation augmentation on the canvas... this setting yields an additional gain of 2.9 points."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F018",
+    "cio": {
+      "context": [
+        {
+          "id": "C122",
+          "text": "Patchification."
+        },
+        {
+          "id": "C124",
+          "text": "the scaling ratio is fixed as 2x."
+        },
+        {
+          "id": "C125",
+          "text": "This can be interpreted as one-pixel translation augmentation on the canvas."
+        }
+      ],
+      "intervention": {
+        "id": "I54",
+        "text": "we advance from 1×1 patches on a 32×32 canvas to 2×2 patches on a 64×64 canvas."
+      },
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P28",
+        "text": "the 2×2 patchification leads to a noticeable gain"
+      },
+      "direction": "up",
+      "pattern_class": "comparison",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 5.1",
+        "source_span": "S215"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M16",
+          "text": "This formulation naturally accommodates translation and scale augmentations, which are common strategies for introducing translation and scale invariance in vision"
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Canvas enables augmentations to learn geometric transformation invariance.",
+        "evidence": "we further apply the scale augmentation enabled by the concept of canvas. Scale augmentation yields a substantial gain of 6.2 points."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F019",
+    "cio": {
+      "context": [
+        {
+          "id": "C127",
+          "text": "Translation and scale augmentation."
+        }
+      ],
+      "intervention": {
+        "id": "I58",
+        "text": "we apply fully flexible translation augmen-tation on the canvas."
+      },
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P34",
+        "text": "this setting yields an additional gain"
+      },
+      "direction": "up",
+      "pattern_class": "comparison",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 5.1",
+        "source_span": "S228"
+      }
+    },
+    "beliefs": [],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F020",
+    "cio": {
+      "context": [
+        {
+          "id": "C127",
+          "text": "Translation and scale augmentation."
+        }
+      ],
+      "intervention": {
+        "id": "I59",
+        "text": "we further ap-ply the scale augmentation enabled by the concept of can-vas."
+      },
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P35",
+        "text": "Scale augmentation yields a substantial gain"
+      },
+      "direction": "up",
+      "pattern_class": "comparison",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 5.1",
+        "source_span": "S230"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M7",
+          "text": "Abstraction and inference can arise directly from visual learning, without explicit linguistic intermediates."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Visual learning directly enables abstraction and inference without language.",
+        "evidence": "all U-Net variants achieve decent accuracy, suggesting that this problem can also be effectively addressed by classical vision backbones."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F021",
+    "cio": {
+      "context": [
+        {
+          "id": "C126",
+          "text": "The circle areas de-note model sizes."
+        }
+      ],
+      "intervention": {
+        "id": "I56",
+        "text": "ViTs with different width (x-axis) and depth."
+      },
+      "reference": null,
+      "eval_metric": {
+        "id": "E10",
+        "text": "Accuracy (%)"
+      },
+      "pattern": {
+        "id": "P29",
+        "text": "increasing depth and/or width leads to higher accuracy"
+      },
+      "direction": "up",
+      "pattern_class": "comparison",
+      "status": "observed",
+      "provenance": {
+        "location": "Figure 8",
+        "source_span": "S219"
+      }
+    },
+    "beliefs": [],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F022",
+    "cio": {
+      "context": [],
+      "intervention": {
+        "id": "I57",
+        "text": "with vs. without offline train-ing, and joint vs. independent for each task."
+      },
+      "reference": {
+        "id": "I57",
+        "text": "with vs. without offline train-ing, and joint vs. independent for each task."
+      },
+      "eval_metric": {
+        "id": "E11",
+        "text": "Accuracy (%)"
+      },
+      "pattern": {
+        "id": "P30",
+        "text": "offline training improves performance"
+      },
+      "direction": "up",
+      "pattern_class": "comparison",
+      "status": "observed",
+      "provenance": {
+        "location": "Figure 9",
+        "source_span": "S222"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M40",
+          "text": "common sense about the visual world can be learned from the training set."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Offline training learns visual common sense from the training set.",
+        "evidence": "offline training greatly improves the performance of TTT, suggesting that common sense about the visual world can be learned from the training set."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F023",
+    "cio": {
+      "context": [],
+      "intervention": {
+        "id": "I57",
+        "text": "with vs. without offline train-ing, and joint vs. independent for each task."
+      },
+      "reference": {
+        "id": "I57",
+        "text": "with vs. without offline train-ing, and joint vs. independent for each task."
+      },
+      "eval_metric": {
+        "id": "E11",
+        "text": "Accuracy (%)"
+      },
+      "pattern": {
+        "id": "P31",
+        "text": "TTT independently performs better than TTT jointly"
+      },
+      "direction": "up",
+      "pattern_class": "comparison",
+      "status": "observed",
+      "provenance": {
+        "location": "Figure 9",
+        "source_span": "S223"
+      }
+    },
+    "beliefs": [],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F024",
+    "cio": {
+      "context": [
+        {
+          "id": "C129",
+          "text": "ViT vs. U-Net."
+        },
+        {
+          "id": "C130",
+          "text": "We evaluate three model sizes for each architecture."
+        }
+      ],
+      "intervention": {
+        "id": "I60",
+        "text": "we compare ViT with U-Nets, a type of convolutional network."
+      },
+      "reference": {
+        "id": "I60",
+        "text": "we compare ViT with U-Nets, a type of convolutional network."
+      },
+      "eval_metric": null,
+      "pattern": {
+        "id": "P36",
+        "text": "ViTs consistently per-form better"
+      },
+      "direction": "up",
+      "pattern_class": "comparison",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 5.2",
+        "source_span": "S236"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "A16",
+          "text": "the latter relies on a stronger assumption about the availability of multiple test tasks at once."
+        },
+        "kind": "assumption",
+        "direction": "weaken",
+        "gloss": "Joint TTT assumes multiple test tasks available simultaneously.",
+        "evidence": "performing TTT independently for each test task yields substantially better performance... than doing so jointly across all test tasks, even though the latter relies on a stronger assumption..."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F025",
+    "cio": {
+      "context": [
+        {
+          "id": "C131",
+          "text": "Scalability."
+        }
+      ],
+      "intervention": {
+        "id": "I61",
+        "text": "we show ViTs with varying depths and widths."
+      },
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P38",
+        "text": "our method demonstrates good scalability: increasing depth and/or width leads to higher accuracy"
+      },
+      "direction": "up",
+      "pattern_class": "comparison",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 5.2",
+        "source_span": "S239"
+      }
+    },
+    "beliefs": [],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F026",
+    "cio": {
+      "context": [
+        {
+          "id": "C132",
+          "text": "as shown in Tab. 1 for the 66M ViT model."
+        }
+      ],
+      "intervention": {
+        "id": "C132",
+        "text": "as shown in Tab. 1 for the 66M ViT model."
+      },
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P39",
+        "text": "this larger model achieves higher training accuracy"
+      },
+      "direction": "up",
+      "pattern_class": "comparison",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 5.2",
+        "source_span": "S241"
+      }
+    },
+    "beliefs": [],
+    "field_mismatches": [
+      {
+        "field": "intervention",
+        "bad_ids": [
+          "C132"
+        ]
+      }
+    ]
+  },
+  {
+    "factor_id": "F027",
+    "cio": {
+      "context": [
+        {
+          "id": "C133",
+          "text": "Test-time training (TTT) strategies."
+        }
+      ],
+      "intervention": {
+        "id": "I62",
+        "text": "we study TTT with and without offline training, and TTT performed jointly on all test tasks vs. independently for each test task."
+      },
+      "reference": {
+        "id": "I62",
+        "text": "we study TTT with and without offline training, and TTT performed jointly on all test tasks vs. independently for each test task."
+      },
+      "eval_metric": null,
+      "pattern": {
+        "id": "P40",
+        "text": "offline training greatly improves the per-formance of TTT"
+      },
+      "direction": "up",
+      "pattern_class": "comparison",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 5.2",
+        "source_span": "S244"
+      }
+    },
+    "beliefs": [],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F028",
+    "cio": {
+      "context": [
+        {
+          "id": "C133",
+          "text": "Test-time training (TTT) strategies."
+        }
+      ],
+      "intervention": {
+        "id": "I62",
+        "text": "we study TTT with and without offline training, and TTT performed jointly on all test tasks vs. independently for each test task."
+      },
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P41",
+        "text": "even without offline training, our TTT strategy can achieve nontrivial accuracy"
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 5.2",
+        "source_span": "S245"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M27",
+          "text": "Predictions from different views are consolidated by majority voting [1]."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Majority voting consolidates multi-view predictions to improve accuracy.",
+        "evidence": "multi-view inference further boosts to 49.8, thanks to majority voting."
+      },
+      {
+        "node": {
+          "id": "A18",
+          "text": "in ARC, a mistake on even a single pixel renders the entire prediction incorrect."
+        },
+        "kind": "assumption",
+        "direction": "strengthen",
+        "gloss": "Single pixel errors invalidate entire ARC predictions.",
+        "evidence": "a mistake on even a single pixel renders the entire prediction incorrect. This may explain the large gain seen here."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F029",
+    "cio": {
+      "context": [
+        {
+          "id": "C134",
+          "text": "under a similar setting."
+        }
+      ],
+      "intervention": {
+        "id": "P41",
+        "text": "even without offline training, our TTT strategy can achieve nontrivial accuracy"
+      },
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P42",
+        "text": "This result outperforms that in [36]"
+      },
+      "direction": "up",
+      "pattern_class": "comparison",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 5.2",
+        "source_span": "S246"
+      }
+    },
+    "beliefs": [],
+    "field_mismatches": [
+      {
+        "field": "intervention",
+        "bad_ids": [
+          "P41"
+        ]
+      }
+    ]
+  },
+  {
+    "factor_id": "F030",
+    "cio": {
+      "context": [
+        {
+          "id": "C133",
+          "text": "Test-time training (TTT) strategies."
+        }
+      ],
+      "intervention": {
+        "id": "I62",
+        "text": "we study TTT with and without offline training, and TTT performed jointly on all test tasks vs. independently for each test task."
+      },
+      "reference": {
+        "id": "I62",
+        "text": "we study TTT with and without offline training, and TTT performed jointly on all test tasks vs. independently for each test task."
+      },
+      "eval_metric": null,
+      "pattern": {
+        "id": "P43",
+        "text": "performing TTT independently for each test task yields substantially better performance than doing so jointly across all test tasks"
+      },
+      "direction": "up",
+      "pattern_class": "comparison",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 5.2",
+        "source_span": "S247"
+      }
+    },
+    "beliefs": [],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F031",
+    "cio": {
+      "context": [
+        {
+          "id": "C135",
+          "text": "Single-view vs. multi-view inference."
+        },
+        {
+          "id": "C136",
+          "text": "we adopt multi-view inference by default."
+        }
+      ],
+      "intervention": {
+        "id": "I63",
+        "text": "we also examine the single-view inference accuracy."
+      },
+      "reference": null,
+      "eval_metric": {
+        "id": "E12",
+        "text": "we compare pass@1 accuracy."
+      },
+      "pattern": {
+        "id": "P44",
+        "text": "Single-view inference has a decent pass@1 accuracy"
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 5.2",
+        "source_span": "S255"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M7",
+          "text": "Abstraction and inference can arise directly from visual learning, without explicit linguistic intermediates."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Visual learning directly enables abstraction and inference without language.",
+        "evidence": "Our VARC with 18M parameters is ~10 points better than TRM on ARC-1, a >20% relative improvement."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F032",
+    "cio": {
+      "context": [
+        {
+          "id": "C135",
+          "text": "Single-view vs. multi-view inference."
+        }
+      ],
+      "intervention": {
+        "id": "C136",
+        "text": "we adopt multi-view inference by default."
+      },
+      "reference": {
+        "id": "P44",
+        "text": "Single-view inference has a decent pass@1 accuracy"
+      },
+      "eval_metric": {
+        "id": "E12",
+        "text": "we compare pass@1 accuracy."
+      },
+      "pattern": {
+        "id": "P45",
+        "text": "multi-view inference further boosts"
+      },
+      "direction": "up",
+      "pattern_class": "comparison",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 5.2",
+        "source_span": "S255"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M7",
+          "text": "Abstraction and inference can arise directly from visual learning, without explicit linguistic intermediates."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Visual learning directly enables abstraction and inference without language.",
+        "evidence": "Our VARC with 18M parameters is ~10 points better than TRM on ARC-1, a >20% relative improvement."
+      }
+    ],
+    "field_mismatches": [
+      {
+        "field": "intervention",
+        "bad_ids": [
+          "C136"
+        ]
+      },
+      {
+        "field": "reference",
+        "bad_ids": [
+          "P44"
+        ]
+      }
+    ]
+  },
+  {
+    "factor_id": "F033",
+    "cio": {
+      "context": [
+        {
+          "id": "C137",
+          "text": "System-level Comparisons."
+        },
+        {
+          "id": "C142",
+          "text": "LLMs are pre-trained on internet-scale data, and some may also incor-porate multimodal data that include images."
+        },
+        {
+          "id": "C143",
+          "text": "Our method does not rely on such data"
+        },
+        {
+          "id": "C144",
+          "text": "uses a model that is several orders of magnitude smaller."
+        }
+      ],
+      "intervention": {
+        "id": "I64",
+        "text": "we compare with leading results using LLMs or recurrent models, on ARC-1 and ARC-2."
+      },
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P48",
+        "text": "Our model compares favorably with some of the most powerful LLMs at the time their results were reported: in-cluding Deepseek, Claude, o3, and GPT-5"
+      },
+      "direction": "up",
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 5.3",
+        "source_span": "S264"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M7",
+          "text": "Abstraction and inference can arise directly from visual learning, without explicit linguistic intermediates."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Visual learning directly enables abstraction and inference without language.",
+        "evidence": "Doing so boosts our result to 60.4."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F034",
+    "cio": {
+      "context": [
+        {
+          "id": "C137",
+          "text": "System-level Comparisons."
+        },
+        {
+          "id": "C145",
+          "text": "In the controlled setting of training from scratch on ARC data"
+        }
+      ],
+      "intervention": {
+        "id": "I64",
+        "text": "we compare with leading results using LLMs or recurrent models, on ARC-1 and ARC-2."
+      },
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P49",
+        "text": "our method substantially outperforms the recur-rent models: HRM [53] and TRM [27]."
+      },
+      "direction": "up",
+      "pattern_class": "comparison",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 5.3",
+        "source_span": "S267"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M7",
+          "text": "Abstraction and inference can arise directly from visual learning, without explicit linguistic intermediates."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Visual learning directly enables abstraction and inference without language.",
+        "evidence": "This result closes the gap with the reported average human performance (60.2 [31])."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F035",
+    "cio": {
+      "context": [
+        {
+          "id": "C137",
+          "text": "System-level Comparisons."
+        },
+        {
+          "id": "C145",
+          "text": "In the controlled setting of training from scratch on ARC data"
+        }
+      ],
+      "intervention": {
+        "id": "I64",
+        "text": "we compare with leading results using LLMs or recurrent models, on ARC-1 and ARC-2."
+      },
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P50",
+        "text": "Our VARC with 18M parameters is better than TRM on ARC-1"
+      },
+      "direction": "up",
+      "pattern_class": "comparison",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 5.3",
+        "source_span": "S268"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M7",
+          "text": "Abstraction and inference can arise directly from visual learning, without explicit linguistic intermediates."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Visual learning directly enables abstraction and inference without language.",
+        "evidence": "Our model compares favorably with some of the most powerful LLMs at the time their results were reported..."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F036",
+    "cio": {
+      "context": [
+        {
+          "id": "C137",
+          "text": "System-level Comparisons."
+        }
+      ],
+      "intervention": {
+        "id": "I65",
+        "text": "we ensemble one ViT and one U-Net, each with test-time training run four times."
+      },
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P51",
+        "text": "Doing so boosts our result"
+      },
+      "direction": "up",
+      "pattern_class": "comparison",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 5.3",
+        "source_span": "S271"
+      }
+    },
+    "beliefs": [],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F037",
+    "cio": {
+      "context": [
+        {
+          "id": "C137",
+          "text": "System-level Comparisons."
+        }
+      ],
+      "intervention": {
+        "id": "I65",
+        "text": "we ensemble one ViT and one U-Net, each with test-time training run four times."
+      },
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P52",
+        "text": "This result closes the gap with the re-ported average human performance"
+      },
+      "direction": "flat",
+      "pattern_class": "comparison",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 5.3",
+        "source_span": "S272"
+      }
+    },
+    "beliefs": [],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F038",
+    "cio": {
+      "context": [
+        {
+          "id": "C138",
+          "text": "LLM-based results are from the ARC-AGI leader-board [18]."
+        },
+        {
+          "id": "C139",
+          "text": "HRM, TRM, and our VARC are trained from scratch only on ARC data."
+        },
+        {
+          "id": "C140",
+          "text": "Our single-model result is based on ViT, with mean±std of 54.5±0.7 (ARC-1) and 8.3±0.4 (ARC-2) over four runs."
+        },
+        {
+          "id": "C141",
+          "text": "Our ensemble result aggregates an 18M ViT and a 55M U-Net, each with test-time training performed four times."
+        }
+      ],
+      "intervention": {
+        "id": "C141",
+        "text": "Our ensemble result aggregates an 18M ViT and a 55M U-Net, each with test-time training performed four times."
+      },
+      "reference": null,
+      "eval_metric": {
+        "id": "E16",
+        "text": "ARC-1"
+      },
+      "pattern": {
+        "id": "P46",
+        "text": "VARC (ensemble) achieves 60.4 on ARC-1 and 11.1 on ARC-2"
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Table 3",
+        "source_span": "S262"
+      }
+    },
+    "beliefs": [],
+    "field_mismatches": [
+      {
+        "field": "intervention",
+        "bad_ids": [
+          "C141"
+        ]
+      }
+    ]
+  },
+  {
+    "factor_id": "F039",
+    "cio": {
+      "context": [
+        {
+          "id": "C138",
+          "text": "LLM-based results are from the ARC-AGI leader-board [18]."
+        },
+        {
+          "id": "C139",
+          "text": "HRM, TRM, and our VARC are trained from scratch only on ARC data."
+        },
+        {
+          "id": "C140",
+          "text": "Our single-model result is based on ViT, with mean±std of 54.5±0.7 (ARC-1) and 8.3±0.4 (ARC-2) over four runs."
+        },
+        {
+          "id": "C141",
+          "text": "Our ensemble result aggregates an 18M ViT and a 55M U-Net, each with test-time training performed four times."
+        }
+      ],
+      "intervention": {
+        "id": "C141",
+        "text": "Our ensemble result aggregates an 18M ViT and a 55M U-Net, each with test-time training performed four times."
+      },
+      "reference": null,
+      "eval_metric": {
+        "id": "E16",
+        "text": "ARC-1"
+      },
+      "pattern": {
+        "id": "P47",
+        "text": "VARC (ensemble) is comparable to avg. human performance on ARC-1"
+      },
+      "direction": "flat",
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Table 3",
+        "source_span": "S263"
+      }
+    },
+    "beliefs": [],
+    "field_mismatches": [
+      {
+        "field": "intervention",
+        "bad_ids": [
+          "C141"
+        ]
+      }
+    ]
+  },
+  {
+    "factor_id": "F040",
+    "cio": {
+      "context": [
+        {
+          "id": "C148",
+          "text": "Attention patterns."
+        },
+        {
+          "id": "C149",
+          "text": "Fig. 10 shows the attention patterns of our ViT model in a test task."
+        },
+        {
+          "id": "C150",
+          "text": "Figure 11 visualizes the layer-wise attention maps for an-other test task."
+        },
+        {
+          "id": "C151",
+          "text": "A layer-wise map is the softmax attention map averaged across all pixels in the layer"
+        }
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P53",
+        "text": "some layers exhibit strong attention to the 3 × 3 neighborhood"
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 6",
+        "source_span": "S280"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M44",
+          "text": "These attention maps show that our model can correctly reason about the relationship between a source pixel and its target pixel to copy from."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Attention maps reveal correct pixel-to-pixel reasoning.",
+        "evidence": "These attention maps show that our model can correctly reason about the relationship between a source pixel and its target pixel to copy from."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F041",
+    "cio": {
+      "context": [
+        {
+          "id": "C148",
+          "text": "Attention patterns."
+        },
+        {
+          "id": "C149",
+          "text": "Fig. 10 shows the attention patterns of our ViT model in a test task."
+        },
+        {
+          "id": "C150",
+          "text": "Figure 11 visualizes the layer-wise attention maps for an-other test task."
+        },
+        {
+          "id": "C151",
+          "text": "A layer-wise map is the softmax attention map averaged across all pixels in the layer"
+        }
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P54",
+        "text": "some other layers (e.g., layers 7-9) focus on the outward-radiating rays"
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 6",
+        "source_span": "S281"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M46",
+          "text": "reflecting the influence of the pattern's core."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Different layers focus on distinct structures and task-specific patterns.",
+        "evidence": "In this task, different layers exhibit different specialties..."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F042",
+    "cio": {
+      "context": [
+        {
+          "id": "C152",
+          "text": "t-SNE of task embeddings."
+        },
+        {
+          "id": "C153",
+          "text": "Our model is conditioned on a task token, with an embedding learned to represent each task."
+        },
+        {
+          "id": "C154",
+          "text": "With 400 training tasks in ARC-1, our model learns 400 distinct task embeddings in offline training."
+        },
+        {
+          "id": "C155",
+          "text": "Each point corresponds to a task.."
+        }
+      ],
+      "intervention": {
+        "id": "I66",
+        "text": "We visu-alize these 400 embeddings in the 2D space by t-SNE [39]"
+      },
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P57",
+        "text": "the top-left corner in Fig. 12 shows two tasks related to coloring; the bottom-left corner shows two tasks related to generalized logic operations (i.e., AND/OR/XOR)."
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Section 6",
+        "source_span": "S289"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M48",
+          "text": "This vi-sualization suggests that our method attempts to learn the relations between different tasks"
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Task embedding visualization suggests learning relations between tasks.",
+        "evidence": "This visualization suggests that our method attempts to learn the relations between different tasks, which is an essential ability for abstraction and reasoning."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F043",
+    "cio": {
+      "context": [
+        {
+          "id": "C214",
+          "text": "RE-ARC samples per task"
+        },
+        {
+          "id": "C215",
+          "text": "evaluated on the ARC-1 eval set"
+        }
+      ],
+      "intervention": {
+        "id": "E18",
+        "text": "Offline training data scaling: effect of varying"
+      },
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P59",
+        "text": "Increasing the amount of offline training data is beneficial"
+      },
+      "direction": "up",
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Figure 14",
+        "source_span": "S357"
+      }
+    },
+    "beliefs": [],
+    "field_mismatches": [
+      {
+        "field": "intervention",
+        "bad_ids": [
+          "E18"
+        ]
+      }
+    ]
+  },
+  {
+    "factor_id": "F044",
+    "cio": {
+      "context": [
+        {
+          "id": "C216",
+          "text": "the number of training tasks"
+        },
+        {
+          "id": "C217",
+          "text": "evaluated on the ARC-1 eval set"
+        }
+      ],
+      "intervention": {
+        "id": "E19",
+        "text": "Offline training task diversity scaling: effect of varying"
+      },
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P60",
+        "text": "Increasing task diversity is beneficial."
+      },
+      "direction": "up",
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Figure 15",
+        "source_span": "S359"
+      }
+    },
+    "beliefs": [],
+    "field_mismatches": [
+      {
+        "field": "intervention",
+        "bad_ids": [
+          "E19"
+        ]
+      }
+    ]
+  },
+  {
+    "factor_id": "F045",
+    "cio": {
+      "context": [
+        {
+          "id": "C218",
+          "text": "RE-ARC dataset [22] in our offline training"
+        }
+      ],
+      "intervention": {
+        "id": "I77",
+        "text": "Using only the original ARC training data, without any RE-ARC data"
+      },
+      "reference": null,
+      "eval_metric": {
+        "id": "E21",
+        "text": "accuracy"
+      },
+      "pattern": {
+        "id": "P61",
+        "text": "our method achieves a decent accuracy"
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Section B.1",
+        "source_span": "S361"
+      }
+    },
+    "beliefs": [],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F046",
+    "cio": {
+      "context": [
+        {
+          "id": "C218",
+          "text": "RE-ARC dataset [22] in our offline training"
+        }
+      ],
+      "intervention": {
+        "id": "I78",
+        "text": "adding 10, 100, and 1,000 pairs per task from RE-ARC"
+      },
+      "reference": {
+        "id": "I77",
+        "text": "Using only the original ARC training data, without any RE-ARC data"
+      },
+      "eval_metric": {
+        "id": "E22",
+        "text": "accuracy"
+      },
+      "pattern": {
+        "id": "P62",
+        "text": "increases"
+      },
+      "direction": "up",
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Section B.1",
+        "source_span": "S362"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M40",
+          "text": "common sense about the visual world can be learned from the training set."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Offline training learns visual common sense from the training set.",
+        "evidence": "By adding 10, 100, and 1,000 pairs per task from RE-ARC, the accuracy increases... This comparison suggests that increasing the amount of offline training data is beneficial..."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F047",
+    "cio": {
+      "context": [],
+      "intervention": {
+        "id": "I79",
+        "text": "trained on 0, 16, 80, and 400 tasks"
+      },
+      "reference": null,
+      "eval_metric": {
+        "id": "E24",
+        "text": "accuracy"
+      },
+      "pattern": {
+        "id": "P63",
+        "text": "increases"
+      },
+      "direction": "up",
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Section B.1",
+        "source_span": "S365"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M40",
+          "text": "common sense about the visual world can be learned from the training set."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Offline training learns visual common sense from the training set.",
+        "evidence": "When trained on 0, 16, 80, and 400 tasks, the accuracy increases... suggesting that the diversity of training tasks is helpful for generalization."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F048",
+    "cio": {
+      "context": [
+        {
+          "id": "C219",
+          "text": "By default, the ARC protocol"
+        },
+        {
+          "id": "C220",
+          "text": "multi-view inference with many views (510)"
+        },
+        {
+          "id": "C222",
+          "text": "On ARC-1"
+        }
+      ],
+      "intervention": {
+        "id": "I80",
+        "text": "as the number of proposals (k) increases"
+      },
+      "reference": null,
+      "eval_metric": {
+        "id": "E31",
+        "text": "pass@k accu-racy"
+      },
+      "pattern": {
+        "id": "P65",
+        "text": "is"
+      },
+      "direction": "up",
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Section B.2",
+        "source_span": "S372"
+      }
+    },
+    "beliefs": [],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F049",
+    "cio": {
+      "context": [
+        {
+          "id": "C219",
+          "text": "By default, the ARC protocol"
+        },
+        {
+          "id": "C220",
+          "text": "multi-view inference with many views (510)"
+        },
+        {
+          "id": "C222",
+          "text": "On ARC-1"
+        }
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": {
+        "id": "E31",
+        "text": "pass@k accu-racy"
+      },
+      "pattern": {
+        "id": "P66",
+        "text": "this result reveals the upper-bound performance (66.3) of our method, even if oracle voting were applied."
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Section B.2",
+        "source_span": "S374"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M27",
+          "text": "Predictions from different views are consolidated by majority voting [1]."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Majority voting consolidates multi-view predictions to improve accuracy.",
+        "evidence": "This result indicates that our model produces correct predictions in some of the many views, although such correct cases are not sufficiently populated to be retained after voting."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F050",
+    "cio": {
+      "context": [],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P80",
+        "text": "Ambiguous examples"
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Figure 19",
+        "source_span": "S399"
+      }
+    },
+    "beliefs": [],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F051",
+    "cio": {
+      "context": [
+        {
+          "id": "C256",
+          "text": "three demonstration examples of a test task (top panel)"
+        },
+        {
+          "id": "C257",
+          "text": "a blue line \"touching\" (but not \"going through\") a red rectangle"
+        }
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P81",
+        "text": "some may admit multiple plausible explanations or rules"
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Figure 19",
+        "source_span": "S400"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "A20",
+          "text": "some may admit multiple plausible explanations or rules."
+        },
+        "kind": "assumption",
+        "direction": "strengthen",
+        "gloss": "Some ARC tasks are ambiguous, admitting multiple plausible rules.",
+        "evidence": "our method uncovers different solutions that are plausible."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F052",
+    "cio": {
+      "context": [
+        {
+          "id": "C258",
+          "text": "inference example (bottom panel) involves this situation (\"touching\")"
+        },
+        {
+          "id": "C259",
+          "text": "Task 09c534e7"
+        }
+      ],
+      "intervention": {
+        "id": "I90",
+        "text": "our model attempts to interpret the rule as either \"going-through-only\" (attempt 1) or \"touching\" (attempt 2)"
+      },
+      "reference": null,
+      "eval_metric": {
+        "id": "E36",
+        "text": "Ground truth"
+      },
+      "pattern": {
+        "id": "P82",
+        "text": "Attempt 2 matches Ground Truth, Attempt 1 does not"
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Figure 19",
+        "source_span": "S403"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "A20",
+          "text": "some may admit multiple plausible explanations or rules."
+        },
+        "kind": "assumption",
+        "direction": "strengthen",
+        "gloss": "Some ARC tasks are ambiguous, admitting multiple plausible rules.",
+        "evidence": "our model attempts to interpret the rule as either 'going-through-only' (attempt 1) or 'touching' (attempt 2)."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F053",
+    "cio": {
+      "context": [
+        {
+          "id": "C230",
+          "text": "ARC-1"
+        }
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P70",
+        "text": "Successful and failed examples"
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Figure 17",
+        "source_span": "S385"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M7",
+          "text": "Abstraction and inference can arise directly from visual learning, without explicit linguistic intermediates."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Visual learning directly enables abstraction and inference without language.",
+        "evidence": "Examples of test tasks successfully solved by VARC."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F054",
+    "cio": {
+      "context": [
+        {
+          "id": "C230",
+          "text": "ARC-1"
+        },
+        {
+          "id": "C231",
+          "text": "test tasks"
+        }
+      ],
+      "intervention": {
+        "id": "I84",
+        "text": "solved by VARC"
+      },
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P71",
+        "text": "successfully solved"
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Figure 17",
+        "source_span": "S386"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M7",
+          "text": "Abstraction and inference can arise directly from visual learning, without explicit linguistic intermediates."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Visual learning directly enables abstraction and inference without language.",
+        "evidence": "Examples of test tasks successfully solved by VARC."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F055",
+    "cio": {
+      "context": [
+        {
+          "id": "C230",
+          "text": "ARC-1"
+        },
+        {
+          "id": "C232",
+          "text": "test tasks"
+        }
+      ],
+      "intervention": {
+        "id": "I85",
+        "text": "unsolved by VARC"
+      },
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P72",
+        "text": "unsolved"
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Figure 17",
+        "source_span": "S387"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M7",
+          "text": "Abstraction and inference can arise directly from visual learning, without explicit linguistic intermediates."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Visual learning directly enables abstraction and inference without language.",
+        "evidence": "Examples of test tasks successfully solved by VARC."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F056",
+    "cio": {
+      "context": [
+        {
+          "id": "C235",
+          "text": "Task 15663ba9"
+        },
+        {
+          "id": "C236",
+          "text": "Task 981571dc"
+        },
+        {
+          "id": "C237",
+          "text": "Task 15696249"
+        },
+        {
+          "id": "C238",
+          "text": "Task 67c52801"
+        },
+        {
+          "id": "C234",
+          "text": "Inference input"
+        }
+      ],
+      "intervention": {
+        "id": "I86",
+        "text": "first and second solutions proposed by VARC"
+      },
+      "reference": null,
+      "eval_metric": {
+        "id": "E32",
+        "text": "correct output"
+      },
+      "pattern": {
+        "id": "P73",
+        "text": "VARC's Attempt 1 matches the Ground Truth"
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Figure 17",
+        "source_span": "S391"
+      }
+    },
+    "beliefs": [],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F057",
+    "cio": {
+      "context": [
+        {
+          "id": "C239",
+          "text": "Task 8dae5dfc"
+        },
+        {
+          "id": "C240",
+          "text": "Task 67636eac"
+        },
+        {
+          "id": "C241",
+          "text": "Task aa4ec2a5"
+        },
+        {
+          "id": "C242",
+          "text": "Task b457fec5"
+        },
+        {
+          "id": "C234",
+          "text": "Inference input"
+        }
+      ],
+      "intervention": {
+        "id": "I86",
+        "text": "first and second solutions proposed by VARC"
+      },
+      "reference": null,
+      "eval_metric": {
+        "id": "E32",
+        "text": "correct output"
+      },
+      "pattern": {
+        "id": "P74",
+        "text": "VARC fails to solve the task"
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Figure 17",
+        "source_span": "S391"
+      }
+    },
+    "beliefs": [],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F058",
+    "cio": {
+      "context": [
+        {
+          "id": "C243",
+          "text": "ARC-2"
+        }
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P75",
+        "text": "Successful and failed examples"
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Figure 18",
+        "source_span": "S392"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M7",
+          "text": "Abstraction and inference can arise directly from visual learning, without explicit linguistic intermediates."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Visual learning directly enables abstraction and inference without language.",
+        "evidence": "Examples of test tasks successfully solved by VARC."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F059",
+    "cio": {
+      "context": [
+        {
+          "id": "C243",
+          "text": "ARC-2"
+        },
+        {
+          "id": "C244",
+          "text": "test tasks"
+        }
+      ],
+      "intervention": {
+        "id": "I87",
+        "text": "solved by VARC"
+      },
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P76",
+        "text": "successfully solved"
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Figure 18",
+        "source_span": "S393"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M7",
+          "text": "Abstraction and inference can arise directly from visual learning, without explicit linguistic intermediates."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Visual learning directly enables abstraction and inference without language.",
+        "evidence": "Examples of test tasks successfully solved by VARC."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F060",
+    "cio": {
+      "context": [
+        {
+          "id": "C243",
+          "text": "ARC-2"
+        },
+        {
+          "id": "C245",
+          "text": "test tasks"
+        }
+      ],
+      "intervention": {
+        "id": "I88",
+        "text": "unsolved by VARC"
+      },
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P77",
+        "text": "unsolved"
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Figure 18",
+        "source_span": "S394"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M7",
+          "text": "Abstraction and inference can arise directly from visual learning, without explicit linguistic intermediates."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Visual learning directly enables abstraction and inference without language.",
+        "evidence": "Examples of test tasks successfully solved by VARC."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F061",
+    "cio": {
+      "context": [
+        {
+          "id": "C248",
+          "text": "Task 800d221b"
+        },
+        {
+          "id": "C249",
+          "text": "Task 7666fa5d"
+        },
+        {
+          "id": "C250",
+          "text": "Task 221dfab4"
+        },
+        {
+          "id": "C251",
+          "text": "Task 7b80bb43"
+        },
+        {
+          "id": "C247",
+          "text": "Inference input"
+        }
+      ],
+      "intervention": {
+        "id": "I89",
+        "text": "first and second solutions proposed by VARC"
+      },
+      "reference": null,
+      "eval_metric": {
+        "id": "E34",
+        "text": "correct output"
+      },
+      "pattern": {
+        "id": "P78",
+        "text": "VARC's Attempt 1 matches the Ground Truth"
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Figure 18",
+        "source_span": "S398"
+      }
+    },
+    "beliefs": [],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F062",
+    "cio": {
+      "context": [
+        {
+          "id": "C252",
+          "text": "Task 2b83f449"
+        },
+        {
+          "id": "C253",
+          "text": "Task 2d0172a1"
+        },
+        {
+          "id": "C254",
+          "text": "Task 3e6067c3"
+        },
+        {
+          "id": "C255",
+          "text": "Task 7ed72f31"
+        },
+        {
+          "id": "C247",
+          "text": "Inference input"
+        }
+      ],
+      "intervention": {
+        "id": "I89",
+        "text": "first and second solutions proposed by VARC"
+      },
+      "reference": null,
+      "eval_metric": {
+        "id": "E34",
+        "text": "correct output"
+      },
+      "pattern": {
+        "id": "P79",
+        "text": "VARC fails to solve the task"
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Figure 18",
+        "source_span": "S398"
+      }
+    },
+    "beliefs": [],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F063",
+    "cio": {
+      "context": [
+        {
+          "id": "C260",
+          "text": "pixel-level attention maps"
+        },
+        {
+          "id": "C263",
+          "text": "4 test tasks in ARC eval"
+        },
+        {
+          "id": "C265",
+          "text": "Task 09c534e7"
+        }
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": {
+        "id": "E37",
+        "text": "correctly solved"
+      },
+      "pattern": {
+        "id": "P83",
+        "text": "task that was not correctly solved"
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Figure 20",
+        "source_span": "S411"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M46",
+          "text": "reflecting the influence of the pattern's core."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Different layers focus on distinct structures and task-specific patterns.",
+        "evidence": "Layers at different depths tend to focus on different structures. Early layers tend to focus on local transformations and context... The deep layers are more task-specialized."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F064",
+    "cio": {
+      "context": [
+        {
+          "id": "C269",
+          "text": "layer-wise attention maps"
+        },
+        {
+          "id": "C270",
+          "text": "demonstration examples (on the left) are provided for reference"
+        },
+        {
+          "id": "C271",
+          "text": "Task 0607ce86"
+        },
+        {
+          "id": "C272",
+          "text": "Task 0bb8deee"
+        },
+        {
+          "id": "C273",
+          "text": "Task 1c56ad9f"
+        },
+        {
+          "id": "C274",
+          "text": "Task 1d0a4b61"
+        }
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": {
+        "id": "E38",
+        "text": "per-pixel softmax attention maps averaged across all pixels in that layer"
+      },
+      "pattern": {
+        "id": "P84",
+        "text": "Attention patterns vary across layers"
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Figure 21",
+        "source_span": "S420"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M46",
+          "text": "reflecting the influence of the pattern's core."
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Different layers focus on distinct structures and task-specific patterns.",
+        "evidence": "some layers exhibit strong attention to the 3 × 3 neighborhood... some other layers (e.g., layers 7-9) focus on the outward-radiating rays..."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F065",
+    "cio": {
+      "context": [
+        {
+          "id": "C276",
+          "text": "the grid augmented with a given scale ratio of 2×"
+        },
+        {
+          "id": "C277",
+          "text": "the full canvas is not shown for brevity"
+        }
+      ],
+      "intervention": {
+        "id": "I92",
+        "text": "test-time training progresses"
+      },
+      "reference": null,
+      "eval_metric": {
+        "id": "E39",
+        "text": "model's predictions converge toward the correct output"
+      },
+      "pattern": {
+        "id": "P85",
+        "text": "gradually converge toward the correct output"
+      },
+      "direction": "up",
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Figure 22 caption | Figure 22 'TTT process' panels",
+        "source_span": "S423"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M69",
+          "text": "by refining color and spatial arrangement"
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Test-time training refines color and spatial arrangement, adapting to tasks.",
+        "evidence": "As the test-time training progresses, the model's predictions gradually converge toward the correct output."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F066",
+    "cio": {
+      "context": [
+        {
+          "id": "C278",
+          "text": "In early epochs"
+        }
+      ],
+      "intervention": {
+        "id": "I92",
+        "text": "test-time training progresses"
+      },
+      "reference": null,
+      "eval_metric": null,
+      "pattern": {
+        "id": "P86",
+        "text": "model produces coarse and imprecise structures"
+      },
+      "direction": null,
+      "pattern_class": "primary_result",
+      "status": "observed",
+      "provenance": {
+        "location": "Figure 22 caption | Figure 22 'TTT process' panels (early stages)",
+        "source_span": "S424"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M69",
+          "text": "by refining color and spatial arrangement"
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Test-time training refines color and spatial arrangement, adapting to tasks.",
+        "evidence": "In early epochs, the model produces coarse and imprecise structures..."
+      }
+    ],
+    "field_mismatches": []
+  },
+  {
+    "factor_id": "F067",
+    "cio": {
+      "context": [
+        {
+          "id": "C279",
+          "text": "in later epochs"
+        }
+      ],
+      "intervention": {
+        "id": "I92",
+        "text": "test-time training progresses"
+      },
+      "reference": {
+        "id": "C278",
+        "text": "In early epochs"
+      },
+      "eval_metric": null,
+      "pattern": {
+        "id": "P87",
+        "text": "model can improve the solutions"
+      },
+      "direction": "up",
+      "pattern_class": "comparison",
+      "status": "observed",
+      "provenance": {
+        "location": "Figure 22 caption | Figure 22 'TTT process' panels (later stages)",
+        "source_span": "S425"
+      }
+    },
+    "beliefs": [
+      {
+        "node": {
+          "id": "M69",
+          "text": "by refining color and spatial arrangement"
+        },
+        "kind": "mechanism",
+        "direction": "strengthen",
+        "gloss": "Test-time training refines color and spatial arrangement, adapting to tasks.",
+        "evidence": "in later epochs, the model can improve the solutions, e.g., by refining color and spatial arrangement."
+      }
+    ],
+    "field_mismatches": []
+  }
+]
