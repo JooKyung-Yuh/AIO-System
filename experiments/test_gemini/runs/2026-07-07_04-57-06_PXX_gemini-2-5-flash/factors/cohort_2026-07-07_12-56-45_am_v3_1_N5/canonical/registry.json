@@ -1038,6 +1038,14 @@
         "I80"
       ]
     },
+    "INT_illustrates_evolution_model_predictions_during_test": {
+      "canonical_id": "INT_illustrates_evolution_model_predictions_during_test",
+      "type": "intervention",
+      "gloss": "illustrates the evolution of model predictions during the test-time training pro",
+      "members": [
+        "I83"
+      ]
+    },
     "INT_solved_varc": {
       "canonical_id": "INT_solved_varc",
       "type": "intervention",
@@ -1109,6 +1117,7 @@
       "type": "eval_metric",
       "members": [
         "E12",
+        "E30",
         "E31"
       ]
     },
@@ -1121,44 +1130,6 @@
     }
   },
   "am": {
-    "ASM_some_arc_tasks_ambiguous_admitting_multiple": {
-      "canonical_id": "ASM_some_arc_tasks_ambiguous_admitting_multiple",
-      "type": "assumption",
-      "gloss": "Some ARC tasks are ambiguous, admitting multiple plausible rules.",
-      "representative": "A20",
-      "members": [
-        "A20",
-        "A21"
-      ],
-      "votes": 5
-    },
-    "MECH_majority_voting_consolidates_multi_view_predictions": {
-      "canonical_id": "MECH_majority_voting_consolidates_multi_view_predictions",
-      "type": "mechanism",
-      "gloss": "Majority voting consolidates multi-view predictions to improve accuracy.",
-      "representative": "M27",
-      "members": [
-        "M27",
-        "M28",
-        "M33",
-        "M42"
-      ],
-      "votes": 5
-    },
-    "MECH_canvas_patchification_enriches_data_space_reduces": {
-      "canonical_id": "MECH_canvas_patchification_enriches_data_space_reduces",
-      "type": "mechanism",
-      "gloss": "Canvas patchification enriches data space, reduces overfitting, learns spatial priors.",
-      "representative": "M10",
-      "members": [
-        "M10",
-        "M17",
-        "M23",
-        "M34",
-        "M36"
-      ],
-      "votes": 5
-    },
     "MECH_task_embedding_visualization_suggests_learning_relations": {
       "canonical_id": "MECH_task_embedding_visualization_suggests_learning_relations",
       "type": "mechanism",
@@ -1167,50 +1138,9 @@
       "members": [
         "M48"
       ],
-      "votes": 5
-    },
-    "MECH_attention_maps_reveal_correct_pixel_pixel": {
-      "canonical_id": "MECH_attention_maps_reveal_correct_pixel_pixel",
-      "type": "mechanism",
-      "gloss": "Attention maps reveal correct pixel-to-pixel reasoning.",
-      "representative": "M44",
-      "members": [
-        "M44"
-      ],
-      "votes": 5
-    },
-    "MECH_offline_training_learns_visual_common_sense": {
-      "canonical_id": "MECH_offline_training_learns_visual_common_sense",
-      "type": "mechanism",
-      "gloss": "Offline training learns visual common sense from the training set.",
-      "representative": "M40",
-      "members": [
-        "M40"
-      ],
-      "votes": 5
-    },
-    "MECH_canvas_enables_augmentations_learn_geometric_transformation": {
-      "canonical_id": "MECH_canvas_enables_augmentations_learn_geometric_transformation",
-      "type": "mechanism",
-      "gloss": "Canvas enables augmentations to learn geometric transformation invariance.",
-      "representative": "M16",
-      "members": [
-        "M16",
-        "M19",
-        "M20"
-      ],
-      "votes": 5
-    },
-    "MECH_test_time_training_refines_color_spatial": {
-      "canonical_id": "MECH_test_time_training_refines_color_spatial",
-      "type": "mechanism",
-      "gloss": "Test-time training refines color and spatial arrangement, adapting to tasks.",
-      "representative": "M70",
-      "members": [
-        "M69",
-        "M70"
-      ],
-      "votes": 5
+      "votes": 5,
+      "confidence": 1.0,
+      "band": "observed"
     },
     "MECH_different_layers_focus_distinct_structures_task": {
       "canonical_id": "MECH_different_layers_focus_distinct_structures_task",
@@ -1225,7 +1155,88 @@
         "M61",
         "M62"
       ],
-      "votes": 5
+      "votes": 5,
+      "confidence": 1.0,
+      "band": "observed"
+    },
+    "MECH_majority_voting_consolidates_multi_view_predictions": {
+      "canonical_id": "MECH_majority_voting_consolidates_multi_view_predictions",
+      "type": "mechanism",
+      "gloss": "Majority voting consolidates multi-view predictions to improve accuracy.",
+      "representative": "M27",
+      "members": [
+        "M27",
+        "M28",
+        "M33",
+        "M42"
+      ],
+      "votes": 5,
+      "confidence": 1.0,
+      "band": "observed"
+    },
+    "MECH_average_pooling_aggregates_multi_pixel_predictions": {
+      "canonical_id": "MECH_average_pooling_aggregates_multi_pixel_predictions",
+      "type": "mechanism",
+      "gloss": "Average pooling aggregates multi-pixel predictions for single output location.",
+      "representative": "M29",
+      "members": [
+        "M29"
+      ],
+      "votes": 5,
+      "confidence": 1.0,
+      "band": "observed"
+    },
+    "MECH_demo_pairs_at_inference_enable_test": {
+      "canonical_id": "MECH_demo_pairs_at_inference_enable_test",
+      "type": "mechanism",
+      "gloss": "Demo pairs at inference enable test-time training.",
+      "representative": "M15",
+      "members": [
+        "M15"
+      ],
+      "votes": 5,
+      "confidence": 1.0,
+      "band": "observed"
+    },
+    "ASM_some_arc_tasks_ambiguous_admitting_multiple": {
+      "canonical_id": "ASM_some_arc_tasks_ambiguous_admitting_multiple",
+      "type": "assumption",
+      "gloss": "Some ARC tasks are ambiguous, admitting multiple plausible rules.",
+      "representative": "A20",
+      "members": [
+        "A20",
+        "A21",
+        "A22"
+      ],
+      "votes": 5,
+      "confidence": 1.0,
+      "band": "observed"
+    },
+    "ASM_arc_colors_not_real_world_making": {
+      "canonical_id": "ASM_arc_colors_not_real_world_making",
+      "type": "assumption",
+      "gloss": "ARC colors are not real-world, making bilinear interpolation meaningless.",
+      "representative": "A6",
+      "members": [
+        "A6"
+      ],
+      "votes": 5,
+      "confidence": 1.0,
+      "band": "observed"
+    },
+    "MECH_canvas_enables_augmentations_learn_geometric_transformation": {
+      "canonical_id": "MECH_canvas_enables_augmentations_learn_geometric_transformation",
+      "type": "mechanism",
+      "gloss": "Canvas enables augmentations to learn geometric transformation invariance.",
+      "representative": "M16",
+      "members": [
+        "M16",
+        "M19",
+        "M20"
+      ],
+      "votes": 5,
+      "confidence": 1.0,
+      "band": "observed"
     },
     "MECH_visual_learning_directly_enables_abstraction_inference": {
       "canonical_id": "MECH_visual_learning_directly_enables_abstraction_inference",
@@ -1236,7 +1247,62 @@
         "M50",
         "M7"
       ],
-      "votes": 5
+      "votes": 5,
+      "confidence": 1.0,
+      "band": "observed"
+    },
+    "MECH_test_time_training_refines_color_spatial": {
+      "canonical_id": "MECH_test_time_training_refines_color_spatial",
+      "type": "mechanism",
+      "gloss": "Test-time training refines color and spatial arrangement, adapting to tasks.",
+      "representative": "M70",
+      "members": [
+        "M69",
+        "M70"
+      ],
+      "votes": 5,
+      "confidence": 1.0,
+      "band": "observed"
+    },
+    "MECH_offline_training_learns_visual_common_sense": {
+      "canonical_id": "MECH_offline_training_learns_visual_common_sense",
+      "type": "mechanism",
+      "gloss": "Offline training learns visual common sense from the training set.",
+      "representative": "M40",
+      "members": [
+        "M40"
+      ],
+      "votes": 5,
+      "confidence": 1.0,
+      "band": "observed"
+    },
+    "MECH_canvas_patchification_enriches_data_space_reduces": {
+      "canonical_id": "MECH_canvas_patchification_enriches_data_space_reduces",
+      "type": "mechanism",
+      "gloss": "Canvas patchification enriches data space, reduces overfitting, learns spatial priors.",
+      "representative": "M10",
+      "members": [
+        "M10",
+        "M17",
+        "M23",
+        "M34",
+        "M36"
+      ],
+      "votes": 5,
+      "confidence": 1.0,
+      "band": "observed"
+    },
+    "MECH_attention_maps_reveal_correct_pixel_pixel": {
+      "canonical_id": "MECH_attention_maps_reveal_correct_pixel_pixel",
+      "type": "mechanism",
+      "gloss": "Attention maps reveal correct pixel-to-pixel reasoning.",
+      "representative": "M44",
+      "members": [
+        "M44"
+      ],
+      "votes": 5,
+      "confidence": 1.0,
+      "band": "observed"
     },
     "ASM_single_pixel_errors_invalidate_entire_arc": {
       "canonical_id": "ASM_single_pixel_errors_invalidate_entire_arc",
@@ -1246,17 +1312,22 @@
       "members": [
         "A18"
       ],
-      "votes": 5
+      "votes": 5,
+      "confidence": 1.0,
+      "band": "observed"
     },
-    "MECH_average_pooling_aggregates_multi_pixel_predictions": {
-      "canonical_id": "MECH_average_pooling_aggregates_multi_pixel_predictions",
-      "type": "mechanism",
-      "gloss": "Average pooling aggregates multi-pixel predictions for single output location.",
-      "representative": "M29",
+    "ASM_joint_ttt_assumes_multiple_test_tasks": {
+      "canonical_id": "ASM_joint_ttt_assumes_multiple_test_tasks",
+      "type": "assumption",
+      "gloss": "Joint TTT assumes multiple test tasks available simultaneously.",
+      "representative": "A16",
       "members": [
-        "M29"
+        "A16",
+        "A19"
       ],
-      "votes": 5
+      "votes": 3,
+      "confidence": 0.6,
+      "band": "supported"
     },
     "ASM_larger_models_can_overfit_hindering_generalization": {
       "canonical_id": "ASM_larger_models_can_overfit_hindering_generalization",
@@ -1266,27 +1337,118 @@
       "members": [
         "A15"
       ],
-      "votes": 5
+      "votes": 5,
+      "confidence": 1.0,
+      "band": "observed"
     },
-    "MECH_demo_pairs_at_inference_enable_test": {
-      "canonical_id": "MECH_demo_pairs_at_inference_enable_test",
-      "type": "mechanism",
-      "gloss": "Demo pairs at inference enable test-time training.",
-      "representative": "M15",
-      "members": [
-        "M15"
-      ],
-      "votes": 5
-    },
-    "ASM_arc_colors_not_real_world_making": {
-      "canonical_id": "ASM_arc_colors_not_real_world_making",
+    "ASM_auxiliary_tasks_assumed_translation_scale_invariant": {
+      "canonical_id": "ASM_auxiliary_tasks_assumed_translation_scale_invariant",
       "type": "assumption",
-      "gloss": "ARC colors are not real-world, making bilinear interpolation meaningless.",
-      "representative": "A6",
+      "gloss": "Auxiliary tasks are assumed translation and scale invariant.",
+      "representative": "A12",
       "members": [
-        "A6"
+        "A12"
       ],
-      "votes": 5
+      "votes": 2,
+      "confidence": 0.4,
+      "band": "supported"
+    },
+    "MECH_attention_masks_focus_model_foreground_pixels": {
+      "canonical_id": "MECH_attention_masks_focus_model_foreground_pixels",
+      "type": "mechanism",
+      "gloss": "Attention masks focus model on foreground pixels, improving accuracy.",
+      "representative": "M53",
+      "members": [
+        "M53",
+        "M54"
+      ],
+      "votes": 2,
+      "confidence": 0.4,
+      "band": "supported"
+    },
+    "MECH_some_arc_tasks_solvable_without_prior": {
+      "canonical_id": "MECH_some_arc_tasks_solvable_without_prior",
+      "type": "mechanism",
+      "gloss": "Some ARC tasks are solvable without prior offline training.",
+      "representative": "M41",
+      "members": [
+        "M41"
+      ],
+      "votes": 2,
+      "confidence": 0.4,
+      "band": "supported"
+    },
+    "MECH_increasing_offline_training_data_beneficial_diminishing": {
+      "canonical_id": "MECH_increasing_offline_training_data_beneficial_diminishing",
+      "type": "mechanism",
+      "gloss": "Increasing offline training data is beneficial, with diminishing returns.",
+      "representative": "M55",
+      "members": [
+        "M55"
+      ],
+      "votes": 2,
+      "confidence": 0.4,
+      "band": "supported"
+    },
+    "MECH_classical_vision_backbones_can_effectively_address": {
+      "canonical_id": "MECH_classical_vision_backbones_can_effectively_address",
+      "type": "mechanism",
+      "gloss": "Classical vision backbones can effectively address the ARC problem.",
+      "representative": "M38",
+      "members": [
+        "M38"
+      ],
+      "votes": 2,
+      "confidence": 0.4,
+      "band": "supported"
+    },
+    "MECH_model_produces_correct_predictions_many_views": {
+      "canonical_id": "MECH_model_produces_correct_predictions_many_views",
+      "type": "mechanism",
+      "gloss": "Model produces correct predictions in many views, but voting filters some.",
+      "representative": "M57",
+      "members": [
+        "M57"
+      ],
+      "votes": 2,
+      "confidence": 0.4,
+      "band": "supported"
+    },
+    "MECH_canvas_unifies_handling_variable_input_output": {
+      "canonical_id": "MECH_canvas_unifies_handling_variable_input_output",
+      "type": "mechanism",
+      "gloss": "Canvas unifies handling of variable input/output sizes.",
+      "representative": "M51",
+      "members": [
+        "M51"
+      ],
+      "votes": 2,
+      "confidence": 0.4,
+      "band": "supported"
+    },
+    "MECH_2d_positional_embeddings_preserve_image_structure": {
+      "canonical_id": "MECH_2d_positional_embeddings_preserve_image_structure",
+      "type": "mechanism",
+      "gloss": "2D positional embeddings preserve image structure, preventing loss from 1D sequences.",
+      "representative": "M24",
+      "members": [
+        "M24"
+      ],
+      "votes": 2,
+      "confidence": 0.4,
+      "band": "supported"
+    },
+    "MECH_diversity_training_tasks_improves_generalization": {
+      "canonical_id": "MECH_diversity_training_tasks_improves_generalization",
+      "type": "mechanism",
+      "gloss": "Diversity of training tasks improves generalization.",
+      "representative": "M56",
+      "members": [
+        "M56"
+      ],
+      "votes": 2,
+      "confidence": 0.4,
+      "band": "supported"
     }
   },
   "raw2canon": {
@@ -1418,6 +1580,7 @@
     "I79": "INT_trained_0_16_80_400_tasks",
     "I8": "INT_approach_arc_from_vision_centric_perspective",
     "I80": "INT_number_proposals_k_increases",
+    "I83": "INT_illustrates_evolution_model_predictions_during_test",
     "I84": "INT_solved_varc",
     "I87": "INT_solved_varc",
     "I85": "INT_unsolved_varc",
@@ -1435,6 +1598,7 @@
     "E21": "MET_gen_accuracy",
     "E22": "MET_gen_accuracy",
     "E24": "MET_gen_accuracy",
+    "E30": "MET_gen_passk",
     "E31": "MET_gen_passk",
     "E32": "MET_gen_accuracy",
     "E34": "MET_gen_accuracy",
@@ -1444,37 +1608,50 @@
     "E39": "MET_gen_accuracy",
     "E8": "MET_gen_accuracy",
     "E9": "MET_gen_accuracy",
-    "A20": "ASM_some_arc_tasks_ambiguous_admitting_multiple",
-    "A21": "ASM_some_arc_tasks_ambiguous_admitting_multiple",
-    "M42": "MECH_majority_voting_consolidates_multi_view_predictions",
-    "M28": "MECH_majority_voting_consolidates_multi_view_predictions",
-    "M27": "MECH_majority_voting_consolidates_multi_view_predictions",
-    "M33": "MECH_majority_voting_consolidates_multi_view_predictions",
-    "M34": "MECH_canvas_patchification_enriches_data_space_reduces",
-    "M36": "MECH_canvas_patchification_enriches_data_space_reduces",
-    "M23": "MECH_canvas_patchification_enriches_data_space_reduces",
-    "M10": "MECH_canvas_patchification_enriches_data_space_reduces",
-    "M17": "MECH_canvas_patchification_enriches_data_space_reduces",
     "M48": "MECH_task_embedding_visualization_suggests_learning_relations",
-    "M44": "MECH_attention_maps_reveal_correct_pixel_pixel",
-    "M40": "MECH_offline_training_learns_visual_common_sense",
+    "M59": "MECH_different_layers_focus_distinct_structures_task",
+    "M60": "MECH_different_layers_focus_distinct_structures_task",
+    "M61": "MECH_different_layers_focus_distinct_structures_task",
+    "M47": "MECH_different_layers_focus_distinct_structures_task",
+    "M46": "MECH_different_layers_focus_distinct_structures_task",
+    "M62": "MECH_different_layers_focus_distinct_structures_task",
+    "M27": "MECH_majority_voting_consolidates_multi_view_predictions",
+    "M42": "MECH_majority_voting_consolidates_multi_view_predictions",
+    "M33": "MECH_majority_voting_consolidates_multi_view_predictions",
+    "M28": "MECH_majority_voting_consolidates_multi_view_predictions",
+    "M29": "MECH_average_pooling_aggregates_multi_pixel_predictions",
+    "M15": "MECH_demo_pairs_at_inference_enable_test",
+    "A21": "ASM_some_arc_tasks_ambiguous_admitting_multiple",
+    "A22": "ASM_some_arc_tasks_ambiguous_admitting_multiple",
+    "A20": "ASM_some_arc_tasks_ambiguous_admitting_multiple",
+    "A6": "ASM_arc_colors_not_real_world_making",
+    "M20": "MECH_canvas_enables_augmentations_learn_geometric_transformation",
     "M16": "MECH_canvas_enables_augmentations_learn_geometric_transformation",
     "M19": "MECH_canvas_enables_augmentations_learn_geometric_transformation",
-    "M20": "MECH_canvas_enables_augmentations_learn_geometric_transformation",
+    "M7": "MECH_visual_learning_directly_enables_abstraction_inference",
+    "M50": "MECH_visual_learning_directly_enables_abstraction_inference",
     "M70": "MECH_test_time_training_refines_color_spatial",
     "M69": "MECH_test_time_training_refines_color_spatial",
-    "M59": "MECH_different_layers_focus_distinct_structures_task",
-    "M47": "MECH_different_layers_focus_distinct_structures_task",
-    "M62": "MECH_different_layers_focus_distinct_structures_task",
-    "M61": "MECH_different_layers_focus_distinct_structures_task",
-    "M46": "MECH_different_layers_focus_distinct_structures_task",
-    "M60": "MECH_different_layers_focus_distinct_structures_task",
-    "M50": "MECH_visual_learning_directly_enables_abstraction_inference",
-    "M7": "MECH_visual_learning_directly_enables_abstraction_inference",
+    "M40": "MECH_offline_training_learns_visual_common_sense",
+    "M36": "MECH_canvas_patchification_enriches_data_space_reduces",
+    "M34": "MECH_canvas_patchification_enriches_data_space_reduces",
+    "M17": "MECH_canvas_patchification_enriches_data_space_reduces",
+    "M10": "MECH_canvas_patchification_enriches_data_space_reduces",
+    "M23": "MECH_canvas_patchification_enriches_data_space_reduces",
+    "M44": "MECH_attention_maps_reveal_correct_pixel_pixel",
     "A18": "ASM_single_pixel_errors_invalidate_entire_arc",
-    "M29": "MECH_average_pooling_aggregates_multi_pixel_predictions",
+    "A19": "ASM_joint_ttt_assumes_multiple_test_tasks",
+    "A16": "ASM_joint_ttt_assumes_multiple_test_tasks",
     "A15": "ASM_larger_models_can_overfit_hindering_generalization",
-    "M15": "MECH_demo_pairs_at_inference_enable_test",
-    "A6": "ASM_arc_colors_not_real_world_making"
+    "A12": "ASM_auxiliary_tasks_assumed_translation_scale_invariant",
+    "M53": "MECH_attention_masks_focus_model_foreground_pixels",
+    "M54": "MECH_attention_masks_focus_model_foreground_pixels",
+    "M41": "MECH_some_arc_tasks_solvable_without_prior",
+    "M55": "MECH_increasing_offline_training_data_beneficial_diminishing",
+    "M38": "MECH_classical_vision_backbones_can_effectively_address",
+    "M57": "MECH_model_produces_correct_predictions_many_views",
+    "M51": "MECH_canvas_unifies_handling_variable_input_output",
+    "M24": "MECH_2d_positional_embeddings_preserve_image_structure",
+    "M56": "MECH_diversity_training_tasks_improves_generalization"
   }
 }

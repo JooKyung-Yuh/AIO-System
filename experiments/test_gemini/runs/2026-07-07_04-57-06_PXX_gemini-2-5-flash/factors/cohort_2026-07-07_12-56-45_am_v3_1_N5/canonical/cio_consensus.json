@@ -2040,5 +2040,196 @@
         "up"
       ]
     }
+  },
+  "P37": {
+    "pattern": "P37",
+    "unit": "U022",
+    "intervention": "I60",
+    "reference": null,
+    "eval_metric": null,
+    "direction": null,
+    "pattern_class": "primary_result",
+    "context": [],
+    "field_support": {
+      "n_cards": 2
+    },
+    "canonical": {
+      "context": [],
+      "intervention": "INT_compare_vit_u_nets_type_convolutional",
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        null
+      ]
+    }
+  },
+  "P55": {
+    "pattern": "P55",
+    "unit": "U026",
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "direction": null,
+    "pattern_class": "primary_result",
+    "context": [],
+    "field_support": {
+      "n_cards": 2
+    },
+    "canonical": {
+      "context": [],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        null
+      ]
+    }
+  },
+  "P56": {
+    "pattern": "P56",
+    "unit": "U026",
+    "intervention": "I66",
+    "reference": null,
+    "eval_metric": null,
+    "direction": null,
+    "pattern_class": "primary_result",
+    "context": [],
+    "field_support": {
+      "n_cards": 2
+    },
+    "canonical": {
+      "context": [],
+      "intervention": "INT_visu_alize_these_400_embeddings_2d",
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        null
+      ]
+    }
+  },
+  "P58": {
+    "pattern": "P58",
+    "unit": "U027",
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "direction": "flat",
+    "pattern_class": "primary_result",
+    "context": [],
+    "field_support": {
+      "n_cards": 2
+    },
+    "field_mismatch": {
+      "intervention": {
+        "raw": "C158",
+        "layer1_label": "context",
+        "text": "Our work explores a previously overlooked perspective in the ARC task by framing it as an image-to-image translation problem."
+      }
+    },
+    "canonical": {
+      "context": [],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        "flat"
+      ]
+    }
+  },
+  "P64": {
+    "pattern": "P64",
+    "unit": "U040",
+    "intervention": "I80",
+    "reference": null,
+    "eval_metric": "E30",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "context": [],
+    "field_support": {
+      "n_cards": 2
+    },
+    "canonical": {
+      "context": [],
+      "intervention": "INT_number_proposals_k_increases",
+      "reference": null,
+      "eval_metric": "MET_gen_passk",
+      "observable": [
+        "MET_gen_passk",
+        "up"
+      ]
+    }
+  },
+  "P67": {
+    "pattern": "P67",
+    "unit": "U042",
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "direction": null,
+    "pattern_class": "primary_result",
+    "context": [],
+    "field_support": {
+      "n_cards": 2
+    },
+    "canonical": {
+      "context": [],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        null
+      ]
+    }
+  },
+  "P68": {
+    "pattern": "P68",
+    "unit": "U043",
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "direction": null,
+    "pattern_class": "primary_result",
+    "context": [],
+    "field_support": {
+      "n_cards": 2
+    },
+    "canonical": {
+      "context": [],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        null
+      ]
+    }
+  },
+  "P69": {
+    "pattern": "P69",
+    "unit": "U045",
+    "intervention": "I83",
+    "reference": null,
+    "eval_metric": null,
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "context": [],
+    "field_support": {
+      "n_cards": 2
+    },
+    "canonical": {
+      "context": [],
+      "intervention": "INT_illustrates_evolution_model_predictions_during_test",
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        "up"
+      ]
+    }
   }
 }

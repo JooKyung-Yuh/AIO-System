@@ -75,5 +75,12 @@
     "bad_value": "E19",
     "layer1_label": "eval_metric",
     "text": "Offline training task diversity scaling: effect of varying"
+  },
+  {
+    "pattern": "P58",
+    "field": "intervention",
+    "bad_value": "C158",
+    "layer1_label": "context",
+    "text": "Our work explores a previously overlooked perspective in the ARC task by framing it as an image-to-i"
   }
 ]

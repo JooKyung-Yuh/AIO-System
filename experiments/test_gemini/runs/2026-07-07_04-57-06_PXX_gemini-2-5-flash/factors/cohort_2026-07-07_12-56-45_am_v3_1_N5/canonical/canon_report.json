@@ -2,20 +2,25 @@
   "n_builds": 5,
   "before": {
     "context": 101,
-    "intervention": 35,
-    "eval_metric": 18,
-    "am_survivors": 32
+    "intervention": 36,
+    "eval_metric": 19,
+    "am_atoms_union": 45
   },
   "after": {
     "context": 86,
-    "intervention": 36,
+    "intervention": 37,
     "eval_metric": 3,
-    "am_clusters": 15
+    "am_clusters": 25
+  },
+  "am_cluster_bands": {
+    "observed": 15,
+    "supported": 10,
+    "uncertain": 0
   },
   "context_dropped": 1,
   "merge_queue_pending": 0,
-  "cio_field_errors": 11,
+  "cio_field_errors": 12,
   "promoted_interventions": 4,
   "link_jaccard_raw_baseline": 0.229,
-  "link_jaccard_on_canonical_am": 0.291
+  "link_jaccard_on_canonical_am": 0.259
 }
