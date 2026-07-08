@@ -23,7 +23,8 @@
       },
       "pattern": {
         "id": "P1",
-        "text": "achieves accuracy"
+        "text": "achieves accuracy",
+        "note": "60.4%"
       },
       "direction": null,
       "pattern_class": "primary_result",
@@ -102,7 +103,8 @@
         },
         {
           "id": "C26",
-          "text": "using a small model with only 18 million parameters."
+          "text": "using a small model with only 18 million parameters.",
+          "note": "18 million parameters"
         }
       ],
       "intervention": {
@@ -116,7 +118,8 @@
       },
       "pattern": {
         "id": "P8",
-        "text": "achieves accuracy"
+        "text": "achieves accuracy",
+        "note": "54.5%"
       },
       "direction": null,
       "pattern_class": "primary_result",
@@ -154,7 +157,8 @@
         },
         {
           "id": "C26",
-          "text": "using a small model with only 18 million parameters."
+          "text": "using a small model with only 18 million parameters.",
+          "note": "18 million parameters"
         }
       ],
       "intervention": {
@@ -214,7 +218,8 @@
       },
       "reference": {
         "id": "P8",
-        "text": "achieves accuracy"
+        "text": "achieves accuracy",
+        "note": "54.5%"
       },
       "eval_metric": {
         "id": "E2",
@@ -222,7 +227,8 @@
       },
       "pattern": {
         "id": "P11",
-        "text": "further improves accuracy"
+        "text": "further improves accuracy",
+        "note": "to 60.4%"
       },
       "direction": "up",
       "pattern_class": "comparison",
@@ -357,7 +363,8 @@
       "eval_metric": null,
       "pattern": {
         "id": "P18",
-        "text": "this test-time training process remains reasonably fast"
+        "text": "this test-time training process remains reasonably fast",
+        "note": "e.g., 70 seconds per task on a single GPU"
       },
       "direction": null,
       "pattern_class": "primary_result",
@@ -427,27 +434,33 @@
       "context": [
         {
           "id": "C110",
-          "text": "ViT"
+          "text": "ViT",
+          "note": "width 384, depth 5, #params 6M, Gflops 10"
         },
         {
           "id": "C111",
-          "text": "ViT"
+          "text": "ViT",
+          "note": "width 512, depth 10, #params 18M, Gflops 28"
         },
         {
           "id": "C112",
-          "text": "ViT"
+          "text": "ViT",
+          "note": "width 768, depth 20, #params 66M, Gflops 99"
         },
         {
           "id": "C113",
-          "text": "U-Net"
+          "text": "U-Net",
+          "note": "setting (a), #params 7M, Gflops 18"
         },
         {
           "id": "C114",
-          "text": "U-Net"
+          "text": "U-Net",
+          "note": "setting (b), #params 17M, Gflops 33"
         },
         {
           "id": "C115",
-          "text": "U-Net"
+          "text": "U-Net",
+          "note": "setting (c), #params 55M, Gflops 87"
         }
       ],
       "intervention": {
@@ -456,7 +469,8 @@
       },
       "reference": {
         "id": "C113",
-        "text": "U-Net"
+        "text": "U-Net",
+        "note": "setting (a), #params 7M, Gflops 18"
       },
       "eval_metric": {
         "id": "E8",
@@ -464,7 +478,8 @@
       },
       "pattern": {
         "id": "P19",
-        "text": "ViT models show higher accuracy than U-Net models"
+        "text": "ViT models show higher accuracy than U-Net models",
+        "note": "ViT accuracies: 44.4, 54.5, 53.0; U-Net accuracies: 42.8, 47.5, 48.3"
       },
       "direction": "up",
       "pattern_class": "comparison",
@@ -508,7 +523,8 @@
       },
       "pattern": {
         "id": "P20",
-        "text": "These vision priors cumulatively yield improvement (a→f)"
+        "text": "These vision priors cumulatively yield improvement (a→f)",
+        "note": "27.7 improvement"
       },
       "direction": "up",
       "pattern_class": "comparison",
@@ -570,7 +586,8 @@
       },
       "pattern": {
         "id": "P21",
-        "text": "the canvas-based designs (c→f) contribute an gain."
+        "text": "the canvas-based designs (c→f) contribute an gain.",
+        "note": "11.5 gain"
       },
       "direction": "up",
       "pattern_class": "comparison",
@@ -632,7 +649,8 @@
       "eval_metric": null,
       "pattern": {
         "id": "P22",
-        "text": "These priors jointly have a gain"
+        "text": "These priors jointly have a gain",
+        "note": "27.7 points"
       },
       "direction": "up",
       "pattern_class": "comparison",
@@ -666,7 +684,8 @@
       "eval_metric": null,
       "pattern": {
         "id": "P23",
-        "text": "the canvas-based designs (c–f) has a gain."
+        "text": "the canvas-based designs (c–f) has a gain.",
+        "note": "11.5 points"
       },
       "direction": "up",
       "pattern_class": "comparison",
@@ -738,7 +757,8 @@
       "eval_metric": null,
       "pattern": {
         "id": "P25",
-        "text": "observe a degradation"
+        "text": "observe a degradation",
+        "note": "3.5 points, from 54.5 to 51.0"
       },
       "direction": "down",
       "pattern_class": "primary_result",
@@ -821,7 +841,8 @@
       "eval_metric": null,
       "pattern": {
         "id": "P28",
-        "text": "the 2×2 patchification leads to a noticeable gain"
+        "text": "the 2×2 patchification leads to a noticeable gain",
+        "note": "2.4 points, improving from 43.0 to 45.4"
       },
       "direction": "up",
       "pattern_class": "comparison",
@@ -862,7 +883,8 @@
       "eval_metric": null,
       "pattern": {
         "id": "P34",
-        "text": "this setting yields an additional gain"
+        "text": "this setting yields an additional gain",
+        "note": "2.9 points (from 45.4 to 48.3)"
       },
       "direction": "up",
       "pattern_class": "comparison",
@@ -892,7 +914,8 @@
       "eval_metric": null,
       "pattern": {
         "id": "P35",
-        "text": "Scale augmentation yields a substantial gain"
+        "text": "Scale augmentation yields a substantial gain",
+        "note": "6.2 points"
       },
       "direction": "up",
       "pattern_class": "comparison",
@@ -967,7 +990,8 @@
       },
       "pattern": {
         "id": "P30",
-        "text": "offline training improves performance"
+        "text": "offline training improves performance",
+        "note": "54.5 vs 29.1"
       },
       "direction": "up",
       "pattern_class": "comparison",
@@ -1009,7 +1033,8 @@
       },
       "pattern": {
         "id": "P31",
-        "text": "TTT independently performs better than TTT jointly"
+        "text": "TTT independently performs better than TTT jointly",
+        "note": "54.5 vs 26.4"
       },
       "direction": "up",
       "pattern_class": "comparison",
@@ -1187,7 +1212,8 @@
       "eval_metric": null,
       "pattern": {
         "id": "P41",
-        "text": "even without offline training, our TTT strategy can achieve nontrivial accuracy"
+        "text": "even without offline training, our TTT strategy can achieve nontrivial accuracy",
+        "note": "26.4"
       },
       "direction": null,
       "pattern_class": "primary_result",
@@ -1232,7 +1258,8 @@
       ],
       "intervention": {
         "id": "P41",
-        "text": "even without offline training, our TTT strategy can achieve nontrivial accuracy"
+        "text": "even without offline training, our TTT strategy can achieve nontrivial accuracy",
+        "note": "26.4"
       },
       "reference": null,
       "eval_metric": null,
@@ -1278,7 +1305,8 @@
       "eval_metric": null,
       "pattern": {
         "id": "P43",
-        "text": "performing TTT independently for each test task yields substantially better performance than doing so jointly across all test tasks"
+        "text": "performing TTT independently for each test task yields substantially better performance than doing so jointly across all test tasks",
+        "note": "by ~10 points"
       },
       "direction": "up",
       "pattern_class": "comparison",
@@ -1315,7 +1343,8 @@
       },
       "pattern": {
         "id": "P44",
-        "text": "Single-view inference has a decent pass@1 accuracy"
+        "text": "Single-view inference has a decent pass@1 accuracy",
+        "note": "35.9"
       },
       "direction": null,
       "pattern_class": "primary_result",
@@ -1354,7 +1383,8 @@
       },
       "reference": {
         "id": "P44",
-        "text": "Single-view inference has a decent pass@1 accuracy"
+        "text": "Single-view inference has a decent pass@1 accuracy",
+        "note": "35.9"
       },
       "eval_metric": {
         "id": "E12",
@@ -1362,7 +1392,8 @@
       },
       "pattern": {
         "id": "P45",
-        "text": "multi-view inference further boosts"
+        "text": "multi-view inference further boosts",
+        "note": "to 49.8"
       },
       "direction": "up",
       "pattern_class": "comparison",
@@ -1518,7 +1549,8 @@
       "eval_metric": null,
       "pattern": {
         "id": "P50",
-        "text": "Our VARC with 18M parameters is better than TRM on ARC-1"
+        "text": "Our VARC with 18M parameters is better than TRM on ARC-1",
+        "note": "~10 points better, a >20% relative improvement"
       },
       "direction": "up",
       "pattern_class": "comparison",
@@ -1559,7 +1591,8 @@
       "eval_metric": null,
       "pattern": {
         "id": "P51",
-        "text": "Doing so boosts our result"
+        "text": "Doing so boosts our result",
+        "note": "to 60.4"
       },
       "direction": "up",
       "pattern_class": "comparison",
@@ -1589,7 +1622,8 @@
       "eval_metric": null,
       "pattern": {
         "id": "P52",
-        "text": "This result closes the gap with the re-ported average human performance"
+        "text": "This result closes the gap with the re-ported average human performance",
+        "note": "60.4 vs 60.2 [31]"
       },
       "direction": "flat",
       "pattern_class": "comparison",
@@ -1634,7 +1668,8 @@
       },
       "pattern": {
         "id": "P46",
-        "text": "VARC (ensemble) achieves 60.4 on ARC-1 and 11.1 on ARC-2"
+        "text": "VARC (ensemble) achieves 60.4 on ARC-1 and 11.1 on ARC-2",
+        "note": "60.4, 11.1"
       },
       "direction": null,
       "pattern_class": "primary_result",
@@ -1686,7 +1721,8 @@
       },
       "pattern": {
         "id": "P47",
-        "text": "VARC (ensemble) is comparable to avg. human performance on ARC-1"
+        "text": "VARC (ensemble) is comparable to avg. human performance on ARC-1",
+        "note": "VARC 60.4, avg. human 60.2"
       },
       "direction": "flat",
       "pattern_class": "primary_result",
@@ -1961,7 +1997,8 @@
       },
       "pattern": {
         "id": "P61",
-        "text": "our method achieves a decent accuracy"
+        "text": "our method achieves a decent accuracy",
+        "note": "31.5%"
       },
       "direction": null,
       "pattern_class": "primary_result",
@@ -1997,7 +2034,8 @@
       },
       "pattern": {
         "id": "P62",
-        "text": "increases"
+        "text": "increases",
+        "note": "to 38.6, 52.3, and 54.0"
       },
       "direction": "up",
       "pattern_class": "primary_result",
@@ -2036,7 +2074,8 @@
       },
       "pattern": {
         "id": "P63",
-        "text": "increases"
+        "text": "increases",
+        "note": "from 26.4 to 43.1, 49.6, and 54.5"
       },
       "direction": "up",
       "pattern_class": "primary_result",
@@ -2088,7 +2127,8 @@
       },
       "pattern": {
         "id": "P65",
-        "text": "is"
+        "text": "is",
+        "note": "49.8, 54.5, and 66.3, when k is 1, 2, and 300"
       },
       "direction": "up",
       "pattern_class": "primary_result",
@@ -2426,7 +2466,8 @@
       },
       "pattern": {
         "id": "P73",
-        "text": "VARC's Attempt 1 matches the Ground Truth"
+        "text": "VARC's Attempt 1 matches the Ground Truth",
+        "note": "Tasks: 15663ba9, 981571dc, 15696249, 67c52801"
       },
       "direction": null,
       "pattern_class": "primary_result",
@@ -2475,7 +2516,8 @@
       },
       "pattern": {
         "id": "P74",
-        "text": "VARC fails to solve the task"
+        "text": "VARC fails to solve the task",
+        "note": "Tasks: 8dae5dfc, 67636eac, aa4ec2a5, b457fec5"
       },
       "direction": null,
       "pattern_class": "primary_result",
@@ -2652,7 +2694,8 @@
       },
       "pattern": {
         "id": "P78",
-        "text": "VARC's Attempt 1 matches the Ground Truth"
+        "text": "VARC's Attempt 1 matches the Ground Truth",
+        "note": "Tasks: 800d221b, 7666fa5d, 221dfab4, 7b80bb43"
       },
       "direction": null,
       "pattern_class": "primary_result",
@@ -2701,7 +2744,8 @@
       },
       "pattern": {
         "id": "P79",
-        "text": "VARC fails to solve the task"
+        "text": "VARC fails to solve the task",
+        "note": "Tasks: 2b83f449, 2d0172a1, 3e6067c3, 7ed72f31"
       },
       "direction": null,
       "pattern_class": "primary_result",

@@ -6,7 +6,7 @@
 *from Section 1 (S8)*
 - **context**: Our framework, termed Vision ARC (VARC); on the ARC-1 benchmark
 - **intervention**: formulate ARC within a vision paradigm, framing it as an image-to-image translation problem.
-- **observed**: achieves accuracy  [metric: accuracy]
+- **observed**: achieves accuracy  [60.4%]  [metric: accuracy]
 - **↑ strengthens** [mechanism] Visual learning directly enables abstraction and inference without language.
 
 ### F002  (primary_result, observed)
@@ -18,14 +18,14 @@
 
 ### F003  (primary_result, observed)
 *from Section 1 (S38)*
-- **context**: VARC; on the ARC-1 benchmark; using a small model with only 18 million parameters.
+- **context**: VARC; on the ARC-1 benchmark; using a small model with only 18 million parameters.  [18 million parameters]
 - **intervention**: approach ARC from a vision-centric perspective.
-- **observed**: achieves accuracy  [metric: accuracy]
+- **observed**: achieves accuracy  [54.5%]  [metric: accuracy]
 - **↑ strengthens** [mechanism] Visual learning directly enables abstraction and inference without language.
 
 ### F004  (primary_result, observed)
 *from Section 1 (S39)*
-- **context**: VARC; on the ARC-1 benchmark; using a small model with only 18 million parameters.
+- **context**: VARC; on the ARC-1 benchmark; using a small model with only 18 million parameters.  [18 million parameters]
 - **intervention**: approach ARC from a vision-centric perspective.  vs reference: recurrent models [53, 27]
 - **observed**: substantially surpasses the best recurrent methods [53, 27] that are also trained from scratch on ARC. (up)  [metric: accuracy]
 - **↑ strengthens** [mechanism] Visual learning directly enables abstraction and inference without language.
@@ -33,8 +33,8 @@
 ### F005  (comparison, observed)
 *from Section 1 (S41)*
 - **context**: VARC; on the ARC-1 benchmark
-- **intervention**: Combining VARC models through ensembling [29]  vs reference: achieves accuracy
-- **observed**: further improves accuracy (up)  [metric: accuracy]
+- **intervention**: Combining VARC models through ensembling [29]  vs reference: achieves accuracy  [54.5%]
+- **observed**: further improves accuracy  [to 60.4%] (up)  [metric: accuracy]
 - **↑ strengthens** [mechanism] Majority voting consolidates multi-view predictions to improve accuracy.
 - ⚠️ **field mismatch**: `reference` holds ['P8'] (wrong category)
 
@@ -54,7 +54,7 @@
 *from Section 3.5 (S148)*
 - **context**: Test-time training (TTT).; At inference time, we are given Demo={(xi, Yi)}m=1 with both input and output accessible; the model is required to make prediction for a given Xinfer in this new task T.; at inference time, the model is initialized from offline training, fine-tuned with test-time training only for the single new task T, and then performs inference on Xinfer.; As the new demo pairs in Demo are very few
 - **intervention**: We perform test-time training for each new task T independently.
-- **observed**: this test-time training process remains reasonably fast  [metric: —]
+- **observed**: this test-time training process remains reasonably fast  [e.g., 70 seconds per task on a single GPU]  [metric: —]
 - **↑ strengthens** [mechanism] Majority voting consolidates multi-view predictions to improve accuracy.
 - ⚠️ **field mismatch**: `context` holds ['A9'] (wrong category)
 
@@ -66,15 +66,15 @@
 
 ### F010  (comparison, observed)
 *from Table 1 (S191)*
-- **context**: ViT; ViT; ViT; U-Net; U-Net; U-Net
-- **intervention**: We compare variants of ViTs and U-Nets of similar sizes.  vs reference: U-Net
-- **observed**: ViT models show higher accuracy than U-Net models (up)  [metric: acc.]
+- **context**: ViT  [width 384, depth 5, #params 6M, Gflops 10]; ViT  [width 512, depth 10, #params 18M, Gflops 28]; ViT  [width 768, depth 20, #params 66M, Gflops 99]; U-Net  [setting (a), #params 7M, Gflops 18]; U-Net  [setting (b), #params 17M, Gflops 33]; U-Net  [setting (c), #params 55M, Gflops 87]
+- **intervention**: We compare variants of ViTs and U-Nets of similar sizes.  vs reference: U-Net  [setting (a), #params 7M, Gflops 18]
+- **observed**: ViT models show higher accuracy than U-Net models  [ViT accuracies: 44.4, 54.5, 53.0; U-Net accuracies: 42.8, 47.5, 48.3] (up)  [metric: acc.]
 
 ### F011  (comparison, observed)
 *from Figure 7 (S198)*
 - **context**: Effects of visual priors in VARC.; ARC-1 evaluation set.; The model used is ViT-18M.
 - **intervention**: Entries (a-c) use a patch size of 1×1 on a 32×32 canvas, whereas entries (d-f) use a patch size of 2×2 on a 64×64 canvas.  vs reference: We start from a naïve baseline with components (b-f) removed.
-- **observed**: These vision priors cumulatively yield improvement (a→f) (up)  [metric: Accuracy]
+- **observed**: These vision priors cumulatively yield improvement (a→f)  [27.7 improvement] (up)  [metric: Accuracy]
 - **↑ strengthens** [mechanism] Canvas patchification enriches data space, reduces overfitting, learns spatial priors.
 - **↑ strengthens** [mechanism] Canvas enables augmentations to learn geometric transformation invariance.
 
@@ -82,7 +82,7 @@
 *from Figure 7 (S198)*
 - **context**: Effects of visual priors in VARC.; ARC-1 evaluation set.; The model used is ViT-18M.
 - **intervention**: Entries (a-c) use a patch size of 1×1 on a 32×32 canvas, whereas entries (d-f) use a patch size of 2×2 on a 64×64 canvas.
-- **observed**: the canvas-based designs (c→f) contribute an gain. (up)  [metric: Accuracy]
+- **observed**: the canvas-based designs (c→f) contribute an gain.  [11.5 gain] (up)  [metric: Accuracy]
 - **↑ strengthens** [mechanism] Canvas patchification enriches data space, reduces overfitting, learns spatial priors.
 - **↑ strengthens** [mechanism] Canvas enables augmentations to learn geometric transformation invariance.
 
@@ -90,13 +90,13 @@
 *from Section 5.1 (S200)*
 - **context**: 2D positional embedding.; Patchification.; Translation and scale augmentation.
 - **intervention**: starting from a baseline (a) without the other components in this figure.  vs reference: starting from a baseline (a) without the other components in this figure.
-- **observed**: These priors jointly have a gain (up)  [metric: —]
+- **observed**: These priors jointly have a gain  [27.7 points] (up)  [metric: —]
 
 ### F014  (comparison, observed)
 *from Section 5.1 (S200)*
 - **context**: Patchification.; Translation and scale augmentation.
 - **intervention**: we advance from 1×1 patches on a 32×32 canvas to 2×2 patches on a 64×64 canvas.
-- **observed**: the canvas-based designs (c–f) has a gain. (up)  [metric: —]
+- **observed**: the canvas-based designs (c–f) has a gain.  [11.5 points] (up)  [metric: —]
 
 ### F015  (primary_result, observed)
 *from Section 5.1 (S202)*
@@ -108,7 +108,7 @@
 *from Section 5.1 (S204)*
 - **context**: 2D positional embedding.
 - **intervention**: we re-place the 2D ROPE in Fig. 7(f) with a 1D ROPE
-- **observed**: observe a degradation (down)  [metric: —]
+- **observed**: observe a degradation  [3.5 points, from 54.5 to 51.0] (down)  [metric: —]
 
 ### F017  (primary_result, observed)
 *from Section 5.1 (S208)*
@@ -121,20 +121,20 @@
 *from Section 5.1 (S215)*
 - **context**: Patchification.; the scaling ratio is fixed as 2x.; This can be interpreted as one-pixel translation augmentation on the canvas.
 - **intervention**: we advance from 1×1 patches on a 32×32 canvas to 2×2 patches on a 64×64 canvas.
-- **observed**: the 2×2 patchification leads to a noticeable gain (up)  [metric: —]
+- **observed**: the 2×2 patchification leads to a noticeable gain  [2.4 points, improving from 43.0 to 45.4] (up)  [metric: —]
 - **↑ strengthens** [mechanism] Canvas enables augmentations to learn geometric transformation invariance.
 
 ### F019  (comparison, observed)
 *from Section 5.1 (S228)*
 - **context**: Translation and scale augmentation.
 - **intervention**: we apply fully flexible translation augmen-tation on the canvas.
-- **observed**: this setting yields an additional gain (up)  [metric: —]
+- **observed**: this setting yields an additional gain  [2.9 points (from 45.4 to 48.3)] (up)  [metric: —]
 
 ### F020  (comparison, observed)
 *from Section 5.1 (S230)*
 - **context**: Translation and scale augmentation.
 - **intervention**: we further ap-ply the scale augmentation enabled by the concept of can-vas.
-- **observed**: Scale augmentation yields a substantial gain (up)  [metric: —]
+- **observed**: Scale augmentation yields a substantial gain  [6.2 points] (up)  [metric: —]
 - **↑ strengthens** [mechanism] Visual learning directly enables abstraction and inference without language.
 
 ### F021  (comparison, observed)
@@ -147,14 +147,14 @@
 *from Figure 9 (S222)*
 - **context**: —
 - **intervention**: with vs. without offline train-ing, and joint vs. independent for each task.  vs reference: with vs. without offline train-ing, and joint vs. independent for each task.
-- **observed**: offline training improves performance (up)  [metric: Accuracy (%)]
+- **observed**: offline training improves performance  [54.5 vs 29.1] (up)  [metric: Accuracy (%)]
 - **↑ strengthens** [mechanism] Offline training learns visual common sense from the training set.
 
 ### F023  (comparison, observed)
 *from Figure 9 (S223)*
 - **context**: —
 - **intervention**: with vs. without offline train-ing, and joint vs. independent for each task.  vs reference: with vs. without offline train-ing, and joint vs. independent for each task.
-- **observed**: TTT independently performs better than TTT jointly (up)  [metric: Accuracy (%)]
+- **observed**: TTT independently performs better than TTT jointly  [54.5 vs 26.4] (up)  [metric: Accuracy (%)]
 
 ### F024  (comparison, observed)
 *from Section 5.2 (S236)*
@@ -186,14 +186,14 @@
 *from Section 5.2 (S245)*
 - **context**: Test-time training (TTT) strategies.
 - **intervention**: we study TTT with and without offline training, and TTT performed jointly on all test tasks vs. independently for each test task.
-- **observed**: even without offline training, our TTT strategy can achieve nontrivial accuracy  [metric: —]
+- **observed**: even without offline training, our TTT strategy can achieve nontrivial accuracy  [26.4]  [metric: —]
 - **↑ strengthens** [mechanism] Majority voting consolidates multi-view predictions to improve accuracy.
 - **↑ strengthens** [assumption] Single pixel errors invalidate entire ARC predictions.
 
 ### F029  (comparison, observed)
 *from Section 5.2 (S246)*
 - **context**: under a similar setting.
-- **intervention**: even without offline training, our TTT strategy can achieve nontrivial accuracy
+- **intervention**: even without offline training, our TTT strategy can achieve nontrivial accuracy  [26.4]
 - **observed**: This result outperforms that in [36] (up)  [metric: —]
 - ⚠️ **field mismatch**: `intervention` holds ['P41'] (wrong category)
 
@@ -201,20 +201,20 @@
 *from Section 5.2 (S247)*
 - **context**: Test-time training (TTT) strategies.
 - **intervention**: we study TTT with and without offline training, and TTT performed jointly on all test tasks vs. independently for each test task.  vs reference: we study TTT with and without offline training, and TTT performed jointly on all test tasks vs. independently for each test task.
-- **observed**: performing TTT independently for each test task yields substantially better performance than doing so jointly across all test tasks (up)  [metric: —]
+- **observed**: performing TTT independently for each test task yields substantially better performance than doing so jointly across all test tasks  [by ~10 points] (up)  [metric: —]
 
 ### F031  (primary_result, observed)
 *from Section 5.2 (S255)*
 - **context**: Single-view vs. multi-view inference.; we adopt multi-view inference by default.
 - **intervention**: we also examine the single-view inference accuracy.
-- **observed**: Single-view inference has a decent pass@1 accuracy  [metric: we compare pass@1 accuracy.]
+- **observed**: Single-view inference has a decent pass@1 accuracy  [35.9]  [metric: we compare pass@1 accuracy.]
 - **↑ strengthens** [mechanism] Visual learning directly enables abstraction and inference without language.
 
 ### F032  (comparison, observed)
 *from Section 5.2 (S255)*
 - **context**: Single-view vs. multi-view inference.
-- **intervention**: we adopt multi-view inference by default.  vs reference: Single-view inference has a decent pass@1 accuracy
-- **observed**: multi-view inference further boosts (up)  [metric: we compare pass@1 accuracy.]
+- **intervention**: we adopt multi-view inference by default.  vs reference: Single-view inference has a decent pass@1 accuracy  [35.9]
+- **observed**: multi-view inference further boosts  [to 49.8] (up)  [metric: we compare pass@1 accuracy.]
 - **↑ strengthens** [mechanism] Visual learning directly enables abstraction and inference without language.
 - ⚠️ **field mismatch**: `intervention` holds ['C136'] (wrong category)
 - ⚠️ **field mismatch**: `reference` holds ['P44'] (wrong category)
@@ -237,33 +237,33 @@
 *from Section 5.3 (S268)*
 - **context**: System-level Comparisons.; In the controlled setting of training from scratch on ARC data
 - **intervention**: we compare with leading results using LLMs or recurrent models, on ARC-1 and ARC-2.
-- **observed**: Our VARC with 18M parameters is better than TRM on ARC-1 (up)  [metric: —]
+- **observed**: Our VARC with 18M parameters is better than TRM on ARC-1  [~10 points better, a >20% relative improvement] (up)  [metric: —]
 - **↑ strengthens** [mechanism] Visual learning directly enables abstraction and inference without language.
 
 ### F036  (comparison, observed)
 *from Section 5.3 (S271)*
 - **context**: System-level Comparisons.
 - **intervention**: we ensemble one ViT and one U-Net, each with test-time training run four times.
-- **observed**: Doing so boosts our result (up)  [metric: —]
+- **observed**: Doing so boosts our result  [to 60.4] (up)  [metric: —]
 
 ### F037  (comparison, observed)
 *from Section 5.3 (S272)*
 - **context**: System-level Comparisons.
 - **intervention**: we ensemble one ViT and one U-Net, each with test-time training run four times.
-- **observed**: This result closes the gap with the re-ported average human performance (flat)  [metric: —]
+- **observed**: This result closes the gap with the re-ported average human performance  [60.4 vs 60.2 [31]] (flat)  [metric: —]
 
 ### F038  (primary_result, observed)
 *from Table 3 (S262)*
 - **context**: LLM-based results are from the ARC-AGI leader-board [18].; HRM, TRM, and our VARC are trained from scratch only on ARC data.; Our single-model result is based on ViT, with mean±std of 54.5±0.7 (ARC-1) and 8.3±0.4 (ARC-2) over four runs.; Our ensemble result aggregates an 18M ViT and a 55M U-Net, each with test-time training performed four times.
 - **intervention**: Our ensemble result aggregates an 18M ViT and a 55M U-Net, each with test-time training performed four times.
-- **observed**: VARC (ensemble) achieves 60.4 on ARC-1 and 11.1 on ARC-2  [metric: ARC-1]
+- **observed**: VARC (ensemble) achieves 60.4 on ARC-1 and 11.1 on ARC-2  [60.4, 11.1]  [metric: ARC-1]
 - ⚠️ **field mismatch**: `intervention` holds ['C141'] (wrong category)
 
 ### F039  (primary_result, observed)
 *from Table 3 (S263)*
 - **context**: LLM-based results are from the ARC-AGI leader-board [18].; HRM, TRM, and our VARC are trained from scratch only on ARC data.; Our single-model result is based on ViT, with mean±std of 54.5±0.7 (ARC-1) and 8.3±0.4 (ARC-2) over four runs.; Our ensemble result aggregates an 18M ViT and a 55M U-Net, each with test-time training performed four times.
 - **intervention**: Our ensemble result aggregates an 18M ViT and a 55M U-Net, each with test-time training performed four times.
-- **observed**: VARC (ensemble) is comparable to avg. human performance on ARC-1 (flat)  [metric: ARC-1]
+- **observed**: VARC (ensemble) is comparable to avg. human performance on ARC-1  [VARC 60.4, avg. human 60.2] (flat)  [metric: ARC-1]
 - ⚠️ **field mismatch**: `intervention` holds ['C141'] (wrong category)
 
 ### F040  (primary_result, observed)
@@ -303,27 +303,27 @@
 *from Section B.1 (S361)*
 - **context**: RE-ARC dataset [22] in our offline training
 - **intervention**: Using only the original ARC training data, without any RE-ARC data
-- **observed**: our method achieves a decent accuracy  [metric: accuracy]
+- **observed**: our method achieves a decent accuracy  [31.5%]  [metric: accuracy]
 
 ### F046  (primary_result, observed)
 *from Section B.1 (S362)*
 - **context**: RE-ARC dataset [22] in our offline training
 - **intervention**: adding 10, 100, and 1,000 pairs per task from RE-ARC  vs reference: Using only the original ARC training data, without any RE-ARC data
-- **observed**: increases (up)  [metric: accuracy]
+- **observed**: increases  [to 38.6, 52.3, and 54.0] (up)  [metric: accuracy]
 - **↑ strengthens** [mechanism] Offline training learns visual common sense from the training set.
 
 ### F047  (primary_result, observed)
 *from Section B.1 (S365)*
 - **context**: —
 - **intervention**: trained on 0, 16, 80, and 400 tasks
-- **observed**: increases (up)  [metric: accuracy]
+- **observed**: increases  [from 26.4 to 43.1, 49.6, and 54.5] (up)  [metric: accuracy]
 - **↑ strengthens** [mechanism] Offline training learns visual common sense from the training set.
 
 ### F048  (primary_result, observed)
 *from Section B.2 (S372)*
 - **context**: By default, the ARC protocol; multi-view inference with many views (510); On ARC-1
 - **intervention**: as the number of proposals (k) increases
-- **observed**: is (up)  [metric: pass@k accu-racy]
+- **observed**: is  [49.8, 54.5, and 66.3, when k is 1, 2, and 300] (up)  [metric: pass@k accu-racy]
 
 ### F049  (primary_result, observed)
 *from Section B.2 (S374)*
@@ -373,13 +373,13 @@
 *from Figure 17 (S391)*
 - **context**: Task 15663ba9; Task 981571dc; Task 15696249; Task 67c52801; Inference input
 - **intervention**: first and second solutions proposed by VARC
-- **observed**: VARC's Attempt 1 matches the Ground Truth  [metric: correct output]
+- **observed**: VARC's Attempt 1 matches the Ground Truth  [Tasks: 15663ba9, 981571dc, 15696249, 67c52801]  [metric: correct output]
 
 ### F057  (primary_result, observed)
 *from Figure 17 (S391)*
 - **context**: Task 8dae5dfc; Task 67636eac; Task aa4ec2a5; Task b457fec5; Inference input
 - **intervention**: first and second solutions proposed by VARC
-- **observed**: VARC fails to solve the task  [metric: correct output]
+- **observed**: VARC fails to solve the task  [Tasks: 8dae5dfc, 67636eac, aa4ec2a5, b457fec5]  [metric: correct output]
 
 ### F058  (primary_result, observed)
 *from Figure 18 (S392)*
@@ -405,13 +405,13 @@
 *from Figure 18 (S398)*
 - **context**: Task 800d221b; Task 7666fa5d; Task 221dfab4; Task 7b80bb43; Inference input
 - **intervention**: first and second solutions proposed by VARC
-- **observed**: VARC's Attempt 1 matches the Ground Truth  [metric: correct output]
+- **observed**: VARC's Attempt 1 matches the Ground Truth  [Tasks: 800d221b, 7666fa5d, 221dfab4, 7b80bb43]  [metric: correct output]
 
 ### F062  (primary_result, observed)
 *from Figure 18 (S398)*
 - **context**: Task 2b83f449; Task 2d0172a1; Task 3e6067c3; Task 7ed72f31; Inference input
 - **intervention**: first and second solutions proposed by VARC
-- **observed**: VARC fails to solve the task  [metric: correct output]
+- **observed**: VARC fails to solve the task  [Tasks: 2b83f449, 2d0172a1, 3e6067c3, 7ed72f31]  [metric: correct output]
 
 ### F063  (primary_result, observed)
 *from Figure 20 (S411)*
