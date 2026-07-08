@@ -150,6 +150,7 @@ def consensus_cio(builds, survivors_patterns, ctx_min):
             "direction": mode([c.get("direction") for c in cards]),
             "pattern_class": mode([c.get("pattern_class") for c in cards]),
             "context": sorted([x for x, v in ctx_ctr.items() if v >= ctx_min]),
+            "provenance": {"location": mode([(c.get("provenance") or {}).get("location") for c in cards])},
             "field_support": {"n_cards": len(cards)},
         }
     return out
