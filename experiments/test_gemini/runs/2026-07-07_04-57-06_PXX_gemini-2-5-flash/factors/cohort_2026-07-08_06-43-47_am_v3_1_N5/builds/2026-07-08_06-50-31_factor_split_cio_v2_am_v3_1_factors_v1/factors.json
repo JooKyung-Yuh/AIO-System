@@ -1,0 +1,1478 @@
+[
+  {
+    "factor_id": "F001",
+    "cio": {
+      "cio_id": "CIO_001",
+      "unit": "U001",
+      "context": [
+        "C6",
+        "C7"
+      ],
+      "intervention": "I13",
+      "reference": null,
+      "eval_metric": "E1",
+      "pattern": "P1",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section 1",
+        "source_span": "S8"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "VARC achieves 60.4% accuracy, outperforming scratch-trained methods and competitive with LLMs, suggesting visual learning enables abstraction."
+      }
+    ]
+  },
+  {
+    "factor_id": "F002",
+    "cio": {
+      "cio_id": "CIO_002",
+      "unit": "U001",
+      "context": [
+        "C24",
+        "C25",
+        "C26"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": "E2",
+      "pattern": "P8",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section 1",
+        "source_span": "S38"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "ARC concepts are inherently visual (reflection, symmetry, gravity), motivating a vision-centric approach where abstraction arises from visual learning."
+      }
+    ]
+  },
+  {
+    "factor_id": "F003",
+    "cio": {
+      "cio_id": "CIO_003",
+      "unit": "U001",
+      "context": [
+        "C24",
+        "C26",
+        "C25",
+        "C15",
+        "C13"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": "E2",
+      "pattern": "P9",
+      "direction": "up",
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section 1",
+        "source_span": "S39"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "Humans solve ARC by reasoning through common sense from the visual world, making vision-driven approaches natural for abstraction."
+      }
+    ]
+  },
+  {
+    "factor_id": "F004",
+    "cio": {
+      "cio_id": "CIO_004",
+      "unit": "U001",
+      "context": [
+        "C25"
+      ],
+      "intervention": "I13",
+      "reference": null,
+      "eval_metric": "E2",
+      "pattern": "P11",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 1",
+        "source_span": "S41"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "VARC (18M params) achieves 54.5% accuracy, surpassing recurrent methods, indicating visual learning enables abstraction without language."
+      }
+    ]
+  },
+  {
+    "factor_id": "F005",
+    "cio": {
+      "cio_id": "CIO_005",
+      "unit": "U001",
+      "context": [
+        "C25"
+      ],
+      "intervention": "I13",
+      "reference": null,
+      "eval_metric": "E2",
+      "pattern": "P12",
+      "direction": "flat",
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section 1",
+        "source_span": "S41"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "Ensembled VARC achieves 60.4% accuracy, matching human performance, supporting that visual learning enables abstraction."
+      }
+    ]
+  },
+  {
+    "factor_id": "F006",
+    "cio": {
+      "cio_id": "CIO_006",
+      "unit": "U012",
+      "context": [
+        "C86",
+        "A9"
+      ],
+      "intervention": "I39",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P18",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section 3.5",
+        "source_span": "S148"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  },
+  {
+    "factor_id": "F007",
+    "cio": {
+      "cio_id": "CIO_007",
+      "unit": "U017",
+      "context": [
+        "C110",
+        "C111",
+        "C112",
+        "C113",
+        "C114",
+        "C115"
+      ],
+      "intervention": "I49",
+      "reference": null,
+      "eval_metric": "E8",
+      "pattern": "P19",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Table 1",
+        "source_span": "S191"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_008",
+        "kind": "mechanism",
+        "node": "M38",
+        "gloss": "Classical vision backbones can address ARC effectively",
+        "direction": "strengthen",
+        "evidence": "U-Net variants achieve decent accuracy, suggesting this problem can also be effectively addressed by classical vision backbones."
+      }
+    ]
+  },
+  {
+    "factor_id": "F008",
+    "cio": {
+      "cio_id": "CIO_008",
+      "unit": "U018",
+      "context": [
+        "C118",
+        "C117"
+      ],
+      "intervention": "I50",
+      "reference": "I51",
+      "eval_metric": "E9",
+      "pattern": "P20",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Figure 7",
+        "source_span": "S198"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_006",
+        "kind": "mechanism",
+        "node": "M25",
+        "gloss": "Explicit 2D positional modeling is essential",
+        "direction": "strengthen",
+        "evidence": "Extending from 1D to 2D positional embedding is beneficial, supporting that explicit 2D positional modeling is essential."
+      }
+    ]
+  },
+  {
+    "factor_id": "F009",
+    "cio": {
+      "cio_id": "CIO_009",
+      "unit": "U018",
+      "context": [
+        "C118",
+        "C117"
+      ],
+      "intervention": "I50",
+      "reference": null,
+      "eval_metric": "E9",
+      "pattern": "P21",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Figure 7",
+        "source_span": "S198"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_006",
+        "kind": "mechanism",
+        "node": "M25",
+        "gloss": "Explicit 2D positional modeling is essential",
+        "direction": "strengthen",
+        "evidence": "2D ROPE improves accuracy, observed as beneficial for 2D positional embedding, supporting its essential nature."
+      }
+    ]
+  },
+  {
+    "factor_id": "F010",
+    "cio": {
+      "cio_id": "CIO_010",
+      "unit": "U019",
+      "context": [
+        "C120"
+      ],
+      "intervention": "I53",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P25",
+      "direction": "down",
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section 5.1",
+        "source_span": "S204"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_006",
+        "kind": "mechanism",
+        "node": "M25",
+        "gloss": "Explicit 2D positional modeling is essential",
+        "direction": "strengthen",
+        "evidence": "Replacing 2D ROPE with 1D ROPE degrades accuracy by 3.5 points, demonstrating 2D positional modeling is essential."
+      }
+    ]
+  },
+  {
+    "factor_id": "F011",
+    "cio": {
+      "cio_id": "CIO_011",
+      "unit": "U019",
+      "context": [
+        "C122",
+        "C124",
+        "C125"
+      ],
+      "intervention": "I54",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P28",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 5.1",
+        "source_span": "S215"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_002",
+        "kind": "mechanism",
+        "node": "M10",
+        "gloss": "Canvas patchification enriches data space, reduces overfitting",
+        "direction": "strengthen",
+        "evidence": "2x2 patchification leads to a 2.4 point gain, as each patch covers multiple colors, enriching the data space for learning."
+      }
+    ]
+  },
+  {
+    "factor_id": "F012",
+    "cio": {
+      "cio_id": "CIO_012",
+      "unit": "U019",
+      "context": [
+        "C127"
+      ],
+      "intervention": "I58",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P34",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 5.1",
+        "source_span": "S228"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_003",
+        "kind": "mechanism",
+        "node": "M16",
+        "gloss": "Canvas enables geometric augmentations for invariance",
+        "direction": "strengthen",
+        "evidence": "Fully flexible translation augmentation on the canvas yields an additional 2.9 points gain."
+      },
+      {
+        "target_am": "AM_004",
+        "kind": "mechanism",
+        "node": "M20",
+        "gloss": "Augmentations foster invariance to geometric transformations",
+        "direction": "strengthen",
+        "evidence": "Translation augmentation yields a 2.9 point gain; these augmentations encourage learning invariance to geometric transformations."
+      }
+    ]
+  },
+  {
+    "factor_id": "F013",
+    "cio": {
+      "cio_id": "CIO_013",
+      "unit": "U019",
+      "context": [
+        "C127"
+      ],
+      "intervention": "I59",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P35",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 5.1",
+        "source_span": "S230"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_003",
+        "kind": "mechanism",
+        "node": "M16",
+        "gloss": "Canvas enables geometric augmentations for invariance",
+        "direction": "strengthen",
+        "evidence": "Scale augmentation enabled by the canvas yields a substantial 6.2 points gain."
+      },
+      {
+        "target_am": "AM_004",
+        "kind": "mechanism",
+        "node": "M20",
+        "gloss": "Augmentations foster invariance to geometric transformations",
+        "direction": "strengthen",
+        "evidence": "Scale augmentation yields a substantial 6.2 points gain; these augmentations encourage learning invariance to geometric transformations."
+      },
+      {
+        "target_am": "AM_007",
+        "kind": "mechanism",
+        "node": "M37",
+        "gloss": "Scale augmentation yields substantial gain due to ViT bias",
+        "direction": "strengthen",
+        "evidence": "Scale augmentation yields a substantial 6.2 points gain, explaining why it's substantial due to ViT's lack of scale invariance bias."
+      }
+    ]
+  },
+  {
+    "factor_id": "F014",
+    "cio": {
+      "cio_id": "CIO_014",
+      "unit": "U020",
+      "context": [
+        "C126"
+      ],
+      "intervention": "I56",
+      "reference": null,
+      "eval_metric": "E10",
+      "pattern": "P29",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Figure 8",
+        "source_span": "S219"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  },
+  {
+    "factor_id": "F015",
+    "cio": {
+      "cio_id": "CIO_015",
+      "unit": "U021",
+      "context": [
+        "C133"
+      ],
+      "intervention": "I57",
+      "reference": "I57",
+      "eval_metric": "E11",
+      "pattern": "P30",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Figure 9",
+        "source_span": "S222"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_009",
+        "kind": "mechanism",
+        "node": "M40",
+        "gloss": "Visual common sense is learnable from training data",
+        "direction": "strengthen",
+        "evidence": "Offline training greatly improves TTT performance, suggesting that common sense about the visual world can be learned from the training set."
+      }
+    ]
+  },
+  {
+    "factor_id": "F016",
+    "cio": {
+      "cio_id": "CIO_016",
+      "unit": "U021",
+      "context": [
+        "C133"
+      ],
+      "intervention": "I57",
+      "reference": "I57",
+      "eval_metric": "E11",
+      "pattern": "P31",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Figure 9",
+        "source_span": "S223"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_010",
+        "kind": "mechanism",
+        "node": "M41",
+        "gloss": "Some ARC tasks are solvable from scratch",
+        "direction": "strengthen",
+        "evidence": "Even without offline training, TTT achieves nontrivial accuracy (26.4%), suggesting some tasks can be solved tabula rasa."
+      }
+    ]
+  },
+  {
+    "factor_id": "F017",
+    "cio": {
+      "cio_id": "CIO_017",
+      "unit": "U022",
+      "context": [
+        "C129",
+        "C130"
+      ],
+      "intervention": "I60",
+      "reference": "I60",
+      "eval_metric": null,
+      "pattern": "P36",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 5.2",
+        "source_span": "S236"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  },
+  {
+    "factor_id": "F018",
+    "cio": {
+      "cio_id": "CIO_018",
+      "unit": "U022",
+      "context": [
+        "C132"
+      ],
+      "intervention": "I61",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P39",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 5.2",
+        "source_span": "S241"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_018",
+        "kind": "assumption",
+        "node": "A16",
+        "gloss": "Multiple test tasks cannot be assumed available simultaneously",
+        "direction": "strengthen",
+        "evidence": "Independent TTT performs better than joint TTT, even though joint relies on a stronger assumption about multiple test tasks at once."
+      }
+    ]
+  },
+  {
+    "factor_id": "F019",
+    "cio": {
+      "cio_id": "CIO_019",
+      "unit": "U022",
+      "context": [
+        "C133"
+      ],
+      "intervention": "I62",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P41",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section 5.2",
+        "source_span": "S245"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  },
+  {
+    "factor_id": "F020",
+    "cio": {
+      "cio_id": "CIO_020",
+      "unit": "U022",
+      "context": [
+        "C134"
+      ],
+      "intervention": "I62",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P42",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 5.2",
+        "source_span": "S246"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_019",
+        "kind": "assumption",
+        "node": "A18",
+        "gloss": "Single pixel error invalidates entire ARC prediction",
+        "direction": "strengthen",
+        "evidence": "Multi-view inference boosts pass@1 accuracy by 13.9 points; this large gain is explained by single pixel errors invalidating ARC predictions."
+      }
+    ]
+  },
+  {
+    "factor_id": "F021",
+    "cio": {
+      "cio_id": "CIO_021",
+      "unit": "U022",
+      "context": [
+        "C135"
+      ],
+      "intervention": "I63",
+      "reference": null,
+      "eval_metric": "E12",
+      "pattern": "P44",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section 5.2",
+        "source_span": "S255"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "VARC (18M params) achieves 54.5% accuracy on ARC-1, supporting that visual learning enables abstraction without language."
+      }
+    ]
+  },
+  {
+    "factor_id": "F022",
+    "cio": {
+      "cio_id": "CIO_022",
+      "unit": "U022",
+      "context": [
+        "C135"
+      ],
+      "intervention": null,
+      "reference": "I63",
+      "eval_metric": "E12",
+      "pattern": "P45",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 5.2",
+        "source_span": "S255"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "Ensembled VARC achieves 60.4% accuracy on ARC-1, supporting that visual learning enables abstraction without language."
+      }
+    ]
+  },
+  {
+    "factor_id": "F023",
+    "cio": {
+      "cio_id": "CIO_023",
+      "unit": "U025",
+      "context": [
+        "C141"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": [
+        "E16",
+        "E17"
+      ],
+      "pattern": "P46",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Table 3",
+        "source_span": "S262"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "VARC (ensemble) matches average human performance on ARC-1, closing the gap and supporting visual learning for abstraction."
+      }
+    ]
+  },
+  {
+    "factor_id": "F024",
+    "cio": {
+      "cio_id": "CIO_024",
+      "unit": "U025",
+      "context": [
+        "C141"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": "E16",
+      "pattern": "P47",
+      "direction": "flat",
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Table 3",
+        "source_span": "S263"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  },
+  {
+    "factor_id": "F025",
+    "cio": {
+      "cio_id": "CIO_025",
+      "unit": "U024",
+      "context": [
+        "C143",
+        "C144"
+      ],
+      "intervention": "I64",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P48",
+      "direction": "up",
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section 5.3",
+        "source_span": "S264"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "VARC substantially outperforms recurrent models trained from scratch, indicating visual learning enables abstraction without language."
+      }
+    ]
+  },
+  {
+    "factor_id": "F026",
+    "cio": {
+      "cio_id": "CIO_026",
+      "unit": "U024",
+      "context": [
+        "C145"
+      ],
+      "intervention": "I64",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P49",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 5.3",
+        "source_span": "S267"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "VARC is competitive with many popular LLM-based methods, supporting that visual learning enables abstraction without language."
+      }
+    ]
+  },
+  {
+    "factor_id": "F027",
+    "cio": {
+      "cio_id": "CIO_027",
+      "unit": "U024",
+      "context": [
+        "C145"
+      ],
+      "intervention": "I64",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P50",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 5.3",
+        "source_span": "S268"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "VARC uses a model several orders of magnitude smaller than LLMs, yet achieves competitive results, supporting visual learning's efficiency for abstraction."
+      }
+    ]
+  },
+  {
+    "factor_id": "F028",
+    "cio": {
+      "cio_id": "CIO_028",
+      "unit": "U024",
+      "context": [
+        "C145"
+      ],
+      "intervention": "I65",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P51",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 5.3",
+        "source_span": "S271"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  },
+  {
+    "factor_id": "F029",
+    "cio": {
+      "cio_id": "CIO_029",
+      "unit": "U024",
+      "context": [
+        "C145"
+      ],
+      "intervention": "I65",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P52",
+      "direction": "flat",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 5.3",
+        "source_span": "S272"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "VARC does not rely on internet-scale pre-training data, yet achieves competitive results, supporting visual learning's effectiveness for abstraction."
+      }
+    ]
+  },
+  {
+    "factor_id": "F030",
+    "cio": {
+      "cio_id": "CIO_030",
+      "unit": "U026",
+      "context": [
+        "C150",
+        "C151"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P53",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section 6",
+        "source_span": "S280"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_011",
+        "kind": "mechanism",
+        "node": "M44",
+        "gloss": "Attention maps reveal pixel-to-pixel reasoning",
+        "direction": "strengthen",
+        "evidence": "Attention maps show our model correctly reasons about pixel-to-pixel relationships."
+      }
+    ]
+  },
+  {
+    "factor_id": "F031",
+    "cio": {
+      "cio_id": "CIO_031",
+      "unit": "U026",
+      "context": [
+        "C150",
+        "C151"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P54",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section 6",
+        "source_span": "S281"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_015",
+        "kind": "mechanism",
+        "node": "M59",
+        "gloss": "Transformer layers specialize in different structures/contexts",
+        "direction": "strengthen",
+        "evidence": "Different layers exhibit different specialties, such as attending to pixels to be copied or target lines, showing layer specialization."
+      }
+    ]
+  },
+  {
+    "factor_id": "F032",
+    "cio": {
+      "cio_id": "CIO_032",
+      "unit": "U026",
+      "context": [
+        "C154",
+        "C155"
+      ],
+      "intervention": "I66",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P57",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 12",
+        "source_span": "S289"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_012",
+        "kind": "mechanism",
+        "node": "M48",
+        "gloss": "Task embedding visualization suggests learning task relations",
+        "direction": "strengthen",
+        "evidence": "Nearby points in task embedding space exhibit similar semantics, suggesting our method learns task relations."
+      }
+    ]
+  },
+  {
+    "factor_id": "F033",
+    "cio": {
+      "cio_id": "CIO_033",
+      "unit": "U037",
+      "context": [
+        "C214",
+        "C215"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P59",
+      "direction": "up",
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 14",
+        "source_span": "S357"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_009",
+        "kind": "mechanism",
+        "node": "M40",
+        "gloss": "Visual common sense is learnable from training data",
+        "direction": "strengthen",
+        "evidence": "Increasing RE-ARC data increases accuracy, suggesting that common sense about the visual world can be learned from training data."
+      }
+    ]
+  },
+  {
+    "factor_id": "F034",
+    "cio": {
+      "cio_id": "CIO_034",
+      "unit": "U038",
+      "context": [
+        "C216",
+        "C217"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P60",
+      "direction": "up",
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 15",
+        "source_span": "S359"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_009",
+        "kind": "mechanism",
+        "node": "M40",
+        "gloss": "Visual common sense is learnable from training data",
+        "direction": "strengthen",
+        "evidence": "Increasing training task diversity increases accuracy, suggesting that common sense about the visual world can be learned from training data."
+      }
+    ]
+  },
+  {
+    "factor_id": "F035",
+    "cio": {
+      "cio_id": "CIO_035",
+      "unit": "U039",
+      "context": [
+        "C218"
+      ],
+      "intervention": "I77",
+      "reference": null,
+      "eval_metric": "E21",
+      "pattern": "P61",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section B.1",
+        "source_span": "S361"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  },
+  {
+    "factor_id": "F036",
+    "cio": {
+      "cio_id": "CIO_036",
+      "unit": "U039",
+      "context": [
+        "C218"
+      ],
+      "intervention": "I78",
+      "reference": "I77",
+      "eval_metric": "E22",
+      "pattern": "P62",
+      "direction": "up",
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section B.1",
+        "source_span": "S362"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  },
+  {
+    "factor_id": "F037",
+    "cio": {
+      "cio_id": "CIO_037",
+      "unit": "U039",
+      "context": [
+        "C218"
+      ],
+      "intervention": "I79",
+      "reference": "I79",
+      "eval_metric": "E24",
+      "pattern": "P63",
+      "direction": "up",
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section B.1",
+        "source_span": "S365"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  },
+  {
+    "factor_id": "F038",
+    "cio": {
+      "cio_id": "CIO_038",
+      "unit": "U040",
+      "context": [
+        "C222",
+        "C220"
+      ],
+      "intervention": "I80",
+      "reference": null,
+      "eval_metric": "E31",
+      "pattern": "P65",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section B.2",
+        "source_span": "S372"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "Our method can solve some highly challenging tasks, supporting that visual learning enables abstraction without language."
+      }
+    ]
+  },
+  {
+    "factor_id": "F039",
+    "cio": {
+      "cio_id": "CIO_039",
+      "unit": "U040",
+      "context": [
+        "C222",
+        "C220"
+      ],
+      "intervention": "I80",
+      "reference": null,
+      "eval_metric": "E31",
+      "pattern": "P66",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section B.2",
+        "source_span": "S374"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  },
+  {
+    "factor_id": "F040",
+    "cio": {
+      "cio_id": "CIO_040",
+      "unit": "U048",
+      "context": [
+        "C256",
+        "C257",
+        "C258"
+      ],
+      "intervention": "I90",
+      "reference": null,
+      "eval_metric": "E36",
+      "pattern": "P82",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 19",
+        "source_span": "S403"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_014",
+        "kind": "mechanism",
+        "node": "M58",
+        "gloss": "Model interprets ambiguous rules with multiple plausible guesses",
+        "direction": "strengthen",
+        "evidence": "Our model attempts to interpret ambiguous rules as either 'going-through-only' or 'touching', showing it makes plausible guesses."
+      },
+      {
+        "target_am": "AM_020",
+        "kind": "assumption",
+        "node": "A20",
+        "gloss": "Some ARC tasks have multiple plausible rules",
+        "direction": "strengthen",
+        "evidence": "Some ARC tasks admit multiple plausible explanations or rules, and our model provides different interpretations."
+      }
+    ]
+  },
+  {
+    "factor_id": "F041",
+    "cio": {
+      "cio_id": "CIO_041",
+      "unit": "U046",
+      "context": [
+        "C235",
+        "C236",
+        "C237",
+        "C238"
+      ],
+      "intervention": "I86",
+      "reference": null,
+      "eval_metric": "E32",
+      "pattern": "P73",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 17",
+        "source_span": "S391"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "VARC successfully solves challenging ARC-2 tasks, supporting that visual learning enables abstraction without language."
+      }
+    ]
+  },
+  {
+    "factor_id": "F042",
+    "cio": {
+      "cio_id": "CIO_042",
+      "unit": "U046",
+      "context": [
+        "C239",
+        "C240",
+        "C241",
+        "C242"
+      ],
+      "intervention": "I86",
+      "reference": null,
+      "eval_metric": "E32",
+      "pattern": "P74",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 17",
+        "source_span": "S391"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  },
+  {
+    "factor_id": "F043",
+    "cio": {
+      "cio_id": "CIO_043",
+      "unit": "U047",
+      "context": [
+        "C248",
+        "C249",
+        "C250",
+        "C251"
+      ],
+      "intervention": "I89",
+      "reference": null,
+      "eval_metric": "E34",
+      "pattern": "P78",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 18",
+        "source_span": "S398"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_015",
+        "kind": "mechanism",
+        "node": "M59",
+        "gloss": "Transformer layers specialize in different structures/contexts",
+        "direction": "strengthen",
+        "evidence": "Layers at different depths tend to focus on different structures, showing Transformer layers specialize in structures/contexts."
+      }
+    ]
+  },
+  {
+    "factor_id": "F044",
+    "cio": {
+      "cio_id": "CIO_044",
+      "unit": "U047",
+      "context": [
+        "C252",
+        "C253",
+        "C254",
+        "C255"
+      ],
+      "intervention": "I89",
+      "reference": null,
+      "eval_metric": "E34",
+      "pattern": "P79",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 18",
+        "source_span": "S398"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_015",
+        "kind": "mechanism",
+        "node": "M59",
+        "gloss": "Transformer layers specialize in different structures/contexts",
+        "direction": "strengthen",
+        "evidence": "Early layers tend to focus on local transformations and context, showing Transformer layers specialize in structures/contexts."
+      }
+    ]
+  },
+  {
+    "factor_id": "F045",
+    "cio": {
+      "cio_id": "CIO_045",
+      "unit": "U049",
+      "context": [
+        "C263",
+        "C265"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": "E37",
+      "pattern": "P83",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 20",
+        "source_span": "S411"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_015",
+        "kind": "mechanism",
+        "node": "M59",
+        "gloss": "Transformer layers specialize in different structures/contexts",
+        "direction": "strengthen",
+        "evidence": "Deep layers are more task-specialized, showing Transformer layers specialize in different structures/contexts."
+      }
+    ]
+  },
+  {
+    "factor_id": "F046",
+    "cio": {
+      "cio_id": "CIO_046",
+      "unit": "U050",
+      "context": [
+        "C269",
+        "C270",
+        "C271",
+        "C272",
+        "C273",
+        "C274"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": "E38",
+      "pattern": "P84",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 21",
+        "source_span": "S420"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_015",
+        "kind": "mechanism",
+        "node": "M59",
+        "gloss": "Transformer layers specialize in different structures/contexts",
+        "direction": "strengthen",
+        "evidence": "Some layers exhibit strong attention to 3x3 neighborhoods, while others focus on outward-radiating rays, showing layer specialization."
+      }
+    ]
+  },
+  {
+    "factor_id": "F047",
+    "cio": {
+      "cio_id": "CIO_047",
+      "unit": "U055",
+      "context": [
+        "C275",
+        "C276",
+        "C277"
+      ],
+      "intervention": "I92",
+      "reference": null,
+      "eval_metric": "E39",
+      "pattern": "P85",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 22",
+        "source_span": "S423"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  },
+  {
+    "factor_id": "F048",
+    "cio": {
+      "cio_id": "CIO_048",
+      "unit": "U056",
+      "context": [
+        "C278"
+      ],
+      "intervention": "I92",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P86",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 22",
+        "source_span": "S424"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  },
+  {
+    "factor_id": "F049",
+    "cio": {
+      "cio_id": "CIO_049",
+      "unit": "U057",
+      "context": [
+        "C279"
+      ],
+      "intervention": "I92",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P87",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Figure 22",
+        "source_span": "S425"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  }
+]

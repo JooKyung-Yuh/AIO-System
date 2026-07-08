@@ -1,0 +1,9 @@
+[
+  {
+    "pattern": "P18",
+    "field": "context",
+    "bad_value": [
+      "A9"
+    ]
+  }
+]

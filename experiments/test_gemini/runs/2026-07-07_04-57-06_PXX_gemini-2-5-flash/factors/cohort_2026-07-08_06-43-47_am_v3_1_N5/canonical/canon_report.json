@@ -1,0 +1,26 @@
+{
+  "n_builds": 5,
+  "before": {
+    "context": 75,
+    "intervention": 29,
+    "eval_metric": 20,
+    "am_atoms_union": 46
+  },
+  "after": {
+    "context": 68,
+    "intervention": 27,
+    "eval_metric": 4,
+    "am_clusters": 21
+  },
+  "am_cluster_bands": {
+    "observed": 18,
+    "supported": 0,
+    "uncertain": 3
+  },
+  "context_dropped": 1,
+  "merge_queue_pending": 0,
+  "cio_field_errors": 1,
+  "promoted_interventions": 0,
+  "link_jaccard_raw_baseline": 0.403,
+  "link_jaccard_on_canonical_am": 0.371
+}
