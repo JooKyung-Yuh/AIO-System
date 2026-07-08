@@ -288,7 +288,15 @@ def canonical_metric(consensus, byspan):
     for e in ids:
         text = byspan.get(e, {}).get("text", "").lower()
         evalset = "arc2" if ("arc-2" in text or "arc2" in text) else "arc1" if "arc" in text else "gen"
-        metric = "passk" if "pass@" in text else "accuracy"
+        m = re.search(r"pass\s*@?\s*(\d+)", text)
+        if m:
+            metric = f"pass{m.group(1)}"            # keep pass@1 vs pass@2 distinct (headline is pass@2)
+        elif "pass@" in text:
+            metric = "passk"
+        elif "loss" in text or "cross-entropy" in text or "cross entropy" in text:
+            metric = "loss"                         # a loss is not an accuracy -- do not merge them
+        else:
+            metric = "accuracy"
         cid = f"MET_{evalset}_{metric}"
         canon.setdefault(cid, {"canonical_id": cid, "type": "eval_metric", "members": []})
         canon[cid]["members"].append(e)

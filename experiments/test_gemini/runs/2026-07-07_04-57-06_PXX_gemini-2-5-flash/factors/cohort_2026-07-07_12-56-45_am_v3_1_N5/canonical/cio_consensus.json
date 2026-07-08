@@ -906,9 +906,9 @@
       ],
       "intervention": "INT_also_examine_single_view_inference_accuracy",
       "reference": null,
-      "eval_metric": "MET_gen_passk",
+      "eval_metric": "MET_gen_pass1",
       "observable": [
-        "MET_gen_passk",
+        "MET_gen_pass1",
         null
       ]
     }
@@ -945,9 +945,9 @@
       ],
       "intervention": null,
       "reference": null,
-      "eval_metric": "MET_gen_passk",
+      "eval_metric": "MET_gen_pass1",
       "observable": [
-        "MET_gen_passk",
+        "MET_gen_pass1",
         "up"
       ]
     }

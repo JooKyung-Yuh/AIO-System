@@ -9,7 +9,7 @@
   "after": {
     "context": 86,
     "intervention": 37,
-    "eval_metric": 3,
+    "eval_metric": 4,
     "am_clusters": 25
   },
   "am_cluster_bands": {

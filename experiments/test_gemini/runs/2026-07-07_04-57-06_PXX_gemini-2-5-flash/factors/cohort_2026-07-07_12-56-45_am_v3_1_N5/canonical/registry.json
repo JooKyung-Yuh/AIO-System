@@ -1112,13 +1112,11 @@
         "E9"
       ]
     },
-    "MET_gen_passk": {
-      "canonical_id": "MET_gen_passk",
+    "MET_gen_pass1": {
+      "canonical_id": "MET_gen_pass1",
       "type": "eval_metric",
       "members": [
-        "E12",
-        "E30",
-        "E31"
+        "E12"
       ]
     },
     "MET_arc1_accuracy": {
@@ -1126,6 +1124,14 @@
       "type": "eval_metric",
       "members": [
         "E16"
+      ]
+    },
+    "MET_gen_passk": {
+      "canonical_id": "MET_gen_passk",
+      "type": "eval_metric",
+      "members": [
+        "E30",
+        "E31"
       ]
     }
   },
@@ -1592,7 +1598,7 @@
     "E1": "MET_gen_accuracy",
     "E10": "MET_gen_accuracy",
     "E11": "MET_gen_accuracy",
-    "E12": "MET_gen_passk",
+    "E12": "MET_gen_pass1",
     "E16": "MET_arc1_accuracy",
     "E2": "MET_gen_accuracy",
     "E21": "MET_gen_accuracy",
