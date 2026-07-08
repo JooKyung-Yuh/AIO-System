@@ -1,14 +1,5 @@
 {
   "context": {
-    "CTX_other_new_demo_pairs_demo_very_few": {
-      "canonical_id": "CTX_other_new_demo_pairs_demo_very_few",
-      "type": "context",
-      "facet": "other",
-      "gloss": "As the new demo pairs in Demo are very few",
-      "members": [
-        "A9"
-      ]
-    },
     "CTX_model_vit": {
       "canonical_id": "CTX_model_vit",
       "type": "context",
@@ -815,22 +806,6 @@
         "C13"
       ]
     },
-    "INT_shown_tab_1_66m_vit_model": {
-      "canonical_id": "INT_shown_tab_1_66m_vit_model",
-      "type": "intervention",
-      "gloss": "as shown in Tab. 1 for the 66M ViT model.",
-      "members": [
-        "C132"
-      ]
-    },
-    "INT_adopt_multi_view_inference_default": {
-      "canonical_id": "INT_adopt_multi_view_inference_default",
-      "type": "intervention",
-      "gloss": "we adopt multi-view inference by default.",
-      "members": [
-        "C136"
-      ]
-    },
     "INT_ensemble_result_aggregates_18m_vit_55m": {
       "canonical_id": "INT_ensemble_result_aggregates_18m_vit_55m",
       "type": "intervention",
@@ -845,14 +820,6 @@
       "gloss": "In early epochs",
       "members": [
         "C278"
-      ]
-    },
-    "INT_varc": {
-      "canonical_id": "INT_varc",
-      "type": "intervention",
-      "gloss": "VARC",
-      "members": [
-        "C35"
       ]
     },
     "INT_offline_training_data_scaling_effect_varying": {
@@ -1113,30 +1080,6 @@
       "members": [
         "I92"
       ]
-    },
-    "INT_even_without_offline_training_ttt_strategy": {
-      "canonical_id": "INT_even_without_offline_training_ttt_strategy",
-      "type": "intervention",
-      "gloss": "even without offline training, our TTT strategy can achieve nontrivial accuracy",
-      "members": [
-        "P41"
-      ]
-    },
-    "INT_single_view_inference_has_decent_pass": {
-      "canonical_id": "INT_single_view_inference_has_decent_pass",
-      "type": "intervention",
-      "gloss": "Single-view inference has a decent pass@1 accuracy",
-      "members": [
-        "P44"
-      ]
-    },
-    "INT_achieves_accuracy": {
-      "canonical_id": "INT_achieves_accuracy",
-      "type": "intervention",
-      "gloss": "achieves accuracy",
-      "members": [
-        "P8"
-      ]
     }
   },
   "eval_metric": {
@@ -1347,7 +1290,6 @@
     }
   },
   "raw2canon": {
-    "A9": "CTX_other_new_demo_pairs_demo_very_few",
     "C110": "CTX_model_vit",
     "C111": "CTX_model_vit",
     "C112": "CTX_model_vit",
@@ -1367,11 +1309,11 @@
     "C129": "CTX_model_vit_vs_u_net",
     "C130": "CTX_other_evaluate_three_model_sizes_each_architecture",
     "C131": "CTX_other_scalability",
-    "C132": "INT_shown_tab_1_66m_vit_model",
+    "C132": "CTX_model_shown_tab_1_66m_vit_model",
     "C133": "CTX_training_test_time_training_ttt_strategies",
     "C134": "CTX_other_under_similar_setting",
     "C135": "CTX_eval_single_view_vs_multi_view_inference",
-    "C136": "INT_adopt_multi_view_inference_default",
+    "C136": "CTX_eval_adopt_multi_view_inference_default",
     "C137": "CTX_other_system_level_comparisons",
     "C138": "CTX_other_llm_based_results_from_arc_agi",
     "C139": "CTX_training_hrm_trm_varc_trained_from_scratch",
@@ -1442,7 +1384,7 @@
     "C277": "CTX_model_full_canvas_not_shown_brevity",
     "C278": "INT_early_epochs",
     "C279": "CTX_other_later_epochs",
-    "C35": "INT_varc",
+    "C35": "CTX_other_varc",
     "C6": "CTX_other_framework_termed_vision_arc_varc",
     "C7": "CTX_dataset_arc_1_benchmark",
     "C81": "CTX_training_test_time_training_ttt",
@@ -1484,9 +1426,6 @@
     "I89": "INT_first_second_solutions_proposed_varc",
     "I90": "INT_model_attempts_interpret_rule_either_going",
     "I92": "INT_test_time_training_progresses",
-    "P41": "INT_even_without_offline_training_ttt_strategy",
-    "P44": "INT_single_view_inference_has_decent_pass",
-    "P8": "INT_achieves_accuracy",
     "E1": "MET_gen_accuracy",
     "E10": "MET_gen_accuracy",
     "E11": "MET_gen_accuracy",

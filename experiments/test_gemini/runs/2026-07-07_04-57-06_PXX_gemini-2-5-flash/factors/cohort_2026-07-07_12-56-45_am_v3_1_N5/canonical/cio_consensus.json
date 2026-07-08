@@ -121,7 +121,7 @@
     "pattern": "P11",
     "unit": "U001",
     "intervention": "I13",
-    "reference": "P8",
+    "reference": null,
     "eval_metric": "E2",
     "direction": "up",
     "pattern_class": "comparison",
@@ -132,13 +132,20 @@
     "field_support": {
       "n_cards": 5
     },
+    "field_mismatch": {
+      "reference": {
+        "raw": "P8",
+        "layer1_label": "pattern",
+        "text": "achieves accuracy"
+      }
+    },
     "canonical": {
       "context": [
         "CTX_other_varc",
         "CTX_dataset_arc_1_benchmark"
       ],
       "intervention": "INT_combining_varc_models_through_ensembling_29",
-      "reference": "INT_achieves_accuracy",
+      "reference": null,
       "eval_metric": "MET_gen_accuracy",
       "observable": [
         "MET_gen_accuracy",
@@ -178,7 +185,7 @@
   "P16": {
     "pattern": "P16",
     "unit": "U004",
-    "intervention": "C35",
+    "intervention": null,
     "reference": null,
     "eval_metric": null,
     "direction": null,
@@ -189,11 +196,18 @@
     "field_support": {
       "n_cards": 5
     },
+    "field_mismatch": {
+      "intervention": {
+        "raw": "C35",
+        "layer1_label": "context",
+        "text": "VARC"
+      }
+    },
     "canonical": {
       "context": [
         "CTX_other_varc"
       ],
-      "intervention": "INT_varc",
+      "intervention": null,
       "reference": null,
       "eval_metric": null,
       "observable": [
@@ -211,7 +225,6 @@
     "direction": null,
     "pattern_class": "primary_result",
     "context": [
-      "A9",
       "C81",
       "C83",
       "C86"
@@ -219,9 +232,17 @@
     "field_support": {
       "n_cards": 3
     },
+    "field_mismatch": {
+      "context": [
+        {
+          "raw": "A9",
+          "layer1_label": "assumption",
+          "text": "As the new demo pairs in Demo are very few"
+        }
+      ]
+    },
     "canonical": {
       "context": [
-        "CTX_other_new_demo_pairs_demo_very_few",
         "CTX_training_test_time_training_ttt",
         "CTX_other_at_inference_time_given_demo_xi",
         "CTX_training_at_inference_time_model_initialized_from"
@@ -717,7 +738,7 @@
   "P39": {
     "pattern": "P39",
     "unit": "U022",
-    "intervention": "C132",
+    "intervention": null,
     "reference": null,
     "eval_metric": null,
     "direction": "up",
@@ -728,11 +749,18 @@
     "field_support": {
       "n_cards": 5
     },
+    "field_mismatch": {
+      "intervention": {
+        "raw": "C132",
+        "layer1_label": "context",
+        "text": "as shown in Tab. 1 for the 66M ViT model."
+      }
+    },
     "canonical": {
       "context": [
         "CTX_model_shown_tab_1_66m_vit_model"
       ],
-      "intervention": "INT_shown_tab_1_66m_vit_model",
+      "intervention": null,
       "reference": null,
       "eval_metric": null,
       "observable": [
@@ -798,7 +826,7 @@
   "P42": {
     "pattern": "P42",
     "unit": "U022",
-    "intervention": "P41",
+    "intervention": null,
     "reference": null,
     "eval_metric": null,
     "direction": "up",
@@ -809,11 +837,18 @@
     "field_support": {
       "n_cards": 5
     },
+    "field_mismatch": {
+      "intervention": {
+        "raw": "P41",
+        "layer1_label": "pattern",
+        "text": "even without offline training, our TTT strategy can achieve nontrivial accuracy"
+      }
+    },
     "canonical": {
       "context": [
         "CTX_other_under_similar_setting"
       ],
-      "intervention": "INT_even_without_offline_training_ttt_strategy",
+      "intervention": null,
       "reference": null,
       "eval_metric": null,
       "observable": [
@@ -881,8 +916,8 @@
   "P45": {
     "pattern": "P45",
     "unit": "U022",
-    "intervention": "C136",
-    "reference": "P44",
+    "intervention": null,
+    "reference": null,
     "eval_metric": "E12",
     "direction": "up",
     "pattern_class": "comparison",
@@ -892,12 +927,24 @@
     "field_support": {
       "n_cards": 5
     },
+    "field_mismatch": {
+      "intervention": {
+        "raw": "C136",
+        "layer1_label": "context",
+        "text": "we adopt multi-view inference by default."
+      },
+      "reference": {
+        "raw": "P44",
+        "layer1_label": "pattern",
+        "text": "Single-view inference has a decent pass@1 accuracy"
+      }
+    },
     "canonical": {
       "context": [
         "CTX_eval_single_view_vs_multi_view_inference"
       ],
-      "intervention": "INT_adopt_multi_view_inference_default",
-      "reference": "INT_single_view_inference_has_decent_pass",
+      "intervention": null,
+      "reference": null,
       "eval_metric": "MET_gen_passk",
       "observable": [
         "MET_gen_passk",
@@ -1067,6 +1114,16 @@
     "field_support": {
       "n_cards": 5
     },
+    "field_mismatch": {
+      "intervention": {
+        "raw": "C141",
+        "layer1_label": "context",
+        "text": "Our ensemble result aggregates an 18M ViT and a 55M U-Net, each with test-time training performed four times."
+      }
+    },
+    "promoted": {
+      "intervention": "C141"
+    },
     "canonical": {
       "context": [
         "CTX_other_llm_based_results_from_arc_agi",
@@ -1099,6 +1156,16 @@
     ],
     "field_support": {
       "n_cards": 5
+    },
+    "field_mismatch": {
+      "intervention": {
+        "raw": "C141",
+        "layer1_label": "context",
+        "text": "Our ensemble result aggregates an 18M ViT and a 55M U-Net, each with test-time training performed four times."
+      }
+    },
+    "promoted": {
+      "intervention": "C141"
     },
     "canonical": {
       "context": [
@@ -1230,6 +1297,16 @@
     "field_support": {
       "n_cards": 5
     },
+    "field_mismatch": {
+      "intervention": {
+        "raw": "E18",
+        "layer1_label": "eval_metric",
+        "text": "Offline training data scaling: effect of varying"
+      }
+    },
+    "promoted": {
+      "intervention": "E18"
+    },
     "canonical": {
       "context": [
         "CTX_dataset_re_arc_samples_per_task",
@@ -1258,6 +1335,16 @@
     ],
     "field_support": {
       "n_cards": 5
+    },
+    "field_mismatch": {
+      "intervention": {
+        "raw": "E19",
+        "layer1_label": "eval_metric",
+        "text": "Offline training task diversity scaling: effect of varying"
+      }
+    },
+    "promoted": {
+      "intervention": "E19"
     },
     "canonical": {
       "context": [
