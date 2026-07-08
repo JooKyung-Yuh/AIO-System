@@ -136,6 +136,68 @@ def consensus_cio(builds, survivors_patterns, ctx_min):
     return out
 
 
+# ---------- Phase A': field category discipline WITHOUT discarding info ----------
+FIELD_PREFIX = {
+    "intervention": ("I",),        # an intervention id only
+    "reference":    ("I", "C"),    # baseline arm: another intervention, or a contrasting context
+    "eval_metric":  ("E",),        # a metric id only
+}
+# verbs that betray a real manipulation that Layer-1 mislabeled as context/metric
+MANIP_RE = re.compile(
+    r"\b(vary|varying|ablat|ensembl|scal|swap|replace|remov|add|combin|"
+    r"increase|decrease|with vs|independent|joint|augment)\w*", re.I)
+
+
+def validate_cio_fields(consensus, byspan):
+    """Enforce field-prefix discipline on each surviving CIO card. A violating value is NOT
+    deleted: it is stashed in card['field_mismatch'][field] with its Layer-1 label + text, and
+    the working slot is cleared to None so the graph never builds a wrong-category edge.
+    promote_mislabeled_intervention() can pull genuine-but-mislabeled ones back."""
+    errors = []
+    for pat, c in consensus.items():
+        mism = {}
+        for field, allowed in FIELD_PREFIX.items():
+            v = c.get(field)
+            if v and not str(v).startswith(allowed):
+                s = byspan.get(v, {})
+                mism[field] = {"raw": v, "layer1_label": s.get("assigned_label"),
+                               "text": s.get("text", "")}
+                c[field] = None
+                errors.append({"pattern": pat, "field": field, "bad_value": v,
+                               "layer1_label": s.get("assigned_label"),
+                               "text": (s.get("text") or "")[:100]})
+        ctx = c.get("context") or []
+        bad = [x for x in ctx if not str(x).startswith("C")]
+        if bad:
+            mism["context"] = [{"raw": x, "layer1_label": byspan.get(x, {}).get("assigned_label"),
+                                "text": byspan.get(x, {}).get("text", "")} for x in bad]
+            c["context"] = [x for x in ctx if str(x).startswith("C")]
+            errors.append({"pattern": pat, "field": "context", "bad_value": bad})
+        if not str(c.get("pattern") or "").startswith("P"):
+            errors.append({"pattern": pat, "field": "pattern", "bad_value": c.get("pattern"),
+                           "note": "anchor not a P-id"})
+        if mism:
+            c["field_mismatch"] = mism
+    return errors
+
+
+def promote_mislabeled_intervention(consensus, byspan):
+    """A value stashed in field_mismatch['intervention'] that came from a context/metric node but
+    reads like a real manipulation (MANIP_RE) is promoted back into the empty intervention slot.
+    The raw id is kept (still C../E..) and tagged 'promoted' so provenance stays honest."""
+    promoted = []
+    for pat, c in consensus.items():
+        mm = (c.get("field_mismatch") or {}).get("intervention")
+        if not mm or c.get("intervention"):
+            continue
+        if MANIP_RE.search(mm.get("text", "")):
+            c["intervention"] = mm["raw"]
+            c.setdefault("promoted", {})["intervention"] = mm["raw"]
+            promoted.append({"pattern": pat, "node": mm["raw"],
+                             "layer1_label": mm.get("layer1_label"), "text": mm.get("text", "")[:90]})
+    return promoted
+
+
 # ---------- Step D: context facet classify + drop pure fragments ----------
 FACET_RULES = [
     ("dataset", r"arc-?1|arc-?2|re-?arc"),
@@ -263,6 +325,8 @@ def main():
         link_counts[k.split("|")[1]] += 1
 
     cio_cons = consensus_cio(builds, survivors_pat, args.ctx_min)
+    field_errors = validate_cio_fields(cio_cons, byspan)                 # Phase A'
+    promoted = promote_mislabeled_intervention(cio_cons, byspan)         # Phase C-1
     am_canon, r2c_am = canonical_am(builds, survivors_am, link_counts)
     merge_queue = []
     int_canon, r2c_int = canonical_intervention(cio_cons, byspan, cache, merge_queue)
@@ -293,6 +357,8 @@ def main():
                   "eval_metric": len(met_canon), "am_clusters": len(am_canon)},
         "context_dropped": len(dropped),
         "merge_queue_pending": len(merge_queue),
+        "cio_field_errors": len(field_errors),
+        "promoted_interventions": len(promoted),
         "link_jaccard_raw_baseline": ens["reproducibility_mean_pairwise_jaccard"].get("link_atomic"),
         "link_jaccard_on_canonical_am": link_jaccard_canonical(builds, r2c_am),
     }
@@ -301,6 +367,8 @@ def main():
     (out_dir / "am_canonical.json").write_text(json.dumps(am_canon, indent=2, ensure_ascii=False))
     (out_dir / "registry.json").write_text(json.dumps(registry, indent=2, ensure_ascii=False))
     (out_dir / "merge_queue.json").write_text(json.dumps(merge_queue, indent=2, ensure_ascii=False))
+    (out_dir / "cio_field_errors.json").write_text(json.dumps(field_errors, indent=2, ensure_ascii=False))
+    (out_dir / "promoted_interventions.json").write_text(json.dumps(promoted, indent=2, ensure_ascii=False))
     (out_dir / "canon_report.json").write_text(json.dumps(report, indent=2, ensure_ascii=False))
     if not cache_path.exists():
         cache_path.write_text(json.dumps(cache, indent=2, ensure_ascii=False))
