@@ -1,0 +1,32 @@
+[
+  {
+    "pattern": "P46",
+    "node": "C141",
+    "layer1_label": "context",
+    "text": "Our ensemble result aggregates an 18M ViT and a 55M U-Net, each with test-time training pe"
+  },
+  {
+    "pattern": "P47",
+    "node": "C141",
+    "layer1_label": "context",
+    "text": "Our ensemble result aggregates an 18M ViT and a 55M U-Net, each with test-time training pe"
+  },
+  {
+    "pattern": "P52",
+    "node": "C141",
+    "layer1_label": "context",
+    "text": "Our ensemble result aggregates an 18M ViT and a 55M U-Net, each with test-time training pe"
+  },
+  {
+    "pattern": "P59",
+    "node": "E18",
+    "layer1_label": "eval_metric",
+    "text": "Offline training data scaling: effect of varying"
+  },
+  {
+    "pattern": "P60",
+    "node": "E19",
+    "layer1_label": "eval_metric",
+    "text": "Offline training task diversity scaling: effect of varying"
+  }
+]

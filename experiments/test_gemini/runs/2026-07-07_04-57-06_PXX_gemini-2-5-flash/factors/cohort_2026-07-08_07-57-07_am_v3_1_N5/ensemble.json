@@ -1,0 +1,2857 @@
+{
+  "run_dir": "runs/2026-07-07_04-57-06_PXX_gemini-2-5-flash",
+  "builds": [
+    "2026-07-08_07-57-09_1_factor_split_cio_v2_1_am_v3_1_factors_v1",
+    "2026-07-08_07-57-09_2_factor_split_cio_v2_1_am_v3_1_factors_v1",
+    "2026-07-08_07-57-09_3_factor_split_cio_v2_1_am_v3_1_factors_v1",
+    "2026-07-08_08-00-46_4_factor_split_cio_v2_1_am_v3_1_factors_v1",
+    "2026-07-08_08-00-49_5_factor_split_cio_v2_1_am_v3_1_factors_v1"
+  ],
+  "prompts": {
+    "cio": "extract_cio_v2_1",
+    "am": "extract_am_v3_1",
+    "link": "link_factors_v1"
+  },
+  "band_cutoffs": {
+    "observed": ">=0.8",
+    "supported": ">=0.4",
+    "uncertain": "<0.4"
+  },
+  "reproducibility_mean_pairwise_jaccard": {
+    "n_builds": 5,
+    "cio_pattern": 0.954,
+    "am_all_raw": 0.7,
+    "am_mechanism_raw": 0.684,
+    "am_assumption_raw": 0.775,
+    "link_atomic": 0.363
+  },
+  "nodes": {
+    "cio_patterns": {
+      "P44": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P31": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P39": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P46": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P52": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P34": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P48": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P74": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P36": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P49": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P41": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P73": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P84": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P53": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P22": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P57": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P20": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P65": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P8": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P72": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P76": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P17": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P83": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P78": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P85": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P25": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P63": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P21": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P9": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P16": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P29": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P80": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P42": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P71": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P59": {
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P54": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P82": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P87": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P12": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P86": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P19": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P61": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P75": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P28": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P7": {
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P51": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P62": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P38": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P30": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P79": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P26": {
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P66": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P43": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P47": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P50": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P24": {
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P40": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P11": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P60": {
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P81": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P23": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P70": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P77": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P35": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P1": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P45": {
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      }
+    },
+    "am_nodes": {
+      "M25": {
+        "kind": "mechanism",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "M7": {
+        "kind": "mechanism",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "A20": {
+        "kind": "assumption",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "M34": {
+        "kind": "mechanism",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "A18": {
+        "kind": "assumption",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "M60": {
+        "kind": "mechanism",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "M61": {
+        "kind": "mechanism",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "A16": {
+        "kind": "assumption",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "M36": {
+        "kind": "mechanism",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "M23": {
+        "kind": "mechanism",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "M10": {
+        "kind": "mechanism",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "A6": {
+        "kind": "assumption",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "M38": {
+        "kind": "mechanism",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "M17": {
+        "kind": "mechanism",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "A21": {
+        "kind": "assumption",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "M62": {
+        "kind": "mechanism",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "M19": {
+        "kind": "mechanism",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "A15": {
+        "kind": "assumption",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "M48": {
+        "kind": "mechanism",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "M58": {
+        "kind": "mechanism",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "M37": {
+        "kind": "mechanism",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "M41": {
+        "kind": "mechanism",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "M16": {
+        "kind": "mechanism",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "A19": {
+        "kind": "assumption",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "M20": {
+        "kind": "mechanism",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "M59": {
+        "kind": "mechanism",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "M44": {
+        "kind": "mechanism",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "M40": {
+        "kind": "mechanism",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "M54": {
+        "kind": "mechanism",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "M64": {
+        "kind": "mechanism",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "M29": {
+        "kind": "mechanism",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "M63": {
+        "kind": "mechanism",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "M50": {
+        "kind": "mechanism",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "M18": {
+        "kind": "mechanism",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "M32": {
+        "kind": "mechanism",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "M24": {
+        "kind": "mechanism",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "M67": {
+        "kind": "mechanism",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "M28": {
+        "kind": "mechanism",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "M66": {
+        "kind": "mechanism",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "M33": {
+        "kind": "mechanism",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "M42": {
+        "kind": "mechanism",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "M68": {
+        "kind": "mechanism",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "M65": {
+        "kind": "mechanism",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "A12": {
+        "kind": "assumption",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "M22": {
+        "kind": "mechanism",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "M27": {
+        "kind": "mechanism",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      }
+    },
+    "links": {
+      "P31|A16|strengthen": {
+        "cio_pattern": "P31",
+        "am_node": "A16",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P48|A6|strengthen": {
+        "cio_pattern": "P48",
+        "am_node": "A6",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P28|M20|strengthen": {
+        "cio_pattern": "P28",
+        "am_node": "M20",
+        "direction": "strengthen",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P16|M7|strengthen": {
+        "cio_pattern": "P16",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P74|M7|strengthen": {
+        "cio_pattern": "P74",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P84|M60|strengthen": {
+        "cio_pattern": "P84",
+        "am_node": "M60",
+        "direction": "strengthen",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P63|M60|strengthen": {
+        "cio_pattern": "P63",
+        "am_node": "M60",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P12|M7|strengthen": {
+        "cio_pattern": "P12",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P44|M44|strengthen": {
+        "cio_pattern": "P44",
+        "am_node": "M44",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P1|M7|strengthen": {
+        "cio_pattern": "P1",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P80|M59|strengthen": {
+        "cio_pattern": "P80",
+        "am_node": "M59",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P8|M7|strengthen": {
+        "cio_pattern": "P8",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P76|M7|strengthen": {
+        "cio_pattern": "P76",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P26|M19|strengthen": {
+        "cio_pattern": "P26",
+        "am_node": "M19",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P49|M54|strengthen": {
+        "cio_pattern": "P49",
+        "am_node": "M54",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P50|M54|strengthen": {
+        "cio_pattern": "P50",
+        "am_node": "M54",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P9|M7|strengthen": {
+        "cio_pattern": "P9",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P21|M25|strengthen": {
+        "cio_pattern": "P21",
+        "am_node": "M25",
+        "direction": "strengthen",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P61|M58|strengthen": {
+        "cio_pattern": "P61",
+        "am_node": "M58",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P17|M40|strengthen": {
+        "cio_pattern": "P17",
+        "am_node": "M40",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P63|M59|strengthen": {
+        "cio_pattern": "P63",
+        "am_node": "M59",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P66|M62|strengthen": {
+        "cio_pattern": "P66",
+        "am_node": "M62",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P84|M61|strengthen": {
+        "cio_pattern": "P84",
+        "am_node": "M61",
+        "direction": "strengthen",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P26|M20|strengthen": {
+        "cio_pattern": "P26",
+        "am_node": "M20",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P87|M7|strengthen": {
+        "cio_pattern": "P87",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 4,
+        "confidence": 0.8,
+        "band": "observed"
+      },
+      "P24|M36|strengthen": {
+        "cio_pattern": "P24",
+        "am_node": "M36",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P66|M60|strengthen": {
+        "cio_pattern": "P66",
+        "am_node": "M60",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P52|M40|strengthen": {
+        "cio_pattern": "P52",
+        "am_node": "M40",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P23|M17|strengthen": {
+        "cio_pattern": "P23",
+        "am_node": "M17",
+        "direction": "strengthen",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P80|M60|strengthen": {
+        "cio_pattern": "P80",
+        "am_node": "M60",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P78|M7|strengthen": {
+        "cio_pattern": "P78",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P66|M59|strengthen": {
+        "cio_pattern": "P66",
+        "am_node": "M59",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P61|A20|strengthen": {
+        "cio_pattern": "P61",
+        "am_node": "A20",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P23|M36|strengthen": {
+        "cio_pattern": "P23",
+        "am_node": "M36",
+        "direction": "strengthen",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P30|M41|strengthen": {
+        "cio_pattern": "P30",
+        "am_node": "M41",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P28|M16|strengthen": {
+        "cio_pattern": "P28",
+        "am_node": "M16",
+        "direction": "strengthen",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P81|M59|strengthen": {
+        "cio_pattern": "P81",
+        "am_node": "M59",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P77|M7|strengthen": {
+        "cio_pattern": "P77",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P24|M17|strengthen": {
+        "cio_pattern": "P24",
+        "am_node": "M17",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P66|M61|strengthen": {
+        "cio_pattern": "P66",
+        "am_node": "M61",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P65|M62|strengthen": {
+        "cio_pattern": "P65",
+        "am_node": "M62",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P80|M61|strengthen": {
+        "cio_pattern": "P80",
+        "am_node": "M61",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P22|M25|strengthen": {
+        "cio_pattern": "P22",
+        "am_node": "M25",
+        "direction": "strengthen",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P82|M7|strengthen": {
+        "cio_pattern": "P82",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P45|M59|strengthen": {
+        "cio_pattern": "P45",
+        "am_node": "M59",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P81|M62|strengthen": {
+        "cio_pattern": "P81",
+        "am_node": "M62",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P20|M25|strengthen": {
+        "cio_pattern": "P20",
+        "am_node": "M25",
+        "direction": "strengthen",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P26|M16|strengthen": {
+        "cio_pattern": "P26",
+        "am_node": "M16",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P63|M61|strengthen": {
+        "cio_pattern": "P63",
+        "am_node": "M61",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P60|M7|strengthen": {
+        "cio_pattern": "P60",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P81|M60|strengthen": {
+        "cio_pattern": "P81",
+        "am_node": "M60",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P17|M41|strengthen": {
+        "cio_pattern": "P17",
+        "am_node": "M41",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P65|M59|strengthen": {
+        "cio_pattern": "P65",
+        "am_node": "M59",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P24|M34|strengthen": {
+        "cio_pattern": "P24",
+        "am_node": "M34",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P28|M37|strengthen": {
+        "cio_pattern": "P28",
+        "am_node": "M37",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P45|M62|strengthen": {
+        "cio_pattern": "P45",
+        "am_node": "M62",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P35|A15|strengthen": {
+        "cio_pattern": "P35",
+        "am_node": "A15",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P31|A19|strengthen": {
+        "cio_pattern": "P31",
+        "am_node": "A19",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P17|M7|strengthen": {
+        "cio_pattern": "P17",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 4,
+        "confidence": 0.8,
+        "band": "observed"
+      },
+      "P85|M7|strengthen": {
+        "cio_pattern": "P85",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 4,
+        "confidence": 0.8,
+        "band": "observed"
+      },
+      "P28|M19|strengthen": {
+        "cio_pattern": "P28",
+        "am_node": "M19",
+        "direction": "strengthen",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P45|M60|strengthen": {
+        "cio_pattern": "P45",
+        "am_node": "M60",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P84|M62|strengthen": {
+        "cio_pattern": "P84",
+        "am_node": "M62",
+        "direction": "strengthen",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P19|M38|strengthen": {
+        "cio_pattern": "P19",
+        "am_node": "M38",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P23|M34|strengthen": {
+        "cio_pattern": "P23",
+        "am_node": "M34",
+        "direction": "strengthen",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P29|M40|strengthen": {
+        "cio_pattern": "P29",
+        "am_node": "M40",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P65|M60|strengthen": {
+        "cio_pattern": "P65",
+        "am_node": "M60",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P11|M7|strengthen": {
+        "cio_pattern": "P11",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P81|M61|strengthen": {
+        "cio_pattern": "P81",
+        "am_node": "M61",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P40|M7|strengthen": {
+        "cio_pattern": "P40",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P63|M62|strengthen": {
+        "cio_pattern": "P63",
+        "am_node": "M62",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P7|M7|strengthen": {
+        "cio_pattern": "P7",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P84|M59|strengthen": {
+        "cio_pattern": "P84",
+        "am_node": "M59",
+        "direction": "strengthen",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P24|M10|strengthen": {
+        "cio_pattern": "P24",
+        "am_node": "M10",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P41|M7|strengthen": {
+        "cio_pattern": "P41",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P75|M7|strengthen": {
+        "cio_pattern": "P75",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P42|M7|strengthen": {
+        "cio_pattern": "P42",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P45|M61|strengthen": {
+        "cio_pattern": "P45",
+        "am_node": "M61",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P39|A18|strengthen": {
+        "cio_pattern": "P39",
+        "am_node": "A18",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P72|M7|strengthen": {
+        "cio_pattern": "P72",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P65|M61|strengthen": {
+        "cio_pattern": "P65",
+        "am_node": "M61",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P79|M7|strengthen": {
+        "cio_pattern": "P79",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P23|M10|strengthen": {
+        "cio_pattern": "P23",
+        "am_node": "M10",
+        "direction": "strengthen",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P38|A18|strengthen": {
+        "cio_pattern": "P38",
+        "am_node": "A18",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P73|M7|strengthen": {
+        "cio_pattern": "P73",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P51|M40|strengthen": {
+        "cio_pattern": "P51",
+        "am_node": "M40",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P59|M7|strengthen": {
+        "cio_pattern": "P59",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P80|M62|strengthen": {
+        "cio_pattern": "P80",
+        "am_node": "M62",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P46|M48|strengthen": {
+        "cio_pattern": "P46",
+        "am_node": "M48",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P71|M7|strengthen": {
+        "cio_pattern": "P71",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 5,
+        "confidence": 1.0,
+        "band": "observed"
+      },
+      "P38|M42|strengthen": {
+        "cio_pattern": "P38",
+        "am_node": "M42",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P81|A21|strengthen": {
+        "cio_pattern": "P81",
+        "am_node": "A21",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P36|M28|strengthen": {
+        "cio_pattern": "P36",
+        "am_node": "M28",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P66|M42|strengthen": {
+        "cio_pattern": "P66",
+        "am_node": "M42",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P20|M23|strengthen": {
+        "cio_pattern": "P20",
+        "am_node": "M23",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P84|M68|strengthen": {
+        "cio_pattern": "P84",
+        "am_node": "M68",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P80|A20|strengthen": {
+        "cio_pattern": "P80",
+        "am_node": "A20",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P23|M25|strengthen": {
+        "cio_pattern": "P23",
+        "am_node": "M25",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P45|M64|strengthen": {
+        "cio_pattern": "P45",
+        "am_node": "M64",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P23|M18|strengthen": {
+        "cio_pattern": "P23",
+        "am_node": "M18",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P22|M24|strengthen": {
+        "cio_pattern": "P22",
+        "am_node": "M24",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P63|M40|strengthen": {
+        "cio_pattern": "P63",
+        "am_node": "M40",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P47|M48|strengthen": {
+        "cio_pattern": "P47",
+        "am_node": "M48",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P54|M67|strengthen": {
+        "cio_pattern": "P54",
+        "am_node": "M67",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P62|M40|strengthen": {
+        "cio_pattern": "P62",
+        "am_node": "M40",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P77|M50|strengthen": {
+        "cio_pattern": "P77",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P39|M32|strengthen": {
+        "cio_pattern": "P39",
+        "am_node": "M32",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P20|M24|strengthen": {
+        "cio_pattern": "P20",
+        "am_node": "M24",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P66|M33|strengthen": {
+        "cio_pattern": "P66",
+        "am_node": "M33",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P59|M40|strengthen": {
+        "cio_pattern": "P59",
+        "am_node": "M40",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P34|M40|strengthen": {
+        "cio_pattern": "P34",
+        "am_node": "M40",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P36|M32|strengthen": {
+        "cio_pattern": "P36",
+        "am_node": "M32",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P39|M42|strengthen": {
+        "cio_pattern": "P39",
+        "am_node": "M42",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P84|M66|strengthen": {
+        "cio_pattern": "P84",
+        "am_node": "M66",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P70|M50|strengthen": {
+        "cio_pattern": "P70",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P75|M50|strengthen": {
+        "cio_pattern": "P75",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P66|M32|strengthen": {
+        "cio_pattern": "P66",
+        "am_node": "M32",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P45|M63|strengthen": {
+        "cio_pattern": "P45",
+        "am_node": "M63",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P48|M50|strengthen": {
+        "cio_pattern": "P48",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P39|M28|strengthen": {
+        "cio_pattern": "P39",
+        "am_node": "M28",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P65|M42|strengthen": {
+        "cio_pattern": "P65",
+        "am_node": "M42",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P70|M7|strengthen": {
+        "cio_pattern": "P70",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P43|M50|strengthen": {
+        "cio_pattern": "P43",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P48|M7|strengthen": {
+        "cio_pattern": "P48",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P36|M27|strengthen": {
+        "cio_pattern": "P36",
+        "am_node": "M27",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P24|M24|strengthen": {
+        "cio_pattern": "P24",
+        "am_node": "M24",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P53|M44|strengthen": {
+        "cio_pattern": "P53",
+        "am_node": "M44",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P81|A20|strengthen": {
+        "cio_pattern": "P81",
+        "am_node": "A20",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P54|M65|strengthen": {
+        "cio_pattern": "P54",
+        "am_node": "M65",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P9|M32|strengthen": {
+        "cio_pattern": "P9",
+        "am_node": "M32",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P84|M63|strengthen": {
+        "cio_pattern": "P84",
+        "am_node": "M63",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P45|M65|strengthen": {
+        "cio_pattern": "P45",
+        "am_node": "M65",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P54|M64|strengthen": {
+        "cio_pattern": "P54",
+        "am_node": "M64",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P60|M40|strengthen": {
+        "cio_pattern": "P60",
+        "am_node": "M40",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P24|M23|strengthen": {
+        "cio_pattern": "P24",
+        "am_node": "M23",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P82|A21|strengthen": {
+        "cio_pattern": "P82",
+        "am_node": "A21",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P49|M50|strengthen": {
+        "cio_pattern": "P49",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P45|M68|strengthen": {
+        "cio_pattern": "P45",
+        "am_node": "M68",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P84|M67|strengthen": {
+        "cio_pattern": "P84",
+        "am_node": "M67",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P82|A20|strengthen": {
+        "cio_pattern": "P82",
+        "am_node": "A20",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P57|M48|strengthen": {
+        "cio_pattern": "P57",
+        "am_node": "M48",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P36|M33|strengthen": {
+        "cio_pattern": "P36",
+        "am_node": "M33",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P39|M33|strengthen": {
+        "cio_pattern": "P39",
+        "am_node": "M33",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P65|M32|strengthen": {
+        "cio_pattern": "P65",
+        "am_node": "M32",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P38|M32|strengthen": {
+        "cio_pattern": "P38",
+        "am_node": "M32",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P23|M23|strengthen": {
+        "cio_pattern": "P23",
+        "am_node": "M23",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P39|M27|strengthen": {
+        "cio_pattern": "P39",
+        "am_node": "M27",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P21|M24|strengthen": {
+        "cio_pattern": "P21",
+        "am_node": "M24",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P65|M28|strengthen": {
+        "cio_pattern": "P65",
+        "am_node": "M28",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P9|M50|strengthen": {
+        "cio_pattern": "P9",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P43|M7|strengthen": {
+        "cio_pattern": "P43",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P38|M28|strengthen": {
+        "cio_pattern": "P38",
+        "am_node": "M28",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P21|M23|strengthen": {
+        "cio_pattern": "P21",
+        "am_node": "M23",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P9|M33|strengthen": {
+        "cio_pattern": "P9",
+        "am_node": "M33",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P66|M27|strengthen": {
+        "cio_pattern": "P66",
+        "am_node": "M27",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P9|M27|strengthen": {
+        "cio_pattern": "P9",
+        "am_node": "M27",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P61|M40|strengthen": {
+        "cio_pattern": "P61",
+        "am_node": "M40",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P60|M48|strengthen": {
+        "cio_pattern": "P60",
+        "am_node": "M48",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P50|M50|strengthen": {
+        "cio_pattern": "P50",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P28|M22|strengthen": {
+        "cio_pattern": "P28",
+        "am_node": "M22",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P54|M60|strengthen": {
+        "cio_pattern": "P54",
+        "am_node": "M60",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P63|M48|strengthen": {
+        "cio_pattern": "P63",
+        "am_node": "M48",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P36|A18|strengthen": {
+        "cio_pattern": "P36",
+        "am_node": "A18",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P50|M7|strengthen": {
+        "cio_pattern": "P50",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P52|M50|strengthen": {
+        "cio_pattern": "P52",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P84|M65|strengthen": {
+        "cio_pattern": "P84",
+        "am_node": "M65",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P54|M68|strengthen": {
+        "cio_pattern": "P54",
+        "am_node": "M68",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P84|M64|strengthen": {
+        "cio_pattern": "P84",
+        "am_node": "M64",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P45|M66|strengthen": {
+        "cio_pattern": "P45",
+        "am_node": "M66",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P51|M28|strengthen": {
+        "cio_pattern": "P51",
+        "am_node": "M28",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P24|M18|strengthen": {
+        "cio_pattern": "P24",
+        "am_node": "M18",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P80|A21|strengthen": {
+        "cio_pattern": "P80",
+        "am_node": "A21",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P11|M50|strengthen": {
+        "cio_pattern": "P11",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P23|M24|strengthen": {
+        "cio_pattern": "P23",
+        "am_node": "M24",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P36|M42|strengthen": {
+        "cio_pattern": "P36",
+        "am_node": "M42",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P65|M33|strengthen": {
+        "cio_pattern": "P65",
+        "am_node": "M33",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P38|M33|strengthen": {
+        "cio_pattern": "P38",
+        "am_node": "M33",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P40|M50|strengthen": {
+        "cio_pattern": "P40",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P1|M50|strengthen": {
+        "cio_pattern": "P1",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P7|M50|strengthen": {
+        "cio_pattern": "P7",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P16|M50|strengthen": {
+        "cio_pattern": "P16",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P38|M27|strengthen": {
+        "cio_pattern": "P38",
+        "am_node": "M27",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P54|M59|strengthen": {
+        "cio_pattern": "P54",
+        "am_node": "M59",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P26|M22|strengthen": {
+        "cio_pattern": "P26",
+        "am_node": "M22",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P65|M27|strengthen": {
+        "cio_pattern": "P65",
+        "am_node": "M27",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P66|M28|strengthen": {
+        "cio_pattern": "P66",
+        "am_node": "M28",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P12|M50|strengthen": {
+        "cio_pattern": "P12",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P42|M50|strengthen": {
+        "cio_pattern": "P42",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P9|M28|strengthen": {
+        "cio_pattern": "P9",
+        "am_node": "M28",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P8|M50|strengthen": {
+        "cio_pattern": "P8",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P76|M50|strengthen": {
+        "cio_pattern": "P76",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P9|M42|strengthen": {
+        "cio_pattern": "P9",
+        "am_node": "M42",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P72|M50|strengthen": {
+        "cio_pattern": "P72",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P45|M67|strengthen": {
+        "cio_pattern": "P45",
+        "am_node": "M67",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P19|A15|strengthen": {
+        "cio_pattern": "P19",
+        "am_node": "A15",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P54|M61|strengthen": {
+        "cio_pattern": "P54",
+        "am_node": "M61",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P51|M32|strengthen": {
+        "cio_pattern": "P51",
+        "am_node": "M32",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P24|M25|strengthen": {
+        "cio_pattern": "P24",
+        "am_node": "M25",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P54|M62|strengthen": {
+        "cio_pattern": "P54",
+        "am_node": "M62",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P22|M23|strengthen": {
+        "cio_pattern": "P22",
+        "am_node": "M23",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P51|M33|strengthen": {
+        "cio_pattern": "P51",
+        "am_node": "M33",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P51|M42|strengthen": {
+        "cio_pattern": "P51",
+        "am_node": "M42",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P49|M7|strengthen": {
+        "cio_pattern": "P49",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P51|M27|strengthen": {
+        "cio_pattern": "P51",
+        "am_node": "M27",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P71|M50|strengthen": {
+        "cio_pattern": "P71",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P54|M66|strengthen": {
+        "cio_pattern": "P54",
+        "am_node": "M66",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P30|M40|strengthen": {
+        "cio_pattern": "P30",
+        "am_node": "M40",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P54|M63|strengthen": {
+        "cio_pattern": "P54",
+        "am_node": "M63",
+        "direction": "strengthen",
+        "votes": 3,
+        "confidence": 0.6,
+        "band": "supported"
+      },
+      "P52|M7|strengthen": {
+        "cio_pattern": "P52",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 1,
+        "confidence": 0.2,
+        "band": "uncertain"
+      },
+      "P43|M33|strengthen": {
+        "cio_pattern": "P43",
+        "am_node": "M33",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P83|M63|strengthen": {
+        "cio_pattern": "P83",
+        "am_node": "M63",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P40|M28|strengthen": {
+        "cio_pattern": "P40",
+        "am_node": "M28",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P43|M32|strengthen": {
+        "cio_pattern": "P43",
+        "am_node": "M32",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P83|M64|strengthen": {
+        "cio_pattern": "P83",
+        "am_node": "M64",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P25|M36|strengthen": {
+        "cio_pattern": "P25",
+        "am_node": "M36",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P44|M50|strengthen": {
+        "cio_pattern": "P44",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P87|M50|strengthen": {
+        "cio_pattern": "P87",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P45|M50|strengthen": {
+        "cio_pattern": "P45",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P78|M50|weaken": {
+        "cio_pattern": "P78",
+        "am_node": "M50",
+        "direction": "weaken",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P46|M7|strengthen": {
+        "cio_pattern": "P46",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P45|M7|strengthen": {
+        "cio_pattern": "P45",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P78|M7|weaken": {
+        "cio_pattern": "P78",
+        "am_node": "M7",
+        "direction": "weaken",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P25|M17|strengthen": {
+        "cio_pattern": "P25",
+        "am_node": "M17",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P19|M50|strengthen": {
+        "cio_pattern": "P19",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P83|M59|strengthen": {
+        "cio_pattern": "P83",
+        "am_node": "M59",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P35|M22|strengthen": {
+        "cio_pattern": "P35",
+        "am_node": "M22",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P45|M28|strengthen": {
+        "cio_pattern": "P45",
+        "am_node": "M28",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P40|M33|strengthen": {
+        "cio_pattern": "P40",
+        "am_node": "M33",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P35|M19|strengthen": {
+        "cio_pattern": "P35",
+        "am_node": "M19",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P34|M19|strengthen": {
+        "cio_pattern": "P34",
+        "am_node": "M19",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P40|M32|strengthen": {
+        "cio_pattern": "P40",
+        "am_node": "M32",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P44|M7|strengthen": {
+        "cio_pattern": "P44",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P17|M50|strengthen": {
+        "cio_pattern": "P17",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P83|M62|strengthen": {
+        "cio_pattern": "P83",
+        "am_node": "M62",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P85|M50|strengthen": {
+        "cio_pattern": "P85",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P43|M27|strengthen": {
+        "cio_pattern": "P43",
+        "am_node": "M27",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P34|M20|strengthen": {
+        "cio_pattern": "P34",
+        "am_node": "M20",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P83|M68|strengthen": {
+        "cio_pattern": "P83",
+        "am_node": "M68",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P25|M34|strengthen": {
+        "cio_pattern": "P25",
+        "am_node": "M34",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P83|M60|strengthen": {
+        "cio_pattern": "P83",
+        "am_node": "M60",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P51|M50|strengthen": {
+        "cio_pattern": "P51",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P45|M32|strengthen": {
+        "cio_pattern": "P45",
+        "am_node": "M32",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P51|M7|strengthen": {
+        "cio_pattern": "P51",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P45|M27|strengthen": {
+        "cio_pattern": "P45",
+        "am_node": "M27",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P40|M27|strengthen": {
+        "cio_pattern": "P40",
+        "am_node": "M27",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P43|M28|strengthen": {
+        "cio_pattern": "P43",
+        "am_node": "M28",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P47|M7|strengthen": {
+        "cio_pattern": "P47",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P25|M18|strengthen": {
+        "cio_pattern": "P25",
+        "am_node": "M18",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P79|M50|weaken": {
+        "cio_pattern": "P79",
+        "am_node": "M50",
+        "direction": "weaken",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P83|M67|strengthen": {
+        "cio_pattern": "P83",
+        "am_node": "M67",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P83|M61|strengthen": {
+        "cio_pattern": "P83",
+        "am_node": "M61",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P73|M50|weaken": {
+        "cio_pattern": "P73",
+        "am_node": "M50",
+        "direction": "weaken",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P25|M10|strengthen": {
+        "cio_pattern": "P25",
+        "am_node": "M10",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P83|M66|strengthen": {
+        "cio_pattern": "P83",
+        "am_node": "M66",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P35|M20|strengthen": {
+        "cio_pattern": "P35",
+        "am_node": "M20",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P45|M33|strengthen": {
+        "cio_pattern": "P45",
+        "am_node": "M33",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P74|M50|weaken": {
+        "cio_pattern": "P74",
+        "am_node": "M50",
+        "direction": "weaken",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P34|M16|strengthen": {
+        "cio_pattern": "P34",
+        "am_node": "M16",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P41|A18|strengthen": {
+        "cio_pattern": "P41",
+        "am_node": "A18",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P19|M7|strengthen": {
+        "cio_pattern": "P19",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P42|A18|strengthen": {
+        "cio_pattern": "P42",
+        "am_node": "A18",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P83|M65|strengthen": {
+        "cio_pattern": "P83",
+        "am_node": "M65",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P40|M42|strengthen": {
+        "cio_pattern": "P40",
+        "am_node": "M42",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P47|M50|strengthen": {
+        "cio_pattern": "P47",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P43|M42|strengthen": {
+        "cio_pattern": "P43",
+        "am_node": "M42",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P79|M7|weaken": {
+        "cio_pattern": "P79",
+        "am_node": "M7",
+        "direction": "weaken",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P73|M7|weaken": {
+        "cio_pattern": "P73",
+        "am_node": "M7",
+        "direction": "weaken",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P46|M50|strengthen": {
+        "cio_pattern": "P46",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P86|M50|strengthen": {
+        "cio_pattern": "P86",
+        "am_node": "M50",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P45|M42|strengthen": {
+        "cio_pattern": "P45",
+        "am_node": "M42",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P74|M7|weaken": {
+        "cio_pattern": "P74",
+        "am_node": "M7",
+        "direction": "weaken",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P86|M7|strengthen": {
+        "cio_pattern": "P86",
+        "am_node": "M7",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P35|M16|strengthen": {
+        "cio_pattern": "P35",
+        "am_node": "M16",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      },
+      "P34|M22|strengthen": {
+        "cio_pattern": "P34",
+        "am_node": "M22",
+        "direction": "strengthen",
+        "votes": 2,
+        "confidence": 0.4,
+        "band": "supported"
+      }
+    }
+  },
+  "band_counts": {
+    "cio_patterns": {
+      "observed": 61,
+      "supported": 5,
+      "uncertain": 0
+    },
+    "am_nodes": {
+      "observed": 23,
+      "supported": 23,
+      "uncertain": 0
+    },
+    "links": {
+      "observed": 27,
+      "supported": 187,
+      "uncertain": 60
+    }
+  },
+  "totals": {
+    "cio_patterns": 66,
+    "am_mechanism": 38,
+    "am_assumption": 8,
+    "links": 274
+  }
+}

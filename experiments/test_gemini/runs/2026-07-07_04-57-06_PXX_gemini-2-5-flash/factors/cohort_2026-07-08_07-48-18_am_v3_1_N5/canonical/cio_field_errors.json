@@ -1,0 +1,9 @@
+[
+  {
+    "pattern": "P45",
+    "field": "intervention",
+    "bad_value": "C136",
+    "layer1_label": "context",
+    "text": "we adopt multi-view inference by default."
+  }
+]

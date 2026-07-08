@@ -1,0 +1,2177 @@
+{
+  "P1": {
+    "pattern": "P1",
+    "unit": "U001",
+    "intervention": "I1",
+    "reference": null,
+    "eval_metric": "E1",
+    "direction": null,
+    "pattern_class": "primary_result",
+    "context": [
+      "C6",
+      "C7"
+    ],
+    "provenance": {
+      "location": "Section 1"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_framework_termed_vision_arc_varc",
+        "CTX_dataset_arc_1_benchmark"
+      ],
+      "intervention": "INT_formulate_arc_within_vision_paradigm_framing",
+      "reference": null,
+      "eval_metric": "MET_gen_accuracy",
+      "observable": [
+        "MET_gen_accuracy",
+        null
+      ]
+    }
+  },
+  "P7": {
+    "pattern": "P7",
+    "unit": "U001",
+    "intervention": "I11",
+    "reference": null,
+    "eval_metric": null,
+    "direction": null,
+    "pattern_class": "primary_result",
+    "context": [
+      "C23"
+    ],
+    "provenance": {
+      "location": "Section 1"
+    },
+    "field_support": {
+      "n_cards": 3
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_framework_termed_vision_arc_varc"
+      ],
+      "intervention": "INT_represent_inputs_canvas_flexible_geometric_transformations",
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        null
+      ]
+    }
+  },
+  "P8": {
+    "pattern": "P8",
+    "unit": "U001",
+    "intervention": "I11",
+    "reference": null,
+    "eval_metric": "E2",
+    "direction": null,
+    "pattern_class": "primary_result",
+    "context": [
+      "C24",
+      "C25",
+      "C26"
+    ],
+    "provenance": {
+      "location": "Section 1"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_varc",
+        "CTX_dataset_arc_1_benchmark",
+        "CTX_model_small_model_only_18_million_parameters"
+      ],
+      "intervention": "INT_represent_inputs_canvas_flexible_geometric_transformations",
+      "reference": null,
+      "eval_metric": "MET_gen_accuracy",
+      "observable": [
+        "MET_gen_accuracy",
+        null
+      ]
+    }
+  },
+  "P9": {
+    "pattern": "P9",
+    "unit": "U001",
+    "intervention": "I11",
+    "reference": "C13",
+    "eval_metric": "E2",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "context": [
+      "C24",
+      "C25",
+      "C26"
+    ],
+    "provenance": {
+      "location": "Section 1"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_varc",
+        "CTX_dataset_arc_1_benchmark",
+        "CTX_model_small_model_only_18_million_parameters"
+      ],
+      "intervention": "INT_represent_inputs_canvas_flexible_geometric_transformations",
+      "reference": "INT_recurrent_models_53_27",
+      "eval_metric": "MET_gen_accuracy",
+      "observable": [
+        "MET_gen_accuracy",
+        "up"
+      ]
+    }
+  },
+  "P11": {
+    "pattern": "P11",
+    "unit": "U001",
+    "intervention": "I13",
+    "reference": "C26",
+    "eval_metric": "E2",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "context": [
+      "C24",
+      "C25"
+    ],
+    "provenance": {
+      "location": "Section 1"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_varc",
+        "CTX_dataset_arc_1_benchmark"
+      ],
+      "intervention": "INT_combining_varc_models_through_ensembling_29",
+      "reference": "INT_small_model_only_18_million_parameters",
+      "eval_metric": "MET_gen_accuracy",
+      "observable": [
+        "MET_gen_accuracy",
+        "up"
+      ]
+    }
+  },
+  "P12": {
+    "pattern": "P12",
+    "unit": "U001",
+    "intervention": "I13",
+    "reference": null,
+    "eval_metric": "E2",
+    "direction": "flat",
+    "pattern_class": "primary_result",
+    "context": [
+      "C24",
+      "C25"
+    ],
+    "provenance": {
+      "location": "Section 1"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_varc",
+        "CTX_dataset_arc_1_benchmark"
+      ],
+      "intervention": "INT_combining_varc_models_through_ensembling_29",
+      "reference": null,
+      "eval_metric": "MET_gen_accuracy",
+      "observable": [
+        "MET_gen_accuracy",
+        "flat"
+      ]
+    }
+  },
+  "P16": {
+    "pattern": "P16",
+    "unit": "U004",
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "direction": null,
+    "pattern_class": "primary_result",
+    "context": [
+      "C35"
+    ],
+    "provenance": {
+      "location": "Figure 2"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_varc"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        null
+      ]
+    }
+  },
+  "P17": {
+    "pattern": "P17",
+    "unit": "U014",
+    "intervention": "I39",
+    "reference": null,
+    "eval_metric": null,
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "context": [
+      "C81",
+      "C82",
+      "C83"
+    ],
+    "provenance": {
+      "location": "Figure 6"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_training_test_time_training_ttt",
+        "CTX_training_given_single_new_unseen_task_t",
+        "CTX_other_at_inference_time_given_demo_xi"
+      ],
+      "intervention": "INT_perform_test_time_training_each_new",
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        "up"
+      ]
+    }
+  },
+  "P19": {
+    "pattern": "P19",
+    "unit": "U017",
+    "intervention": "I49",
+    "reference": "C113",
+    "eval_metric": "E8",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "context": [
+      "C110",
+      "C111",
+      "C112"
+    ],
+    "provenance": {
+      "location": "Table 1"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_model_vit",
+        "CTX_model_vit",
+        "CTX_model_vit"
+      ],
+      "intervention": "INT_compare_variants_vits_u_nets_similar",
+      "reference": "INT_u_net",
+      "eval_metric": "MET_gen_accuracy",
+      "observable": [
+        "MET_gen_accuracy",
+        "up"
+      ]
+    }
+  },
+  "P20": {
+    "pattern": "P20",
+    "unit": "U018",
+    "intervention": "I50",
+    "reference": "I51",
+    "eval_metric": "E9",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "context": [
+      "C116",
+      "C117",
+      "C118"
+    ],
+    "provenance": {
+      "location": "Figure 7"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_effects_visual_priors_varc",
+        "CTX_dataset_arc_1_evaluation_set",
+        "CTX_model_model_used_vit_18m"
+      ],
+      "intervention": "INT_entries_c_patch_size_1_1",
+      "reference": "INT_start_from_na_ve_baseline_components",
+      "eval_metric": "MET_gen_accuracy",
+      "observable": [
+        "MET_gen_accuracy",
+        "up"
+      ]
+    }
+  },
+  "P21": {
+    "pattern": "P21",
+    "unit": "U018",
+    "intervention": "I50",
+    "reference": "C121",
+    "eval_metric": "E9",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "context": [
+      "C116",
+      "C117",
+      "C118"
+    ],
+    "provenance": {
+      "location": "Figure 7"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_effects_visual_priors_varc",
+        "CTX_dataset_arc_1_evaluation_set",
+        "CTX_model_model_used_vit_18m"
+      ],
+      "intervention": "INT_entries_c_patch_size_1_1",
+      "reference": "INT_observed_both_b_absolute_c_relative",
+      "eval_metric": "MET_gen_accuracy",
+      "observable": [
+        "MET_gen_accuracy",
+        "up"
+      ]
+    }
+  },
+  "P22": {
+    "pattern": "P22",
+    "unit": "U019",
+    "intervention": "I52",
+    "reference": "I52",
+    "eval_metric": null,
+    "direction": "up",
+    "pattern_class": "comparison",
+    "context": [
+      "C120",
+      "C122",
+      "C127"
+    ],
+    "provenance": {
+      "location": "Section 5.1"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_2d_positional_embedding",
+        "CTX_other_patchification",
+        "CTX_training_translation_scale_augmentation"
+      ],
+      "intervention": "INT_starting_from_baseline_without_other_components",
+      "reference": "INT_starting_from_baseline_without_other_components",
+      "eval_metric": null,
+      "observable": [
+        null,
+        "up"
+      ]
+    }
+  },
+  "P23": {
+    "pattern": "P23",
+    "unit": "U019",
+    "intervention": "I54",
+    "reference": "C121",
+    "eval_metric": null,
+    "direction": "up",
+    "pattern_class": "comparison",
+    "context": [
+      "C120",
+      "C122",
+      "C127"
+    ],
+    "provenance": {
+      "location": "Section 5.1"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_2d_positional_embedding",
+        "CTX_other_patchification",
+        "CTX_training_translation_scale_augmentation"
+      ],
+      "intervention": "INT_advance_from_1_1_patches_32",
+      "reference": "INT_observed_both_b_absolute_c_relative",
+      "eval_metric": null,
+      "observable": [
+        null,
+        "up"
+      ]
+    }
+  },
+  "P24": {
+    "pattern": "P24",
+    "unit": "U019",
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "context": [
+      "C120"
+    ],
+    "provenance": {
+      "location": "Section 5.1"
+    },
+    "field_support": {
+      "n_cards": 3
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_2d_positional_embedding"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        "up"
+      ]
+    }
+  },
+  "P25": {
+    "pattern": "P25",
+    "unit": "U019",
+    "intervention": "I53",
+    "reference": "C120",
+    "eval_metric": null,
+    "direction": "down",
+    "pattern_class": "primary_result",
+    "context": [
+      "C120"
+    ],
+    "provenance": {
+      "location": "Section 5.1"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_2d_positional_embedding"
+      ],
+      "intervention": "INT_re_place_2d_rope_fig_7",
+      "reference": "INT_2d_positional_embedding",
+      "eval_metric": null,
+      "observable": [
+        null,
+        "down"
+      ]
+    }
+  },
+  "P26": {
+    "pattern": "P26",
+    "unit": "U019",
+    "intervention": "I54",
+    "reference": null,
+    "eval_metric": null,
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "context": [
+      "C122",
+      "C123"
+    ],
+    "provenance": {
+      "location": "Section 5.1"
+    },
+    "field_support": {
+      "n_cards": 3
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_patchification",
+        "CTX_other_key_design_principle_method_prepare_input"
+      ],
+      "intervention": "INT_advance_from_1_1_patches_32",
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        "up"
+      ]
+    }
+  },
+  "P28": {
+    "pattern": "P28",
+    "unit": "U019",
+    "intervention": "I54",
+    "reference": null,
+    "eval_metric": null,
+    "direction": "up",
+    "pattern_class": "comparison",
+    "context": [
+      "C122",
+      "C124"
+    ],
+    "provenance": {
+      "location": "Section 5.1"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_patchification",
+        "CTX_other_scaling_ratio_fixed_2x"
+      ],
+      "intervention": "INT_advance_from_1_1_patches_32",
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        "up"
+      ]
+    }
+  },
+  "P34": {
+    "pattern": "P34",
+    "unit": "U019",
+    "intervention": "I58",
+    "reference": null,
+    "eval_metric": null,
+    "direction": "up",
+    "pattern_class": "comparison",
+    "context": [
+      "C127"
+    ],
+    "provenance": {
+      "location": "Section 5.1"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_training_translation_scale_augmentation"
+      ],
+      "intervention": "INT_apply_fully_flexible_translation_augmen_tation",
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        "up"
+      ]
+    }
+  },
+  "P35": {
+    "pattern": "P35",
+    "unit": "U019",
+    "intervention": "I59",
+    "reference": null,
+    "eval_metric": null,
+    "direction": "up",
+    "pattern_class": "comparison",
+    "context": [
+      "C127"
+    ],
+    "provenance": {
+      "location": "Section 5.1"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_training_translation_scale_augmentation"
+      ],
+      "intervention": "INT_further_ap_ply_scale_augmentation_enabled",
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        "up"
+      ]
+    }
+  },
+  "P29": {
+    "pattern": "P29",
+    "unit": "U020",
+    "intervention": "I56",
+    "reference": null,
+    "eval_metric": "E10",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "context": [
+      "C126"
+    ],
+    "provenance": {
+      "location": "Figure 8"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [],
+      "intervention": "INT_vits_different_width_x_axis_depth",
+      "reference": null,
+      "eval_metric": "MET_gen_accuracy",
+      "observable": [
+        "MET_gen_accuracy",
+        "up"
+      ]
+    }
+  },
+  "P30": {
+    "pattern": "P30",
+    "unit": "U021",
+    "intervention": "I57",
+    "reference": "I57",
+    "eval_metric": "E11",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "context": [],
+    "provenance": {
+      "location": "Figure 9"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [],
+      "intervention": "INT_vs_without_offline_train_ing_joint",
+      "reference": "INT_vs_without_offline_train_ing_joint",
+      "eval_metric": "MET_gen_accuracy",
+      "observable": [
+        "MET_gen_accuracy",
+        "up"
+      ]
+    }
+  },
+  "P31": {
+    "pattern": "P31",
+    "unit": "U021",
+    "intervention": "I57",
+    "reference": "I57",
+    "eval_metric": "E11",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "context": [],
+    "provenance": {
+      "location": "Figure 9"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [],
+      "intervention": "INT_vs_without_offline_train_ing_joint",
+      "reference": "INT_vs_without_offline_train_ing_joint",
+      "eval_metric": "MET_gen_accuracy",
+      "observable": [
+        "MET_gen_accuracy",
+        "up"
+      ]
+    }
+  },
+  "P36": {
+    "pattern": "P36",
+    "unit": "U022",
+    "intervention": "I60",
+    "reference": "I60",
+    "eval_metric": null,
+    "direction": "up",
+    "pattern_class": "comparison",
+    "context": [
+      "C129",
+      "C130"
+    ],
+    "provenance": {
+      "location": "Section 5.2"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_model_vit_vs_u_net",
+        "CTX_other_evaluate_three_model_sizes_each_architecture"
+      ],
+      "intervention": "INT_compare_vit_u_nets_type_convolutional",
+      "reference": "INT_compare_vit_u_nets_type_convolutional",
+      "eval_metric": null,
+      "observable": [
+        null,
+        "up"
+      ]
+    }
+  },
+  "P38": {
+    "pattern": "P38",
+    "unit": "U022",
+    "intervention": "I61",
+    "reference": null,
+    "eval_metric": null,
+    "direction": "up",
+    "pattern_class": "comparison",
+    "context": [
+      "C131"
+    ],
+    "provenance": {
+      "location": "Section 5.2"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_scalability"
+      ],
+      "intervention": "INT_show_vits_varying_depths_widths",
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        "up"
+      ]
+    }
+  },
+  "P39": {
+    "pattern": "P39",
+    "unit": "U022",
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "direction": "up",
+    "pattern_class": "comparison",
+    "context": [
+      "C132"
+    ],
+    "provenance": {
+      "location": "Section 5.2"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "field_mismatch": {
+      "intervention": {
+        "raw": "C132",
+        "layer1_label": "context",
+        "text": "as shown in Tab. 1 for the 66M ViT model."
+      }
+    },
+    "canonical": {
+      "context": [
+        "CTX_model_shown_tab_1_66m_vit_model"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        "up"
+      ]
+    }
+  },
+  "P40": {
+    "pattern": "P40",
+    "unit": "U022",
+    "intervention": "I62",
+    "reference": "I62",
+    "eval_metric": null,
+    "direction": "up",
+    "pattern_class": "comparison",
+    "context": [
+      "C133"
+    ],
+    "provenance": {
+      "location": "Section 5.2"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_training_test_time_training_ttt_strategies"
+      ],
+      "intervention": "INT_study_ttt_without_offline_training_ttt",
+      "reference": "INT_study_ttt_without_offline_training_ttt",
+      "eval_metric": null,
+      "observable": [
+        null,
+        "up"
+      ]
+    }
+  },
+  "P41": {
+    "pattern": "P41",
+    "unit": "U022",
+    "intervention": "I62",
+    "reference": null,
+    "eval_metric": null,
+    "direction": null,
+    "pattern_class": "primary_result",
+    "context": [
+      "C133"
+    ],
+    "provenance": {
+      "location": "Section 5.2"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_training_test_time_training_ttt_strategies"
+      ],
+      "intervention": "INT_study_ttt_without_offline_training_ttt",
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        null
+      ]
+    }
+  },
+  "P42": {
+    "pattern": "P42",
+    "unit": "U022",
+    "intervention": "I62",
+    "reference": null,
+    "eval_metric": null,
+    "direction": "up",
+    "pattern_class": "comparison",
+    "context": [
+      "C134"
+    ],
+    "provenance": {
+      "location": "Section 5.2"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_under_similar_setting"
+      ],
+      "intervention": "INT_study_ttt_without_offline_training_ttt",
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        "up"
+      ]
+    }
+  },
+  "P43": {
+    "pattern": "P43",
+    "unit": "U022",
+    "intervention": "I62",
+    "reference": "I62",
+    "eval_metric": null,
+    "direction": "up",
+    "pattern_class": "comparison",
+    "context": [
+      "C133"
+    ],
+    "provenance": {
+      "location": "Section 5.2"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_training_test_time_training_ttt_strategies"
+      ],
+      "intervention": "INT_study_ttt_without_offline_training_ttt",
+      "reference": "INT_study_ttt_without_offline_training_ttt",
+      "eval_metric": null,
+      "observable": [
+        null,
+        "up"
+      ]
+    }
+  },
+  "P44": {
+    "pattern": "P44",
+    "unit": "U022",
+    "intervention": "I63",
+    "reference": null,
+    "eval_metric": "E12",
+    "direction": null,
+    "pattern_class": "primary_result",
+    "context": [
+      "C135"
+    ],
+    "provenance": {
+      "location": "Section 5.2"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_eval_single_view_vs_multi_view_inference"
+      ],
+      "intervention": "INT_also_examine_single_view_inference_accuracy",
+      "reference": null,
+      "eval_metric": "MET_gen_pass1",
+      "observable": [
+        "MET_gen_pass1",
+        null
+      ]
+    }
+  },
+  "P45": {
+    "pattern": "P45",
+    "unit": "U022",
+    "intervention": null,
+    "reference": "I63",
+    "eval_metric": "E12",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "context": [
+      "C135"
+    ],
+    "provenance": {
+      "location": "Section 5.2"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "field_mismatch": {
+      "intervention": {
+        "raw": "C136",
+        "layer1_label": "context",
+        "text": "we adopt multi-view inference by default."
+      }
+    },
+    "canonical": {
+      "context": [
+        "CTX_eval_single_view_vs_multi_view_inference"
+      ],
+      "intervention": null,
+      "reference": "INT_also_examine_single_view_inference_accuracy",
+      "eval_metric": "MET_gen_pass1",
+      "observable": [
+        "MET_gen_pass1",
+        "up"
+      ]
+    }
+  },
+  "P46": {
+    "pattern": "P46",
+    "unit": "U025",
+    "intervention": "C141",
+    "reference": null,
+    "eval_metric": "E16",
+    "direction": null,
+    "pattern_class": "primary_result",
+    "context": [
+      "C138",
+      "C139",
+      "C141"
+    ],
+    "provenance": {
+      "location": "Table 3"
+    },
+    "field_support": {
+      "n_cards": 7
+    },
+    "field_mismatch": {
+      "intervention": {
+        "raw": "C141",
+        "layer1_label": "context",
+        "text": "Our ensemble result aggregates an 18M ViT and a 55M U-Net, each with test-time training performed four times."
+      }
+    },
+    "promoted": {
+      "intervention": "C141"
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_llm_based_results_from_arc_agi",
+        "CTX_training_hrm_trm_varc_trained_from_scratch",
+        "CTX_model_ensemble_result_aggregates_18m_vit_55m"
+      ],
+      "intervention": "INT_ensemble_result_aggregates_18m_vit_55m",
+      "reference": null,
+      "eval_metric": "MET_arc1_accuracy",
+      "observable": [
+        "MET_arc1_accuracy",
+        null
+      ]
+    }
+  },
+  "P47": {
+    "pattern": "P47",
+    "unit": "U025",
+    "intervention": "C141",
+    "reference": null,
+    "eval_metric": "E16",
+    "direction": "flat",
+    "pattern_class": "primary_result",
+    "context": [
+      "C139",
+      "C141"
+    ],
+    "provenance": {
+      "location": "Table 3"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "field_mismatch": {
+      "intervention": {
+        "raw": "C141",
+        "layer1_label": "context",
+        "text": "Our ensemble result aggregates an 18M ViT and a 55M U-Net, each with test-time training performed four times."
+      }
+    },
+    "promoted": {
+      "intervention": "C141"
+    },
+    "canonical": {
+      "context": [
+        "CTX_training_hrm_trm_varc_trained_from_scratch",
+        "CTX_model_ensemble_result_aggregates_18m_vit_55m"
+      ],
+      "intervention": "INT_ensemble_result_aggregates_18m_vit_55m",
+      "reference": null,
+      "eval_metric": "MET_arc1_accuracy",
+      "observable": [
+        "MET_arc1_accuracy",
+        "flat"
+      ]
+    }
+  },
+  "P48": {
+    "pattern": "P48",
+    "unit": "U025",
+    "intervention": null,
+    "reference": "C138",
+    "eval_metric": "E16",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "context": [
+      "C139",
+      "C140"
+    ],
+    "provenance": {
+      "location": "Section 5.3"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "field_mismatch": {
+      "intervention": {
+        "raw": "C140",
+        "layer1_label": "context",
+        "text": "Our single-model result is based on ViT, with mean±std of 54.5±0.7 (ARC-1) and 8.3±0.4 (ARC-2) over four runs."
+      }
+    },
+    "canonical": {
+      "context": [
+        "CTX_training_hrm_trm_varc_trained_from_scratch",
+        "CTX_dataset_single_model_result_based_vit_mean"
+      ],
+      "intervention": null,
+      "reference": "INT_llm_based_results_from_arc_agi",
+      "eval_metric": "MET_arc1_accuracy",
+      "observable": [
+        "MET_arc1_accuracy",
+        "up"
+      ]
+    }
+  },
+  "P49": {
+    "pattern": "P49",
+    "unit": "U025",
+    "intervention": null,
+    "reference": "C139",
+    "eval_metric": "E16",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "context": [
+      "C145"
+    ],
+    "provenance": {
+      "location": "Section 5.3"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "field_mismatch": {
+      "intervention": {
+        "raw": "C140",
+        "layer1_label": "context",
+        "text": "Our single-model result is based on ViT, with mean±std of 54.5±0.7 (ARC-1) and 8.3±0.4 (ARC-2) over four runs."
+      }
+    },
+    "canonical": {
+      "context": [
+        "CTX_training_controlled_setting_training_from_scratch_arc"
+      ],
+      "intervention": null,
+      "reference": "INT_hrm_trm_varc_trained_from_scratch",
+      "eval_metric": "MET_arc1_accuracy",
+      "observable": [
+        "MET_arc1_accuracy",
+        "up"
+      ]
+    }
+  },
+  "P50": {
+    "pattern": "P50",
+    "unit": "U025",
+    "intervention": null,
+    "reference": "C139",
+    "eval_metric": "E16",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "context": [
+      "C140"
+    ],
+    "provenance": {
+      "location": "Section 5.3"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "field_mismatch": {
+      "intervention": {
+        "raw": "C140",
+        "layer1_label": "context",
+        "text": "Our single-model result is based on ViT, with mean±std of 54.5±0.7 (ARC-1) and 8.3±0.4 (ARC-2) over four runs."
+      }
+    },
+    "canonical": {
+      "context": [
+        "CTX_dataset_single_model_result_based_vit_mean"
+      ],
+      "intervention": null,
+      "reference": "INT_hrm_trm_varc_trained_from_scratch",
+      "eval_metric": "MET_arc1_accuracy",
+      "observable": [
+        "MET_arc1_accuracy",
+        "up"
+      ]
+    }
+  },
+  "P51": {
+    "pattern": "P51",
+    "unit": "U025",
+    "intervention": "I65",
+    "reference": "C140",
+    "eval_metric": "E16",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "context": [
+      "C140"
+    ],
+    "provenance": {
+      "location": "Section 5.3"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_dataset_single_model_result_based_vit_mean"
+      ],
+      "intervention": "INT_ensemble_one_vit_one_u_net",
+      "reference": "INT_single_model_result_based_vit_mean",
+      "eval_metric": "MET_arc1_accuracy",
+      "observable": [
+        "MET_arc1_accuracy",
+        "up"
+      ]
+    }
+  },
+  "P52": {
+    "pattern": "P52",
+    "unit": "U025",
+    "intervention": "C141",
+    "reference": null,
+    "eval_metric": "E16",
+    "direction": "flat",
+    "pattern_class": "comparison",
+    "context": [
+      "C141"
+    ],
+    "provenance": {
+      "location": "Section 5.3"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "field_mismatch": {
+      "intervention": {
+        "raw": "C141",
+        "layer1_label": "context",
+        "text": "Our ensemble result aggregates an 18M ViT and a 55M U-Net, each with test-time training performed four times."
+      }
+    },
+    "promoted": {
+      "intervention": "C141"
+    },
+    "canonical": {
+      "context": [
+        "CTX_model_ensemble_result_aggregates_18m_vit_55m"
+      ],
+      "intervention": "INT_ensemble_result_aggregates_18m_vit_55m",
+      "reference": null,
+      "eval_metric": "MET_arc1_accuracy",
+      "observable": [
+        "MET_arc1_accuracy",
+        "flat"
+      ]
+    }
+  },
+  "P53": {
+    "pattern": "P53",
+    "unit": "U026",
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "direction": null,
+    "pattern_class": "primary_result",
+    "context": [
+      "C150",
+      "C151"
+    ],
+    "provenance": {
+      "location": "Section 6"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_figure_11_visualizes_layer_wise_attention",
+        "CTX_other_layer_wise_map_softmax_attention_map"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        null
+      ]
+    }
+  },
+  "P54": {
+    "pattern": "P54",
+    "unit": "U026",
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "direction": null,
+    "pattern_class": "primary_result",
+    "context": [
+      "C150",
+      "C151"
+    ],
+    "provenance": {
+      "location": "Section 6"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_figure_11_visualizes_layer_wise_attention",
+        "CTX_other_layer_wise_map_softmax_attention_map"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        null
+      ]
+    }
+  },
+  "P57": {
+    "pattern": "P57",
+    "unit": "U026",
+    "intervention": "I66",
+    "reference": null,
+    "eval_metric": null,
+    "direction": null,
+    "pattern_class": "primary_result",
+    "context": [
+      "C152",
+      "C154",
+      "C155"
+    ],
+    "provenance": {
+      "location": "Section 6"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_t_sne_task_embeddings",
+        "CTX_dataset_400_training_tasks_arc_1_model",
+        "CTX_other_each_point_corresponds_task"
+      ],
+      "intervention": "INT_visu_alize_these_400_embeddings_2d",
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        null
+      ]
+    }
+  },
+  "P59": {
+    "pattern": "P59",
+    "unit": "U037",
+    "intervention": "E18",
+    "reference": null,
+    "eval_metric": null,
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "context": [
+      "C214",
+      "C215"
+    ],
+    "provenance": {
+      "location": "Figure 14"
+    },
+    "field_support": {
+      "n_cards": 3
+    },
+    "field_mismatch": {
+      "intervention": {
+        "raw": "E18",
+        "layer1_label": "eval_metric",
+        "text": "Offline training data scaling: effect of varying"
+      }
+    },
+    "promoted": {
+      "intervention": "E18"
+    },
+    "canonical": {
+      "context": [
+        "CTX_dataset_re_arc_samples_per_task",
+        "CTX_dataset_evaluated_arc_1_eval_set"
+      ],
+      "intervention": "INT_offline_training_data_scaling_effect_varying",
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        "up"
+      ]
+    }
+  },
+  "P60": {
+    "pattern": "P60",
+    "unit": "U038",
+    "intervention": "E19",
+    "reference": null,
+    "eval_metric": null,
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "context": [
+      "C216",
+      "C217"
+    ],
+    "provenance": {
+      "location": "Figure 15"
+    },
+    "field_support": {
+      "n_cards": 3
+    },
+    "field_mismatch": {
+      "intervention": {
+        "raw": "E19",
+        "layer1_label": "eval_metric",
+        "text": "Offline training task diversity scaling: effect of varying"
+      }
+    },
+    "promoted": {
+      "intervention": "E19"
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_number_training_tasks",
+        "CTX_dataset_evaluated_arc_1_eval_set"
+      ],
+      "intervention": "INT_offline_training_task_diversity_scaling_effect",
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        "up"
+      ]
+    }
+  },
+  "P61": {
+    "pattern": "P61",
+    "unit": "U039",
+    "intervention": "I77",
+    "reference": null,
+    "eval_metric": "E21",
+    "direction": null,
+    "pattern_class": "primary_result",
+    "context": [
+      "C218"
+    ],
+    "provenance": {
+      "location": "Section B.1"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_dataset_re_arc_dataset_22_offline_training"
+      ],
+      "intervention": "INT_only_original_arc_training_data_without",
+      "reference": null,
+      "eval_metric": "MET_gen_accuracy",
+      "observable": [
+        "MET_gen_accuracy",
+        null
+      ]
+    }
+  },
+  "P62": {
+    "pattern": "P62",
+    "unit": "U039",
+    "intervention": "I78",
+    "reference": "I77",
+    "eval_metric": "E22",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "context": [
+      "C218"
+    ],
+    "provenance": {
+      "location": "Section B.1"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_dataset_re_arc_dataset_22_offline_training"
+      ],
+      "intervention": "INT_adding_10_100_1_000_pairs",
+      "reference": "INT_only_original_arc_training_data_without",
+      "eval_metric": "MET_gen_accuracy",
+      "observable": [
+        "MET_gen_accuracy",
+        "up"
+      ]
+    }
+  },
+  "P63": {
+    "pattern": "P63",
+    "unit": "U039",
+    "intervention": "I79",
+    "reference": null,
+    "eval_metric": "E24",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "context": [],
+    "provenance": {
+      "location": "Section B.1"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [],
+      "intervention": "INT_trained_0_16_80_400_tasks",
+      "reference": null,
+      "eval_metric": "MET_gen_accuracy",
+      "observable": [
+        "MET_gen_accuracy",
+        "up"
+      ]
+    }
+  },
+  "P65": {
+    "pattern": "P65",
+    "unit": "U040",
+    "intervention": "I80",
+    "reference": null,
+    "eval_metric": "E31",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "context": [
+      "C220",
+      "C222"
+    ],
+    "provenance": {
+      "location": "Section B.2"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_eval_multi_view_inference_many_views_510",
+        "CTX_dataset_arc_1"
+      ],
+      "intervention": "INT_number_proposals_k_increases",
+      "reference": null,
+      "eval_metric": "MET_gen_passk",
+      "observable": [
+        "MET_gen_passk",
+        "up"
+      ]
+    }
+  },
+  "P66": {
+    "pattern": "P66",
+    "unit": "U040",
+    "intervention": null,
+    "reference": null,
+    "eval_metric": "E31",
+    "direction": null,
+    "pattern_class": "primary_result",
+    "context": [
+      "C220",
+      "C222"
+    ],
+    "provenance": {
+      "location": "Section B.2"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_eval_multi_view_inference_many_views_510",
+        "CTX_dataset_arc_1"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": "MET_gen_passk",
+      "observable": [
+        "MET_gen_passk",
+        null
+      ]
+    }
+  },
+  "P80": {
+    "pattern": "P80",
+    "unit": "U043",
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "direction": null,
+    "pattern_class": "primary_result",
+    "context": [
+      "C224",
+      "C225"
+    ],
+    "provenance": {
+      "location": "Figure 19"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_most_arc_tasks_unambiguous",
+        "CTX_other_example_fig_19"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        null
+      ]
+    }
+  },
+  "P81": {
+    "pattern": "P81",
+    "unit": "U043",
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "direction": null,
+    "pattern_class": "primary_result",
+    "context": [
+      "C224",
+      "C225"
+    ],
+    "provenance": {
+      "location": "Figure 19"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_most_arc_tasks_unambiguous",
+        "CTX_other_example_fig_19"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        null
+      ]
+    }
+  },
+  "P82": {
+    "pattern": "P82",
+    "unit": "U043",
+    "intervention": "I90",
+    "reference": "I90",
+    "eval_metric": "E36",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "context": [
+      "C256",
+      "C257",
+      "C258",
+      "C259"
+    ],
+    "provenance": {
+      "location": "Figure 19"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_three_demonstration_examples_test_task_top",
+        "CTX_other_blue_line_touching_but_not_going",
+        "CTX_other_inference_example_bottom_panel_involves_situation",
+        "CTX_other_task_09c534e7"
+      ],
+      "intervention": "INT_model_attempts_interpret_rule_either_going",
+      "reference": "INT_model_attempts_interpret_rule_either_going",
+      "eval_metric": "MET_gen_accuracy",
+      "observable": [
+        "MET_gen_accuracy",
+        "up"
+      ]
+    }
+  },
+  "P70": {
+    "pattern": "P70",
+    "unit": "U046",
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "direction": null,
+    "pattern_class": "primary_result",
+    "context": [
+      "C230"
+    ],
+    "provenance": {
+      "location": "Figure 17"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_dataset_arc_1"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        null
+      ]
+    }
+  },
+  "P71": {
+    "pattern": "P71",
+    "unit": "U046",
+    "intervention": "I84",
+    "reference": null,
+    "eval_metric": "E32",
+    "direction": null,
+    "pattern_class": "primary_result",
+    "context": [
+      "C230",
+      "C231"
+    ],
+    "provenance": {
+      "location": "Figure 17"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_dataset_arc_1",
+        "CTX_other_test_tasks"
+      ],
+      "intervention": "INT_solved_varc",
+      "reference": null,
+      "eval_metric": "MET_gen_accuracy",
+      "observable": [
+        "MET_gen_accuracy",
+        null
+      ]
+    }
+  },
+  "P72": {
+    "pattern": "P72",
+    "unit": "U046",
+    "intervention": "I85",
+    "reference": null,
+    "eval_metric": "E32",
+    "direction": null,
+    "pattern_class": "primary_result",
+    "context": [
+      "C230",
+      "C232"
+    ],
+    "provenance": {
+      "location": "Figure 17"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_dataset_arc_1",
+        "CTX_other_test_tasks"
+      ],
+      "intervention": "INT_unsolved_varc",
+      "reference": null,
+      "eval_metric": "MET_gen_accuracy",
+      "observable": [
+        "MET_gen_accuracy",
+        null
+      ]
+    }
+  },
+  "P73": {
+    "pattern": "P73",
+    "unit": "U046",
+    "intervention": "I86",
+    "reference": null,
+    "eval_metric": "E33",
+    "direction": "flat",
+    "pattern_class": "primary_result",
+    "context": [
+      "C235",
+      "C236",
+      "C237",
+      "C238"
+    ],
+    "provenance": {
+      "location": "Figure 17"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_task_15663ba9",
+        "CTX_other_task_981571dc",
+        "CTX_other_task_15696249",
+        "CTX_other_task_67c52801"
+      ],
+      "intervention": "INT_first_second_solutions_proposed_varc",
+      "reference": null,
+      "eval_metric": "MET_gen_accuracy",
+      "observable": [
+        "MET_gen_accuracy",
+        "flat"
+      ]
+    }
+  },
+  "P74": {
+    "pattern": "P74",
+    "unit": "U046",
+    "intervention": "I86",
+    "reference": null,
+    "eval_metric": "E33",
+    "direction": "down",
+    "pattern_class": "primary_result",
+    "context": [
+      "C239",
+      "C240",
+      "C241",
+      "C242"
+    ],
+    "provenance": {
+      "location": "Figure 17"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_task_8dae5dfc",
+        "CTX_other_task_67636eac",
+        "CTX_other_task_aa4ec2a5",
+        "CTX_other_task_b457fec5"
+      ],
+      "intervention": "INT_first_second_solutions_proposed_varc",
+      "reference": null,
+      "eval_metric": "MET_gen_accuracy",
+      "observable": [
+        "MET_gen_accuracy",
+        "down"
+      ]
+    }
+  },
+  "P75": {
+    "pattern": "P75",
+    "unit": "U047",
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "direction": null,
+    "pattern_class": "primary_result",
+    "context": [
+      "C243"
+    ],
+    "provenance": {
+      "location": "Figure 18"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_dataset_arc_2"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        null
+      ]
+    }
+  },
+  "P76": {
+    "pattern": "P76",
+    "unit": "U047",
+    "intervention": "I87",
+    "reference": null,
+    "eval_metric": "E34",
+    "direction": null,
+    "pattern_class": "primary_result",
+    "context": [
+      "C243",
+      "C244"
+    ],
+    "provenance": {
+      "location": "Figure 18"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_dataset_arc_2",
+        "CTX_other_test_tasks"
+      ],
+      "intervention": "INT_solved_varc",
+      "reference": null,
+      "eval_metric": "MET_gen_accuracy",
+      "observable": [
+        "MET_gen_accuracy",
+        null
+      ]
+    }
+  },
+  "P77": {
+    "pattern": "P77",
+    "unit": "U047",
+    "intervention": "I88",
+    "reference": null,
+    "eval_metric": "E34",
+    "direction": null,
+    "pattern_class": "primary_result",
+    "context": [
+      "C243",
+      "C245"
+    ],
+    "provenance": {
+      "location": "Figure 18"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_dataset_arc_2",
+        "CTX_other_test_tasks"
+      ],
+      "intervention": "INT_unsolved_varc",
+      "reference": null,
+      "eval_metric": "MET_gen_accuracy",
+      "observable": [
+        "MET_gen_accuracy",
+        null
+      ]
+    }
+  },
+  "P78": {
+    "pattern": "P78",
+    "unit": "U047",
+    "intervention": "I89",
+    "reference": null,
+    "eval_metric": "E35",
+    "direction": "flat",
+    "pattern_class": "primary_result",
+    "context": [
+      "C248",
+      "C249",
+      "C250",
+      "C251"
+    ],
+    "provenance": {
+      "location": "Figure 18"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_task_800d221b",
+        "CTX_other_task_7666fa5d",
+        "CTX_other_task_221dfab4",
+        "CTX_other_task_7b80bb43"
+      ],
+      "intervention": "INT_first_second_solutions_proposed_varc",
+      "reference": null,
+      "eval_metric": "MET_gen_accuracy",
+      "observable": [
+        "MET_gen_accuracy",
+        "flat"
+      ]
+    }
+  },
+  "P79": {
+    "pattern": "P79",
+    "unit": "U047",
+    "intervention": "I89",
+    "reference": null,
+    "eval_metric": "E35",
+    "direction": "down",
+    "pattern_class": "primary_result",
+    "context": [
+      "C252",
+      "C253",
+      "C254",
+      "C255"
+    ],
+    "provenance": {
+      "location": "Figure 18"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_task_2b83f449",
+        "CTX_other_task_2d0172a1",
+        "CTX_other_task_3e6067c3",
+        "CTX_other_task_7ed72f31"
+      ],
+      "intervention": "INT_first_second_solutions_proposed_varc",
+      "reference": null,
+      "eval_metric": "MET_gen_accuracy",
+      "observable": [
+        "MET_gen_accuracy",
+        "down"
+      ]
+    }
+  },
+  "P83": {
+    "pattern": "P83",
+    "unit": "U049",
+    "intervention": null,
+    "reference": null,
+    "eval_metric": "E37",
+    "direction": "down",
+    "pattern_class": "primary_result",
+    "context": [
+      "C263",
+      "C265"
+    ],
+    "provenance": {
+      "location": "Figure 20"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_4_test_tasks_arc_eval",
+        "CTX_other_task_09c534e7"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": "MET_gen_accuracy",
+      "observable": [
+        "MET_gen_accuracy",
+        "down"
+      ]
+    }
+  },
+  "P84": {
+    "pattern": "P84",
+    "unit": "U050",
+    "intervention": null,
+    "reference": null,
+    "eval_metric": "E38",
+    "direction": null,
+    "pattern_class": "primary_result",
+    "context": [
+      "C269",
+      "C270",
+      "C271",
+      "C272",
+      "C273",
+      "C274"
+    ],
+    "provenance": {
+      "location": "Figure 21"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_layer_wise_attention_maps",
+        "CTX_other_demonstration_examples_left_provided_reference",
+        "CTX_other_task_0607ce86",
+        "CTX_other_task_0bb8deee",
+        "CTX_other_task_1c56ad9f",
+        "CTX_other_task_1d0a4b61"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": "MET_gen_accuracy",
+      "observable": [
+        "MET_gen_accuracy",
+        null
+      ]
+    }
+  },
+  "P85": {
+    "pattern": "P85",
+    "unit": "U055",
+    "intervention": "I92",
+    "reference": null,
+    "eval_metric": "E39",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "context": [
+      "C276",
+      "C277"
+    ],
+    "provenance": {
+      "location": "Figure 22 caption"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_training_grid_augmented_given_scale_ratio_2",
+        "CTX_model_full_canvas_not_shown_brevity"
+      ],
+      "intervention": "INT_test_time_training_progresses",
+      "reference": null,
+      "eval_metric": "MET_gen_accuracy",
+      "observable": [
+        "MET_gen_accuracy",
+        "up"
+      ]
+    }
+  },
+  "P86": {
+    "pattern": "P86",
+    "unit": "U056",
+    "intervention": "I92",
+    "reference": null,
+    "eval_metric": null,
+    "direction": null,
+    "pattern_class": "primary_result",
+    "context": [
+      "C278"
+    ],
+    "provenance": {
+      "location": "Figure 22 caption"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_early_epochs"
+      ],
+      "intervention": "INT_test_time_training_progresses",
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        null
+      ]
+    }
+  },
+  "P87": {
+    "pattern": "P87",
+    "unit": "U057",
+    "intervention": "I92",
+    "reference": null,
+    "eval_metric": null,
+    "direction": "up",
+    "pattern_class": "comparison",
+    "context": [
+      "C279"
+    ],
+    "provenance": {
+      "location": "Figure 22 caption"
+    },
+    "field_support": {
+      "n_cards": 5
+    },
+    "canonical": {
+      "context": [
+        "CTX_other_later_epochs"
+      ],
+      "intervention": "INT_test_time_training_progresses",
+      "reference": null,
+      "eval_metric": null,
+      "observable": [
+        null,
+        "up"
+      ]
+    }
+  }
+}

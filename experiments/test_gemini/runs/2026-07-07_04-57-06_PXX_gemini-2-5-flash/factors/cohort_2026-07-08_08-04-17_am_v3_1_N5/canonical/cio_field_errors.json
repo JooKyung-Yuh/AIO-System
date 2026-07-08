@@ -1,0 +1,44 @@
+[
+  {
+    "pattern": "P39",
+    "field": "intervention",
+    "bad_value": "C132",
+    "layer1_label": "context",
+    "text": "as shown in Tab. 1 for the 66M ViT model."
+  },
+  {
+    "pattern": "P45",
+    "field": "intervention",
+    "bad_value": "C136",
+    "layer1_label": "context",
+    "text": "we adopt multi-view inference by default."
+  },
+  {
+    "pattern": "P46",
+    "field": "intervention",
+    "bad_value": "C141",
+    "layer1_label": "context",
+    "text": "Our ensemble result aggregates an 18M ViT and a 55M U-Net, each with test-time training performed fo"
+  },
+  {
+    "pattern": "P47",
+    "field": "intervention",
+    "bad_value": "C141",
+    "layer1_label": "context",
+    "text": "Our ensemble result aggregates an 18M ViT and a 55M U-Net, each with test-time training performed fo"
+  },
+  {
+    "pattern": "P59",
+    "field": "intervention",
+    "bad_value": "E18",
+    "layer1_label": "eval_metric",
+    "text": "Offline training data scaling: effect of varying"
+  },
+  {
+    "pattern": "P60",
+    "field": "intervention",
+    "bad_value": "E19",
+    "layer1_label": "eval_metric",
+    "text": "Offline training task diversity scaling: effect of varying"
+  }
+]

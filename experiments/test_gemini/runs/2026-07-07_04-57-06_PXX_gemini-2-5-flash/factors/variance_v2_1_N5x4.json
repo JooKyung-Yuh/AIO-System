@@ -1,0 +1,147 @@
+{
+  "n_cohorts": 4,
+  "cohorts": [
+    "cohort_2026-07-08_07-14-03_am_v3_1_N5",
+    "cohort_2026-07-08_07-48-18_am_v3_1_N5",
+    "cohort_2026-07-08_07-57-07_am_v3_1_N5",
+    "cohort_2026-07-08_08-04-17_am_v3_1_N5"
+  ],
+  "prompt_set": {
+    "am": "extract_am_v3_1",
+    "cio": "extract_cio_v2_1",
+    "link": "link_factors_v1"
+  },
+  "per_cohort": [
+    {
+      "cohort": "cohort_2026-07-08_07-14-03_am_v3_1_N5",
+      "n_builds": 5,
+      "assum": 0.775,
+      "mech": 0.684,
+      "cio": 0.97,
+      "link": 0.248,
+      "field_errors": 6,
+      "promoted": 4,
+      "comp_refs": 15,
+      "comp_total": 24
+    },
+    {
+      "cohort": "cohort_2026-07-08_07-48-18_am_v3_1_N5",
+      "n_builds": 5,
+      "assum": 0.85,
+      "mech": 0.79,
+      "cio": 1.0,
+      "link": 0.345,
+      "field_errors": 1,
+      "promoted": 0,
+      "comp_refs": 12,
+      "comp_total": 24
+    },
+    {
+      "cohort": "cohort_2026-07-08_07-57-07_am_v3_1_N5",
+      "n_builds": 5,
+      "assum": 0.775,
+      "mech": 0.684,
+      "cio": 0.954,
+      "link": 0.363,
+      "field_errors": 10,
+      "promoted": 5,
+      "comp_refs": 15,
+      "comp_total": 24
+    },
+    {
+      "cohort": "cohort_2026-07-08_08-04-17_am_v3_1_N5",
+      "n_builds": 5,
+      "assum": 0.85,
+      "mech": 0.79,
+      "cio": 0.954,
+      "link": 0.213,
+      "field_errors": 6,
+      "promoted": 4,
+      "comp_refs": 15,
+      "comp_total": 24
+    }
+  ],
+  "mean_std": {
+    "assum": {
+      "mean": 0.812,
+      "std": 0.037,
+      "raw": [
+        0.775,
+        0.85,
+        0.775,
+        0.85
+      ]
+    },
+    "mech": {
+      "mean": 0.737,
+      "std": 0.053,
+      "raw": [
+        0.684,
+        0.79,
+        0.684,
+        0.79
+      ]
+    },
+    "cio": {
+      "mean": 0.97,
+      "std": 0.019,
+      "raw": [
+        0.97,
+        1.0,
+        0.954,
+        0.954
+      ]
+    },
+    "link": {
+      "mean": 0.292,
+      "std": 0.063,
+      "raw": [
+        0.248,
+        0.345,
+        0.363,
+        0.213
+      ]
+    },
+    "field_errors": {
+      "mean": 5.75,
+      "std": 3.192,
+      "raw": [
+        6,
+        1,
+        10,
+        6
+      ]
+    },
+    "promoted": {
+      "mean": 3.25,
+      "std": 1.92,
+      "raw": [
+        4,
+        0,
+        5,
+        4
+      ]
+    },
+    "comp_refs": {
+      "mean": 14.25,
+      "std": 1.299,
+      "raw": [
+        15,
+        12,
+        15,
+        15
+      ]
+    },
+    "comp_total": {
+      "mean": 24,
+      "std": 0.0,
+      "raw": [
+        24,
+        24,
+        24,
+        24
+      ]
+    }
+  },
+  "note": "same-prompt cohort-to-cohort variance; a prompt change is signal only if it moves a metric by more than ~2x its std here."
+}

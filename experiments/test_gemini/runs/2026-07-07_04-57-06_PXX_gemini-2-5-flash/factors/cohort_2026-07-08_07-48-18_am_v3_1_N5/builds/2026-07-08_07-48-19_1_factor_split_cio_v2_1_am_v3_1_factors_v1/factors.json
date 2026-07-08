@@ -1,0 +1,1907 @@
+[
+  {
+    "factor_id": "F001",
+    "cio": {
+      "cio_id": "CIO_001",
+      "unit": "U001",
+      "context": [
+        "C6",
+        "C7"
+      ],
+      "intervention": "I3",
+      "reference": null,
+      "eval_metric": "E1",
+      "pattern": "P1",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section 1",
+        "source_span": "S8"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "Our framework... achieves 60.4% accuracy... yields strong few-shot generalization competitive with recent approaches."
+      }
+    ]
+  },
+  {
+    "factor_id": "F002",
+    "cio": {
+      "cio_id": "CIO_002",
+      "unit": "U001",
+      "context": [
+        "C24",
+        "C25",
+        "C26"
+      ],
+      "intervention": "I3",
+      "reference": null,
+      "eval_metric": "E2",
+      "pattern": "P8",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section 1",
+        "source_span": "S38"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "VARC achieves 54.5% accuracy... This result substantially surpasses... yields strong few-shot generalization competitive with recent approaches."
+      }
+    ]
+  },
+  {
+    "factor_id": "F003",
+    "cio": {
+      "cio_id": "CIO_003",
+      "unit": "U001",
+      "context": [
+        "C24",
+        "C25",
+        "C26"
+      ],
+      "intervention": "I3",
+      "reference": "C13",
+      "eval_metric": "E2",
+      "pattern": "P9",
+      "direction": "up",
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section 1",
+        "source_span": "S39"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "VARC (ensemble) improves accuracy to 60.4%, matching average human performance... yields strong few-shot generalization competitive with recent approaches."
+      }
+    ]
+  },
+  {
+    "factor_id": "F004",
+    "cio": {
+      "cio_id": "CIO_004",
+      "unit": "U001",
+      "context": [
+        "C24",
+        "C25"
+      ],
+      "intervention": "I13",
+      "reference": "C26",
+      "eval_metric": "E2",
+      "pattern": "P11",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 1",
+        "source_span": "S41"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "VARC is competitive with many popular LLM-based methods... yields strong few-shot generalization competitive with recent approaches."
+      }
+    ]
+  },
+  {
+    "factor_id": "F005",
+    "cio": {
+      "cio_id": "CIO_005",
+      "unit": "U001",
+      "context": [
+        "C25"
+      ],
+      "intervention": "I13",
+      "reference": null,
+      "eval_metric": "E2",
+      "pattern": "P12",
+      "direction": "flat",
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section 1",
+        "source_span": "S41"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "Our method does not rely on such data [internet-scale, multimodal]... abstraction and inference can arise directly from visual learning, without explicit linguistic intermediates."
+      }
+    ]
+  },
+  {
+    "factor_id": "F006",
+    "cio": {
+      "cio_id": "CIO_006",
+      "unit": "U004",
+      "context": [
+        "C35"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P16",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 2",
+        "source_span": "S55"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "VARC correctly solves these challenging tasks... yields strong few-shot generalization competitive with recent approaches."
+      }
+    ]
+  },
+  {
+    "factor_id": "F007",
+    "cio": {
+      "cio_id": "CIO_007",
+      "unit": "U014",
+      "context": [
+        "C81"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P17",
+      "direction": "up",
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 6",
+        "source_span": "S139"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  },
+  {
+    "factor_id": "F008",
+    "cio": {
+      "cio_id": "CIO_008",
+      "unit": "U017",
+      "context": [
+        "C110",
+        "C111",
+        "C112"
+      ],
+      "intervention": "I49",
+      "reference": "C113",
+      "eval_metric": "E8",
+      "pattern": "P19",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Table 1",
+        "source_span": "S191"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_008",
+        "kind": "mechanism",
+        "node": "M38",
+        "gloss": "Classical vision backbones can address ARC effectively",
+        "direction": "strengthen",
+        "evidence": "all U-Net variants achieve decent accuracy, suggesting that this problem can also be effectively addressed by classical vision backbones."
+      }
+    ]
+  },
+  {
+    "factor_id": "F009",
+    "cio": {
+      "cio_id": "CIO_009",
+      "unit": "U018",
+      "context": [
+        "C116",
+        "C118",
+        "C117"
+      ],
+      "intervention": "I50",
+      "reference": "I51",
+      "eval_metric": "E9",
+      "pattern": "P20",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Figure 7",
+        "source_span": "S198"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_006",
+        "kind": "mechanism",
+        "node": "M25",
+        "gloss": "Explicit 2D positional modeling is essential",
+        "direction": "strengthen",
+        "evidence": "Extending from 1D positional embedding to its 2D counterpart is beneficial: see Fig. 7(b)(c)."
+      }
+    ]
+  },
+  {
+    "factor_id": "F010",
+    "cio": {
+      "cio_id": "CIO_010",
+      "unit": "U018",
+      "context": [
+        "C116",
+        "C118",
+        "C117"
+      ],
+      "intervention": "I50",
+      "reference": "C121",
+      "eval_metric": "E9",
+      "pattern": "P21",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Figure 7",
+        "source_span": "S198"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_006",
+        "kind": "mechanism",
+        "node": "M25",
+        "gloss": "Explicit 2D positional modeling is essential",
+        "direction": "strengthen",
+        "evidence": "Extending from 1D positional embedding to its 2D counterpart is beneficial... observed in both (b) absolute and (c) relative positional embeddings."
+      }
+    ]
+  },
+  {
+    "factor_id": "F011",
+    "cio": {
+      "cio_id": "CIO_011",
+      "unit": "U019",
+      "context": [
+        "C120",
+        "C122",
+        "C127"
+      ],
+      "intervention": "I52",
+      "reference": "I52",
+      "eval_metric": null,
+      "pattern": "P22",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 5.1",
+        "source_span": "S200"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_002",
+        "kind": "mechanism",
+        "node": "M10",
+        "gloss": "Canvas patchification enriches data space, reduces overfitting",
+        "direction": "strengthen",
+        "evidence": "canvas-based designs (c-f) contribute an 11.5 gain... This formulation is important for improving generalization performance."
+      },
+      {
+        "target_am": "AM_003",
+        "kind": "mechanism",
+        "node": "M16",
+        "gloss": "Canvas enables geometric augmentations for invariance",
+        "direction": "strengthen",
+        "evidence": "canvas-based designs (c-f) contribute an 11.5 gain... The “canvas\" concept enables us to flexibly apply translation and scale augmentations."
+      }
+    ]
+  },
+  {
+    "factor_id": "F012",
+    "cio": {
+      "cio_id": "CIO_012",
+      "unit": "U019",
+      "context": [
+        "C122",
+        "C127"
+      ],
+      "intervention": "I54",
+      "reference": "C121",
+      "eval_metric": null,
+      "pattern": "P23",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 5.1",
+        "source_span": "S200"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_002",
+        "kind": "mechanism",
+        "node": "M10",
+        "gloss": "Canvas patchification enriches data space, reduces overfitting",
+        "direction": "strengthen",
+        "evidence": "These priors jointly have a gain of 27.7 points... Our canvas formulation supports a much larger set of local, patch-level configurations... important for improving generalization."
+      },
+      {
+        "target_am": "AM_003",
+        "kind": "mechanism",
+        "node": "M16",
+        "gloss": "Canvas enables geometric augmentations for invariance",
+        "direction": "strengthen",
+        "evidence": "These priors jointly have a gain of 27.7 points... The “canvas\" concept enables us to flexibly apply translation and scale augmentations."
+      },
+      {
+        "target_am": "AM_004",
+        "kind": "mechanism",
+        "node": "M20",
+        "gloss": "Augmentations foster invariance to geometric transformations",
+        "direction": "strengthen",
+        "evidence": "These priors jointly have a gain of 27.7 points... These data augmentations encourage the model to learn underlying mappings invariant to geometric transformations."
+      },
+      {
+        "target_am": "AM_006",
+        "kind": "mechanism",
+        "node": "M25",
+        "gloss": "Explicit 2D positional modeling is essential",
+        "direction": "strengthen",
+        "evidence": "These priors jointly have a gain of 27.7 points... explicitly modeling positions in 2D is essential."
+      }
+    ]
+  },
+  {
+    "factor_id": "F013",
+    "cio": {
+      "cio_id": "CIO_013",
+      "unit": "U019",
+      "context": [
+        "C120"
+      ],
+      "intervention": "I53",
+      "reference": "C121",
+      "eval_metric": null,
+      "pattern": "P25",
+      "direction": "down",
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section 5.1",
+        "source_span": "S204"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_006",
+        "kind": "mechanism",
+        "node": "M25",
+        "gloss": "Explicit 2D positional modeling is essential",
+        "direction": "strengthen",
+        "evidence": "we replace the 2D ROPE... with a 1D ROPE and observe a degradation of 3.5 points... explicitly modeling positions in 2D is essential."
+      }
+    ]
+  },
+  {
+    "factor_id": "F014",
+    "cio": {
+      "cio_id": "CIO_014",
+      "unit": "U019",
+      "context": [
+        "C122",
+        "C124",
+        "C125"
+      ],
+      "intervention": "I54",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P28",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 5.1",
+        "source_span": "S215"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_002",
+        "kind": "mechanism",
+        "node": "M10",
+        "gloss": "Canvas patchification enriches data space, reduces overfitting",
+        "direction": "strengthen",
+        "evidence": "the 2×2 patchification leads to a noticeable gain of 2.4 points... which substantially enriches the data space for learning."
+      }
+    ]
+  },
+  {
+    "factor_id": "F015",
+    "cio": {
+      "cio_id": "CIO_015",
+      "unit": "U019",
+      "context": [
+        "C127"
+      ],
+      "intervention": "I58",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P34",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 5.1",
+        "source_span": "S228"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_003",
+        "kind": "mechanism",
+        "node": "M16",
+        "gloss": "Canvas enables geometric augmentations for invariance",
+        "direction": "strengthen",
+        "evidence": "fully flexible translation augmentation on the canvas... yields an additional gain of 2.9 points."
+      },
+      {
+        "target_am": "AM_004",
+        "kind": "mechanism",
+        "node": "M20",
+        "gloss": "Augmentations foster invariance to geometric transformations",
+        "direction": "strengthen",
+        "evidence": "fully flexible translation augmentation... yields an additional gain of 2.9 points. These data augmentations encourage the model to learn underlying mappings invariant to geometric transformations."
+      }
+    ]
+  },
+  {
+    "factor_id": "F016",
+    "cio": {
+      "cio_id": "CIO_016",
+      "unit": "U019",
+      "context": [
+        "C127"
+      ],
+      "intervention": "I59",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P35",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 5.1",
+        "source_span": "S230"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_003",
+        "kind": "mechanism",
+        "node": "M16",
+        "gloss": "Canvas enables geometric augmentations for invariance",
+        "direction": "strengthen",
+        "evidence": "we further apply the scale augmentation enabled by the concept of canvas. Scale augmentation yields a substantial gain."
+      },
+      {
+        "target_am": "AM_004",
+        "kind": "mechanism",
+        "node": "M20",
+        "gloss": "Augmentations foster invariance to geometric transformations",
+        "direction": "strengthen",
+        "evidence": "Scale augmentation yields a substantial gain of 6.2 points. These data augmentations encourage the model to learn underlying mappings invariant to geometric transformations."
+      },
+      {
+        "target_am": "AM_007",
+        "kind": "mechanism",
+        "node": "M37",
+        "gloss": "Scale augmentation yields substantial gain due to ViT bias",
+        "direction": "strengthen",
+        "evidence": "Scale augmentation yields a substantial gain of 6.2 points... This can explain why scale augmentation yields a substantial gain."
+      }
+    ]
+  },
+  {
+    "factor_id": "F017",
+    "cio": {
+      "cio_id": "CIO_017",
+      "unit": "U020",
+      "context": [
+        "C126"
+      ],
+      "intervention": "I56",
+      "reference": null,
+      "eval_metric": "E10",
+      "pattern": "P29",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Figure 8",
+        "source_span": "S219"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  },
+  {
+    "factor_id": "F018",
+    "cio": {
+      "cio_id": "CIO_018",
+      "unit": "U021",
+      "context": [],
+      "intervention": "I57",
+      "reference": "I57",
+      "eval_metric": "E11",
+      "pattern": "P30",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Figure 9",
+        "source_span": "S222"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_009",
+        "kind": "mechanism",
+        "node": "M40",
+        "gloss": "Visual common sense is learnable from training data",
+        "direction": "strengthen",
+        "evidence": "offline training greatly improves the performance of TTT, suggesting that common sense about the visual world can be learned from the training set."
+      }
+    ]
+  },
+  {
+    "factor_id": "F019",
+    "cio": {
+      "cio_id": "CIO_019",
+      "unit": "U021",
+      "context": [],
+      "intervention": "I57",
+      "reference": "I57",
+      "eval_metric": "E11",
+      "pattern": "P31",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Figure 9",
+        "source_span": "S223"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_010",
+        "kind": "mechanism",
+        "node": "M41",
+        "gloss": "Some ARC tasks are solvable from scratch",
+        "direction": "strengthen",
+        "evidence": "even without offline training, our TTT strategy can achieve nontrivial accuracy (26.4), suggesting that some tasks... can be solved tabula rasa."
+      }
+    ]
+  },
+  {
+    "factor_id": "F020",
+    "cio": {
+      "cio_id": "CIO_020",
+      "unit": "U022",
+      "context": [
+        "C129",
+        "C130"
+      ],
+      "intervention": "I60",
+      "reference": "I60",
+      "eval_metric": null,
+      "pattern": "P36",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 5.2",
+        "source_span": "S236"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_019",
+        "kind": "assumption",
+        "node": "A18",
+        "gloss": "Single pixel error invalidates entire ARC prediction",
+        "direction": "strengthen",
+        "evidence": "multi-view inference further boosts to 49.8... a mistake on even a single pixel renders the entire prediction incorrect. This may explain the large gain."
+      }
+    ]
+  },
+  {
+    "factor_id": "F021",
+    "cio": {
+      "cio_id": "CIO_021",
+      "unit": "U022",
+      "context": [
+        "C131"
+      ],
+      "intervention": "I61",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P38",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 5.2",
+        "source_span": "S239"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_019",
+        "kind": "assumption",
+        "node": "A18",
+        "gloss": "Single pixel error invalidates entire ARC prediction",
+        "direction": "strengthen",
+        "evidence": "multi-view inference further boosts to 54.5 (from Table 2)... a mistake on even a single pixel renders the entire prediction incorrect. This may explain the large gain."
+      }
+    ]
+  },
+  {
+    "factor_id": "F022",
+    "cio": {
+      "cio_id": "CIO_022",
+      "unit": "U022",
+      "context": [
+        "C132"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P39",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 5.2",
+        "source_span": "S241"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_019",
+        "kind": "assumption",
+        "node": "A18",
+        "gloss": "Single pixel error invalidates entire ARC prediction",
+        "direction": "strengthen",
+        "evidence": "multi-view inference further boosts to 49.8... a mistake on even a single pixel renders the entire prediction incorrect. This may explain the large gain."
+      }
+    ]
+  },
+  {
+    "factor_id": "F023",
+    "cio": {
+      "cio_id": "CIO_023",
+      "unit": "U022",
+      "context": [
+        "C133"
+      ],
+      "intervention": "I62",
+      "reference": "I62",
+      "eval_metric": null,
+      "pattern": "P40",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 5.2",
+        "source_span": "S244"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_018",
+        "kind": "assumption",
+        "node": "A16",
+        "gloss": "Multiple test tasks cannot be assumed available simultaneously",
+        "direction": "weaken",
+        "evidence": "performing TTT independently... yields substantially better performance... even though the latter relies on a stronger assumption about the availability of multiple test tasks."
+      }
+    ]
+  },
+  {
+    "factor_id": "F024",
+    "cio": {
+      "cio_id": "CIO_024",
+      "unit": "U022",
+      "context": [
+        "C133"
+      ],
+      "intervention": "I62",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P41",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section 5.2",
+        "source_span": "S245"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  },
+  {
+    "factor_id": "F025",
+    "cio": {
+      "cio_id": "CIO_025",
+      "unit": "U022",
+      "context": [
+        "C134"
+      ],
+      "intervention": "I62",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P42",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 5.2",
+        "source_span": "S246"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_009",
+        "kind": "mechanism",
+        "node": "M40",
+        "gloss": "Visual common sense is learnable from training data",
+        "direction": "strengthen",
+        "evidence": "offline training greatly improves the performance of TTT, suggesting that common sense about the visual world can be learned from the training set."
+      }
+    ]
+  },
+  {
+    "factor_id": "F026",
+    "cio": {
+      "cio_id": "CIO_026",
+      "unit": "U022",
+      "context": [
+        "C133"
+      ],
+      "intervention": "I62",
+      "reference": "I62",
+      "eval_metric": null,
+      "pattern": "P43",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 5.2",
+        "source_span": "S247"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_010",
+        "kind": "mechanism",
+        "node": "M41",
+        "gloss": "Some ARC tasks are solvable from scratch",
+        "direction": "strengthen",
+        "evidence": "even without offline training, our TTT strategy can achieve nontrivial accuracy (26.4), suggesting that some tasks... can be solved tabula rasa."
+      }
+    ]
+  },
+  {
+    "factor_id": "F027",
+    "cio": {
+      "cio_id": "CIO_027",
+      "unit": "U022",
+      "context": [
+        "C135"
+      ],
+      "intervention": "I63",
+      "reference": null,
+      "eval_metric": "E12",
+      "pattern": "P44",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section 5.2",
+        "source_span": "S255"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  },
+  {
+    "factor_id": "F028",
+    "cio": {
+      "cio_id": "CIO_028",
+      "unit": "U022",
+      "context": [
+        "C135"
+      ],
+      "intervention": "C136",
+      "reference": "I63",
+      "eval_metric": "E12",
+      "pattern": "P45",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 5.2",
+        "source_span": "S255"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_019",
+        "kind": "assumption",
+        "node": "A18",
+        "gloss": "Single pixel error invalidates entire ARC prediction",
+        "direction": "strengthen",
+        "evidence": "multi-view inference further boosts to 49.8... a mistake on even a single pixel renders the entire prediction incorrect. This may explain the large gain."
+      }
+    ]
+  },
+  {
+    "factor_id": "F029",
+    "cio": {
+      "cio_id": "CIO_029",
+      "unit": "U024",
+      "context": [
+        "C137",
+        "C143",
+        "C144"
+      ],
+      "intervention": "I64",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P48",
+      "direction": "up",
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section 5.3",
+        "source_span": "S264"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "Our VARC with 18M parameters is ~10 points better than TRM... yields strong few-shot generalization competitive with recent approaches."
+      }
+    ]
+  },
+  {
+    "factor_id": "F030",
+    "cio": {
+      "cio_id": "CIO_030",
+      "unit": "U024",
+      "context": [
+        "C145"
+      ],
+      "intervention": "I64",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P49",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 5.3",
+        "source_span": "S267"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "Our model compares favorably with some of the most powerful LLMs... yields strong few-shot generalization competitive with recent approaches."
+      }
+    ]
+  },
+  {
+    "factor_id": "F031",
+    "cio": {
+      "cio_id": "CIO_031",
+      "unit": "U024",
+      "context": [
+        "C145"
+      ],
+      "intervention": "I64",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P50",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 5.3",
+        "source_span": "S268"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "Our method does not rely on such data and uses a model that is several orders of magnitude smaller."
+      }
+    ]
+  },
+  {
+    "factor_id": "F032",
+    "cio": {
+      "cio_id": "CIO_032",
+      "unit": "U024",
+      "context": [
+        "C137"
+      ],
+      "intervention": "I65",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P51",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 5.3",
+        "source_span": "S271"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "VARC (ensemble) boosts our result to 60.4... yields strong few-shot generalization competitive with recent approaches."
+      }
+    ]
+  },
+  {
+    "factor_id": "F033",
+    "cio": {
+      "cio_id": "CIO_033",
+      "unit": "U024",
+      "context": [
+        "C137"
+      ],
+      "intervention": "I65",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P52",
+      "direction": "flat",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Section 5.3",
+        "source_span": "S272"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "This result closes the gap with the reported average human performance... yields strong few-shot generalization competitive with recent approaches."
+      }
+    ]
+  },
+  {
+    "factor_id": "F034",
+    "cio": {
+      "cio_id": "CIO_034",
+      "unit": "U025",
+      "context": [
+        "C138",
+        "C139",
+        "C141"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": "E16",
+      "pattern": "P46",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Table 3",
+        "source_span": "S262"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "Our single-model result... 54.5% (ARC-1) and 8.3% (ARC-2)... yields strong few-shot generalization competitive with recent approaches."
+      }
+    ]
+  },
+  {
+    "factor_id": "F035",
+    "cio": {
+      "cio_id": "CIO_035",
+      "unit": "U025",
+      "context": [
+        "C138",
+        "C139",
+        "C141"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": "E17",
+      "pattern": "P46",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Table 3",
+        "source_span": "S262"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  },
+  {
+    "factor_id": "F036",
+    "cio": {
+      "cio_id": "CIO_036",
+      "unit": "U025",
+      "context": [
+        "C138",
+        "C139",
+        "C141"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": "E16",
+      "pattern": "P47",
+      "direction": "flat",
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Table 3",
+        "source_span": "S263"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "Our ensemble result... 60.4% (ARC-1) and 11.1% (ARC-2)... yields strong few-shot generalization competitive with recent approaches."
+      }
+    ]
+  },
+  {
+    "factor_id": "F037",
+    "cio": {
+      "cio_id": "CIO_037",
+      "unit": "U026",
+      "context": [
+        "C150",
+        "C151"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P53",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section 6",
+        "source_span": "S280"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_011",
+        "kind": "mechanism",
+        "node": "M44",
+        "gloss": "Attention maps reveal pixel-to-pixel reasoning",
+        "direction": "strengthen",
+        "evidence": "These attention maps show that our model can correctly reason about the relationship between a source pixel and its target pixel."
+      }
+    ]
+  },
+  {
+    "factor_id": "F038",
+    "cio": {
+      "cio_id": "CIO_038",
+      "unit": "U026",
+      "context": [
+        "C150",
+        "C151"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P54",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section 6",
+        "source_span": "S281"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_015",
+        "kind": "mechanism",
+        "node": "M59",
+        "gloss": "Transformer layers specialize in different structures/contexts",
+        "direction": "strengthen",
+        "evidence": "In this task, different layers exhibit different specialties: some layers attend to the pixels that are to be copied..."
+      }
+    ]
+  },
+  {
+    "factor_id": "F039",
+    "cio": {
+      "cio_id": "CIO_039",
+      "unit": "U026",
+      "context": [
+        "C152",
+        "C154",
+        "C155"
+      ],
+      "intervention": "I66",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P57",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section 6",
+        "source_span": "S289"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_012",
+        "kind": "mechanism",
+        "node": "M48",
+        "gloss": "Task embedding visualization suggests learning task relations",
+        "direction": "strengthen",
+        "evidence": "This visualization suggests that our method attempts to learn the relations between different tasks, which is an essential ability for abstraction and reasoning."
+      }
+    ]
+  },
+  {
+    "factor_id": "F040",
+    "cio": {
+      "cio_id": "CIO_040",
+      "unit": "U039",
+      "context": [
+        "C218"
+      ],
+      "intervention": "I77",
+      "reference": null,
+      "eval_metric": "E21",
+      "pattern": "P61",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section B.1",
+        "source_span": "S361"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  },
+  {
+    "factor_id": "F041",
+    "cio": {
+      "cio_id": "CIO_041",
+      "unit": "U039",
+      "context": [
+        "C218"
+      ],
+      "intervention": "I78",
+      "reference": "I77",
+      "eval_metric": "E22",
+      "pattern": "P62",
+      "direction": "up",
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section B.1",
+        "source_span": "S362"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_009",
+        "kind": "mechanism",
+        "node": "M40",
+        "gloss": "Visual common sense is learnable from training data",
+        "direction": "strengthen",
+        "evidence": "increasing the amount of offline training data is beneficial... suggesting that common sense about the visual world can be learned from the training set."
+      }
+    ]
+  },
+  {
+    "factor_id": "F042",
+    "cio": {
+      "cio_id": "CIO_042",
+      "unit": "U039",
+      "context": [],
+      "intervention": "I79",
+      "reference": null,
+      "eval_metric": "E24",
+      "pattern": "P63",
+      "direction": "up",
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section B.1",
+        "source_span": "S365"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_009",
+        "kind": "mechanism",
+        "node": "M40",
+        "gloss": "Visual common sense is learnable from training data",
+        "direction": "strengthen",
+        "evidence": "the diversity of training tasks is helpful for generalization... suggesting that common sense about the visual world can be learned from the training set."
+      }
+    ]
+  },
+  {
+    "factor_id": "F043",
+    "cio": {
+      "cio_id": "CIO_043",
+      "unit": "U040",
+      "context": [
+        "C222",
+        "C220"
+      ],
+      "intervention": "I80",
+      "reference": null,
+      "eval_metric": "E31",
+      "pattern": "P65",
+      "direction": "up",
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section B.2",
+        "source_span": "S372"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  },
+  {
+    "factor_id": "F044",
+    "cio": {
+      "cio_id": "CIO_044",
+      "unit": "U040",
+      "context": [
+        "C222",
+        "C220"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": "E31",
+      "pattern": "P66",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Section B.2",
+        "source_span": "S374"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  },
+  {
+    "factor_id": "F045",
+    "cio": {
+      "cio_id": "CIO_045",
+      "unit": "U043",
+      "context": [
+        "C225"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P80",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 19",
+        "source_span": "S399"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_014",
+        "kind": "mechanism",
+        "node": "M58",
+        "gloss": "Model interprets ambiguous rules with multiple plausible guesses",
+        "direction": "strengthen",
+        "evidence": "our method uncovers different solutions that are plausible... our method's first guess"
+      },
+      {
+        "target_am": "AM_020",
+        "kind": "assumption",
+        "node": "A20",
+        "gloss": "Some ARC tasks have multiple plausible rules",
+        "direction": "strengthen",
+        "evidence": "the rule can be interpreted as either 'going-through-only' (our method's first guess) or 'touching' (our method's second guess)."
+      }
+    ]
+  },
+  {
+    "factor_id": "F046",
+    "cio": {
+      "cio_id": "CIO_046",
+      "unit": "U043",
+      "context": [
+        "C225"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P81",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 19",
+        "source_span": "S400"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_014",
+        "kind": "mechanism",
+        "node": "M58",
+        "gloss": "Model interprets ambiguous rules with multiple plausible guesses",
+        "direction": "strengthen",
+        "evidence": "our method uncovers different solutions that are plausible... our method's second guess"
+      },
+      {
+        "target_am": "AM_020",
+        "kind": "assumption",
+        "node": "A20",
+        "gloss": "Some ARC tasks have multiple plausible rules",
+        "direction": "strengthen",
+        "evidence": "the rule can be interpreted as either 'going-through-only' (our method's first guess) or 'touching' (our method's second guess)."
+      }
+    ]
+  },
+  {
+    "factor_id": "F047",
+    "cio": {
+      "cio_id": "CIO_047",
+      "unit": "U043",
+      "context": [
+        "C258",
+        "C259"
+      ],
+      "intervention": "I90",
+      "reference": null,
+      "eval_metric": "E36",
+      "pattern": "P82",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 19",
+        "source_span": "S403"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_021",
+        "kind": "assumption",
+        "node": "A21",
+        "gloss": "Most ARC tasks have unambiguous rules",
+        "direction": "strengthen",
+        "evidence": "Although most ARC tasks are unambiguous, some may admit multiple plausible explanations or rules."
+      }
+    ]
+  },
+  {
+    "factor_id": "F048",
+    "cio": {
+      "cio_id": "CIO_048",
+      "unit": "U046",
+      "context": [
+        "C230"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P70",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 17",
+        "source_span": "S385"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "Examples of test tasks successfully solved by VARC... yields strong few-shot generalization competitive with recent approaches."
+      }
+    ]
+  },
+  {
+    "factor_id": "F049",
+    "cio": {
+      "cio_id": "CIO_049",
+      "unit": "U046",
+      "context": [
+        "C231"
+      ],
+      "intervention": "I84",
+      "reference": null,
+      "eval_metric": "E32",
+      "pattern": "P71",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 17",
+        "source_span": "S386"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "weaken",
+        "evidence": "Our method... still makes mistakes on some tasks that are simple for humans."
+      }
+    ]
+  },
+  {
+    "factor_id": "F050",
+    "cio": {
+      "cio_id": "CIO_050",
+      "unit": "U046",
+      "context": [
+        "C232"
+      ],
+      "intervention": "I85",
+      "reference": null,
+      "eval_metric": "E32",
+      "pattern": "P72",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 17",
+        "source_span": "S387"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "weaken",
+        "evidence": "Examples of test tasks unsolved by VARC... still makes mistakes on some tasks that are simple for humans."
+      }
+    ]
+  },
+  {
+    "factor_id": "F051",
+    "cio": {
+      "cio_id": "CIO_051",
+      "unit": "U046",
+      "context": [
+        "C235",
+        "C236",
+        "C237",
+        "C238"
+      ],
+      "intervention": "I86",
+      "reference": null,
+      "eval_metric": "E33",
+      "pattern": "P73",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 17",
+        "source_span": "S391"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  },
+  {
+    "factor_id": "F052",
+    "cio": {
+      "cio_id": "CIO_052",
+      "unit": "U046",
+      "context": [
+        "C239",
+        "C240",
+        "C241",
+        "C242"
+      ],
+      "intervention": "I86",
+      "reference": null,
+      "eval_metric": "E33",
+      "pattern": "P74",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 17",
+        "source_span": "S391"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  },
+  {
+    "factor_id": "F053",
+    "cio": {
+      "cio_id": "CIO_053",
+      "unit": "U047",
+      "context": [
+        "C243"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P75",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 18",
+        "source_span": "S392"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "strengthen",
+        "evidence": "Examples of test tasks successfully solved by VARC... yields strong few-shot generalization competitive with recent approaches."
+      }
+    ]
+  },
+  {
+    "factor_id": "F054",
+    "cio": {
+      "cio_id": "CIO_054",
+      "unit": "U047",
+      "context": [
+        "C244"
+      ],
+      "intervention": "I87",
+      "reference": null,
+      "eval_metric": "E34",
+      "pattern": "P76",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 18",
+        "source_span": "S393"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "weaken",
+        "evidence": "Examples of test tasks unsolved by VARC... still makes mistakes on some tasks that are simple for humans."
+      }
+    ]
+  },
+  {
+    "factor_id": "F055",
+    "cio": {
+      "cio_id": "CIO_055",
+      "unit": "U047",
+      "context": [
+        "C245"
+      ],
+      "intervention": "I88",
+      "reference": null,
+      "eval_metric": "E34",
+      "pattern": "P77",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 18",
+        "source_span": "S394"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_001",
+        "kind": "mechanism",
+        "node": "M7",
+        "gloss": "Visual learning enables abstraction without language",
+        "direction": "weaken",
+        "evidence": "Examples of test tasks unsolved by VARC... still makes mistakes on some tasks that are simple for humans."
+      }
+    ]
+  },
+  {
+    "factor_id": "F056",
+    "cio": {
+      "cio_id": "CIO_056",
+      "unit": "U047",
+      "context": [
+        "C248",
+        "C249",
+        "C250",
+        "C251"
+      ],
+      "intervention": "I89",
+      "reference": null,
+      "eval_metric": "E35",
+      "pattern": "P78",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 18",
+        "source_span": "S398"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  },
+  {
+    "factor_id": "F057",
+    "cio": {
+      "cio_id": "CIO_057",
+      "unit": "U047",
+      "context": [
+        "C252",
+        "C253",
+        "C254",
+        "C255"
+      ],
+      "intervention": "I89",
+      "reference": null,
+      "eval_metric": "E35",
+      "pattern": "P79",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 18",
+        "source_span": "S398"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  },
+  {
+    "factor_id": "F058",
+    "cio": {
+      "cio_id": "CIO_058",
+      "unit": "U049",
+      "context": [
+        "C263",
+        "C265"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": "E37",
+      "pattern": "P83",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 20",
+        "source_span": "S411"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_015",
+        "kind": "mechanism",
+        "node": "M59",
+        "gloss": "Transformer layers specialize in different structures/contexts",
+        "direction": "strengthen",
+        "evidence": "Layers at different depths tend to focus on different structures... deep layers are more task-specialized."
+      }
+    ]
+  },
+  {
+    "factor_id": "F059",
+    "cio": {
+      "cio_id": "CIO_059",
+      "unit": "U050",
+      "context": [
+        "C269",
+        "C270",
+        "C271",
+        "C272",
+        "C273",
+        "C274"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": "E38",
+      "pattern": "P84",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 21",
+        "source_span": "S420"
+      },
+      "status": "observed"
+    },
+    "beliefs": [
+      {
+        "target_am": "AM_015",
+        "kind": "mechanism",
+        "node": "M59",
+        "gloss": "Transformer layers specialize in different structures/contexts",
+        "direction": "strengthen",
+        "evidence": "different layers exhibit different specialties: some layers attend to the pixels that are to be copied, and some layers attend to the target lines."
+      }
+    ]
+  },
+  {
+    "factor_id": "F060",
+    "cio": {
+      "cio_id": "CIO_060",
+      "unit": "U055",
+      "context": [
+        "C276",
+        "C277"
+      ],
+      "intervention": "I92",
+      "reference": null,
+      "eval_metric": "E39",
+      "pattern": "P85",
+      "direction": "up",
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 22 caption",
+        "source_span": "S423"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  },
+  {
+    "factor_id": "F061",
+    "cio": {
+      "cio_id": "CIO_061",
+      "unit": "U056",
+      "context": [
+        "C278"
+      ],
+      "intervention": "I92",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P86",
+      "direction": null,
+      "pattern_class": "primary_result",
+      "provenance": {
+        "location": "Figure 22 caption",
+        "source_span": "S424"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  },
+  {
+    "factor_id": "F062",
+    "cio": {
+      "cio_id": "CIO_062",
+      "unit": "U057",
+      "context": [
+        "C279"
+      ],
+      "intervention": "I92",
+      "reference": null,
+      "eval_metric": null,
+      "pattern": "P87",
+      "direction": "up",
+      "pattern_class": "comparison",
+      "provenance": {
+        "location": "Figure 22 caption",
+        "source_span": "S425"
+      },
+      "status": "observed"
+    },
+    "beliefs": []
+  }
+]

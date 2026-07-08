@@ -1,0 +1,270 @@
+```json
+[
+  {
+    "source_cio": "CIO_001",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Our framework... achieves 60.4% accuracy... emphasizing abstraction and reasoning emerging directly from image pixels."
+  },
+  {
+    "source_cio": "CIO_002",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "VARC achieves 54.5% accuracy... emphasizing abstraction and reasoning emerging directly from image pixels."
+  },
+  {
+    "source_cio": "CIO_003",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This result substantially surpasses the best recurrent methods... emphasizing abstraction and reasoning emerging directly from image pixels."
+  },
+  {
+    "source_cio": "CIO_004",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "It is also competitive with many popular LLM-based methods... emphasizing abstraction and reasoning emerging directly from image pixels."
+  },
+  {
+    "source_cio": "CIO_005",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Combining VARC models... improves accuracy to 60.4%, matching... human performance... emphasizing abstraction and reasoning emerging directly from image pixels."
+  },
+  {
+    "source_cio": "CIO_006",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "VARC correctly solves these challenging tasks... emphasizing abstraction and reasoning emerging directly from image pixels."
+  },
+  {
+    "source_cio": "CIO_008",
+    "target_am": "AM_008",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "all U-Net variants achieve decent accuracy, suggesting that this problem can also be effectively addressed by classical vision backbones."
+  },
+  {
+    "source_cio": "CIO_009",
+    "target_am": "AM_006",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Extending from 1D positional embedding to its 2D counterpart is beneficial: see Fig. 7(b)(c)."
+  },
+  {
+    "source_cio": "CIO_010",
+    "target_am": "AM_006",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Extending from 1D positional embedding to its 2D counterpart is beneficial: see Fig. 7(b)(c)."
+  },
+  {
+    "source_cio": "CIO_011",
+    "target_am": "AM_006",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "we replace the 2D ROPE... with a 1D ROPE and observe a degradation of 3.5 points."
+  },
+  {
+    "source_cio": "CIO_012",
+    "target_am": "AM_002",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "the 2×2 patchification leads to a noticeable gain... each patch can cover multiple colors... which substantially enriches the data space for learning."
+  },
+  {
+    "source_cio": "CIO_013",
+    "target_am": "AM_004",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "fully flexible translation augmen- tation on the canvas... yields an additional gain of 2.9 points."
+  },
+  {
+    "source_cio": "CIO_013",
+    "target_am": "AM_003",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "In Fig. 7(e), we apply fully flexible translation augmen- tation on the canvas... this setting yields an additional gain of 2.9 points."
+  },
+  {
+    "source_cio": "CIO_014",
+    "target_am": "AM_004",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Scale augmentation yields a substantial gain of 6.2 points."
+  },
+  {
+    "source_cio": "CIO_014",
+    "target_am": "AM_003",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "we further ap- ply the scale augmentation enabled by the concept of can- vas. Scale augmentation yields a substantial gain of 6.2 points."
+  },
+  {
+    "source_cio": "CIO_015",
+    "target_am": "AM_007",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "the ViT architecture has little to no inductive bias about scale invariance. This can explain why scale augmen- tation yields a substantial gain."
+  },
+  {
+    "source_cio": "CIO_017",
+    "target_am": "AM_017",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Going beyond this regime can lead to overfitting in our current setting, as shown in Tab. 1 for the 66M ViT model."
+  },
+  {
+    "source_cio": "CIO_018",
+    "target_am": "AM_009",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "offline training greatly improves the per- formance of TTT, suggesting that common sense about the visual world can be learned from the training set."
+  },
+  {
+    "source_cio": "CIO_019",
+    "target_am": "AM_010",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "even without offline training, our TTT strategy can achieve nontrivial accuracy (26.4), suggesting that some tasks in this benchmark can be solved tabula rasa."
+  },
+  {
+    "source_cio": "CIO_020",
+    "target_am": "AM_018",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "performing TTT independently for each test task yields substantially better performance... even though the latter relies on a stronger assumption about the availability of multiple test tasks at once."
+  },
+  {
+    "source_cio": "CIO_024",
+    "target_am": "AM_019",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "in ARC, a mistake on even a single pixel renders the entire prediction incorrect."
+  },
+  {
+    "source_cio": "CIO_025",
+    "target_am": "AM_019",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "a mistake on even a single pixel renders the entire prediction incorrect. This may explain the large gain seen here."
+  },
+  {
+    "source_cio": "CIO_026",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Doing so boosts our result to 60.4. This result closes the gap with the re- ported average human performance... emphasizing abstraction and reasoning emerging directly from image pixels."
+  },
+  {
+    "source_cio": "CIO_028",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "our method substantially outperforms the recur- rent models: HRM [53] and TRM [27]... emphasizing abstraction and reasoning emerging directly from image pixels."
+  },
+  {
+    "source_cio": "CIO_029",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Our VARC with 18M parameters is ~10 points better than TRM on ARC-1... emphasizing abstraction and reasoning emerging directly from image pixels."
+  },
+  {
+    "source_cio": "CIO_030",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Our model compares favorably with some of the most powerful LLMs... emphasizing abstraction and reasoning emerging directly from image pixels."
+  },
+  {
+    "source_cio": "CIO_031",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Our model compares favorably with some of the most powerful LLMs... emphasizing abstraction and reasoning emerging directly from image pixels."
+  },
+  {
+    "source_cio": "CIO_037",
+    "target_am": "AM_011",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "These attention maps show that our model can correctly reason about the relationship between a source pixel and its target pixel to copy from."
+  },
+  {
+    "source_cio": "CIO_038",
+    "target_am": "AM_015",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "In this task, different layers exhibit different specialties: some layers at- tend to the pixels that are to be copied, and some layers attend to the target lines alone the eight directions."
+  },
+  {
+    "source_cio": "CIO_039",
+    "target_am": "AM_012",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This visualization suggests that our method attempts to learn the relations between different tasks, which is an essential ability for abstraction and reasoning."
+  },
+  {
+    "source_cio": "CIO_045",
+    "target_am": "AM_014",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "our model attempts to interpret the rule as either \"going-through-only\" (attempt 1) or \"touching\" (attempt 2)."
+  },
+  {
+    "source_cio": "CIO_046",
+    "target_am": "AM_014",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "our model attempts to interpret the rule as either \"going-through-only\" (attempt 1) or \"touching\" (attempt 2)."
+  },
+  {
+    "source_cio": "CIO_047",
+    "target_am": "AM_020",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "some may admit multiple plausible explanations or rules."
+  },
+  {
+    "source_cio": "CIO_047",
+    "target_am": "AM_021",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Although most ARC tasks are unambiguous, some may admit multiple plausible explanations or rules."
+  },
+  {
+    "source_cio": "CIO_052",
+    "target_am": "AM_015",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Layers at different depths tend to focus on different structures. Early layers tend to focus on local transformations and context."
+  },
+  {
+    "source_cio": "CIO_053",
+    "target_am": "AM_015",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Middle layers tend to perform a more non-local connection, e.g., horizontally or vertically."
+  },
+  {
+    "source_cio": "CIO_054",
+    "target_am": "AM_015",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "The deep layers are more task-specialized."
+  },
+  {
+    "source_cio": "CIO_055",
+    "target_am": "AM_015",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "some layers exhibit strong attention to the 3 × 3 neighborhood... some other layers... focus on the outward-radiating rays."
+  }
+]
+```

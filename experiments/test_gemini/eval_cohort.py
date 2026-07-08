@@ -9,6 +9,7 @@ Usage: python eval_cohort.py --run-dir <run> --cohort <cohort_dir> [--baseline <
 import argparse
 import collections
 import json
+import statistics as st
 from pathlib import Path
 
 
@@ -48,13 +49,98 @@ def gates(cohort):
     }
 
 
+def summarize_across(cohort_dirs, out=None):
+    """Headline-metric mean±std over several cohorts built from the SAME prompt set.
+
+    A single cohort's Jaccard is one draw from a noisy distribution (temp=0 Gemini still
+    varies run-to-run), so one number can't tell a real prompt gain from luck. Repeating the
+    SAME prompt across cohorts and reporting mean±std gives the confidence interval: only a
+    shift larger than the std is signal. Pure deterministic aggregation — no LLM."""
+    keys = ["assum", "mech", "cio", "link", "field_errors", "promoted", "comp_refs", "comp_total"]
+    acc = {k: [] for k in keys}
+    per_cohort = []
+    prompt_sets = set()
+    for c in cohort_dirs:
+        c = Path(c)
+        ens = load(c / "ensemble.json")
+        rpt = load(c / "canonical" / "canon_report.json")
+        cons = load(c / "canonical" / "cio_consensus.json")
+        j = ens["reproducibility_mean_pairwise_jaccard"]
+        comp = [v for v in cons.values() if v.get("pattern_class") == "comparison"]
+        if ens.get("prompts"):
+            prompt_sets.add(tuple(sorted(ens["prompts"].items())))
+        row = {
+            "cohort": c.name,
+            "n_builds": j.get("n_builds"),
+            "assum": j.get("am_assumption_raw"),
+            "mech": j.get("am_mechanism_raw"),
+            "cio": j.get("cio_pattern"),
+            "link": j.get("link_atomic"),
+            "field_errors": rpt.get("cio_field_errors"),
+            "promoted": rpt.get("promoted_interventions"),
+            "comp_refs": sum(1 for v in comp if v.get("reference")),
+            "comp_total": len(comp),
+        }
+        per_cohort.append(row)
+        for k in keys:
+            if row[k] is not None:
+                acc[k].append(row[k])
+
+    if len(prompt_sets) > 1:
+        print("[WARN] cohorts do NOT share one prompt set — mean±std mixes prompts, not pure variance")
+
+    stats = {}
+    for k in keys:
+        vals = acc[k]
+        if not vals:
+            continue
+        stats[k] = {"mean": round(st.mean(vals), 3),
+                    "std": round(st.pstdev(vals), 3) if len(vals) > 1 else 0.0,
+                    "raw": vals}
+
+    print(f"=== across {len(cohort_dirs)} cohorts (same prompt set) ===")
+    for r in per_cohort:
+        print(f"  {r['cohort']}  (n={r['n_builds']} builds)")
+    print(f"\n{'metric':14s} {'mean':>8s} ± {'std':<7s}  raw")
+    for k in keys:
+        if k not in stats:
+            print(f"{k:14s} {'—':>8s}")
+            continue
+        print(f"{k:14s} {stats[k]['mean']:>8} ± {stats[k]['std']:<7}  {stats[k]['raw']}")
+
+    if out:
+        report = {
+            "n_cohorts": len(cohort_dirs),
+            "cohorts": [r["cohort"] for r in per_cohort],
+            "prompt_set": dict(next(iter(prompt_sets))) if len(prompt_sets) == 1 else "MIXED",
+            "per_cohort": per_cohort,
+            "mean_std": stats,
+            "note": "same-prompt cohort-to-cohort variance; a prompt change is signal only if it "
+                    "moves a metric by more than ~2x its std here.",
+        }
+        Path(out).write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")
+        print(f"\nwrote {out}")
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--run-dir", required=True)
-    ap.add_argument("--cohort", required=True, help="cohort dir (holds ensemble.json + canonical/)")
+    ap.add_argument("--run-dir", default=None, help="run dir (for node text/notes in single-cohort view)")
+    ap.add_argument("--cohort", default=None, help="single cohort dir (holds ensemble.json + canonical/)")
+    ap.add_argument("--cohorts", nargs="+", default=None,
+                    help="two+ cohort dirs built from the SAME prompt set -> headline mean±std "
+                         "(quantifies cohort-to-cohort variance; use before trusting a single number)")
     ap.add_argument("--baseline", default=None, help="another cohort dir to diff against")
     ap.add_argument("--tables", nargs="*", default=["Table 1", "Table 2", "Table 3"])
+    ap.add_argument("--out", default=None, help="with --cohorts: write the variance report JSON here")
     args = ap.parse_args()
+
+    if args.cohorts:
+        summarize_across(args.cohorts, out=args.out)
+        return
+    if not args.cohort:
+        ap.error("pass --cohort <dir> for a single cohort, or --cohorts <dir dir ...> for mean±std")
+    if not args.run_dir:
+        ap.error("--run-dir is required with --cohort (needed to resolve node text/notes)")
 
     nm = node_map(args.run_dir)
     cohort = Path(args.cohort)
