@@ -27,10 +27,14 @@ FIELD_PREFIX = {
 }
 
 
-def resolve(nid, text_of):
+def resolve(nid, node_of):
     if not nid:
         return None
-    return {"id": nid, "text": text_of.get(nid, "(not in spans.json)")}
+    m = node_of.get(nid) or {}
+    out = {"id": nid, "text": m.get("text", "(not in spans.json)")}
+    if m.get("note"):
+        out["note"] = m["note"]          # notes carry the measured numbers (e.g. P-node "54.5 vs 47.5")
+    return out
 
 
 def mismatch(field, nid):
@@ -77,7 +81,9 @@ def readable_factor(f, text_of):
 
 
 def _t(node):
-    return node["text"] if isinstance(node, dict) else "—"
+    if not isinstance(node, dict):
+        return "—"
+    return node["text"] + (f"  [{node['note']}]" if node.get("note") else "")
 
 
 def factor_to_prose(rf):
@@ -115,10 +121,10 @@ def main():
 
     run_dir = Path(args.run_dir)
     spans = json.loads((run_dir / "spans.json").read_text(encoding="utf-8"))
-    text_of = {s["node_id"]: s.get("text", "") for s in spans}
+    node_of = {s["node_id"]: {"text": s.get("text", ""), "note": s.get("note", "")} for s in spans}
 
     factors = json.loads(Path(args.factors).read_text(encoding="utf-8"))
-    readable = [readable_factor(f, text_of) for f in factors]
+    readable = [readable_factor(f, node_of) for f in factors]
 
     out_json = Path(args.out_json) if args.out_json else Path(args.factors).with_name("factors_readable.json")
     out_md = Path(args.out_md) if args.out_md else Path(args.factors).with_name("factors_readable.md")
