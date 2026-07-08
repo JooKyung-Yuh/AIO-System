@@ -95,10 +95,15 @@ def pairwise_jaccard(sets):
     return round(sum(vals) / len(vals), 3) if vals else None
 
 
-def vote(counter, n, threshold):
-    """{key: [keys with votes>=threshold] -> confidence} plus full tally."""
-    accepted = {k: round(v / n, 3) for k, v in counter.items() if v >= threshold}
-    return accepted
+def band(conf):
+    """View-level confidence band, NOT a delete filter. Nothing is dropped by vote count;
+    every node/edge seen in >=1 build is kept and tagged. 4-5/5 observed, 2-3/5 supported,
+    1/5 uncertain. Downstream views may filter by band; the data keeps everything."""
+    if conf >= 0.8:
+        return "observed"
+    if conf >= 0.4:
+        return "supported"
+    return "uncertain"
 
 
 def main():
@@ -110,10 +115,6 @@ def main():
     ap.add_argument("--builds", nargs="*", help="explicit build dirs/names to pool (overrides --builds-dir scan)")
     ap.add_argument("--auto", action="store_true",
                     help="pool the largest same-prompt cohort under --builds-dir")
-    ap.add_argument("--cio-threshold", type=int, default=None, help="default: majority ceil(N/2)+... -> 3 for N=5")
-    ap.add_argument("--mech-threshold", type=int, default=None)
-    ap.add_argument("--assum-threshold", type=int, default=None, help="default one higher than mech")
-    ap.add_argument("--link-threshold", type=int, default=None)
     ap.add_argument("--out", default=None, help="write ensemble json here (default: run-dir/ensemble/<tag>.json)")
     args = ap.parse_args()
 
@@ -159,11 +160,7 @@ def main():
 
     n = len(builds)
     if n < 2:
-        sys.exit(f"need >=2 builds to vote, got {n}")
-    cio_t = args.cio_threshold or (n // 2 + 1)
-    mech_t = args.mech_threshold or (n // 2 + 1)
-    assum_t = args.assum_threshold or min(n, (n // 2 + 2))   # one stricter than mechanism
-    link_t = args.link_threshold or (n // 2 + 1)
+        sys.exit(f"need >=2 builds to pool, got {n}")
 
     sigs = [build_signals(b) for b in builds]
 
@@ -186,34 +183,45 @@ def main():
         am_ctr.update(s["am_all"])
         link_ctr.update(s["links"])
 
-    accepted_cio = vote(cio_ctr, n, cio_t)
-    # AM split by category via node-id prefix
-    accepted_am = {}
-    for atom, votes in am_ctr.items():
-        cat = cat_of(atom)
-        t = assum_t if cat == "assumption" else mech_t
-        if votes >= t:
-            accepted_am[atom] = {"kind": cat, "votes": votes, "confidence": round(votes / n, 3)}
-    accepted_links = {f"{p}|{a}|{d}": {"cio_pattern": p, "am_node": a, "direction": d,
-                                       "votes": v, "confidence": round(v / n, 3)}
-                      for (p, a, d), v in link_ctr.items() if v >= link_t}
+    # KEEP-ALL: every node/edge seen in >=1 build is retained and tagged with confidence + band.
+    # Voting no longer deletes — a low-vote edge is "uncertain", not gone (recall preserved).
+    def tally_all(counter):
+        return {k: {"votes": v, "confidence": round(v / n, 3), "band": band(v / n)}
+                for k, v in counter.items()}
+
+    nodes_cio = tally_all(cio_ctr)
+    nodes_am = {atom: {"kind": cat_of(atom), "votes": v, "confidence": round(v / n, 3),
+                       "band": band(v / n)}
+                for atom, v in am_ctr.items()}
+    nodes_link = {f"{p}|{a}|{d}": {"cio_pattern": p, "am_node": a, "direction": d,
+                                   "votes": v, "confidence": round(v / n, 3), "band": band(v / n)}
+                  for (p, a, d), v in link_ctr.items()}
+
+    def band_counts(d):
+        c = collections.Counter(x["band"] for x in d.values())
+        return {b: c.get(b, 0) for b in ("observed", "supported", "uncertain")}
 
     out = {
         "run_dir": str(run_dir),
         "builds": [str(b["dir"].name) for b in builds],
         "prompts": builds[0]["meta"].get("prompts"),
-        "thresholds": {"cio": cio_t, "mechanism": mech_t, "assumption": assum_t, "link": link_t},
+        "band_cutoffs": {"observed": ">=0.8", "supported": ">=0.4", "uncertain": "<0.4"},
         "reproducibility_mean_pairwise_jaccard": repro,
-        "accepted": {
-            "cio_patterns": accepted_cio,
-            "am_nodes": accepted_am,
-            "links": accepted_links,
+        "nodes": {
+            "cio_patterns": nodes_cio,
+            "am_nodes": nodes_am,
+            "links": nodes_link,
         },
-        "counts": {
-            "cio_patterns": len(accepted_cio),
-            "am_mechanism": sum(1 for v in accepted_am.values() if v["kind"] == "mechanism"),
-            "am_assumption": sum(1 for v in accepted_am.values() if v["kind"] == "assumption"),
-            "links": len(accepted_links),
+        "band_counts": {
+            "cio_patterns": band_counts(nodes_cio),
+            "am_nodes": band_counts(nodes_am),
+            "links": band_counts(nodes_link),
+        },
+        "totals": {
+            "cio_patterns": len(nodes_cio),
+            "am_mechanism": sum(1 for v in nodes_am.values() if v["kind"] == "mechanism"),
+            "am_assumption": sum(1 for v in nodes_am.values() if v["kind"] == "assumption"),
+            "links": len(nodes_link),
         },
     }
 
@@ -224,10 +232,10 @@ def main():
 
     print(f"pooled {n} builds: {out['builds']}")
     print(f"reproducibility (mean pairwise Jaccard): {json.dumps(repro, ensure_ascii=False)}")
-    print(f"thresholds cio>={cio_t} mech>={mech_t} assum>={assum_t} link>={link_t}")
-    print(f"accepted: cio={out['counts']['cio_patterns']}  "
-          f"mechanism={out['counts']['am_mechanism']}  assumption={out['counts']['am_assumption']}  "
-          f"links={out['counts']['links']}")
+    print(f"kept all nodes (band = observed/supported/uncertain, nothing deleted):")
+    print(f"  cio_patterns {band_counts(nodes_cio)}  total {len(nodes_cio)}")
+    print(f"  am_nodes     {band_counts(nodes_am)}  total {len(nodes_am)}")
+    print(f"  links        {band_counts(nodes_link)}  total {len(nodes_link)}")
     print(f"wrote {out_path}")
 
 

@@ -71,29 +71,48 @@ def span_num(node_id):
     return int(m.group(1)) if m else 10**9
 
 
-# ---------- Step B: AM canonical (deterministic; aliases + votes already judged) ----------
-def canonical_am(builds, survivors_am, link_counts):
+def band(conf):
+    """View-level confidence band (mirror of aggregate_ensemble.band). Nothing is dropped."""
+    if conf >= 0.8:
+        return "observed"
+    if conf >= 0.4:
+        return "supported"
+    return "uncertain"
+
+
+# ---------- Step B: AM canonical (union clustering; merge-then-count confidence) ----------
+def canonical_am(builds, am_votes, link_counts, n):
+    """Cluster EVERY AM atom (union, no vote filter). A cluster's confidence is recomputed
+    merge-then-count: how many of the N builds contained ANY of the cluster's member atoms --
+    so a concept scattered across builds under different aliases regains its true support."""
     uf = UF()
     text = {}
+    build_atoms = []
     for b in builds:
+        present = set()
         for card in b["am"]:
             atoms = [card["node"]] + list(card.get("aliases") or [])
+            present.update(a for a in atoms if a)
             for x in atoms:
                 text.setdefault(x, card.get("gloss") or "")
             for x in atoms[1:]:
                 uf.union(atoms[0], x)
+        build_atoms.append(present)
     clusters = collections.defaultdict(list)
-    for node in survivors_am:
+    for node in am_votes:
         clusters[uf.find(node)].append(node)
     am_canon, raw2canon = {}, {}
     for members in clusters.values():
-        rep = sorted(members, key=lambda n: (-survivors_am.get(n, 0),
-                                             -link_counts.get(n, 0), span_num(n)))[0]
+        rep = sorted(members, key=lambda x: (-am_votes.get(x, 0),
+                                             -link_counts.get(x, 0), span_num(x)))[0]
         kind = "assumption" if rep.startswith("A") else "mechanism"
         cid = slugify(text.get(rep, rep), "ASM" if kind == "assumption" else "MECH")
+        mset = set(members)
+        cluster_votes = sum(1 for present in build_atoms if present & mset)
+        conf = round(cluster_votes / n, 3)
         am_canon[cid] = {"canonical_id": cid, "type": kind, "gloss": text.get(rep, ""),
                          "representative": rep, "members": sorted(members),
-                         "votes": survivors_am.get(rep, 0)}
+                         "votes": cluster_votes, "confidence": conf, "band": band(conf)}
         for m in members:
             raw2canon[m] = cid
     return am_canon, raw2canon
@@ -318,16 +337,18 @@ def main():
     cache_path = out_dir / "merge_decisions.json"
     cache = load_json(cache_path) if cache_path.exists() else {}
 
-    survivors_pat = set(ens["accepted"]["cio_patterns"])
-    survivors_am = {k: v["votes"] for k, v in ens["accepted"]["am_nodes"].items()}
+    # KEEP-ALL union: canonicalize EVERY node seen in >=1 build, not just vote-survivors.
+    n = len(builds)
+    all_pat = set(ens["nodes"]["cio_patterns"])
+    am_votes = {k: v["votes"] for k, v in ens["nodes"]["am_nodes"].items()}
     link_counts = collections.Counter()
-    for k in ens["accepted"]["links"]:
+    for k in ens["nodes"]["links"]:
         link_counts[k.split("|")[1]] += 1
 
-    cio_cons = consensus_cio(builds, survivors_pat, args.ctx_min)
+    cio_cons = consensus_cio(builds, all_pat, args.ctx_min)
     field_errors = validate_cio_fields(cio_cons, byspan)                 # Phase A'
     promoted = promote_mislabeled_intervention(cio_cons, byspan)         # Phase C-1
-    am_canon, r2c_am = canonical_am(builds, survivors_am, link_counts)
+    am_canon, r2c_am = canonical_am(builds, am_votes, link_counts, n)
     merge_queue = []
     int_canon, r2c_int = canonical_intervention(cio_cons, byspan, cache, merge_queue)
     ctx_canon, r2c_ctx, dropped = canonical_context(cio_cons, byspan)
@@ -345,16 +366,18 @@ def main():
     registry = {"context": ctx_canon, "intervention": int_canon,
                 "eval_metric": met_canon, "am": am_canon,
                 "raw2canon": {**r2c_ctx, **r2c_int, **r2c_met, **r2c_am}}
+    am_band = collections.Counter(v["band"] for v in am_canon.values())
     report = {
-        "n_builds": len(builds),
+        "n_builds": n,
         "before": {
             "context": len({x for cc in cio_cons.values() for x in cc["context"]}),
             "intervention": len({cc.get("intervention") for cc in cio_cons.values() if cc.get("intervention")}),
             "eval_metric": len({cc.get("eval_metric") for cc in cio_cons.values() if cc.get("eval_metric")}),
-            "am_survivors": len(survivors_am),
+            "am_atoms_union": len(am_votes),
         },
         "after": {"context": len(ctx_canon), "intervention": len(int_canon),
                   "eval_metric": len(met_canon), "am_clusters": len(am_canon)},
+        "am_cluster_bands": {b: am_band.get(b, 0) for b in ("observed", "supported", "uncertain")},
         "context_dropped": len(dropped),
         "merge_queue_pending": len(merge_queue),
         "cio_field_errors": len(field_errors),
