@@ -111,7 +111,7 @@ def canonical_am(builds, am_votes, link_counts, n):
         cluster_votes = sum(1 for present in build_atoms if present & mset)
         conf = round(cluster_votes / n, 3)
         am_canon[cid] = {"canonical_id": cid, "type": kind, "gloss": text.get(rep, ""),
-                         "representative": rep, "members": sorted(members),
+                         "representative": rep, "members": sorted(members), "n_members": len(members),
                          "votes": cluster_votes, "confidence": conf, "band": band(conf)}
         for m in members:
             raw2canon[m] = cid
@@ -228,20 +228,43 @@ FACET_RULES = [
 DROP_RE = re.compile(r"modifies the one above|circle areas|denote|entries?\s*\(", re.I)
 
 
+def spec_sig(note):
+    """A context node's distinguishing spec (width / #params / Gflops ...) usually lives in
+    `note`, not `text`: text="ViT", note="width 512, 18M". Merging on text alone collapses
+    ViT-6M/18M/66M into one node. This returns the note's numeric tokens joined, so nodes that
+    share text but differ in ANY spec number stay SEPARATE. Empty note -> "" -> text-only merge
+    (true duplicate contexts, e.g. two bare "ARC-1", still merge as before)."""
+    nums = [t for t in re.findall(r"[a-z0-9]+", (note or "").lower()) if any(ch.isdigit() for ch in t)]
+    return "_".join(nums)
+
+
 def canonical_context(consensus, byspan):
+    """Cluster context C-nodes by facet + text slug, BUT keep spec-distinct nodes apart via
+    spec_sig(note): ViT-6M/18M/66M -> three canonical contexts instead of one. Nodes with no
+    distinguishing spec (empty note) still merge on text. Pure layout fragments (DROP_RE) are
+    dropped. Deterministic: no LLM, no randomness."""
     ctx_canon, raw2canon, dropped = {}, {}, []
     seen = {c for cc in consensus.values() for c in cc["context"]}
     for cid in sorted(seen):
-        text = byspan.get(cid, {}).get("text", "")
+        s = byspan.get(cid, {})
+        text = s.get("text", "")
+        note = s.get("note", "") or ""
         if DROP_RE.search(text):
             dropped.append(cid)
             continue
         facet = next((f for f, rx in FACET_RULES if re.search(rx, text, re.I)), "other")
-        canon = slugify(text, f"CTX_{facet}")
+        base = slugify(text, f"CTX_{facet}")
+        sig = spec_sig(note)
+        canon = f"{base}_{sig}" if sig else base            # spec-distinct -> distinct canonical id
+        gloss = (text + (f" — {note}" if note else "")).strip()[:80]
         ctx_canon.setdefault(canon, {"canonical_id": canon, "type": "context",
-                                     "facet": facet, "gloss": text[:80], "members": []})
+                                     "facet": facet, "gloss": gloss, "members": []})
         ctx_canon[canon]["members"].append(cid)
         raw2canon[cid] = canon
+    for rec in ctx_canon.values():
+        rec["members"] = sorted(rec["members"])
+        rec["representative"] = sorted(rec["members"], key=span_num)[0]
+        rec["n_members"] = len(rec["members"])
     return ctx_canon, raw2canon, dropped
 
 
@@ -276,7 +299,8 @@ def canonical_intervention(consensus, byspan, cache, merge_queue):
         rep = sorted(members, key=span_num)[0]
         cid = slugify(byspan.get(rep, {}).get("text", rep), "INT")
         canon[cid] = {"canonical_id": cid, "type": "intervention",
-                      "gloss": byspan.get(rep, {}).get("text", "")[:80], "members": sorted(members)}
+                      "gloss": byspan.get(rep, {}).get("text", "")[:80],
+                      "representative": rep, "members": sorted(members), "n_members": len(members)}
         for m in members:
             raw2canon[m] = cid
     return canon, raw2canon
@@ -302,6 +326,10 @@ def canonical_metric(consensus, byspan):
         canon.setdefault(cid, {"canonical_id": cid, "type": "eval_metric", "members": []})
         canon[cid]["members"].append(e)
         raw2canon[e] = cid
+    for rec in canon.values():
+        rec["members"] = sorted(rec["members"])
+        rec["representative"] = sorted(rec["members"], key=span_num)[0]
+        rec["n_members"] = len(rec["members"])
     return canon, raw2canon
 
 
@@ -365,7 +393,7 @@ def main():
 
     for pat, c in cio_cons.items():
         c["canonical"] = {
-            "context": [r2c_ctx.get(x, x) for x in c["context"] if x not in dropped],
+            "context": sorted(set(r2c_ctx.get(x, x) for x in c["context"] if x not in dropped)),
             "intervention": r2c_int.get(c.get("intervention")),
             "reference": r2c_int.get(c.get("reference")),
             "eval_metric": r2c_met.get(c.get("eval_metric")),
@@ -375,6 +403,33 @@ def main():
     registry = {"context": ctx_canon, "intervention": int_canon,
                 "eval_metric": met_canon, "am": am_canon,
                 "raw2canon": {**r2c_ctx, **r2c_int, **r2c_met, **r2c_am}}
+
+    # reverse index: which surviving patterns reference each canonical node. CIO-layer nodes
+    # (context/intervention/eval_metric) are referenced by card slots; AM clusters by belief
+    # links. ref_count surfaces hub concepts (the interventions/metrics many factors lean on).
+    ref_index = collections.defaultdict(set)
+    for pat, c in cio_cons.items():
+        cn = c.get("canonical", {})
+        for cc in (cn.get("context") or []):
+            ref_index[cc].add(pat)
+        for slot in ("intervention", "reference", "eval_metric"):
+            if cn.get(slot):
+                ref_index[cn[slot]].add(pat)
+    for b in builds:
+        pat_of = {c["cio_id"]: c.get("pattern") for c in b["cio"]}
+        amc = {c["am_id"]: [c["node"]] + list(c.get("aliases") or []) for c in b["am"]}
+        for e in b["links"]:
+            p = pat_of.get(e.get("source_cio"))
+            if not p or p not in cio_cons:
+                continue
+            for atom in amc.get(e.get("target_am"), []):
+                cc = r2c_am.get(atom)
+                if cc:
+                    ref_index[cc].add(p)
+    for kind in ("context", "intervention", "eval_metric", "am"):
+        for cid, rec in registry[kind].items():
+            rec["referenced_by"] = sorted(ref_index.get(cid, []))
+            rec["ref_count"] = len(rec["referenced_by"])
     am_band = collections.Counter(v["band"] for v in am_canon.values())
     report = {
         "n_builds": n,

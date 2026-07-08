@@ -1,15 +1,49 @@
 {
   "context": {
-    "CTX_model_vit": {
-      "canonical_id": "CTX_model_vit",
+    "CTX_model_vit_384_5_6m_10": {
+      "canonical_id": "CTX_model_vit_384_5_6m_10",
       "type": "context",
       "facet": "model",
-      "gloss": "ViT",
+      "gloss": "ViT — width 384, depth 5, #params 6M, Gflops 10",
       "members": [
-        "C110",
-        "C111",
+        "C110"
+      ],
+      "representative": "C110",
+      "n_members": 1,
+      "referenced_by": [
+        "P19"
+      ],
+      "ref_count": 1
+    },
+    "CTX_model_vit_512_10_18m_28": {
+      "canonical_id": "CTX_model_vit_512_10_18m_28",
+      "type": "context",
+      "facet": "model",
+      "gloss": "ViT — width 512, depth 10, #params 18M, Gflops 28",
+      "members": [
+        "C111"
+      ],
+      "representative": "C111",
+      "n_members": 1,
+      "referenced_by": [
+        "P19"
+      ],
+      "ref_count": 1
+    },
+    "CTX_model_vit_768_20_66m_99": {
+      "canonical_id": "CTX_model_vit_768_20_66m_99",
+      "type": "context",
+      "facet": "model",
+      "gloss": "ViT — width 768, depth 20, #params 66M, Gflops 99",
+      "members": [
         "C112"
-      ]
+      ],
+      "representative": "C112",
+      "n_members": 1,
+      "referenced_by": [
+        "P19"
+      ],
+      "ref_count": 1
     },
     "CTX_other_effects_visual_priors_varc": {
       "canonical_id": "CTX_other_effects_visual_priors_varc",
@@ -18,7 +52,14 @@
       "gloss": "Effects of visual priors in VARC.",
       "members": [
         "C116"
-      ]
+      ],
+      "representative": "C116",
+      "n_members": 1,
+      "referenced_by": [
+        "P20",
+        "P21"
+      ],
+      "ref_count": 2
     },
     "CTX_dataset_arc_1_evaluation_set": {
       "canonical_id": "CTX_dataset_arc_1_evaluation_set",
@@ -27,7 +68,14 @@
       "gloss": "ARC-1 evaluation set.",
       "members": [
         "C117"
-      ]
+      ],
+      "representative": "C117",
+      "n_members": 1,
+      "referenced_by": [
+        "P20",
+        "P21"
+      ],
+      "ref_count": 2
     },
     "CTX_model_model_used_vit_18m": {
       "canonical_id": "CTX_model_model_used_vit_18m",
@@ -36,7 +84,14 @@
       "gloss": "The model used is ViT-18M.",
       "members": [
         "C118"
-      ]
+      ],
+      "representative": "C118",
+      "n_members": 1,
+      "referenced_by": [
+        "P20",
+        "P21"
+      ],
+      "ref_count": 2
     },
     "CTX_other_2d_positional_embedding": {
       "canonical_id": "CTX_other_2d_positional_embedding",
@@ -45,7 +100,14 @@
       "gloss": "2D positional embedding.",
       "members": [
         "C120"
-      ]
+      ],
+      "representative": "C120",
+      "n_members": 1,
+      "referenced_by": [
+        "P22",
+        "P25"
+      ],
+      "ref_count": 2
     },
     "CTX_other_patchification": {
       "canonical_id": "CTX_other_patchification",
@@ -54,7 +116,15 @@
       "gloss": "Patchification.",
       "members": [
         "C122"
-      ]
+      ],
+      "representative": "C122",
+      "n_members": 1,
+      "referenced_by": [
+        "P22",
+        "P23",
+        "P28"
+      ],
+      "ref_count": 3
     },
     "CTX_other_scaling_ratio_fixed_2x": {
       "canonical_id": "CTX_other_scaling_ratio_fixed_2x",
@@ -63,7 +133,13 @@
       "gloss": "the scaling ratio is fixed as 2x.",
       "members": [
         "C124"
-      ]
+      ],
+      "representative": "C124",
+      "n_members": 1,
+      "referenced_by": [
+        "P28"
+      ],
+      "ref_count": 1
     },
     "CTX_training_can_interpreted_one_pixel_translation_augmentation": {
       "canonical_id": "CTX_training_can_interpreted_one_pixel_translation_augmentation",
@@ -72,7 +148,13 @@
       "gloss": "This can be interpreted as one-pixel translation augmentation on the canvas.",
       "members": [
         "C125"
-      ]
+      ],
+      "representative": "C125",
+      "n_members": 1,
+      "referenced_by": [
+        "P28"
+      ],
+      "ref_count": 1
     },
     "CTX_training_translation_scale_augmentation": {
       "canonical_id": "CTX_training_translation_scale_augmentation",
@@ -81,7 +163,16 @@
       "gloss": "Translation and scale augmentation.",
       "members": [
         "C127"
-      ]
+      ],
+      "representative": "C127",
+      "n_members": 1,
+      "referenced_by": [
+        "P22",
+        "P23",
+        "P34",
+        "P35"
+      ],
+      "ref_count": 4
     },
     "CTX_model_vit_vs_u_net": {
       "canonical_id": "CTX_model_vit_vs_u_net",
@@ -90,7 +181,13 @@
       "gloss": "ViT vs. U-Net.",
       "members": [
         "C129"
-      ]
+      ],
+      "representative": "C129",
+      "n_members": 1,
+      "referenced_by": [
+        "P36"
+      ],
+      "ref_count": 1
     },
     "CTX_other_evaluate_three_model_sizes_each_architecture": {
       "canonical_id": "CTX_other_evaluate_three_model_sizes_each_architecture",
@@ -99,7 +196,13 @@
       "gloss": "We evaluate three model sizes for each architecture.",
       "members": [
         "C130"
-      ]
+      ],
+      "representative": "C130",
+      "n_members": 1,
+      "referenced_by": [
+        "P36"
+      ],
+      "ref_count": 1
     },
     "CTX_other_scalability": {
       "canonical_id": "CTX_other_scalability",
@@ -108,7 +211,13 @@
       "gloss": "Scalability.",
       "members": [
         "C131"
-      ]
+      ],
+      "representative": "C131",
+      "n_members": 1,
+      "referenced_by": [
+        "P38"
+      ],
+      "ref_count": 1
     },
     "CTX_model_shown_tab_1_66m_vit_model": {
       "canonical_id": "CTX_model_shown_tab_1_66m_vit_model",
@@ -117,7 +226,13 @@
       "gloss": "as shown in Tab. 1 for the 66M ViT model.",
       "members": [
         "C132"
-      ]
+      ],
+      "representative": "C132",
+      "n_members": 1,
+      "referenced_by": [
+        "P39"
+      ],
+      "ref_count": 1
     },
     "CTX_training_test_time_training_ttt_strategies": {
       "canonical_id": "CTX_training_test_time_training_ttt_strategies",
@@ -126,7 +241,15 @@
       "gloss": "Test-time training (TTT) strategies.",
       "members": [
         "C133"
-      ]
+      ],
+      "representative": "C133",
+      "n_members": 1,
+      "referenced_by": [
+        "P40",
+        "P41",
+        "P43"
+      ],
+      "ref_count": 3
     },
     "CTX_other_under_similar_setting": {
       "canonical_id": "CTX_other_under_similar_setting",
@@ -135,7 +258,13 @@
       "gloss": "under a similar setting.",
       "members": [
         "C134"
-      ]
+      ],
+      "representative": "C134",
+      "n_members": 1,
+      "referenced_by": [
+        "P42"
+      ],
+      "ref_count": 1
     },
     "CTX_eval_single_view_vs_multi_view_inference": {
       "canonical_id": "CTX_eval_single_view_vs_multi_view_inference",
@@ -144,7 +273,14 @@
       "gloss": "Single-view vs. multi-view inference.",
       "members": [
         "C135"
-      ]
+      ],
+      "representative": "C135",
+      "n_members": 1,
+      "referenced_by": [
+        "P44",
+        "P45"
+      ],
+      "ref_count": 2
     },
     "CTX_other_system_level_comparisons": {
       "canonical_id": "CTX_other_system_level_comparisons",
@@ -153,7 +289,15 @@
       "gloss": "System-level Comparisons.",
       "members": [
         "C137"
-      ]
+      ],
+      "representative": "C137",
+      "n_members": 1,
+      "referenced_by": [
+        "P48",
+        "P51",
+        "P52"
+      ],
+      "ref_count": 3
     },
     "CTX_other_llm_based_results_from_arc_agi": {
       "canonical_id": "CTX_other_llm_based_results_from_arc_agi",
@@ -162,7 +306,14 @@
       "gloss": "LLM-based results are from the ARC-AGI leader-board [18].",
       "members": [
         "C138"
-      ]
+      ],
+      "representative": "C138",
+      "n_members": 1,
+      "referenced_by": [
+        "P46",
+        "P47"
+      ],
+      "ref_count": 2
     },
     "CTX_training_hrm_trm_varc_trained_from_scratch": {
       "canonical_id": "CTX_training_hrm_trm_varc_trained_from_scratch",
@@ -171,7 +322,14 @@
       "gloss": "HRM, TRM, and our VARC are trained from scratch only on ARC data.",
       "members": [
         "C139"
-      ]
+      ],
+      "representative": "C139",
+      "n_members": 1,
+      "referenced_by": [
+        "P46",
+        "P47"
+      ],
+      "ref_count": 2
     },
     "CTX_model_ensemble_result_aggregates_18m_vit_55m": {
       "canonical_id": "CTX_model_ensemble_result_aggregates_18m_vit_55m",
@@ -180,7 +338,14 @@
       "gloss": "Our ensemble result aggregates an 18M ViT and a 55M U-Net, each with test-time t",
       "members": [
         "C141"
-      ]
+      ],
+      "representative": "C141",
+      "n_members": 1,
+      "referenced_by": [
+        "P46",
+        "P47"
+      ],
+      "ref_count": 2
     },
     "CTX_other_method_does_not_rely_such_data": {
       "canonical_id": "CTX_other_method_does_not_rely_such_data",
@@ -189,7 +354,13 @@
       "gloss": "Our method does not rely on such data",
       "members": [
         "C143"
-      ]
+      ],
+      "representative": "C143",
+      "n_members": 1,
+      "referenced_by": [
+        "P48"
+      ],
+      "ref_count": 1
     },
     "CTX_other_uses_model_several_orders_magnitude_smaller": {
       "canonical_id": "CTX_other_uses_model_several_orders_magnitude_smaller",
@@ -198,7 +369,13 @@
       "gloss": "uses a model that is several orders of magnitude smaller.",
       "members": [
         "C144"
-      ]
+      ],
+      "representative": "C144",
+      "n_members": 1,
+      "referenced_by": [
+        "P48"
+      ],
+      "ref_count": 1
     },
     "CTX_training_controlled_setting_training_from_scratch_arc": {
       "canonical_id": "CTX_training_controlled_setting_training_from_scratch_arc",
@@ -207,7 +384,14 @@
       "gloss": "In the controlled setting of training from scratch on ARC data",
       "members": [
         "C145"
-      ]
+      ],
+      "representative": "C145",
+      "n_members": 1,
+      "referenced_by": [
+        "P49",
+        "P50"
+      ],
+      "ref_count": 2
     },
     "CTX_other_figure_11_visualizes_layer_wise_attention": {
       "canonical_id": "CTX_other_figure_11_visualizes_layer_wise_attention",
@@ -216,7 +400,14 @@
       "gloss": "Figure 11 visualizes the layer-wise attention maps for an-other test task.",
       "members": [
         "C150"
-      ]
+      ],
+      "representative": "C150",
+      "n_members": 1,
+      "referenced_by": [
+        "P53",
+        "P54"
+      ],
+      "ref_count": 2
     },
     "CTX_other_layer_wise_map_softmax_attention_map": {
       "canonical_id": "CTX_other_layer_wise_map_softmax_attention_map",
@@ -225,7 +416,14 @@
       "gloss": "A layer-wise map is the softmax attention map averaged across all pixels in the ",
       "members": [
         "C151"
-      ]
+      ],
+      "representative": "C151",
+      "n_members": 1,
+      "referenced_by": [
+        "P53",
+        "P54"
+      ],
+      "ref_count": 2
     },
     "CTX_other_t_sne_task_embeddings": {
       "canonical_id": "CTX_other_t_sne_task_embeddings",
@@ -234,7 +432,13 @@
       "gloss": "t-SNE of task embeddings.",
       "members": [
         "C152"
-      ]
+      ],
+      "representative": "C152",
+      "n_members": 1,
+      "referenced_by": [
+        "P57"
+      ],
+      "ref_count": 1
     },
     "CTX_dataset_400_training_tasks_arc_1_model": {
       "canonical_id": "CTX_dataset_400_training_tasks_arc_1_model",
@@ -243,7 +447,13 @@
       "gloss": "With 400 training tasks in ARC-1, our model learns 400 distinct task embeddings ",
       "members": [
         "C154"
-      ]
+      ],
+      "representative": "C154",
+      "n_members": 1,
+      "referenced_by": [
+        "P57"
+      ],
+      "ref_count": 1
     },
     "CTX_other_each_point_corresponds_task": {
       "canonical_id": "CTX_other_each_point_corresponds_task",
@@ -252,7 +462,13 @@
       "gloss": "Each point corresponds to a task..",
       "members": [
         "C155"
-      ]
+      ],
+      "representative": "C155",
+      "n_members": 1,
+      "referenced_by": [
+        "P57"
+      ],
+      "ref_count": 1
     },
     "CTX_dataset_re_arc_dataset_22_offline_training": {
       "canonical_id": "CTX_dataset_re_arc_dataset_22_offline_training",
@@ -261,7 +477,14 @@
       "gloss": "RE-ARC dataset [22] in our offline training",
       "members": [
         "C218"
-      ]
+      ],
+      "representative": "C218",
+      "n_members": 1,
+      "referenced_by": [
+        "P61",
+        "P62"
+      ],
+      "ref_count": 2
     },
     "CTX_eval_multi_view_inference_many_views_510": {
       "canonical_id": "CTX_eval_multi_view_inference_many_views_510",
@@ -270,7 +493,14 @@
       "gloss": "multi-view inference with many views (510)",
       "members": [
         "C220"
-      ]
+      ],
+      "representative": "C220",
+      "n_members": 1,
+      "referenced_by": [
+        "P65",
+        "P66"
+      ],
+      "ref_count": 2
     },
     "CTX_dataset_arc_1": {
       "canonical_id": "CTX_dataset_arc_1",
@@ -280,7 +510,15 @@
       "members": [
         "C222",
         "C230"
-      ]
+      ],
+      "representative": "C222",
+      "n_members": 2,
+      "referenced_by": [
+        "P65",
+        "P66",
+        "P70"
+      ],
+      "ref_count": 3
     },
     "CTX_other_example_fig_19": {
       "canonical_id": "CTX_other_example_fig_19",
@@ -289,7 +527,14 @@
       "gloss": "an example in Fig. 19",
       "members": [
         "C225"
-      ]
+      ],
+      "representative": "C225",
+      "n_members": 1,
+      "referenced_by": [
+        "P80",
+        "P81"
+      ],
+      "ref_count": 2
     },
     "CTX_other_test_tasks": {
       "canonical_id": "CTX_other_test_tasks",
@@ -301,7 +546,16 @@
         "C232",
         "C244",
         "C245"
-      ]
+      ],
+      "representative": "C231",
+      "n_members": 4,
+      "referenced_by": [
+        "P71",
+        "P72",
+        "P76",
+        "P77"
+      ],
+      "ref_count": 4
     },
     "CTX_other_task_15663ba9": {
       "canonical_id": "CTX_other_task_15663ba9",
@@ -310,7 +564,13 @@
       "gloss": "Task 15663ba9",
       "members": [
         "C235"
-      ]
+      ],
+      "representative": "C235",
+      "n_members": 1,
+      "referenced_by": [
+        "P73"
+      ],
+      "ref_count": 1
     },
     "CTX_other_task_981571dc": {
       "canonical_id": "CTX_other_task_981571dc",
@@ -319,7 +579,13 @@
       "gloss": "Task 981571dc",
       "members": [
         "C236"
-      ]
+      ],
+      "representative": "C236",
+      "n_members": 1,
+      "referenced_by": [
+        "P73"
+      ],
+      "ref_count": 1
     },
     "CTX_other_task_15696249": {
       "canonical_id": "CTX_other_task_15696249",
@@ -328,7 +594,13 @@
       "gloss": "Task 15696249",
       "members": [
         "C237"
-      ]
+      ],
+      "representative": "C237",
+      "n_members": 1,
+      "referenced_by": [
+        "P73"
+      ],
+      "ref_count": 1
     },
     "CTX_other_task_67c52801": {
       "canonical_id": "CTX_other_task_67c52801",
@@ -337,7 +609,13 @@
       "gloss": "Task 67c52801",
       "members": [
         "C238"
-      ]
+      ],
+      "representative": "C238",
+      "n_members": 1,
+      "referenced_by": [
+        "P73"
+      ],
+      "ref_count": 1
     },
     "CTX_other_task_8dae5dfc": {
       "canonical_id": "CTX_other_task_8dae5dfc",
@@ -346,7 +624,13 @@
       "gloss": "Task 8dae5dfc",
       "members": [
         "C239"
-      ]
+      ],
+      "representative": "C239",
+      "n_members": 1,
+      "referenced_by": [
+        "P74"
+      ],
+      "ref_count": 1
     },
     "CTX_other_varc": {
       "canonical_id": "CTX_other_varc",
@@ -356,7 +640,16 @@
       "members": [
         "C24",
         "C35"
-      ]
+      ],
+      "representative": "C24",
+      "n_members": 2,
+      "referenced_by": [
+        "P11",
+        "P16",
+        "P8",
+        "P9"
+      ],
+      "ref_count": 4
     },
     "CTX_other_task_67636eac": {
       "canonical_id": "CTX_other_task_67636eac",
@@ -365,7 +658,13 @@
       "gloss": "Task 67636eac",
       "members": [
         "C240"
-      ]
+      ],
+      "representative": "C240",
+      "n_members": 1,
+      "referenced_by": [
+        "P74"
+      ],
+      "ref_count": 1
     },
     "CTX_other_task_aa4ec2a5": {
       "canonical_id": "CTX_other_task_aa4ec2a5",
@@ -374,7 +673,13 @@
       "gloss": "Task aa4ec2a5",
       "members": [
         "C241"
-      ]
+      ],
+      "representative": "C241",
+      "n_members": 1,
+      "referenced_by": [
+        "P74"
+      ],
+      "ref_count": 1
     },
     "CTX_other_task_b457fec5": {
       "canonical_id": "CTX_other_task_b457fec5",
@@ -383,7 +688,13 @@
       "gloss": "Task b457fec5",
       "members": [
         "C242"
-      ]
+      ],
+      "representative": "C242",
+      "n_members": 1,
+      "referenced_by": [
+        "P74"
+      ],
+      "ref_count": 1
     },
     "CTX_dataset_arc_2": {
       "canonical_id": "CTX_dataset_arc_2",
@@ -392,7 +703,13 @@
       "gloss": "ARC-2",
       "members": [
         "C243"
-      ]
+      ],
+      "representative": "C243",
+      "n_members": 1,
+      "referenced_by": [
+        "P75"
+      ],
+      "ref_count": 1
     },
     "CTX_other_task_800d221b": {
       "canonical_id": "CTX_other_task_800d221b",
@@ -401,7 +718,13 @@
       "gloss": "Task 800d221b",
       "members": [
         "C248"
-      ]
+      ],
+      "representative": "C248",
+      "n_members": 1,
+      "referenced_by": [
+        "P78"
+      ],
+      "ref_count": 1
     },
     "CTX_other_task_7666fa5d": {
       "canonical_id": "CTX_other_task_7666fa5d",
@@ -410,7 +733,13 @@
       "gloss": "Task 7666fa5d",
       "members": [
         "C249"
-      ]
+      ],
+      "representative": "C249",
+      "n_members": 1,
+      "referenced_by": [
+        "P78"
+      ],
+      "ref_count": 1
     },
     "CTX_dataset_arc_1_benchmark": {
       "canonical_id": "CTX_dataset_arc_1_benchmark",
@@ -420,7 +749,17 @@
       "members": [
         "C25",
         "C7"
-      ]
+      ],
+      "representative": "C7",
+      "n_members": 2,
+      "referenced_by": [
+        "P1",
+        "P11",
+        "P12",
+        "P8",
+        "P9"
+      ],
+      "ref_count": 5
     },
     "CTX_other_task_221dfab4": {
       "canonical_id": "CTX_other_task_221dfab4",
@@ -429,7 +768,13 @@
       "gloss": "Task 221dfab4",
       "members": [
         "C250"
-      ]
+      ],
+      "representative": "C250",
+      "n_members": 1,
+      "referenced_by": [
+        "P78"
+      ],
+      "ref_count": 1
     },
     "CTX_other_task_7b80bb43": {
       "canonical_id": "CTX_other_task_7b80bb43",
@@ -438,7 +783,13 @@
       "gloss": "Task 7b80bb43",
       "members": [
         "C251"
-      ]
+      ],
+      "representative": "C251",
+      "n_members": 1,
+      "referenced_by": [
+        "P78"
+      ],
+      "ref_count": 1
     },
     "CTX_other_task_2b83f449": {
       "canonical_id": "CTX_other_task_2b83f449",
@@ -447,7 +798,13 @@
       "gloss": "Task 2b83f449",
       "members": [
         "C252"
-      ]
+      ],
+      "representative": "C252",
+      "n_members": 1,
+      "referenced_by": [
+        "P79"
+      ],
+      "ref_count": 1
     },
     "CTX_other_task_2d0172a1": {
       "canonical_id": "CTX_other_task_2d0172a1",
@@ -456,7 +813,13 @@
       "gloss": "Task 2d0172a1",
       "members": [
         "C253"
-      ]
+      ],
+      "representative": "C253",
+      "n_members": 1,
+      "referenced_by": [
+        "P79"
+      ],
+      "ref_count": 1
     },
     "CTX_other_task_3e6067c3": {
       "canonical_id": "CTX_other_task_3e6067c3",
@@ -465,7 +828,13 @@
       "gloss": "Task 3e6067c3",
       "members": [
         "C254"
-      ]
+      ],
+      "representative": "C254",
+      "n_members": 1,
+      "referenced_by": [
+        "P79"
+      ],
+      "ref_count": 1
     },
     "CTX_other_task_7ed72f31": {
       "canonical_id": "CTX_other_task_7ed72f31",
@@ -474,7 +843,13 @@
       "gloss": "Task 7ed72f31",
       "members": [
         "C255"
-      ]
+      ],
+      "representative": "C255",
+      "n_members": 1,
+      "referenced_by": [
+        "P79"
+      ],
+      "ref_count": 1
     },
     "CTX_other_inference_example_bottom_panel_involves_situation": {
       "canonical_id": "CTX_other_inference_example_bottom_panel_involves_situation",
@@ -483,7 +858,13 @@
       "gloss": "inference example (bottom panel) involves this situation (\"touching\")",
       "members": [
         "C258"
-      ]
+      ],
+      "representative": "C258",
+      "n_members": 1,
+      "referenced_by": [
+        "P82"
+      ],
+      "ref_count": 1
     },
     "CTX_other_task_09c534e7": {
       "canonical_id": "CTX_other_task_09c534e7",
@@ -493,16 +874,30 @@
       "members": [
         "C259",
         "C265"
-      ]
+      ],
+      "representative": "C259",
+      "n_members": 2,
+      "referenced_by": [
+        "P82",
+        "P83"
+      ],
+      "ref_count": 2
     },
-    "CTX_model_small_model_only_18_million_parameters": {
-      "canonical_id": "CTX_model_small_model_only_18_million_parameters",
+    "CTX_model_small_model_only_18_million_parameters_18": {
+      "canonical_id": "CTX_model_small_model_only_18_million_parameters_18",
       "type": "context",
       "facet": "model",
-      "gloss": "using a small model with only 18 million parameters.",
+      "gloss": "using a small model with only 18 million parameters. — 18 million parameters",
       "members": [
         "C26"
-      ]
+      ],
+      "representative": "C26",
+      "n_members": 1,
+      "referenced_by": [
+        "P8",
+        "P9"
+      ],
+      "ref_count": 2
     },
     "CTX_other_4_test_tasks_arc_eval": {
       "canonical_id": "CTX_other_4_test_tasks_arc_eval",
@@ -511,7 +906,13 @@
       "gloss": "4 test tasks in ARC eval",
       "members": [
         "C263"
-      ]
+      ],
+      "representative": "C263",
+      "n_members": 1,
+      "referenced_by": [
+        "P83"
+      ],
+      "ref_count": 1
     },
     "CTX_other_layer_wise_attention_maps": {
       "canonical_id": "CTX_other_layer_wise_attention_maps",
@@ -520,7 +921,13 @@
       "gloss": "layer-wise attention maps",
       "members": [
         "C269"
-      ]
+      ],
+      "representative": "C269",
+      "n_members": 1,
+      "referenced_by": [
+        "P84"
+      ],
+      "ref_count": 1
     },
     "CTX_other_demonstration_examples_left_provided_reference": {
       "canonical_id": "CTX_other_demonstration_examples_left_provided_reference",
@@ -529,7 +936,13 @@
       "gloss": "demonstration examples (on the left) are provided for reference",
       "members": [
         "C270"
-      ]
+      ],
+      "representative": "C270",
+      "n_members": 1,
+      "referenced_by": [
+        "P84"
+      ],
+      "ref_count": 1
     },
     "CTX_other_task_0607ce86": {
       "canonical_id": "CTX_other_task_0607ce86",
@@ -538,7 +951,13 @@
       "gloss": "Task 0607ce86",
       "members": [
         "C271"
-      ]
+      ],
+      "representative": "C271",
+      "n_members": 1,
+      "referenced_by": [
+        "P84"
+      ],
+      "ref_count": 1
     },
     "CTX_other_task_0bb8deee": {
       "canonical_id": "CTX_other_task_0bb8deee",
@@ -547,7 +966,13 @@
       "gloss": "Task 0bb8deee",
       "members": [
         "C272"
-      ]
+      ],
+      "representative": "C272",
+      "n_members": 1,
+      "referenced_by": [
+        "P84"
+      ],
+      "ref_count": 1
     },
     "CTX_other_task_1c56ad9f": {
       "canonical_id": "CTX_other_task_1c56ad9f",
@@ -556,7 +981,13 @@
       "gloss": "Task 1c56ad9f",
       "members": [
         "C273"
-      ]
+      ],
+      "representative": "C273",
+      "n_members": 1,
+      "referenced_by": [
+        "P84"
+      ],
+      "ref_count": 1
     },
     "CTX_other_task_1d0a4b61": {
       "canonical_id": "CTX_other_task_1d0a4b61",
@@ -565,7 +996,13 @@
       "gloss": "Task 1d0a4b61",
       "members": [
         "C274"
-      ]
+      ],
+      "representative": "C274",
+      "n_members": 1,
+      "referenced_by": [
+        "P84"
+      ],
+      "ref_count": 1
     },
     "CTX_training_grid_augmented_given_scale_ratio_2": {
       "canonical_id": "CTX_training_grid_augmented_given_scale_ratio_2",
@@ -574,7 +1011,13 @@
       "gloss": "the grid augmented with a given scale ratio of 2×",
       "members": [
         "C276"
-      ]
+      ],
+      "representative": "C276",
+      "n_members": 1,
+      "referenced_by": [
+        "P85"
+      ],
+      "ref_count": 1
     },
     "CTX_model_full_canvas_not_shown_brevity": {
       "canonical_id": "CTX_model_full_canvas_not_shown_brevity",
@@ -583,7 +1026,13 @@
       "gloss": "the full canvas is not shown for brevity",
       "members": [
         "C277"
-      ]
+      ],
+      "representative": "C277",
+      "n_members": 1,
+      "referenced_by": [
+        "P85"
+      ],
+      "ref_count": 1
     },
     "CTX_other_early_epochs": {
       "canonical_id": "CTX_other_early_epochs",
@@ -592,7 +1041,13 @@
       "gloss": "In early epochs",
       "members": [
         "C278"
-      ]
+      ],
+      "representative": "C278",
+      "n_members": 1,
+      "referenced_by": [
+        "P86"
+      ],
+      "ref_count": 1
     },
     "CTX_other_later_epochs": {
       "canonical_id": "CTX_other_later_epochs",
@@ -601,7 +1056,13 @@
       "gloss": "in later epochs",
       "members": [
         "C279"
-      ]
+      ],
+      "representative": "C279",
+      "n_members": 1,
+      "referenced_by": [
+        "P87"
+      ],
+      "ref_count": 1
     },
     "CTX_other_framework_termed_vision_arc_varc": {
       "canonical_id": "CTX_other_framework_termed_vision_arc_varc",
@@ -610,7 +1071,13 @@
       "gloss": "Our framework, termed Vision ARC (VARC)",
       "members": [
         "C6"
-      ]
+      ],
+      "representative": "C6",
+      "n_members": 1,
+      "referenced_by": [
+        "P1"
+      ],
+      "ref_count": 1
     },
     "CTX_training_test_time_training_ttt": {
       "canonical_id": "CTX_training_test_time_training_ttt",
@@ -619,7 +1086,13 @@
       "gloss": "Test-time training (TTT).",
       "members": [
         "C81"
-      ]
+      ],
+      "representative": "C81",
+      "n_members": 1,
+      "referenced_by": [
+        "P17"
+      ],
+      "ref_count": 1
     }
   },
   "intervention": {
@@ -627,324 +1100,590 @@
       "canonical_id": "INT_u_net",
       "type": "intervention",
       "gloss": "U-Net",
+      "representative": "C113",
       "members": [
         "C113"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P19"
+      ],
+      "ref_count": 1
     },
     "INT_observed_both_b_absolute_c_relative": {
       "canonical_id": "INT_observed_both_b_absolute_c_relative",
       "type": "intervention",
       "gloss": "This is observed in both (b) absolute and (c) relative positional embeddings.",
+      "representative": "C121",
       "members": [
         "C121"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P21",
+        "P23",
+        "P25"
+      ],
+      "ref_count": 3
     },
     "INT_recurrent_models_53_27": {
       "canonical_id": "INT_recurrent_models_53_27",
       "type": "intervention",
       "gloss": "recurrent models [53, 27]",
+      "representative": "C13",
       "members": [
         "C13"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P9"
+      ],
+      "ref_count": 1
     },
     "INT_llm_based_results_from_arc_agi": {
       "canonical_id": "INT_llm_based_results_from_arc_agi",
       "type": "intervention",
       "gloss": "LLM-based results are from the ARC-AGI leader-board [18].",
+      "representative": "C138",
       "members": [
         "C138"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P48"
+      ],
+      "ref_count": 1
     },
     "INT_hrm_trm_varc_trained_from_scratch": {
       "canonical_id": "INT_hrm_trm_varc_trained_from_scratch",
       "type": "intervention",
       "gloss": "HRM, TRM, and our VARC are trained from scratch only on ARC data.",
+      "representative": "C139",
       "members": [
         "C139"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P49",
+        "P50"
+      ],
+      "ref_count": 2
     },
     "INT_single_model_result_based_vit_mean": {
       "canonical_id": "INT_single_model_result_based_vit_mean",
       "type": "intervention",
       "gloss": "Our single-model result is based on ViT, with mean±std of 54.5±0.7 (ARC-1) and 8",
+      "representative": "C140",
       "members": [
         "C140"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P51"
+      ],
+      "ref_count": 1
     },
     "INT_ensemble_result_aggregates_18m_vit_55m": {
       "canonical_id": "INT_ensemble_result_aggregates_18m_vit_55m",
       "type": "intervention",
       "gloss": "Our ensemble result aggregates an 18M ViT and a 55M U-Net, each with test-time t",
+      "representative": "C141",
       "members": [
         "C141"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P46",
+        "P47"
+      ],
+      "ref_count": 2
     },
     "INT_small_model_only_18_million_parameters": {
       "canonical_id": "INT_small_model_only_18_million_parameters",
       "type": "intervention",
       "gloss": "using a small model with only 18 million parameters.",
+      "representative": "C26",
       "members": [
         "C26"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P11"
+      ],
+      "ref_count": 1
     },
     "INT_offline_training_data_scaling_effect_varying": {
       "canonical_id": "INT_offline_training_data_scaling_effect_varying",
       "type": "intervention",
       "gloss": "Offline training data scaling: effect of varying",
+      "representative": "E18",
       "members": [
         "E18"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P59"
+      ],
+      "ref_count": 1
     },
     "INT_offline_training_task_diversity_scaling_effect": {
       "canonical_id": "INT_offline_training_task_diversity_scaling_effect",
       "type": "intervention",
       "gloss": "Offline training task diversity scaling: effect of varying",
+      "representative": "E19",
       "members": [
         "E19"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P60"
+      ],
+      "ref_count": 1
     },
     "INT_represent_inputs_canvas_flexible_geometric_transformations": {
       "canonical_id": "INT_represent_inputs_canvas_flexible_geometric_transformations",
       "type": "intervention",
       "gloss": "represent the inputs on a \"canvas\" with flexible geometric transformations",
+      "representative": "I11",
       "members": [
         "I11"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P7"
+      ],
+      "ref_count": 1
     },
     "INT_combining_varc_models_through_ensembling_29": {
       "canonical_id": "INT_combining_varc_models_through_ensembling_29",
       "type": "intervention",
       "gloss": "Combining VARC models through ensembling [29]",
+      "representative": "I13",
       "members": [
         "I13"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P11",
+        "P12"
+      ],
+      "ref_count": 2
     },
     "INT_apply_standard_vision_architectures_such_vanilla": {
       "canonical_id": "INT_apply_standard_vision_architectures_such_vanilla",
       "type": "intervention",
       "gloss": "apply standard vision architectures, such as a vanilla Vision Transformer (ViT),",
+      "representative": "I3",
       "members": [
         "I3"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P1",
+        "P8",
+        "P9"
+      ],
+      "ref_count": 3
     },
     "INT_perform_test_time_training_each_new": {
       "canonical_id": "INT_perform_test_time_training_each_new",
       "type": "intervention",
       "gloss": "We perform test-time training for each new task T independently.",
+      "representative": "I39",
       "members": [
         "I39"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P17"
+      ],
+      "ref_count": 1
     },
     "INT_compare_variants_vits_u_nets_similar": {
       "canonical_id": "INT_compare_variants_vits_u_nets_similar",
       "type": "intervention",
       "gloss": "We compare variants of ViTs and U-Nets of similar sizes.",
+      "representative": "I49",
       "members": [
         "I49"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P19"
+      ],
+      "ref_count": 1
     },
     "INT_entries_c_patch_size_1_1": {
       "canonical_id": "INT_entries_c_patch_size_1_1",
       "type": "intervention",
       "gloss": "Entries (a-c) use a patch size of 1×1 on a 32×32 canvas, whereas entries (d-f) u",
+      "representative": "I50",
       "members": [
         "I50"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P20",
+        "P21"
+      ],
+      "ref_count": 2
     },
     "INT_start_from_na_ve_baseline_components": {
       "canonical_id": "INT_start_from_na_ve_baseline_components",
       "type": "intervention",
       "gloss": "We start from a naïve baseline with components (b-f) removed.",
+      "representative": "I51",
       "members": [
         "I51"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P20"
+      ],
+      "ref_count": 1
     },
     "INT_starting_from_baseline_without_other_components": {
       "canonical_id": "INT_starting_from_baseline_without_other_components",
       "type": "intervention",
       "gloss": "starting from a baseline (a) without the other components in this figure.",
+      "representative": "I52",
       "members": [
         "I52"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P22"
+      ],
+      "ref_count": 1
     },
     "INT_re_place_2d_rope_fig_7": {
       "canonical_id": "INT_re_place_2d_rope_fig_7",
       "type": "intervention",
       "gloss": "we re-place the 2D ROPE in Fig. 7(f) with a 1D ROPE",
+      "representative": "I53",
       "members": [
         "I53"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P25"
+      ],
+      "ref_count": 1
     },
     "INT_advance_from_1_1_patches_32": {
       "canonical_id": "INT_advance_from_1_1_patches_32",
       "type": "intervention",
       "gloss": "we advance from 1×1 patches on a 32×32 canvas to 2×2 patches on a 64×64 canvas.",
+      "representative": "I54",
       "members": [
         "I54"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P23",
+        "P26",
+        "P28"
+      ],
+      "ref_count": 3
     },
     "INT_vits_different_width_x_axis_depth": {
       "canonical_id": "INT_vits_different_width_x_axis_depth",
       "type": "intervention",
       "gloss": "ViTs with different width (x-axis) and depth.",
+      "representative": "I56",
       "members": [
         "I56"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P29"
+      ],
+      "ref_count": 1
     },
     "INT_vs_without_offline_train_ing_joint": {
       "canonical_id": "INT_vs_without_offline_train_ing_joint",
       "type": "intervention",
       "gloss": "with vs. without offline train-ing, and joint vs. independent for each task.",
+      "representative": "I57",
       "members": [
         "I57"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P30",
+        "P31"
+      ],
+      "ref_count": 2
     },
     "INT_apply_fully_flexible_translation_augmen_tation": {
       "canonical_id": "INT_apply_fully_flexible_translation_augmen_tation",
       "type": "intervention",
       "gloss": "we apply fully flexible translation augmen-tation on the canvas.",
+      "representative": "I58",
       "members": [
         "I58"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P34"
+      ],
+      "ref_count": 1
     },
     "INT_further_ap_ply_scale_augmentation_enabled": {
       "canonical_id": "INT_further_ap_ply_scale_augmentation_enabled",
       "type": "intervention",
       "gloss": "we further ap-ply the scale augmentation enabled by the concept of can-vas.",
+      "representative": "I59",
       "members": [
         "I59"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P35"
+      ],
+      "ref_count": 1
     },
     "INT_compare_vit_u_nets_type_convolutional": {
       "canonical_id": "INT_compare_vit_u_nets_type_convolutional",
       "type": "intervention",
       "gloss": "we compare ViT with U-Nets, a type of convolutional network.",
+      "representative": "I60",
       "members": [
         "I60"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P36"
+      ],
+      "ref_count": 1
     },
     "INT_show_vits_varying_depths_widths": {
       "canonical_id": "INT_show_vits_varying_depths_widths",
       "type": "intervention",
       "gloss": "we show ViTs with varying depths and widths.",
+      "representative": "I61",
       "members": [
         "I61"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P38"
+      ],
+      "ref_count": 1
     },
     "INT_study_ttt_without_offline_training_ttt": {
       "canonical_id": "INT_study_ttt_without_offline_training_ttt",
       "type": "intervention",
       "gloss": "we study TTT with and without offline training, and TTT performed jointly on all",
+      "representative": "I62",
       "members": [
         "I62"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P40",
+        "P41",
+        "P42",
+        "P43"
+      ],
+      "ref_count": 4
     },
     "INT_also_examine_single_view_inference_accuracy": {
       "canonical_id": "INT_also_examine_single_view_inference_accuracy",
       "type": "intervention",
       "gloss": "we also examine the single-view inference accuracy.",
+      "representative": "I63",
       "members": [
         "I63"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P44",
+        "P45"
+      ],
+      "ref_count": 2
     },
     "INT_compare_leading_results_llms_recurrent_models": {
       "canonical_id": "INT_compare_leading_results_llms_recurrent_models",
       "type": "intervention",
       "gloss": "we compare with leading results using LLMs or recurrent models, on ARC-1 and ARC",
+      "representative": "I64",
       "members": [
         "I64"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P48",
+        "P49",
+        "P50"
+      ],
+      "ref_count": 3
     },
     "INT_ensemble_one_vit_one_u_net": {
       "canonical_id": "INT_ensemble_one_vit_one_u_net",
       "type": "intervention",
       "gloss": "we ensemble one ViT and one U-Net, each with test-time training run four times.",
+      "representative": "I65",
       "members": [
         "I65"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P51",
+        "P52"
+      ],
+      "ref_count": 2
     },
     "INT_visu_alize_these_400_embeddings_2d": {
       "canonical_id": "INT_visu_alize_these_400_embeddings_2d",
       "type": "intervention",
       "gloss": "We visu-alize these 400 embeddings in the 2D space by t-SNE [39]",
+      "representative": "I66",
       "members": [
         "I66"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P57"
+      ],
+      "ref_count": 1
     },
     "INT_only_original_arc_training_data_without": {
       "canonical_id": "INT_only_original_arc_training_data_without",
       "type": "intervention",
       "gloss": "Using only the original ARC training data, without any RE-ARC data",
+      "representative": "I77",
       "members": [
         "I77"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P61",
+        "P62"
+      ],
+      "ref_count": 2
     },
     "INT_adding_10_100_1_000_pairs": {
       "canonical_id": "INT_adding_10_100_1_000_pairs",
       "type": "intervention",
       "gloss": "adding 10, 100, and 1,000 pairs per task from RE-ARC",
+      "representative": "I78",
       "members": [
         "I78"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P62"
+      ],
+      "ref_count": 1
     },
     "INT_trained_0_16_80_400_tasks": {
       "canonical_id": "INT_trained_0_16_80_400_tasks",
       "type": "intervention",
       "gloss": "trained on 0, 16, 80, and 400 tasks",
+      "representative": "I79",
       "members": [
         "I79"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P63"
+      ],
+      "ref_count": 1
     },
     "INT_number_proposals_k_increases": {
       "canonical_id": "INT_number_proposals_k_increases",
       "type": "intervention",
       "gloss": "as the number of proposals (k) increases",
+      "representative": "I80",
       "members": [
         "I80"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P65"
+      ],
+      "ref_count": 1
     },
     "INT_solved_varc": {
       "canonical_id": "INT_solved_varc",
       "type": "intervention",
       "gloss": "solved by VARC",
+      "representative": "I84",
       "members": [
         "I84",
         "I87"
-      ]
+      ],
+      "n_members": 2,
+      "referenced_by": [
+        "P71",
+        "P76"
+      ],
+      "ref_count": 2
     },
     "INT_unsolved_varc": {
       "canonical_id": "INT_unsolved_varc",
       "type": "intervention",
       "gloss": "unsolved by VARC",
+      "representative": "I85",
       "members": [
         "I85",
         "I88"
-      ]
+      ],
+      "n_members": 2,
+      "referenced_by": [
+        "P72",
+        "P77"
+      ],
+      "ref_count": 2
     },
     "INT_first_second_solutions_proposed_varc": {
       "canonical_id": "INT_first_second_solutions_proposed_varc",
       "type": "intervention",
       "gloss": "first and second solutions proposed by VARC",
+      "representative": "I86",
       "members": [
         "I86",
         "I89"
-      ]
+      ],
+      "n_members": 2,
+      "referenced_by": [
+        "P73",
+        "P74",
+        "P78",
+        "P79"
+      ],
+      "ref_count": 4
     },
     "INT_model_attempts_interpret_rule_either_going": {
       "canonical_id": "INT_model_attempts_interpret_rule_either_going",
       "type": "intervention",
       "gloss": "our model attempts to interpret the rule as either \"going-through-only\" (attempt",
+      "representative": "I90",
       "members": [
         "I90"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P82"
+      ],
+      "ref_count": 1
     },
     "INT_test_time_training_progresses": {
       "canonical_id": "INT_test_time_training_progresses",
       "type": "intervention",
       "gloss": "test-time training progresses",
+      "representative": "I92",
       "members": [
         "I92"
-      ]
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P85",
+        "P86",
+        "P87"
+      ],
+      "ref_count": 3
     }
   },
   "eval_metric": {
@@ -969,28 +1708,85 @@
         "E39",
         "E8",
         "E9"
-      ]
+      ],
+      "representative": "E1",
+      "n_members": 17,
+      "referenced_by": [
+        "P1",
+        "P11",
+        "P12",
+        "P19",
+        "P20",
+        "P21",
+        "P29",
+        "P30",
+        "P31",
+        "P61",
+        "P62",
+        "P63",
+        "P71",
+        "P72",
+        "P73",
+        "P74",
+        "P76",
+        "P77",
+        "P78",
+        "P79",
+        "P8",
+        "P82",
+        "P83",
+        "P84",
+        "P85",
+        "P9"
+      ],
+      "ref_count": 26
     },
     "MET_gen_pass1": {
       "canonical_id": "MET_gen_pass1",
       "type": "eval_metric",
       "members": [
         "E12"
-      ]
+      ],
+      "representative": "E12",
+      "n_members": 1,
+      "referenced_by": [
+        "P44",
+        "P45"
+      ],
+      "ref_count": 2
     },
     "MET_arc1_accuracy": {
       "canonical_id": "MET_arc1_accuracy",
       "type": "eval_metric",
       "members": [
         "E16"
-      ]
+      ],
+      "representative": "E16",
+      "n_members": 1,
+      "referenced_by": [
+        "P46",
+        "P47",
+        "P48",
+        "P49",
+        "P50",
+        "P51",
+        "P52"
+      ],
+      "ref_count": 7
     },
     "MET_gen_passk": {
       "canonical_id": "MET_gen_passk",
       "type": "eval_metric",
       "members": [
         "E31"
-      ]
+      ],
+      "representative": "E31",
+      "n_members": 1,
+      "referenced_by": [
+        "P65",
+        "P66"
+      ],
+      "ref_count": 2
     }
   },
   "am": {
@@ -1003,9 +1799,45 @@
         "M50",
         "M7"
       ],
+      "n_members": 2,
       "votes": 5,
       "confidence": 1.0,
-      "band": "observed"
+      "band": "observed",
+      "referenced_by": [
+        "P1",
+        "P11",
+        "P12",
+        "P16",
+        "P19",
+        "P39",
+        "P40",
+        "P41",
+        "P42",
+        "P43",
+        "P44",
+        "P45",
+        "P46",
+        "P47",
+        "P48",
+        "P49",
+        "P50",
+        "P51",
+        "P52",
+        "P65",
+        "P66",
+        "P7",
+        "P70",
+        "P71",
+        "P72",
+        "P75",
+        "P76",
+        "P77",
+        "P8",
+        "P80",
+        "P81",
+        "P9"
+      ],
+      "ref_count": 32
     },
     "MECH_classical_vision_backbones_can_address_arc": {
       "canonical_id": "MECH_classical_vision_backbones_can_address_arc",
@@ -1015,9 +1847,14 @@
       "members": [
         "M38"
       ],
+      "n_members": 1,
       "votes": 4,
       "confidence": 0.8,
-      "band": "observed"
+      "band": "observed",
+      "referenced_by": [
+        "P19"
+      ],
+      "ref_count": 1
     },
     "MECH_canvas_enables_geometric_augmentations_invariance": {
       "canonical_id": "MECH_canvas_enables_geometric_augmentations_invariance",
@@ -1030,9 +1867,36 @@
         "M20",
         "M22"
       ],
+      "n_members": 4,
       "votes": 5,
       "confidence": 1.0,
-      "band": "observed"
+      "band": "observed",
+      "referenced_by": [
+        "P1",
+        "P11",
+        "P12",
+        "P16",
+        "P19",
+        "P22",
+        "P23",
+        "P25",
+        "P26",
+        "P28",
+        "P34",
+        "P35",
+        "P44",
+        "P45",
+        "P46",
+        "P48",
+        "P49",
+        "P50",
+        "P51",
+        "P52",
+        "P70",
+        "P72",
+        "P9"
+      ],
+      "ref_count": 23
     },
     "MECH_explicit_2d_positional_modeling_essential": {
       "canonical_id": "MECH_explicit_2d_positional_modeling_essential",
@@ -1044,9 +1908,34 @@
         "M24",
         "M25"
       ],
+      "n_members": 3,
       "votes": 5,
       "confidence": 1.0,
-      "band": "observed"
+      "band": "observed",
+      "referenced_by": [
+        "P1",
+        "P11",
+        "P12",
+        "P16",
+        "P19",
+        "P20",
+        "P21",
+        "P22",
+        "P23",
+        "P25",
+        "P44",
+        "P45",
+        "P46",
+        "P48",
+        "P49",
+        "P50",
+        "P51",
+        "P52",
+        "P70",
+        "P72",
+        "P9"
+      ],
+      "ref_count": 21
     },
     "MECH_model_interprets_ambiguous_rules_multiple_plausible": {
       "canonical_id": "MECH_model_interprets_ambiguous_rules_multiple_plausible",
@@ -1056,9 +1945,16 @@
       "members": [
         "M58"
       ],
+      "n_members": 1,
       "votes": 4,
       "confidence": 0.8,
-      "band": "observed"
+      "band": "observed",
+      "referenced_by": [
+        "P80",
+        "P81",
+        "P82"
+      ],
+      "ref_count": 3
     },
     "MECH_transformer_layers_specialize_different_structures_contexts": {
       "canonical_id": "MECH_transformer_layers_specialize_different_structures_contexts",
@@ -1077,9 +1973,25 @@
         "M67",
         "M68"
       ],
+      "n_members": 10,
       "votes": 5,
       "confidence": 1.0,
-      "band": "observed"
+      "band": "observed",
+      "referenced_by": [
+        "P45",
+        "P49",
+        "P50",
+        "P51",
+        "P54",
+        "P74",
+        "P75",
+        "P76",
+        "P77",
+        "P83",
+        "P84",
+        "P85"
+      ],
+      "ref_count": 12
     },
     "MECH_task_embedding_visualization_suggests_learning_task": {
       "canonical_id": "MECH_task_embedding_visualization_suggests_learning_task",
@@ -1089,9 +2001,17 @@
       "members": [
         "M48"
       ],
+      "n_members": 1,
       "votes": 5,
       "confidence": 1.0,
-      "band": "observed"
+      "band": "observed",
+      "referenced_by": [
+        "P46",
+        "P47",
+        "P57",
+        "P63"
+      ],
+      "ref_count": 4
     },
     "ASM_single_pixel_error_invalidates_entire_arc": {
       "canonical_id": "ASM_single_pixel_error_invalidates_entire_arc",
@@ -1101,9 +2021,26 @@
       "members": [
         "A18"
       ],
+      "n_members": 1,
       "votes": 5,
       "confidence": 1.0,
-      "band": "observed"
+      "band": "observed",
+      "referenced_by": [
+        "P36",
+        "P38",
+        "P39",
+        "P40",
+        "P41",
+        "P42",
+        "P43",
+        "P45",
+        "P59",
+        "P60",
+        "P61",
+        "P62",
+        "P63"
+      ],
+      "ref_count": 13
     },
     "ASM_multiple_test_tasks_cannot_assumed_available": {
       "canonical_id": "ASM_multiple_test_tasks_cannot_assumed_available",
@@ -1114,9 +2051,16 @@
         "A16",
         "A19"
       ],
+      "n_members": 2,
       "votes": 4,
       "confidence": 0.8,
-      "band": "observed"
+      "band": "observed",
+      "referenced_by": [
+        "P30",
+        "P36",
+        "P40"
+      ],
+      "ref_count": 3
     },
     "MECH_canvas_patchification_enriches_data_space_reduces": {
       "canonical_id": "MECH_canvas_patchification_enriches_data_space_reduces",
@@ -1130,9 +2074,18 @@
         "M34",
         "M36"
       ],
+      "n_members": 5,
       "votes": 5,
       "confidence": 1.0,
-      "band": "observed"
+      "band": "observed",
+      "referenced_by": [
+        "P22",
+        "P23",
+        "P24",
+        "P25",
+        "P28"
+      ],
+      "ref_count": 5
     },
     "MECH_scale_augmentation_yields_substantial_gain_due": {
       "canonical_id": "MECH_scale_augmentation_yields_substantial_gain_due",
@@ -1142,9 +2095,16 @@
       "members": [
         "M37"
       ],
+      "n_members": 1,
       "votes": 4,
       "confidence": 0.8,
-      "band": "observed"
+      "band": "observed",
+      "referenced_by": [
+        "P28",
+        "P34",
+        "P35"
+      ],
+      "ref_count": 3
     },
     "ASM_larger_models_current_setting_lead_overfitting": {
       "canonical_id": "ASM_larger_models_current_setting_lead_overfitting",
@@ -1154,9 +2114,14 @@
       "members": [
         "A15"
       ],
+      "n_members": 1,
       "votes": 5,
       "confidence": 1.0,
-      "band": "observed"
+      "band": "observed",
+      "referenced_by": [
+        "P29"
+      ],
+      "ref_count": 1
     },
     "MECH_some_arc_tasks_solvable_from_scratch": {
       "canonical_id": "MECH_some_arc_tasks_solvable_from_scratch",
@@ -1166,9 +2131,21 @@
       "members": [
         "M41"
       ],
+      "n_members": 1,
       "votes": 4,
       "confidence": 0.8,
-      "band": "observed"
+      "band": "observed",
+      "referenced_by": [
+        "P17",
+        "P31",
+        "P35",
+        "P43",
+        "P53",
+        "P70",
+        "P71",
+        "P72"
+      ],
+      "ref_count": 8
     },
     "MECH_attention_maps_reveal_pixel_pixel_reasoning": {
       "canonical_id": "MECH_attention_maps_reveal_pixel_pixel_reasoning",
@@ -1178,9 +2155,15 @@
       "members": [
         "M44"
       ],
+      "n_members": 1,
       "votes": 5,
       "confidence": 1.0,
-      "band": "observed"
+      "band": "observed",
+      "referenced_by": [
+        "P44",
+        "P53"
+      ],
+      "ref_count": 2
     },
     "MECH_attention_masks_improve_accuracy_focusing_foregrounds": {
       "canonical_id": "MECH_attention_masks_improve_accuracy_focusing_foregrounds",
@@ -1190,9 +2173,12 @@
       "members": [
         "M54"
       ],
+      "n_members": 1,
       "votes": 5,
       "confidence": 1.0,
-      "band": "observed"
+      "band": "observed",
+      "referenced_by": [],
+      "ref_count": 0
     },
     "ASM_some_arc_tasks_have_multiple_plausible": {
       "canonical_id": "ASM_some_arc_tasks_have_multiple_plausible",
@@ -1203,9 +2189,16 @@
         "A20",
         "A21"
       ],
+      "n_members": 2,
       "votes": 5,
       "confidence": 1.0,
-      "band": "observed"
+      "band": "observed",
+      "referenced_by": [
+        "P80",
+        "P81",
+        "P82"
+      ],
+      "ref_count": 3
     },
     "MECH_visual_common_sense_learnable_from_training": {
       "canonical_id": "MECH_visual_common_sense_learnable_from_training",
@@ -1215,9 +2208,38 @@
       "members": [
         "M40"
       ],
+      "n_members": 1,
       "votes": 5,
       "confidence": 1.0,
-      "band": "observed"
+      "band": "observed",
+      "referenced_by": [
+        "P1",
+        "P11",
+        "P12",
+        "P16",
+        "P17",
+        "P30",
+        "P34",
+        "P42",
+        "P44",
+        "P45",
+        "P46",
+        "P48",
+        "P49",
+        "P50",
+        "P51",
+        "P52",
+        "P54",
+        "P57",
+        "P62",
+        "P63",
+        "P70",
+        "P71",
+        "P72",
+        "P86",
+        "P87"
+      ],
+      "ref_count": 25
     },
     "ASM_arc_colors_lack_real_world_semantic": {
       "canonical_id": "ASM_arc_colors_lack_real_world_semantic",
@@ -1227,9 +2249,12 @@
       "members": [
         "A6"
       ],
+      "n_members": 1,
       "votes": 5,
       "confidence": 1.0,
-      "band": "observed"
+      "band": "observed",
+      "referenced_by": [],
+      "ref_count": 0
     },
     "MECH_majority_voting_consolidates_multi_view_predictions": {
       "canonical_id": "MECH_majority_voting_consolidates_multi_view_predictions",
@@ -1243,9 +2268,19 @@
         "M33",
         "M42"
       ],
+      "n_members": 5,
       "votes": 1,
       "confidence": 0.2,
-      "band": "uncertain"
+      "band": "uncertain",
+      "referenced_by": [
+        "P1",
+        "P39",
+        "P40",
+        "P48",
+        "P65",
+        "P66"
+      ],
+      "ref_count": 6
     },
     "MECH_average_pooling_aggregates_multi_pixel_canvas": {
       "canonical_id": "MECH_average_pooling_aggregates_multi_pixel_canvas",
@@ -1255,9 +2290,12 @@
       "members": [
         "M29"
       ],
+      "n_members": 1,
       "votes": 1,
       "confidence": 0.2,
-      "band": "uncertain"
+      "band": "uncertain",
+      "referenced_by": [],
+      "ref_count": 0
     },
     "ASM_auxiliary_tasks_translation_scale_invariant": {
       "canonical_id": "ASM_auxiliary_tasks_translation_scale_invariant",
@@ -1267,15 +2305,18 @@
       "members": [
         "A12"
       ],
+      "n_members": 1,
       "votes": 1,
       "confidence": 0.2,
-      "band": "uncertain"
+      "band": "uncertain",
+      "referenced_by": [],
+      "ref_count": 0
     }
   },
   "raw2canon": {
-    "C110": "CTX_model_vit",
-    "C111": "CTX_model_vit",
-    "C112": "CTX_model_vit",
+    "C110": "CTX_model_vit_384_5_6m_10",
+    "C111": "CTX_model_vit_512_10_18m_28",
+    "C112": "CTX_model_vit_768_20_66m_99",
     "C116": "CTX_other_effects_visual_priors_varc",
     "C117": "CTX_dataset_arc_1_evaluation_set",
     "C118": "CTX_model_model_used_vit_18m",

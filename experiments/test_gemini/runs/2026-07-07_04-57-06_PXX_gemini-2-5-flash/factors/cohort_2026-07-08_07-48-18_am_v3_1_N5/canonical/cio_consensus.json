@@ -19,8 +19,8 @@
     },
     "canonical": {
       "context": [
-        "CTX_other_framework_termed_vision_arc_varc",
-        "CTX_dataset_arc_1_benchmark"
+        "CTX_dataset_arc_1_benchmark",
+        "CTX_other_framework_termed_vision_arc_varc"
       ],
       "intervention": "INT_apply_standard_vision_architectures_such_vanilla",
       "reference": null,
@@ -52,9 +52,9 @@
     },
     "canonical": {
       "context": [
-        "CTX_other_varc",
         "CTX_dataset_arc_1_benchmark",
-        "CTX_model_small_model_only_18_million_parameters"
+        "CTX_model_small_model_only_18_million_parameters_18",
+        "CTX_other_varc"
       ],
       "intervention": "INT_apply_standard_vision_architectures_such_vanilla",
       "reference": null,
@@ -86,9 +86,9 @@
     },
     "canonical": {
       "context": [
-        "CTX_other_varc",
         "CTX_dataset_arc_1_benchmark",
-        "CTX_model_small_model_only_18_million_parameters"
+        "CTX_model_small_model_only_18_million_parameters_18",
+        "CTX_other_varc"
       ],
       "intervention": "INT_apply_standard_vision_architectures_such_vanilla",
       "reference": "INT_recurrent_models_53_27",
@@ -119,8 +119,8 @@
     },
     "canonical": {
       "context": [
-        "CTX_other_varc",
-        "CTX_dataset_arc_1_benchmark"
+        "CTX_dataset_arc_1_benchmark",
+        "CTX_other_varc"
       ],
       "intervention": "INT_combining_varc_models_through_ensembling_29",
       "reference": "INT_small_model_only_18_million_parameters",
@@ -242,9 +242,9 @@
     },
     "canonical": {
       "context": [
-        "CTX_model_vit",
-        "CTX_model_vit",
-        "CTX_model_vit"
+        "CTX_model_vit_384_5_6m_10",
+        "CTX_model_vit_512_10_18m_28",
+        "CTX_model_vit_768_20_66m_99"
       ],
       "intervention": "INT_compare_variants_vits_u_nets_similar",
       "reference": "INT_u_net",
@@ -276,9 +276,9 @@
     },
     "canonical": {
       "context": [
-        "CTX_other_effects_visual_priors_varc",
         "CTX_dataset_arc_1_evaluation_set",
-        "CTX_model_model_used_vit_18m"
+        "CTX_model_model_used_vit_18m",
+        "CTX_other_effects_visual_priors_varc"
       ],
       "intervention": "INT_entries_c_patch_size_1_1",
       "reference": "INT_start_from_na_ve_baseline_components",
@@ -310,9 +310,9 @@
     },
     "canonical": {
       "context": [
-        "CTX_other_effects_visual_priors_varc",
         "CTX_dataset_arc_1_evaluation_set",
-        "CTX_model_model_used_vit_18m"
+        "CTX_model_model_used_vit_18m",
+        "CTX_other_effects_visual_priors_varc"
       ],
       "intervention": "INT_entries_c_patch_size_1_1",
       "reference": "INT_observed_both_b_absolute_c_relative",
@@ -893,8 +893,8 @@
     },
     "canonical": {
       "context": [
-        "CTX_other_system_level_comparisons",
         "CTX_other_method_does_not_rely_such_data",
+        "CTX_other_system_level_comparisons",
         "CTX_other_uses_model_several_orders_magnitude_smaller"
       ],
       "intervention": "INT_compare_leading_results_llms_recurrent_models",
@@ -1047,9 +1047,9 @@
     },
     "canonical": {
       "context": [
+        "CTX_model_ensemble_result_aggregates_18m_vit_55m",
         "CTX_other_llm_based_results_from_arc_agi",
-        "CTX_training_hrm_trm_varc_trained_from_scratch",
-        "CTX_model_ensemble_result_aggregates_18m_vit_55m"
+        "CTX_training_hrm_trm_varc_trained_from_scratch"
       ],
       "intervention": null,
       "reference": null,
@@ -1081,9 +1081,9 @@
     },
     "canonical": {
       "context": [
+        "CTX_model_ensemble_result_aggregates_18m_vit_55m",
         "CTX_other_llm_based_results_from_arc_agi",
-        "CTX_training_hrm_trm_varc_trained_from_scratch",
-        "CTX_model_ensemble_result_aggregates_18m_vit_55m"
+        "CTX_training_hrm_trm_varc_trained_from_scratch"
       ],
       "intervention": null,
       "reference": null,
@@ -1179,9 +1179,9 @@
     },
     "canonical": {
       "context": [
-        "CTX_other_t_sne_task_embeddings",
         "CTX_dataset_400_training_tasks_arc_1_model",
-        "CTX_other_each_point_corresponds_task"
+        "CTX_other_each_point_corresponds_task",
+        "CTX_other_t_sne_task_embeddings"
       ],
       "intervention": "INT_visu_alize_these_400_embeddings_2d",
       "reference": null,
@@ -1298,8 +1298,8 @@
     },
     "canonical": {
       "context": [
-        "CTX_eval_multi_view_inference_many_views_510",
-        "CTX_dataset_arc_1"
+        "CTX_dataset_arc_1",
+        "CTX_eval_multi_view_inference_many_views_510"
       ],
       "intervention": "INT_number_proposals_k_increases",
       "reference": null,
@@ -1330,8 +1330,8 @@
     },
     "canonical": {
       "context": [
-        "CTX_eval_multi_view_inference_many_views_510",
-        "CTX_dataset_arc_1"
+        "CTX_dataset_arc_1",
+        "CTX_eval_multi_view_inference_many_views_510"
       ],
       "intervention": null,
       "reference": null,
@@ -1547,9 +1547,9 @@
     "canonical": {
       "context": [
         "CTX_other_task_15663ba9",
-        "CTX_other_task_981571dc",
         "CTX_other_task_15696249",
-        "CTX_other_task_67c52801"
+        "CTX_other_task_67c52801",
+        "CTX_other_task_981571dc"
       ],
       "intervention": "INT_first_second_solutions_proposed_varc",
       "reference": null,
@@ -1582,8 +1582,8 @@
     },
     "canonical": {
       "context": [
-        "CTX_other_task_8dae5dfc",
         "CTX_other_task_67636eac",
+        "CTX_other_task_8dae5dfc",
         "CTX_other_task_aa4ec2a5",
         "CTX_other_task_b457fec5"
       ],
@@ -1708,10 +1708,10 @@
     },
     "canonical": {
       "context": [
-        "CTX_other_task_800d221b",
-        "CTX_other_task_7666fa5d",
         "CTX_other_task_221dfab4",
-        "CTX_other_task_7b80bb43"
+        "CTX_other_task_7666fa5d",
+        "CTX_other_task_7b80bb43",
+        "CTX_other_task_800d221b"
       ],
       "intervention": "INT_first_second_solutions_proposed_varc",
       "reference": null,
@@ -1814,8 +1814,8 @@
     },
     "canonical": {
       "context": [
-        "CTX_other_layer_wise_attention_maps",
         "CTX_other_demonstration_examples_left_provided_reference",
+        "CTX_other_layer_wise_attention_maps",
         "CTX_other_task_0607ce86",
         "CTX_other_task_0bb8deee",
         "CTX_other_task_1c56ad9f",
@@ -1850,8 +1850,8 @@
     },
     "canonical": {
       "context": [
-        "CTX_training_grid_augmented_given_scale_ratio_2",
-        "CTX_model_full_canvas_not_shown_brevity"
+        "CTX_model_full_canvas_not_shown_brevity",
+        "CTX_training_grid_augmented_given_scale_ratio_2"
       ],
       "intervention": "INT_test_time_training_progresses",
       "reference": null,

@@ -11,9 +11,17 @@
       "M34",
       "M36"
     ],
+    "n_members": 5,
     "votes": 5,
     "confidence": 1.0,
-    "band": "observed"
+    "band": "observed",
+    "referenced_by": [
+      "P22",
+      "P23",
+      "P25",
+      "P28"
+    ],
+    "ref_count": 4
   },
   "MECH_transformer_layers_specialize_different_structures_contexts": {
     "canonical_id": "MECH_transformer_layers_specialize_different_structures_contexts",
@@ -32,9 +40,21 @@
       "M67",
       "M68"
     ],
+    "n_members": 10,
     "votes": 5,
     "confidence": 1.0,
-    "band": "observed"
+    "band": "observed",
+    "referenced_by": [
+      "P54",
+      "P74",
+      "P75",
+      "P76",
+      "P77",
+      "P83",
+      "P84",
+      "P85"
+    ],
+    "ref_count": 8
   },
   "MECH_canvas_enables_geometric_augmentations_invariance": {
     "canonical_id": "MECH_canvas_enables_geometric_augmentations_invariance",
@@ -47,9 +67,35 @@
       "M20",
       "M22"
     ],
+    "n_members": 4,
     "votes": 5,
     "confidence": 1.0,
-    "band": "observed"
+    "band": "observed",
+    "referenced_by": [
+      "P1",
+      "P11",
+      "P12",
+      "P16",
+      "P19",
+      "P22",
+      "P23",
+      "P25",
+      "P28",
+      "P34",
+      "P35",
+      "P44",
+      "P45",
+      "P46",
+      "P48",
+      "P49",
+      "P50",
+      "P51",
+      "P52",
+      "P70",
+      "P72",
+      "P9"
+    ],
+    "ref_count": 22
   },
   "MECH_scale_augmentation_yields_substantial_gain_due": {
     "canonical_id": "MECH_scale_augmentation_yields_substantial_gain_due",
@@ -59,9 +105,15 @@
     "members": [
       "M37"
     ],
+    "n_members": 1,
     "votes": 4,
     "confidence": 0.8,
-    "band": "observed"
+    "band": "observed",
+    "referenced_by": [
+      "P34",
+      "P35"
+    ],
+    "ref_count": 2
   },
   "ASM_arc_colors_lack_real_world_semantic": {
     "canonical_id": "ASM_arc_colors_lack_real_world_semantic",
@@ -71,9 +123,12 @@
     "members": [
       "A6"
     ],
+    "n_members": 1,
     "votes": 5,
     "confidence": 1.0,
-    "band": "observed"
+    "band": "observed",
+    "referenced_by": [],
+    "ref_count": 0
   },
   "MECH_explicit_2d_positional_modeling_essential": {
     "canonical_id": "MECH_explicit_2d_positional_modeling_essential",
@@ -85,9 +140,34 @@
       "M24",
       "M25"
     ],
+    "n_members": 3,
     "votes": 5,
     "confidence": 1.0,
-    "band": "observed"
+    "band": "observed",
+    "referenced_by": [
+      "P1",
+      "P11",
+      "P12",
+      "P16",
+      "P19",
+      "P20",
+      "P21",
+      "P22",
+      "P23",
+      "P25",
+      "P44",
+      "P45",
+      "P46",
+      "P48",
+      "P49",
+      "P50",
+      "P51",
+      "P52",
+      "P70",
+      "P72",
+      "P9"
+    ],
+    "ref_count": 21
   },
   "MECH_visual_learning_enables_abstraction_without_language": {
     "canonical_id": "MECH_visual_learning_enables_abstraction_without_language",
@@ -98,9 +178,36 @@
       "M50",
       "M7"
     ],
+    "n_members": 2,
     "votes": 5,
     "confidence": 1.0,
-    "band": "observed"
+    "band": "observed",
+    "referenced_by": [
+      "P1",
+      "P11",
+      "P12",
+      "P16",
+      "P19",
+      "P43",
+      "P44",
+      "P45",
+      "P46",
+      "P47",
+      "P48",
+      "P49",
+      "P50",
+      "P51",
+      "P52",
+      "P70",
+      "P71",
+      "P72",
+      "P75",
+      "P76",
+      "P77",
+      "P8",
+      "P9"
+    ],
+    "ref_count": 23
   },
   "MECH_attention_maps_reveal_pixel_pixel_reasoning": {
     "canonical_id": "MECH_attention_maps_reveal_pixel_pixel_reasoning",
@@ -110,9 +217,14 @@
     "members": [
       "M44"
     ],
+    "n_members": 1,
     "votes": 5,
     "confidence": 1.0,
-    "band": "observed"
+    "band": "observed",
+    "referenced_by": [
+      "P53"
+    ],
+    "ref_count": 1
   },
   "MECH_some_arc_tasks_solvable_from_scratch": {
     "canonical_id": "MECH_some_arc_tasks_solvable_from_scratch",
@@ -122,9 +234,15 @@
     "members": [
       "M41"
     ],
+    "n_members": 1,
     "votes": 4,
     "confidence": 0.8,
-    "band": "observed"
+    "band": "observed",
+    "referenced_by": [
+      "P31",
+      "P43"
+    ],
+    "ref_count": 2
   },
   "ASM_some_arc_tasks_have_multiple_plausible": {
     "canonical_id": "ASM_some_arc_tasks_have_multiple_plausible",
@@ -135,9 +253,16 @@
       "A20",
       "A21"
     ],
+    "n_members": 2,
     "votes": 5,
     "confidence": 1.0,
-    "band": "observed"
+    "band": "observed",
+    "referenced_by": [
+      "P80",
+      "P81",
+      "P82"
+    ],
+    "ref_count": 3
   },
   "MECH_attention_masks_improve_accuracy_focusing_foregrounds": {
     "canonical_id": "MECH_attention_masks_improve_accuracy_focusing_foregrounds",
@@ -147,9 +272,12 @@
     "members": [
       "M54"
     ],
+    "n_members": 1,
     "votes": 5,
     "confidence": 1.0,
-    "band": "observed"
+    "band": "observed",
+    "referenced_by": [],
+    "ref_count": 0
   },
   "MECH_model_interprets_ambiguous_rules_multiple_plausible": {
     "canonical_id": "MECH_model_interprets_ambiguous_rules_multiple_plausible",
@@ -159,9 +287,15 @@
     "members": [
       "M58"
     ],
+    "n_members": 1,
     "votes": 4,
     "confidence": 0.8,
-    "band": "observed"
+    "band": "observed",
+    "referenced_by": [
+      "P80",
+      "P81"
+    ],
+    "ref_count": 2
   },
   "MECH_classical_vision_backbones_can_address_arc": {
     "canonical_id": "MECH_classical_vision_backbones_can_address_arc",
@@ -171,9 +305,14 @@
     "members": [
       "M38"
     ],
+    "n_members": 1,
     "votes": 4,
     "confidence": 0.8,
-    "band": "observed"
+    "band": "observed",
+    "referenced_by": [
+      "P19"
+    ],
+    "ref_count": 1
   },
   "ASM_single_pixel_error_invalidates_entire_arc": {
     "canonical_id": "ASM_single_pixel_error_invalidates_entire_arc",
@@ -183,9 +322,21 @@
     "members": [
       "A18"
     ],
+    "n_members": 1,
     "votes": 5,
     "confidence": 1.0,
-    "band": "observed"
+    "band": "observed",
+    "referenced_by": [
+      "P36",
+      "P38",
+      "P39",
+      "P40",
+      "P41",
+      "P42",
+      "P43",
+      "P45"
+    ],
+    "ref_count": 8
   },
   "MECH_visual_common_sense_learnable_from_training": {
     "canonical_id": "MECH_visual_common_sense_learnable_from_training",
@@ -195,9 +346,34 @@
     "members": [
       "M40"
     ],
+    "n_members": 1,
     "votes": 5,
     "confidence": 1.0,
-    "band": "observed"
+    "band": "observed",
+    "referenced_by": [
+      "P1",
+      "P11",
+      "P12",
+      "P16",
+      "P17",
+      "P30",
+      "P42",
+      "P44",
+      "P45",
+      "P46",
+      "P48",
+      "P49",
+      "P50",
+      "P51",
+      "P52",
+      "P62",
+      "P63",
+      "P70",
+      "P72",
+      "P86",
+      "P87"
+    ],
+    "ref_count": 21
   },
   "MECH_task_embedding_visualization_suggests_learning_task": {
     "canonical_id": "MECH_task_embedding_visualization_suggests_learning_task",
@@ -207,9 +383,15 @@
     "members": [
       "M48"
     ],
+    "n_members": 1,
     "votes": 5,
     "confidence": 1.0,
-    "band": "observed"
+    "band": "observed",
+    "referenced_by": [
+      "P57",
+      "P63"
+    ],
+    "ref_count": 2
   },
   "ASM_multiple_test_tasks_cannot_assumed_available": {
     "canonical_id": "ASM_multiple_test_tasks_cannot_assumed_available",
@@ -220,9 +402,15 @@
       "A16",
       "A19"
     ],
+    "n_members": 2,
     "votes": 4,
     "confidence": 0.8,
-    "band": "observed"
+    "band": "observed",
+    "referenced_by": [
+      "P36",
+      "P40"
+    ],
+    "ref_count": 2
   },
   "ASM_larger_models_current_setting_lead_overfitting": {
     "canonical_id": "ASM_larger_models_current_setting_lead_overfitting",
@@ -232,9 +420,14 @@
     "members": [
       "A15"
     ],
+    "n_members": 1,
     "votes": 5,
     "confidence": 1.0,
-    "band": "observed"
+    "band": "observed",
+    "referenced_by": [
+      "P29"
+    ],
+    "ref_count": 1
   },
   "MECH_majority_voting_consolidates_multi_view_predictions": {
     "canonical_id": "MECH_majority_voting_consolidates_multi_view_predictions",
@@ -248,9 +441,19 @@
       "M33",
       "M42"
     ],
+    "n_members": 5,
     "votes": 1,
     "confidence": 0.2,
-    "band": "uncertain"
+    "band": "uncertain",
+    "referenced_by": [
+      "P1",
+      "P39",
+      "P40",
+      "P48",
+      "P65",
+      "P66"
+    ],
+    "ref_count": 6
   },
   "ASM_auxiliary_tasks_translation_scale_invariant": {
     "canonical_id": "ASM_auxiliary_tasks_translation_scale_invariant",
@@ -260,9 +463,12 @@
     "members": [
       "A12"
     ],
+    "n_members": 1,
     "votes": 1,
     "confidence": 0.2,
-    "band": "uncertain"
+    "band": "uncertain",
+    "referenced_by": [],
+    "ref_count": 0
   },
   "MECH_average_pooling_aggregates_multi_pixel_canvas": {
     "canonical_id": "MECH_average_pooling_aggregates_multi_pixel_canvas",
@@ -272,8 +478,11 @@
     "members": [
       "M29"
     ],
+    "n_members": 1,
     "votes": 1,
     "confidence": 0.2,
-    "band": "uncertain"
+    "band": "uncertain",
+    "referenced_by": [],
+    "ref_count": 0
   }
 }
