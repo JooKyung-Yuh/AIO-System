@@ -38,13 +38,14 @@ def prompt_set():
     return vals
 
 
-def run(cmd, dry):
+def run(cmd, dry, fatal=True):
     print("  $ " + " ".join(str(c) for c in cmd), flush=True)
     if dry:
-        return
+        return 0
     r = subprocess.run(cmd)
-    if r.returncode != 0:
+    if r.returncode != 0 and fatal:
         sys.exit(f"step failed ({r.returncode}): {' '.join(str(c) for c in cmd)}")
+    return r.returncode
 
 
 def parse_args():
@@ -53,6 +54,9 @@ def parse_args():
     p.add_argument("--n", type=int, default=5, help="number of builds in the cohort")
     p.add_argument("--no-canonical", action="store_true", help="stop after the vote, skip canonicalization")
     p.add_argument("--ctx-min", type=int, default=3, help="passed to canonicalize_v0")
+    p.add_argument("--parallel", type=int, default=1,
+                   help="max builds to run at once (builds are independent). Start at 3; raise to N "
+                        "once the rate limit is comfortable. Default 1 = sequential.")
     p.add_argument("--dry-run", action="store_true", help="print the plan without running anything")
     return p.parse_args()
 
@@ -73,11 +77,28 @@ def main():
         builds_dir.mkdir(parents=True, exist_ok=False)
 
     py = sys.executable
-    # --- Stage: N builds into the cohort's builds/ ---
-    for i in range(1, args.n + 1):
-        print(f"[build {i}/{args.n}]")
-        run([py, str(HERE / "build_factors_split.py"),
-             "--run-dir", str(run_dir), "--builds-dir", str(builds_dir)], args.dry_run)
+    # --- Stage: N builds into the cohort's builds/ (bounded parallel; each build is independent) ---
+    def one_build(i):
+        print(f"[build {i}/{args.n}] start", flush=True)
+        rc = run([py, str(HERE / "build_factors_split.py"),
+                  "--run-dir", str(run_dir), "--builds-dir", str(builds_dir),
+                  "--build-index", str(i)], args.dry_run, fatal=False)
+        print(f"[build {i}/{args.n}] done rc={rc}", flush=True)
+        return i, rc
+
+    if args.parallel > 1 and not args.dry_run:
+        import concurrent.futures as cf
+        with cf.ThreadPoolExecutor(max_workers=args.parallel) as ex:
+            results = list(ex.map(one_build, range(1, args.n + 1)))
+    else:
+        results = [one_build(i) for i in range(1, args.n + 1)]
+
+    if not args.dry_run:
+        ok = [i for i, rc in results if rc == 0]
+        if len(ok) < 2:
+            sys.exit(f"only {len(ok)}/{args.n} builds succeeded; need >=2 to vote (raise --parallel headroom or check rate limits)")
+        if len(ok) < args.n:
+            print(f"[WARN] {args.n - len(ok)} build(s) failed; voting over {len(ok)} (aggregate ignores incomplete builds)", flush=True)
 
     # --- Stage: vote over exactly this cohort's builds ---
     print("[vote]")

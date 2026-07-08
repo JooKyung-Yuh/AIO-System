@@ -174,6 +174,9 @@ def parse_args():
     p.add_argument("--paper-title-hint", default="unknown")
     p.add_argument("--paper-text", default="./docs/VARC.txt", help="prose transcription fed to every call")
     p.add_argument("--assets", default="./docs/VARC.assets.json", help="figure/table descriptions fed to every call")
+    p.add_argument("--build-index", default=None,
+                   help="unique suffix for build_id; required when builds are launched in parallel "
+                        "(the second-granularity timestamp alone collides). Default: none (sequential).")
     p.add_argument("--builds-dir", default=None,
                    help="where to write this build's folder (default: <run-dir>/factors). "
                         "run_cohort.py points this at <cohort>/builds so an ensemble stays self-contained.")
@@ -194,7 +197,8 @@ def main():
     )
 
     now = datetime.datetime.now().astimezone()
-    build_id = f"{now.strftime('%Y-%m-%d_%H-%M-%S')}_{BUILD_TAG}"
+    idx = f"{args.build_index}_" if args.build_index else ""   # avoid same-second build_id collision in parallel
+    build_id = f"{now.strftime('%Y-%m-%d_%H-%M-%S')}_{idx}{BUILD_TAG}"
     builds_root = Path(args.builds_dir) if args.builds_dir else run_dir / "factors"
     build_dir = builds_root / build_id
     build_dir.mkdir(parents=True, exist_ok=False)

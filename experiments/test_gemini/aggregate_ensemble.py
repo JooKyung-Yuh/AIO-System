@@ -132,10 +132,12 @@ def main():
             sys.exit(f"build not found: {b} (looked at {p} and {cand})")
         build_dirs = [resolve(b) for b in args.builds]
     else:
-        all_dirs = sorted(glob.glob(str(builds_dir / "*" / "cio_cards.json")))
-        build_dirs = [Path(p).parent for p in all_dirs]
+        # complete builds only: a build that died mid-way (e.g. CIO ok, AM failed under a rate
+        # limit during a parallel run) leaves a partial dir — skip it so voting isn't corrupted.
+        build_dirs = [Path(d) for d in sorted(glob.glob(str(builds_dir / "*")))
+                      if all((Path(d) / f).exists() for f in ("cio_cards.json", "am_cards.json", "links.json"))]
         if not build_dirs:
-            sys.exit(f"no split builds under {builds_dir}")
+            sys.exit(f"no complete split builds under {builds_dir}")
 
     builds = [load_build(d) for d in build_dirs]
 
