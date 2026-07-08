@@ -1,0 +1,279 @@
+{
+  "ASM_larger_models_current_setting_lead_overfitting": {
+    "canonical_id": "ASM_larger_models_current_setting_lead_overfitting",
+    "type": "assumption",
+    "gloss": "Larger models in current setting lead to overfitting",
+    "representative": "A15",
+    "members": [
+      "A15"
+    ],
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed"
+  },
+  "MECH_transformer_layers_specialize_different_structures_contexts": {
+    "canonical_id": "MECH_transformer_layers_specialize_different_structures_contexts",
+    "type": "mechanism",
+    "gloss": "Transformer layers specialize in different structures/contexts",
+    "representative": "M59",
+    "members": [
+      "M59",
+      "M60",
+      "M61",
+      "M62",
+      "M63",
+      "M64",
+      "M65",
+      "M66",
+      "M67",
+      "M68"
+    ],
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed"
+  },
+  "MECH_visual_common_sense_learnable_from_training": {
+    "canonical_id": "MECH_visual_common_sense_learnable_from_training",
+    "type": "mechanism",
+    "gloss": "Visual common sense is learnable from training data",
+    "representative": "M40",
+    "members": [
+      "M40"
+    ],
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed"
+  },
+  "MECH_canvas_patchification_enriches_data_space_reduces": {
+    "canonical_id": "MECH_canvas_patchification_enriches_data_space_reduces",
+    "type": "mechanism",
+    "gloss": "Canvas patchification enriches data space, reduces overfitting",
+    "representative": "M10",
+    "members": [
+      "M10",
+      "M17",
+      "M18",
+      "M34",
+      "M36"
+    ],
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed"
+  },
+  "MECH_some_arc_tasks_solvable_from_scratch": {
+    "canonical_id": "MECH_some_arc_tasks_solvable_from_scratch",
+    "type": "mechanism",
+    "gloss": "Some ARC tasks are solvable from scratch",
+    "representative": "M41",
+    "members": [
+      "M41"
+    ],
+    "votes": 2,
+    "confidence": 0.4,
+    "band": "supported"
+  },
+  "MECH_attention_masks_improve_accuracy_focusing_foregrounds": {
+    "canonical_id": "MECH_attention_masks_improve_accuracy_focusing_foregrounds",
+    "type": "mechanism",
+    "gloss": "Attention masks improve accuracy by focusing on foregrounds",
+    "representative": "M54",
+    "members": [
+      "M54"
+    ],
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed"
+  },
+  "ASM_multiple_test_tasks_cannot_assumed_available": {
+    "canonical_id": "ASM_multiple_test_tasks_cannot_assumed_available",
+    "type": "assumption",
+    "gloss": "Multiple test tasks cannot be assumed available simultaneously",
+    "representative": "A16",
+    "members": [
+      "A16",
+      "A19"
+    ],
+    "votes": 2,
+    "confidence": 0.4,
+    "band": "supported"
+  },
+  "MECH_canvas_enables_geometric_augmentations_invariance": {
+    "canonical_id": "MECH_canvas_enables_geometric_augmentations_invariance",
+    "type": "mechanism",
+    "gloss": "Canvas enables geometric augmentations for invariance",
+    "representative": "M16",
+    "members": [
+      "M16",
+      "M19",
+      "M20",
+      "M22"
+    ],
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed"
+  },
+  "ASM_some_arc_tasks_have_multiple_plausible": {
+    "canonical_id": "ASM_some_arc_tasks_have_multiple_plausible",
+    "type": "assumption",
+    "gloss": "Some ARC tasks have multiple plausible rules",
+    "representative": "A20",
+    "members": [
+      "A20",
+      "A21"
+    ],
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed"
+  },
+  "MECH_visual_learning_enables_abstraction_without_language": {
+    "canonical_id": "MECH_visual_learning_enables_abstraction_without_language",
+    "type": "mechanism",
+    "gloss": "Visual learning enables abstraction without language",
+    "representative": "M7",
+    "members": [
+      "M50",
+      "M7"
+    ],
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed"
+  },
+  "MECH_model_interprets_ambiguous_rules_multiple_plausible": {
+    "canonical_id": "MECH_model_interprets_ambiguous_rules_multiple_plausible",
+    "type": "mechanism",
+    "gloss": "Model interprets ambiguous rules with multiple plausible guesses",
+    "representative": "M58",
+    "members": [
+      "M58"
+    ],
+    "votes": 2,
+    "confidence": 0.4,
+    "band": "supported"
+  },
+  "MECH_task_embedding_visualization_suggests_learning_task": {
+    "canonical_id": "MECH_task_embedding_visualization_suggests_learning_task",
+    "type": "mechanism",
+    "gloss": "Task embedding visualization suggests learning task relations",
+    "representative": "M48",
+    "members": [
+      "M48"
+    ],
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed"
+  },
+  "MECH_attention_maps_reveal_pixel_pixel_reasoning": {
+    "canonical_id": "MECH_attention_maps_reveal_pixel_pixel_reasoning",
+    "type": "mechanism",
+    "gloss": "Attention maps reveal pixel-to-pixel reasoning",
+    "representative": "M44",
+    "members": [
+      "M44"
+    ],
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed"
+  },
+  "MECH_classical_vision_backbones_can_address_arc": {
+    "canonical_id": "MECH_classical_vision_backbones_can_address_arc",
+    "type": "mechanism",
+    "gloss": "Classical vision backbones can address ARC effectively",
+    "representative": "M38",
+    "members": [
+      "M38"
+    ],
+    "votes": 2,
+    "confidence": 0.4,
+    "band": "supported"
+  },
+  "ASM_single_pixel_error_invalidates_entire_arc": {
+    "canonical_id": "ASM_single_pixel_error_invalidates_entire_arc",
+    "type": "assumption",
+    "gloss": "Single pixel error invalidates entire ARC prediction",
+    "representative": "A18",
+    "members": [
+      "A18"
+    ],
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed"
+  },
+  "MECH_scale_augmentation_yields_substantial_gain_due": {
+    "canonical_id": "MECH_scale_augmentation_yields_substantial_gain_due",
+    "type": "mechanism",
+    "gloss": "Scale augmentation yields substantial gain due to ViT bias",
+    "representative": "M37",
+    "members": [
+      "M37"
+    ],
+    "votes": 2,
+    "confidence": 0.4,
+    "band": "supported"
+  },
+  "MECH_explicit_2d_positional_modeling_essential": {
+    "canonical_id": "MECH_explicit_2d_positional_modeling_essential",
+    "type": "mechanism",
+    "gloss": "Explicit 2D positional modeling is essential",
+    "representative": "M25",
+    "members": [
+      "M23",
+      "M24",
+      "M25"
+    ],
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed"
+  },
+  "ASM_arc_colors_lack_real_world_semantic": {
+    "canonical_id": "ASM_arc_colors_lack_real_world_semantic",
+    "type": "assumption",
+    "gloss": "ARC colors lack real-world semantic meaning",
+    "representative": "A6",
+    "members": [
+      "A6"
+    ],
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed"
+  },
+  "ASM_auxiliary_tasks_translation_scale_invariant": {
+    "canonical_id": "ASM_auxiliary_tasks_translation_scale_invariant",
+    "type": "assumption",
+    "gloss": "auxiliary tasks are translation/scale invariant",
+    "representative": "A12",
+    "members": [
+      "A12"
+    ],
+    "votes": 3,
+    "confidence": 0.6,
+    "band": "supported"
+  },
+  "MECH_average_pooling_aggregates_multi_pixel_canvas": {
+    "canonical_id": "MECH_average_pooling_aggregates_multi_pixel_canvas",
+    "type": "mechanism",
+    "gloss": "average pooling aggregates multi-pixel canvas predictions",
+    "representative": "M29",
+    "members": [
+      "M29"
+    ],
+    "votes": 3,
+    "confidence": 0.6,
+    "band": "supported"
+  },
+  "MECH_majority_voting_consolidates_multi_view_predictions": {
+    "canonical_id": "MECH_majority_voting_consolidates_multi_view_predictions",
+    "type": "mechanism",
+    "gloss": "majority voting consolidates multi-view predictions for accuracy",
+    "representative": "M27",
+    "members": [
+      "M27",
+      "M28",
+      "M32",
+      "M33",
+      "M42"
+    ],
+    "votes": 3,
+    "confidence": 0.6,
+    "band": "supported"
+  }
+}

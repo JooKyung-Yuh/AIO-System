@@ -1,0 +1,11 @@
+[
+  {
+    "pair": [
+      "E18",
+      "E19"
+    ],
+    "overlap": 0.62,
+    "a": "Offline training data scaling: effect of varying",
+    "b": "Offline training task diversity scaling: effect of varying"
+  }
+]
