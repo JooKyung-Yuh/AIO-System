@@ -11,7 +11,8 @@ You are given (1) the paper itself (prose transcription + figure/table descripti
 ground each observation, and (2) a Layer-1 span extraction already grouped into local **evidence
 units** by the paper location the spans came from (a Table, a Figure, or a Section). Each node has a
 per-category node_id (C.. context, I.. intervention, E.. eval_metric, P.. pattern) and a
-source_span.
+source_span. The FIGURES & TABLES block is structured: each table carries `columns` and `rows` with
+the exact printed cells — treat those cells as the source of truth for any measured number.
 
 --- PAPER: PROSE TRANSCRIPTION ---
 {paper_text}
@@ -40,8 +41,10 @@ same Section unit only.)
 **Fill each field by selecting from that unit:**
 - `context`: the list of context node_ids that state this observation's setting (often several —
   e.g. the spec rows of a table). Prefer the concrete setting rows over vague background.
-- `intervention`: the node_id of the manipulated / compared condition. Use null only for a purely
-  observational result with no manipulation.
+- `intervention`: the node_id of the manipulated / compared condition. It MUST be an intervention
+  (I..) node — never a context (C), eval_metric (E), or pattern (P) id. If the manipulation is only
+  present as a C or E node, prefer null and leave it for the belief/mismatch layer. Use null for a
+  purely observational result with no manipulation.
 - `reference`: **the baseline arm.** When the pattern is a comparison ("A is better than B"), select
   the node_id of the baseline/other condition B if a distinct node exists; otherwise null. Read the
   PAPER text and figure descriptions to identify B (e.g. "U-Net" opposite "ViT", "TTT jointly"
@@ -50,6 +53,14 @@ same Section unit only.)
 - `pattern`: the node_id of the measured result (the anchor).
 - `direction`: `up` / `down` / `flat` / null — the direction the pattern reports for the
   intervention relative to the reference, read from the paper/figure, not guessed.
+
+**Anchor observable numbers to a table row when one exists.** Each table in the FIGURES & TABLES
+block carries `columns` and `rows` with the exact printed cells. When the pattern reports a value
+that appears in a table, confirm the number, its metric (e.g. accuracy vs pass@2), and its
+condition against that row (match by row-label + column header) before choosing
+intervention / reference / eval_metric — the row tells you WHICH condition produced WHICH number,
+so the intervention arm and the observable value come from the SAME row, not a guess. Record the
+table id in `provenance.location`.
 
 **Ground everything in the paper.** Use the prose + figure/table descriptions to confirm the
 reference arm and direction. Do not invent comparisons the paper does not make.
