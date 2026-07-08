@@ -1,0 +1,94 @@
+"""eval_cohort.py — read one cohort's gate metrics (no LLM), optionally vs a baseline cohort.
+
+Surfaces the numbers a grounding change is judged on, and — because notes carry the measured
+values (a P-node's "54.5 vs 47.5") — resolves every referenced node to text + note so table
+grounding is legible without a decoder ring.
+
+Usage: python eval_cohort.py --run-dir <run> --cohort <cohort_dir> [--baseline <cohort_dir>]
+"""
+import argparse
+import collections
+import json
+from pathlib import Path
+
+
+def load(p):
+    return json.loads(Path(p).read_text(encoding="utf-8"))
+
+
+def node_map(run_dir):
+    spans = load(Path(run_dir) / "spans.json")
+    return {s["node_id"]: {"text": s.get("text", ""), "note": s.get("note", "")} for s in spans}
+
+
+def show(nid, nm):
+    if not nid:
+        return "—"
+    m = nm.get(nid, {})
+    t = m.get("text", "?")[:60]
+    return f"{nid}={t!r}" + (f" [{m['note']}]" if m.get("note") else "")
+
+
+def gates(cohort):
+    ens = load(cohort / "ensemble.json")
+    rep = ens["reproducibility_mean_pairwise_jaccard"]
+    rpt = load(cohort / "canonical" / "canon_report.json")
+    reg = load(cohort / "canonical" / "registry.json")
+    return {
+        "assumption_raw_jaccard": rep.get("am_assumption_raw"),
+        "mechanism_raw_jaccard": rep.get("am_mechanism_raw"),
+        "cio_pattern_jaccard": rep.get("cio_pattern"),
+        "link_jaccard": rep.get("link_atomic"),
+        "band_counts": ens.get("band_counts"),
+        "cio_field_errors": rpt.get("cio_field_errors"),
+        "promoted_interventions": rpt.get("promoted_interventions"),
+        "eval_metric_clusters": sorted(reg.get("eval_metric", {}).keys()),
+        "am_cluster_bands": rpt.get("am_cluster_bands"),
+        "context_before_after": [rpt.get("before", {}).get("context"), rpt.get("after", {}).get("context")],
+    }
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--run-dir", required=True)
+    ap.add_argument("--cohort", required=True, help="cohort dir (holds ensemble.json + canonical/)")
+    ap.add_argument("--baseline", default=None, help="another cohort dir to diff against")
+    ap.add_argument("--tables", nargs="*", default=["Table 1", "Table 2", "Table 3"])
+    args = ap.parse_args()
+
+    nm = node_map(args.run_dir)
+    cohort = Path(args.cohort)
+    g = gates(cohort)
+
+    print(f"=== cohort: {cohort.name} ===")
+    print(f"reproducibility  assumption={g['assumption_raw_jaccard']}  mechanism={g['mechanism_raw_jaccard']}"
+          f"  cio={g['cio_pattern_jaccard']}  link={g['link_jaccard']}")
+    print(f"band_counts      {json.dumps(g['band_counts'], ensure_ascii=False)}")
+    print(f"cio_field_errors {g['cio_field_errors']}   promoted_interventions {g['promoted_interventions']}")
+    print(f"eval_metric      {g['eval_metric_clusters']}")
+    print(f"am_cluster_bands {g['am_cluster_bands']}   context {g['context_before_after'][0]} -> {g['context_before_after'][1]}")
+
+    if args.baseline:
+        gb = gates(Path(args.baseline))
+        print(f"\n=== vs baseline {Path(args.baseline).name} ===")
+        for k in ("cio_field_errors", "assumption_raw_jaccard", "mechanism_raw_jaccard"):
+            print(f"  {k}: {gb[k]} -> {g[k]}")
+        print(f"  eval_metric clusters: {len(gb['eval_metric_clusters'])} -> {len(g['eval_metric_clusters'])}")
+
+    # --- table grounding: consensus CIO cards anchored on a table, with node notes ---
+    cons = load(cohort / "canonical" / "cio_consensus.json")
+    print("\n=== table grounding (CIO cards anchored on tables; notes carry the numbers) ===")
+    for tbl in args.tables:
+        cards = [c for c in cons.values() if (c.get("provenance") or {}).get("location") == tbl]
+        print(f"\n-- {tbl}: {len(cards)} CIO card(s) --")
+        for c in cards:
+            print(f"  pattern   {show(c.get('pattern'), nm)}")
+            print(f"    metric  {show(c.get('eval_metric'), nm)}   dir={c.get('direction')}  class={c.get('pattern_class')}")
+            print(f"    interv  {show(c.get('intervention'), nm)}")
+            print(f"    ref     {show(c.get('reference'), nm)}")
+            if c.get("field_mismatch"):
+                print(f"    ⚠ mismatch {list(c['field_mismatch'].keys())}")
+
+
+if __name__ == "__main__":
+    main()

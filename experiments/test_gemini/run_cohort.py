@@ -26,10 +26,8 @@ HERE = Path(__file__).resolve().parent
 
 def prompt_set():
     """Read the current prompt versions straight from build_factors_split so the cohort id
-    reflects exactly what will run."""
-    import importlib
-    spec = importlib.util.spec_from_file_location("bfs", HERE / "build_factors_split.py")
-    # avoid importing (it needs an API key at import time) — parse the constants textually
+    reflects exactly what will run. Parse the constants textually — importing the module would
+    trigger its API-key check at import time."""
     text = (HERE / "build_factors_split.py").read_text(encoding="utf-8")
     vals = {}
     for key in ("CIO_PROMPT", "AM_PROMPT", "LINK_PROMPT"):
