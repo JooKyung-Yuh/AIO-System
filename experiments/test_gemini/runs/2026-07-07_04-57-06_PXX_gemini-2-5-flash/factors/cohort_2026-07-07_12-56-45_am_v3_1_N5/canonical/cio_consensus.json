@@ -11,6 +11,9 @@
       "C6",
       "C7"
     ],
+    "provenance": {
+      "location": "Section 1"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -39,6 +42,9 @@
     "context": [
       "C23"
     ],
+    "provenance": {
+      "location": "Section 1"
+    },
     "field_support": {
       "n_cards": 3
     },
@@ -68,6 +74,9 @@
       "C25",
       "C26"
     ],
+    "provenance": {
+      "location": "Section 1"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -99,6 +108,9 @@
       "C25",
       "C26"
     ],
+    "provenance": {
+      "location": "Section 1"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -129,6 +141,9 @@
       "C24",
       "C25"
     ],
+    "provenance": {
+      "location": "Section 1"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -165,6 +180,9 @@
       "C24",
       "C25"
     ],
+    "provenance": {
+      "location": "Section 1"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -193,6 +211,9 @@
     "context": [
       "C35"
     ],
+    "provenance": {
+      "location": "Figure 2"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -229,6 +250,9 @@
       "C83",
       "C86"
     ],
+    "provenance": {
+      "location": "Section 3.5"
+    },
     "field_support": {
       "n_cards": 3
     },
@@ -265,6 +289,9 @@
     "direction": "up",
     "pattern_class": "primary_result",
     "context": [],
+    "provenance": {
+      "location": "Figure 6"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -295,6 +322,9 @@
       "C114",
       "C115"
     ],
+    "provenance": {
+      "location": "Table 1"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -329,6 +359,9 @@
       "C117",
       "C118"
     ],
+    "provenance": {
+      "location": "Figure 7"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -360,6 +393,9 @@
       "C117",
       "C118"
     ],
+    "provenance": {
+      "location": "Figure 7"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -391,6 +427,9 @@
       "C122",
       "C127"
     ],
+    "provenance": {
+      "location": "Section 5.1"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -421,6 +460,9 @@
       "C122",
       "C127"
     ],
+    "provenance": {
+      "location": "Section 5.1"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -450,6 +492,9 @@
       "C120",
       "C121"
     ],
+    "provenance": {
+      "location": "Section 5.1"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -478,6 +523,9 @@
     "context": [
       "C120"
     ],
+    "provenance": {
+      "location": "Section 5.1"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -506,6 +554,9 @@
       "C122",
       "C123"
     ],
+    "provenance": {
+      "location": "Section 5.1"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -536,6 +587,9 @@
       "C124",
       "C125"
     ],
+    "provenance": {
+      "location": "Section 5.1"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -565,6 +619,9 @@
     "context": [
       "C127"
     ],
+    "provenance": {
+      "location": "Section 5.1"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -592,6 +649,9 @@
     "context": [
       "C127"
     ],
+    "provenance": {
+      "location": "Section 5.1"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -619,6 +679,9 @@
     "context": [
       "C126"
     ],
+    "provenance": {
+      "location": "Figure 8"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -642,6 +705,9 @@
     "direction": "up",
     "pattern_class": "comparison",
     "context": [],
+    "provenance": {
+      "location": "Figure 9"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -665,6 +731,9 @@
     "direction": "up",
     "pattern_class": "comparison",
     "context": [],
+    "provenance": {
+      "location": "Figure 9"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -691,6 +760,9 @@
       "C129",
       "C130"
     ],
+    "provenance": {
+      "location": "Section 5.2"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -719,6 +791,9 @@
     "context": [
       "C131"
     ],
+    "provenance": {
+      "location": "Section 5.2"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -746,6 +821,9 @@
     "context": [
       "C132"
     ],
+    "provenance": {
+      "location": "Section 5.2"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -780,6 +858,9 @@
     "context": [
       "C133"
     ],
+    "provenance": {
+      "location": "Section 5.2"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -807,6 +888,9 @@
     "context": [
       "C133"
     ],
+    "provenance": {
+      "location": "Section 5.2"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -834,6 +918,9 @@
     "context": [
       "C134"
     ],
+    "provenance": {
+      "location": "Section 5.2"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -868,6 +955,9 @@
     "context": [
       "C133"
     ],
+    "provenance": {
+      "location": "Section 5.2"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -896,6 +986,9 @@
       "C135",
       "C136"
     ],
+    "provenance": {
+      "location": "Section 5.2"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -924,6 +1017,9 @@
     "context": [
       "C135"
     ],
+    "provenance": {
+      "location": "Section 5.2"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -966,6 +1062,9 @@
       "C143",
       "C144"
     ],
+    "provenance": {
+      "location": "Section 5.3"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -997,6 +1096,9 @@
       "C137",
       "C145"
     ],
+    "provenance": {
+      "location": "Section 5.3"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1026,6 +1128,9 @@
       "C137",
       "C145"
     ],
+    "provenance": {
+      "location": "Section 5.3"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1054,6 +1159,9 @@
     "context": [
       "C137"
     ],
+    "provenance": {
+      "location": "Section 5.3"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1081,6 +1189,9 @@
     "context": [
       "C137"
     ],
+    "provenance": {
+      "location": "Section 5.3"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1111,6 +1222,9 @@
       "C140",
       "C141"
     ],
+    "provenance": {
+      "location": "Table 3"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1154,6 +1268,9 @@
       "C140",
       "C141"
     ],
+    "provenance": {
+      "location": "Table 3"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1197,6 +1314,9 @@
       "C150",
       "C151"
     ],
+    "provenance": {
+      "location": "Section 6"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1230,6 +1350,9 @@
       "C150",
       "C151"
     ],
+    "provenance": {
+      "location": "Section 6"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1263,6 +1386,9 @@
       "C154",
       "C155"
     ],
+    "provenance": {
+      "location": "Section 6"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1294,6 +1420,9 @@
       "C214",
       "C215"
     ],
+    "provenance": {
+      "location": "Figure 14"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1333,6 +1462,9 @@
       "C216",
       "C217"
     ],
+    "provenance": {
+      "location": "Figure 15"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1371,6 +1503,9 @@
     "context": [
       "C218"
     ],
+    "provenance": {
+      "location": "Section B.1"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1398,6 +1533,9 @@
     "context": [
       "C218"
     ],
+    "provenance": {
+      "location": "Section B.1"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1423,6 +1561,9 @@
     "direction": "up",
     "pattern_class": "primary_result",
     "context": [],
+    "provenance": {
+      "location": "Section B.1"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1450,6 +1591,9 @@
       "C220",
       "C222"
     ],
+    "provenance": {
+      "location": "Section B.2"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1481,6 +1625,9 @@
       "C220",
       "C222"
     ],
+    "provenance": {
+      "location": "Section B.2"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1508,6 +1655,9 @@
     "direction": null,
     "pattern_class": "primary_result",
     "context": [],
+    "provenance": {
+      "location": "Figure 19"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1534,6 +1684,9 @@
       "C256",
       "C257"
     ],
+    "provenance": {
+      "location": "Figure 19"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1563,6 +1716,9 @@
       "C258",
       "C259"
     ],
+    "provenance": {
+      "location": "Figure 19"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1591,6 +1747,9 @@
     "context": [
       "C230"
     ],
+    "provenance": {
+      "location": "Figure 17"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1619,6 +1778,9 @@
       "C230",
       "C231"
     ],
+    "provenance": {
+      "location": "Figure 17"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1648,6 +1810,9 @@
       "C230",
       "C232"
     ],
+    "provenance": {
+      "location": "Figure 17"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1680,6 +1845,9 @@
       "C237",
       "C238"
     ],
+    "provenance": {
+      "location": "Figure 17"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1715,6 +1883,9 @@
       "C241",
       "C242"
     ],
+    "provenance": {
+      "location": "Figure 17"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1746,6 +1917,9 @@
     "context": [
       "C243"
     ],
+    "provenance": {
+      "location": "Figure 18"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1774,6 +1948,9 @@
       "C243",
       "C244"
     ],
+    "provenance": {
+      "location": "Figure 18"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1803,6 +1980,9 @@
       "C243",
       "C245"
     ],
+    "provenance": {
+      "location": "Figure 18"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1835,6 +2015,9 @@
       "C250",
       "C251"
     ],
+    "provenance": {
+      "location": "Figure 18"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1870,6 +2053,9 @@
       "C254",
       "C255"
     ],
+    "provenance": {
+      "location": "Figure 18"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1903,6 +2089,9 @@
       "C263",
       "C265"
     ],
+    "provenance": {
+      "location": "Figure 20"
+    },
     "field_support": {
       "n_cards": 3
     },
@@ -1937,6 +2126,9 @@
       "C273",
       "C274"
     ],
+    "provenance": {
+      "location": "Figure 21"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1970,6 +2162,9 @@
       "C276",
       "C277"
     ],
+    "provenance": {
+      "location": "Figure 22 caption | Figure 22 'TTT process' panels"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -1998,6 +2193,9 @@
     "context": [
       "C278"
     ],
+    "provenance": {
+      "location": "Figure 22 caption | Figure 22 'TTT process' panels (early stages)"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -2025,6 +2223,9 @@
     "context": [
       "C279"
     ],
+    "provenance": {
+      "location": "Figure 22 caption | Figure 22 'TTT process' panels (later stages)"
+    },
     "field_support": {
       "n_cards": 5
     },
@@ -2050,6 +2251,9 @@
     "direction": null,
     "pattern_class": "primary_result",
     "context": [],
+    "provenance": {
+      "location": "Section 5.2"
+    },
     "field_support": {
       "n_cards": 2
     },
@@ -2073,6 +2277,9 @@
     "direction": null,
     "pattern_class": "primary_result",
     "context": [],
+    "provenance": {
+      "location": "Section 6"
+    },
     "field_support": {
       "n_cards": 2
     },
@@ -2096,6 +2303,9 @@
     "direction": null,
     "pattern_class": "primary_result",
     "context": [],
+    "provenance": {
+      "location": "Section 6"
+    },
     "field_support": {
       "n_cards": 2
     },
@@ -2119,6 +2329,9 @@
     "direction": "flat",
     "pattern_class": "primary_result",
     "context": [],
+    "provenance": {
+      "location": "Section 7"
+    },
     "field_support": {
       "n_cards": 2
     },
@@ -2149,6 +2362,9 @@
     "direction": "up",
     "pattern_class": "primary_result",
     "context": [],
+    "provenance": {
+      "location": "Section B.2"
+    },
     "field_support": {
       "n_cards": 2
     },
@@ -2172,6 +2388,9 @@
     "direction": null,
     "pattern_class": "primary_result",
     "context": [],
+    "provenance": {
+      "location": "Section C.1"
+    },
     "field_support": {
       "n_cards": 2
     },
@@ -2195,6 +2414,9 @@
     "direction": null,
     "pattern_class": "primary_result",
     "context": [],
+    "provenance": {
+      "location": "Section C.2"
+    },
     "field_support": {
       "n_cards": 2
     },
@@ -2218,6 +2440,9 @@
     "direction": "up",
     "pattern_class": "primary_result",
     "context": [],
+    "provenance": {
+      "location": "Section C.4"
+    },
     "field_support": {
       "n_cards": 2
     },
