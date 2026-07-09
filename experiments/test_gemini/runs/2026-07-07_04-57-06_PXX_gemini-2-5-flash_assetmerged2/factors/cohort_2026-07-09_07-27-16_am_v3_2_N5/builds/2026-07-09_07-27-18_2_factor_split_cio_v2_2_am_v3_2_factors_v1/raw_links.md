@@ -1,0 +1,340 @@
+```json
+[
+  {
+    "source_cio": "CIO_001",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Our framework, termed Vision ARC (VARC), achieves 60.4% accuracy on the ARC-1 benchmark... Our results are competitive with those of leading LLMs and close the gap to average human performance."
+  },
+  {
+    "source_cio": "CIO_002",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "VARC achieves 54.5% accuracy on the ARC-1 benchmark, using a small model with only 18 million parameters."
+  },
+  {
+    "source_cio": "CIO_003",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This result substantially surpasses the best recurrent methods [53, 27] that are also trained from scratch on ARC."
+  },
+  {
+    "source_cio": "CIO_004",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Combining VARC models through ensembling [29] further improves accuracy to 60.4%, matching the reported average human performance [31]."
+  },
+  {
+    "source_cio": "CIO_005",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Our results are competitive with those of leading LLMs and close the gap to average human performance."
+  },
+  {
+    "source_cio": "CIO_008",
+    "target_am": "AM_021",
+    "direction": "weaken",
+    "explicit": true,
+    "evidence": "Going beyond this regime can lead to overfitting in our current setting, as shown in Tab. 1 for the 66M ViT model."
+  },
+  {
+    "source_cio": "CIO_013",
+    "target_am": "AM_006",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "To demonstrate this effect... we replace the 2D ROPE... with a 1D ROPE and observe a degradation of 3.5 points."
+  },
+  {
+    "source_cio": "CIO_014",
+    "target_am": "AM_006",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Extending from 1D positional embedding to its 2D counterpart is beneficial: see Fig. 7(b)(c)."
+  },
+  {
+    "source_cio": "CIO_015",
+    "target_am": "AM_002",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "the 2×2 patchification leads to a noticeable gain of 2.4 points... each patch can cover multiple colors... which substantially enriches the data space."
+  },
+  {
+    "source_cio": "CIO_016",
+    "target_am": "AM_002",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "each patch can cover multiple colors (as in natural images), which substantially enriches the data space for learning."
+  },
+  {
+    "source_cio": "CIO_017",
+    "target_am": "AM_006",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "To demonstrate this effect... we replace the 2D ROPE... with a 1D ROPE and observe a degradation of 3.5 points."
+  },
+  {
+    "source_cio": "CIO_019",
+    "target_am": "AM_003",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "In Fig. 7(e), we apply fully flexible translation augmentation on the canvas... this setting yields an additional gain of 2.9 points."
+  },
+  {
+    "source_cio": "CIO_019",
+    "target_am": "AM_004",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "In Fig. 7(e), we apply fully flexible translation augmentation on the canvas... this setting yields an additional gain of 2.9 points."
+  },
+  {
+    "source_cio": "CIO_020",
+    "target_am": "AM_003",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "In Fig. 7(f), we further apply the scale augmentation enabled by the concept of canvas. Scale augmentation yields a substantial gain of 6.2 points."
+  },
+  {
+    "source_cio": "CIO_020",
+    "target_am": "AM_004",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Scale augmentation yields a substantial gain of 6.2 points."
+  },
+  {
+    "source_cio": "CIO_020",
+    "target_am": "AM_009",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This can explain why scale augmentation yields a substantial gain."
+  },
+  {
+    "source_cio": "CIO_021",
+    "target_am": "AM_009",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This can explain why scale augmentation yields a substantial gain."
+  },
+  {
+    "source_cio": "CIO_023",
+    "target_am": "AM_010",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "offline training greatly improves the performance of TTT, suggesting that common sense about the visual world can be learned."
+  },
+  {
+    "source_cio": "CIO_024",
+    "target_am": "AM_011",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "even without offline training, our TTT strategy can achieve nontrivial accuracy (26.4), suggesting that some tasks... can be solved tabula rasa."
+  },
+  {
+    "source_cio": "CIO_025",
+    "target_am": "AM_022",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "performing TTT independently for each test task yields substantially better performance... even though the latter relies on a stronger assumption."
+  },
+  {
+    "source_cio": "CIO_028",
+    "target_am": "AM_007",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "multi-view inference further boosts to 49.8, thanks to majority voting."
+  },
+  {
+    "source_cio": "CIO_029",
+    "target_am": "AM_007",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "multi-view inference further boosts to 54.5, thanks to majority voting."
+  },
+  {
+    "source_cio": "CIO_030",
+    "target_am": "AM_023",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "in ARC, a mistake on even a single pixel renders the entire prediction incorrect. This may explain the large gain seen here."
+  },
+  {
+    "source_cio": "CIO_031",
+    "target_am": "AM_023",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This may explain the large gain seen here."
+  },
+  {
+    "source_cio": "CIO_032",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Our single-model result is based on ViT, with mean±std of 54.5±0.7 (ARC-1) and 8.3±0.4 (ARC-2)."
+  },
+  {
+    "source_cio": "CIO_033",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This result closes the gap with the reported average human performance (60.2 [31])."
+  },
+  {
+    "source_cio": "CIO_037",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "our method substantially outperforms the recurrent models: HRM [53] and TRM [27]."
+  },
+  {
+    "source_cio": "CIO_038",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Our model compares favorably with some of the most powerful LLMs... uses a model that is several orders of magnitude smaller."
+  },
+  {
+    "source_cio": "CIO_040",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Doing so boosts our result to 60.4. This result closes the gap with the reported average human performance (60.2 [31])."
+  },
+  {
+    "source_cio": "CIO_067",
+    "target_am": "AM_012",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "These attention maps show that our model can correctly reason about the relationship between a source pixel and its target pixel."
+  },
+  {
+    "source_cio": "CIO_068",
+    "target_am": "AM_013",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "some layers exhibit strong attention to the 3 × 3 neighborhood, reflecting the influence of the pattern's core."
+  },
+  {
+    "source_cio": "CIO_068",
+    "target_am": "AM_014",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "some other layers (e.g., layers 7-9) focus on the outward-radiating rays, corresponding to the rule that extends colored pixels."
+  },
+  {
+    "source_cio": "CIO_069",
+    "target_am": "AM_015",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This visualization suggests that our method attempts to learn the relations between different tasks, which is an essential ability."
+  },
+  {
+    "source_cio": "CIO_075",
+    "target_am": "AM_017",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This result indicates that our model produces correct predictions in some of the many views, although such correct cases are not sufficiently populated."
+  },
+  {
+    "source_cio": "CIO_076",
+    "target_am": "AM_017",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This result indicates that our model produces correct predictions in some of the many views, although such correct cases are not sufficiently populated."
+  },
+  {
+    "source_cio": "CIO_077",
+    "target_am": "AM_018",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "our model attempts to interpret the rule as either \"going-through-only\" (attempt 1) or \"touching\" (attempt 2)."
+  },
+  {
+    "source_cio": "CIO_077",
+    "target_am": "AM_024",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Although most ARC tasks are unambiguous, some may admit multiple plausible explanations or rules. Here, in the given three demonstration examples... it is unclear whether..."
+  },
+  {
+    "source_cio": "CIO_078",
+    "target_am": "AM_013",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Early layers tend to focus on local transformations and context."
+  },
+  {
+    "source_cio": "CIO_081",
+    "target_am": "AM_013",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Block 3 Attention focuses on endpoints of all lines for all pixels."
+  },
+  {
+    "source_cio": "CIO_082",
+    "target_am": "AM_013",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "some layers exhibit strong attention to the 3 × 3 neighborhood, reflecting the influence of the pattern's core."
+  },
+  {
+    "source_cio": "CIO_083",
+    "target_am": "AM_014",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "some other layers (e.g., layers 7-9) focus on the outward-radiating rays, corresponding to the rule that extends colored pixels."
+  },
+  {
+    "source_cio": "CIO_084",
+    "target_am": "AM_016",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "These designs encourage the model to pay more attention to foregrounds and therefore improve accuracy."
+  },
+  {
+    "source_cio": "CIO_085",
+    "target_am": "AM_019",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This visualization illustrates the model's behavior of adapting to task-specific transformations through few-shot test-time training."
+  },
+  {
+    "source_cio": "CIO_086",
+    "target_am": "AM_019",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This visualization illustrates the model's behavior of adapting to task-specific transformations through few-shot test-time training."
+  },
+  {
+    "source_cio": "CIO_087",
+    "target_am": "AM_020",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "As the multi-view inference cost is negligible compared with test-time training cost, it is virtually nearly free to use many views."
+  },
+  {
+    "source_cio": "CIO_088",
+    "target_am": "AM_019",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This visualization illustrates the model's behavior of adapting to task-specific transformations through few-shot test-time training."
+  },
+  {
+    "source_cio": "CIO_089",
+    "target_am": "AM_019",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This visualization illustrates the model's behavior of adapting to task-specific transformations through few-shot test-time training."
+  },
+  {
+    "source_cio": "CIO_090",
+    "target_am": "AM_019",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This visualization illustrates the model's behavior of adapting to task-specific transformations through few-shot test-time training."
+  }
+]
+```

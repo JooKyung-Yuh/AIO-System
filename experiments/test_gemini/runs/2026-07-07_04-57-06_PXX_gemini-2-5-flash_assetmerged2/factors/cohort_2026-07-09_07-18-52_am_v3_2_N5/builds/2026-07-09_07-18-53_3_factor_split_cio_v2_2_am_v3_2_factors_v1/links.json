@@ -1,0 +1,170 @@
+[
+  {
+    "source_cio": "CIO_013",
+    "target_am": "AM_005",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "we replace the 2D ROPE... with a 1D ROPE and observe a degradation of 3.5 points"
+  },
+  {
+    "source_cio": "CIO_014",
+    "target_am": "AM_005",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Extending from 1D positional embedding to its 2D counterpart is beneficial"
+  },
+  {
+    "source_cio": "CIO_015",
+    "target_am": "AM_005",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Extending from 1D positional embedding to its 2D counterpart is beneficial"
+  },
+  {
+    "source_cio": "CIO_016",
+    "target_am": "AM_005",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Extending from 1D positional embedding to its 2D counterpart is beneficial"
+  },
+  {
+    "source_cio": "CIO_017",
+    "target_am": "AM_005",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "we replace the 2D ROPE... with a 1D ROPE and observe a degradation of 3.5 points"
+  },
+  {
+    "source_cio": "CIO_018",
+    "target_am": "AM_002",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "2×2 patchification leads to a noticeable gain... which substantially enriches the data space for learning."
+  },
+  {
+    "source_cio": "CIO_019",
+    "target_am": "AM_003",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "fully flexible translation augmentation on the canvas... yields an additional gain of 2.9 points"
+  },
+  {
+    "source_cio": "CIO_020",
+    "target_am": "AM_003",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Scale augmentation yields a substantial gain of 6.2 points."
+  },
+  {
+    "source_cio": "CIO_021",
+    "target_am": "AM_003",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This can explain why scale augmentation yields a substantial gain."
+  },
+  {
+    "source_cio": "CIO_022",
+    "target_am": "AM_006",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "increasing depth and/or width leads to higher accuracy as a result of better fitting."
+  },
+  {
+    "source_cio": "CIO_023",
+    "target_am": "AM_008",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "offline training greatly improves the performance of TTT, suggesting that common sense... can be learned"
+  },
+  {
+    "source_cio": "CIO_026",
+    "target_am": "AM_008",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This comparison suggests that increasing the amount of offline training data is beneficial"
+  },
+  {
+    "source_cio": "CIO_027",
+    "target_am": "AM_008",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "suggesting that the diversity of training tasks is helpful for generalization."
+  },
+  {
+    "source_cio": "CIO_067",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "These attention maps show that our model can correctly reason about the relationship"
+  },
+  {
+    "source_cio": "CIO_068",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "different layers exhibit different specialties: some layers attend to the pixels that are to be copied"
+  },
+  {
+    "source_cio": "CIO_069",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This visualization suggests that our method attempts to learn the relations between different tasks"
+  },
+  {
+    "source_cio": "CIO_070",
+    "target_am": "AM_008",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This comparison suggests that increasing the amount of offline training data is beneficial"
+  },
+  {
+    "source_cio": "CIO_071",
+    "target_am": "AM_008",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "suggesting that the diversity of training tasks is helpful for generalization."
+  },
+  {
+    "source_cio": "CIO_074",
+    "target_am": "AM_008",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "suggesting that the diversity of training tasks is helpful for generalization."
+  },
+  {
+    "source_cio": "CIO_077",
+    "target_am": "AM_010",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "our method uncovers different solutions that are plausible."
+  },
+  {
+    "source_cio": "CIO_086",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Layers at different depths tend to focus on different structures... deep layers are more task-specialized."
+  },
+  {
+    "source_cio": "CIO_088",
+    "target_am": "AM_011",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "As the test-time training progresses, the model's predictions gradually converge toward the correct output."
+  },
+  {
+    "source_cio": "CIO_089",
+    "target_am": "AM_011",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "In early epochs, the model produces coarse... in later epochs, the model can improve the solutions, e.g., by refining color and spatial arrangement."
+  },
+  {
+    "source_cio": "CIO_090",
+    "target_am": "AM_011",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This visualization illustrates the model's behavior of adapting to task-specific transformations through few-shot test-time training."
+  }
+]

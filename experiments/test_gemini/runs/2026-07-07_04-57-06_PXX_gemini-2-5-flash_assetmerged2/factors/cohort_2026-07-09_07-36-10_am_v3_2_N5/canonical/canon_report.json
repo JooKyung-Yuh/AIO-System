@@ -1,0 +1,35 @@
+{
+  "n_builds": 5,
+  "before": {
+    "context": 110,
+    "intervention": 47,
+    "eval_metric": 23,
+    "am_atoms_union": 23
+  },
+  "after": {
+    "context": 96,
+    "intervention": 47,
+    "eval_metric": 6,
+    "am_clusters": 11
+  },
+  "am_cluster_bands": {
+    "observed": 11,
+    "supported": 0,
+    "uncertain": 0
+  },
+  "am_status": {
+    "tested": 8,
+    "assumed": 2,
+    "contested": 1
+  },
+  "propose_test_targets": [
+    "MECH_attention_masks_encourage_foreground_focus_improving",
+    "MECH_patchification_convolution_introduces_locality_translation_invariance"
+  ],
+  "context_dropped": 1,
+  "merge_queue_pending": 0,
+  "cio_field_errors": 10,
+  "promoted_interventions": 2,
+  "link_jaccard_raw_baseline": 0.762,
+  "link_jaccard_on_canonical_am": 0.738
+}
