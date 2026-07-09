@@ -29,6 +29,11 @@ PRIMARY_CLS, COMPARISON_CLS = "#1baf7a", "#eb6834"
 # categorical by canonical type (hub view)
 TYPE_COLOR = {"mechanism": "#2a78d6", "assumption": "#7c4dff", "intervention": "#eb6834",
               "eval_metric": "#1baf7a", "context": "#898781"}
+# belief node color by ontology_type, grouped by link_policy so the picture reads by policy:
+# direct = blue/teal, paper_thesis = gold, qualifier family = purple/magenta, demoted = grey.
+ONTOLOGY_COLOR = {"mechanism": "#2a78d6", "aggregate_claim": "#1f9e8f", "paper_thesis": "#d4a017",
+                  "assumption": "#7c4dff", "scope_condition": "#9c6ade", "precondition": "#b39ddb",
+                  "limitation": "#c2185b", "qualitative_observation": "#898781"}
 BAND_ALPHA = {"observed": 0.9, "supported": 0.55, "uncertain": 0.28}
 
 
@@ -170,7 +175,7 @@ def plot_canonical_graph(cons, registry, direct, nondirect, loc_order, out):
         rec = am_reg[a]
         v = out_votes[a]
         ax.scatter(X_AM, y_am[a], s=70 + 120 * (rec.get("ref_count", 0) ** 0.5),
-                   color=TYPE_COLOR.get(rec.get("type"), INK),
+                   color=ONTOLOGY_COLOR.get(rec.get("ontology_type"), TYPE_COLOR.get(rec.get("type"), INK)),
                    alpha=BAND_ALPHA.get(rec.get("band"), 0.9),
                    edgecolors=MUTED, linewidths=0.6, zorder=3)
         ax.text(X_AM + 0.06, y_am[a], (rec.get("gloss") or a)[:34], va="center", ha="left",
@@ -187,8 +192,23 @@ def plot_canonical_graph(cons, registry, direct, nondirect, loc_order, out):
         Patch(facecolor=WEAKEN, edgecolor="none", label="weaken"),
         Line2D([0], [0], color=MUTED, lw=1.0, linestyle=(0, (2, 2)), label="re-routed (not belief)"),
     ]
-    ax.legend(handles=legend, loc="lower center", bbox_to_anchor=(0.5, -0.04),
-              ncol=6, fontsize=8, frameon=False)
+    leg1 = ax.legend(handles=legend, loc="lower center", bbox_to_anchor=(0.5, -0.04),
+                     ncol=6, fontsize=8, frameon=False)
+    ax.add_artist(leg1)
+    onto_legend = [
+        Line2D([0], [0], marker="o", linestyle="none", markersize=8, markeredgecolor="none",
+               markerfacecolor=ONTOLOGY_COLOR["mechanism"], label="mechanism / aggregate (direct)"),
+        Line2D([0], [0], marker="o", linestyle="none", markersize=8, markeredgecolor="none",
+               markerfacecolor=ONTOLOGY_COLOR["paper_thesis"], label="paper_thesis (rolls_up)"),
+        Line2D([0], [0], marker="o", linestyle="none", markersize=8, markeredgecolor="none",
+               markerfacecolor=ONTOLOGY_COLOR["assumption"], label="qualifier (assumption / scope)"),
+        Line2D([0], [0], marker="o", linestyle="none", markersize=8, markeredgecolor="none",
+               markerfacecolor=ONTOLOGY_COLOR["limitation"], label="limitation"),
+        Line2D([0], [0], marker="o", linestyle="none", markersize=8, markeredgecolor="none",
+               markerfacecolor=ONTOLOGY_COLOR["qualitative_observation"], label="demoted observation"),
+    ]
+    ax.legend(handles=onto_legend, loc="upper right", bbox_to_anchor=(1.04, 1.0), fontsize=7.5,
+              frameon=False, title="belief node type", title_fontsize=8)
     ax.set_xlim(-0.6, 2.75)
     ax.set_ylim(-0.05, 1.1)
     ax.axis("off")

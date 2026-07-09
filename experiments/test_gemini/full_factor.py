@@ -9,8 +9,9 @@ registry.json (canonical nodes + belief status), and spans.json (raw text + meas
     group id shown so shared variables are visible;
   * the beliefs it votes on (canonical M/A), each tagged with its cohort status
     (tested / contested / assumed / weakly-tested);
-  * a propose_test section: the assumed beliefs (asserted but with zero observation) — the AIO
-    output RAG/caption systems don't produce.
+  * a propose_test section: untested DIRECT claims (direct_link_allowed, asserted with zero
+    observation) — the AIO output RAG/caption systems don't produce — kept separate from
+    unobserved qualifiers (assumption/scope/limitation with no observation, which are not beliefs).
 
 Deterministic. Writes full_factor.md + full_factor.json next to the cohort's canonical/.
 """
@@ -102,18 +103,20 @@ def render(cohort, run_dir):
 
     propose = sorted((rec for rec in am_reg.values() if rec.get("propose_test")),
                      key=lambda r: r.get("canonical_id", ""))
-    return factors, propose, am_reg
+    unobserved_q = sorted((rec for rec in am_reg.values() if rec.get("unobserved_qualifier")),
+                          key=lambda r: r.get("canonical_id", ""))
+    return factors, propose, unobserved_q, am_reg
 
 
-def to_md(factors, propose, cohort_name):
+def to_md(factors, propose, unobserved_q, cohort_name):
     st_ct = collections.Counter(b["status"] for f in factors for b in f["beliefs"])
     pol_ct = collections.Counter()
     for f in factors:
         for k in ("beliefs", "rolls_up", "qualifiers", "demoted"):
             pol_ct[k] += len(f[k])
     lines = [f"# Full factor graph — {cohort_name}", "",
-             f"{len(factors)} observations · {len(propose)} propose_test targets "
-             f"(asserted beliefs with no observation).",
+             f"{len(factors)} observations · {len(propose)} propose_test (untested direct claims) · "
+             f"{len(unobserved_q)} unobserved qualifiers.",
              "Belief edges are link_policy-enforced: only **direct** edges (↑/↓) are genuine "
              "Observation→mechanism belief_update; rolls_up / qualifier / demoted are re-routed and "
              "are **not** belief_update.", ""]
@@ -146,10 +149,16 @@ def to_md(factors, propose, cohort_name):
         if f["field_mismatch"]:
             lines.append(f"- ⚠️ field mismatch: {f['field_mismatch']}")
         lines.append("")
-    lines += ["## propose_test — asserted but untested here (AIO differentiator)", ""]
+    lines += ["## propose_test — untested direct claims (AIO differentiator)",
+              "_direct_link_allowed beliefs asserted with zero observation — candidates for a test._", ""]
     for rec in propose:
         lines.append(f"- **{rec.get('canonical_id')}** — {rec.get('gloss')}  "
-                     f"(_{rec.get('type')}_, {len(rec.get('members') or [])} raw nodes)")
+                     f"(_{rec.get('ontology_type') or rec.get('type')}_, {len(rec.get('members') or [])} raw nodes)")
+    lines += ["", "## unobserved qualifiers — assumptions / scope / limitations with no observation",
+              "_flagged, but NOT propose_test targets: a qualifier is not a belief to strengthen._", ""]
+    for rec in unobserved_q:
+        lines.append(f"- **{rec.get('canonical_id')}** — {rec.get('gloss')}  "
+                     f"(_{rec.get('ontology_type') or rec.get('type')}_, {len(rec.get('members') or [])} raw nodes)")
     lines += ["", f"_direct belief edge status tally: {dict(st_ct)}_",
               f"_edges by policy: {dict(pol_ct)}_"]
     return "\n".join(lines)
@@ -161,12 +170,15 @@ def main():
     ap.add_argument("--cohort", required=True, help="cohort dir (ensemble.json + canonical/)")
     args = ap.parse_args()
     cohort = Path(args.cohort)
-    factors, propose, _ = render(cohort, args.run_dir)
+    factors, propose, unobserved_q, _ = render(cohort, args.run_dir)
     (cohort / "full_factor.json").write_text(
-        json.dumps({"factors": factors, "propose_test": [r.get("canonical_id") for r in propose]},
+        json.dumps({"factors": factors,
+                    "propose_test_direct_claims": [r.get("canonical_id") for r in propose],
+                    "unobserved_qualifiers": [r.get("canonical_id") for r in unobserved_q]},
                    indent=2, ensure_ascii=False), encoding="utf-8")
-    (cohort / "full_factor.md").write_text(to_md(factors, propose, cohort.name), encoding="utf-8")
-    print(f"{len(factors)} factors, {len(propose)} propose_test -> {cohort/'full_factor.md'}")
+    (cohort / "full_factor.md").write_text(to_md(factors, propose, unobserved_q, cohort.name), encoding="utf-8")
+    print(f"{len(factors)} factors, {len(propose)} propose_test, {len(unobserved_q)} unobserved_qual "
+          f"-> {cohort/'full_factor.md'}")
 
 
 if __name__ == "__main__":

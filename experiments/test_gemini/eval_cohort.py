@@ -58,9 +58,9 @@ def summarize_across(cohort_dirs, out=None):
     varies run-to-run), so one number can't tell a real prompt gain from luck. Repeating the
     SAME prompt across cohorts and reporting mean±std gives the confidence interval: only a
     shift larger than the std is signal. Pure deterministic aggregation — no LLM."""
-    keys = ["assum", "mech", "cio", "link", "field_errors", "promoted", "comp_refs", "comp_total",
+    keys = ["assum", "mech", "cio", "link_raw", "field_errors", "promoted", "comp_refs", "comp_total",
             "st_assumed", "st_contested", "st_tested", "st_rollup", "st_qualifier", "st_demoted",
-            "be_direct", "be_rolls_up", "be_qualifier", "be_demoted", "propose_test"]
+            "be_direct", "be_rolls_up", "be_qualifier", "be_demoted", "propose_test", "unobserved_qual"]
     acc = {k: [] for k in keys}
     per_cohort = []
     prompt_sets = set()
@@ -81,7 +81,7 @@ def summarize_across(cohort_dirs, out=None):
             "assum": j.get("am_assumption_raw"),
             "mech": j.get("am_mechanism_raw"),
             "cio": j.get("cio_pattern"),
-            "link": j.get("link_atomic"),
+            "link_raw": j.get("link_atomic"),        # raw ensemble atomic-link Jaccard, NOT ontology-enforced
             "field_errors": rpt.get("cio_field_errors"),
             "promoted": rpt.get("promoted_interventions"),
             "comp_refs": sum(1 for v in comp if v.get("reference")),
@@ -96,7 +96,8 @@ def summarize_across(cohort_dirs, out=None):
             "be_rolls_up": bep.get("rolls_up", 0),
             "be_qualifier": bep.get("qualifier", 0),
             "be_demoted": bep.get("demoted", 0),
-            "propose_test": len(rpt.get("propose_test_targets") or []),
+            "propose_test": len(rpt.get("propose_test_direct_claims") or []),
+            "unobserved_qual": len(rpt.get("unobserved_qualifiers") or []),
         }
         per_cohort.append(row)
         for k in keys:
@@ -165,7 +166,7 @@ def main():
 
     print(f"=== cohort: {cohort.name} ===")
     print(f"reproducibility  assumption={g['assumption_raw_jaccard']}  mechanism={g['mechanism_raw_jaccard']}"
-          f"  cio={g['cio_pattern_jaccard']}  link={g['link_jaccard']}")
+          f"  cio={g['cio_pattern_jaccard']}  link_raw={g['link_jaccard']}")
     print(f"band_counts      {json.dumps(g['band_counts'], ensure_ascii=False)}")
     print(f"cio_field_errors {g['cio_field_errors']}   promoted_interventions {g['promoted_interventions']}")
     print(f"eval_metric      {g['eval_metric_clusters']}")

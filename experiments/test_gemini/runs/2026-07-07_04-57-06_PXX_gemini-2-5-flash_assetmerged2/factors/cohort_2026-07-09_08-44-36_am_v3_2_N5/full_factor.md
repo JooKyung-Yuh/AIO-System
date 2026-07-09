@@ -1,6 +1,6 @@
 # Full factor graph — cohort_2026-07-09_08-44-36_am_v3_2_N5
 
-100 observations · 5 propose_test targets (asserted beliefs with no observation).
+100 observations · 2 propose_test (untested direct claims) · 3 unobserved qualifiers.
 Belief edges are link_policy-enforced: only **direct** edges (↑/↓) are genuine Observation→mechanism belief_update; rolls_up / qualifier / demoted are re-routed and are **not** belief_update.
 
 ## Observations (φ) → beliefs (δ)
@@ -601,13 +601,18 @@ Belief edges are link_policy-enforced: only **direct** edges (↑/↓) are genui
     - _(no direct belief edge)_
     - ∅ _demoted-observation (not belief)_ (n5) TTT visualization shows model adapting to task-specific tran
 
-## propose_test — asserted but untested here (AIO differentiator)
+## propose_test — untested direct claims (AIO differentiator)
+_direct_link_allowed beliefs asserted with zero observation — candidates for a test._
 
-- **ASM_larger_models_beyond_current_regime_lead** — Larger models beyond current regime lead to overfitting.  (_assumption_, 1 raw nodes)
-- **ASM_multi_view_inference_cost_negligible_compared** — Multi-view inference cost is negligible compared to TTT.  (_assumption_, 1 raw nodes)
-- **ASM_multiple_unseen_tasks_cannot_assumed_simultaneously** — Multiple unseen tasks cannot be assumed simultaneously.  (_assumption_, 2 raw nodes)
 - **MECH_attention_masks_loss_focus_improve_foreground** — Attention masks and loss focus improve foreground attention/accuracy.  (_mechanism_, 1 raw nodes)
 - **MECH_average_pooling_aggregates_predictions_raw_grid** — Average pooling aggregates predictions for raw grid locations.  (_mechanism_, 1 raw nodes)
+
+## unobserved qualifiers — assumptions / scope / limitations with no observation
+_flagged, but NOT propose_test targets: a qualifier is not a belief to strengthen._
+
+- **ASM_larger_models_beyond_current_regime_lead** — Larger models beyond current regime lead to overfitting.  (_limitation_, 1 raw nodes)
+- **ASM_multi_view_inference_cost_negligible_compared** — Multi-view inference cost is negligible compared to TTT.  (_scope_condition_, 1 raw nodes)
+- **ASM_multiple_unseen_tasks_cannot_assumed_simultaneously** — Multiple unseen tasks cannot be assumed simultaneously.  (_assumption_, 2 raw nodes)
 
 _direct belief edge status tally: {'tested': 12, 'weakly-tested': 5}_
 _edges by policy: {'beliefs': 17, 'rolls_up': 4, 'qualifiers': 7, 'demoted': 6}_

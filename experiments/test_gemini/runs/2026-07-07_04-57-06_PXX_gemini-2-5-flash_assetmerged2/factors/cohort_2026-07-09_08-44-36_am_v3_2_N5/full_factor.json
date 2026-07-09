@@ -3506,11 +3506,13 @@
       ]
     }
   ],
-  "propose_test": [
-    "ASM_larger_models_beyond_current_regime_lead",
-    "ASM_multi_view_inference_cost_negligible_compared",
-    "ASM_multiple_unseen_tasks_cannot_assumed_simultaneously",
+  "propose_test_direct_claims": [
     "MECH_attention_masks_loss_focus_improve_foreground",
     "MECH_average_pooling_aggregates_predictions_raw_grid"
+  ],
+  "unobserved_qualifiers": [
+    "ASM_larger_models_beyond_current_regime_lead",
+    "ASM_multi_view_inference_cost_negligible_compared",
+    "ASM_multiple_unseen_tasks_cannot_assumed_simultaneously"
   ]
 }

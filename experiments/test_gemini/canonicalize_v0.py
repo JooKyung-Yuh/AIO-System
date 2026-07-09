@@ -566,13 +566,17 @@ def main():
         if rec["link_policy"] == "direct_link_allowed":
             st, s_obs, w_obs, propose = derive_am_status(rec, edges, STATUS_MIN_BUILDS)
             rec["status"], rec["strengthened_by"], rec["weakened_by"], rec["propose_test"] = st, s_obs, w_obs, propose
+            rec["unobserved_qualifier"] = False          # a direct claim is a propose_test target, not a qualifier
             for (p, d), nb in repro.items():
                 belief_edges["direct"].append({"observation": p, "target": cid, "direction": d,
                                                "edge_type": d, "n_builds": nb})
         else:                                            # policy forbids direct belief edges -> reroute
-            st, _, _, propose = derive_am_status(rec, {}, STATUS_MIN_BUILDS)  # orphan/'assumed' logic still applies
+            st, _, _, _ = derive_am_status(rec, {}, STATUS_MIN_BUILDS)  # orphan/'assumed' logic still applies
             rec["status"] = st if rec.get("ref_count", 0) == 0 else POLICY_STATUS[rec["link_policy"]]
-            rec["strengthened_by"], rec["weakened_by"], rec["propose_test"] = [], [], propose
+            rec["strengthened_by"], rec["weakened_by"], rec["propose_test"] = [], [], False
+            # an unobserved qualifier (assumption/scope/limitation with no observation) is flagged separately;
+            # it is NOT a propose_test target — that differentiator is for untested direct claims/mechanisms.
+            rec["unobserved_qualifier"] = rec["link_policy"] == "qualifier_only" and rec.get("ref_count", 0) == 0
             bucket = POLICY_BUCKET[rec["link_policy"]]
             for (p, d), nb in repro.items():
                 belief_edges[bucket].append({"observation": p, "target": cid, "direction": d,
@@ -602,7 +606,8 @@ def main():
         "am_ontology_types": dict(collections.Counter(v.get("ontology_type") for v in am_canon.values())),
         "am_link_policies": dict(collections.Counter(v.get("link_policy") for v in am_canon.values())),
         "belief_edges_by_policy": {k: len(v) for k, v in belief_edges.items()},
-        "propose_test_targets": sorted(cid for cid, v in am_canon.items() if v.get("propose_test")),
+        "propose_test_direct_claims": sorted(cid for cid, v in am_canon.items() if v.get("propose_test")),
+        "unobserved_qualifiers": sorted(cid for cid, v in am_canon.items() if v.get("unobserved_qualifier")),
         "context_dropped": len(dropped),
         "merge_queue_pending": len(merge_queue),
         "cio_field_errors": len(field_errors),
