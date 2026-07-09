@@ -12,7 +12,11 @@
     "confidence": 1.0,
     "band": "observed",
     "referenced_by": [],
-    "ref_count": 0
+    "ref_count": 0,
+    "status": "assumed",
+    "strengthened_by": [],
+    "weakened_by": [],
+    "propose_test": true
   },
   "MECH_transformer_layers_specialize_different_structures_contexts": {
     "canonical_id": "MECH_transformer_layers_specialize_different_structures_contexts",
@@ -45,7 +49,16 @@
       "P84",
       "P85"
     ],
-    "ref_count": 8
+    "ref_count": 8,
+    "status": "tested",
+    "strengthened_by": [
+      "P54",
+      "P83",
+      "P84",
+      "P85"
+    ],
+    "weakened_by": [],
+    "propose_test": false
   },
   "MECH_visual_common_sense_learnable_from_training": {
     "canonical_id": "MECH_visual_common_sense_learnable_from_training",
@@ -86,7 +99,32 @@
       "P86",
       "P87"
     ],
-    "ref_count": 25
+    "ref_count": 25,
+    "status": "tested",
+    "strengthened_by": [
+      "P1",
+      "P11",
+      "P12",
+      "P16",
+      "P17",
+      "P30",
+      "P44",
+      "P45",
+      "P46",
+      "P48",
+      "P49",
+      "P50",
+      "P51",
+      "P52",
+      "P62",
+      "P63",
+      "P70",
+      "P72",
+      "P86",
+      "P87"
+    ],
+    "weakened_by": [],
+    "propose_test": false
   },
   "MECH_canvas_patchification_enriches_data_space_reduces": {
     "canonical_id": "MECH_canvas_patchification_enriches_data_space_reduces",
@@ -111,7 +149,14 @@
       "P25",
       "P28"
     ],
-    "ref_count": 5
+    "ref_count": 5,
+    "status": "tested",
+    "strengthened_by": [
+      "P23",
+      "P25"
+    ],
+    "weakened_by": [],
+    "propose_test": false
   },
   "MECH_some_arc_tasks_solvable_from_scratch": {
     "canonical_id": "MECH_some_arc_tasks_solvable_from_scratch",
@@ -135,7 +180,11 @@
       "P71",
       "P72"
     ],
-    "ref_count": 8
+    "ref_count": 8,
+    "status": "weakly-tested",
+    "strengthened_by": [],
+    "weakened_by": [],
+    "propose_test": false
   },
   "MECH_attention_masks_improve_accuracy_focusing_foregrounds": {
     "canonical_id": "MECH_attention_masks_improve_accuracy_focusing_foregrounds",
@@ -150,7 +199,11 @@
     "confidence": 1.0,
     "band": "observed",
     "referenced_by": [],
-    "ref_count": 0
+    "ref_count": 0,
+    "status": "assumed",
+    "strengthened_by": [],
+    "weakened_by": [],
+    "propose_test": true
   },
   "ASM_multiple_test_tasks_cannot_assumed_available": {
     "canonical_id": "ASM_multiple_test_tasks_cannot_assumed_available",
@@ -169,7 +222,11 @@
       "P30",
       "P40"
     ],
-    "ref_count": 2
+    "ref_count": 2,
+    "status": "weakly-tested",
+    "strengthened_by": [],
+    "weakened_by": [],
+    "propose_test": false
   },
   "MECH_canvas_enables_geometric_augmentations_invariance": {
     "canonical_id": "MECH_canvas_enables_geometric_augmentations_invariance",
@@ -210,7 +267,31 @@
       "P72",
       "P9"
     ],
-    "ref_count": 22
+    "ref_count": 22,
+    "status": "tested",
+    "strengthened_by": [
+      "P1",
+      "P11",
+      "P12",
+      "P16",
+      "P19",
+      "P28",
+      "P34",
+      "P35",
+      "P44",
+      "P45",
+      "P46",
+      "P48",
+      "P49",
+      "P50",
+      "P51",
+      "P52",
+      "P70",
+      "P72",
+      "P9"
+    ],
+    "weakened_by": [],
+    "propose_test": false
   },
   "ASM_some_arc_tasks_have_multiple_plausible": {
     "canonical_id": "ASM_some_arc_tasks_have_multiple_plausible",
@@ -230,7 +311,15 @@
       "P81",
       "P82"
     ],
-    "ref_count": 3
+    "ref_count": 3,
+    "status": "tested",
+    "strengthened_by": [
+      "P80",
+      "P81",
+      "P82"
+    ],
+    "weakened_by": [],
+    "propose_test": false
   },
   "MECH_visual_learning_enables_abstraction_without_language": {
     "canonical_id": "MECH_visual_learning_enables_abstraction_without_language",
@@ -287,7 +376,31 @@
       "P87",
       "P9"
     ],
-    "ref_count": 40
+    "ref_count": 40,
+    "status": "tested",
+    "strengthened_by": [
+      "P1",
+      "P11",
+      "P12",
+      "P16",
+      "P19",
+      "P44",
+      "P45",
+      "P46",
+      "P47",
+      "P48",
+      "P49",
+      "P50",
+      "P51",
+      "P52",
+      "P70",
+      "P72",
+      "P75",
+      "P8",
+      "P9"
+    ],
+    "weakened_by": [],
+    "propose_test": false
   },
   "MECH_model_interprets_ambiguous_rules_multiple_plausible": {
     "canonical_id": "MECH_model_interprets_ambiguous_rules_multiple_plausible",
@@ -306,7 +419,11 @@
       "P81",
       "P82"
     ],
-    "ref_count": 3
+    "ref_count": 3,
+    "status": "weakly-tested",
+    "strengthened_by": [],
+    "weakened_by": [],
+    "propose_test": false
   },
   "MECH_task_embedding_visualization_suggests_learning_task": {
     "canonical_id": "MECH_task_embedding_visualization_suggests_learning_task",
@@ -326,7 +443,14 @@
       "P57",
       "P63"
     ],
-    "ref_count": 4
+    "ref_count": 4,
+    "status": "tested",
+    "strengthened_by": [
+      "P57",
+      "P63"
+    ],
+    "weakened_by": [],
+    "propose_test": false
   },
   "MECH_attention_maps_reveal_pixel_pixel_reasoning": {
     "canonical_id": "MECH_attention_maps_reveal_pixel_pixel_reasoning",
@@ -344,7 +468,13 @@
       "P44",
       "P53"
     ],
-    "ref_count": 2
+    "ref_count": 2,
+    "status": "tested",
+    "strengthened_by": [
+      "P53"
+    ],
+    "weakened_by": [],
+    "propose_test": false
   },
   "MECH_classical_vision_backbones_can_address_arc": {
     "canonical_id": "MECH_classical_vision_backbones_can_address_arc",
@@ -361,7 +491,13 @@
     "referenced_by": [
       "P19"
     ],
-    "ref_count": 1
+    "ref_count": 1,
+    "status": "weakly-tested",
+    "strengthened_by": [
+      "P19"
+    ],
+    "weakened_by": [],
+    "propose_test": false
   },
   "ASM_single_pixel_error_invalidates_entire_arc": {
     "canonical_id": "ASM_single_pixel_error_invalidates_entire_arc",
@@ -390,7 +526,18 @@
       "P62",
       "P63"
     ],
-    "ref_count": 13
+    "ref_count": 13,
+    "status": "tested",
+    "strengthened_by": [
+      "P36",
+      "P38",
+      "P40",
+      "P41",
+      "P42",
+      "P43"
+    ],
+    "weakened_by": [],
+    "propose_test": false
   },
   "MECH_scale_augmentation_yields_substantial_gain_due": {
     "canonical_id": "MECH_scale_augmentation_yields_substantial_gain_due",
@@ -408,7 +555,11 @@
       "P28",
       "P35"
     ],
-    "ref_count": 2
+    "ref_count": 2,
+    "status": "weakly-tested",
+    "strengthened_by": [],
+    "weakened_by": [],
+    "propose_test": false
   },
   "MECH_explicit_2d_positional_modeling_essential": {
     "canonical_id": "MECH_explicit_2d_positional_modeling_essential",
@@ -447,7 +598,32 @@
       "P72",
       "P9"
     ],
-    "ref_count": 21
+    "ref_count": 21,
+    "status": "tested",
+    "strengthened_by": [
+      "P1",
+      "P11",
+      "P12",
+      "P16",
+      "P19",
+      "P20",
+      "P21",
+      "P22",
+      "P23",
+      "P44",
+      "P45",
+      "P46",
+      "P48",
+      "P49",
+      "P50",
+      "P51",
+      "P52",
+      "P70",
+      "P72",
+      "P9"
+    ],
+    "weakened_by": [],
+    "propose_test": false
   },
   "ASM_arc_colors_lack_real_world_semantic": {
     "canonical_id": "ASM_arc_colors_lack_real_world_semantic",
@@ -462,7 +638,11 @@
     "confidence": 1.0,
     "band": "observed",
     "referenced_by": [],
-    "ref_count": 0
+    "ref_count": 0,
+    "status": "assumed",
+    "strengthened_by": [],
+    "weakened_by": [],
+    "propose_test": true
   },
   "ASM_auxiliary_tasks_translation_scale_invariant": {
     "canonical_id": "ASM_auxiliary_tasks_translation_scale_invariant",
@@ -477,7 +657,11 @@
     "confidence": 0.6,
     "band": "supported",
     "referenced_by": [],
-    "ref_count": 0
+    "ref_count": 0,
+    "status": "assumed",
+    "strengthened_by": [],
+    "weakened_by": [],
+    "propose_test": true
   },
   "MECH_average_pooling_aggregates_multi_pixel_canvas": {
     "canonical_id": "MECH_average_pooling_aggregates_multi_pixel_canvas",
@@ -492,7 +676,11 @@
     "confidence": 0.6,
     "band": "supported",
     "referenced_by": [],
-    "ref_count": 0
+    "ref_count": 0,
+    "status": "assumed",
+    "strengthened_by": [],
+    "weakened_by": [],
+    "propose_test": true
   },
   "MECH_majority_voting_consolidates_multi_view_predictions": {
     "canonical_id": "MECH_majority_voting_consolidates_multi_view_predictions",
@@ -521,6 +709,17 @@
       "P66",
       "P9"
     ],
-    "ref_count": 9
+    "ref_count": 9,
+    "status": "weakly-tested",
+    "strengthened_by": [
+      "P1",
+      "P39",
+      "P40",
+      "P48",
+      "P65",
+      "P66"
+    ],
+    "weakened_by": [],
+    "propose_test": false
   }
 }

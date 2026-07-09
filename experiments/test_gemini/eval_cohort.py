@@ -56,7 +56,8 @@ def summarize_across(cohort_dirs, out=None):
     varies run-to-run), so one number can't tell a real prompt gain from luck. Repeating the
     SAME prompt across cohorts and reporting mean±std gives the confidence interval: only a
     shift larger than the std is signal. Pure deterministic aggregation — no LLM."""
-    keys = ["assum", "mech", "cio", "link", "field_errors", "promoted", "comp_refs", "comp_total"]
+    keys = ["assum", "mech", "cio", "link", "field_errors", "promoted", "comp_refs", "comp_total",
+            "st_assumed", "st_contested", "st_tested", "propose_test"]
     acc = {k: [] for k in keys}
     per_cohort = []
     prompt_sets = set()
@@ -67,6 +68,7 @@ def summarize_across(cohort_dirs, out=None):
         cons = load(c / "canonical" / "cio_consensus.json")
         j = ens["reproducibility_mean_pairwise_jaccard"]
         comp = [v for v in cons.values() if v.get("pattern_class") == "comparison"]
+        amst = rpt.get("am_status") or {}
         if ens.get("prompts"):
             prompt_sets.add(tuple(sorted(ens["prompts"].items())))
         row = {
@@ -80,6 +82,10 @@ def summarize_across(cohort_dirs, out=None):
             "promoted": rpt.get("promoted_interventions"),
             "comp_refs": sum(1 for v in comp if v.get("reference")),
             "comp_total": len(comp),
+            "st_assumed": amst.get("assumed", 0),
+            "st_contested": amst.get("contested", 0),
+            "st_tested": amst.get("tested", 0),
+            "propose_test": len(rpt.get("propose_test_targets") or []),
         }
         per_cohort.append(row)
         for k in keys:

@@ -17,6 +17,18 @@
     "supported": 8,
     "uncertain": 0
   },
+  "am_status": {
+    "assumed": 5,
+    "tested": 10,
+    "weakly-tested": 6
+  },
+  "propose_test_targets": [
+    "ASM_arc_colors_lack_real_world_semantic",
+    "ASM_auxiliary_tasks_translation_scale_invariant",
+    "ASM_larger_models_current_setting_lead_overfitting",
+    "MECH_attention_masks_improve_accuracy_focusing_foregrounds",
+    "MECH_average_pooling_aggregates_multi_pixel_canvas"
+  ],
   "context_dropped": 1,
   "merge_queue_pending": 0,
   "cio_field_errors": 6,

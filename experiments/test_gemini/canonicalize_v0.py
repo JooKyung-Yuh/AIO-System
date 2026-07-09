@@ -19,6 +19,10 @@ from pathlib import Path
 STOP = {"the", "a", "an", "of", "to", "on", "in", "for", "with", "as", "we", "our",
         "is", "are", "be", "it", "this", "that", "and", "or", "by", "use", "using"}
 
+STATUS_MIN_BUILDS = 2   # link Jaccard ~0.29, so a 1-build belief edge is noise. An edge only counts
+                        # toward tested/contested if it recurs in >= this many builds. 'assumed' is
+                        # judged separately on ref_count==0 (a true orphan), per the "narrow" choice.
+
 
 def load_json(p):
     return json.loads(Path(p).read_text(encoding="utf-8"))
@@ -360,6 +364,28 @@ def link_jaccard_canonical(builds, raw2canon_am):
     return round(sum(vals) / len(vals), 3) if vals else None
 
 
+def derive_am_status(rec, edges, min_builds):
+    """Deterministic belief status for one canonical AM node (no LLM). `edges` maps
+    (pattern_id, direction) -> set of build names that produced it, so an edge only counts once it
+    recurs in >= min_builds builds. Status ladder:
+      assumed        ref_count == 0 — a genuine orphan asserted with no observation -> propose_test
+      contested      >=1 reproduced weaken edge — the paper's own results push back
+      tested         >=1 reproduced strengthen edge AND an 'observed' confidence band
+      weakly-tested  has edges, but none reproduce enough / band too low to call it tested
+    strengthened_by / weakened_by carry the pattern ids so the status stays auditable."""
+    strengthen = sorted({p for (p, d), bs in edges.items()
+                         if d == "strengthen" and len(bs) >= min_builds})
+    weaken = sorted({p for (p, d), bs in edges.items()
+                     if d == "weaken" and len(bs) >= min_builds})
+    if rec.get("ref_count", 0) == 0:
+        return "assumed", strengthen, weaken, True
+    if weaken:
+        return "contested", strengthen, weaken, False
+    if strengthen and rec.get("band") == "observed":
+        return "tested", strengthen, weaken, False
+    return "weakly-tested", strengthen, weaken, False
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--run-dir", required=True)
@@ -438,6 +464,30 @@ def main():
         for cid, rec in registry[kind].items():
             rec["referenced_by"] = sorted(ref_index.get(cid, []))
             rec["ref_count"] = len(rec["referenced_by"])
+
+    # ---- C1: deterministic belief status per canonical AM (no LLM). Collect each cluster's
+    # (pattern, direction) belief edges with the set of builds that produced them, so status can
+    # require build reproducibility (see derive_am_status). ref_count (set above) drives 'assumed'.
+    am_edges = collections.defaultdict(lambda: collections.defaultdict(set))
+    for b in builds:
+        pat_of = {c["cio_id"]: c.get("pattern") for c in b["cio"]}
+        amc = {c["am_id"]: [c["node"]] + list(c.get("aliases") or []) for c in b["am"]}
+        for e in b["links"]:
+            p = pat_of.get(e.get("source_cio"))
+            if not p or p not in cio_cons:
+                continue
+            d = e.get("direction")
+            for atom in amc.get(e.get("target_am"), []):
+                cid = r2c_am.get(atom)
+                if cid in am_canon:
+                    am_edges[cid][(p, d)].add(b["name"])
+    for cid, rec in am_canon.items():
+        st, s_obs, w_obs, propose = derive_am_status(rec, am_edges.get(cid, {}), STATUS_MIN_BUILDS)
+        rec["status"] = st
+        rec["strengthened_by"] = s_obs
+        rec["weakened_by"] = w_obs
+        rec["propose_test"] = propose
+
     am_band = collections.Counter(v["band"] for v in am_canon.values())
     report = {
         "n_builds": n,
@@ -450,6 +500,8 @@ def main():
         "after": {"context": len(ctx_canon), "intervention": len(int_canon),
                   "eval_metric": len(met_canon), "am_clusters": len(am_canon)},
         "am_cluster_bands": {b: am_band.get(b, 0) for b in ("observed", "supported", "uncertain")},
+        "am_status": dict(collections.Counter(v["status"] for v in am_canon.values())),
+        "propose_test_targets": sorted(cid for cid, v in am_canon.items() if v.get("propose_test")),
         "context_dropped": len(dropped),
         "merge_queue_pending": len(merge_queue),
         "cio_field_errors": len(field_errors),

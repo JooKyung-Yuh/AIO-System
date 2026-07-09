@@ -17,6 +17,16 @@
     "supported": 8,
     "uncertain": 0
   },
+  "am_status": {
+    "tested": 12,
+    "contested": 1,
+    "weakly-tested": 6,
+    "assumed": 2
+  },
+  "propose_test_targets": [
+    "ASM_auxiliary_tasks_translation_scale_invariant",
+    "MECH_average_pooling_aggregates_multi_pixel_canvas"
+  ],
   "context_dropped": 1,
   "merge_queue_pending": 0,
   "cio_field_errors": 10,
