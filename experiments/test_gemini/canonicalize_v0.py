@@ -442,7 +442,11 @@ def assign_ontology_types(am_canon, overrides):
             if any(str(s).lower() in g for s in subs):
                 rec["ontology_type"] = otype
     for rec in am_canon.values():
-        rec["link_policy"] = ONTOLOGY_LINK_POLICY.get(rec["ontology_type"], "direct_link_allowed")
+        ot = rec["ontology_type"]
+        if ot not in ONTOLOGY_LINK_POLICY:           # fail-fast: an override typo must not silently fall to direct
+            raise ValueError(f"unknown ontology_type {ot!r} for {rec.get('canonical_id')} "
+                             f"(override typo?); known: {sorted(ONTOLOGY_LINK_POLICY)}")
+        rec["link_policy"] = ONTOLOGY_LINK_POLICY[ot]
 
 
 def main():
@@ -565,6 +569,7 @@ def main():
         "am_cluster_bands": {b: am_band.get(b, 0) for b in ("observed", "supported", "uncertain")},
         "am_status": dict(collections.Counter(v["status"] for v in am_canon.values())),
         "am_ontology_types": dict(collections.Counter(v.get("ontology_type") for v in am_canon.values())),
+        "am_link_policies": dict(collections.Counter(v.get("link_policy") for v in am_canon.values())),
         "propose_test_targets": sorted(cid for cid, v in am_canon.items() if v.get("propose_test")),
         "context_dropped": len(dropped),
         "merge_queue_pending": len(merge_queue),

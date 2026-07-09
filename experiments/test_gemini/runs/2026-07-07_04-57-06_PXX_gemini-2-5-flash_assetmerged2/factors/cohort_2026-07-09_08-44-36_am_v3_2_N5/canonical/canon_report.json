@@ -30,6 +30,12 @@
     "scope_condition": 2,
     "limitation": 2
   },
+  "am_link_policies": {
+    "direct_link_allowed": 12,
+    "rolls_up_only": 1,
+    "qualifier_only": 7,
+    "no_direct_link": 3
+  },
   "propose_test_targets": [
     "ASM_larger_models_beyond_current_regime_lead",
     "ASM_multi_view_inference_cost_negligible_compared",
