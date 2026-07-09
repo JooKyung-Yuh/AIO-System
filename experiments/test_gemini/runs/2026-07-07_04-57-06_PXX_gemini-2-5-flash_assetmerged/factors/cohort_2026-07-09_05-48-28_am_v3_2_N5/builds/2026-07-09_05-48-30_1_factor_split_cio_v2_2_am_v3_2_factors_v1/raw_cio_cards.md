@@ -1,0 +1,1744 @@
+```json
+[
+  {
+    "cio_id": "CIO_001",
+    "unit": "U001",
+    "context": [
+      "C24",
+      "C25",
+      "C26"
+    ],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": "E2",
+    "pattern": "P8",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Section 1",
+      "source_span": "S38"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_002",
+    "unit": "U001",
+    "context": [
+      "C24",
+      "C26"
+    ],
+    "intervention": "C24",
+    "reference": "C13",
+    "eval_metric": "E2",
+    "pattern": "P9",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Section 1",
+      "source_span": "S39"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_003",
+    "unit": "U001",
+    "context": [
+      "C24"
+    ],
+    "intervention": "I13",
+    "reference": "C24",
+    "eval_metric": "E2",
+    "pattern": "P11",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "provenance": {
+      "location": "Section 1",
+      "source_span": "S41"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_004",
+    "unit": "U001",
+    "context": [
+      "C23"
+    ],
+    "intervention": "I13",
+    "reference": null,
+    "eval_metric": "E2",
+    "pattern": "P12",
+    "direction": "flat",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Section 1",
+      "source_span": "S41"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_005",
+    "unit": "U004",
+    "context": [
+      "C35"
+    ],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P16",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Figure 2",
+      "source_span": "S55"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_006",
+    "unit": "U014",
+    "context": [],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P17",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Figure 6",
+      "source_span": "S139"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_007",
+    "unit": "U017",
+    "context": [
+      "C281"
+    ],
+    "intervention": "C281",
+    "reference": null,
+    "eval_metric": "E40",
+    "pattern": "P88",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 1",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_008",
+    "unit": "U017",
+    "context": [
+      "C282"
+    ],
+    "intervention": "C282",
+    "reference": null,
+    "eval_metric": "E40",
+    "pattern": "P89",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 1",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_009",
+    "unit": "U017",
+    "context": [
+      "C283"
+    ],
+    "intervention": "C283",
+    "reference": null,
+    "eval_metric": "E40",
+    "pattern": "P90",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 1",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_010",
+    "unit": "U017",
+    "context": [
+      "C284"
+    ],
+    "intervention": "C284",
+    "reference": null,
+    "eval_metric": "E40",
+    "pattern": "P91",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 1",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_011",
+    "unit": "U017",
+    "context": [
+      "C285"
+    ],
+    "intervention": "C285",
+    "reference": null,
+    "eval_metric": "E40",
+    "pattern": "P92",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 1",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_012",
+    "unit": "U017",
+    "context": [
+      "C286"
+    ],
+    "intervention": "C286",
+    "reference": null,
+    "eval_metric": "E40",
+    "pattern": "P93",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 1",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_013",
+    "unit": "U017",
+    "context": [
+      "I49"
+    ],
+    "intervention": "C110",
+    "reference": "C113",
+    "eval_metric": "E8",
+    "pattern": "P19",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "provenance": {
+      "location": "Table 1",
+      "source_span": "S191"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_014",
+    "unit": "U018",
+    "context": [
+      "C116",
+      "C118",
+      "I51"
+    ],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": "E9",
+    "pattern": "P20",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "provenance": {
+      "location": "Figure 7",
+      "source_span": "S198"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_015",
+    "unit": "U018",
+    "context": [
+      "C116",
+      "C118"
+    ],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": "E9",
+    "pattern": "P21",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "provenance": {
+      "location": "Figure 7",
+      "source_span": "S198"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_016",
+    "unit": "U019",
+    "context": [],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P22",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "provenance": {
+      "location": "Section 5.1",
+      "source_span": "S200"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_017",
+    "unit": "U019",
+    "context": [],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P23",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "provenance": {
+      "location": "Section 5.1",
+      "source_span": "S200"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_018",
+    "unit": "U019",
+    "context": [
+      "C120"
+    ],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P24",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Section 5.1",
+      "source_span": "S202"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_019",
+    "unit": "U019",
+    "context": [
+      "C121"
+    ],
+    "intervention": "I53",
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P25",
+    "direction": "down",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Section 5.1",
+      "source_span": "S204"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_020",
+    "unit": "U019",
+    "context": [
+      "C122",
+      "C123"
+    ],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P26",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Section 5.1",
+      "source_span": "S208"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_021",
+    "unit": "U019",
+    "context": [
+      "I54",
+      "C124",
+      "C125"
+    ],
+    "intervention": "I55",
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P28",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "provenance": {
+      "location": "Section 5.1",
+      "source_span": "S215"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_022",
+    "unit": "U019",
+    "context": [
+      "C127"
+    ],
+    "intervention": "I58",
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P34",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "provenance": {
+      "location": "Section 5.1",
+      "source_span": "S228"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_023",
+    "unit": "U019",
+    "context": [
+      "C127"
+    ],
+    "intervention": "I59",
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P35",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "provenance": {
+      "location": "Section 5.1",
+      "source_span": "S230"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_024",
+    "unit": "U020",
+    "context": [
+      "C126"
+    ],
+    "intervention": "I56",
+    "reference": null,
+    "eval_metric": "E10",
+    "pattern": "P29",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "provenance": {
+      "location": "Figure 8",
+      "source_span": "S219"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_025",
+    "unit": "U021",
+    "context": [],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": "E11",
+    "pattern": "P30",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "provenance": {
+      "location": "Figure 9",
+      "source_span": "S222"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_026",
+    "unit": "U021",
+    "context": [],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": "E11",
+    "pattern": "P31",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "provenance": {
+      "location": "Figure 9",
+      "source_span": "S223"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_027",
+    "unit": "U022",
+    "context": [
+      "C129",
+      "I60",
+      "C130"
+    ],
+    "intervention": "I60",
+    "reference": "I60",
+    "eval_metric": null,
+    "pattern": "P36",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "provenance": {
+      "location": "Section 5.2",
+      "source_span": "S236"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_028",
+    "unit": "U022",
+    "context": [
+      "C131",
+      "I61"
+    ],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P38",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "provenance": {
+      "location": "Section 5.2",
+      "source_span": "S239"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_029",
+    "unit": "U022",
+    "context": [
+      "C132"
+    ],
+    "intervention": "C132",
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P39",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "provenance": {
+      "location": "Section 5.2",
+      "source_span": "S241"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_030",
+    "unit": "U022",
+    "context": [
+      "C133",
+      "I62"
+    ],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P40",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "provenance": {
+      "location": "Section 5.2",
+      "source_span": "S244"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_031",
+    "unit": "U022",
+    "context": [
+      "C133",
+      "I62"
+    ],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P41",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Section 5.2",
+      "source_span": "S245"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_032",
+    "unit": "U022",
+    "context": [
+      "C134"
+    ],
+    "intervention": null,
+    "reference": "C134",
+    "eval_metric": null,
+    "pattern": "P42",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "provenance": {
+      "location": "Section 5.2",
+      "source_span": "S246"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_033",
+    "unit": "U022",
+    "context": [
+      "C133",
+      "I62"
+    ],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P43",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "provenance": {
+      "location": "Section 5.2",
+      "source_span": "S247"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_034",
+    "unit": "U022",
+    "context": [
+      "C135",
+      "I63"
+    ],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": "E12",
+    "pattern": "P44",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Section 5.2",
+      "source_span": "S255"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_035",
+    "unit": "U022",
+    "context": [
+      "C135",
+      "C136"
+    ],
+    "intervention": "C136",
+    "reference": null,
+    "eval_metric": "E12",
+    "pattern": "P45",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "provenance": {
+      "location": "Section 5.2",
+      "source_span": "S255"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_036",
+    "unit": "U023",
+    "context": [
+      "C287"
+    ],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": "E41",
+    "pattern": "P94",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 2",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_037",
+    "unit": "U023",
+    "context": [
+      "C287"
+    ],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": "E42",
+    "pattern": "P95",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 2",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_038",
+    "unit": "U023",
+    "context": [
+      "C287"
+    ],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": "E43",
+    "pattern": "P96",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 2",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_039",
+    "unit": "U025",
+    "context": [
+      "C141"
+    ],
+    "intervention": "C297",
+    "reference": null,
+    "eval_metric": "E16",
+    "pattern": "P46",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 3",
+      "source_span": "S262"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_040",
+    "unit": "U025",
+    "context": [
+      "C141"
+    ],
+    "intervention": "C297",
+    "reference": null,
+    "eval_metric": "E16",
+    "pattern": "P47",
+    "direction": "flat",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 3",
+      "source_span": "S263"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_041",
+    "unit": "U024",
+    "context": [
+      "C143",
+      "C144"
+    ],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P48",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Section 5.3",
+      "source_span": "S264"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_042",
+    "unit": "U024",
+    "context": [
+      "C145"
+    ],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P49",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "provenance": {
+      "location": "Section 5.3",
+      "source_span": "S267"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_043",
+    "unit": "U024",
+    "context": [
+      "C145"
+    ],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": "E16",
+    "pattern": "P50",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "provenance": {
+      "location": "Section 5.3",
+      "source_span": "S268"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_044",
+    "unit": "U024",
+    "context": [],
+    "intervention": "I65",
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P51",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "provenance": {
+      "location": "Section 5.3",
+      "source_span": "S271"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_045",
+    "unit": "U024",
+    "context": [],
+    "intervention": "I65",
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P52",
+    "direction": "flat",
+    "pattern_class": "comparison",
+    "provenance": {
+      "location": "Section 5.3",
+      "source_span": "S272"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_046",
+    "unit": "U025",
+    "context": [
+      "C288"
+    ],
+    "intervention": "C288",
+    "reference": null,
+    "eval_metric": "E44",
+    "pattern": "P97",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 3",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_047",
+    "unit": "U025",
+    "context": [
+      "C288"
+    ],
+    "intervention": "C288",
+    "reference": null,
+    "eval_metric": "E45",
+    "pattern": "P98",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 3",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_048",
+    "unit": "U025",
+    "context": [
+      "C289"
+    ],
+    "intervention": "C289",
+    "reference": null,
+    "eval_metric": "E44",
+    "pattern": "P99",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 3",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_049",
+    "unit": "U025",
+    "context": [
+      "C289"
+    ],
+    "intervention": "C289",
+    "reference": null,
+    "eval_metric": "E45",
+    "pattern": "P100",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 3",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_050",
+    "unit": "U025",
+    "context": [
+      "C290"
+    ],
+    "intervention": "C290",
+    "reference": null,
+    "eval_metric": "E44",
+    "pattern": "P101",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 3",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_051",
+    "unit": "U025",
+    "context": [
+      "C290"
+    ],
+    "intervention": "C290",
+    "reference": null,
+    "eval_metric": "E45",
+    "pattern": "P102",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 3",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_052",
+    "unit": "U025",
+    "context": [
+      "C291"
+    ],
+    "intervention": "C291",
+    "reference": null,
+    "eval_metric": "E44",
+    "pattern": "P103",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 3",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_053",
+    "unit": "U025",
+    "context": [
+      "C291"
+    ],
+    "intervention": "C291",
+    "reference": null,
+    "eval_metric": "E45",
+    "pattern": "P104",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 3",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_054",
+    "unit": "U025",
+    "context": [
+      "C292"
+    ],
+    "intervention": "C292",
+    "reference": null,
+    "eval_metric": "E44",
+    "pattern": "P105",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 3",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_055",
+    "unit": "U025",
+    "context": [
+      "C292"
+    ],
+    "intervention": "C292",
+    "reference": null,
+    "eval_metric": "E45",
+    "pattern": "P106",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 3",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_056",
+    "unit": "U025",
+    "context": [
+      "C293"
+    ],
+    "intervention": "C293",
+    "reference": null,
+    "eval_metric": "E44",
+    "pattern": "P107",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 3",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_057",
+    "unit": "U025",
+    "context": [
+      "C293"
+    ],
+    "intervention": "C293",
+    "reference": null,
+    "eval_metric": "E45",
+    "pattern": "P108",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 3",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_058",
+    "unit": "U025",
+    "context": [
+      "C294"
+    ],
+    "intervention": "C294",
+    "reference": null,
+    "eval_metric": "E44",
+    "pattern": "P109",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 3",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_059",
+    "unit": "U025",
+    "context": [
+      "C294"
+    ],
+    "intervention": "C294",
+    "reference": null,
+    "eval_metric": "E45",
+    "pattern": "P110",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 3",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_060",
+    "unit": "U025",
+    "context": [
+      "C295"
+    ],
+    "intervention": "C295",
+    "reference": null,
+    "eval_metric": "E44",
+    "pattern": "P111",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 3",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_061",
+    "unit": "U025",
+    "context": [
+      "C295"
+    ],
+    "intervention": "C295",
+    "reference": null,
+    "eval_metric": "E45",
+    "pattern": "P112",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 3",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_062",
+    "unit": "U025",
+    "context": [
+      "C296"
+    ],
+    "intervention": "C296",
+    "reference": null,
+    "eval_metric": "E44",
+    "pattern": "P113",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 3",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_063",
+    "unit": "U025",
+    "context": [
+      "C296"
+    ],
+    "intervention": "C296",
+    "reference": null,
+    "eval_metric": "E45",
+    "pattern": "P114",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 3",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_064",
+    "unit": "U025",
+    "context": [
+      "C297"
+    ],
+    "intervention": "C297",
+    "reference": null,
+    "eval_metric": "E44",
+    "pattern": "P115",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 3",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_065",
+    "unit": "U025",
+    "context": [
+      "C297"
+    ],
+    "intervention": "C297",
+    "reference": null,
+    "eval_metric": "E45",
+    "pattern": "P116",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 3",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_066",
+    "unit": "U025",
+    "context": [
+      "C298"
+    ],
+    "intervention": "C298",
+    "reference": null,
+    "eval_metric": "E44",
+    "pattern": "P117",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 3",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_067",
+    "unit": "U025",
+    "context": [
+      "C299"
+    ],
+    "intervention": "C299",
+    "reference": null,
+    "eval_metric": "E44",
+    "pattern": "P118",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 3",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_068",
+    "unit": "U025",
+    "context": [
+      "C299"
+    ],
+    "intervention": "C299",
+    "reference": null,
+    "eval_metric": "E45",
+    "pattern": "P119",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Table 3",
+      "source_span": null
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_069",
+    "unit": "U026",
+    "context": [
+      "C150",
+      "C151"
+    ],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P53",
+    "direction": null,
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Section 6",
+      "source_span": "S280"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_070",
+    "unit": "U026",
+    "context": [
+      "C150",
+      "C151"
+    ],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P54",
+    "direction": null,
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Section 6",
+      "source_span": "S281"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_071",
+    "unit": "U026",
+    "context": [
+      "C154",
+      "I66",
+      "C155"
+    ],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P57",
+    "direction": null,
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Section 6",
+      "source_span": "S289"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_072",
+    "unit": "U037",
+    "context": [
+      "C214",
+      "C215"
+    ],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": "E18",
+    "pattern": "P59",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Figure 14",
+      "source_span": "S357"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_073",
+    "unit": "U038",
+    "context": [
+      "C216",
+      "C217"
+    ],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": "E19",
+    "pattern": "P60",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Figure 15",
+      "source_span": "S359"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_074",
+    "unit": "U039",
+    "context": [
+      "C218"
+    ],
+    "intervention": "I77",
+    "reference": null,
+    "eval_metric": "E21",
+    "pattern": "P61",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Section B.1",
+      "source_span": "S361"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_075",
+    "unit": "U039",
+    "context": [
+      "C218"
+    ],
+    "intervention": "I78",
+    "reference": "I77",
+    "eval_metric": "E22",
+    "pattern": "P62",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Section B.1",
+      "source_span": "S362"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_076",
+    "unit": "U039",
+    "context": [],
+    "intervention": "I79",
+    "reference": null,
+    "eval_metric": "E24",
+    "pattern": "P63",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Section B.1",
+      "source_span": "S365"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_077",
+    "unit": "U040",
+    "context": [
+      "C222",
+      "I80"
+    ],
+    "intervention": "I80",
+    "reference": null,
+    "eval_metric": "E31",
+    "pattern": "P65",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Section B.2",
+      "source_span": "S372"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_078",
+    "unit": "U040",
+    "context": [
+      "C220"
+    ],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P66",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Section B.2",
+      "source_span": "S374"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_079",
+    "unit": "U046",
+    "context": [
+      "C230"
+    ],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P70",
+    "direction": null,
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Figure 17",
+      "source_span": "S385"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_080",
+    "unit": "U046",
+    "context": [
+      "C231"
+    ],
+    "intervention": "I84",
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P71",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Figure 17",
+      "source_span": "S386"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_081",
+    "unit": "U046",
+    "context": [
+      "C232"
+    ],
+    "intervention": "I85",
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P72",
+    "direction": "down",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Figure 17",
+      "source_span": "S387"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_082",
+    "unit": "U046",
+    "context": [
+      "C235",
+      "C236",
+      "C237",
+      "C238",
+      "I86"
+    ],
+    "intervention": "I86",
+    "reference": "E32",
+    "eval_metric": "E33",
+    "pattern": "P73",
+    "direction": "flat",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Figure 17",
+      "source_span": "S391"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_083",
+    "unit": "U046",
+    "context": [
+      "C239",
+      "C240",
+      "C241",
+      "C242",
+      "I86"
+    ],
+    "intervention": "I86",
+    "reference": "E32",
+    "eval_metric": "E33",
+    "pattern": "P74",
+    "direction": "down",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Figure 17",
+      "source_span": "S391"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_084",
+    "unit": "U047",
+    "context": [
+      "C243"
+    ],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P75",
+    "direction": null,
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Figure 18",
+      "source_span": "S392"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_085",
+    "unit": "U047",
+    "context": [
+      "C244"
+    ],
+    "intervention": "I87",
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P76",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Figure 18",
+      "source_span": "S393"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_086",
+    "unit": "U047",
+    "context": [
+      "C245"
+    ],
+    "intervention": "I88",
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P77",
+    "direction": "down",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Figure 18",
+      "source_span": "S394"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_087",
+    "unit": "U047",
+    "context": [
+      "C248",
+      "C249",
+      "C250",
+      "C251",
+      "I89"
+    ],
+    "intervention": "I89",
+    "reference": "E34",
+    "eval_metric": "E35",
+    "pattern": "P78",
+    "direction": "flat",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Figure 18",
+      "source_span": "S398"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_088",
+    "unit": "U047",
+    "context": [
+      "C252",
+      "C253",
+      "C254",
+      "C255",
+      "I89"
+    ],
+    "intervention": "I89",
+    "reference": "E34",
+    "eval_metric": "E35",
+    "pattern": "P79",
+    "direction": "down",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Figure 18",
+      "source_span": "S398"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_089",
+    "unit": "U048",
+    "context": [],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P80",
+    "direction": null,
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Figure 19",
+      "source_span": "S399"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_090",
+    "unit": "U048",
+    "context": [
+      "A21"
+    ],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P81",
+    "direction": null,
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Figure 19",
+      "source_span": "S400"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_091",
+    "unit": "U048",
+    "context": [
+      "C256",
+      "C257",
+      "C258"
+    ],
+    "intervention": "I90",
+    "reference": "E36",
+    "eval_metric": null,
+    "pattern": "P82",
+    "direction": "flat",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Figure 19",
+      "source_span": "S403"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_092",
+    "unit": "U050",
+    "context": [
+      "C269",
+      "C270",
+      "C271",
+      "C272",
+      "C273",
+      "C274"
+    ],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": "E38",
+    "pattern": "P84",
+    "direction": null,
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Figure 21",
+      "source_span": "S420"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_093",
+    "unit": "U055",
+    "context": [
+      "I92"
+    ],
+    "intervention": "I92",
+    "reference": null,
+    "eval_metric": "E39",
+    "pattern": "P85",
+    "direction": "up",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Figure 22",
+      "source_span": "S423"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_094",
+    "unit": "U056",
+    "context": [
+      "C278"
+    ],
+    "intervention": null,
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P86",
+    "direction": "down",
+    "pattern_class": "primary_result",
+    "provenance": {
+      "location": "Figure 22",
+      "source_span": "S424"
+    },
+    "status": "observed"
+  },
+  {
+    "cio_id": "CIO_095",
+    "unit": "U057",
+    "context": [
+      "C279"
+    ],
+    "intervention": "I93",
+    "reference": null,
+    "eval_metric": null,
+    "pattern": "P87",
+    "direction": "up",
+    "pattern_class": "comparison",
+    "provenance": {
+      "location": "Figure 22",
+      "source_span": "S425"
+    },
+    "status": "observed"
+  }
+]
+```

@@ -1,0 +1,26 @@
+[
+  {
+    "pattern": "P46",
+    "node": "C297",
+    "layer1_label": "context",
+    "text": "VARC (ensemble)"
+  },
+  {
+    "pattern": "P47",
+    "node": "C297",
+    "layer1_label": "context",
+    "text": "VARC (ensemble)"
+  },
+  {
+    "pattern": "P115",
+    "node": "C297",
+    "layer1_label": "context",
+    "text": "VARC (ensemble)"
+  },
+  {
+    "pattern": "P116",
+    "node": "C297",
+    "layer1_label": "context",
+    "text": "VARC (ensemble)"
+  }
+]

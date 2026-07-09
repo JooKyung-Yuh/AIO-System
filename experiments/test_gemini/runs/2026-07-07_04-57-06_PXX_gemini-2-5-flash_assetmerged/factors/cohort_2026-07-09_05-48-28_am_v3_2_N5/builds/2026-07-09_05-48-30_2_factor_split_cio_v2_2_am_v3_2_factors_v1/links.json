@@ -1,0 +1,380 @@
+[
+  {
+    "source_cio": "CIO_001",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Our framework, termed Vision ARC (VARC), achieves 60.4% accuracy... Abstraction and inference can arise directly from visual learning."
+  },
+  {
+    "source_cio": "CIO_002",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "VARC achieves 54.5% accuracy... Abstraction and inference can arise directly from visual learning, without explicit linguistic intermediates."
+  },
+  {
+    "source_cio": "CIO_003",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This result substantially surpasses the best recurrent methods... Abstraction and inference can arise directly from visual learning."
+  },
+  {
+    "source_cio": "CIO_004",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "It is also competitive with many popular LLM-based methods. Abstraction and inference can arise directly from visual learning."
+  },
+  {
+    "source_cio": "CIO_005",
+    "target_am": "AM_019",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Fig. 6 visualizes the effect of test-time training. This visualization illustrates the model's behavior of adapting to task-specific transformations."
+  },
+  {
+    "source_cio": "CIO_006",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "all U-Net variants achieve decent accuracy, suggesting that this problem can also be effectively addressed by classical vision backbones."
+  },
+  {
+    "source_cio": "CIO_007",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "all U-Net variants achieve decent accuracy, suggesting that this problem can also be effectively addressed by classical vision backbones."
+  },
+  {
+    "source_cio": "CIO_008",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "all U-Net variants achieve decent accuracy, suggesting that this problem can also be effectively addressed by classical vision backbones."
+  },
+  {
+    "source_cio": "CIO_009",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "all U-Net variants achieve decent accuracy, suggesting that this problem can also be effectively addressed by classical vision backbones."
+  },
+  {
+    "source_cio": "CIO_010",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "all U-Net variants achieve decent accuracy, suggesting that this problem can also be effectively addressed by classical vision backbones."
+  },
+  {
+    "source_cio": "CIO_011",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "all U-Net variants achieve decent accuracy, suggesting that this problem can also be effectively addressed by classical vision backbones."
+  },
+  {
+    "source_cio": "CIO_012",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "all U-Net variants achieve decent accuracy, suggesting that this problem can also be effectively addressed by classical vision backbones."
+  },
+  {
+    "source_cio": "CIO_013",
+    "target_am": "AM_006",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Extending from 1D positional embedding to its 2D counterpart is beneficial: see Fig. 7(b)(c)."
+  },
+  {
+    "source_cio": "CIO_014",
+    "target_am": "AM_006",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Extending from 1D positional embedding to its 2D counterpart is beneficial: see Fig. 7(b)(c)."
+  },
+  {
+    "source_cio": "CIO_015",
+    "target_am": "AM_006",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "we replace the 2D ROPE... with a 1D ROPE and observe a degradation of 3.5 points."
+  },
+  {
+    "source_cio": "CIO_016",
+    "target_am": "AM_002",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "the 2×2 patchification leads to a noticeable gain... each patch can cover multiple colors... which substantially enriches the data space for learning."
+  },
+  {
+    "source_cio": "CIO_017",
+    "target_am": "AM_003",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "we apply fully flexible translation augmentation on the canvas... this setting yields an additional gain of 2.9 points."
+  },
+  {
+    "source_cio": "CIO_017",
+    "target_am": "AM_004",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "These data augmentations encourage the model to learn underlying mappings invariant to geometric transformations... yields an additional gain."
+  },
+  {
+    "source_cio": "CIO_018",
+    "target_am": "AM_003",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "we further apply the scale augmentation enabled by the concept of canvas. Scale augmentation yields a substantial gain."
+  },
+  {
+    "source_cio": "CIO_018",
+    "target_am": "AM_004",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "These data augmentations encourage the model to learn underlying mappings invariant to geometric transformations... Scale augmentation yields a substantial gain."
+  },
+  {
+    "source_cio": "CIO_018",
+    "target_am": "AM_009",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "the ViT architecture has little to no inductive bias about scale invariance. This can explain why scale augmentation yields a substantial gain."
+  },
+  {
+    "source_cio": "CIO_020",
+    "target_am": "AM_010",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "offline training greatly improves the performance of TTT, suggesting that common sense about the visual world can be learned."
+  },
+  {
+    "source_cio": "CIO_021",
+    "target_am": "AM_011",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "even without offline training, our TTT strategy can achieve nontrivial accuracy... suggesting that some tasks... can be solved tabula rasa."
+  },
+  {
+    "source_cio": "CIO_023",
+    "target_am": "AM_021",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Going beyond this regime can lead to overfitting in our current setting, as shown in Tab. 1 for the 66M ViT model."
+  },
+  {
+    "source_cio": "CIO_025",
+    "target_am": "AM_007",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "multi-view inference further boosts to 49.8, thanks to majority voting."
+  },
+  {
+    "source_cio": "CIO_026",
+    "target_am": "AM_007",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "multi-view inference further boosts to 49.8, thanks to majority voting."
+  },
+  {
+    "source_cio": "CIO_027",
+    "target_am": "AM_023",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "in ARC, a mistake on even a single pixel renders the entire prediction incorrect. This may explain the large gain."
+  },
+  {
+    "source_cio": "CIO_028",
+    "target_am": "AM_020",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "As the multi-view inference cost is negligible compared with test-time training cost, it is virtually nearly free."
+  },
+  {
+    "source_cio": "CIO_029",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Our single-model result... 54.5% (ARC-1) and 8.3% (ARC-2)... Abstraction and inference can arise directly from visual learning."
+  },
+  {
+    "source_cio": "CIO_030",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Our ensemble result... 60.4% (ARC-1) and 11.1% (ARC-2)... Abstraction and inference can arise directly from visual learning."
+  },
+  {
+    "source_cio": "CIO_032",
+    "target_am": "AM_007",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "multi-view inference further boosts to 49.8, thanks to majority voting."
+  },
+  {
+    "source_cio": "CIO_032",
+    "target_am": "AM_023",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "in ARC, a mistake on even a single pixel renders the entire prediction incorrect. This may explain the large gain."
+  },
+  {
+    "source_cio": "CIO_033",
+    "target_am": "AM_007",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "multi-view inference further boosts to 49.8, thanks to majority voting."
+  },
+  {
+    "source_cio": "CIO_033",
+    "target_am": "AM_023",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "in ARC, a mistake on even a single pixel renders the entire prediction incorrect. This may explain the large gain."
+  },
+  {
+    "source_cio": "CIO_034",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "our method substantially outperforms the recurrent models... Abstraction and inference can arise directly from visual learning."
+  },
+  {
+    "source_cio": "CIO_035",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Our model compares favorably with some of the most powerful LLMs... Abstraction and inference can arise directly from visual learning."
+  },
+  {
+    "source_cio": "CIO_036",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Doing so boosts our result to 60.4. This result closes the gap with... human performance... Abstraction and inference can arise directly from visual learning."
+  },
+  {
+    "source_cio": "CIO_037",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Our ensemble result... 11.1% (ARC-2)... Abstraction and inference can arise directly from visual learning, without explicit linguistic intermediates."
+  },
+  {
+    "source_cio": "CIO_038",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Our single-model result... 54.5% (ARC-1)... Abstraction and inference can arise directly from visual learning, without explicit linguistic intermediates."
+  },
+  {
+    "source_cio": "CIO_039",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Our ensemble result... 60.4% (ARC-1)... Abstraction and inference can arise directly from visual learning, without explicit linguistic intermediates."
+  },
+  {
+    "source_cio": "CIO_063",
+    "target_am": "AM_012",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "These attention maps show that our model can correctly reason about the relationship between a source pixel and its target pixel."
+  },
+  {
+    "source_cio": "CIO_064",
+    "target_am": "AM_013",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "some layers exhibit strong attention to the 3 × 3 neighborhood, reflecting the influence of the pattern's core."
+  },
+  {
+    "source_cio": "CIO_064",
+    "target_am": "AM_014",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "some other layers (e.g., layers 7-9) focus on the outward-radiating rays, corresponding to the rule that extends colored pixels."
+  },
+  {
+    "source_cio": "CIO_065",
+    "target_am": "AM_015",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This visualization suggests that our method attempts to learn the relations between different tasks, which is an essential ability."
+  },
+  {
+    "source_cio": "CIO_069",
+    "target_am": "AM_017",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This result indicates that our model produces correct predictions in some of the many views, although such correct cases are not sufficiently populated."
+  },
+  {
+    "source_cio": "CIO_071",
+    "target_am": "AM_018",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "our method uncovers different solutions that are plausible."
+  },
+  {
+    "source_cio": "CIO_071",
+    "target_am": "AM_024",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "the rule can be interpreted as either 'going-through-only' or 'touching'."
+  },
+  {
+    "source_cio": "CIO_072",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Examples of test tasks successfully solved by VARC. Abstraction and inference can arise directly from visual learning."
+  },
+  {
+    "source_cio": "CIO_073",
+    "target_am": "AM_001",
+    "direction": "weaken",
+    "explicit": true,
+    "evidence": "Examples of test tasks unsolved by VARC. Abstraction and inference can arise directly from visual learning."
+  },
+  {
+    "source_cio": "CIO_074",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Examples of test tasks successfully solved by VARC. Abstraction and inference can arise directly from visual learning."
+  },
+  {
+    "source_cio": "CIO_075",
+    "target_am": "AM_001",
+    "direction": "weaken",
+    "explicit": true,
+    "evidence": "Examples of test tasks unsolved by VARC. Abstraction and inference can arise directly from visual learning."
+  },
+  {
+    "source_cio": "CIO_078",
+    "target_am": "AM_019",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This visualization illustrates the model's behavior of adapting to task-specific transformations through few-shot test-time training."
+  },
+  {
+    "source_cio": "CIO_079",
+    "target_am": "AM_019",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "In early epochs, the model produces coarse and imprecise structures; This visualization illustrates the model's behavior of adapting to task-specific transformations."
+  },
+  {
+    "source_cio": "CIO_080",
+    "target_am": "AM_019",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "in later epochs, the model can improve the solutions... This visualization illustrates the model's behavior of adapting to task-specific transformations."
+  }
+]

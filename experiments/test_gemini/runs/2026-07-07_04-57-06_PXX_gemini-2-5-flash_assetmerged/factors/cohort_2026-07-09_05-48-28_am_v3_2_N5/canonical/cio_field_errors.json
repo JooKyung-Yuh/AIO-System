@@ -1,0 +1,331 @@
+[
+  {
+    "pattern": "P9",
+    "field": "intervention",
+    "bad_value": "C24",
+    "layer1_label": "context",
+    "text": "VARC"
+  },
+  {
+    "pattern": "P88",
+    "field": "intervention",
+    "bad_value": "C281",
+    "layer1_label": "context",
+    "text": "ViT"
+  },
+  {
+    "pattern": "P89",
+    "field": "intervention",
+    "bad_value": "C282",
+    "layer1_label": "context",
+    "text": "ViT"
+  },
+  {
+    "pattern": "P90",
+    "field": "intervention",
+    "bad_value": "C283",
+    "layer1_label": "context",
+    "text": "ViT"
+  },
+  {
+    "pattern": "P91",
+    "field": "intervention",
+    "bad_value": "C284",
+    "layer1_label": "context",
+    "text": "U-Net"
+  },
+  {
+    "pattern": "P92",
+    "field": "intervention",
+    "bad_value": "C285",
+    "layer1_label": "context",
+    "text": "U-Net"
+  },
+  {
+    "pattern": "P93",
+    "field": "intervention",
+    "bad_value": "C286",
+    "layer1_label": "context",
+    "text": "U-Net"
+  },
+  {
+    "pattern": "P19",
+    "field": "intervention",
+    "bad_value": "C110",
+    "layer1_label": "context",
+    "text": "ViT"
+  },
+  {
+    "pattern": "P19",
+    "field": "context",
+    "bad_value": [
+      "I49"
+    ]
+  },
+  {
+    "pattern": "P39",
+    "field": "intervention",
+    "bad_value": "C132",
+    "layer1_label": "context",
+    "text": "as shown in Tab. 1 for the 66M ViT model."
+  },
+  {
+    "pattern": "P45",
+    "field": "intervention",
+    "bad_value": "C136",
+    "layer1_label": "context",
+    "text": "we adopt multi-view inference by default."
+  },
+  {
+    "pattern": "P46",
+    "field": "intervention",
+    "bad_value": "C297",
+    "layer1_label": "context",
+    "text": "VARC (ensemble)"
+  },
+  {
+    "pattern": "P47",
+    "field": "intervention",
+    "bad_value": "C297",
+    "layer1_label": "context",
+    "text": "VARC (ensemble)"
+  },
+  {
+    "pattern": "P97",
+    "field": "intervention",
+    "bad_value": "C288",
+    "layer1_label": "context",
+    "text": "Deepseek R1 [21]"
+  },
+  {
+    "pattern": "P98",
+    "field": "intervention",
+    "bad_value": "C288",
+    "layer1_label": "context",
+    "text": "Deepseek R1 [21]"
+  },
+  {
+    "pattern": "P99",
+    "field": "intervention",
+    "bad_value": "C289",
+    "layer1_label": "context",
+    "text": "Claude 3.7 8k [18]"
+  },
+  {
+    "pattern": "P100",
+    "field": "intervention",
+    "bad_value": "C289",
+    "layer1_label": "context",
+    "text": "Claude 3.7 8k [18]"
+  },
+  {
+    "pattern": "P101",
+    "field": "intervention",
+    "bad_value": "C290",
+    "layer1_label": "context",
+    "text": "o3-mini-high [18]"
+  },
+  {
+    "pattern": "P102",
+    "field": "intervention",
+    "bad_value": "C290",
+    "layer1_label": "context",
+    "text": "o3-mini-high [18]"
+  },
+  {
+    "pattern": "P103",
+    "field": "intervention",
+    "bad_value": "C291",
+    "layer1_label": "context",
+    "text": "GPT-5 [18]"
+  },
+  {
+    "pattern": "P104",
+    "field": "intervention",
+    "bad_value": "C291",
+    "layer1_label": "context",
+    "text": "GPT-5 [18]"
+  },
+  {
+    "pattern": "P105",
+    "field": "intervention",
+    "bad_value": "C292",
+    "layer1_label": "context",
+    "text": "Grok-4-thinking [18]"
+  },
+  {
+    "pattern": "P106",
+    "field": "intervention",
+    "bad_value": "C292",
+    "layer1_label": "context",
+    "text": "Grok-4-thinking [18]"
+  },
+  {
+    "pattern": "P107",
+    "field": "intervention",
+    "bad_value": "C293",
+    "layer1_label": "context",
+    "text": "Bespoke (Grok-4) [8]"
+  },
+  {
+    "pattern": "P108",
+    "field": "intervention",
+    "bad_value": "C293",
+    "layer1_label": "context",
+    "text": "Bespoke (Grok-4) [8]"
+  },
+  {
+    "pattern": "P109",
+    "field": "intervention",
+    "bad_value": "C294",
+    "layer1_label": "context",
+    "text": "HRM [53]"
+  },
+  {
+    "pattern": "P110",
+    "field": "intervention",
+    "bad_value": "C294",
+    "layer1_label": "context",
+    "text": "HRM [53]"
+  },
+  {
+    "pattern": "P111",
+    "field": "intervention",
+    "bad_value": "C295",
+    "layer1_label": "context",
+    "text": "TRM [27]"
+  },
+  {
+    "pattern": "P112",
+    "field": "intervention",
+    "bad_value": "C295",
+    "layer1_label": "context",
+    "text": "TRM [27]"
+  },
+  {
+    "pattern": "P113",
+    "field": "intervention",
+    "bad_value": "C296",
+    "layer1_label": "context",
+    "text": "VARC"
+  },
+  {
+    "pattern": "P114",
+    "field": "intervention",
+    "bad_value": "C296",
+    "layer1_label": "context",
+    "text": "VARC"
+  },
+  {
+    "pattern": "P115",
+    "field": "intervention",
+    "bad_value": "C297",
+    "layer1_label": "context",
+    "text": "VARC (ensemble)"
+  },
+  {
+    "pattern": "P116",
+    "field": "intervention",
+    "bad_value": "C297",
+    "layer1_label": "context",
+    "text": "VARC (ensemble)"
+  },
+  {
+    "pattern": "P117",
+    "field": "intervention",
+    "bad_value": "C298",
+    "layer1_label": "context",
+    "text": "avg. human [31]"
+  },
+  {
+    "pattern": "P118",
+    "field": "intervention",
+    "bad_value": "C299",
+    "layer1_label": "context",
+    "text": "best human [18]"
+  },
+  {
+    "pattern": "P119",
+    "field": "intervention",
+    "bad_value": "C299",
+    "layer1_label": "context",
+    "text": "best human [18]"
+  },
+  {
+    "pattern": "P73",
+    "field": "reference",
+    "bad_value": "E32",
+    "layer1_label": "eval_metric",
+    "text": "correct output"
+  },
+  {
+    "pattern": "P73",
+    "field": "context",
+    "bad_value": [
+      "I86"
+    ]
+  },
+  {
+    "pattern": "P74",
+    "field": "reference",
+    "bad_value": "E32",
+    "layer1_label": "eval_metric",
+    "text": "correct output"
+  },
+  {
+    "pattern": "P74",
+    "field": "context",
+    "bad_value": [
+      "I86"
+    ]
+  },
+  {
+    "pattern": "P78",
+    "field": "reference",
+    "bad_value": "E34",
+    "layer1_label": "eval_metric",
+    "text": "correct output"
+  },
+  {
+    "pattern": "P78",
+    "field": "context",
+    "bad_value": [
+      "I89"
+    ]
+  },
+  {
+    "pattern": "P79",
+    "field": "reference",
+    "bad_value": "E34",
+    "layer1_label": "eval_metric",
+    "text": "correct output"
+  },
+  {
+    "pattern": "P79",
+    "field": "context",
+    "bad_value": [
+      "I89"
+    ]
+  },
+  {
+    "pattern": "P82",
+    "field": "reference",
+    "bad_value": "E36",
+    "layer1_label": "eval_metric",
+    "text": "Ground truth"
+  },
+  {
+    "pattern": "P18",
+    "field": "context",
+    "bad_value": [
+      "A9"
+    ]
+  },
+  {
+    "pattern": "P83",
+    "field": "reference",
+    "bad_value": "E37",
+    "layer1_label": "eval_metric",
+    "text": "correctly solved"
+  }
+]

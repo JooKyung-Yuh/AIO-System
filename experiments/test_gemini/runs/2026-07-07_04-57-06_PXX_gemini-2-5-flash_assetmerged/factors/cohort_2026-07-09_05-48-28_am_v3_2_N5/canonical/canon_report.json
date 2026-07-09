@@ -1,0 +1,37 @@
+{
+  "n_builds": 5,
+  "before": {
+    "context": 89,
+    "intervention": 26,
+    "eval_metric": 25,
+    "am_atoms_union": 38
+  },
+  "after": {
+    "context": 79,
+    "intervention": 29,
+    "eval_metric": 6,
+    "am_clusters": 23
+  },
+  "am_cluster_bands": {
+    "observed": 22,
+    "supported": 0,
+    "uncertain": 1
+  },
+  "am_status": {
+    "tested": 17,
+    "contested": 1,
+    "weakly-tested": 2,
+    "assumed": 3
+  },
+  "propose_test_targets": [
+    "ASM_multiple_unseen_tasks_cannot_assumed_simultaneously",
+    "MECH_attention_masks_encourage_foreground_focus_improving",
+    "MECH_average_pooling_aggregates_predictions_raw_grid"
+  ],
+  "context_dropped": 1,
+  "merge_queue_pending": 0,
+  "cio_field_errors": 47,
+  "promoted_interventions": 4,
+  "link_jaccard_raw_baseline": 0.644,
+  "link_jaccard_on_canonical_am": 0.652
+}
