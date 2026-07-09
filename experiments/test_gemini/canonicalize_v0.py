@@ -544,16 +544,47 @@ def main():
                 cid = r2c_am.get(atom)
                 if cid in am_canon:
                     am_edges[cid][(p, d)].add(b["name"])
-    for cid, rec in am_canon.items():
-        st, s_obs, w_obs, propose = derive_am_status(rec, am_edges.get(cid, {}), STATUS_MIN_BUILDS)
-        rec["status"] = st
-        rec["strengthened_by"] = s_obs
-        rec["weakened_by"] = w_obs
-        rec["propose_test"] = propose
-
-    # AM ontology v0.1 typing: general rules (code, spec §1) + per-paper overrides (config, §2)
+    # AM ontology v0.1 typing FIRST (general rules code §1 + per-paper overrides config §2), so the
+    # belief-edge routing below can gate each edge on its target's link_policy.
     onto_path = run_dir / "am_ontology_overrides.json"
     assign_ontology_types(am_canon, load_json(onto_path) if onto_path.exists() else {})
+
+    # ---- L2: enforce link_policy on belief edges (migration spec §3 + §4 success criteria). A direct
+    # belief_update (strengthen/weaken) may target a direct_link_allowed AM (mechanism | aggregate_claim)
+    # ONLY. Edges whose target is a paper_thesis / qualifier / demoted observation are re-routed to
+    # explicit buckets (rolls_up / qualifier / demoted) so the direct graph carries only genuine
+    # Observation->mechanism belief; strengthened_by/weakened_by stay empty for non-direct targets. The
+    # STATUS_MIN_BUILDS reproducibility gate is applied uniformly, so every reported edge recurs. No LLM.
+    POLICY_BUCKET = {"rolls_up_only": "rolls_up", "qualifier_only": "qualifier", "no_direct_link": "demoted"}
+    POLICY_EDGE = {"rolls_up": "rolls_up", "qualifier": "qualifies", "demoted": "demoted"}
+    POLICY_STATUS = {"rolls_up_only": "rollup_target", "qualifier_only": "qualifier",
+                     "no_direct_link": "demoted_observation"}
+    belief_edges = {"direct": [], "rolls_up": [], "qualifier": [], "demoted": []}
+    for cid, rec in am_canon.items():
+        edges = am_edges.get(cid, {})
+        repro = {(p, d): len(bs) for (p, d), bs in edges.items() if len(bs) >= STATUS_MIN_BUILDS}
+        if rec["link_policy"] == "direct_link_allowed":
+            st, s_obs, w_obs, propose = derive_am_status(rec, edges, STATUS_MIN_BUILDS)
+            rec["status"], rec["strengthened_by"], rec["weakened_by"], rec["propose_test"] = st, s_obs, w_obs, propose
+            for (p, d), nb in repro.items():
+                belief_edges["direct"].append({"observation": p, "target": cid, "direction": d,
+                                               "edge_type": d, "n_builds": nb})
+        else:                                            # policy forbids direct belief edges -> reroute
+            st, _, _, propose = derive_am_status(rec, {}, STATUS_MIN_BUILDS)  # orphan/'assumed' logic still applies
+            rec["status"] = st if rec.get("ref_count", 0) == 0 else POLICY_STATUS[rec["link_policy"]]
+            rec["strengthened_by"], rec["weakened_by"], rec["propose_test"] = [], [], propose
+            bucket = POLICY_BUCKET[rec["link_policy"]]
+            for (p, d), nb in repro.items():
+                belief_edges[bucket].append({"observation": p, "target": cid, "direction": d,
+                                             "edge_type": POLICY_EDGE[bucket], "n_builds": nb})
+    for k in belief_edges:
+        belief_edges[k].sort(key=lambda e: (e["target"], e["observation"], e["direction"]))
+    # success criteria (spec §4): direct edges only to direct_link_allowed AMs; paper_thesis direct = 0.
+    assert all(am_canon[e["target"]]["link_policy"] == "direct_link_allowed" for e in belief_edges["direct"]), \
+        "link_policy violation: a direct belief edge targets a non-direct AM"
+    thesis_direct = sum(1 for e in belief_edges["direct"]
+                        if am_canon[e["target"]]["ontology_type"] == "paper_thesis")
+    assert thesis_direct == 0, f"paper_thesis direct edges must be 0, got {thesis_direct}"
 
     am_band = collections.Counter(v["band"] for v in am_canon.values())
     report = {
@@ -570,6 +601,7 @@ def main():
         "am_status": dict(collections.Counter(v["status"] for v in am_canon.values())),
         "am_ontology_types": dict(collections.Counter(v.get("ontology_type") for v in am_canon.values())),
         "am_link_policies": dict(collections.Counter(v.get("link_policy") for v in am_canon.values())),
+        "belief_edges_by_policy": {k: len(v) for k, v in belief_edges.items()},
         "propose_test_targets": sorted(cid for cid, v in am_canon.items() if v.get("propose_test")),
         "context_dropped": len(dropped),
         "merge_queue_pending": len(merge_queue),
@@ -581,6 +613,7 @@ def main():
 
     (out_dir / "cio_consensus.json").write_text(json.dumps(cio_cons, indent=2, ensure_ascii=False))
     (out_dir / "am_canonical.json").write_text(json.dumps(am_canon, indent=2, ensure_ascii=False))
+    (out_dir / "belief_edges.json").write_text(json.dumps(belief_edges, indent=2, ensure_ascii=False))
     (out_dir / "registry.json").write_text(json.dumps(registry, indent=2, ensure_ascii=False))
     (out_dir / "merge_queue.json").write_text(json.dumps(merge_queue, indent=2, ensure_ascii=False))
     (out_dir / "cio_field_errors.json").write_text(json.dumps(field_errors, indent=2, ensure_ascii=False))

@@ -1,0 +1,248 @@
+{
+  "direct": [
+    {
+      "observation": "P28",
+      "target": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+      "direction": "strengthen",
+      "edge_type": "strengthen",
+      "n_builds": 2
+    },
+    {
+      "observation": "P34",
+      "target": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+      "direction": "strengthen",
+      "edge_type": "strengthen",
+      "n_builds": 5
+    },
+    {
+      "observation": "P35",
+      "target": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+      "direction": "strengthen",
+      "edge_type": "strengthen",
+      "n_builds": 5
+    },
+    {
+      "observation": "P24",
+      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+      "direction": "strengthen",
+      "edge_type": "strengthen",
+      "n_builds": 4
+    },
+    {
+      "observation": "P25",
+      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+      "direction": "strengthen",
+      "edge_type": "strengthen",
+      "n_builds": 3
+    },
+    {
+      "observation": "P26",
+      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+      "direction": "strengthen",
+      "edge_type": "strengthen",
+      "n_builds": 3
+    },
+    {
+      "observation": "P28",
+      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+      "direction": "strengthen",
+      "edge_type": "strengthen",
+      "n_builds": 2
+    },
+    {
+      "observation": "P20",
+      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
+      "direction": "strengthen",
+      "edge_type": "strengthen",
+      "n_builds": 4
+    },
+    {
+      "observation": "P21",
+      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
+      "direction": "strengthen",
+      "edge_type": "strengthen",
+      "n_builds": 5
+    },
+    {
+      "observation": "P22",
+      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
+      "direction": "strengthen",
+      "edge_type": "strengthen",
+      "n_builds": 5
+    },
+    {
+      "observation": "P23",
+      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
+      "direction": "strengthen",
+      "edge_type": "strengthen",
+      "n_builds": 2
+    },
+    {
+      "observation": "P29",
+      "target": "MECH_increasing_model_size_improves_accuracy_enabling",
+      "direction": "strengthen",
+      "edge_type": "strengthen",
+      "n_builds": 3
+    },
+    {
+      "observation": "P39",
+      "target": "MECH_majority_voting_consolidates_predictions_from_different",
+      "direction": "strengthen",
+      "edge_type": "strengthen",
+      "n_builds": 2
+    },
+    {
+      "observation": "P95",
+      "target": "MECH_majority_voting_consolidates_predictions_from_different",
+      "direction": "strengthen",
+      "edge_type": "strengthen",
+      "n_builds": 2
+    },
+    {
+      "observation": "P80",
+      "target": "MECH_model_handles_ambiguity_proposing_multiple_rule",
+      "direction": "strengthen",
+      "edge_type": "strengthen",
+      "n_builds": 2
+    },
+    {
+      "observation": "P82",
+      "target": "MECH_model_handles_ambiguity_proposing_multiple_rule",
+      "direction": "strengthen",
+      "edge_type": "strengthen",
+      "n_builds": 2
+    },
+    {
+      "observation": "P30",
+      "target": "MECH_visual_common_sense_learned_from_offline",
+      "direction": "strengthen",
+      "edge_type": "strengthen",
+      "n_builds": 5
+    }
+  ],
+  "rolls_up": [
+    {
+      "observation": "P12",
+      "target": "MECH_visual_learning_enables_abstraction_inference_without",
+      "direction": "strengthen",
+      "edge_type": "rolls_up",
+      "n_builds": 2
+    },
+    {
+      "observation": "P16",
+      "target": "MECH_visual_learning_enables_abstraction_inference_without",
+      "direction": "strengthen",
+      "edge_type": "rolls_up",
+      "n_builds": 2
+    },
+    {
+      "observation": "P48",
+      "target": "MECH_visual_learning_enables_abstraction_inference_without",
+      "direction": "strengthen",
+      "edge_type": "rolls_up",
+      "n_builds": 2
+    },
+    {
+      "observation": "P49",
+      "target": "MECH_visual_learning_enables_abstraction_inference_without",
+      "direction": "strengthen",
+      "edge_type": "rolls_up",
+      "n_builds": 2
+    }
+  ],
+  "qualifier": [
+    {
+      "observation": "P41",
+      "target": "ASM_single_pixel_error_invalidates_entire_arc",
+      "direction": "strengthen",
+      "edge_type": "qualifies",
+      "n_builds": 2
+    },
+    {
+      "observation": "P42",
+      "target": "ASM_single_pixel_error_invalidates_entire_arc",
+      "direction": "strengthen",
+      "edge_type": "qualifies",
+      "n_builds": 2
+    },
+    {
+      "observation": "P80",
+      "target": "ASM_some_arc_tasks_admit_multiple_plausible",
+      "direction": "strengthen",
+      "edge_type": "qualifies",
+      "n_builds": 2
+    },
+    {
+      "observation": "P81",
+      "target": "ASM_some_arc_tasks_admit_multiple_plausible",
+      "direction": "strengthen",
+      "edge_type": "qualifies",
+      "n_builds": 4
+    },
+    {
+      "observation": "P82",
+      "target": "ASM_some_arc_tasks_admit_multiple_plausible",
+      "direction": "strengthen",
+      "edge_type": "qualifies",
+      "n_builds": 3
+    },
+    {
+      "observation": "P66",
+      "target": "MECH_correct_predictions_exist_views_but_outvoted",
+      "direction": "strengthen",
+      "edge_type": "qualifies",
+      "n_builds": 2
+    },
+    {
+      "observation": "P31",
+      "target": "MECH_some_tasks_solvable_from_scratch_tabula",
+      "direction": "strengthen",
+      "edge_type": "qualifies",
+      "n_builds": 2
+    }
+  ],
+  "demoted": [
+    {
+      "observation": "P18",
+      "target": "MECH_attention_maps_reveal_pixel_pixel_reasoning",
+      "direction": "strengthen",
+      "edge_type": "demoted",
+      "n_builds": 2
+    },
+    {
+      "observation": "P53",
+      "target": "MECH_attention_maps_reveal_pixel_pixel_reasoning",
+      "direction": "strengthen",
+      "edge_type": "demoted",
+      "n_builds": 2
+    },
+    {
+      "observation": "P17",
+      "target": "MECH_ttt_visualization_shows_model_adapting_task",
+      "direction": "strengthen",
+      "edge_type": "demoted",
+      "n_builds": 2
+    },
+    {
+      "observation": "P85",
+      "target": "MECH_ttt_visualization_shows_model_adapting_task",
+      "direction": "strengthen",
+      "edge_type": "demoted",
+      "n_builds": 5
+    },
+    {
+      "observation": "P86",
+      "target": "MECH_ttt_visualization_shows_model_adapting_task",
+      "direction": "strengthen",
+      "edge_type": "demoted",
+      "n_builds": 4
+    },
+    {
+      "observation": "P87",
+      "target": "MECH_ttt_visualization_shows_model_adapting_task",
+      "direction": "strengthen",
+      "edge_type": "demoted",
+      "n_builds": 5
+    }
+  ]
+}

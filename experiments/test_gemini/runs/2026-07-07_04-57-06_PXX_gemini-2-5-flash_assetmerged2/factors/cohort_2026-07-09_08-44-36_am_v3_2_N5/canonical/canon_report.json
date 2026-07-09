@@ -18,9 +18,12 @@
     "uncertain": 0
   },
   "am_status": {
-    "tested": 7,
-    "weakly-tested": 11,
-    "assumed": 5
+    "tested": 4,
+    "rollup_target": 1,
+    "qualifier": 4,
+    "assumed": 5,
+    "weakly-tested": 6,
+    "demoted_observation": 3
   },
   "am_ontology_types": {
     "mechanism": 12,
@@ -35,6 +38,12 @@
     "rolls_up_only": 1,
     "qualifier_only": 7,
     "no_direct_link": 3
+  },
+  "belief_edges_by_policy": {
+    "direct": 17,
+    "rolls_up": 4,
+    "qualifier": 7,
+    "demoted": 6
   },
   "propose_test_targets": [
     "ASM_larger_models_beyond_current_regime_lead",
