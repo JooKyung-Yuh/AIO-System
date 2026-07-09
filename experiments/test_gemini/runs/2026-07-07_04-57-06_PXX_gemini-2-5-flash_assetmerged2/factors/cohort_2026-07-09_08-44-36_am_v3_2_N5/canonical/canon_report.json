@@ -22,6 +22,14 @@
     "weakly-tested": 11,
     "assumed": 5
   },
+  "am_ontology_types": {
+    "mechanism": 12,
+    "paper_thesis": 1,
+    "assumption": 3,
+    "qualitative_observation": 3,
+    "scope_condition": 2,
+    "limitation": 2
+  },
   "propose_test_targets": [
     "ASM_larger_models_beyond_current_regime_lead",
     "ASM_multi_view_inference_cost_negligible_compared",

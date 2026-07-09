@@ -1,0 +1,7 @@
+{
+  "_note": "VARC-tuned AM ontology overrides (migration spec §2). Keyed by ontology_type -> [gloss substrings]. Applied AFTER the general rules (spec §1, in canonicalize_v0.py). Per-paper: do NOT move into the system core.",
+  "paper_thesis": ["visual learning enables abstraction", "visual learning directly yields abstraction"],
+  "scope_condition": ["single pixel error invalidates", "multi-view inference cost", "multi view inference cost"],
+  "limitation": ["beyond current regime", "outvoted"],
+  "assumption": ["solvable from scratch", "tabula"]
+}

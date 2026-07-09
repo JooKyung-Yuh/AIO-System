@@ -402,6 +402,49 @@ def derive_am_status(rec, edges, min_builds):
     return "weakly-tested", strengthen, weaken, False
 
 
+# --- AM ontology v0.1 typing (docs/am-ontology-v0.1/2026-07-09-am-ontology-migration-spec.md) ---
+# §1 GENERAL rules live here as paper-agnostic code. §2 VARC-tuned assignments come from a
+# per-paper overrides file (run-dir/am_ontology_overrides.json), so no paper-specific string leaks
+# into the system core. link_policy is derived deterministically from ontology_type.
+OBS_LEAKY_RE = re.compile(r"\b(shows?|reveal(?:s|ed)?|suggests?|visuali[sz]ation|illustrat)", re.I)
+ONTOLOGY_LINK_POLICY = {
+    "mechanism": "direct_link_allowed", "aggregate_claim": "direct_link_allowed",
+    "paper_thesis": "rolls_up_only",
+    "assumption": "qualifier_only", "scope_condition": "qualifier_only",
+    "precondition": "qualifier_only", "limitation": "qualifier_only",
+    "qualitative_observation": "no_direct_link",
+}
+
+
+def general_ontology_type(gloss, kind):
+    """Paper-agnostic ontology_type (spec §1): an observation-leaky belief
+    ('shows/reveals/suggests/visualization') is really a qualitative observation; an L1 assumption
+    defaults to a QualifierCard; everything else is a mechanism. paper_thesis / scope_condition /
+    limitation / aggregate_claim are paper-specific and arrive via per-paper overrides (§2)."""
+    if OBS_LEAKY_RE.search(gloss or ""):
+        return "qualitative_observation"
+    if kind == "assumption":
+        return "assumption"
+    return "mechanism"
+
+
+def assign_ontology_types(am_canon, overrides):
+    """Attach ontology_type + link_policy to every canonical AM. General rule first, then the
+    per-paper overrides — keyed by GLOSS substring (a canonical_id is per-cohort, a gloss is
+    stable), mapping {ontology_type: [gloss substrings]}."""
+    for rec in am_canon.values():
+        rec["ontology_type"] = general_ontology_type(rec.get("gloss"), rec.get("type"))
+    for otype, subs in (overrides or {}).items():
+        if otype.startswith("_") or not isinstance(subs, list):
+            continue                                 # skip config metadata (e.g. "_note")
+        for rec in am_canon.values():
+            g = (rec.get("gloss") or "").lower()
+            if any(str(s).lower() in g for s in subs):
+                rec["ontology_type"] = otype
+    for rec in am_canon.values():
+        rec["link_policy"] = ONTOLOGY_LINK_POLICY.get(rec["ontology_type"], "direct_link_allowed")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--run-dir", required=True)
@@ -504,6 +547,10 @@ def main():
         rec["weakened_by"] = w_obs
         rec["propose_test"] = propose
 
+    # AM ontology v0.1 typing: general rules (code, spec §1) + per-paper overrides (config, §2)
+    onto_path = run_dir / "am_ontology_overrides.json"
+    assign_ontology_types(am_canon, load_json(onto_path) if onto_path.exists() else {})
+
     am_band = collections.Counter(v["band"] for v in am_canon.values())
     report = {
         "n_builds": n,
@@ -517,6 +564,7 @@ def main():
                   "eval_metric": len(met_canon), "am_clusters": len(am_canon)},
         "am_cluster_bands": {b: am_band.get(b, 0) for b in ("observed", "supported", "uncertain")},
         "am_status": dict(collections.Counter(v["status"] for v in am_canon.values())),
+        "am_ontology_types": dict(collections.Counter(v.get("ontology_type") for v in am_canon.values())),
         "propose_test_targets": sorted(cid for cid, v in am_canon.items() if v.get("propose_test")),
         "context_dropped": len(dropped),
         "merge_queue_pending": len(merge_queue),

@@ -2481,7 +2481,9 @@
         "P35"
       ],
       "weakened_by": [],
-      "propose_test": false
+      "propose_test": false,
+      "ontology_type": "mechanism",
+      "link_policy": "direct_link_allowed"
     },
     "MECH_visual_learning_enables_abstraction_inference_without": {
       "canonical_id": "MECH_visual_learning_enables_abstraction_inference_without",
@@ -2520,7 +2522,9 @@
         "P49"
       ],
       "weakened_by": [],
-      "propose_test": false
+      "propose_test": false,
+      "ontology_type": "paper_thesis",
+      "link_policy": "rolls_up_only"
     },
     "MECH_some_tasks_solvable_from_scratch_tabula": {
       "canonical_id": "MECH_some_tasks_solvable_from_scratch_tabula",
@@ -2544,7 +2548,9 @@
         "P31"
       ],
       "weakened_by": [],
-      "propose_test": false
+      "propose_test": false,
+      "ontology_type": "assumption",
+      "link_policy": "qualifier_only"
     },
     "MECH_canvas_patchification_enriches_data_reduces_overfitting": {
       "canonical_id": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
@@ -2579,7 +2585,9 @@
         "P28"
       ],
       "weakened_by": [],
-      "propose_test": false
+      "propose_test": false,
+      "ontology_type": "mechanism",
+      "link_policy": "direct_link_allowed"
     },
     "ASM_some_arc_tasks_admit_multiple_plausible": {
       "canonical_id": "ASM_some_arc_tasks_admit_multiple_plausible",
@@ -2607,7 +2615,9 @@
         "P82"
       ],
       "weakened_by": [],
-      "propose_test": false
+      "propose_test": false,
+      "ontology_type": "assumption",
+      "link_policy": "qualifier_only"
     },
     "MECH_average_pooling_aggregates_predictions_raw_grid": {
       "canonical_id": "MECH_average_pooling_aggregates_predictions_raw_grid",
@@ -2626,7 +2636,9 @@
       "status": "assumed",
       "strengthened_by": [],
       "weakened_by": [],
-      "propose_test": true
+      "propose_test": true,
+      "ontology_type": "mechanism",
+      "link_policy": "direct_link_allowed"
     },
     "MECH_early_layer_attention_reflects_pattern_core": {
       "canonical_id": "MECH_early_layer_attention_reflects_pattern_core",
@@ -2647,7 +2659,9 @@
       "status": "weakly-tested",
       "strengthened_by": [],
       "weakened_by": [],
-      "propose_test": false
+      "propose_test": false,
+      "ontology_type": "mechanism",
+      "link_policy": "direct_link_allowed"
     },
     "MECH_task_embedding_visualization_suggests_learning_inter": {
       "canonical_id": "MECH_task_embedding_visualization_suggests_learning_inter",
@@ -2668,7 +2682,9 @@
       "status": "weakly-tested",
       "strengthened_by": [],
       "weakened_by": [],
-      "propose_test": false
+      "propose_test": false,
+      "ontology_type": "qualitative_observation",
+      "link_policy": "no_direct_link"
     },
     "MECH_attention_maps_reveal_pixel_pixel_reasoning": {
       "canonical_id": "MECH_attention_maps_reveal_pixel_pixel_reasoning",
@@ -2696,7 +2712,9 @@
         "P53"
       ],
       "weakened_by": [],
-      "propose_test": false
+      "propose_test": false,
+      "ontology_type": "qualitative_observation",
+      "link_policy": "no_direct_link"
     },
     "ASM_multiple_unseen_tasks_cannot_assumed_simultaneously": {
       "canonical_id": "ASM_multiple_unseen_tasks_cannot_assumed_simultaneously",
@@ -2716,7 +2734,9 @@
       "status": "assumed",
       "strengthened_by": [],
       "weakened_by": [],
-      "propose_test": true
+      "propose_test": true,
+      "ontology_type": "assumption",
+      "link_policy": "qualifier_only"
     },
     "MECH_explicit_2d_positional_modeling_preserves_image": {
       "canonical_id": "MECH_explicit_2d_positional_modeling_preserves_image",
@@ -2747,7 +2767,9 @@
         "P23"
       ],
       "weakened_by": [],
-      "propose_test": false
+      "propose_test": false,
+      "ontology_type": "mechanism",
+      "link_policy": "direct_link_allowed"
     },
     "ASM_single_pixel_error_invalidates_entire_arc": {
       "canonical_id": "ASM_single_pixel_error_invalidates_entire_arc",
@@ -2772,7 +2794,9 @@
         "P42"
       ],
       "weakened_by": [],
-      "propose_test": false
+      "propose_test": false,
+      "ontology_type": "scope_condition",
+      "link_policy": "qualifier_only"
     },
     "MECH_majority_voting_consolidates_predictions_from_different": {
       "canonical_id": "MECH_majority_voting_consolidates_predictions_from_different",
@@ -2805,7 +2829,9 @@
         "P95"
       ],
       "weakened_by": [],
-      "propose_test": false
+      "propose_test": false,
+      "ontology_type": "mechanism",
+      "link_policy": "direct_link_allowed"
     },
     "MECH_visual_common_sense_learned_from_offline": {
       "canonical_id": "MECH_visual_common_sense_learned_from_offline",
@@ -2833,7 +2859,9 @@
         "P30"
       ],
       "weakened_by": [],
-      "propose_test": false
+      "propose_test": false,
+      "ontology_type": "mechanism",
+      "link_policy": "direct_link_allowed"
     },
     "MECH_correct_predictions_exist_views_but_outvoted": {
       "canonical_id": "MECH_correct_predictions_exist_views_but_outvoted",
@@ -2857,7 +2885,9 @@
         "P66"
       ],
       "weakened_by": [],
-      "propose_test": false
+      "propose_test": false,
+      "ontology_type": "limitation",
+      "link_policy": "qualifier_only"
     },
     "MECH_model_handles_ambiguity_proposing_multiple_rule": {
       "canonical_id": "MECH_model_handles_ambiguity_proposing_multiple_rule",
@@ -2882,7 +2912,9 @@
         "P82"
       ],
       "weakened_by": [],
-      "propose_test": false
+      "propose_test": false,
+      "ontology_type": "mechanism",
+      "link_policy": "direct_link_allowed"
     },
     "ASM_multi_view_inference_cost_negligible_compared": {
       "canonical_id": "ASM_multi_view_inference_cost_negligible_compared",
@@ -2901,7 +2933,9 @@
       "status": "assumed",
       "strengthened_by": [],
       "weakened_by": [],
-      "propose_test": true
+      "propose_test": true,
+      "ontology_type": "scope_condition",
+      "link_policy": "qualifier_only"
     },
     "ASM_larger_models_beyond_current_regime_lead": {
       "canonical_id": "ASM_larger_models_beyond_current_regime_lead",
@@ -2920,7 +2954,9 @@
       "status": "assumed",
       "strengthened_by": [],
       "weakened_by": [],
-      "propose_test": true
+      "propose_test": true,
+      "ontology_type": "limitation",
+      "link_policy": "qualifier_only"
     },
     "MECH_attention_masks_loss_focus_improve_foreground": {
       "canonical_id": "MECH_attention_masks_loss_focus_improve_foreground",
@@ -2939,7 +2975,9 @@
       "status": "assumed",
       "strengthened_by": [],
       "weakened_by": [],
-      "propose_test": true
+      "propose_test": true,
+      "ontology_type": "mechanism",
+      "link_policy": "direct_link_allowed"
     },
     "MECH_ttt_visualization_shows_model_adapting_task": {
       "canonical_id": "MECH_ttt_visualization_shows_model_adapting_task",
@@ -2969,7 +3007,9 @@
         "P87"
       ],
       "weakened_by": [],
-      "propose_test": false
+      "propose_test": false,
+      "ontology_type": "qualitative_observation",
+      "link_policy": "no_direct_link"
     },
     "MECH_later_layer_attention_reflects_rule_extending": {
       "canonical_id": "MECH_later_layer_attention_reflects_rule_extending",
@@ -2990,7 +3030,9 @@
       "status": "weakly-tested",
       "strengthened_by": [],
       "weakened_by": [],
-      "propose_test": false
+      "propose_test": false,
+      "ontology_type": "mechanism",
+      "link_policy": "direct_link_allowed"
     },
     "MECH_patchification_provides_locality_translation_invariance_inductive": {
       "canonical_id": "MECH_patchification_provides_locality_translation_invariance_inductive",
@@ -3011,7 +3053,9 @@
       "status": "weakly-tested",
       "strengthened_by": [],
       "weakened_by": [],
-      "propose_test": false
+      "propose_test": false,
+      "ontology_type": "mechanism",
+      "link_policy": "direct_link_allowed"
     },
     "MECH_increasing_model_size_improves_accuracy_enabling": {
       "canonical_id": "MECH_increasing_model_size_improves_accuracy_enabling",
@@ -3034,7 +3078,9 @@
         "P29"
       ],
       "weakened_by": [],
-      "propose_test": false
+      "propose_test": false,
+      "ontology_type": "mechanism",
+      "link_policy": "direct_link_allowed"
     }
   },
   "raw2canon": {
