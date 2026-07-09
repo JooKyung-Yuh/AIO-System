@@ -24,7 +24,7 @@
 ## factor precision 관점 expected improvement
 - v2 raw link 중 **~39%만 진짜 belief_update**로 남고, 나머지는:
   thesis-funnel(13%)는 rolls_up으로 격하(관측 직결 아님), 관측-누수(18%)는 belief에서 제거, 조건류(14%)는 qualifier로.
-- 즉 새 ontology는 **belief 레이어를 절반가량으로 정제**하고, 남은 direct link의 precision을 높인다(가짜 지지 제거).
+- 즉 새 ontology는 **belief 레이어를 절반가량으로 정제**해 **precision audit 대상을 좁힌다**(type-mixing 제거). 남은 direct link의 실제 precision은 별도 audit(unique 27, correct+plausible 70%, wrong+too_broad 30%) 참조 — ontology가 precision 자체를 보장하진 않음.
 - 단 aggregate_claim 신설 전까지 집계 관측은 unresolved로 남음(코드 단계 과제).
 
 ## 검증

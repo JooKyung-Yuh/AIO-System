@@ -17,7 +17,7 @@ r2c = reg["raw2canon"]
 # fan_in_v2: canonical-AM-resolved links across the 5 v2 builds (unresolved excluded)
 fanin = collections.Counter()
 resolved = excluded = 0
-for b in glob.glob(str(COH / "builds/*/")):
+for b in sorted(glob.glob(str(COH / "builds/*/"))):
     try:
         amc = {x["am_id"]: x for x in json.load(open(f"{b}/am_cards.json"))}
         links = json.load(open(f"{b}/links.json"))
@@ -97,7 +97,7 @@ for cid, rec in am.items():
         "confidence": conf,
         "unresolved_questions": unresolved,
     })
-annos.sort(key=lambda a: -a["fan_in_v2"])
+annos.sort(key=lambda a: (-a["fan_in_v2"], a["canonical_id"]))   # deterministic order (tie-break by id)
 
 # aggregate_claim gap is explicit
 type_counts = collections.Counter(a["ontology_type"] for a in annos)

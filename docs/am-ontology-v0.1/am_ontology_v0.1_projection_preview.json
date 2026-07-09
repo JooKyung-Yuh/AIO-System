@@ -36,8 +36,85 @@
       "edge": "strengthen/weaken"
     },
     {
+      "observation": "P24",
+      "pattern_text": "Extending from 1D posi-tional embedding to its 2D counterpar",
+      "claim": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+      "claim_gloss": "Canvas patchification enriches data, reduces",
+      "edge": "strengthen/weaken"
+    },
+    {
+      "observation": "P24",
+      "pattern_text": "Extending from 1D posi-tional embedding to its 2D counterpar",
+      "claim": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+      "claim_gloss": "Canvas patchification enriches data, reduces",
+      "edge": "strengthen/weaken"
+    },
+    {
+      "observation": "P24",
+      "pattern_text": "Extending from 1D posi-tional embedding to its 2D counterpar",
+      "claim": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+      "claim_gloss": "Canvas patchification enriches data, reduces",
+      "edge": "strengthen/weaken"
+    },
+    {
       "observation": "P25",
       "pattern_text": "observe a degradation",
+      "claim": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+      "claim_gloss": "Canvas patchification enriches data, reduces",
+      "edge": "strengthen/weaken"
+    },
+    {
+      "observation": "P25",
+      "pattern_text": "observe a degradation",
+      "claim": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+      "claim_gloss": "Canvas patchification enriches data, reduces",
+      "edge": "strengthen/weaken"
+    },
+    {
+      "observation": "P25",
+      "pattern_text": "observe a degradation",
+      "claim": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+      "claim_gloss": "Canvas patchification enriches data, reduces",
+      "edge": "strengthen/weaken"
+    },
+    {
+      "observation": "P25",
+      "pattern_text": "observe a degradation",
+      "claim": "MECH_explicit_2d_positional_modeling_preserves_image",
+      "claim_gloss": "Explicit 2D positional modeling preserves im",
+      "edge": "strengthen/weaken"
+    },
+    {
+      "observation": "P27",
+      "pattern_text": "Doing so does not increase the computational cost of the Tra",
+      "claim": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+      "claim_gloss": "Canvas patchification enriches data, reduces",
+      "edge": "strengthen/weaken"
+    },
+    {
+      "observation": "P28",
+      "pattern_text": "the 2×2 patchification leads to a noticeable gain",
+      "claim": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+      "claim_gloss": "Canvas formulation enables augmentations for",
+      "edge": "strengthen/weaken"
+    },
+    {
+      "observation": "P28",
+      "pattern_text": "the 2×2 patchification leads to a noticeable gain",
+      "claim": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+      "claim_gloss": "Canvas formulation enables augmentations for",
+      "edge": "strengthen/weaken"
+    },
+    {
+      "observation": "P28",
+      "pattern_text": "the 2×2 patchification leads to a noticeable gain",
+      "claim": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+      "claim_gloss": "Canvas patchification enriches data, reduces",
+      "edge": "strengthen/weaken"
+    },
+    {
+      "observation": "P28",
+      "pattern_text": "the 2×2 patchification leads to a noticeable gain",
       "claim": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
       "claim_gloss": "Canvas patchification enriches data, reduces",
       "edge": "strengthen/weaken"
@@ -47,6 +124,90 @@
       "pattern_text": "the 2×2 patchification leads to a noticeable gain",
       "claim": "MECH_patchification_provides_locality_translation_invariance_inductive",
       "claim_gloss": "Patchification provides locality and transla",
+      "edge": "strengthen/weaken"
+    },
+    {
+      "observation": "P29",
+      "pattern_text": "increasing depth and/or width leads to higher accuracy",
+      "claim": "MECH_increasing_model_size_improves_accuracy_enabling",
+      "claim_gloss": "Increasing model size improves accuracy by e",
+      "edge": "strengthen/weaken"
+    },
+    {
+      "observation": "P29",
+      "pattern_text": "increasing depth and/or width leads to higher accuracy",
+      "claim": "MECH_increasing_model_size_improves_accuracy_enabling",
+      "claim_gloss": "Increasing model size improves accuracy by e",
+      "edge": "strengthen/weaken"
+    },
+    {
+      "observation": "P29",
+      "pattern_text": "increasing depth and/or width leads to higher accuracy",
+      "claim": "MECH_increasing_model_size_improves_accuracy_enabling",
+      "claim_gloss": "Increasing model size improves accuracy by e",
+      "edge": "strengthen/weaken"
+    },
+    {
+      "observation": "P30",
+      "pattern_text": "offline training improves performance",
+      "claim": "MECH_visual_common_sense_learned_from_offline",
+      "claim_gloss": "Visual common sense is learned from offline ",
+      "edge": "strengthen/weaken"
+    },
+    {
+      "observation": "P30",
+      "pattern_text": "offline training improves performance",
+      "claim": "MECH_visual_common_sense_learned_from_offline",
+      "claim_gloss": "Visual common sense is learned from offline ",
+      "edge": "strengthen/weaken"
+    },
+    {
+      "observation": "P30",
+      "pattern_text": "offline training improves performance",
+      "claim": "MECH_visual_common_sense_learned_from_offline",
+      "claim_gloss": "Visual common sense is learned from offline ",
+      "edge": "strengthen/weaken"
+    },
+    {
+      "observation": "P30",
+      "pattern_text": "offline training improves performance",
+      "claim": "MECH_visual_common_sense_learned_from_offline",
+      "claim_gloss": "Visual common sense is learned from offline ",
+      "edge": "strengthen/weaken"
+    },
+    {
+      "observation": "P30",
+      "pattern_text": "offline training improves performance",
+      "claim": "MECH_visual_common_sense_learned_from_offline",
+      "claim_gloss": "Visual common sense is learned from offline ",
+      "edge": "strengthen/weaken"
+    },
+    {
+      "observation": "P34",
+      "pattern_text": "this setting yields an additional gain",
+      "claim": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+      "claim_gloss": "Canvas formulation enables augmentations for",
+      "edge": "strengthen/weaken"
+    },
+    {
+      "observation": "P34",
+      "pattern_text": "this setting yields an additional gain",
+      "claim": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+      "claim_gloss": "Canvas formulation enables augmentations for",
+      "edge": "strengthen/weaken"
+    },
+    {
+      "observation": "P34",
+      "pattern_text": "this setting yields an additional gain",
+      "claim": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+      "claim_gloss": "Canvas formulation enables augmentations for",
+      "edge": "strengthen/weaken"
+    },
+    {
+      "observation": "P34",
+      "pattern_text": "this setting yields an additional gain",
+      "claim": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+      "claim_gloss": "Canvas formulation enables augmentations for",
       "edge": "strengthen/weaken"
     },
     {
@@ -64,10 +225,38 @@
       "edge": "strengthen/weaken"
     },
     {
-      "observation": "P30",
-      "pattern_text": "offline training improves performance",
-      "claim": "MECH_visual_common_sense_learned_from_offline",
-      "claim_gloss": "Visual common sense is learned from offline ",
+      "observation": "P35",
+      "pattern_text": "Scale augmentation yields a substantial gain",
+      "claim": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+      "claim_gloss": "Canvas formulation enables augmentations for",
+      "edge": "strengthen/weaken"
+    },
+    {
+      "observation": "P35",
+      "pattern_text": "Scale augmentation yields a substantial gain",
+      "claim": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+      "claim_gloss": "Canvas formulation enables augmentations for",
+      "edge": "strengthen/weaken"
+    },
+    {
+      "observation": "P35",
+      "pattern_text": "Scale augmentation yields a substantial gain",
+      "claim": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+      "claim_gloss": "Canvas formulation enables augmentations for",
+      "edge": "strengthen/weaken"
+    },
+    {
+      "observation": "P35",
+      "pattern_text": "Scale augmentation yields a substantial gain",
+      "claim": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+      "claim_gloss": "Canvas formulation enables augmentations for",
+      "edge": "strengthen/weaken"
+    },
+    {
+      "observation": "P39",
+      "pattern_text": "this larger model achieves higher training accuracy",
+      "claim": "MECH_majority_voting_consolidates_predictions_from_different",
+      "claim_gloss": "Majority voting consolidates predictions fro",
       "edge": "strengthen/weaken"
     },
     {
@@ -92,24 +281,24 @@
       "edge": "strengthen/weaken"
     },
     {
-      "observation": "P95",
-      "pattern_text": "multi-view — pass@1 = 49.8",
-      "claim": "MECH_majority_voting_consolidates_predictions_from_different",
-      "claim_gloss": "Majority voting consolidates predictions fro",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P96",
-      "pattern_text": "multi-view — pass@2 = 54.5",
-      "claim": "MECH_majority_voting_consolidates_predictions_from_different",
-      "claim_gloss": "Majority voting consolidates predictions fro",
-      "edge": "strengthen/weaken"
-    },
-    {
       "observation": "P47",
       "pattern_text": "VARC (ensemble) is comparable to avg. human performance on A",
       "claim": "MECH_majority_voting_consolidates_predictions_from_different",
       "claim_gloss": "Majority voting consolidates predictions fro",
+      "edge": "strengthen/weaken"
+    },
+    {
+      "observation": "P57",
+      "pattern_text": "the top-left corner in Fig. 12 shows two tasks related to co",
+      "claim": "MECH_early_layer_attention_reflects_pattern_core",
+      "claim_gloss": "Early layer attention reflects pattern core ",
+      "edge": "strengthen/weaken"
+    },
+    {
+      "observation": "P57",
+      "pattern_text": "the top-left corner in Fig. 12 shows two tasks related to co",
+      "claim": "MECH_later_layer_attention_reflects_rule_extending",
+      "claim_gloss": "Later layer attention reflects rule for exte",
       "edge": "strengthen/weaken"
     },
     {
@@ -155,6 +344,13 @@
       "edge": "strengthen/weaken"
     },
     {
+      "observation": "P80",
+      "pattern_text": "Ambiguous examples",
+      "claim": "MECH_model_handles_ambiguity_proposing_multiple_rule",
+      "claim_gloss": "Model handles ambiguity by proposing multipl",
+      "edge": "strengthen/weaken"
+    },
+    {
       "observation": "P82",
       "pattern_text": "Attempt 2 matches Ground Truth, Attempt 1 does not",
       "claim": "MECH_model_handles_ambiguity_proposing_multiple_rule",
@@ -162,190 +358,15 @@
       "edge": "strengthen/weaken"
     },
     {
-      "observation": "P24",
-      "pattern_text": "Extending from 1D posi-tional embedding to its 2D counterpar",
-      "claim": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
-      "claim_gloss": "Canvas patchification enriches data, reduces",
+      "observation": "P82",
+      "pattern_text": "Attempt 2 matches Ground Truth, Attempt 1 does not",
+      "claim": "MECH_model_handles_ambiguity_proposing_multiple_rule",
+      "claim_gloss": "Model handles ambiguity by proposing multipl",
       "edge": "strengthen/weaken"
     },
     {
-      "observation": "P25",
-      "pattern_text": "observe a degradation",
-      "claim": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
-      "claim_gloss": "Canvas patchification enriches data, reduces",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P28",
-      "pattern_text": "the 2×2 patchification leads to a noticeable gain",
-      "claim": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
-      "claim_gloss": "Canvas patchification enriches data, reduces",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P34",
-      "pattern_text": "this setting yields an additional gain",
-      "claim": "MECH_canvas_formulation_enables_augmentations_translation_scale",
-      "claim_gloss": "Canvas formulation enables augmentations for",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P35",
-      "pattern_text": "Scale augmentation yields a substantial gain",
-      "claim": "MECH_canvas_formulation_enables_augmentations_translation_scale",
-      "claim_gloss": "Canvas formulation enables augmentations for",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P29",
-      "pattern_text": "increasing depth and/or width leads to higher accuracy",
-      "claim": "MECH_increasing_model_size_improves_accuracy_enabling",
-      "claim_gloss": "Increasing model size improves accuracy by e",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P30",
-      "pattern_text": "offline training improves performance",
-      "claim": "MECH_visual_common_sense_learned_from_offline",
-      "claim_gloss": "Visual common sense is learned from offline ",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P24",
-      "pattern_text": "Extending from 1D posi-tional embedding to its 2D counterpar",
-      "claim": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
-      "claim_gloss": "Canvas patchification enriches data, reduces",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P25",
-      "pattern_text": "observe a degradation",
-      "claim": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
-      "claim_gloss": "Canvas patchification enriches data, reduces",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P28",
-      "pattern_text": "the 2×2 patchification leads to a noticeable gain",
-      "claim": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
-      "claim_gloss": "Canvas patchification enriches data, reduces",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P34",
-      "pattern_text": "this setting yields an additional gain",
-      "claim": "MECH_canvas_formulation_enables_augmentations_translation_scale",
-      "claim_gloss": "Canvas formulation enables augmentations for",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P35",
-      "pattern_text": "Scale augmentation yields a substantial gain",
-      "claim": "MECH_canvas_formulation_enables_augmentations_translation_scale",
-      "claim_gloss": "Canvas formulation enables augmentations for",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P29",
-      "pattern_text": "increasing depth and/or width leads to higher accuracy",
-      "claim": "MECH_increasing_model_size_improves_accuracy_enabling",
-      "claim_gloss": "Increasing model size improves accuracy by e",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P30",
-      "pattern_text": "offline training improves performance",
-      "claim": "MECH_visual_common_sense_learned_from_offline",
-      "claim_gloss": "Visual common sense is learned from offline ",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P25",
-      "pattern_text": "observe a degradation",
-      "claim": "MECH_explicit_2d_positional_modeling_preserves_image",
-      "claim_gloss": "Explicit 2D positional modeling preserves im",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P27",
-      "pattern_text": "Doing so does not increase the computational cost of the Tra",
-      "claim": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
-      "claim_gloss": "Canvas patchification enriches data, reduces",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P28",
-      "pattern_text": "the 2×2 patchification leads to a noticeable gain",
-      "claim": "MECH_canvas_formulation_enables_augmentations_translation_scale",
-      "claim_gloss": "Canvas formulation enables augmentations for",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P34",
-      "pattern_text": "this setting yields an additional gain",
-      "claim": "MECH_canvas_formulation_enables_augmentations_translation_scale",
-      "claim_gloss": "Canvas formulation enables augmentations for",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P35",
-      "pattern_text": "Scale augmentation yields a substantial gain",
-      "claim": "MECH_canvas_formulation_enables_augmentations_translation_scale",
-      "claim_gloss": "Canvas formulation enables augmentations for",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P29",
-      "pattern_text": "increasing depth and/or width leads to higher accuracy",
-      "claim": "MECH_increasing_model_size_improves_accuracy_enabling",
-      "claim_gloss": "Increasing model size improves accuracy by e",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P30",
-      "pattern_text": "offline training improves performance",
-      "claim": "MECH_visual_common_sense_learned_from_offline",
-      "claim_gloss": "Visual common sense is learned from offline ",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P24",
-      "pattern_text": "Extending from 1D posi-tional embedding to its 2D counterpar",
-      "claim": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
-      "claim_gloss": "Canvas patchification enriches data, reduces",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P28",
-      "pattern_text": "the 2×2 patchification leads to a noticeable gain",
-      "claim": "MECH_canvas_formulation_enables_augmentations_translation_scale",
-      "claim_gloss": "Canvas formulation enables augmentations for",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P34",
-      "pattern_text": "this setting yields an additional gain",
-      "claim": "MECH_canvas_formulation_enables_augmentations_translation_scale",
-      "claim_gloss": "Canvas formulation enables augmentations for",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P35",
-      "pattern_text": "Scale augmentation yields a substantial gain",
-      "claim": "MECH_canvas_formulation_enables_augmentations_translation_scale",
-      "claim_gloss": "Canvas formulation enables augmentations for",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P30",
-      "pattern_text": "offline training improves performance",
-      "claim": "MECH_visual_common_sense_learned_from_offline",
-      "claim_gloss": "Visual common sense is learned from offline ",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P39",
-      "pattern_text": "this larger model achieves higher training accuracy",
+      "observation": "P95",
+      "pattern_text": "multi-view — pass@1 = 49.8",
       "claim": "MECH_majority_voting_consolidates_predictions_from_different",
       "claim_gloss": "Majority voting consolidates predictions fro",
       "edge": "strengthen/weaken"
@@ -358,31 +379,10 @@
       "edge": "strengthen/weaken"
     },
     {
-      "observation": "P57",
-      "pattern_text": "the top-left corner in Fig. 12 shows two tasks related to co",
-      "claim": "MECH_early_layer_attention_reflects_pattern_core",
-      "claim_gloss": "Early layer attention reflects pattern core ",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P57",
-      "pattern_text": "the top-left corner in Fig. 12 shows two tasks related to co",
-      "claim": "MECH_later_layer_attention_reflects_rule_extending",
-      "claim_gloss": "Later layer attention reflects rule for exte",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P80",
-      "pattern_text": "Ambiguous examples",
-      "claim": "MECH_model_handles_ambiguity_proposing_multiple_rule",
-      "claim_gloss": "Model handles ambiguity by proposing multipl",
-      "edge": "strengthen/weaken"
-    },
-    {
-      "observation": "P82",
-      "pattern_text": "Attempt 2 matches Ground Truth, Attempt 1 does not",
-      "claim": "MECH_model_handles_ambiguity_proposing_multiple_rule",
-      "claim_gloss": "Model handles ambiguity by proposing multipl",
+      "observation": "P96",
+      "pattern_text": "multi-view — pass@2 = 54.5",
+      "claim": "MECH_majority_voting_consolidates_predictions_from_different",
+      "claim_gloss": "Majority voting consolidates predictions fro",
       "edge": "strengthen/weaken"
     }
   ],
@@ -450,11 +450,11 @@
   ],
   "qualifier_edges": [
     {
-      "qualifier": "MECH_some_tasks_solvable_from_scratch_tabula",
-      "qual_type": "assumption",
-      "edge": "depends_on",
-      "qualifies_observation": "P31",
-      "pattern_text": "TTT independently performs better than TTT jointly"
+      "qualifier": "ASM_single_pixel_error_invalidates_entire_arc",
+      "qual_type": "scope_condition",
+      "edge": "qualifies",
+      "qualifies_observation": "P41",
+      "pattern_text": "even without offline training, our TTT strategy can achieve "
     },
     {
       "qualifier": "ASM_single_pixel_error_invalidates_entire_arc",
@@ -469,6 +469,76 @@
       "edge": "qualifies",
       "qualifies_observation": "P42",
       "pattern_text": "This result outperforms that in [36]"
+    },
+    {
+      "qualifier": "ASM_single_pixel_error_invalidates_entire_arc",
+      "qual_type": "scope_condition",
+      "edge": "qualifies",
+      "qualifies_observation": "P42",
+      "pattern_text": "This result outperforms that in [36]"
+    },
+    {
+      "qualifier": "ASM_some_arc_tasks_admit_multiple_plausible",
+      "qual_type": "assumption",
+      "edge": "depends_on",
+      "qualifies_observation": "P80",
+      "pattern_text": "Ambiguous examples"
+    },
+    {
+      "qualifier": "ASM_some_arc_tasks_admit_multiple_plausible",
+      "qual_type": "assumption",
+      "edge": "depends_on",
+      "qualifies_observation": "P80",
+      "pattern_text": "Ambiguous examples"
+    },
+    {
+      "qualifier": "ASM_some_arc_tasks_admit_multiple_plausible",
+      "qual_type": "assumption",
+      "edge": "depends_on",
+      "qualifies_observation": "P81",
+      "pattern_text": "some may admit multiple plausible explanations or rules"
+    },
+    {
+      "qualifier": "ASM_some_arc_tasks_admit_multiple_plausible",
+      "qual_type": "assumption",
+      "edge": "depends_on",
+      "qualifies_observation": "P81",
+      "pattern_text": "some may admit multiple plausible explanations or rules"
+    },
+    {
+      "qualifier": "ASM_some_arc_tasks_admit_multiple_plausible",
+      "qual_type": "assumption",
+      "edge": "depends_on",
+      "qualifies_observation": "P81",
+      "pattern_text": "some may admit multiple plausible explanations or rules"
+    },
+    {
+      "qualifier": "ASM_some_arc_tasks_admit_multiple_plausible",
+      "qual_type": "assumption",
+      "edge": "depends_on",
+      "qualifies_observation": "P81",
+      "pattern_text": "some may admit multiple plausible explanations or rules"
+    },
+    {
+      "qualifier": "ASM_some_arc_tasks_admit_multiple_plausible",
+      "qual_type": "assumption",
+      "edge": "depends_on",
+      "qualifies_observation": "P82",
+      "pattern_text": "Attempt 2 matches Ground Truth, Attempt 1 does not"
+    },
+    {
+      "qualifier": "ASM_some_arc_tasks_admit_multiple_plausible",
+      "qual_type": "assumption",
+      "edge": "depends_on",
+      "qualifies_observation": "P82",
+      "pattern_text": "Attempt 2 matches Ground Truth, Attempt 1 does not"
+    },
+    {
+      "qualifier": "ASM_some_arc_tasks_admit_multiple_plausible",
+      "qual_type": "assumption",
+      "edge": "depends_on",
+      "qualifies_observation": "P82",
+      "pattern_text": "Attempt 2 matches Ground Truth, Attempt 1 does not"
     },
     {
       "qualifier": "MECH_correct_predictions_exist_views_but_outvoted",
@@ -485,60 +555,11 @@
       "pattern_text": "this result reveals the upper-bound performance (66.3) of ou"
     },
     {
-      "qualifier": "ASM_some_arc_tasks_admit_multiple_plausible",
-      "qual_type": "assumption",
-      "edge": "depends_on",
-      "qualifies_observation": "P81",
-      "pattern_text": "some may admit multiple plausible explanations or rules"
-    },
-    {
-      "qualifier": "ASM_some_arc_tasks_admit_multiple_plausible",
-      "qual_type": "assumption",
-      "edge": "depends_on",
-      "qualifies_observation": "P80",
-      "pattern_text": "Ambiguous examples"
-    },
-    {
-      "qualifier": "ASM_some_arc_tasks_admit_multiple_plausible",
-      "qual_type": "assumption",
-      "edge": "depends_on",
-      "qualifies_observation": "P81",
-      "pattern_text": "some may admit multiple plausible explanations or rules"
-    },
-    {
-      "qualifier": "ASM_some_arc_tasks_admit_multiple_plausible",
-      "qual_type": "assumption",
-      "edge": "depends_on",
-      "qualifies_observation": "P82",
-      "pattern_text": "Attempt 2 matches Ground Truth, Attempt 1 does not"
-    },
-    {
-      "qualifier": "ASM_some_arc_tasks_admit_multiple_plausible",
-      "qual_type": "assumption",
-      "edge": "depends_on",
-      "qualifies_observation": "P80",
-      "pattern_text": "Ambiguous examples"
-    },
-    {
-      "qualifier": "ASM_some_arc_tasks_admit_multiple_plausible",
-      "qual_type": "assumption",
-      "edge": "depends_on",
-      "qualifies_observation": "P81",
-      "pattern_text": "some may admit multiple plausible explanations or rules"
-    },
-    {
-      "qualifier": "ASM_some_arc_tasks_admit_multiple_plausible",
-      "qual_type": "assumption",
-      "edge": "depends_on",
-      "qualifies_observation": "P82",
-      "pattern_text": "Attempt 2 matches Ground Truth, Attempt 1 does not"
-    },
-    {
-      "qualifier": "ASM_some_arc_tasks_admit_multiple_plausible",
-      "qual_type": "assumption",
-      "edge": "depends_on",
-      "qualifies_observation": "P82",
-      "pattern_text": "Attempt 2 matches Ground Truth, Attempt 1 does not"
+      "qualifier": "MECH_correct_predictions_exist_views_but_outvoted",
+      "qual_type": "limitation",
+      "edge": "qualifies",
+      "qualifies_observation": "P66",
+      "pattern_text": "this result reveals the upper-bound performance (66.3) of ou"
     },
     {
       "qualifier": "MECH_some_tasks_solvable_from_scratch_tabula",
@@ -548,18 +569,11 @@
       "pattern_text": "TTT independently performs better than TTT jointly"
     },
     {
-      "qualifier": "ASM_single_pixel_error_invalidates_entire_arc",
-      "qual_type": "scope_condition",
-      "edge": "qualifies",
-      "qualifies_observation": "P41",
-      "pattern_text": "even without offline training, our TTT strategy can achieve "
-    },
-    {
-      "qualifier": "ASM_single_pixel_error_invalidates_entire_arc",
-      "qual_type": "scope_condition",
-      "edge": "qualifies",
-      "qualifies_observation": "P42",
-      "pattern_text": "This result outperforms that in [36]"
+      "qualifier": "MECH_some_tasks_solvable_from_scratch_tabula",
+      "qual_type": "assumption",
+      "edge": "depends_on",
+      "qualifies_observation": "P31",
+      "pattern_text": "TTT independently performs better than TTT jointly"
     },
     {
       "qualifier": "MECH_some_tasks_solvable_from_scratch_tabula",
@@ -567,20 +581,6 @@
       "edge": "depends_on",
       "qualifies_observation": "P63",
       "pattern_text": "increases"
-    },
-    {
-      "qualifier": "MECH_correct_predictions_exist_views_but_outvoted",
-      "qual_type": "limitation",
-      "edge": "qualifies",
-      "qualifies_observation": "P66",
-      "pattern_text": "this result reveals the upper-bound performance (66.3) of ou"
-    },
-    {
-      "qualifier": "ASM_some_arc_tasks_admit_multiple_plausible",
-      "qual_type": "assumption",
-      "edge": "depends_on",
-      "qualifies_observation": "P81",
-      "pattern_text": "some may admit multiple plausible explanations or rules"
     }
   ],
   "demoted_to_observation": [
@@ -610,13 +610,8 @@
       "disposition": "reported_as_main_result candidate (headline/top-line result)"
     },
     {
-      "observation": "P8",
-      "pattern_text": "achieves accuracy",
-      "disposition": "reported_as_main_result candidate (headline/top-line result)"
-    },
-    {
-      "observation": "P9",
-      "pattern_text": "substantially surpasses the best recurrent methods [53, 27] ",
+      "observation": "P12",
+      "pattern_text": "matching the reported average human performance [31] on the ",
       "disposition": "reported_as_main_result candidate (headline/top-line result)"
     },
     {
@@ -630,28 +625,13 @@
       "disposition": "re-route to a specific mechanism (no direct thesis edge)"
     },
     {
+      "observation": "P16",
+      "pattern_text": "correctly solves these challenging tasks.",
+      "disposition": "re-route to a specific mechanism (no direct thesis edge)"
+    },
+    {
       "observation": "P44",
       "pattern_text": "Single-view inference has a decent pass@1 accuracy",
-      "disposition": "reported_as_main_result candidate (headline/top-line result)"
-    },
-    {
-      "observation": "P48",
-      "pattern_text": "Our model compares favorably with some of the most powerful ",
-      "disposition": "re-route to a specific mechanism (no direct thesis edge)"
-    },
-    {
-      "observation": "P49",
-      "pattern_text": "our method substantially outperforms the recur-rent models: ",
-      "disposition": "reported_as_main_result candidate (headline/top-line result)"
-    },
-    {
-      "observation": "P51",
-      "pattern_text": "Doing so boosts our result",
-      "disposition": "re-route to a specific mechanism (no direct thesis edge)"
-    },
-    {
-      "observation": "P52",
-      "pattern_text": "This result closes the gap with the re-ported average human ",
       "disposition": "reported_as_main_result candidate (headline/top-line result)"
     },
     {
@@ -665,8 +645,33 @@
       "disposition": "re-route to a specific mechanism (no direct thesis edge)"
     },
     {
+      "observation": "P48",
+      "pattern_text": "Our model compares favorably with some of the most powerful ",
+      "disposition": "re-route to a specific mechanism (no direct thesis edge)"
+    },
+    {
       "observation": "P49",
       "pattern_text": "our method substantially outperforms the recur-rent models: ",
+      "disposition": "reported_as_main_result candidate (headline/top-line result)"
+    },
+    {
+      "observation": "P49",
+      "pattern_text": "our method substantially outperforms the recur-rent models: ",
+      "disposition": "reported_as_main_result candidate (headline/top-line result)"
+    },
+    {
+      "observation": "P50",
+      "pattern_text": "Our VARC with 18M parameters is better than TRM on ARC-1",
+      "disposition": "re-route to a specific mechanism (no direct thesis edge)"
+    },
+    {
+      "observation": "P51",
+      "pattern_text": "Doing so boosts our result",
+      "disposition": "re-route to a specific mechanism (no direct thesis edge)"
+    },
+    {
+      "observation": "P52",
+      "pattern_text": "This result closes the gap with the re-ported average human ",
       "disposition": "reported_as_main_result candidate (headline/top-line result)"
     },
     {
@@ -675,19 +680,14 @@
       "disposition": "re-route to a specific mechanism (no direct thesis edge)"
     },
     {
-      "observation": "P12",
-      "pattern_text": "matching the reported average human performance [31] on the ",
+      "observation": "P8",
+      "pattern_text": "achieves accuracy",
       "disposition": "reported_as_main_result candidate (headline/top-line result)"
     },
     {
-      "observation": "P16",
-      "pattern_text": "correctly solves these challenging tasks.",
-      "disposition": "re-route to a specific mechanism (no direct thesis edge)"
-    },
-    {
-      "observation": "P50",
-      "pattern_text": "Our VARC with 18M parameters is better than TRM on ARC-1",
-      "disposition": "re-route to a specific mechanism (no direct thesis edge)"
+      "observation": "P9",
+      "pattern_text": "substantially surpasses the best recurrent methods [53, 27] ",
+      "disposition": "reported_as_main_result candidate (headline/top-line result)"
     }
   ],
   "unresolved_needing_aggregate_claim": {

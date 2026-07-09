@@ -3,7 +3,7 @@
 > tracked team-review draft. 코드 미변경. 기준본: `2026-07-09-am-ontology-v0.1.md`
 
 - AM 23개 전부 annotate. fan_in_v2 = 5 v2 빌드의 card-level links를 canonical AM으로 resolve해 합산(=133, unresolved 0). ensemble nodes.links total(141)은 atom-level(각 link를 AM카드 member atoms로 확장)이라 granularity가 다름 — 133<141은 unresolved 제외가 아니라 card-vs-atom 차이..
-- resolved links 133, excluded 0 (합 133). type 분포: {'paper_thesis': 1, 'mechanism': 12, 'qualitative_observation': 3, 'assumption': 3, 'scope_condition': 2, 'limitation': 2}
+- resolved links 133, excluded 0 (합 133). type 분포: {'mechanism': 12, 'paper_thesis': 1, 'qualitative_observation': 3, 'assumption': 3, 'scope_condition': 2, 'limitation': 2}
 
 ## 타입별
 
@@ -49,14 +49,14 @@
 - `MECH_patchification_provides_locality_translation_in`  fan_in=1  conf=high
     - Patchification provides locality and translation invariance indu
     - edge=strengthen_weaken, scope=component_level · 인과: patchification이 locality/invariance 제공.
-- `MECH_average_pooling_aggregates_predictions_raw_grid`  fan_in=0  conf=medium
-    - Average pooling aggregates predictions for raw grid locations.
-    - edge=strengthen_weaken, scope=component_level · 방법-작동원리(집계 방식). 단 method-description 성격도 있음.
-    - ❓ mechanism vs precondition(method) 경계
 - `MECH_attention_masks_loss_focus_improve_foreground`  fan_in=0  conf=medium
     - Attention masks and loss focus improve foreground attention/accu
     - edge=strengthen_weaken, scope=component_level · 인과(설계→foreground 주의). fan-in 0 = 미검증.
     - ❓ fan-in 0이라 belief로 실재하나
+- `MECH_average_pooling_aggregates_predictions_raw_grid`  fan_in=0  conf=medium
+    - Average pooling aggregates predictions for raw grid locations.
+    - edge=strengthen_weaken, scope=component_level · 방법-작동원리(집계 방식). 단 method-description 성격도 있음.
+    - ❓ mechanism vs precondition(method) 경계
 
 ### qualitative_observation (3) — link_policy: no_direct_link
 - `MECH_ttt_visualization_shows_model_adapting_task`  fan_in=16  conf=high

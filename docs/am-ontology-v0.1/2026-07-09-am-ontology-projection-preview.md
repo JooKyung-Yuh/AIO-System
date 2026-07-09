@@ -36,13 +36,13 @@
 ## thesis-direct 제거된 관측의 처리
 
 - 'achieves accuracy' → reported_as_main_result candidate (headline/top-line result)
-- 'achieves accuracy' → reported_as_main_result candidate (headline/top-line result)
-- 'substantially surpasses the best recurrent methods [53, 27] ' → reported_as_main_result candidate (headline/top-line result)
+- 'matching the reported average human performance [31] on the ' → reported_as_main_result candidate (headline/top-line result)
 - 'matching the reported average human performance [31] on the ' → reported_as_main_result candidate (headline/top-line result)
 - 'correctly solves these challenging tasks.' → re-route to a specific mechanism (no direct thesis edge)
+- 'correctly solves these challenging tasks.' → re-route to a specific mechanism (no direct thesis edge)
 - 'Single-view inference has a decent pass@1 accuracy' → reported_as_main_result candidate (headline/top-line result)
+- 'VARC (ensemble) achieves 60.4 on ARC-1 and 11.1 on ARC-2' → reported_as_main_result candidate (headline/top-line result)
 - 'Our model compares favorably with some of the most powerful ' → re-route to a specific mechanism (no direct thesis edge)
-- 'our method substantially outperforms the recur-rent models: ' → reported_as_main_result candidate (headline/top-line result)
 
 ## 판정 (preview가 말하는 것)
 - 새 ontology 적용 시 최종 factor graph는 **2-level**로 정돈됨: Observation→mechanism(direct 52) → paper_thesis(rolls_up).

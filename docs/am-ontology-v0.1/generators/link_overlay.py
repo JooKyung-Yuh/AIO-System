@@ -30,7 +30,7 @@ overlay = []
 cat = collections.Counter()
 moved_qo = collections.Counter()          # qualitative_observation fan-in movement
 referenced = set()
-for b in glob.glob(str(COH / "builds/*/")):
+for b in sorted(glob.glob(str(COH / "builds/*/"))):
     try:
         cio = {x["cio_id"]: x for x in json.load(open(f"{b}/cio_cards.json"))}
         amc = {x["am_id"]: x for x in json.load(open(f"{b}/am_cards.json"))}
@@ -79,6 +79,7 @@ meta = {
     "n_distinct_am_referenced": len(referenced),
     "core_metric_direct_belief_update_share": pct(cat["keep_direct"]),
 }
+overlay.sort(key=lambda o: (o["category"], str(o.get("pattern")), str(o.get("target")), o.get("new_edge", "")))
 OUT_JSON.write_text(json.dumps({"meta": meta, "links": overlay}, indent=2, ensure_ascii=False), encoding="utf-8")
 
 L = [f"# AM ontology v0.1 — link overlay 재해석 ({COH.name})", "",
@@ -103,7 +104,7 @@ L += ["", "## 세부", "",
       f"  thesis-funnel({pct(cat['convert_to_rolls_up'])})는 rolls_up으로 격하(관측 직결 아님), "
       f"관측-누수({pct(cat['downgrade_to_observation'])})는 belief에서 제거, "
       f"조건류({pct(cat['convert_to_qualifier'])})는 qualifier로.",
-      "- 즉 새 ontology는 **belief 레이어를 절반가량으로 정제**하고, 남은 direct link의 precision을 높인다(가짜 지지 제거).",
+      "- 즉 새 ontology는 **belief 레이어를 절반가량으로 정제**해 **precision audit 대상을 좁힌다**(type-mixing 제거). 남은 direct link의 실제 precision은 별도 audit(unique 27, correct+plausible 70%, wrong+too_broad 30%) 참조 — ontology가 precision 자체를 보장하진 않음.",
       "- 단 aggregate_claim 신설 전까지 집계 관측은 unresolved로 남음(코드 단계 과제).",
       "", "## 검증",
       f"1. 23개 AM만 참조: {len(referenced)}개 distinct 참조, 전부 annotation 내 = {all(c in anno for c in referenced)}",

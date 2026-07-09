@@ -39,194 +39,14 @@
   },
   "links": [
     {
-      "pattern": "P1",
-      "pattern_text": "achieves accuracy",
-      "target": "MECH_visual_learning_enables_abstraction_inference_without",
-      "ontology_type": "paper_thesis",
-      "is_aggregate_obs": false,
-      "category": "convert_to_rolls_up",
-      "reason": "paper_thesis",
-      "new_edge": "rolls_up"
-    },
-    {
-      "pattern": "P8",
-      "pattern_text": "achieves accuracy",
-      "target": "MECH_visual_learning_enables_abstraction_inference_without",
-      "ontology_type": "paper_thesis",
-      "is_aggregate_obs": false,
-      "category": "convert_to_rolls_up",
-      "reason": "paper_thesis",
-      "new_edge": "rolls_up"
-    },
-    {
-      "pattern": "P9",
-      "pattern_text": "substantially surpasses the best recurrent methods [53, 27] ",
-      "target": "MECH_visual_learning_enables_abstraction_inference_without",
-      "ontology_type": "paper_thesis",
-      "is_aggregate_obs": false,
-      "category": "convert_to_rolls_up",
-      "reason": "paper_thesis",
-      "new_edge": "rolls_up"
-    },
-    {
-      "pattern": "P11",
-      "pattern_text": "further improves accuracy",
-      "target": "MECH_majority_voting_consolidates_predictions_from_different",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P12",
-      "pattern_text": "matching the reported average human performance [31] on the ",
-      "target": "MECH_visual_learning_enables_abstraction_inference_without",
-      "ontology_type": "paper_thesis",
-      "is_aggregate_obs": false,
-      "category": "convert_to_rolls_up",
-      "reason": "paper_thesis",
-      "new_edge": "rolls_up"
-    },
-    {
-      "pattern": "P16",
-      "pattern_text": "correctly solves these challenging tasks.",
-      "target": "MECH_visual_learning_enables_abstraction_inference_without",
-      "ontology_type": "paper_thesis",
-      "is_aggregate_obs": false,
-      "category": "convert_to_rolls_up",
-      "reason": "paper_thesis",
-      "new_edge": "rolls_up"
-    },
-    {
-      "pattern": "P18",
-      "pattern_text": "this test-time training process remains reasonably fast",
-      "target": "MECH_attention_maps_reveal_pixel_pixel_reasoning",
-      "ontology_type": "qualitative_observation",
-      "is_aggregate_obs": false,
-      "category": "downgrade_to_observation",
-      "reason": "qualitative_observation",
-      "new_edge": "demoted"
-    },
-    {
-      "pattern": "P17",
-      "pattern_text": "During test-time training, the prediction from Xinfer become",
-      "target": "MECH_ttt_visualization_shows_model_adapting_task",
-      "ontology_type": "qualitative_observation",
-      "is_aggregate_obs": false,
-      "category": "downgrade_to_observation",
-      "reason": "qualitative_observation",
-      "new_edge": "demoted"
-    },
-    {
-      "pattern": "P20",
-      "pattern_text": "These vision priors cumulatively yield improvement (a→f)",
-      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
-      "ontology_type": "mechanism",
+      "pattern": "P31",
+      "pattern_text": "TTT independently performs better than TTT jointly",
+      "target": "MECH_some_tasks_solvable_from_scratch_tabula",
+      "ontology_type": "assumption",
       "is_aggregate_obs": true,
-      "category": "unresolved_or_gap",
-      "reason": "aggregate observation -> needs aggregate_claim (absent)",
-      "new_edge": "no-link"
-    },
-    {
-      "pattern": "P21",
-      "pattern_text": "the canvas-based designs (c→f) contribute an gain.",
-      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": true,
-      "category": "unresolved_or_gap",
-      "reason": "aggregate observation -> needs aggregate_claim (absent)",
-      "new_edge": "no-link"
-    },
-    {
-      "pattern": "P22",
-      "pattern_text": "These priors jointly have a gain",
-      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": true,
-      "category": "unresolved_or_gap",
-      "reason": "aggregate observation -> needs aggregate_claim (absent)",
-      "new_edge": "no-link"
-    },
-    {
-      "pattern": "P23",
-      "pattern_text": "the canvas-based designs (c–f) has a gain.",
-      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": true,
-      "category": "unresolved_or_gap",
-      "reason": "aggregate observation -> needs aggregate_claim (absent)",
-      "new_edge": "no-link"
-    },
-    {
-      "pattern": "P24",
-      "pattern_text": "Extending from 1D posi-tional embedding to its 2D counterpar",
-      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P25",
-      "pattern_text": "observe a degradation",
-      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P26",
-      "pattern_text": "The entries Fig. 7(d-f) all benefit from this design.",
-      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": true,
-      "category": "unresolved_or_gap",
-      "reason": "aggregate observation -> needs aggregate_claim (absent)",
-      "new_edge": "no-link"
-    },
-    {
-      "pattern": "P28",
-      "pattern_text": "the 2×2 patchification leads to a noticeable gain",
-      "target": "MECH_patchification_provides_locality_translation_invariance_inductive",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P34",
-      "pattern_text": "this setting yields an additional gain",
-      "target": "MECH_canvas_formulation_enables_augmentations_translation_scale",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P35",
-      "pattern_text": "Scale augmentation yields a substantial gain",
-      "target": "MECH_canvas_formulation_enables_augmentations_translation_scale",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P30",
-      "pattern_text": "offline training improves performance",
-      "target": "MECH_visual_common_sense_learned_from_offline",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
+      "category": "convert_to_qualifier",
+      "reason": "assumption",
+      "new_edge": "depends_on"
     },
     {
       "pattern": "P31",
@@ -239,24 +59,14 @@
       "new_edge": "depends_on"
     },
     {
-      "pattern": "P39",
-      "pattern_text": "this larger model achieves higher training accuracy",
-      "target": "MECH_majority_voting_consolidates_predictions_from_different",
-      "ontology_type": "mechanism",
+      "pattern": "P41",
+      "pattern_text": "even without offline training, our TTT strategy can achieve ",
+      "target": "ASM_single_pixel_error_invalidates_entire_arc",
+      "ontology_type": "scope_condition",
       "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P40",
-      "pattern_text": "offline training greatly improves the per-formance of TTT",
-      "target": "MECH_majority_voting_consolidates_predictions_from_different",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
+      "category": "convert_to_qualifier",
+      "reason": "scope_condition",
+      "new_edge": "qualifies"
     },
     {
       "pattern": "P41",
@@ -279,14 +89,194 @@
       "new_edge": "qualifies"
     },
     {
-      "pattern": "P43",
-      "pattern_text": "performing TTT independently for each test task yields subst",
-      "target": "MECH_majority_voting_consolidates_predictions_from_different",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": true,
-      "category": "unresolved_or_gap",
-      "reason": "aggregate observation -> needs aggregate_claim (absent)",
-      "new_edge": "no-link"
+      "pattern": "P42",
+      "pattern_text": "This result outperforms that in [36]",
+      "target": "ASM_single_pixel_error_invalidates_entire_arc",
+      "ontology_type": "scope_condition",
+      "is_aggregate_obs": false,
+      "category": "convert_to_qualifier",
+      "reason": "scope_condition",
+      "new_edge": "qualifies"
+    },
+    {
+      "pattern": "P63",
+      "pattern_text": "increases",
+      "target": "MECH_some_tasks_solvable_from_scratch_tabula",
+      "ontology_type": "assumption",
+      "is_aggregate_obs": false,
+      "category": "convert_to_qualifier",
+      "reason": "assumption",
+      "new_edge": "depends_on"
+    },
+    {
+      "pattern": "P65",
+      "pattern_text": "is",
+      "target": "MECH_correct_predictions_exist_views_but_outvoted",
+      "ontology_type": "limitation",
+      "is_aggregate_obs": false,
+      "category": "convert_to_qualifier",
+      "reason": "limitation",
+      "new_edge": "qualifies"
+    },
+    {
+      "pattern": "P66",
+      "pattern_text": "this result reveals the upper-bound performance (66.3) of ou",
+      "target": "MECH_correct_predictions_exist_views_but_outvoted",
+      "ontology_type": "limitation",
+      "is_aggregate_obs": false,
+      "category": "convert_to_qualifier",
+      "reason": "limitation",
+      "new_edge": "qualifies"
+    },
+    {
+      "pattern": "P66",
+      "pattern_text": "this result reveals the upper-bound performance (66.3) of ou",
+      "target": "MECH_correct_predictions_exist_views_but_outvoted",
+      "ontology_type": "limitation",
+      "is_aggregate_obs": false,
+      "category": "convert_to_qualifier",
+      "reason": "limitation",
+      "new_edge": "qualifies"
+    },
+    {
+      "pattern": "P80",
+      "pattern_text": "Ambiguous examples",
+      "target": "ASM_some_arc_tasks_admit_multiple_plausible",
+      "ontology_type": "assumption",
+      "is_aggregate_obs": false,
+      "category": "convert_to_qualifier",
+      "reason": "assumption",
+      "new_edge": "depends_on"
+    },
+    {
+      "pattern": "P80",
+      "pattern_text": "Ambiguous examples",
+      "target": "ASM_some_arc_tasks_admit_multiple_plausible",
+      "ontology_type": "assumption",
+      "is_aggregate_obs": false,
+      "category": "convert_to_qualifier",
+      "reason": "assumption",
+      "new_edge": "depends_on"
+    },
+    {
+      "pattern": "P81",
+      "pattern_text": "some may admit multiple plausible explanations or rules",
+      "target": "ASM_some_arc_tasks_admit_multiple_plausible",
+      "ontology_type": "assumption",
+      "is_aggregate_obs": false,
+      "category": "convert_to_qualifier",
+      "reason": "assumption",
+      "new_edge": "depends_on"
+    },
+    {
+      "pattern": "P81",
+      "pattern_text": "some may admit multiple plausible explanations or rules",
+      "target": "ASM_some_arc_tasks_admit_multiple_plausible",
+      "ontology_type": "assumption",
+      "is_aggregate_obs": false,
+      "category": "convert_to_qualifier",
+      "reason": "assumption",
+      "new_edge": "depends_on"
+    },
+    {
+      "pattern": "P81",
+      "pattern_text": "some may admit multiple plausible explanations or rules",
+      "target": "ASM_some_arc_tasks_admit_multiple_plausible",
+      "ontology_type": "assumption",
+      "is_aggregate_obs": false,
+      "category": "convert_to_qualifier",
+      "reason": "assumption",
+      "new_edge": "depends_on"
+    },
+    {
+      "pattern": "P81",
+      "pattern_text": "some may admit multiple plausible explanations or rules",
+      "target": "ASM_some_arc_tasks_admit_multiple_plausible",
+      "ontology_type": "assumption",
+      "is_aggregate_obs": false,
+      "category": "convert_to_qualifier",
+      "reason": "assumption",
+      "new_edge": "depends_on"
+    },
+    {
+      "pattern": "P82",
+      "pattern_text": "Attempt 2 matches Ground Truth, Attempt 1 does not",
+      "target": "ASM_some_arc_tasks_admit_multiple_plausible",
+      "ontology_type": "assumption",
+      "is_aggregate_obs": false,
+      "category": "convert_to_qualifier",
+      "reason": "assumption",
+      "new_edge": "depends_on"
+    },
+    {
+      "pattern": "P82",
+      "pattern_text": "Attempt 2 matches Ground Truth, Attempt 1 does not",
+      "target": "ASM_some_arc_tasks_admit_multiple_plausible",
+      "ontology_type": "assumption",
+      "is_aggregate_obs": false,
+      "category": "convert_to_qualifier",
+      "reason": "assumption",
+      "new_edge": "depends_on"
+    },
+    {
+      "pattern": "P82",
+      "pattern_text": "Attempt 2 matches Ground Truth, Attempt 1 does not",
+      "target": "ASM_some_arc_tasks_admit_multiple_plausible",
+      "ontology_type": "assumption",
+      "is_aggregate_obs": false,
+      "category": "convert_to_qualifier",
+      "reason": "assumption",
+      "new_edge": "depends_on"
+    },
+    {
+      "pattern": "P1",
+      "pattern_text": "achieves accuracy",
+      "target": "MECH_visual_learning_enables_abstraction_inference_without",
+      "ontology_type": "paper_thesis",
+      "is_aggregate_obs": false,
+      "category": "convert_to_rolls_up",
+      "reason": "paper_thesis",
+      "new_edge": "rolls_up"
+    },
+    {
+      "pattern": "P12",
+      "pattern_text": "matching the reported average human performance [31] on the ",
+      "target": "MECH_visual_learning_enables_abstraction_inference_without",
+      "ontology_type": "paper_thesis",
+      "is_aggregate_obs": false,
+      "category": "convert_to_rolls_up",
+      "reason": "paper_thesis",
+      "new_edge": "rolls_up"
+    },
+    {
+      "pattern": "P12",
+      "pattern_text": "matching the reported average human performance [31] on the ",
+      "target": "MECH_visual_learning_enables_abstraction_inference_without",
+      "ontology_type": "paper_thesis",
+      "is_aggregate_obs": false,
+      "category": "convert_to_rolls_up",
+      "reason": "paper_thesis",
+      "new_edge": "rolls_up"
+    },
+    {
+      "pattern": "P16",
+      "pattern_text": "correctly solves these challenging tasks.",
+      "target": "MECH_visual_learning_enables_abstraction_inference_without",
+      "ontology_type": "paper_thesis",
+      "is_aggregate_obs": false,
+      "category": "convert_to_rolls_up",
+      "reason": "paper_thesis",
+      "new_edge": "rolls_up"
+    },
+    {
+      "pattern": "P16",
+      "pattern_text": "correctly solves these challenging tasks.",
+      "target": "MECH_visual_learning_enables_abstraction_inference_without",
+      "ontology_type": "paper_thesis",
+      "is_aggregate_obs": false,
+      "category": "convert_to_rolls_up",
+      "reason": "paper_thesis",
+      "new_edge": "rolls_up"
     },
     {
       "pattern": "P44",
@@ -299,34 +289,24 @@
       "new_edge": "rolls_up"
     },
     {
-      "pattern": "P45",
-      "pattern_text": "multi-view inference further boosts",
-      "target": "MECH_majority_voting_consolidates_predictions_from_different",
-      "ontology_type": "mechanism",
+      "pattern": "P46",
+      "pattern_text": "VARC (ensemble) achieves 60.4 on ARC-1 and 11.1 on ARC-2",
+      "target": "MECH_visual_learning_enables_abstraction_inference_without",
+      "ontology_type": "paper_thesis",
       "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
+      "category": "convert_to_rolls_up",
+      "reason": "paper_thesis",
+      "new_edge": "rolls_up"
     },
     {
-      "pattern": "P95",
-      "pattern_text": "multi-view — pass@1 = 49.8",
-      "target": "MECH_majority_voting_consolidates_predictions_from_different",
-      "ontology_type": "mechanism",
+      "pattern": "P48",
+      "pattern_text": "Our model compares favorably with some of the most powerful ",
+      "target": "MECH_visual_learning_enables_abstraction_inference_without",
+      "ontology_type": "paper_thesis",
       "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P96",
-      "pattern_text": "multi-view — pass@2 = 54.5",
-      "target": "MECH_majority_voting_consolidates_predictions_from_different",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
+      "category": "convert_to_rolls_up",
+      "reason": "paper_thesis",
+      "new_edge": "rolls_up"
     },
     {
       "pattern": "P48",
@@ -341,6 +321,26 @@
     {
       "pattern": "P49",
       "pattern_text": "our method substantially outperforms the recur-rent models: ",
+      "target": "MECH_visual_learning_enables_abstraction_inference_without",
+      "ontology_type": "paper_thesis",
+      "is_aggregate_obs": false,
+      "category": "convert_to_rolls_up",
+      "reason": "paper_thesis",
+      "new_edge": "rolls_up"
+    },
+    {
+      "pattern": "P49",
+      "pattern_text": "our method substantially outperforms the recur-rent models: ",
+      "target": "MECH_visual_learning_enables_abstraction_inference_without",
+      "ontology_type": "paper_thesis",
+      "is_aggregate_obs": false,
+      "category": "convert_to_rolls_up",
+      "reason": "paper_thesis",
+      "new_edge": "rolls_up"
+    },
+    {
+      "pattern": "P50",
+      "pattern_text": "Our VARC with 18M parameters is better than TRM on ARC-1",
       "target": "MECH_visual_learning_enables_abstraction_inference_without",
       "ontology_type": "paper_thesis",
       "is_aggregate_obs": false,
@@ -369,8 +369,8 @@
       "new_edge": "rolls_up"
     },
     {
-      "pattern": "P46",
-      "pattern_text": "VARC (ensemble) achieves 60.4 on ARC-1 and 11.1 on ARC-2",
+      "pattern": "P57",
+      "pattern_text": "the top-left corner in Fig. 12 shows two tasks related to co",
       "target": "MECH_visual_learning_enables_abstraction_inference_without",
       "ontology_type": "paper_thesis",
       "is_aggregate_obs": false,
@@ -379,14 +379,74 @@
       "new_edge": "rolls_up"
     },
     {
-      "pattern": "P47",
-      "pattern_text": "VARC (ensemble) is comparable to avg. human performance on A",
-      "target": "MECH_majority_voting_consolidates_predictions_from_different",
-      "ontology_type": "mechanism",
+      "pattern": "P8",
+      "pattern_text": "achieves accuracy",
+      "target": "MECH_visual_learning_enables_abstraction_inference_without",
+      "ontology_type": "paper_thesis",
       "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
+      "category": "convert_to_rolls_up",
+      "reason": "paper_thesis",
+      "new_edge": "rolls_up"
+    },
+    {
+      "pattern": "P9",
+      "pattern_text": "substantially surpasses the best recurrent methods [53, 27] ",
+      "target": "MECH_visual_learning_enables_abstraction_inference_without",
+      "ontology_type": "paper_thesis",
+      "is_aggregate_obs": false,
+      "category": "convert_to_rolls_up",
+      "reason": "paper_thesis",
+      "new_edge": "rolls_up"
+    },
+    {
+      "pattern": "P17",
+      "pattern_text": "During test-time training, the prediction from Xinfer become",
+      "target": "MECH_ttt_visualization_shows_model_adapting_task",
+      "ontology_type": "qualitative_observation",
+      "is_aggregate_obs": false,
+      "category": "downgrade_to_observation",
+      "reason": "qualitative_observation",
+      "new_edge": "demoted"
+    },
+    {
+      "pattern": "P17",
+      "pattern_text": "During test-time training, the prediction from Xinfer become",
+      "target": "MECH_ttt_visualization_shows_model_adapting_task",
+      "ontology_type": "qualitative_observation",
+      "is_aggregate_obs": false,
+      "category": "downgrade_to_observation",
+      "reason": "qualitative_observation",
+      "new_edge": "demoted"
+    },
+    {
+      "pattern": "P18",
+      "pattern_text": "this test-time training process remains reasonably fast",
+      "target": "MECH_attention_maps_reveal_pixel_pixel_reasoning",
+      "ontology_type": "qualitative_observation",
+      "is_aggregate_obs": false,
+      "category": "downgrade_to_observation",
+      "reason": "qualitative_observation",
+      "new_edge": "demoted"
+    },
+    {
+      "pattern": "P18",
+      "pattern_text": "this test-time training process remains reasonably fast",
+      "target": "MECH_attention_maps_reveal_pixel_pixel_reasoning",
+      "ontology_type": "qualitative_observation",
+      "is_aggregate_obs": false,
+      "category": "downgrade_to_observation",
+      "reason": "qualitative_observation",
+      "new_edge": "demoted"
+    },
+    {
+      "pattern": "P53",
+      "pattern_text": "some layers exhibit strong attention to the 3 × 3 neighborho",
+      "target": "MECH_attention_maps_reveal_pixel_pixel_reasoning",
+      "ontology_type": "qualitative_observation",
+      "is_aggregate_obs": false,
+      "category": "downgrade_to_observation",
+      "reason": "qualitative_observation",
+      "new_edge": "demoted"
     },
     {
       "pattern": "P53",
@@ -417,6 +477,566 @@
       "category": "downgrade_to_observation",
       "reason": "qualitative_observation",
       "new_edge": "demoted"
+    },
+    {
+      "pattern": "P83",
+      "pattern_text": "task that was not correctly solved",
+      "target": "MECH_attention_maps_reveal_pixel_pixel_reasoning",
+      "ontology_type": "qualitative_observation",
+      "is_aggregate_obs": false,
+      "category": "downgrade_to_observation",
+      "reason": "qualitative_observation",
+      "new_edge": "demoted"
+    },
+    {
+      "pattern": "P84",
+      "pattern_text": "Attention patterns vary across layers",
+      "target": "MECH_attention_maps_reveal_pixel_pixel_reasoning",
+      "ontology_type": "qualitative_observation",
+      "is_aggregate_obs": false,
+      "category": "downgrade_to_observation",
+      "reason": "qualitative_observation",
+      "new_edge": "demoted"
+    },
+    {
+      "pattern": "P85",
+      "pattern_text": "gradually converge toward the correct output",
+      "target": "MECH_ttt_visualization_shows_model_adapting_task",
+      "ontology_type": "qualitative_observation",
+      "is_aggregate_obs": false,
+      "category": "downgrade_to_observation",
+      "reason": "qualitative_observation",
+      "new_edge": "demoted"
+    },
+    {
+      "pattern": "P85",
+      "pattern_text": "gradually converge toward the correct output",
+      "target": "MECH_ttt_visualization_shows_model_adapting_task",
+      "ontology_type": "qualitative_observation",
+      "is_aggregate_obs": false,
+      "category": "downgrade_to_observation",
+      "reason": "qualitative_observation",
+      "new_edge": "demoted"
+    },
+    {
+      "pattern": "P85",
+      "pattern_text": "gradually converge toward the correct output",
+      "target": "MECH_ttt_visualization_shows_model_adapting_task",
+      "ontology_type": "qualitative_observation",
+      "is_aggregate_obs": false,
+      "category": "downgrade_to_observation",
+      "reason": "qualitative_observation",
+      "new_edge": "demoted"
+    },
+    {
+      "pattern": "P85",
+      "pattern_text": "gradually converge toward the correct output",
+      "target": "MECH_ttt_visualization_shows_model_adapting_task",
+      "ontology_type": "qualitative_observation",
+      "is_aggregate_obs": false,
+      "category": "downgrade_to_observation",
+      "reason": "qualitative_observation",
+      "new_edge": "demoted"
+    },
+    {
+      "pattern": "P85",
+      "pattern_text": "gradually converge toward the correct output",
+      "target": "MECH_ttt_visualization_shows_model_adapting_task",
+      "ontology_type": "qualitative_observation",
+      "is_aggregate_obs": false,
+      "category": "downgrade_to_observation",
+      "reason": "qualitative_observation",
+      "new_edge": "demoted"
+    },
+    {
+      "pattern": "P86",
+      "pattern_text": "model produces coarse and imprecise structures",
+      "target": "MECH_ttt_visualization_shows_model_adapting_task",
+      "ontology_type": "qualitative_observation",
+      "is_aggregate_obs": false,
+      "category": "downgrade_to_observation",
+      "reason": "qualitative_observation",
+      "new_edge": "demoted"
+    },
+    {
+      "pattern": "P86",
+      "pattern_text": "model produces coarse and imprecise structures",
+      "target": "MECH_ttt_visualization_shows_model_adapting_task",
+      "ontology_type": "qualitative_observation",
+      "is_aggregate_obs": false,
+      "category": "downgrade_to_observation",
+      "reason": "qualitative_observation",
+      "new_edge": "demoted"
+    },
+    {
+      "pattern": "P86",
+      "pattern_text": "model produces coarse and imprecise structures",
+      "target": "MECH_ttt_visualization_shows_model_adapting_task",
+      "ontology_type": "qualitative_observation",
+      "is_aggregate_obs": false,
+      "category": "downgrade_to_observation",
+      "reason": "qualitative_observation",
+      "new_edge": "demoted"
+    },
+    {
+      "pattern": "P86",
+      "pattern_text": "model produces coarse and imprecise structures",
+      "target": "MECH_ttt_visualization_shows_model_adapting_task",
+      "ontology_type": "qualitative_observation",
+      "is_aggregate_obs": false,
+      "category": "downgrade_to_observation",
+      "reason": "qualitative_observation",
+      "new_edge": "demoted"
+    },
+    {
+      "pattern": "P87",
+      "pattern_text": "model can improve the solutions",
+      "target": "MECH_ttt_visualization_shows_model_adapting_task",
+      "ontology_type": "qualitative_observation",
+      "is_aggregate_obs": false,
+      "category": "downgrade_to_observation",
+      "reason": "qualitative_observation",
+      "new_edge": "demoted"
+    },
+    {
+      "pattern": "P87",
+      "pattern_text": "model can improve the solutions",
+      "target": "MECH_ttt_visualization_shows_model_adapting_task",
+      "ontology_type": "qualitative_observation",
+      "is_aggregate_obs": false,
+      "category": "downgrade_to_observation",
+      "reason": "qualitative_observation",
+      "new_edge": "demoted"
+    },
+    {
+      "pattern": "P87",
+      "pattern_text": "model can improve the solutions",
+      "target": "MECH_ttt_visualization_shows_model_adapting_task",
+      "ontology_type": "qualitative_observation",
+      "is_aggregate_obs": false,
+      "category": "downgrade_to_observation",
+      "reason": "qualitative_observation",
+      "new_edge": "demoted"
+    },
+    {
+      "pattern": "P87",
+      "pattern_text": "model can improve the solutions",
+      "target": "MECH_ttt_visualization_shows_model_adapting_task",
+      "ontology_type": "qualitative_observation",
+      "is_aggregate_obs": false,
+      "category": "downgrade_to_observation",
+      "reason": "qualitative_observation",
+      "new_edge": "demoted"
+    },
+    {
+      "pattern": "P87",
+      "pattern_text": "model can improve the solutions",
+      "target": "MECH_ttt_visualization_shows_model_adapting_task",
+      "ontology_type": "qualitative_observation",
+      "is_aggregate_obs": false,
+      "category": "downgrade_to_observation",
+      "reason": "qualitative_observation",
+      "new_edge": "demoted"
+    },
+    {
+      "pattern": "P11",
+      "pattern_text": "further improves accuracy",
+      "target": "MECH_majority_voting_consolidates_predictions_from_different",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P24",
+      "pattern_text": "Extending from 1D posi-tional embedding to its 2D counterpar",
+      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P24",
+      "pattern_text": "Extending from 1D posi-tional embedding to its 2D counterpar",
+      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P24",
+      "pattern_text": "Extending from 1D posi-tional embedding to its 2D counterpar",
+      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P24",
+      "pattern_text": "Extending from 1D posi-tional embedding to its 2D counterpar",
+      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P25",
+      "pattern_text": "observe a degradation",
+      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P25",
+      "pattern_text": "observe a degradation",
+      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P25",
+      "pattern_text": "observe a degradation",
+      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P25",
+      "pattern_text": "observe a degradation",
+      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P27",
+      "pattern_text": "Doing so does not increase the computational cost of the Tra",
+      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P28",
+      "pattern_text": "the 2×2 patchification leads to a noticeable gain",
+      "target": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P28",
+      "pattern_text": "the 2×2 patchification leads to a noticeable gain",
+      "target": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P28",
+      "pattern_text": "the 2×2 patchification leads to a noticeable gain",
+      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P28",
+      "pattern_text": "the 2×2 patchification leads to a noticeable gain",
+      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P28",
+      "pattern_text": "the 2×2 patchification leads to a noticeable gain",
+      "target": "MECH_patchification_provides_locality_translation_invariance_inductive",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P29",
+      "pattern_text": "increasing depth and/or width leads to higher accuracy",
+      "target": "MECH_increasing_model_size_improves_accuracy_enabling",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P29",
+      "pattern_text": "increasing depth and/or width leads to higher accuracy",
+      "target": "MECH_increasing_model_size_improves_accuracy_enabling",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P29",
+      "pattern_text": "increasing depth and/or width leads to higher accuracy",
+      "target": "MECH_increasing_model_size_improves_accuracy_enabling",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P30",
+      "pattern_text": "offline training improves performance",
+      "target": "MECH_visual_common_sense_learned_from_offline",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P30",
+      "pattern_text": "offline training improves performance",
+      "target": "MECH_visual_common_sense_learned_from_offline",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P30",
+      "pattern_text": "offline training improves performance",
+      "target": "MECH_visual_common_sense_learned_from_offline",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P30",
+      "pattern_text": "offline training improves performance",
+      "target": "MECH_visual_common_sense_learned_from_offline",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P30",
+      "pattern_text": "offline training improves performance",
+      "target": "MECH_visual_common_sense_learned_from_offline",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P34",
+      "pattern_text": "this setting yields an additional gain",
+      "target": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P34",
+      "pattern_text": "this setting yields an additional gain",
+      "target": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P34",
+      "pattern_text": "this setting yields an additional gain",
+      "target": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P34",
+      "pattern_text": "this setting yields an additional gain",
+      "target": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P34",
+      "pattern_text": "this setting yields an additional gain",
+      "target": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P35",
+      "pattern_text": "Scale augmentation yields a substantial gain",
+      "target": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P35",
+      "pattern_text": "Scale augmentation yields a substantial gain",
+      "target": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P35",
+      "pattern_text": "Scale augmentation yields a substantial gain",
+      "target": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P35",
+      "pattern_text": "Scale augmentation yields a substantial gain",
+      "target": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P35",
+      "pattern_text": "Scale augmentation yields a substantial gain",
+      "target": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P39",
+      "pattern_text": "this larger model achieves higher training accuracy",
+      "target": "MECH_majority_voting_consolidates_predictions_from_different",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P39",
+      "pattern_text": "this larger model achieves higher training accuracy",
+      "target": "MECH_majority_voting_consolidates_predictions_from_different",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P40",
+      "pattern_text": "offline training greatly improves the per-formance of TTT",
+      "target": "MECH_majority_voting_consolidates_predictions_from_different",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P45",
+      "pattern_text": "multi-view inference further boosts",
+      "target": "MECH_majority_voting_consolidates_predictions_from_different",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P47",
+      "pattern_text": "VARC (ensemble) is comparable to avg. human performance on A",
+      "target": "MECH_majority_voting_consolidates_predictions_from_different",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P57",
+      "pattern_text": "the top-left corner in Fig. 12 shows two tasks related to co",
+      "target": "MECH_early_layer_attention_reflects_pattern_core",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
+    },
+    {
+      "pattern": "P57",
+      "pattern_text": "the top-left corner in Fig. 12 shows two tasks related to co",
+      "target": "MECH_later_layer_attention_reflects_rule_extending",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": false,
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
     },
     {
       "pattern": "P59",
@@ -469,24 +1089,14 @@
       "new_edge": "strengthen/weaken"
     },
     {
-      "pattern": "P65",
-      "pattern_text": "is",
-      "target": "MECH_correct_predictions_exist_views_but_outvoted",
-      "ontology_type": "limitation",
+      "pattern": "P80",
+      "pattern_text": "Ambiguous examples",
+      "target": "MECH_model_handles_ambiguity_proposing_multiple_rule",
+      "ontology_type": "mechanism",
       "is_aggregate_obs": false,
-      "category": "convert_to_qualifier",
-      "reason": "limitation",
-      "new_edge": "qualifies"
-    },
-    {
-      "pattern": "P66",
-      "pattern_text": "this result reveals the upper-bound performance (66.3) of ou",
-      "target": "MECH_correct_predictions_exist_views_but_outvoted",
-      "ontology_type": "limitation",
-      "is_aggregate_obs": false,
-      "category": "convert_to_qualifier",
-      "reason": "limitation",
-      "new_edge": "qualifies"
+      "category": "keep_direct",
+      "reason": "mechanism",
+      "new_edge": "strengthen/weaken"
     },
     {
       "pattern": "P80",
@@ -499,16 +1109,6 @@
       "new_edge": "strengthen/weaken"
     },
     {
-      "pattern": "P81",
-      "pattern_text": "some may admit multiple plausible explanations or rules",
-      "target": "ASM_some_arc_tasks_admit_multiple_plausible",
-      "ontology_type": "assumption",
-      "is_aggregate_obs": false,
-      "category": "convert_to_qualifier",
-      "reason": "assumption",
-      "new_edge": "depends_on"
-    },
-    {
       "pattern": "P82",
       "pattern_text": "Attempt 2 matches Ground Truth, Attempt 1 does not",
       "target": "MECH_model_handles_ambiguity_proposing_multiple_rule",
@@ -519,734 +1119,14 @@
       "new_edge": "strengthen/weaken"
     },
     {
-      "pattern": "P83",
-      "pattern_text": "task that was not correctly solved",
-      "target": "MECH_attention_maps_reveal_pixel_pixel_reasoning",
-      "ontology_type": "qualitative_observation",
-      "is_aggregate_obs": false,
-      "category": "downgrade_to_observation",
-      "reason": "qualitative_observation",
-      "new_edge": "demoted"
-    },
-    {
-      "pattern": "P84",
-      "pattern_text": "Attention patterns vary across layers",
-      "target": "MECH_attention_maps_reveal_pixel_pixel_reasoning",
-      "ontology_type": "qualitative_observation",
-      "is_aggregate_obs": false,
-      "category": "downgrade_to_observation",
-      "reason": "qualitative_observation",
-      "new_edge": "demoted"
-    },
-    {
-      "pattern": "P85",
-      "pattern_text": "gradually converge toward the correct output",
-      "target": "MECH_ttt_visualization_shows_model_adapting_task",
-      "ontology_type": "qualitative_observation",
-      "is_aggregate_obs": false,
-      "category": "downgrade_to_observation",
-      "reason": "qualitative_observation",
-      "new_edge": "demoted"
-    },
-    {
-      "pattern": "P86",
-      "pattern_text": "model produces coarse and imprecise structures",
-      "target": "MECH_ttt_visualization_shows_model_adapting_task",
-      "ontology_type": "qualitative_observation",
-      "is_aggregate_obs": false,
-      "category": "downgrade_to_observation",
-      "reason": "qualitative_observation",
-      "new_edge": "demoted"
-    },
-    {
-      "pattern": "P87",
-      "pattern_text": "model can improve the solutions",
-      "target": "MECH_ttt_visualization_shows_model_adapting_task",
-      "ontology_type": "qualitative_observation",
-      "is_aggregate_obs": false,
-      "category": "downgrade_to_observation",
-      "reason": "qualitative_observation",
-      "new_edge": "demoted"
-    },
-    {
-      "pattern": "P20",
-      "pattern_text": "These vision priors cumulatively yield improvement (a→f)",
-      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": true,
-      "category": "unresolved_or_gap",
-      "reason": "aggregate observation -> needs aggregate_claim (absent)",
-      "new_edge": "no-link"
-    },
-    {
-      "pattern": "P21",
-      "pattern_text": "the canvas-based designs (c→f) contribute an gain.",
-      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": true,
-      "category": "unresolved_or_gap",
-      "reason": "aggregate observation -> needs aggregate_claim (absent)",
-      "new_edge": "no-link"
-    },
-    {
-      "pattern": "P22",
-      "pattern_text": "These priors jointly have a gain",
-      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": true,
-      "category": "unresolved_or_gap",
-      "reason": "aggregate observation -> needs aggregate_claim (absent)",
-      "new_edge": "no-link"
-    },
-    {
-      "pattern": "P24",
-      "pattern_text": "Extending from 1D posi-tional embedding to its 2D counterpar",
-      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P25",
-      "pattern_text": "observe a degradation",
-      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P26",
-      "pattern_text": "The entries Fig. 7(d-f) all benefit from this design.",
-      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": true,
-      "category": "unresolved_or_gap",
-      "reason": "aggregate observation -> needs aggregate_claim (absent)",
-      "new_edge": "no-link"
-    },
-    {
-      "pattern": "P28",
-      "pattern_text": "the 2×2 patchification leads to a noticeable gain",
-      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P34",
-      "pattern_text": "this setting yields an additional gain",
-      "target": "MECH_canvas_formulation_enables_augmentations_translation_scale",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P35",
-      "pattern_text": "Scale augmentation yields a substantial gain",
-      "target": "MECH_canvas_formulation_enables_augmentations_translation_scale",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P29",
-      "pattern_text": "increasing depth and/or width leads to higher accuracy",
-      "target": "MECH_increasing_model_size_improves_accuracy_enabling",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P30",
-      "pattern_text": "offline training improves performance",
-      "target": "MECH_visual_common_sense_learned_from_offline",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P80",
-      "pattern_text": "Ambiguous examples",
-      "target": "ASM_some_arc_tasks_admit_multiple_plausible",
-      "ontology_type": "assumption",
-      "is_aggregate_obs": false,
-      "category": "convert_to_qualifier",
-      "reason": "assumption",
-      "new_edge": "depends_on"
-    },
-    {
-      "pattern": "P81",
-      "pattern_text": "some may admit multiple plausible explanations or rules",
-      "target": "ASM_some_arc_tasks_admit_multiple_plausible",
-      "ontology_type": "assumption",
-      "is_aggregate_obs": false,
-      "category": "convert_to_qualifier",
-      "reason": "assumption",
-      "new_edge": "depends_on"
-    },
-    {
       "pattern": "P82",
       "pattern_text": "Attempt 2 matches Ground Truth, Attempt 1 does not",
-      "target": "ASM_some_arc_tasks_admit_multiple_plausible",
-      "ontology_type": "assumption",
-      "is_aggregate_obs": false,
-      "category": "convert_to_qualifier",
-      "reason": "assumption",
-      "new_edge": "depends_on"
-    },
-    {
-      "pattern": "P85",
-      "pattern_text": "gradually converge toward the correct output",
-      "target": "MECH_ttt_visualization_shows_model_adapting_task",
-      "ontology_type": "qualitative_observation",
-      "is_aggregate_obs": false,
-      "category": "downgrade_to_observation",
-      "reason": "qualitative_observation",
-      "new_edge": "demoted"
-    },
-    {
-      "pattern": "P86",
-      "pattern_text": "model produces coarse and imprecise structures",
-      "target": "MECH_ttt_visualization_shows_model_adapting_task",
-      "ontology_type": "qualitative_observation",
-      "is_aggregate_obs": false,
-      "category": "downgrade_to_observation",
-      "reason": "qualitative_observation",
-      "new_edge": "demoted"
-    },
-    {
-      "pattern": "P87",
-      "pattern_text": "model can improve the solutions",
-      "target": "MECH_ttt_visualization_shows_model_adapting_task",
-      "ontology_type": "qualitative_observation",
-      "is_aggregate_obs": false,
-      "category": "downgrade_to_observation",
-      "reason": "qualitative_observation",
-      "new_edge": "demoted"
-    },
-    {
-      "pattern": "P20",
-      "pattern_text": "These vision priors cumulatively yield improvement (a→f)",
-      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": true,
-      "category": "unresolved_or_gap",
-      "reason": "aggregate observation -> needs aggregate_claim (absent)",
-      "new_edge": "no-link"
-    },
-    {
-      "pattern": "P21",
-      "pattern_text": "the canvas-based designs (c→f) contribute an gain.",
-      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": true,
-      "category": "unresolved_or_gap",
-      "reason": "aggregate observation -> needs aggregate_claim (absent)",
-      "new_edge": "no-link"
-    },
-    {
-      "pattern": "P22",
-      "pattern_text": "These priors jointly have a gain",
-      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": true,
-      "category": "unresolved_or_gap",
-      "reason": "aggregate observation -> needs aggregate_claim (absent)",
-      "new_edge": "no-link"
-    },
-    {
-      "pattern": "P24",
-      "pattern_text": "Extending from 1D posi-tional embedding to its 2D counterpar",
-      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+      "target": "MECH_model_handles_ambiguity_proposing_multiple_rule",
       "ontology_type": "mechanism",
       "is_aggregate_obs": false,
       "category": "keep_direct",
       "reason": "mechanism",
       "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P25",
-      "pattern_text": "observe a degradation",
-      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P26",
-      "pattern_text": "The entries Fig. 7(d-f) all benefit from this design.",
-      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": true,
-      "category": "unresolved_or_gap",
-      "reason": "aggregate observation -> needs aggregate_claim (absent)",
-      "new_edge": "no-link"
-    },
-    {
-      "pattern": "P28",
-      "pattern_text": "the 2×2 patchification leads to a noticeable gain",
-      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P34",
-      "pattern_text": "this setting yields an additional gain",
-      "target": "MECH_canvas_formulation_enables_augmentations_translation_scale",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P35",
-      "pattern_text": "Scale augmentation yields a substantial gain",
-      "target": "MECH_canvas_formulation_enables_augmentations_translation_scale",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P29",
-      "pattern_text": "increasing depth and/or width leads to higher accuracy",
-      "target": "MECH_increasing_model_size_improves_accuracy_enabling",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P30",
-      "pattern_text": "offline training improves performance",
-      "target": "MECH_visual_common_sense_learned_from_offline",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P80",
-      "pattern_text": "Ambiguous examples",
-      "target": "ASM_some_arc_tasks_admit_multiple_plausible",
-      "ontology_type": "assumption",
-      "is_aggregate_obs": false,
-      "category": "convert_to_qualifier",
-      "reason": "assumption",
-      "new_edge": "depends_on"
-    },
-    {
-      "pattern": "P81",
-      "pattern_text": "some may admit multiple plausible explanations or rules",
-      "target": "ASM_some_arc_tasks_admit_multiple_plausible",
-      "ontology_type": "assumption",
-      "is_aggregate_obs": false,
-      "category": "convert_to_qualifier",
-      "reason": "assumption",
-      "new_edge": "depends_on"
-    },
-    {
-      "pattern": "P82",
-      "pattern_text": "Attempt 2 matches Ground Truth, Attempt 1 does not",
-      "target": "ASM_some_arc_tasks_admit_multiple_plausible",
-      "ontology_type": "assumption",
-      "is_aggregate_obs": false,
-      "category": "convert_to_qualifier",
-      "reason": "assumption",
-      "new_edge": "depends_on"
-    },
-    {
-      "pattern": "P85",
-      "pattern_text": "gradually converge toward the correct output",
-      "target": "MECH_ttt_visualization_shows_model_adapting_task",
-      "ontology_type": "qualitative_observation",
-      "is_aggregate_obs": false,
-      "category": "downgrade_to_observation",
-      "reason": "qualitative_observation",
-      "new_edge": "demoted"
-    },
-    {
-      "pattern": "P86",
-      "pattern_text": "model produces coarse and imprecise structures",
-      "target": "MECH_ttt_visualization_shows_model_adapting_task",
-      "ontology_type": "qualitative_observation",
-      "is_aggregate_obs": false,
-      "category": "downgrade_to_observation",
-      "reason": "qualitative_observation",
-      "new_edge": "demoted"
-    },
-    {
-      "pattern": "P87",
-      "pattern_text": "model can improve the solutions",
-      "target": "MECH_ttt_visualization_shows_model_adapting_task",
-      "ontology_type": "qualitative_observation",
-      "is_aggregate_obs": false,
-      "category": "downgrade_to_observation",
-      "reason": "qualitative_observation",
-      "new_edge": "demoted"
-    },
-    {
-      "pattern": "P21",
-      "pattern_text": "the canvas-based designs (c→f) contribute an gain.",
-      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": true,
-      "category": "unresolved_or_gap",
-      "reason": "aggregate observation -> needs aggregate_claim (absent)",
-      "new_edge": "no-link"
-    },
-    {
-      "pattern": "P22",
-      "pattern_text": "These priors jointly have a gain",
-      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": true,
-      "category": "unresolved_or_gap",
-      "reason": "aggregate observation -> needs aggregate_claim (absent)",
-      "new_edge": "no-link"
-    },
-    {
-      "pattern": "P23",
-      "pattern_text": "the canvas-based designs (c–f) has a gain.",
-      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": true,
-      "category": "unresolved_or_gap",
-      "reason": "aggregate observation -> needs aggregate_claim (absent)",
-      "new_edge": "no-link"
-    },
-    {
-      "pattern": "P25",
-      "pattern_text": "observe a degradation",
-      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P27",
-      "pattern_text": "Doing so does not increase the computational cost of the Tra",
-      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P28",
-      "pattern_text": "the 2×2 patchification leads to a noticeable gain",
-      "target": "MECH_canvas_formulation_enables_augmentations_translation_scale",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P34",
-      "pattern_text": "this setting yields an additional gain",
-      "target": "MECH_canvas_formulation_enables_augmentations_translation_scale",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P35",
-      "pattern_text": "Scale augmentation yields a substantial gain",
-      "target": "MECH_canvas_formulation_enables_augmentations_translation_scale",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P29",
-      "pattern_text": "increasing depth and/or width leads to higher accuracy",
-      "target": "MECH_increasing_model_size_improves_accuracy_enabling",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P30",
-      "pattern_text": "offline training improves performance",
-      "target": "MECH_visual_common_sense_learned_from_offline",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P48",
-      "pattern_text": "Our model compares favorably with some of the most powerful ",
-      "target": "MECH_visual_learning_enables_abstraction_inference_without",
-      "ontology_type": "paper_thesis",
-      "is_aggregate_obs": false,
-      "category": "convert_to_rolls_up",
-      "reason": "paper_thesis",
-      "new_edge": "rolls_up"
-    },
-    {
-      "pattern": "P49",
-      "pattern_text": "our method substantially outperforms the recur-rent models: ",
-      "target": "MECH_visual_learning_enables_abstraction_inference_without",
-      "ontology_type": "paper_thesis",
-      "is_aggregate_obs": false,
-      "category": "convert_to_rolls_up",
-      "reason": "paper_thesis",
-      "new_edge": "rolls_up"
-    },
-    {
-      "pattern": "P57",
-      "pattern_text": "the top-left corner in Fig. 12 shows two tasks related to co",
-      "target": "MECH_visual_learning_enables_abstraction_inference_without",
-      "ontology_type": "paper_thesis",
-      "is_aggregate_obs": false,
-      "category": "convert_to_rolls_up",
-      "reason": "paper_thesis",
-      "new_edge": "rolls_up"
-    },
-    {
-      "pattern": "P82",
-      "pattern_text": "Attempt 2 matches Ground Truth, Attempt 1 does not",
-      "target": "ASM_some_arc_tasks_admit_multiple_plausible",
-      "ontology_type": "assumption",
-      "is_aggregate_obs": false,
-      "category": "convert_to_qualifier",
-      "reason": "assumption",
-      "new_edge": "depends_on"
-    },
-    {
-      "pattern": "P85",
-      "pattern_text": "gradually converge toward the correct output",
-      "target": "MECH_ttt_visualization_shows_model_adapting_task",
-      "ontology_type": "qualitative_observation",
-      "is_aggregate_obs": false,
-      "category": "downgrade_to_observation",
-      "reason": "qualitative_observation",
-      "new_edge": "demoted"
-    },
-    {
-      "pattern": "P86",
-      "pattern_text": "model produces coarse and imprecise structures",
-      "target": "MECH_ttt_visualization_shows_model_adapting_task",
-      "ontology_type": "qualitative_observation",
-      "is_aggregate_obs": false,
-      "category": "downgrade_to_observation",
-      "reason": "qualitative_observation",
-      "new_edge": "demoted"
-    },
-    {
-      "pattern": "P87",
-      "pattern_text": "model can improve the solutions",
-      "target": "MECH_ttt_visualization_shows_model_adapting_task",
-      "ontology_type": "qualitative_observation",
-      "is_aggregate_obs": false,
-      "category": "downgrade_to_observation",
-      "reason": "qualitative_observation",
-      "new_edge": "demoted"
-    },
-    {
-      "pattern": "P12",
-      "pattern_text": "matching the reported average human performance [31] on the ",
-      "target": "MECH_visual_learning_enables_abstraction_inference_without",
-      "ontology_type": "paper_thesis",
-      "is_aggregate_obs": false,
-      "category": "convert_to_rolls_up",
-      "reason": "paper_thesis",
-      "new_edge": "rolls_up"
-    },
-    {
-      "pattern": "P16",
-      "pattern_text": "correctly solves these challenging tasks.",
-      "target": "MECH_visual_learning_enables_abstraction_inference_without",
-      "ontology_type": "paper_thesis",
-      "is_aggregate_obs": false,
-      "category": "convert_to_rolls_up",
-      "reason": "paper_thesis",
-      "new_edge": "rolls_up"
-    },
-    {
-      "pattern": "P18",
-      "pattern_text": "this test-time training process remains reasonably fast",
-      "target": "MECH_attention_maps_reveal_pixel_pixel_reasoning",
-      "ontology_type": "qualitative_observation",
-      "is_aggregate_obs": false,
-      "category": "downgrade_to_observation",
-      "reason": "qualitative_observation",
-      "new_edge": "demoted"
-    },
-    {
-      "pattern": "P17",
-      "pattern_text": "During test-time training, the prediction from Xinfer become",
-      "target": "MECH_ttt_visualization_shows_model_adapting_task",
-      "ontology_type": "qualitative_observation",
-      "is_aggregate_obs": false,
-      "category": "downgrade_to_observation",
-      "reason": "qualitative_observation",
-      "new_edge": "demoted"
-    },
-    {
-      "pattern": "P20",
-      "pattern_text": "These vision priors cumulatively yield improvement (a→f)",
-      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": true,
-      "category": "unresolved_or_gap",
-      "reason": "aggregate observation -> needs aggregate_claim (absent)",
-      "new_edge": "no-link"
-    },
-    {
-      "pattern": "P21",
-      "pattern_text": "the canvas-based designs (c→f) contribute an gain.",
-      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": true,
-      "category": "unresolved_or_gap",
-      "reason": "aggregate observation -> needs aggregate_claim (absent)",
-      "new_edge": "no-link"
-    },
-    {
-      "pattern": "P22",
-      "pattern_text": "These priors jointly have a gain",
-      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": true,
-      "category": "unresolved_or_gap",
-      "reason": "aggregate observation -> needs aggregate_claim (absent)",
-      "new_edge": "no-link"
-    },
-    {
-      "pattern": "P23",
-      "pattern_text": "the canvas-based designs (c–f) has a gain.",
-      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": true,
-      "category": "unresolved_or_gap",
-      "reason": "aggregate observation -> needs aggregate_claim (absent)",
-      "new_edge": "no-link"
-    },
-    {
-      "pattern": "P24",
-      "pattern_text": "Extending from 1D posi-tional embedding to its 2D counterpar",
-      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P28",
-      "pattern_text": "the 2×2 patchification leads to a noticeable gain",
-      "target": "MECH_canvas_formulation_enables_augmentations_translation_scale",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P34",
-      "pattern_text": "this setting yields an additional gain",
-      "target": "MECH_canvas_formulation_enables_augmentations_translation_scale",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P35",
-      "pattern_text": "Scale augmentation yields a substantial gain",
-      "target": "MECH_canvas_formulation_enables_augmentations_translation_scale",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P30",
-      "pattern_text": "offline training improves performance",
-      "target": "MECH_visual_common_sense_learned_from_offline",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P31",
-      "pattern_text": "TTT independently performs better than TTT jointly",
-      "target": "MECH_some_tasks_solvable_from_scratch_tabula",
-      "ontology_type": "assumption",
-      "is_aggregate_obs": true,
-      "category": "convert_to_qualifier",
-      "reason": "assumption",
-      "new_edge": "depends_on"
-    },
-    {
-      "pattern": "P39",
-      "pattern_text": "this larger model achieves higher training accuracy",
-      "target": "MECH_majority_voting_consolidates_predictions_from_different",
-      "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
-    },
-    {
-      "pattern": "P41",
-      "pattern_text": "even without offline training, our TTT strategy can achieve ",
-      "target": "ASM_single_pixel_error_invalidates_entire_arc",
-      "ontology_type": "scope_condition",
-      "is_aggregate_obs": false,
-      "category": "convert_to_qualifier",
-      "reason": "scope_condition",
-      "new_edge": "qualifies"
-    },
-    {
-      "pattern": "P42",
-      "pattern_text": "This result outperforms that in [36]",
-      "target": "ASM_single_pixel_error_invalidates_entire_arc",
-      "ontology_type": "scope_condition",
-      "is_aggregate_obs": false,
-      "category": "convert_to_qualifier",
-      "reason": "scope_condition",
-      "new_edge": "qualifies"
     },
     {
       "pattern": "P95",
@@ -1259,29 +1139,9 @@
       "new_edge": "strengthen/weaken"
     },
     {
-      "pattern": "P50",
-      "pattern_text": "Our VARC with 18M parameters is better than TRM on ARC-1",
-      "target": "MECH_visual_learning_enables_abstraction_inference_without",
-      "ontology_type": "paper_thesis",
-      "is_aggregate_obs": false,
-      "category": "convert_to_rolls_up",
-      "reason": "paper_thesis",
-      "new_edge": "rolls_up"
-    },
-    {
-      "pattern": "P53",
-      "pattern_text": "some layers exhibit strong attention to the 3 × 3 neighborho",
-      "target": "MECH_attention_maps_reveal_pixel_pixel_reasoning",
-      "ontology_type": "qualitative_observation",
-      "is_aggregate_obs": false,
-      "category": "downgrade_to_observation",
-      "reason": "qualitative_observation",
-      "new_edge": "demoted"
-    },
-    {
-      "pattern": "P57",
-      "pattern_text": "the top-left corner in Fig. 12 shows two tasks related to co",
-      "target": "MECH_early_layer_attention_reflects_pattern_core",
+      "pattern": "P95",
+      "pattern_text": "multi-view — pass@1 = 49.8",
+      "target": "MECH_majority_voting_consolidates_predictions_from_different",
       "ontology_type": "mechanism",
       "is_aggregate_obs": false,
       "category": "keep_direct",
@@ -1289,9 +1149,9 @@
       "new_edge": "strengthen/weaken"
     },
     {
-      "pattern": "P57",
-      "pattern_text": "the top-left corner in Fig. 12 shows two tasks related to co",
-      "target": "MECH_later_layer_attention_reflects_rule_extending",
+      "pattern": "P96",
+      "pattern_text": "multi-view — pass@2 = 54.5",
+      "target": "MECH_majority_voting_consolidates_predictions_from_different",
       "ontology_type": "mechanism",
       "is_aggregate_obs": false,
       "category": "keep_direct",
@@ -1299,74 +1159,214 @@
       "new_edge": "strengthen/weaken"
     },
     {
-      "pattern": "P63",
-      "pattern_text": "increases",
-      "target": "MECH_some_tasks_solvable_from_scratch_tabula",
-      "ontology_type": "assumption",
-      "is_aggregate_obs": false,
-      "category": "convert_to_qualifier",
-      "reason": "assumption",
-      "new_edge": "depends_on"
-    },
-    {
-      "pattern": "P66",
-      "pattern_text": "this result reveals the upper-bound performance (66.3) of ou",
-      "target": "MECH_correct_predictions_exist_views_but_outvoted",
-      "ontology_type": "limitation",
-      "is_aggregate_obs": false,
-      "category": "convert_to_qualifier",
-      "reason": "limitation",
-      "new_edge": "qualifies"
-    },
-    {
-      "pattern": "P80",
-      "pattern_text": "Ambiguous examples",
-      "target": "MECH_model_handles_ambiguity_proposing_multiple_rule",
+      "pattern": "P20",
+      "pattern_text": "These vision priors cumulatively yield improvement (a→f)",
+      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
       "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
+      "is_aggregate_obs": true,
+      "category": "unresolved_or_gap",
+      "reason": "aggregate observation -> needs aggregate_claim (absent)",
+      "new_edge": "no-link"
     },
     {
-      "pattern": "P81",
-      "pattern_text": "some may admit multiple plausible explanations or rules",
-      "target": "ASM_some_arc_tasks_admit_multiple_plausible",
-      "ontology_type": "assumption",
-      "is_aggregate_obs": false,
-      "category": "convert_to_qualifier",
-      "reason": "assumption",
-      "new_edge": "depends_on"
-    },
-    {
-      "pattern": "P82",
-      "pattern_text": "Attempt 2 matches Ground Truth, Attempt 1 does not",
-      "target": "MECH_model_handles_ambiguity_proposing_multiple_rule",
+      "pattern": "P20",
+      "pattern_text": "These vision priors cumulatively yield improvement (a→f)",
+      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
       "ontology_type": "mechanism",
-      "is_aggregate_obs": false,
-      "category": "keep_direct",
-      "reason": "mechanism",
-      "new_edge": "strengthen/weaken"
+      "is_aggregate_obs": true,
+      "category": "unresolved_or_gap",
+      "reason": "aggregate observation -> needs aggregate_claim (absent)",
+      "new_edge": "no-link"
     },
     {
-      "pattern": "P85",
-      "pattern_text": "gradually converge toward the correct output",
-      "target": "MECH_ttt_visualization_shows_model_adapting_task",
-      "ontology_type": "qualitative_observation",
-      "is_aggregate_obs": false,
-      "category": "downgrade_to_observation",
-      "reason": "qualitative_observation",
-      "new_edge": "demoted"
+      "pattern": "P20",
+      "pattern_text": "These vision priors cumulatively yield improvement (a→f)",
+      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": true,
+      "category": "unresolved_or_gap",
+      "reason": "aggregate observation -> needs aggregate_claim (absent)",
+      "new_edge": "no-link"
     },
     {
-      "pattern": "P87",
-      "pattern_text": "model can improve the solutions",
-      "target": "MECH_ttt_visualization_shows_model_adapting_task",
-      "ontology_type": "qualitative_observation",
-      "is_aggregate_obs": false,
-      "category": "downgrade_to_observation",
-      "reason": "qualitative_observation",
-      "new_edge": "demoted"
+      "pattern": "P20",
+      "pattern_text": "These vision priors cumulatively yield improvement (a→f)",
+      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": true,
+      "category": "unresolved_or_gap",
+      "reason": "aggregate observation -> needs aggregate_claim (absent)",
+      "new_edge": "no-link"
+    },
+    {
+      "pattern": "P21",
+      "pattern_text": "the canvas-based designs (c→f) contribute an gain.",
+      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": true,
+      "category": "unresolved_or_gap",
+      "reason": "aggregate observation -> needs aggregate_claim (absent)",
+      "new_edge": "no-link"
+    },
+    {
+      "pattern": "P21",
+      "pattern_text": "the canvas-based designs (c→f) contribute an gain.",
+      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": true,
+      "category": "unresolved_or_gap",
+      "reason": "aggregate observation -> needs aggregate_claim (absent)",
+      "new_edge": "no-link"
+    },
+    {
+      "pattern": "P21",
+      "pattern_text": "the canvas-based designs (c→f) contribute an gain.",
+      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": true,
+      "category": "unresolved_or_gap",
+      "reason": "aggregate observation -> needs aggregate_claim (absent)",
+      "new_edge": "no-link"
+    },
+    {
+      "pattern": "P21",
+      "pattern_text": "the canvas-based designs (c→f) contribute an gain.",
+      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": true,
+      "category": "unresolved_or_gap",
+      "reason": "aggregate observation -> needs aggregate_claim (absent)",
+      "new_edge": "no-link"
+    },
+    {
+      "pattern": "P21",
+      "pattern_text": "the canvas-based designs (c→f) contribute an gain.",
+      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": true,
+      "category": "unresolved_or_gap",
+      "reason": "aggregate observation -> needs aggregate_claim (absent)",
+      "new_edge": "no-link"
+    },
+    {
+      "pattern": "P22",
+      "pattern_text": "These priors jointly have a gain",
+      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": true,
+      "category": "unresolved_or_gap",
+      "reason": "aggregate observation -> needs aggregate_claim (absent)",
+      "new_edge": "no-link"
+    },
+    {
+      "pattern": "P22",
+      "pattern_text": "These priors jointly have a gain",
+      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": true,
+      "category": "unresolved_or_gap",
+      "reason": "aggregate observation -> needs aggregate_claim (absent)",
+      "new_edge": "no-link"
+    },
+    {
+      "pattern": "P22",
+      "pattern_text": "These priors jointly have a gain",
+      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": true,
+      "category": "unresolved_or_gap",
+      "reason": "aggregate observation -> needs aggregate_claim (absent)",
+      "new_edge": "no-link"
+    },
+    {
+      "pattern": "P22",
+      "pattern_text": "These priors jointly have a gain",
+      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": true,
+      "category": "unresolved_or_gap",
+      "reason": "aggregate observation -> needs aggregate_claim (absent)",
+      "new_edge": "no-link"
+    },
+    {
+      "pattern": "P22",
+      "pattern_text": "These priors jointly have a gain",
+      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": true,
+      "category": "unresolved_or_gap",
+      "reason": "aggregate observation -> needs aggregate_claim (absent)",
+      "new_edge": "no-link"
+    },
+    {
+      "pattern": "P23",
+      "pattern_text": "the canvas-based designs (c–f) has a gain.",
+      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": true,
+      "category": "unresolved_or_gap",
+      "reason": "aggregate observation -> needs aggregate_claim (absent)",
+      "new_edge": "no-link"
+    },
+    {
+      "pattern": "P23",
+      "pattern_text": "the canvas-based designs (c–f) has a gain.",
+      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": true,
+      "category": "unresolved_or_gap",
+      "reason": "aggregate observation -> needs aggregate_claim (absent)",
+      "new_edge": "no-link"
+    },
+    {
+      "pattern": "P23",
+      "pattern_text": "the canvas-based designs (c–f) has a gain.",
+      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": true,
+      "category": "unresolved_or_gap",
+      "reason": "aggregate observation -> needs aggregate_claim (absent)",
+      "new_edge": "no-link"
+    },
+    {
+      "pattern": "P26",
+      "pattern_text": "The entries Fig. 7(d-f) all benefit from this design.",
+      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": true,
+      "category": "unresolved_or_gap",
+      "reason": "aggregate observation -> needs aggregate_claim (absent)",
+      "new_edge": "no-link"
+    },
+    {
+      "pattern": "P26",
+      "pattern_text": "The entries Fig. 7(d-f) all benefit from this design.",
+      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": true,
+      "category": "unresolved_or_gap",
+      "reason": "aggregate observation -> needs aggregate_claim (absent)",
+      "new_edge": "no-link"
+    },
+    {
+      "pattern": "P26",
+      "pattern_text": "The entries Fig. 7(d-f) all benefit from this design.",
+      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": true,
+      "category": "unresolved_or_gap",
+      "reason": "aggregate observation -> needs aggregate_claim (absent)",
+      "new_edge": "no-link"
+    },
+    {
+      "pattern": "P43",
+      "pattern_text": "performing TTT independently for each test task yields subst",
+      "target": "MECH_majority_voting_consolidates_predictions_from_different",
+      "ontology_type": "mechanism",
+      "is_aggregate_obs": true,
+      "category": "unresolved_or_gap",
+      "reason": "aggregate observation -> needs aggregate_claim (absent)",
+      "new_edge": "no-link"
     }
   ]
 }

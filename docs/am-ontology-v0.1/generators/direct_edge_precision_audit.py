@@ -3,7 +3,7 @@ The ontology overlay only reclassifies by target TYPE; it does NOT verify a link
 dedups the 52 card-level direct edges to their 27 unique (observation, claim) pairs and records a
 hand verdict (correct / plausible / too_broad / wrong) per pair, so the "39% belief_update" claim
 is qualified by actual precision."""
-import json, collections
+import json, collections, sys
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parents[3]
@@ -61,6 +61,10 @@ for (obs, claim), d in sorted(uniq.items()):
     s = SPANS.get(obs, {})
     ptext = (s.get("text", "")[:44] + (f" [{s.get('note','')[:18]}]" if s.get("note") else ""))
     rows.append((obs, ptext, claim.replace("MECH_", "")[:40], v, note))
+
+if dist["unmatched"]:                                            # fail-fast: no silent unmatched in the report
+    sys.exit(f"FAIL: {dist['unmatched']} direct edge(s) have no hand verdict — projection direct_edges "
+             f"changed; update VERDICTS. Report NOT written.")
 
 n = len(rows)
 good = dist["correct"] + dist["plausible"]

@@ -57,8 +57,8 @@ GLOSS = {"AGG_vision_priors_jointly_yield_gain": "Vision priors jointly explain 
          "AGG_canvas_components_jointly_contribute": "Canvas-based design components jointly contribute to the gain",
          "AGG_other_cumulative": "Other cumulative/combined result"}
 proposed, manual_review = [], []
-for k, v in sorted(agg.items(), key=lambda kv: -len(kv[1])):
-    if len(v) >= 2:                                          # single-link catch-all은 claim으로 승격 안 함
+for k, v in sorted(agg.items(), key=lambda kv: (-len(kv[1]), kv[0])):
+    if len(set(v)) >= 2:                                     # UNIQUE pattern >=2 (card-level 반복 제외)
         proposed.append({"proposed_id": k, "gloss": GLOSS[k], "claim_type": "aggregate_claim",
                          "would_absorb_links": len(v), "rolls_up_to": THESIS, "example_patterns": sorted(set(v))[:3]})
     else:
@@ -67,6 +67,12 @@ for k, v in sorted(agg.items(), key=lambda kv: -len(kv[1])):
 # reviewer 지적: 아래 count는 CARD-LEVEL(5빌드 vote-repeated multiset)이지 최종 consensus edge가 아님.
 unique_direct = len({(d["observation"], d["claim"]) for d in direct})
 unique_all = len({(o["pattern"], o["target"], o["category"]) for o in links})
+
+# deterministic output ordering (arrays built in build-iteration order otherwise)
+direct.sort(key=lambda d: (str(d["observation"]), d["claim"]))
+qual.sort(key=lambda q: (q["qualifier"], str(q["qualifies_observation"])))
+thesis_removed.sort(key=lambda t: str(t["observation"]))
+demoted_nodes.sort(key=lambda d: (-d["affected_links"], d["node"]))
 
 meta = {
     "source": OV["meta"]["source_cohort"], "total_v2_links": OV["meta"]["total_v2_links"],
