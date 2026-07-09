@@ -45,6 +45,8 @@ def gates(cohort):
         "promoted_interventions": rpt.get("promoted_interventions"),
         "eval_metric_clusters": sorted(reg.get("eval_metric", {}).keys()),
         "am_cluster_bands": rpt.get("am_cluster_bands"),
+        "am_status": rpt.get("am_status"),
+        "belief_edges_by_policy": rpt.get("belief_edges_by_policy"),
         "context_before_after": [rpt.get("before", {}).get("context"), rpt.get("after", {}).get("context")],
     }
 
@@ -57,7 +59,8 @@ def summarize_across(cohort_dirs, out=None):
     SAME prompt across cohorts and reporting mean±std gives the confidence interval: only a
     shift larger than the std is signal. Pure deterministic aggregation — no LLM."""
     keys = ["assum", "mech", "cio", "link", "field_errors", "promoted", "comp_refs", "comp_total",
-            "st_assumed", "st_contested", "st_tested", "propose_test"]
+            "st_assumed", "st_contested", "st_tested", "st_rollup", "st_qualifier", "st_demoted",
+            "be_direct", "be_rolls_up", "be_qualifier", "be_demoted", "propose_test"]
     acc = {k: [] for k in keys}
     per_cohort = []
     prompt_sets = set()
@@ -69,6 +72,7 @@ def summarize_across(cohort_dirs, out=None):
         j = ens["reproducibility_mean_pairwise_jaccard"]
         comp = [v for v in cons.values() if v.get("pattern_class") == "comparison"]
         amst = rpt.get("am_status") or {}
+        bep = rpt.get("belief_edges_by_policy") or {}
         if ens.get("prompts"):
             prompt_sets.add(tuple(sorted(ens["prompts"].items())))
         row = {
@@ -85,6 +89,13 @@ def summarize_across(cohort_dirs, out=None):
             "st_assumed": amst.get("assumed", 0),
             "st_contested": amst.get("contested", 0),
             "st_tested": amst.get("tested", 0),
+            "st_rollup": amst.get("rollup_target", 0),
+            "st_qualifier": amst.get("qualifier", 0),
+            "st_demoted": amst.get("demoted_observation", 0),
+            "be_direct": bep.get("direct", 0),
+            "be_rolls_up": bep.get("rolls_up", 0),
+            "be_qualifier": bep.get("qualifier", 0),
+            "be_demoted": bep.get("demoted", 0),
             "propose_test": len(rpt.get("propose_test_targets") or []),
         }
         per_cohort.append(row)
@@ -159,6 +170,8 @@ def main():
     print(f"cio_field_errors {g['cio_field_errors']}   promoted_interventions {g['promoted_interventions']}")
     print(f"eval_metric      {g['eval_metric_clusters']}")
     print(f"am_cluster_bands {g['am_cluster_bands']}   context {g['context_before_after'][0]} -> {g['context_before_after'][1]}")
+    print(f"belief_edges     {json.dumps(g['belief_edges_by_policy'], ensure_ascii=False)}")
+    print(f"am_status        {json.dumps(g['am_status'], ensure_ascii=False)}")
 
     if args.baseline:
         gb = gates(Path(args.baseline))

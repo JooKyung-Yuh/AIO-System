@@ -1,0 +1,3516 @@
+{
+  "factors": [
+    {
+      "factor_id": "F001",
+      "pattern": "P1",
+      "pattern_class": "primary_result",
+      "location": "Section 1",
+      "context": [
+        "Our framework, termed Vision ARC (VARC)",
+        "on the ARC-1 benchmark"
+      ],
+      "intervention": "Combining VARC models through ensembling [29]",
+      "reference": "VARC",
+      "eval_metric": "accuracy",
+      "pattern_text": "achieves accuracy  [60.4%]",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_dataset_arc_1_benchmark",
+          "CTX_other_framework_termed_vision_arc_varc"
+        ],
+        "intervention": "INT_combining_varc_models_through_ensembling_29",
+        "reference": "INT_varc",
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F002",
+      "pattern": "P11",
+      "pattern_class": "comparison",
+      "location": "Section 1",
+      "context": [
+        "on the ARC-1 benchmark"
+      ],
+      "intervention": "Combining VARC models through ensembling [29]",
+      "reference": "VARC",
+      "eval_metric": "accuracy",
+      "pattern_text": "further improves accuracy  [to 60.4%]",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_dataset_arc_1_benchmark"
+        ],
+        "intervention": "INT_combining_varc_models_through_ensembling_29",
+        "reference": "INT_varc",
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F003",
+      "pattern": "P12",
+      "pattern_class": "primary_result",
+      "location": "Section 1",
+      "context": [
+        "on the ARC-1 benchmark"
+      ],
+      "intervention": "Combining VARC models through ensembling [29]",
+      "reference": null,
+      "eval_metric": "accuracy",
+      "pattern_text": "matching the reported average human performance [31] on the ARC-1 dataset.",
+      "direction": "flat",
+      "canonical": {
+        "context": [
+          "CTX_dataset_arc_1_benchmark"
+        ],
+        "intervention": "INT_combining_varc_models_through_ensembling_29",
+        "reference": null,
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          "flat"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [
+        {
+          "canonical": "MECH_visual_learning_enables_abstraction_inference_without",
+          "direction": "strengthen",
+          "edge_type": "rolls_up",
+          "n_builds": 2,
+          "status": "rollup_target",
+          "gloss": "Visual learning enables abstraction/inference without language."
+        }
+      ],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F004",
+      "pattern": "P7",
+      "pattern_class": "primary_result",
+      "location": "Section 1",
+      "context": [
+        "Our framework, termed Vision ARC (VARC)"
+      ],
+      "intervention": "formulate ARC within a vision paradigm, framing it as an image-to-image translation problem.",
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "shows strong performance on the ARC benchmarks (e.g., Fig. 2).",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_other_framework_termed_vision_arc_varc"
+        ],
+        "intervention": "INT_formulate_arc_within_vision_paradigm_framing",
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F005",
+      "pattern": "P8",
+      "pattern_class": "primary_result",
+      "location": "Section 1",
+      "context": [
+        "VARC",
+        "on the ARC-1 benchmark",
+        "using a small model with only 18 million parameters.  [18 million parameters]"
+      ],
+      "intervention": "apply standard vision architectures, such as a vanilla Vision Transformer (ViT), to perform image-to-image mapping.",
+      "reference": null,
+      "eval_metric": "accuracy",
+      "pattern_text": "achieves accuracy  [54.5%]",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_dataset_arc_1_benchmark",
+          "CTX_model_small_model_only_18_million_parameters_18",
+          "CTX_other_varc"
+        ],
+        "intervention": "INT_apply_standard_vision_architectures_such_vanilla",
+        "reference": null,
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F006",
+      "pattern": "P9",
+      "pattern_class": "primary_result",
+      "location": "Section 1",
+      "context": [
+        "VARC",
+        "on the ARC-1 benchmark",
+        "using a small model with only 18 million parameters.  [18 million parameters]"
+      ],
+      "intervention": "apply standard vision architectures, such as a vanilla Vision Transformer (ViT), to perform image-to-image mapping.",
+      "reference": "recurrent models [53, 27]",
+      "eval_metric": "accuracy",
+      "pattern_text": "substantially surpasses the best recurrent methods [53, 27] that are also trained from scratch on ARC.",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_dataset_arc_1_benchmark",
+          "CTX_model_small_model_only_18_million_parameters_18",
+          "CTX_other_varc"
+        ],
+        "intervention": "INT_apply_standard_vision_architectures_such_vanilla",
+        "reference": "INT_recurrent_models_53_27",
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F007",
+      "pattern": "P16",
+      "pattern_class": "primary_result",
+      "location": "Figure 2",
+      "context": [
+        "VARC"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "correctly solves these challenging tasks.",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_other_varc"
+        ],
+        "intervention": null,
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [
+        {
+          "canonical": "MECH_visual_learning_enables_abstraction_inference_without",
+          "direction": "strengthen",
+          "edge_type": "rolls_up",
+          "n_builds": 2,
+          "status": "rollup_target",
+          "gloss": "Visual learning enables abstraction/inference without language."
+        }
+      ],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F008",
+      "pattern": "P18",
+      "pattern_class": "primary_result",
+      "location": "Section 3.5",
+      "context": [
+        "Test-time training (TTT).",
+        "Given a single new, unseen task T∈ Ttest from the test set, we perform inference by test-time training.",
+        "At inference time, we are given Demo={(xi, Yi)}m=1 with both input and output accessible; the model is required to make prediction for a given Xinfer in this new task T.",
+        "The test-time training followed by inference can be viewed abstractly as a function F(Xinfer | Demo)→ Yinfer."
+      ],
+      "intervention": "We perform test-time training for each new task T independently.",
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "this test-time training process remains reasonably fast  [e.g., 70 seconds per task on a single GPU]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_other_at_inference_time_given_demo_xi",
+          "CTX_training_given_single_new_unseen_task_t",
+          "CTX_training_test_time_training_followed_inference_can",
+          "CTX_training_test_time_training_ttt"
+        ],
+        "intervention": "INT_perform_test_time_training_each_new",
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          null
+        ]
+      },
+      "field_mismatch": [
+        "context"
+      ],
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": [
+        {
+          "canonical": "MECH_attention_maps_reveal_pixel_pixel_reasoning",
+          "direction": "strengthen",
+          "edge_type": "demoted",
+          "n_builds": 2,
+          "status": "demoted_observation",
+          "gloss": "Attention maps reveal pixel-to-pixel reasoning relationships."
+        }
+      ]
+    },
+    {
+      "factor_id": "F009",
+      "pattern": "P17",
+      "pattern_class": "primary_result",
+      "location": "Figure 6",
+      "context": [],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "During test-time training, the prediction from Xinfer becomes progressively more accurate, with the model finally generating the correct prediction.",
+      "direction": "up",
+      "canonical": {
+        "context": [],
+        "intervention": null,
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": [
+        {
+          "canonical": "MECH_ttt_visualization_shows_model_adapting_task",
+          "direction": "strengthen",
+          "edge_type": "demoted",
+          "n_builds": 2,
+          "status": "demoted_observation",
+          "gloss": "TTT visualization shows model adapting to task-specific transformations."
+        }
+      ]
+    },
+    {
+      "factor_id": "F010",
+      "pattern": "P19",
+      "pattern_class": "comparison",
+      "location": "Table 1",
+      "context": [
+        "ViT  [width 384, depth 5, #params 6M, Gflops 10]",
+        "ViT  [width 512, depth 10, #params 18M, Gflops 28]",
+        "ViT  [width 768, depth 20, #params 66M, Gflops 99]",
+        "U-Net  [setting (a), #params 7M, Gflops 18]",
+        "U-Net  [setting (b), #params 17M, Gflops 33]",
+        "U-Net  [setting (c), #params 55M, Gflops 87]"
+      ],
+      "intervention": "ViT",
+      "reference": "U-Net",
+      "eval_metric": "acc.",
+      "pattern_text": "ViT models show higher accuracy than U-Net models  [ViT accuracies: 44.4, 54.5, 53.0; U-Net accuracies: 42.8, 47.5, 48.3]",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_model_u_net_17m_33",
+          "CTX_model_u_net_55m_87",
+          "CTX_model_u_net_7m_18",
+          "CTX_model_vit_384_5_6m_10",
+          "CTX_model_vit_512_10_18m_28",
+          "CTX_model_vit_768_20_66m_99"
+        ],
+        "intervention": "INT_vit",
+        "reference": "INT_u_net",
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F011",
+      "pattern": "P88",
+      "pattern_class": "primary_result",
+      "location": "Table 1",
+      "context": [
+        "ViT  [width 384, depth 5, #params 6M, Gflops 10]"
+      ],
+      "intervention": "ViT",
+      "reference": null,
+      "eval_metric": "acc.",
+      "pattern_text": "ViT — acc. = 44.4  [cell: acc. = 44.4; width 384; depth 5; #params 6M; Gflops 10]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_model_vit_384_5_6m_10"
+        ],
+        "intervention": "INT_vit",
+        "reference": null,
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F012",
+      "pattern": "P89",
+      "pattern_class": "primary_result",
+      "location": "Table 1",
+      "context": [
+        "ViT  [width 512, depth 10, #params 18M, Gflops 28]"
+      ],
+      "intervention": "ViT",
+      "reference": null,
+      "eval_metric": "acc.",
+      "pattern_text": "ViT — acc. = 54.5  [cell: acc. = 54.5; width 512; depth 10; #params 18M; Gflops 28]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_model_vit_512_10_18m_28"
+        ],
+        "intervention": "INT_vit",
+        "reference": null,
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F013",
+      "pattern": "P90",
+      "pattern_class": "primary_result",
+      "location": "Table 1",
+      "context": [
+        "ViT  [width 768, depth 20, #params 66M, Gflops 99]"
+      ],
+      "intervention": "ViT",
+      "reference": null,
+      "eval_metric": "acc.",
+      "pattern_text": "ViT — acc. = 53.0  [cell: acc. = 53.0; width 768; depth 20; #params 66M; Gflops 99]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_model_vit_768_20_66m_99"
+        ],
+        "intervention": "INT_vit",
+        "reference": null,
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F014",
+      "pattern": "P91",
+      "pattern_class": "primary_result",
+      "location": "Table 1",
+      "context": [
+        "U-Net  [setting (a), #params 7M, Gflops 18]"
+      ],
+      "intervention": "U-Net",
+      "reference": null,
+      "eval_metric": "acc.",
+      "pattern_text": "U-Net — acc. = 42.8  [cell: acc. = 42.8; width setting (a); #params 7M; Gflops 18]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_model_u_net_7m_18"
+        ],
+        "intervention": "INT_u_net",
+        "reference": null,
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F015",
+      "pattern": "P92",
+      "pattern_class": "primary_result",
+      "location": "Table 1",
+      "context": [
+        "U-Net  [setting (b), #params 17M, Gflops 33]"
+      ],
+      "intervention": "U-Net",
+      "reference": null,
+      "eval_metric": "acc.",
+      "pattern_text": "U-Net — acc. = 47.5  [cell: acc. = 47.5; width setting (b); #params 17M; Gflops 33]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_model_u_net_17m_33"
+        ],
+        "intervention": "INT_u_net",
+        "reference": null,
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F016",
+      "pattern": "P93",
+      "pattern_class": "primary_result",
+      "location": "Table 1",
+      "context": [
+        "U-Net  [setting (c), #params 55M, Gflops 87]"
+      ],
+      "intervention": "U-Net",
+      "reference": null,
+      "eval_metric": "acc.",
+      "pattern_text": "U-Net — acc. = 48.3  [cell: acc. = 48.3; width setting (c); #params 55M; Gflops 87]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_model_u_net_55m_87"
+        ],
+        "intervention": "INT_u_net",
+        "reference": null,
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F017",
+      "pattern": "P20",
+      "pattern_class": "comparison",
+      "location": "Figure 7",
+      "context": [
+        "ARC-1 evaluation set.",
+        "The model used is ViT-18M."
+      ],
+      "intervention": "Entries (a-c) use a patch size of 1×1 on a 32×32 canvas, whereas entries (d-f) use a patch size of 2×2 on a 64×64 canvas.",
+      "reference": "We start from a naïve baseline with components (b-f) removed.",
+      "eval_metric": "Accuracy",
+      "pattern_text": "These vision priors cumulatively yield improvement (a→f)  [27.7 improvement]",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_dataset_arc_1_evaluation_set",
+          "CTX_model_model_used_vit_18m"
+        ],
+        "intervention": "INT_entries_c_patch_size_1_1",
+        "reference": "INT_start_from_na_ve_baseline_components",
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          "up"
+        ]
+      },
+      "field_mismatch": [
+        "context"
+      ],
+      "beliefs": [
+        {
+          "canonical": "MECH_explicit_2d_positional_modeling_preserves_image",
+          "direction": "strengthen",
+          "edge_type": "strengthen",
+          "n_builds": 4,
+          "status": "tested",
+          "gloss": "Explicit 2D positional modeling preserves image structure."
+        }
+      ],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F018",
+      "pattern": "P21",
+      "pattern_class": "comparison",
+      "location": "Figure 7",
+      "context": [
+        "ARC-1 evaluation set.",
+        "The model used is ViT-18M."
+      ],
+      "intervention": "Entries (a-c) use a patch size of 1×1 on a 32×32 canvas, whereas entries (d-f) use a patch size of 2×2 on a 64×64 canvas.",
+      "reference": null,
+      "eval_metric": "Accuracy",
+      "pattern_text": "the canvas-based designs (c→f) contribute an gain.  [11.5 gain]",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_dataset_arc_1_evaluation_set",
+          "CTX_model_model_used_vit_18m"
+        ],
+        "intervention": "INT_entries_c_patch_size_1_1",
+        "reference": null,
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [
+        {
+          "canonical": "MECH_explicit_2d_positional_modeling_preserves_image",
+          "direction": "strengthen",
+          "edge_type": "strengthen",
+          "n_builds": 5,
+          "status": "tested",
+          "gloss": "Explicit 2D positional modeling preserves image structure."
+        }
+      ],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F019",
+      "pattern": "P22",
+      "pattern_class": "comparison",
+      "location": "Section 5.1",
+      "context": [],
+      "intervention": null,
+      "reference": "starting from a baseline (a) without the other components in this figure.",
+      "eval_metric": null,
+      "pattern_text": "These priors jointly have a gain  [27.7 points]",
+      "direction": "up",
+      "canonical": {
+        "context": [],
+        "intervention": null,
+        "reference": "INT_starting_from_baseline_without_other_components",
+        "eval_metric": null,
+        "observable": [
+          null,
+          "up"
+        ]
+      },
+      "field_mismatch": [
+        "context"
+      ],
+      "beliefs": [
+        {
+          "canonical": "MECH_explicit_2d_positional_modeling_preserves_image",
+          "direction": "strengthen",
+          "edge_type": "strengthen",
+          "n_builds": 5,
+          "status": "tested",
+          "gloss": "Explicit 2D positional modeling preserves image structure."
+        }
+      ],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F020",
+      "pattern": "P23",
+      "pattern_class": "comparison",
+      "location": "Section 5.1",
+      "context": [],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "the canvas-based designs (c–f) has a gain.  [11.5 points]",
+      "direction": "up",
+      "canonical": {
+        "context": [],
+        "intervention": null,
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [
+        {
+          "canonical": "MECH_explicit_2d_positional_modeling_preserves_image",
+          "direction": "strengthen",
+          "edge_type": "strengthen",
+          "n_builds": 2,
+          "status": "tested",
+          "gloss": "Explicit 2D positional modeling preserves image structure."
+        }
+      ],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F021",
+      "pattern": "P24",
+      "pattern_class": "primary_result",
+      "location": "Section 5.1",
+      "context": [
+        "2D positional embedding.",
+        "This is observed in both (b) absolute and (c) relative positional embeddings."
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "Extending from 1D posi-tional embedding to its 2D counterpart is beneficial",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_other_2d_positional_embedding",
+          "CTX_other_observed_both_b_absolute_c_relative"
+        ],
+        "intervention": null,
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [
+        {
+          "canonical": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+          "direction": "strengthen",
+          "edge_type": "strengthen",
+          "n_builds": 4,
+          "status": "tested",
+          "gloss": "Canvas patchification enriches data, reduces overfitting, encourages spatial priors."
+        }
+      ],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F022",
+      "pattern": "P25",
+      "pattern_class": "primary_result",
+      "location": "Section 5.1",
+      "context": [],
+      "intervention": "we re-place the 2D ROPE in Fig. 7(f) with a 1D ROPE",
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "observe a degradation  [3.5 points, from 54.5 to 51.0]",
+      "direction": "down",
+      "canonical": {
+        "context": [],
+        "intervention": "INT_re_place_2d_rope_fig_7",
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          "down"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [
+        {
+          "canonical": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+          "direction": "strengthen",
+          "edge_type": "strengthen",
+          "n_builds": 3,
+          "status": "tested",
+          "gloss": "Canvas patchification enriches data, reduces overfitting, encourages spatial priors."
+        }
+      ],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F023",
+      "pattern": "P26",
+      "pattern_class": "primary_result",
+      "location": "Section 5.1",
+      "context": [
+        "Patchification.",
+        "A key design principle of our method is to prepare the input as a natural image."
+      ],
+      "intervention": "we advance from 1×1 patches on a 32×32 canvas to 2×2 patches on a 64×64 canvas.",
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "The entries Fig. 7(d-f) all benefit from this design.",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_other_key_design_principle_method_prepare_input",
+          "CTX_other_patchification"
+        ],
+        "intervention": "INT_advance_from_1_1_patches_32",
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [
+        {
+          "canonical": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+          "direction": "strengthen",
+          "edge_type": "strengthen",
+          "n_builds": 3,
+          "status": "tested",
+          "gloss": "Canvas patchification enriches data, reduces overfitting, encourages spatial priors."
+        }
+      ],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F024",
+      "pattern": "P27",
+      "pattern_class": "primary_result",
+      "location": "Section 5.1",
+      "context": [],
+      "intervention": "we advance from 1×1 patches on a 32×32 canvas to 2×2 patches on a 64×64 canvas.",
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "Doing so does not increase the computational cost of the Transformer.",
+      "direction": "flat",
+      "canonical": {
+        "context": [],
+        "intervention": "INT_advance_from_1_1_patches_32",
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          "flat"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F025",
+      "pattern": "P28",
+      "pattern_class": "comparison",
+      "location": "Section 5.1",
+      "context": [
+        "the scaling ratio is fixed as 2x."
+      ],
+      "intervention": "we advance from 1×1 patches on a 32×32 canvas to 2×2 patches on a 64×64 canvas.",
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "the 2×2 patchification leads to a noticeable gain  [2.4 points, improving from 43.0 to 45.4]",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_other_scaling_ratio_fixed_2x"
+        ],
+        "intervention": "INT_advance_from_1_1_patches_32",
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          "up"
+        ]
+      },
+      "field_mismatch": [
+        "context"
+      ],
+      "beliefs": [
+        {
+          "canonical": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+          "direction": "strengthen",
+          "edge_type": "strengthen",
+          "n_builds": 2,
+          "status": "tested",
+          "gloss": "Canvas formulation enables augmentations for translation/scale invariance."
+        },
+        {
+          "canonical": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+          "direction": "strengthen",
+          "edge_type": "strengthen",
+          "n_builds": 2,
+          "status": "tested",
+          "gloss": "Canvas patchification enriches data, reduces overfitting, encourages spatial priors."
+        }
+      ],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F026",
+      "pattern": "P34",
+      "pattern_class": "comparison",
+      "location": "Section 5.1",
+      "context": [
+        "Translation and scale augmentation."
+      ],
+      "intervention": "we apply fully flexible translation augmen-tation on the canvas.",
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "this setting yields an additional gain  [2.9 points (from 45.4 to 48.3)]",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_training_translation_scale_augmentation"
+        ],
+        "intervention": "INT_apply_fully_flexible_translation_augmen_tation",
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [
+        {
+          "canonical": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+          "direction": "strengthen",
+          "edge_type": "strengthen",
+          "n_builds": 5,
+          "status": "tested",
+          "gloss": "Canvas formulation enables augmentations for translation/scale invariance."
+        }
+      ],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F027",
+      "pattern": "P35",
+      "pattern_class": "comparison",
+      "location": "Section 5.1",
+      "context": [
+        "Translation and scale augmentation."
+      ],
+      "intervention": "we further ap-ply the scale augmentation enabled by the concept of can-vas.",
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "Scale augmentation yields a substantial gain  [6.2 points]",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_training_translation_scale_augmentation"
+        ],
+        "intervention": "INT_further_ap_ply_scale_augmentation_enabled",
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [
+        {
+          "canonical": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+          "direction": "strengthen",
+          "edge_type": "strengthen",
+          "n_builds": 5,
+          "status": "tested",
+          "gloss": "Canvas formulation enables augmentations for translation/scale invariance."
+        }
+      ],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F028",
+      "pattern": "P29",
+      "pattern_class": "comparison",
+      "location": "Figure 8",
+      "context": [
+        "The circle areas de-note model sizes."
+      ],
+      "intervention": "ViTs with different width (x-axis) and depth.",
+      "reference": null,
+      "eval_metric": "Accuracy (%)",
+      "pattern_text": "increasing depth and/or width leads to higher accuracy",
+      "direction": "up",
+      "canonical": {
+        "context": [],
+        "intervention": "INT_vits_different_width_x_axis_depth",
+        "reference": null,
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [
+        {
+          "canonical": "MECH_increasing_model_size_improves_accuracy_enabling",
+          "direction": "strengthen",
+          "edge_type": "strengthen",
+          "n_builds": 3,
+          "status": "weakly-tested",
+          "gloss": "Increasing model size improves accuracy by enabling better fitting."
+        }
+      ],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F029",
+      "pattern": "P30",
+      "pattern_class": "comparison",
+      "location": "Figure 9",
+      "context": [],
+      "intervention": "with vs. without offline train-ing, and joint vs. independent for each task.",
+      "reference": "with vs. without offline train-ing, and joint vs. independent for each task.",
+      "eval_metric": "Accuracy (%)",
+      "pattern_text": "offline training improves performance  [54.5 vs 29.1]",
+      "direction": "up",
+      "canonical": {
+        "context": [],
+        "intervention": "INT_vs_without_offline_train_ing_joint",
+        "reference": "INT_vs_without_offline_train_ing_joint",
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [
+        {
+          "canonical": "MECH_visual_common_sense_learned_from_offline",
+          "direction": "strengthen",
+          "edge_type": "strengthen",
+          "n_builds": 5,
+          "status": "tested",
+          "gloss": "Visual common sense is learned from offline training data."
+        }
+      ],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F030",
+      "pattern": "P31",
+      "pattern_class": "comparison",
+      "location": "Figure 9",
+      "context": [],
+      "intervention": "with vs. without offline train-ing, and joint vs. independent for each task.",
+      "reference": "with vs. without offline train-ing, and joint vs. independent for each task.",
+      "eval_metric": "Accuracy (%)",
+      "pattern_text": "TTT independently performs better than TTT jointly  [54.5 vs 26.4]",
+      "direction": "up",
+      "canonical": {
+        "context": [],
+        "intervention": "INT_vs_without_offline_train_ing_joint",
+        "reference": "INT_vs_without_offline_train_ing_joint",
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [
+        {
+          "canonical": "MECH_some_tasks_solvable_from_scratch_tabula",
+          "direction": "strengthen",
+          "edge_type": "qualifies",
+          "n_builds": 2,
+          "status": "qualifier",
+          "gloss": "Some tasks are solvable from scratch (tabula rasa)."
+        }
+      ],
+      "demoted": []
+    },
+    {
+      "factor_id": "F031",
+      "pattern": "P36",
+      "pattern_class": "comparison",
+      "location": "Section 5.2",
+      "context": [
+        "ViT vs. U-Net.",
+        "We evaluate three model sizes for each architecture."
+      ],
+      "intervention": "we compare ViT with U-Nets, a type of convolutional network.",
+      "reference": "we compare ViT with U-Nets, a type of convolutional network.",
+      "eval_metric": null,
+      "pattern_text": "ViTs consistently per-form better",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_model_vit_vs_u_net",
+          "CTX_other_evaluate_three_model_sizes_each_architecture"
+        ],
+        "intervention": "INT_compare_vit_u_nets_type_convolutional",
+        "reference": "INT_compare_vit_u_nets_type_convolutional",
+        "eval_metric": null,
+        "observable": [
+          null,
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F032",
+      "pattern": "P38",
+      "pattern_class": "comparison",
+      "location": "Section 5.2",
+      "context": [
+        "Scalability."
+      ],
+      "intervention": "we show ViTs with varying depths and widths.",
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "our method demonstrates good scalability: increasing depth and/or width leads to higher accuracy",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_other_scalability"
+        ],
+        "intervention": "INT_show_vits_varying_depths_widths",
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F033",
+      "pattern": "P39",
+      "pattern_class": "comparison",
+      "location": "Section 5.2",
+      "context": [
+        "as shown in Tab. 1 for the 66M ViT model."
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "this larger model achieves higher training accuracy",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_model_shown_tab_1_66m_vit_model"
+        ],
+        "intervention": null,
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          "up"
+        ]
+      },
+      "field_mismatch": [
+        "intervention"
+      ],
+      "beliefs": [
+        {
+          "canonical": "MECH_majority_voting_consolidates_predictions_from_different",
+          "direction": "strengthen",
+          "edge_type": "strengthen",
+          "n_builds": 2,
+          "status": "weakly-tested",
+          "gloss": "Majority voting consolidates predictions from different views."
+        }
+      ],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F034",
+      "pattern": "P40",
+      "pattern_class": "comparison",
+      "location": "Section 5.2",
+      "context": [
+        "Test-time training (TTT) strategies."
+      ],
+      "intervention": "we study TTT with and without offline training, and TTT performed jointly on all test tasks vs. independently for each test task.",
+      "reference": "we study TTT with and without offline training, and TTT performed jointly on all test tasks vs. independently for each test task.",
+      "eval_metric": null,
+      "pattern_text": "offline training greatly improves the per-formance of TTT",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_training_test_time_training_ttt_strategies"
+        ],
+        "intervention": "INT_study_ttt_without_offline_training_ttt",
+        "reference": "INT_study_ttt_without_offline_training_ttt",
+        "eval_metric": null,
+        "observable": [
+          null,
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F035",
+      "pattern": "P41",
+      "pattern_class": "primary_result",
+      "location": "Section 5.2",
+      "context": [
+        "Test-time training (TTT) strategies."
+      ],
+      "intervention": "we study TTT with and without offline training, and TTT performed jointly on all test tasks vs. independently for each test task.",
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "even without offline training, our TTT strategy can achieve nontrivial accuracy  [26.4]",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_training_test_time_training_ttt_strategies"
+        ],
+        "intervention": "INT_study_ttt_without_offline_training_ttt",
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [
+        {
+          "canonical": "ASM_single_pixel_error_invalidates_entire_arc",
+          "direction": "strengthen",
+          "edge_type": "qualifies",
+          "n_builds": 2,
+          "status": "qualifier",
+          "gloss": "Single pixel error invalidates entire ARC prediction."
+        }
+      ],
+      "demoted": []
+    },
+    {
+      "factor_id": "F036",
+      "pattern": "P42",
+      "pattern_class": "comparison",
+      "location": "Section 5.2",
+      "context": [
+        "under a similar setting."
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "This result outperforms that in [36]",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_other_under_similar_setting"
+        ],
+        "intervention": null,
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          "up"
+        ]
+      },
+      "field_mismatch": [
+        "intervention"
+      ],
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [
+        {
+          "canonical": "ASM_single_pixel_error_invalidates_entire_arc",
+          "direction": "strengthen",
+          "edge_type": "qualifies",
+          "n_builds": 2,
+          "status": "qualifier",
+          "gloss": "Single pixel error invalidates entire ARC prediction."
+        }
+      ],
+      "demoted": []
+    },
+    {
+      "factor_id": "F037",
+      "pattern": "P43",
+      "pattern_class": "comparison",
+      "location": "Section 5.2",
+      "context": [
+        "Test-time training (TTT) strategies."
+      ],
+      "intervention": "we study TTT with and without offline training, and TTT performed jointly on all test tasks vs. independently for each test task.",
+      "reference": "we study TTT with and without offline training, and TTT performed jointly on all test tasks vs. independently for each test task.",
+      "eval_metric": null,
+      "pattern_text": "performing TTT independently for each test task yields substantially better performance than doing so jointly across all test tasks  [by ~10 points]",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_training_test_time_training_ttt_strategies"
+        ],
+        "intervention": "INT_study_ttt_without_offline_training_ttt",
+        "reference": "INT_study_ttt_without_offline_training_ttt",
+        "eval_metric": null,
+        "observable": [
+          null,
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F038",
+      "pattern": "P44",
+      "pattern_class": "primary_result",
+      "location": "Section 5.2",
+      "context": [
+        "Single-view vs. multi-view inference."
+      ],
+      "intervention": "we also examine the single-view inference accuracy.",
+      "reference": null,
+      "eval_metric": "we compare pass@1 accuracy.",
+      "pattern_text": "Single-view inference has a decent pass@1 accuracy  [35.9]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_eval_single_view_vs_multi_view_inference"
+        ],
+        "intervention": "INT_also_examine_single_view_inference_accuracy",
+        "reference": null,
+        "eval_metric": "MET_gen_pass1",
+        "observable": [
+          "MET_gen_pass1",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F039",
+      "pattern": "P45",
+      "pattern_class": "comparison",
+      "location": "Section 5.2",
+      "context": [
+        "Single-view vs. multi-view inference."
+      ],
+      "intervention": null,
+      "reference": "we also examine the single-view inference accuracy.",
+      "eval_metric": "we compare pass@1 accuracy.",
+      "pattern_text": "multi-view inference further boosts  [to 49.8]",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_eval_single_view_vs_multi_view_inference"
+        ],
+        "intervention": null,
+        "reference": "INT_also_examine_single_view_inference_accuracy",
+        "eval_metric": "MET_gen_pass1",
+        "observable": [
+          "MET_gen_pass1",
+          "up"
+        ]
+      },
+      "field_mismatch": [
+        "intervention"
+      ],
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F040",
+      "pattern": "P94",
+      "pattern_class": "primary_result",
+      "location": "Table 2",
+      "context": [],
+      "intervention": "single-view",
+      "reference": null,
+      "eval_metric": "pass@1",
+      "pattern_text": "single-view — pass@1 = 35.9  [cell: single-view, pass@1 = 35.9]",
+      "direction": null,
+      "canonical": {
+        "context": [],
+        "intervention": "INT_single_view",
+        "reference": null,
+        "eval_metric": "MET_gen_pass1",
+        "observable": [
+          "MET_gen_pass1",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F041",
+      "pattern": "P95",
+      "pattern_class": "primary_result",
+      "location": "Table 2",
+      "context": [],
+      "intervention": "multi-view",
+      "reference": null,
+      "eval_metric": "pass@1",
+      "pattern_text": "multi-view — pass@1 = 49.8  [cell: multi-view, pass@1 = 49.8]",
+      "direction": null,
+      "canonical": {
+        "context": [],
+        "intervention": "INT_multi_view",
+        "reference": null,
+        "eval_metric": "MET_gen_pass1",
+        "observable": [
+          "MET_gen_pass1",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [
+        {
+          "canonical": "MECH_majority_voting_consolidates_predictions_from_different",
+          "direction": "strengthen",
+          "edge_type": "strengthen",
+          "n_builds": 2,
+          "status": "weakly-tested",
+          "gloss": "Majority voting consolidates predictions from different views."
+        }
+      ],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F042",
+      "pattern": "P96",
+      "pattern_class": "primary_result",
+      "location": "Table 2",
+      "context": [],
+      "intervention": "multi-view",
+      "reference": null,
+      "eval_metric": "pass@2",
+      "pattern_text": "multi-view — pass@2 = 54.5  [cell: multi-view, pass@2 = 54.5]",
+      "direction": null,
+      "canonical": {
+        "context": [],
+        "intervention": "INT_multi_view",
+        "reference": null,
+        "eval_metric": "MET_gen_pass2",
+        "observable": [
+          "MET_gen_pass2",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F043",
+      "pattern": "P48",
+      "pattern_class": "primary_result",
+      "location": "Section 5.3",
+      "context": [
+        "System-level Comparisons.",
+        "LLMs are pre-trained on internet-scale data, and some may also incor-porate multimodal data that include images.",
+        "Our method does not rely on such data",
+        "uses a model that is several orders of magnitude smaller."
+      ],
+      "intervention": "we compare with leading results using LLMs or recurrent models, on ARC-1 and ARC-2.",
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "Our model compares favorably with some of the most powerful LLMs at the time their results were reported: in-cluding Deepseek, Claude, o3, and GPT-5",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_other_llms_pre_trained_internet_scale_data",
+          "CTX_other_method_does_not_rely_such_data",
+          "CTX_other_system_level_comparisons",
+          "CTX_other_uses_model_several_orders_magnitude_smaller"
+        ],
+        "intervention": "INT_compare_leading_results_llms_recurrent_models",
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [
+        {
+          "canonical": "MECH_visual_learning_enables_abstraction_inference_without",
+          "direction": "strengthen",
+          "edge_type": "rolls_up",
+          "n_builds": 2,
+          "status": "rollup_target",
+          "gloss": "Visual learning enables abstraction/inference without language."
+        }
+      ],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F044",
+      "pattern": "P49",
+      "pattern_class": "comparison",
+      "location": "Section 5.3",
+      "context": [
+        "In the controlled setting of training from scratch on ARC data"
+      ],
+      "intervention": "we compare with leading results using LLMs or recurrent models, on ARC-1 and ARC-2.",
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "our method substantially outperforms the recur-rent models: HRM [53] and TRM [27].",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_training_controlled_setting_training_from_scratch_arc"
+        ],
+        "intervention": "INT_compare_leading_results_llms_recurrent_models",
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [
+        {
+          "canonical": "MECH_visual_learning_enables_abstraction_inference_without",
+          "direction": "strengthen",
+          "edge_type": "rolls_up",
+          "n_builds": 2,
+          "status": "rollup_target",
+          "gloss": "Visual learning enables abstraction/inference without language."
+        }
+      ],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F045",
+      "pattern": "P50",
+      "pattern_class": "comparison",
+      "location": "Section 5.3",
+      "context": [
+        "In the controlled setting of training from scratch on ARC data"
+      ],
+      "intervention": "we compare with leading results using LLMs or recurrent models, on ARC-1 and ARC-2.",
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "Our VARC with 18M parameters is better than TRM on ARC-1  [~10 points better, a >20% relative improvement]",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_training_controlled_setting_training_from_scratch_arc"
+        ],
+        "intervention": "INT_compare_leading_results_llms_recurrent_models",
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F046",
+      "pattern": "P51",
+      "pattern_class": "comparison",
+      "location": "Section 5.3",
+      "context": [],
+      "intervention": "we ensemble one ViT and one U-Net, each with test-time training run four times.",
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "Doing so boosts our result  [to 60.4]",
+      "direction": "up",
+      "canonical": {
+        "context": [],
+        "intervention": "INT_ensemble_one_vit_one_u_net",
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F047",
+      "pattern": "P52",
+      "pattern_class": "comparison",
+      "location": "Section 5.3",
+      "context": [],
+      "intervention": "we ensemble one ViT and one U-Net, each with test-time training run four times.",
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "This result closes the gap with the re-ported average human performance  [60.4 vs 60.2 [31]]",
+      "direction": "flat",
+      "canonical": {
+        "context": [],
+        "intervention": "INT_ensemble_one_vit_one_u_net",
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          "flat"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F048",
+      "pattern": "P100",
+      "pattern_class": "primary_result",
+      "location": "Table 3",
+      "context": [
+        "Claude 3.7 8k [18]  [#params N/A]"
+      ],
+      "intervention": "Claude 3.7 8k [18]",
+      "reference": null,
+      "eval_metric": "ARC-2",
+      "pattern_text": "Claude 3.7 8k [18] — ARC-2 = 0.9  [cell: ARC-2 = 0.9; #params N/A]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_other_claude_3_7_8k_18"
+        ],
+        "intervention": "INT_claude_3_7_8k_18",
+        "reference": null,
+        "eval_metric": "MET_arc2_accuracy",
+        "observable": [
+          "MET_arc2_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F049",
+      "pattern": "P101",
+      "pattern_class": "primary_result",
+      "location": "Table 3",
+      "context": [
+        "o3-mini-high [18]  [#params N/A]"
+      ],
+      "intervention": "o3-mini-high [18]",
+      "reference": null,
+      "eval_metric": "ARC-1",
+      "pattern_text": "o3-mini-high [18] — ARC-1 = 34.5  [cell: ARC-1 = 34.5; #params N/A]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_other_o3_mini_high_18"
+        ],
+        "intervention": "INT_o3_mini_high_18",
+        "reference": null,
+        "eval_metric": "MET_arc1_accuracy",
+        "observable": [
+          "MET_arc1_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F050",
+      "pattern": "P102",
+      "pattern_class": "primary_result",
+      "location": "Table 3",
+      "context": [
+        "o3-mini-high [18]  [#params N/A]"
+      ],
+      "intervention": "o3-mini-high [18]",
+      "reference": null,
+      "eval_metric": "ARC-2",
+      "pattern_text": "o3-mini-high [18] — ARC-2 = 3.0  [cell: ARC-2 = 3.0; #params N/A]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_other_o3_mini_high_18"
+        ],
+        "intervention": "INT_o3_mini_high_18",
+        "reference": null,
+        "eval_metric": "MET_arc2_accuracy",
+        "observable": [
+          "MET_arc2_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F051",
+      "pattern": "P103",
+      "pattern_class": "primary_result",
+      "location": "Table 3",
+      "context": [
+        "GPT-5 [18]  [#params N/A]"
+      ],
+      "intervention": "GPT-5 [18]",
+      "reference": null,
+      "eval_metric": "ARC-1",
+      "pattern_text": "GPT-5 [18] — ARC-1 = 44.0  [cell: ARC-1 = 44.0; #params N/A]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_other_gpt_5_18"
+        ],
+        "intervention": "INT_gpt_5_18",
+        "reference": null,
+        "eval_metric": "MET_arc1_accuracy",
+        "observable": [
+          "MET_arc1_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F052",
+      "pattern": "P104",
+      "pattern_class": "primary_result",
+      "location": "Table 3",
+      "context": [
+        "GPT-5 [18]  [#params N/A]"
+      ],
+      "intervention": "GPT-5 [18]",
+      "reference": null,
+      "eval_metric": "ARC-2",
+      "pattern_text": "GPT-5 [18] — ARC-2 = 1.9  [cell: ARC-2 = 1.9; #params N/A]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_other_gpt_5_18"
+        ],
+        "intervention": "INT_gpt_5_18",
+        "reference": null,
+        "eval_metric": "MET_arc2_accuracy",
+        "observable": [
+          "MET_arc2_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F053",
+      "pattern": "P105",
+      "pattern_class": "primary_result",
+      "location": "Table 3",
+      "context": [
+        "Grok-4-thinking [18]  [#params 1.7T]"
+      ],
+      "intervention": "Grok-4-thinking [18]",
+      "reference": null,
+      "eval_metric": "ARC-1",
+      "pattern_text": "Grok-4-thinking [18] — ARC-1 = 66.7  [cell: ARC-1 = 66.7; #params 1.7T]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_other_grok_4_thinking_18_1_7t"
+        ],
+        "intervention": "INT_grok_4_thinking_18",
+        "reference": null,
+        "eval_metric": "MET_arc1_accuracy",
+        "observable": [
+          "MET_arc1_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F054",
+      "pattern": "P106",
+      "pattern_class": "primary_result",
+      "location": "Table 3",
+      "context": [
+        "Grok-4-thinking [18]  [#params 1.7T]"
+      ],
+      "intervention": "Grok-4-thinking [18]",
+      "reference": null,
+      "eval_metric": "ARC-2",
+      "pattern_text": "Grok-4-thinking [18] — ARC-2 = 16.0  [cell: ARC-2 = 16.0; #params 1.7T]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_other_grok_4_thinking_18_1_7t"
+        ],
+        "intervention": "INT_grok_4_thinking_18",
+        "reference": null,
+        "eval_metric": "MET_arc2_accuracy",
+        "observable": [
+          "MET_arc2_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F055",
+      "pattern": "P107",
+      "pattern_class": "primary_result",
+      "location": "Table 3",
+      "context": [
+        "Bespoke (Grok-4) [8]  [#params 1.7T]"
+      ],
+      "intervention": "Bespoke (Grok-4) [8]",
+      "reference": null,
+      "eval_metric": "ARC-1",
+      "pattern_text": "Bespoke (Grok-4) [8] — ARC-1 = 79.6  [cell: ARC-1 = 79.6; #params 1.7T]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_other_bespoke_grok_4_8_1_7t"
+        ],
+        "intervention": "INT_bespoke_grok_4_8",
+        "reference": null,
+        "eval_metric": "MET_arc1_accuracy",
+        "observable": [
+          "MET_arc1_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F056",
+      "pattern": "P108",
+      "pattern_class": "primary_result",
+      "location": "Table 3",
+      "context": [
+        "Bespoke (Grok-4) [8]  [#params 1.7T]"
+      ],
+      "intervention": "Bespoke (Grok-4) [8]",
+      "reference": null,
+      "eval_metric": "ARC-2",
+      "pattern_text": "Bespoke (Grok-4) [8] — ARC-2 = 29.4  [cell: ARC-2 = 29.4; #params 1.7T]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_other_bespoke_grok_4_8_1_7t"
+        ],
+        "intervention": "INT_bespoke_grok_4_8",
+        "reference": null,
+        "eval_metric": "MET_arc2_accuracy",
+        "observable": [
+          "MET_arc2_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F057",
+      "pattern": "P109",
+      "pattern_class": "primary_result",
+      "location": "Table 3",
+      "context": [
+        "HRM [53]  [#params 27M]"
+      ],
+      "intervention": "HRM [53]",
+      "reference": null,
+      "eval_metric": "ARC-1",
+      "pattern_text": "HRM [53] — ARC-1 = 40.3  [cell: ARC-1 = 40.3; #params 27M]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_other_hrm_53_27m"
+        ],
+        "intervention": "INT_hrm_53",
+        "reference": null,
+        "eval_metric": "MET_arc1_accuracy",
+        "observable": [
+          "MET_arc1_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F058",
+      "pattern": "P110",
+      "pattern_class": "primary_result",
+      "location": "Table 3",
+      "context": [
+        "HRM [53]  [#params 27M]"
+      ],
+      "intervention": "HRM [53]",
+      "reference": null,
+      "eval_metric": "ARC-2",
+      "pattern_text": "HRM [53] — ARC-2 = 5.0  [cell: ARC-2 = 5.0; #params 27M]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_other_hrm_53_27m"
+        ],
+        "intervention": "INT_hrm_53",
+        "reference": null,
+        "eval_metric": "MET_arc2_accuracy",
+        "observable": [
+          "MET_arc2_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F059",
+      "pattern": "P111",
+      "pattern_class": "primary_result",
+      "location": "Table 3",
+      "context": [
+        "TRM [27]  [#params 7M]"
+      ],
+      "intervention": "TRM [27]",
+      "reference": null,
+      "eval_metric": "ARC-1",
+      "pattern_text": "TRM [27] — ARC-1 = 44.6  [cell: ARC-1 = 44.6; #params 7M]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_other_trm_27_7m"
+        ],
+        "intervention": "INT_trm_27",
+        "reference": null,
+        "eval_metric": "MET_arc1_accuracy",
+        "observable": [
+          "MET_arc1_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F060",
+      "pattern": "P112",
+      "pattern_class": "primary_result",
+      "location": "Table 3",
+      "context": [
+        "TRM [27]  [#params 7M]"
+      ],
+      "intervention": "TRM [27]",
+      "reference": null,
+      "eval_metric": "ARC-2",
+      "pattern_text": "TRM [27] — ARC-2 = 7.8  [cell: ARC-2 = 7.8; #params 7M]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_other_trm_27_7m"
+        ],
+        "intervention": "INT_trm_27",
+        "reference": null,
+        "eval_metric": "MET_arc2_accuracy",
+        "observable": [
+          "MET_arc2_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F061",
+      "pattern": "P113",
+      "pattern_class": "primary_result",
+      "location": "Table 3",
+      "context": [
+        "VARC  [#params 18M]"
+      ],
+      "intervention": "VARC",
+      "reference": null,
+      "eval_metric": "ARC-1",
+      "pattern_text": "VARC — ARC-1 = 54.5  [cell: ARC-1 = 54.5; #params 18M]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_other_varc_18m"
+        ],
+        "intervention": "INT_varc",
+        "reference": null,
+        "eval_metric": "MET_arc1_accuracy",
+        "observable": [
+          "MET_arc1_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F062",
+      "pattern": "P114",
+      "pattern_class": "primary_result",
+      "location": "Table 3",
+      "context": [
+        "VARC  [#params 18M]"
+      ],
+      "intervention": "VARC",
+      "reference": null,
+      "eval_metric": "ARC-2",
+      "pattern_text": "VARC — ARC-2 = 8.3  [cell: ARC-2 = 8.3; #params 18M]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_other_varc_18m"
+        ],
+        "intervention": "INT_varc",
+        "reference": null,
+        "eval_metric": "MET_arc2_accuracy",
+        "observable": [
+          "MET_arc2_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F063",
+      "pattern": "P115",
+      "pattern_class": "primary_result",
+      "location": "Table 3",
+      "context": [
+        "VARC (ensemble)  [#params 73M]"
+      ],
+      "intervention": "VARC (ensemble)",
+      "reference": null,
+      "eval_metric": "ARC-1",
+      "pattern_text": "VARC (ensemble) — ARC-1 = 60.4  [cell: ARC-1 = 60.4; #params 73M]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_eval_varc_ensemble_73m"
+        ],
+        "intervention": "INT_varc_ensemble",
+        "reference": null,
+        "eval_metric": "MET_arc1_accuracy",
+        "observable": [
+          "MET_arc1_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F064",
+      "pattern": "P116",
+      "pattern_class": "primary_result",
+      "location": "Table 3",
+      "context": [
+        "VARC (ensemble)  [#params 73M]"
+      ],
+      "intervention": "VARC (ensemble)",
+      "reference": null,
+      "eval_metric": "ARC-2",
+      "pattern_text": "VARC (ensemble) — ARC-2 = 11.1  [cell: ARC-2 = 11.1; #params 73M]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_eval_varc_ensemble_73m"
+        ],
+        "intervention": "INT_varc_ensemble",
+        "reference": null,
+        "eval_metric": "MET_arc2_accuracy",
+        "observable": [
+          "MET_arc2_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F065",
+      "pattern": "P117",
+      "pattern_class": "primary_result",
+      "location": "Table 3",
+      "context": [
+        "avg. human [31]  [#params -]"
+      ],
+      "intervention": "avg. human [31]",
+      "reference": null,
+      "eval_metric": "ARC-1",
+      "pattern_text": "avg. human [31] — ARC-1 = 60.2  [cell: ARC-1 = 60.2; #params -]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_other_avg_human_31"
+        ],
+        "intervention": "INT_avg_human_31",
+        "reference": null,
+        "eval_metric": "MET_arc1_accuracy",
+        "observable": [
+          "MET_arc1_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F066",
+      "pattern": "P118",
+      "pattern_class": "primary_result",
+      "location": "Table 3",
+      "context": [
+        "best human [18]  [#params -]"
+      ],
+      "intervention": "best human [18]",
+      "reference": null,
+      "eval_metric": "ARC-1",
+      "pattern_text": "best human [18] — ARC-1 = 98.0  [cell: ARC-1 = 98.0; #params -]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_other_best_human_18"
+        ],
+        "intervention": "INT_best_human_18",
+        "reference": null,
+        "eval_metric": "MET_arc1_accuracy",
+        "observable": [
+          "MET_arc1_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F067",
+      "pattern": "P119",
+      "pattern_class": "primary_result",
+      "location": "Table 3",
+      "context": [
+        "best human [18]  [#params -]"
+      ],
+      "intervention": "best human [18]",
+      "reference": null,
+      "eval_metric": "ARC-2",
+      "pattern_text": "best human [18] — ARC-2 = 100.0  [cell: ARC-2 = 100.0; #params -]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_other_best_human_18"
+        ],
+        "intervention": "INT_best_human_18",
+        "reference": null,
+        "eval_metric": "MET_arc2_accuracy",
+        "observable": [
+          "MET_arc2_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F068",
+      "pattern": "P46",
+      "pattern_class": "primary_result",
+      "location": "Table 3",
+      "context": [
+        "LLM-based results are from the ARC-AGI leader-board [18].",
+        "HRM, TRM, and our VARC are trained from scratch only on ARC data.",
+        "Our single-model result is based on ViT, with mean±std of 54.5±0.7 (ARC-1) and 8.3±0.4 (ARC-2) over four runs.",
+        "Our ensemble result aggregates an 18M ViT and a 55M U-Net, each with test-time training performed four times."
+      ],
+      "intervention": "VARC (ensemble)",
+      "reference": null,
+      "eval_metric": "ARC-1",
+      "pattern_text": "VARC (ensemble) achieves 60.4 on ARC-1 and 11.1 on ARC-2  [60.4, 11.1]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_dataset_single_model_result_based_vit_mean",
+          "CTX_model_ensemble_result_aggregates_18m_vit_55m",
+          "CTX_other_llm_based_results_from_arc_agi",
+          "CTX_training_hrm_trm_varc_trained_from_scratch"
+        ],
+        "intervention": "INT_varc_ensemble",
+        "reference": null,
+        "eval_metric": "MET_arc1_accuracy",
+        "observable": [
+          "MET_arc1_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F069",
+      "pattern": "P47",
+      "pattern_class": "primary_result",
+      "location": "Table 3",
+      "context": [
+        "LLM-based results are from the ARC-AGI leader-board [18].",
+        "HRM, TRM, and our VARC are trained from scratch only on ARC data.",
+        "Our single-model result is based on ViT, with mean±std of 54.5±0.7 (ARC-1) and 8.3±0.4 (ARC-2) over four runs.",
+        "Our ensemble result aggregates an 18M ViT and a 55M U-Net, each with test-time training performed four times."
+      ],
+      "intervention": "VARC (ensemble)",
+      "reference": "avg. human [31]",
+      "eval_metric": "ARC-1",
+      "pattern_text": "VARC (ensemble) is comparable to avg. human performance on ARC-1  [VARC 60.4, avg. human 60.2]",
+      "direction": "flat",
+      "canonical": {
+        "context": [
+          "CTX_dataset_single_model_result_based_vit_mean",
+          "CTX_model_ensemble_result_aggregates_18m_vit_55m",
+          "CTX_other_llm_based_results_from_arc_agi",
+          "CTX_training_hrm_trm_varc_trained_from_scratch"
+        ],
+        "intervention": "INT_varc_ensemble",
+        "reference": "INT_avg_human_31",
+        "eval_metric": "MET_arc1_accuracy",
+        "observable": [
+          "MET_arc1_accuracy",
+          "flat"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F070",
+      "pattern": "P97",
+      "pattern_class": "primary_result",
+      "location": "Table 3",
+      "context": [
+        "Deepseek R1 [21]  [#params 671B]"
+      ],
+      "intervention": "Deepseek R1 [21]",
+      "reference": null,
+      "eval_metric": "ARC-1",
+      "pattern_text": "Deepseek R1 [21] — ARC-1 = 15.8  [cell: ARC-1 = 15.8; #params 671B]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_other_deepseek_r1_21_671b"
+        ],
+        "intervention": "INT_deepseek_r1_21",
+        "reference": null,
+        "eval_metric": "MET_arc1_accuracy",
+        "observable": [
+          "MET_arc1_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F071",
+      "pattern": "P98",
+      "pattern_class": "primary_result",
+      "location": "Table 3",
+      "context": [
+        "Deepseek R1 [21]  [#params 671B]"
+      ],
+      "intervention": "Deepseek R1 [21]",
+      "reference": null,
+      "eval_metric": "ARC-2",
+      "pattern_text": "Deepseek R1 [21] — ARC-2 = 1.3  [cell: ARC-2 = 1.3; #params 671B]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_other_deepseek_r1_21_671b"
+        ],
+        "intervention": "INT_deepseek_r1_21",
+        "reference": null,
+        "eval_metric": "MET_arc2_accuracy",
+        "observable": [
+          "MET_arc2_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F072",
+      "pattern": "P99",
+      "pattern_class": "primary_result",
+      "location": "Table 3",
+      "context": [
+        "Claude 3.7 8k [18]  [#params N/A]"
+      ],
+      "intervention": "Claude 3.7 8k [18]",
+      "reference": null,
+      "eval_metric": "ARC-1",
+      "pattern_text": "Claude 3.7 8k [18] — ARC-1 = 21.2  [cell: ARC-1 = 21.2; #params N/A]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_other_claude_3_7_8k_18"
+        ],
+        "intervention": "INT_claude_3_7_8k_18",
+        "reference": null,
+        "eval_metric": "MET_arc1_accuracy",
+        "observable": [
+          "MET_arc1_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F073",
+      "pattern": "P53",
+      "pattern_class": "primary_result",
+      "location": "Section 6",
+      "context": [
+        "Figure 11 visualizes the layer-wise attention maps for an-other test task.",
+        "A layer-wise map is the softmax attention map averaged across all pixels in the layer"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "some layers exhibit strong attention to the 3 × 3 neighborhood",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_other_figure_11_visualizes_layer_wise_attention",
+          "CTX_other_layer_wise_map_softmax_attention_map"
+        ],
+        "intervention": null,
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": [
+        {
+          "canonical": "MECH_attention_maps_reveal_pixel_pixel_reasoning",
+          "direction": "strengthen",
+          "edge_type": "demoted",
+          "n_builds": 2,
+          "status": "demoted_observation",
+          "gloss": "Attention maps reveal pixel-to-pixel reasoning relationships."
+        }
+      ]
+    },
+    {
+      "factor_id": "F074",
+      "pattern": "P54",
+      "pattern_class": "primary_result",
+      "location": "Section 6",
+      "context": [
+        "Figure 11 visualizes the layer-wise attention maps for an-other test task.",
+        "A layer-wise map is the softmax attention map averaged across all pixels in the layer"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "some other layers (e.g., layers 7-9) focus on the outward-radiating rays",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_other_figure_11_visualizes_layer_wise_attention",
+          "CTX_other_layer_wise_map_softmax_attention_map"
+        ],
+        "intervention": null,
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F075",
+      "pattern": "P57",
+      "pattern_class": "primary_result",
+      "location": "Section 6",
+      "context": [
+        "t-SNE of task embeddings.",
+        "Our model is conditioned on a task token, with an embedding learned to represent each task.",
+        "With 400 training tasks in ARC-1, our model learns 400 distinct task embeddings in offline training.",
+        "Each point corresponds to a task.."
+      ],
+      "intervention": "We visu-alize these 400 embeddings in the 2D space by t-SNE [39]",
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "the top-left corner in Fig. 12 shows two tasks related to coloring; the bottom-left corner shows two tasks related to generalized logic operations (i.e., AND/OR/XOR).",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_dataset_400_training_tasks_arc_1_model",
+          "CTX_other_each_point_corresponds_task",
+          "CTX_other_model_conditioned_task_token_embedding_learned",
+          "CTX_other_t_sne_task_embeddings"
+        ],
+        "intervention": "INT_visu_alize_these_400_embeddings_2d",
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F076",
+      "pattern": "P59",
+      "pattern_class": "primary_result",
+      "location": "Figure 14",
+      "context": [
+        "RE-ARC samples per task",
+        "evaluated on the ARC-1 eval set"
+      ],
+      "intervention": "Offline training data scaling: effect of varying",
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "Increasing the amount of offline training data is beneficial",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_dataset_evaluated_arc_1_eval_set",
+          "CTX_dataset_re_arc_samples_per_task"
+        ],
+        "intervention": "INT_offline_training_data_scaling_effect_varying",
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          "up"
+        ]
+      },
+      "field_mismatch": [
+        "intervention"
+      ],
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F077",
+      "pattern": "P60",
+      "pattern_class": "primary_result",
+      "location": "Figure 15",
+      "context": [
+        "the number of training tasks",
+        "evaluated on the ARC-1 eval set"
+      ],
+      "intervention": "Offline training task diversity scaling: effect of varying",
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "Increasing task diversity is beneficial.",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_dataset_evaluated_arc_1_eval_set",
+          "CTX_other_number_training_tasks"
+        ],
+        "intervention": "INT_offline_training_task_diversity_scaling_effect",
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          "up"
+        ]
+      },
+      "field_mismatch": [
+        "intervention"
+      ],
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F078",
+      "pattern": "P61",
+      "pattern_class": "primary_result",
+      "location": "Section B.1",
+      "context": [
+        "RE-ARC dataset [22] in our offline training"
+      ],
+      "intervention": "Using only the original ARC training data, without any RE-ARC data",
+      "reference": null,
+      "eval_metric": "accuracy",
+      "pattern_text": "our method achieves a decent accuracy  [31.5%]",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_dataset_re_arc_dataset_22_offline_training"
+        ],
+        "intervention": "INT_only_original_arc_training_data_without",
+        "reference": null,
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F079",
+      "pattern": "P62",
+      "pattern_class": "primary_result",
+      "location": "Section B.1",
+      "context": [
+        "RE-ARC dataset [22] in our offline training"
+      ],
+      "intervention": "adding 10, 100, and 1,000 pairs per task from RE-ARC",
+      "reference": "Using only the original ARC training data, without any RE-ARC data",
+      "eval_metric": "accuracy",
+      "pattern_text": "increases  [to 38.6, 52.3, and 54.0]",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_dataset_re_arc_dataset_22_offline_training"
+        ],
+        "intervention": "INT_adding_10_100_1_000_pairs",
+        "reference": "INT_only_original_arc_training_data_without",
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F080",
+      "pattern": "P63",
+      "pattern_class": "primary_result",
+      "location": "Section B.1",
+      "context": [],
+      "intervention": "trained on 0, 16, 80, and 400 tasks",
+      "reference": null,
+      "eval_metric": "accuracy",
+      "pattern_text": "increases  [from 26.4 to 43.1, 49.6, and 54.5]",
+      "direction": "up",
+      "canonical": {
+        "context": [],
+        "intervention": "INT_trained_0_16_80_400_tasks",
+        "reference": null,
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F081",
+      "pattern": "P65",
+      "pattern_class": "primary_result",
+      "location": "Section B.2",
+      "context": [
+        "multi-view inference with many views (510)",
+        "On ARC-1"
+      ],
+      "intervention": "as the number of proposals (k) increases",
+      "reference": null,
+      "eval_metric": "pass@k accu-racy",
+      "pattern_text": "is  [49.8, 54.5, and 66.3, when k is 1, 2, and 300]",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_dataset_arc_1",
+          "CTX_eval_multi_view_inference_many_views_510"
+        ],
+        "intervention": "INT_number_proposals_k_increases",
+        "reference": null,
+        "eval_metric": "MET_gen_passk",
+        "observable": [
+          "MET_gen_passk",
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F082",
+      "pattern": "P66",
+      "pattern_class": "primary_result",
+      "location": "Section B.2",
+      "context": [
+        "multi-view inference with many views (510)",
+        "On ARC-1"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": "pass@k accu-racy",
+      "pattern_text": "this result reveals the upper-bound performance (66.3) of our method, even if oracle voting were applied.",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_dataset_arc_1",
+          "CTX_eval_multi_view_inference_many_views_510"
+        ],
+        "intervention": null,
+        "reference": null,
+        "eval_metric": "MET_gen_passk",
+        "observable": [
+          "MET_gen_passk",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [
+        {
+          "canonical": "MECH_correct_predictions_exist_views_but_outvoted",
+          "direction": "strengthen",
+          "edge_type": "qualifies",
+          "n_builds": 2,
+          "status": "qualifier",
+          "gloss": "Correct predictions exist in views but are outvoted."
+        }
+      ],
+      "demoted": []
+    },
+    {
+      "factor_id": "F083",
+      "pattern": "P70",
+      "pattern_class": "primary_result",
+      "location": "Figure 17",
+      "context": [
+        "ARC-1"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "Successful and failed examples",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_dataset_arc_1"
+        ],
+        "intervention": null,
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F084",
+      "pattern": "P71",
+      "pattern_class": "primary_result",
+      "location": "Figure 17",
+      "context": [
+        "ARC-1",
+        "test tasks"
+      ],
+      "intervention": "solved by VARC",
+      "reference": null,
+      "eval_metric": "correct output",
+      "pattern_text": "successfully solved",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_dataset_arc_1",
+          "CTX_other_test_tasks"
+        ],
+        "intervention": "INT_solved_varc",
+        "reference": null,
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F085",
+      "pattern": "P72",
+      "pattern_class": "primary_result",
+      "location": "Figure 17",
+      "context": [
+        "ARC-1",
+        "test tasks"
+      ],
+      "intervention": "unsolved by VARC",
+      "reference": null,
+      "eval_metric": "correct output",
+      "pattern_text": "unsolved",
+      "direction": "down",
+      "canonical": {
+        "context": [
+          "CTX_dataset_arc_1",
+          "CTX_other_test_tasks"
+        ],
+        "intervention": "INT_unsolved_varc",
+        "reference": null,
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          "down"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F086",
+      "pattern": "P73",
+      "pattern_class": "primary_result",
+      "location": "Figure 17",
+      "context": [
+        "Two demonstration example pairs shown for each task (some have more demonstrations not shown here)",
+        "Inference input",
+        "Task 15663ba9",
+        "Task 981571dc",
+        "Task 15696249",
+        "Task 67c52801"
+      ],
+      "intervention": "first and second solutions proposed by VARC",
+      "reference": "correct output",
+      "eval_metric": "Vote  [109, 57, 399, 35, 456, 10, 233, 123, 9, 6, 14, 8, 13, 9, 3, 2]",
+      "pattern_text": "VARC's Attempt 1 matches the Ground Truth  [Tasks: 15663ba9, 981571dc, 15696249, 67c52801]",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_other_inference_input",
+          "CTX_other_task_15663ba9",
+          "CTX_other_task_15696249",
+          "CTX_other_task_67c52801",
+          "CTX_other_task_981571dc",
+          "CTX_other_two_demonstration_example_pairs_shown_each"
+        ],
+        "intervention": "INT_first_second_solutions_proposed_varc",
+        "reference": "INT_correct_output",
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F087",
+      "pattern": "P74",
+      "pattern_class": "primary_result",
+      "location": "Figure 17",
+      "context": [
+        "Two demonstration example pairs shown for each task (some have more demonstrations not shown here)",
+        "Inference input",
+        "Task 8dae5dfc",
+        "Task 67636eac",
+        "Task aa4ec2a5",
+        "Task b457fec5"
+      ],
+      "intervention": "first and second solutions proposed by VARC",
+      "reference": "correct output",
+      "eval_metric": "Vote  [109, 57, 399, 35, 456, 10, 233, 123, 9, 6, 14, 8, 13, 9, 3, 2]",
+      "pattern_text": "VARC fails to solve the task  [Tasks: 8dae5dfc, 67636eac, aa4ec2a5, b457fec5]",
+      "direction": "down",
+      "canonical": {
+        "context": [
+          "CTX_other_inference_input",
+          "CTX_other_task_67636eac",
+          "CTX_other_task_8dae5dfc",
+          "CTX_other_task_aa4ec2a5",
+          "CTX_other_task_b457fec5",
+          "CTX_other_two_demonstration_example_pairs_shown_each"
+        ],
+        "intervention": "INT_first_second_solutions_proposed_varc",
+        "reference": "INT_correct_output",
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          "down"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F088",
+      "pattern": "P75",
+      "pattern_class": "primary_result",
+      "location": "Figure 18",
+      "context": [
+        "ARC-2"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "Successful and failed examples",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_dataset_arc_2"
+        ],
+        "intervention": null,
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F089",
+      "pattern": "P76",
+      "pattern_class": "primary_result",
+      "location": "Figure 18",
+      "context": [
+        "ARC-2",
+        "test tasks"
+      ],
+      "intervention": "solved by VARC",
+      "reference": null,
+      "eval_metric": "correct output",
+      "pattern_text": "successfully solved",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_dataset_arc_2",
+          "CTX_other_test_tasks"
+        ],
+        "intervention": "INT_solved_varc",
+        "reference": null,
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F090",
+      "pattern": "P77",
+      "pattern_class": "primary_result",
+      "location": "Figure 18",
+      "context": [
+        "ARC-2",
+        "test tasks"
+      ],
+      "intervention": "unsolved by VARC",
+      "reference": null,
+      "eval_metric": "correct output",
+      "pattern_text": "unsolved",
+      "direction": "down",
+      "canonical": {
+        "context": [
+          "CTX_dataset_arc_2",
+          "CTX_other_test_tasks"
+        ],
+        "intervention": "INT_unsolved_varc",
+        "reference": null,
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          "down"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F091",
+      "pattern": "P78",
+      "pattern_class": "primary_result",
+      "location": "Figure 18",
+      "context": [
+        "Two demonstration example pairs shown for each task (some have more demonstrations not shown here)",
+        "Inference input",
+        "Task 800d221b",
+        "Task 7666fa5d",
+        "Task 221dfab4",
+        "Task 7b80bb43"
+      ],
+      "intervention": "first and second solutions proposed by VARC",
+      "reference": "correct output",
+      "eval_metric": "Vote  [99, 82, 410, 16, 30, 17, 168, 44, 21, 20, 7, 6, 14, 12, 67, 51]",
+      "pattern_text": "VARC's Attempt 1 matches the Ground Truth  [Tasks: 800d221b, 7666fa5d, 221dfab4, 7b80bb43]",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_other_inference_input",
+          "CTX_other_task_221dfab4",
+          "CTX_other_task_7666fa5d",
+          "CTX_other_task_7b80bb43",
+          "CTX_other_task_800d221b",
+          "CTX_other_two_demonstration_example_pairs_shown_each"
+        ],
+        "intervention": "INT_first_second_solutions_proposed_varc",
+        "reference": "INT_correct_output",
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F092",
+      "pattern": "P79",
+      "pattern_class": "primary_result",
+      "location": "Figure 18",
+      "context": [
+        "Two demonstration example pairs shown for each task (some have more demonstrations not shown here)",
+        "Inference input",
+        "Task 2b83f449",
+        "Task 2d0172a1",
+        "Task 3e6067c3",
+        "Task 7ed72f31"
+      ],
+      "intervention": "first and second solutions proposed by VARC",
+      "reference": "correct output",
+      "eval_metric": "Vote  [99, 82, 410, 16, 30, 17, 168, 44, 21, 20, 7, 6, 14, 12, 67, 51]",
+      "pattern_text": "VARC fails to solve the task  [Tasks: 2b83f449, 2d0172a1, 3e6067c3, 7ed72f31]",
+      "direction": "down",
+      "canonical": {
+        "context": [
+          "CTX_other_inference_input",
+          "CTX_other_task_2b83f449",
+          "CTX_other_task_2d0172a1",
+          "CTX_other_task_3e6067c3",
+          "CTX_other_task_7ed72f31",
+          "CTX_other_two_demonstration_example_pairs_shown_each"
+        ],
+        "intervention": "INT_first_second_solutions_proposed_varc",
+        "reference": "INT_correct_output",
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          "down"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F093",
+      "pattern": "P80",
+      "pattern_class": "primary_result",
+      "location": "Figure 19",
+      "context": [],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "Ambiguous examples",
+      "direction": null,
+      "canonical": {
+        "context": [],
+        "intervention": null,
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [
+        {
+          "canonical": "MECH_model_handles_ambiguity_proposing_multiple_rule",
+          "direction": "strengthen",
+          "edge_type": "strengthen",
+          "n_builds": 2,
+          "status": "weakly-tested",
+          "gloss": "Model handles ambiguity by proposing multiple rule interpretations."
+        }
+      ],
+      "rolls_up": [],
+      "qualifiers": [
+        {
+          "canonical": "ASM_some_arc_tasks_admit_multiple_plausible",
+          "direction": "strengthen",
+          "edge_type": "qualifies",
+          "n_builds": 2,
+          "status": "qualifier",
+          "gloss": "Some ARC tasks admit multiple plausible rules."
+        }
+      ],
+      "demoted": []
+    },
+    {
+      "factor_id": "F094",
+      "pattern": "P81",
+      "pattern_class": "primary_result",
+      "location": "Figure 19",
+      "context": [],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": null,
+      "pattern_text": "some may admit multiple plausible explanations or rules",
+      "direction": null,
+      "canonical": {
+        "context": [],
+        "intervention": null,
+        "reference": null,
+        "eval_metric": null,
+        "observable": [
+          null,
+          null
+        ]
+      },
+      "field_mismatch": [
+        "context"
+      ],
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [
+        {
+          "canonical": "ASM_some_arc_tasks_admit_multiple_plausible",
+          "direction": "strengthen",
+          "edge_type": "qualifies",
+          "n_builds": 4,
+          "status": "qualifier",
+          "gloss": "Some ARC tasks admit multiple plausible rules."
+        }
+      ],
+      "demoted": []
+    },
+    {
+      "factor_id": "F095",
+      "pattern": "P82",
+      "pattern_class": "primary_result",
+      "location": "Figure 19",
+      "context": [
+        "three demonstration examples of a test task (top panel)",
+        "a blue line \"touching\" (but not \"going through\") a red rectangle",
+        "inference example (bottom panel) involves this situation (\"touching\")",
+        "Task 09c534e7"
+      ],
+      "intervention": "our model attempts to interpret the rule as either \"going-through-only\" (attempt 1) or \"touching\" (attempt 2)",
+      "reference": "Ground truth",
+      "eval_metric": "Ground truth",
+      "pattern_text": "Attempt 2 matches Ground Truth, Attempt 1 does not",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_other_blue_line_touching_but_not_going",
+          "CTX_other_inference_example_bottom_panel_involves_situation",
+          "CTX_other_task_09c534e7",
+          "CTX_other_three_demonstration_examples_test_task_top"
+        ],
+        "intervention": "INT_model_attempts_interpret_rule_either_going",
+        "reference": "INT_ground_truth",
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          "up"
+        ]
+      },
+      "field_mismatch": [
+        "context"
+      ],
+      "beliefs": [
+        {
+          "canonical": "MECH_model_handles_ambiguity_proposing_multiple_rule",
+          "direction": "strengthen",
+          "edge_type": "strengthen",
+          "n_builds": 2,
+          "status": "weakly-tested",
+          "gloss": "Model handles ambiguity by proposing multiple rule interpretations."
+        }
+      ],
+      "rolls_up": [],
+      "qualifiers": [
+        {
+          "canonical": "ASM_some_arc_tasks_admit_multiple_plausible",
+          "direction": "strengthen",
+          "edge_type": "qualifies",
+          "n_builds": 3,
+          "status": "qualifier",
+          "gloss": "Some ARC tasks admit multiple plausible rules."
+        }
+      ],
+      "demoted": []
+    },
+    {
+      "factor_id": "F096",
+      "pattern": "P83",
+      "pattern_class": "primary_result",
+      "location": "Figure 20",
+      "context": [
+        "pixel-level attention maps",
+        "4 test tasks in ARC eval",
+        "Task 09c534e7"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": "correctly solved",
+      "pattern_text": "task that was not correctly solved",
+      "direction": "down",
+      "canonical": {
+        "context": [
+          "CTX_other_4_test_tasks_arc_eval",
+          "CTX_other_pixel_level_attention_maps",
+          "CTX_other_task_09c534e7"
+        ],
+        "intervention": null,
+        "reference": null,
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          "down"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F097",
+      "pattern": "P84",
+      "pattern_class": "primary_result",
+      "location": "Figure 21",
+      "context": [
+        "layer-wise attention maps",
+        "demonstration examples (on the left) are provided for reference",
+        "Task 0607ce86",
+        "Task 0bb8deee",
+        "Task 1c56ad9f",
+        "Task 1d0a4b61"
+      ],
+      "intervention": null,
+      "reference": null,
+      "eval_metric": "per-pixel softmax attention maps averaged across all pixels in that layer",
+      "pattern_text": "Attention patterns vary across layers",
+      "direction": null,
+      "canonical": {
+        "context": [
+          "CTX_other_demonstration_examples_left_provided_reference",
+          "CTX_other_layer_wise_attention_maps",
+          "CTX_other_task_0607ce86",
+          "CTX_other_task_0bb8deee",
+          "CTX_other_task_1c56ad9f",
+          "CTX_other_task_1d0a4b61"
+        ],
+        "intervention": null,
+        "reference": null,
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          null
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": []
+    },
+    {
+      "factor_id": "F098",
+      "pattern": "P85",
+      "pattern_class": "primary_result",
+      "location": "Figure 22 caption | Figure 22 'TTT process' and 'Ground truth' panels",
+      "context": [
+        "model's predictions converge toward the correct output"
+      ],
+      "intervention": "test-time training progresses",
+      "reference": null,
+      "eval_metric": "model's predictions converge toward the correct output",
+      "pattern_text": "gradually converge toward the correct output",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_other_model_s_predictions_converge_toward_correct"
+        ],
+        "intervention": "INT_test_time_training_progresses",
+        "reference": null,
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": [
+        {
+          "canonical": "MECH_ttt_visualization_shows_model_adapting_task",
+          "direction": "strengthen",
+          "edge_type": "demoted",
+          "n_builds": 5,
+          "status": "demoted_observation",
+          "gloss": "TTT visualization shows model adapting to task-specific transformations."
+        }
+      ]
+    },
+    {
+      "factor_id": "F099",
+      "pattern": "P86",
+      "pattern_class": "primary_result",
+      "location": "Figure 22 caption | Figure 22 'TTT process' panels (early stages)",
+      "context": [
+        "In early epochs"
+      ],
+      "intervention": "test-time training progresses",
+      "reference": null,
+      "eval_metric": "model's predictions converge toward the correct output",
+      "pattern_text": "model produces coarse and imprecise structures",
+      "direction": "down",
+      "canonical": {
+        "context": [
+          "CTX_other_early_epochs"
+        ],
+        "intervention": "INT_test_time_training_progresses",
+        "reference": null,
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          "down"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": [
+        {
+          "canonical": "MECH_ttt_visualization_shows_model_adapting_task",
+          "direction": "strengthen",
+          "edge_type": "demoted",
+          "n_builds": 4,
+          "status": "demoted_observation",
+          "gloss": "TTT visualization shows model adapting to task-specific transformations."
+        }
+      ]
+    },
+    {
+      "factor_id": "F100",
+      "pattern": "P87",
+      "pattern_class": "comparison",
+      "location": "Figure 22 caption | Figure 22 'TTT process' panels (later stages)",
+      "context": [
+        "in later epochs"
+      ],
+      "intervention": "test-time training progresses",
+      "reference": "In early epochs",
+      "eval_metric": "model's predictions converge toward the correct output",
+      "pattern_text": "model can improve the solutions",
+      "direction": "up",
+      "canonical": {
+        "context": [
+          "CTX_other_later_epochs"
+        ],
+        "intervention": "INT_test_time_training_progresses",
+        "reference": "INT_early_epochs",
+        "eval_metric": "MET_gen_accuracy",
+        "observable": [
+          "MET_gen_accuracy",
+          "up"
+        ]
+      },
+      "field_mismatch": null,
+      "beliefs": [],
+      "rolls_up": [],
+      "qualifiers": [],
+      "demoted": [
+        {
+          "canonical": "MECH_ttt_visualization_shows_model_adapting_task",
+          "direction": "strengthen",
+          "edge_type": "demoted",
+          "n_builds": 5,
+          "status": "demoted_observation",
+          "gloss": "TTT visualization shows model adapting to task-specific transformations."
+        }
+      ]
+    }
+  ],
+  "propose_test": [
+    "ASM_larger_models_beyond_current_regime_lead",
+    "ASM_multi_view_inference_cost_negligible_compared",
+    "ASM_multiple_unseen_tasks_cannot_assumed_simultaneously",
+    "MECH_attention_masks_loss_focus_improve_foreground",
+    "MECH_average_pooling_aggregates_predictions_raw_grid"
+  ]
+}

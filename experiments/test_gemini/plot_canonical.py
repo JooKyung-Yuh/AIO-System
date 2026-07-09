@@ -54,17 +54,21 @@ def location_order(run_dir):
     return {u["location"]: i for i, u in enumerate(load(path))}
 
 
-def belief_edges(ens, r2c):
-    """(pattern, canonical_am, direction) -> max vote confidence, mapping each link's raw am
-    atom through raw2canon so the belief graph is drawn on canonical clusters."""
-    edges = {}
-    for v in ens["nodes"]["links"].values():
-        cam = r2c.get(v["am_node"])
-        if not cam:
-            continue
-        key = (v["cio_pattern"], cam, v["direction"])
-        edges[key] = max(edges.get(key, 0.0), v.get("confidence", 0.0))
-    return edges
+def load_belief_edges(cohort, n_builds_max=5):
+    """Read canonical/belief_edges.json (produced by canonicalize AFTER link_policy enforcement)
+    instead of recomputing raw ensemble links (which would re-mix thesis/qualifier/demoted as
+    'belief'). Returns (direct, nondirect):
+      direct    {(pattern, cam, direction): conf}  genuine Observation->mechanism belief_update
+      nondirect {(pattern, cam, bucket):    conf}  rolls_up / qualifier / demoted (NOT belief_update)
+    conf = n_builds / n_builds_max so edge opacity reflects reproducibility."""
+    be = load(cohort / "canonical" / "belief_edges.json")
+    direct, nondirect = {}, {}
+    for e in be.get("direct", []):
+        direct[(e["observation"], e["target"], e["direction"])] = e["n_builds"] / n_builds_max
+    for bucket in ("rolls_up", "qualifier", "demoted"):
+        for e in be.get(bucket, []):
+            nondirect[(e["observation"], e["target"], bucket)] = e["n_builds"] / n_builds_max
+    return direct, nondirect
 
 
 # ------------------------------------------------------------- hub backbone
@@ -104,9 +108,10 @@ def plot_hubs(registry, out, top=30):
 
 
 # ----------------------------------------------------- location -> obs -> belief
-def plot_canonical_graph(cons, registry, edges, loc_order, out):
+def plot_canonical_graph(cons, registry, direct, nondirect, loc_order, out):
     import matplotlib.pyplot as plt
     from matplotlib.patches import FancyArrowPatch, Patch
+    from matplotlib.lines import Line2D
 
     def loc_rank(c):
         return loc_order.get((c.get("provenance") or {}).get("location", "?"), 10**9)
@@ -120,7 +125,7 @@ def plot_canonical_graph(cons, registry, edges, loc_order, out):
 
     am_reg = registry["am"]
     out_votes = collections.Counter()
-    for (pat, cam, d) in edges:
+    for (pat, cam, d) in direct:
         out_votes[cam] += 1
     ams = sorted(am_reg.keys(), key=lambda a: (-out_votes[a], a))
 
@@ -139,12 +144,17 @@ def plot_canonical_graph(cons, registry, edges, loc_order, out):
         ax.add_patch(FancyArrowPatch((X_LOC, y_loc[loc]), (X_PAT, y_pat[c["pattern"]]),
                      connectionstyle="arc3,rad=0.12", arrowstyle="-", lw=0.4,
                      color=MUTED, alpha=0.16, zorder=1))
-    for (pat, cam, d), conf in edges.items():
+    for (pat, cam, bucket), conf in nondirect.items():       # re-routed: not belief_update -> muted, dashed
+        if pat in y_pat and cam in y_am:
+            ax.add_patch(FancyArrowPatch((X_PAT, y_pat[pat]), (X_AM, y_am[cam]),
+                         connectionstyle="arc3,rad=0.1", arrowstyle="-", lw=0.5, linestyle=(0, (2, 2)),
+                         color=MUTED, alpha=0.10 + 0.28 * conf, zorder=2))
+    for (pat, cam, d), conf in direct.items():               # genuine Observation->mechanism belief_update
         if pat in y_pat and cam in y_am:
             col = STRENGTHEN if d == "strengthen" else WEAKEN if d == "weaken" else MUTED
             ax.add_patch(FancyArrowPatch((X_PAT, y_pat[pat]), (X_AM, y_am[cam]),
-                         connectionstyle="arc3,rad=0.1", arrowstyle="-", lw=0.6,
-                         color=col, alpha=0.12 + 0.5 * conf, zorder=2))
+                         connectionstyle="arc3,rad=0.1", arrowstyle="-", lw=0.7,
+                         color=col, alpha=0.18 + 0.5 * conf, zorder=3))
 
     for l, y in y_loc.items():
         ax.scatter(X_LOC, y, s=52, marker="s", color=BASELINE, edgecolors=MUTED, linewidths=0.5, zorder=3)
@@ -175,9 +185,10 @@ def plot_canonical_graph(cons, registry, edges, loc_order, out):
         Patch(facecolor="white", edgecolor=WEAKEN, label="comparison missing reference"),
         Patch(facecolor=STRENGTHEN, edgecolor="none", label="strengthen"),
         Patch(facecolor=WEAKEN, edgecolor="none", label="weaken"),
+        Line2D([0], [0], color=MUTED, lw=1.0, linestyle=(0, (2, 2)), label="re-routed (not belief)"),
     ]
     ax.legend(handles=legend, loc="lower center", bbox_to_anchor=(0.5, -0.04),
-              ncol=5, fontsize=8, frameon=False)
+              ncol=6, fontsize=8, frameon=False)
     ax.set_xlim(-0.6, 2.75)
     ax.set_ylim(-0.05, 1.1)
     ax.axis("off")
@@ -188,10 +199,10 @@ def plot_canonical_graph(cons, registry, edges, loc_order, out):
 
 
 # ----------------------------------------------------------- belief tally
-def plot_belief_tally(registry, edges, out):
+def plot_belief_tally(registry, direct, out):
     import matplotlib.pyplot as plt
     tally = collections.defaultdict(lambda: {"strengthen": set(), "weaken": set()})
-    for (pat, cam, d) in edges:
+    for (pat, cam, d) in direct:                              # direct belief_update only (policy-enforced)
         if d in ("strengthen", "weaken"):
             tally[cam][d].add(pat)
     am_reg = registry["am"]
@@ -215,7 +226,7 @@ def plot_belief_tally(registry, edges, out):
     ax.tick_params(length=0)
     ax.xaxis.grid(True, color=GRID, lw=0.6)
     ax.set_axisbelow(True)
-    ax.set_title("Belief tally — canonical claims the paper's own results support vs contest",
+    ax.set_title("Belief tally — direct belief_update: claims the paper's own results support vs contest",
                  fontsize=13, color=INK, loc="left", pad=12)
     fig.tight_layout()
     fig.savefig(out, dpi=150, bbox_inches="tight")
@@ -233,8 +244,7 @@ def main():
     cohort = Path(args.cohort)
     cons = load(cohort / "canonical" / "cio_consensus.json")
     registry = load(cohort / "canonical" / "registry.json")
-    ens = load(cohort / "ensemble.json")
-    edges = belief_edges(ens, registry["raw2canon"])
+    direct, nondirect = load_belief_edges(cohort)
     loc_order = location_order(args.run_dir)
 
     try:
@@ -248,8 +258,8 @@ def main():
     out_dir = Path(args.out_dir) if args.out_dir else cohort / "plots"
     out_dir.mkdir(parents=True, exist_ok=True)
     plot_hubs(registry, out_dir / "canonical_hubs.png")
-    plot_canonical_graph(cons, registry, edges, loc_order, out_dir / "canonical_graph.png")
-    plot_belief_tally(registry, edges, out_dir / "belief_tally.png")
+    plot_canonical_graph(cons, registry, direct, nondirect, loc_order, out_dir / "canonical_graph.png")
+    plot_belief_tally(registry, direct, out_dir / "belief_tally.png")
     for name in ("canonical_hubs.png", "canonical_graph.png", "belief_tally.png"):
         print(f"saved: {out_dir / name}")
 

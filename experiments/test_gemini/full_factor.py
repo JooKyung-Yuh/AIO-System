@@ -40,30 +40,31 @@ def _t(node_of, nid):
     return text + (f"  [{m['note']}]" if m.get("note") else "")
 
 
-def belief_edges(ens, r2c_am):
-    """(pattern, canonical_am, direction) -> max vote confidence, over the ensemble's links."""
-    edges = collections.defaultdict(dict)   # pattern -> {(cam, dir): conf}
-    for v in ens["nodes"]["links"].values():
-        cam = r2c_am.get(v["am_node"])
-        if not cam:
-            continue
-        key = (cam, v["direction"])
-        edges[v["cio_pattern"]][key] = max(edges[v["cio_pattern"]].get(key, 0.0), v.get("confidence", 0.0))
-    return edges
+def load_belief_edges(cohort):
+    """Index canonical/belief_edges.json (produced by canonicalize AFTER link_policy enforcement) by
+    observation pattern. Each edge carries its policy bucket (direct / rolls_up / qualifier / demoted)
+    so the doc separates genuine Observation->mechanism belief from re-routed edges instead of
+    recomputing raw ensemble links (which would re-mix thesis/qualifier/demoted as 'belief')."""
+    be = load(cohort / "canonical" / "belief_edges.json")
+    by_pat = collections.defaultdict(list)
+    for bucket, rows in be.items():
+        for e in rows:
+            by_pat[e["observation"]].append({**e, "bucket": bucket})
+    return by_pat
 
 
 STATUS_MARK = {"tested": "✓ tested", "contested": "⚔ contested",
                "assumed": "? assumed", "weakly-tested": "~ weak"}
+BUCKET_KEY = {"direct": "beliefs", "rolls_up": "rolls_up", "qualifier": "qualifiers", "demoted": "demoted"}
 
 
 def render(cohort, run_dir):
     cons = load(cohort / "canonical" / "cio_consensus.json")
     registry = load(cohort / "canonical" / "registry.json")
-    ens = load(cohort / "ensemble.json")
     spans = load(Path(run_dir) / "spans.json")
     node_of = {s["node_id"]: {"text": s.get("text", ""), "note": s.get("note", "")} for s in spans}
     am_reg = registry["am"]
-    edges = belief_edges(ens, registry["raw2canon"])
+    edges = load_belief_edges(cohort)
     loc_order = location_order(run_dir)
 
     def loc_rank(c):
@@ -73,11 +74,13 @@ def render(cohort, run_dir):
     factors = []
     for i, c in enumerate(pats, 1):
         prov = c.get("provenance") or {}
-        beliefs = []
-        for (cam, d), conf in sorted(edges.get(c["pattern"], {}).items(), key=lambda kv: -kv[1]):
-            rec = am_reg.get(cam, {})
-            beliefs.append({"canonical": cam, "direction": d, "confidence": round(conf, 2),
-                            "status": rec.get("status"), "gloss": rec.get("gloss") or cam})
+        by_bucket = {"beliefs": [], "rolls_up": [], "qualifiers": [], "demoted": []}
+        for e in sorted(edges.get(c["pattern"], []),
+                        key=lambda e: (e["bucket"], -e["n_builds"], e["target"], e["direction"])):
+            rec = am_reg.get(e["target"], {})
+            by_bucket[BUCKET_KEY[e["bucket"]]].append(
+                {"canonical": e["target"], "direction": e["direction"], "edge_type": e["edge_type"],
+                 "n_builds": e["n_builds"], "status": rec.get("status"), "gloss": rec.get("gloss") or e["target"]})
         factors.append({
             "factor_id": f"F{i:03d}",
             "pattern": c["pattern"],
@@ -91,7 +94,10 @@ def render(cohort, run_dir):
             "direction": c.get("direction"),
             "canonical": c.get("canonical"),
             "field_mismatch": list((c.get("field_mismatch") or {}).keys()) or None,
-            "beliefs": beliefs,
+            "beliefs": by_bucket["beliefs"],
+            "rolls_up": by_bucket["rolls_up"],
+            "qualifiers": by_bucket["qualifiers"],
+            "demoted": by_bucket["demoted"],
         })
 
     propose = sorted((rec for rec in am_reg.values() if rec.get("propose_test")),
@@ -101,9 +107,16 @@ def render(cohort, run_dir):
 
 def to_md(factors, propose, cohort_name):
     st_ct = collections.Counter(b["status"] for f in factors for b in f["beliefs"])
+    pol_ct = collections.Counter()
+    for f in factors:
+        for k in ("beliefs", "rolls_up", "qualifiers", "demoted"):
+            pol_ct[k] += len(f[k])
     lines = [f"# Full factor graph — {cohort_name}", "",
              f"{len(factors)} observations · {len(propose)} propose_test targets "
-             f"(asserted beliefs with no observation).", ""]
+             f"(asserted beliefs with no observation).",
+             "Belief edges are link_policy-enforced: only **direct** edges (↑/↓) are genuine "
+             "Observation→mechanism belief_update; rolls_up / qualifier / demoted are re-routed and "
+             "are **not** belief_update.", ""]
     lines.append("## Observations (φ) → beliefs (δ)")
     for f in factors:
         head = f"### {f['factor_id']} · {f['pattern']} · {f.get('pattern_class') or '?'}"
@@ -121,9 +134,15 @@ def to_md(factors, propose, cohort_name):
         for b in f["beliefs"]:
             arrow = "↑" if b["direction"] == "strengthen" else "↓" if b["direction"] == "weaken" else "→"
             mark = STATUS_MARK.get(b["status"], b["status"] or "?")
-            lines.append(f"    - {arrow} _{mark}_ ({b['confidence']}) {b['gloss'][:70]}")
+            lines.append(f"    - {arrow} _{mark}_ (n{b['n_builds']}) {b['gloss'][:70]}")
         if not f["beliefs"]:
-            lines.append("    - _(no belief edge)_")
+            lines.append("    - _(no direct belief edge)_")
+        for b in f["rolls_up"]:
+            lines.append(f"    - ⤴ _rolls_up→thesis_ (n{b['n_builds']}) {b['gloss'][:66]}")
+        for b in f["qualifiers"]:
+            lines.append(f"    - ◇ _qualifier (not belief)_ (n{b['n_builds']}) {b['gloss'][:66]}")
+        for b in f["demoted"]:
+            lines.append(f"    - ∅ _demoted-observation (not belief)_ (n{b['n_builds']}) {b['gloss'][:60]}")
         if f["field_mismatch"]:
             lines.append(f"- ⚠️ field mismatch: {f['field_mismatch']}")
         lines.append("")
@@ -131,7 +150,8 @@ def to_md(factors, propose, cohort_name):
     for rec in propose:
         lines.append(f"- **{rec.get('canonical_id')}** — {rec.get('gloss')}  "
                      f"(_{rec.get('type')}_, {len(rec.get('members') or [])} raw nodes)")
-    lines += ["", f"_belief edge status tally: {dict(st_ct)}_"]
+    lines += ["", f"_direct belief edge status tally: {dict(st_ct)}_",
+              f"_edges by policy: {dict(pol_ct)}_"]
     return "\n".join(lines)
 
 
