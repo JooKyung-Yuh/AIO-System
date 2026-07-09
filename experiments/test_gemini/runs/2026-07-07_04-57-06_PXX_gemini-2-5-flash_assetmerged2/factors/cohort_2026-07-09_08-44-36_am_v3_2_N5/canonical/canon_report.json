@@ -1,0 +1,38 @@
+{
+  "n_builds": 5,
+  "before": {
+    "context": 109,
+    "intervention": 48,
+    "eval_metric": 25,
+    "am_atoms_union": 38
+  },
+  "after": {
+    "context": 97,
+    "intervention": 51,
+    "eval_metric": 6,
+    "am_clusters": 23
+  },
+  "am_cluster_bands": {
+    "observed": 10,
+    "supported": 13,
+    "uncertain": 0
+  },
+  "am_status": {
+    "tested": 7,
+    "weakly-tested": 11,
+    "assumed": 5
+  },
+  "propose_test_targets": [
+    "ASM_larger_models_beyond_current_regime_lead",
+    "ASM_multi_view_inference_cost_negligible_compared",
+    "ASM_multiple_unseen_tasks_cannot_assumed_simultaneously",
+    "MECH_attention_masks_loss_focus_improve_foreground",
+    "MECH_average_pooling_aggregates_predictions_raw_grid"
+  ],
+  "context_dropped": 1,
+  "merge_queue_pending": 0,
+  "cio_field_errors": 11,
+  "promoted_interventions": 2,
+  "link_jaccard_raw_baseline": 0.316,
+  "link_jaccard_on_canonical_am": 0.363
+}

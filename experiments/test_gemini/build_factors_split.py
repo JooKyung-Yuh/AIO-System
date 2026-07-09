@@ -43,7 +43,7 @@ PROMPTS = Path("./prompts")
 # (build_dir carries BUILD_TAG) so runs on different prompts never mix in one ensemble vote.
 CIO_PROMPT = "extract_cio_v2_2"
 AM_PROMPT = "extract_am_v3_2"
-LINK_PROMPT = "link_factors_v1"
+LINK_PROMPT = "link_factors_v2"
 
 
 def _ver(prompt_name):

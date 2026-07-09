@@ -1,0 +1,586 @@
+{
+  "MECH_canvas_formulation_enables_augmentations_translation_scale": {
+    "canonical_id": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+    "type": "mechanism",
+    "gloss": "Canvas formulation enables augmentations for translation/scale invariance.",
+    "representative": "M16",
+    "members": [
+      "M16",
+      "M19",
+      "M20",
+      "M22",
+      "M37"
+    ],
+    "n_members": 5,
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed",
+    "referenced_by": [
+      "P28",
+      "P34",
+      "P35"
+    ],
+    "ref_count": 3,
+    "status": "tested",
+    "strengthened_by": [
+      "P28",
+      "P34",
+      "P35"
+    ],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "MECH_visual_learning_enables_abstraction_inference_without": {
+    "canonical_id": "MECH_visual_learning_enables_abstraction_inference_without",
+    "type": "mechanism",
+    "gloss": "Visual learning enables abstraction/inference without language.",
+    "representative": "M7",
+    "members": [
+      "M50",
+      "M7"
+    ],
+    "n_members": 2,
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed",
+    "referenced_by": [
+      "P1",
+      "P12",
+      "P16",
+      "P44",
+      "P46",
+      "P48",
+      "P49",
+      "P50",
+      "P51",
+      "P52",
+      "P57",
+      "P8",
+      "P9"
+    ],
+    "ref_count": 13,
+    "status": "tested",
+    "strengthened_by": [
+      "P12",
+      "P16",
+      "P48",
+      "P49"
+    ],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "MECH_some_tasks_solvable_from_scratch_tabula": {
+    "canonical_id": "MECH_some_tasks_solvable_from_scratch_tabula",
+    "type": "mechanism",
+    "gloss": "Some tasks are solvable from scratch (tabula rasa).",
+    "representative": "M41",
+    "members": [
+      "M41"
+    ],
+    "n_members": 1,
+    "votes": 2,
+    "confidence": 0.4,
+    "band": "supported",
+    "referenced_by": [
+      "P31",
+      "P63"
+    ],
+    "ref_count": 2,
+    "status": "weakly-tested",
+    "strengthened_by": [
+      "P31"
+    ],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "MECH_canvas_patchification_enriches_data_reduces_overfitting": {
+    "canonical_id": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+    "type": "mechanism",
+    "gloss": "Canvas patchification enriches data, reduces overfitting, encourages spatial priors.",
+    "representative": "M10",
+    "members": [
+      "M10",
+      "M17",
+      "M18",
+      "M34",
+      "M36"
+    ],
+    "n_members": 5,
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed",
+    "referenced_by": [
+      "P23",
+      "P24",
+      "P25",
+      "P26",
+      "P27",
+      "P28"
+    ],
+    "ref_count": 6,
+    "status": "tested",
+    "strengthened_by": [
+      "P24",
+      "P25",
+      "P26",
+      "P28"
+    ],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "ASM_some_arc_tasks_admit_multiple_plausible": {
+    "canonical_id": "ASM_some_arc_tasks_admit_multiple_plausible",
+    "type": "assumption",
+    "gloss": "Some ARC tasks admit multiple plausible rules.",
+    "representative": "A20",
+    "members": [
+      "A20",
+      "A22"
+    ],
+    "n_members": 2,
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed",
+    "referenced_by": [
+      "P80",
+      "P81",
+      "P82"
+    ],
+    "ref_count": 3,
+    "status": "tested",
+    "strengthened_by": [
+      "P80",
+      "P81",
+      "P82"
+    ],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "MECH_average_pooling_aggregates_predictions_raw_grid": {
+    "canonical_id": "MECH_average_pooling_aggregates_predictions_raw_grid",
+    "type": "mechanism",
+    "gloss": "Average pooling aggregates predictions for raw grid locations.",
+    "representative": "M29",
+    "members": [
+      "M29"
+    ],
+    "n_members": 1,
+    "votes": 2,
+    "confidence": 0.4,
+    "band": "supported",
+    "referenced_by": [],
+    "ref_count": 0,
+    "status": "assumed",
+    "strengthened_by": [],
+    "weakened_by": [],
+    "propose_test": true
+  },
+  "MECH_early_layer_attention_reflects_pattern_core": {
+    "canonical_id": "MECH_early_layer_attention_reflects_pattern_core",
+    "type": "mechanism",
+    "gloss": "Early layer attention reflects pattern core influence.",
+    "representative": "M46",
+    "members": [
+      "M46"
+    ],
+    "n_members": 1,
+    "votes": 2,
+    "confidence": 0.4,
+    "band": "supported",
+    "referenced_by": [
+      "P57"
+    ],
+    "ref_count": 1,
+    "status": "weakly-tested",
+    "strengthened_by": [],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "MECH_task_embedding_visualization_suggests_learning_inter": {
+    "canonical_id": "MECH_task_embedding_visualization_suggests_learning_inter",
+    "type": "mechanism",
+    "gloss": "Task embedding visualization suggests learning inter-task relations.",
+    "representative": "M48",
+    "members": [
+      "M48"
+    ],
+    "n_members": 1,
+    "votes": 2,
+    "confidence": 0.4,
+    "band": "supported",
+    "referenced_by": [
+      "P57"
+    ],
+    "ref_count": 1,
+    "status": "weakly-tested",
+    "strengthened_by": [],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "MECH_attention_maps_reveal_pixel_pixel_reasoning": {
+    "canonical_id": "MECH_attention_maps_reveal_pixel_pixel_reasoning",
+    "type": "mechanism",
+    "gloss": "Attention maps reveal pixel-to-pixel reasoning relationships.",
+    "representative": "M44",
+    "members": [
+      "M44"
+    ],
+    "n_members": 1,
+    "votes": 2,
+    "confidence": 0.4,
+    "band": "supported",
+    "referenced_by": [
+      "P18",
+      "P53",
+      "P54",
+      "P83",
+      "P84"
+    ],
+    "ref_count": 5,
+    "status": "weakly-tested",
+    "strengthened_by": [
+      "P18",
+      "P53"
+    ],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "ASM_multiple_unseen_tasks_cannot_assumed_simultaneously": {
+    "canonical_id": "ASM_multiple_unseen_tasks_cannot_assumed_simultaneously",
+    "type": "assumption",
+    "gloss": "Multiple unseen tasks cannot be assumed simultaneously.",
+    "representative": "A16",
+    "members": [
+      "A16",
+      "A19"
+    ],
+    "n_members": 2,
+    "votes": 2,
+    "confidence": 0.4,
+    "band": "supported",
+    "referenced_by": [],
+    "ref_count": 0,
+    "status": "assumed",
+    "strengthened_by": [],
+    "weakened_by": [],
+    "propose_test": true
+  },
+  "MECH_explicit_2d_positional_modeling_preserves_image": {
+    "canonical_id": "MECH_explicit_2d_positional_modeling_preserves_image",
+    "type": "mechanism",
+    "gloss": "Explicit 2D positional modeling preserves image structure.",
+    "representative": "M24",
+    "members": [
+      "M24",
+      "M25"
+    ],
+    "n_members": 2,
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed",
+    "referenced_by": [
+      "P20",
+      "P21",
+      "P22",
+      "P23",
+      "P25"
+    ],
+    "ref_count": 5,
+    "status": "tested",
+    "strengthened_by": [
+      "P20",
+      "P21",
+      "P22",
+      "P23"
+    ],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "ASM_single_pixel_error_invalidates_entire_arc": {
+    "canonical_id": "ASM_single_pixel_error_invalidates_entire_arc",
+    "type": "assumption",
+    "gloss": "Single pixel error invalidates entire ARC prediction.",
+    "representative": "A18",
+    "members": [
+      "A18"
+    ],
+    "n_members": 1,
+    "votes": 2,
+    "confidence": 0.4,
+    "band": "supported",
+    "referenced_by": [
+      "P41",
+      "P42"
+    ],
+    "ref_count": 2,
+    "status": "weakly-tested",
+    "strengthened_by": [
+      "P41",
+      "P42"
+    ],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "MECH_majority_voting_consolidates_predictions_from_different": {
+    "canonical_id": "MECH_majority_voting_consolidates_predictions_from_different",
+    "type": "mechanism",
+    "gloss": "Majority voting consolidates predictions from different views.",
+    "representative": "M27",
+    "members": [
+      "M27",
+      "M28",
+      "M33"
+    ],
+    "n_members": 3,
+    "votes": 2,
+    "confidence": 0.4,
+    "band": "supported",
+    "referenced_by": [
+      "P11",
+      "P39",
+      "P40",
+      "P43",
+      "P45",
+      "P47",
+      "P95",
+      "P96"
+    ],
+    "ref_count": 8,
+    "status": "weakly-tested",
+    "strengthened_by": [
+      "P39",
+      "P95"
+    ],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "MECH_visual_common_sense_learned_from_offline": {
+    "canonical_id": "MECH_visual_common_sense_learned_from_offline",
+    "type": "mechanism",
+    "gloss": "Visual common sense is learned from offline training data.",
+    "representative": "M40",
+    "members": [
+      "M40"
+    ],
+    "n_members": 1,
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed",
+    "referenced_by": [
+      "P30",
+      "P59",
+      "P60",
+      "P61",
+      "P62",
+      "P63"
+    ],
+    "ref_count": 6,
+    "status": "tested",
+    "strengthened_by": [
+      "P30"
+    ],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "MECH_correct_predictions_exist_views_but_outvoted": {
+    "canonical_id": "MECH_correct_predictions_exist_views_but_outvoted",
+    "type": "mechanism",
+    "gloss": "Correct predictions exist in views but are outvoted.",
+    "representative": "M57",
+    "members": [
+      "M57"
+    ],
+    "n_members": 1,
+    "votes": 2,
+    "confidence": 0.4,
+    "band": "supported",
+    "referenced_by": [
+      "P65",
+      "P66"
+    ],
+    "ref_count": 2,
+    "status": "weakly-tested",
+    "strengthened_by": [
+      "P66"
+    ],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "MECH_model_handles_ambiguity_proposing_multiple_rule": {
+    "canonical_id": "MECH_model_handles_ambiguity_proposing_multiple_rule",
+    "type": "mechanism",
+    "gloss": "Model handles ambiguity by proposing multiple rule interpretations.",
+    "representative": "M58",
+    "members": [
+      "M58"
+    ],
+    "n_members": 1,
+    "votes": 2,
+    "confidence": 0.4,
+    "band": "supported",
+    "referenced_by": [
+      "P80",
+      "P82"
+    ],
+    "ref_count": 2,
+    "status": "weakly-tested",
+    "strengthened_by": [
+      "P80",
+      "P82"
+    ],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "ASM_multi_view_inference_cost_negligible_compared": {
+    "canonical_id": "ASM_multi_view_inference_cost_negligible_compared",
+    "type": "assumption",
+    "gloss": "Multi-view inference cost is negligible compared to TTT.",
+    "representative": "A11",
+    "members": [
+      "A11"
+    ],
+    "n_members": 1,
+    "votes": 2,
+    "confidence": 0.4,
+    "band": "supported",
+    "referenced_by": [],
+    "ref_count": 0,
+    "status": "assumed",
+    "strengthened_by": [],
+    "weakened_by": [],
+    "propose_test": true
+  },
+  "ASM_larger_models_beyond_current_regime_lead": {
+    "canonical_id": "ASM_larger_models_beyond_current_regime_lead",
+    "type": "assumption",
+    "gloss": "Larger models beyond current regime lead to overfitting.",
+    "representative": "A15",
+    "members": [
+      "A15"
+    ],
+    "n_members": 1,
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed",
+    "referenced_by": [],
+    "ref_count": 0,
+    "status": "assumed",
+    "strengthened_by": [],
+    "weakened_by": [],
+    "propose_test": true
+  },
+  "MECH_attention_masks_loss_focus_improve_foreground": {
+    "canonical_id": "MECH_attention_masks_loss_focus_improve_foreground",
+    "type": "mechanism",
+    "gloss": "Attention masks and loss focus improve foreground attention/accuracy.",
+    "representative": "M54",
+    "members": [
+      "M54"
+    ],
+    "n_members": 1,
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed",
+    "referenced_by": [],
+    "ref_count": 0,
+    "status": "assumed",
+    "strengthened_by": [],
+    "weakened_by": [],
+    "propose_test": true
+  },
+  "MECH_ttt_visualization_shows_model_adapting_task": {
+    "canonical_id": "MECH_ttt_visualization_shows_model_adapting_task",
+    "type": "mechanism",
+    "gloss": "TTT visualization shows model adapting to task-specific transformations.",
+    "representative": "M70",
+    "members": [
+      "M69",
+      "M70"
+    ],
+    "n_members": 2,
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed",
+    "referenced_by": [
+      "P17",
+      "P85",
+      "P86",
+      "P87"
+    ],
+    "ref_count": 4,
+    "status": "tested",
+    "strengthened_by": [
+      "P17",
+      "P85",
+      "P86",
+      "P87"
+    ],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "MECH_later_layer_attention_reflects_rule_extending": {
+    "canonical_id": "MECH_later_layer_attention_reflects_rule_extending",
+    "type": "mechanism",
+    "gloss": "Later layer attention reflects rule for extending pixels.",
+    "representative": "M47",
+    "members": [
+      "M47"
+    ],
+    "n_members": 1,
+    "votes": 2,
+    "confidence": 0.4,
+    "band": "supported",
+    "referenced_by": [
+      "P57"
+    ],
+    "ref_count": 1,
+    "status": "weakly-tested",
+    "strengthened_by": [],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "MECH_patchification_provides_locality_translation_invariance_inductive": {
+    "canonical_id": "MECH_patchification_provides_locality_translation_invariance_inductive",
+    "type": "mechanism",
+    "gloss": "Patchification provides locality and translation invariance inductive biases.",
+    "representative": "M23",
+    "members": [
+      "M23"
+    ],
+    "n_members": 1,
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed",
+    "referenced_by": [
+      "P28"
+    ],
+    "ref_count": 1,
+    "status": "weakly-tested",
+    "strengthened_by": [],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "MECH_increasing_model_size_improves_accuracy_enabling": {
+    "canonical_id": "MECH_increasing_model_size_improves_accuracy_enabling",
+    "type": "mechanism",
+    "gloss": "Increasing model size improves accuracy by enabling better fitting.",
+    "representative": "M39",
+    "members": [
+      "M39"
+    ],
+    "n_members": 1,
+    "votes": 3,
+    "confidence": 0.6,
+    "band": "supported",
+    "referenced_by": [
+      "P29"
+    ],
+    "ref_count": 1,
+    "status": "weakly-tested",
+    "strengthened_by": [
+      "P29"
+    ],
+    "weakened_by": [],
+    "propose_test": false
+  }
+}

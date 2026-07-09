@@ -1,0 +1,121 @@
+[
+  {
+    "source_cio": "CIO_017",
+    "target_am": "AM_005",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Extending from 1D positional embedding to its 2D counterpart is beneficial [Fig. 7(b)], showing explicitly modeling positions in 2D is essential."
+  },
+  {
+    "source_cio": "CIO_018",
+    "target_am": "AM_005",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Extending from 1D positional embedding to its 2D counterpart is beneficial [Fig. 7(c)], showing explicitly modeling positions in 2D is essential."
+  },
+  {
+    "source_cio": "CIO_019",
+    "target_am": "AM_005",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Replacing 2D ROPE with 1D ROPE degrades accuracy by 3.5 points, showing 2D modeling is essential."
+  },
+  {
+    "source_cio": "CIO_021",
+    "target_am": "AM_002",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This enables the expansion of the token set... to an exponentially large number, increasing input diversity."
+  },
+  {
+    "source_cio": "CIO_022",
+    "target_am": "AM_002",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "The 2×2 patchification leads to a noticeable gain of 2.4 points, enriching the data space for learning."
+  },
+  {
+    "source_cio": "CIO_023",
+    "target_am": "AM_002",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "The 2×2 patchification leads to a noticeable gain of 2.4 points, enriching the data space for learning."
+  },
+  {
+    "source_cio": "CIO_024",
+    "target_am": "AM_002",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Each patch can cover multiple colors... which substantially enriches the data space for learning."
+  },
+  {
+    "source_cio": "CIO_025",
+    "target_am": "AM_003",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Fully flexible translation augmentation yields an additional gain of 2.9 points, encouraging learning invariant mappings."
+  },
+  {
+    "source_cio": "CIO_026",
+    "target_am": "AM_003",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Scale augmentation yields a substantial gain of 6.2 points, encouraging learning invariant mappings."
+  },
+  {
+    "source_cio": "CIO_027",
+    "target_am": "AM_006",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Increasing depth and/or width leads to higher accuracy as a result of better fitting."
+  },
+  {
+    "source_cio": "CIO_028",
+    "target_am": "AM_008",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Offline training greatly improves the performance of TTT, suggesting common sense about the visual world is learned."
+  },
+  {
+    "source_cio": "CIO_082",
+    "target_am": "AM_010",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Our model attempts to interpret the rule as either 'going-through-only' (attempt 1) or 'touching' (attempt 2)."
+  },
+  {
+    "source_cio": "CIO_083",
+    "target_am": "AM_010",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Our model attempts to interpret the rule as either 'going-through-only' (attempt 1) or 'touching' (attempt 2)."
+  },
+  {
+    "source_cio": "CIO_084",
+    "target_am": "AM_010",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Our model attempts to interpret the rule as either 'going-through-only' (attempt 1) or 'touching' (attempt 2)."
+  },
+  {
+    "source_cio": "CIO_097",
+    "target_am": "AM_011",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "As the test-time training progresses, the model's predictions gradually converge toward the correct output."
+  },
+  {
+    "source_cio": "CIO_098",
+    "target_am": "AM_011",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "In early epochs, the model produces coarse and imprecise structures, which TTT then refines."
+  },
+  {
+    "source_cio": "CIO_099",
+    "target_am": "AM_011",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "In later epochs, the model can improve solutions, e.g., by refining color and spatial arrangement."
+  }
+]
