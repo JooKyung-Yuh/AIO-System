@@ -1609,6 +1609,38 @@
       ],
       "ref_count": 1
     },
+    "INT_correct_output": {
+      "canonical_id": "INT_correct_output",
+      "type": "intervention",
+      "gloss": "correct output",
+      "representative": "E32",
+      "members": [
+        "E32",
+        "E34"
+      ],
+      "n_members": 2,
+      "referenced_by": [
+        "P73",
+        "P74",
+        "P78",
+        "P79"
+      ],
+      "ref_count": 4
+    },
+    "INT_ground_truth": {
+      "canonical_id": "INT_ground_truth",
+      "type": "intervention",
+      "gloss": "Ground truth",
+      "representative": "E36",
+      "members": [
+        "E36"
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P82"
+      ],
+      "ref_count": 1
+    },
     "INT_formulate_arc_within_vision_paradigm_framing": {
       "canonical_id": "INT_formulate_arc_within_vision_paradigm_framing",
       "type": "intervention",
@@ -3152,6 +3184,9 @@
     "I106": "INT_varc",
     "E18": "INT_offline_training_data_scaling_effect_varying",
     "E19": "INT_offline_training_task_diversity_scaling_effect",
+    "E32": "MET_gen_accuracy",
+    "E34": "MET_gen_accuracy",
+    "E36": "MET_gen_accuracy",
     "I1": "INT_formulate_arc_within_vision_paradigm_framing",
     "I100": "INT_o3_mini_high_18",
     "I101": "INT_gpt_5_18",
@@ -3210,9 +3245,6 @@
     "E22": "MET_gen_accuracy",
     "E24": "MET_gen_accuracy",
     "E31": "MET_gen_passk",
-    "E32": "MET_gen_accuracy",
-    "E34": "MET_gen_accuracy",
-    "E36": "MET_gen_accuracy",
     "E37": "MET_gen_accuracy",
     "E38": "MET_gen_accuracy",
     "E39": "MET_gen_accuracy",

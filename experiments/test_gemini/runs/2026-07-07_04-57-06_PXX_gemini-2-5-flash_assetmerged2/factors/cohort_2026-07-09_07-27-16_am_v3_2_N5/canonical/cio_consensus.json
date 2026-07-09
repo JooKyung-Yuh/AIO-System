@@ -2602,7 +2602,7 @@
     "pattern": "P82",
     "unit": "U043",
     "intervention": "I90",
-    "reference": null,
+    "reference": "E36",
     "eval_metric": "E36",
     "direction": "up",
     "pattern_class": "primary_result",
@@ -2618,13 +2618,6 @@
     "field_support": {
       "n_cards": 5
     },
-    "field_mismatch": {
-      "reference": {
-        "raw": "E36",
-        "layer1_label": "eval_metric",
-        "text": "Ground truth"
-      }
-    },
     "canonical": {
       "context": [
         "CTX_other_blue_line_touching_but_not_going",
@@ -2633,7 +2626,7 @@
         "CTX_other_three_demonstration_examples_test_task_top"
       ],
       "intervention": "INT_model_attempts_interpret_rule_either_going",
-      "reference": null,
+      "reference": "INT_ground_truth",
       "eval_metric": "MET_gen_accuracy",
       "observable": [
         "MET_gen_accuracy",
@@ -2735,7 +2728,7 @@
     "pattern": "P73",
     "unit": "U046",
     "intervention": "I86",
-    "reference": null,
+    "reference": "E32",
     "eval_metric": "E32",
     "direction": "up",
     "pattern_class": "primary_result",
@@ -2753,11 +2746,6 @@
       "n_cards": 5
     },
     "field_mismatch": {
-      "reference": {
-        "raw": "E32",
-        "layer1_label": "eval_metric",
-        "text": "correct output"
-      },
       "context": [
         {
           "raw": "I86",
@@ -2775,7 +2763,7 @@
         "CTX_other_task_981571dc"
       ],
       "intervention": "INT_first_second_solutions_proposed_varc",
-      "reference": null,
+      "reference": "INT_correct_output",
       "eval_metric": "MET_gen_accuracy",
       "observable": [
         "MET_gen_accuracy",
@@ -2787,7 +2775,7 @@
     "pattern": "P74",
     "unit": "U046",
     "intervention": "I86",
-    "reference": null,
+    "reference": "E32",
     "eval_metric": "E32",
     "direction": "down",
     "pattern_class": "primary_result",
@@ -2805,11 +2793,6 @@
       "n_cards": 5
     },
     "field_mismatch": {
-      "reference": {
-        "raw": "E32",
-        "layer1_label": "eval_metric",
-        "text": "correct output"
-      },
       "context": [
         {
           "raw": "I86",
@@ -2827,7 +2810,7 @@
         "CTX_other_task_b457fec5"
       ],
       "intervention": "INT_first_second_solutions_proposed_varc",
-      "reference": null,
+      "reference": "INT_correct_output",
       "eval_metric": "MET_gen_accuracy",
       "observable": [
         "MET_gen_accuracy",
@@ -2929,7 +2912,7 @@
     "pattern": "P78",
     "unit": "U047",
     "intervention": "I89",
-    "reference": null,
+    "reference": "E34",
     "eval_metric": "E34",
     "direction": "up",
     "pattern_class": "primary_result",
@@ -2947,11 +2930,6 @@
       "n_cards": 5
     },
     "field_mismatch": {
-      "reference": {
-        "raw": "E34",
-        "layer1_label": "eval_metric",
-        "text": "correct output"
-      },
       "context": [
         {
           "raw": "I89",
@@ -2969,7 +2947,7 @@
         "CTX_other_task_800d221b"
       ],
       "intervention": "INT_first_second_solutions_proposed_varc",
-      "reference": null,
+      "reference": "INT_correct_output",
       "eval_metric": "MET_gen_accuracy",
       "observable": [
         "MET_gen_accuracy",
@@ -2981,7 +2959,7 @@
     "pattern": "P79",
     "unit": "U047",
     "intervention": "I89",
-    "reference": null,
+    "reference": "E34",
     "eval_metric": "E34",
     "direction": "down",
     "pattern_class": "primary_result",
@@ -2999,11 +2977,6 @@
       "n_cards": 5
     },
     "field_mismatch": {
-      "reference": {
-        "raw": "E34",
-        "layer1_label": "eval_metric",
-        "text": "correct output"
-      },
       "context": [
         {
           "raw": "I89",
@@ -3021,7 +2994,7 @@
         "CTX_other_task_7ed72f31"
       ],
       "intervention": "INT_first_second_solutions_proposed_varc",
-      "reference": null,
+      "reference": "INT_correct_output",
       "eval_metric": "MET_gen_accuracy",
       "observable": [
         "MET_gen_accuracy",

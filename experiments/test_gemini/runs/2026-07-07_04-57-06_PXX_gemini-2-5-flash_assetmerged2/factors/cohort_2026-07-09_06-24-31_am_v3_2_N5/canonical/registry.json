@@ -1507,6 +1507,21 @@
         "P18"
       ],
       "ref_count": 1
+    },
+    "CTX_other_model_s_predictions_converge_toward_correct": {
+      "canonical_id": "CTX_other_model_s_predictions_converge_toward_correct",
+      "type": "context",
+      "facet": "other",
+      "gloss": "model's predictions converge toward the correct output",
+      "members": [
+        "E39"
+      ],
+      "representative": "E39",
+      "n_members": 1,
+      "referenced_by": [
+        "P85"
+      ],
+      "ref_count": 1
     }
   },
   "intervention": {
@@ -1581,6 +1596,38 @@
       "n_members": 1,
       "referenced_by": [
         "P60"
+      ],
+      "ref_count": 1
+    },
+    "INT_correct_output": {
+      "canonical_id": "INT_correct_output",
+      "type": "intervention",
+      "gloss": "correct output",
+      "representative": "E32",
+      "members": [
+        "E32",
+        "E34"
+      ],
+      "n_members": 2,
+      "referenced_by": [
+        "P73",
+        "P74",
+        "P78",
+        "P79"
+      ],
+      "ref_count": 4
+    },
+    "INT_ground_truth": {
+      "canonical_id": "INT_ground_truth",
+      "type": "intervention",
+      "gloss": "Ground truth",
+      "representative": "E36",
+      "members": [
+        "E36"
+      ],
+      "n_members": 1,
+      "referenced_by": [
+        "P82"
       ],
       "ref_count": 1
     },
@@ -3197,10 +3244,14 @@
     "C82": "CTX_training_given_single_new_unseen_task_t",
     "C83": "CTX_other_at_inference_time_given_demo_xi",
     "C84": "CTX_training_test_time_training_followed_inference_can",
+    "E39": "MET_gen_accuracy",
     "C13": "INT_recurrent_models_53_27",
     "I106": "INT_varc",
     "E18": "INT_offline_training_data_scaling_effect_varying",
     "E19": "INT_offline_training_task_diversity_scaling_effect",
+    "E32": "MET_gen_accuracy",
+    "E34": "MET_gen_accuracy",
+    "E36": "MET_gen_accuracy",
     "I1": "INT_formulate_arc_within_vision_paradigm_framing",
     "I100": "INT_o3_mini_high_18",
     "I101": "INT_gpt_5_18",
@@ -3258,14 +3309,10 @@
     "E22": "MET_gen_accuracy",
     "E24": "MET_gen_accuracy",
     "E31": "MET_gen_passk",
-    "E32": "MET_gen_accuracy",
     "E33": "MET_gen_accuracy",
-    "E34": "MET_gen_accuracy",
     "E35": "MET_gen_accuracy",
-    "E36": "MET_gen_accuracy",
     "E37": "MET_gen_accuracy",
     "E38": "MET_gen_accuracy",
-    "E39": "MET_gen_accuracy",
     "E40": "MET_gen_accuracy",
     "E41": "MET_gen_pass1",
     "E42": "MET_gen_pass2",

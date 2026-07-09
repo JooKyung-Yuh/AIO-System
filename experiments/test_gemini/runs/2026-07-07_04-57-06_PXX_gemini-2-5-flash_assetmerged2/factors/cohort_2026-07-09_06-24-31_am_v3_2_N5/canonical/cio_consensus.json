@@ -2363,7 +2363,7 @@
     "pattern": "P82",
     "unit": "U043",
     "intervention": "I90",
-    "reference": null,
+    "reference": "E36",
     "eval_metric": "E36",
     "direction": "up",
     "pattern_class": "primary_result",
@@ -2380,11 +2380,6 @@
       "n_cards": 5
     },
     "field_mismatch": {
-      "reference": {
-        "raw": "E36",
-        "layer1_label": "eval_metric",
-        "text": "Ground truth"
-      },
       "context": [
         {
           "raw": "A22",
@@ -2401,7 +2396,7 @@
         "CTX_other_three_demonstration_examples_test_task_top"
       ],
       "intervention": "INT_model_attempts_interpret_rule_either_going",
-      "reference": null,
+      "reference": "INT_ground_truth",
       "eval_metric": "MET_gen_accuracy",
       "observable": [
         "MET_gen_accuracy",
@@ -2477,7 +2472,7 @@
     "pattern": "P73",
     "unit": "U046",
     "intervention": "I86",
-    "reference": null,
+    "reference": "E32",
     "eval_metric": "E33",
     "direction": "up",
     "pattern_class": "primary_result",
@@ -2495,13 +2490,6 @@
     "field_support": {
       "n_cards": 5
     },
-    "field_mismatch": {
-      "reference": {
-        "raw": "E32",
-        "layer1_label": "eval_metric",
-        "text": "correct output"
-      }
-    },
     "canonical": {
       "context": [
         "CTX_other_inference_input",
@@ -2512,7 +2500,7 @@
         "CTX_other_two_demonstration_example_pairs_shown_each"
       ],
       "intervention": "INT_first_second_solutions_proposed_varc",
-      "reference": null,
+      "reference": "INT_correct_output",
       "eval_metric": "MET_gen_accuracy",
       "observable": [
         "MET_gen_accuracy",
@@ -2524,7 +2512,7 @@
     "pattern": "P74",
     "unit": "U046",
     "intervention": "I86",
-    "reference": null,
+    "reference": "E32",
     "eval_metric": "E33",
     "direction": "down",
     "pattern_class": "primary_result",
@@ -2542,13 +2530,6 @@
     "field_support": {
       "n_cards": 5
     },
-    "field_mismatch": {
-      "reference": {
-        "raw": "E32",
-        "layer1_label": "eval_metric",
-        "text": "correct output"
-      }
-    },
     "canonical": {
       "context": [
         "CTX_other_inference_input",
@@ -2559,7 +2540,7 @@
         "CTX_other_two_demonstration_example_pairs_shown_each"
       ],
       "intervention": "INT_first_second_solutions_proposed_varc",
-      "reference": null,
+      "reference": "INT_correct_output",
       "eval_metric": "MET_gen_accuracy",
       "observable": [
         "MET_gen_accuracy",
@@ -2635,7 +2616,7 @@
     "pattern": "P78",
     "unit": "U047",
     "intervention": "I89",
-    "reference": null,
+    "reference": "E34",
     "eval_metric": "E35",
     "direction": "up",
     "pattern_class": "primary_result",
@@ -2653,13 +2634,6 @@
     "field_support": {
       "n_cards": 5
     },
-    "field_mismatch": {
-      "reference": {
-        "raw": "E34",
-        "layer1_label": "eval_metric",
-        "text": "correct output"
-      }
-    },
     "canonical": {
       "context": [
         "CTX_other_inference_input",
@@ -2670,7 +2644,7 @@
         "CTX_other_two_demonstration_example_pairs_shown_each"
       ],
       "intervention": "INT_first_second_solutions_proposed_varc",
-      "reference": null,
+      "reference": "INT_correct_output",
       "eval_metric": "MET_gen_accuracy",
       "observable": [
         "MET_gen_accuracy",
@@ -2682,7 +2656,7 @@
     "pattern": "P79",
     "unit": "U047",
     "intervention": "I89",
-    "reference": null,
+    "reference": "E34",
     "eval_metric": "E35",
     "direction": "down",
     "pattern_class": "primary_result",
@@ -2700,13 +2674,6 @@
     "field_support": {
       "n_cards": 5
     },
-    "field_mismatch": {
-      "reference": {
-        "raw": "E34",
-        "layer1_label": "eval_metric",
-        "text": "correct output"
-      }
-    },
     "canonical": {
       "context": [
         "CTX_other_inference_input",
@@ -2717,7 +2684,7 @@
         "CTX_other_two_demonstration_example_pairs_shown_each"
       ],
       "intervention": "INT_first_second_solutions_proposed_varc",
-      "reference": null,
+      "reference": "INT_correct_output",
       "eval_metric": "MET_gen_accuracy",
       "observable": [
         "MET_gen_accuracy",
@@ -2807,24 +2774,19 @@
     "eval_metric": "E39",
     "direction": "up",
     "pattern_class": "primary_result",
-    "context": [],
+    "context": [
+      "E39"
+    ],
     "provenance": {
       "location": "Figure 22 caption | Figure 22 'TTT process' and 'Ground truth' panels"
     },
     "field_support": {
       "n_cards": 5
     },
-    "field_mismatch": {
-      "context": [
-        {
-          "raw": "E39",
-          "layer1_label": "eval_metric",
-          "text": "model's predictions converge toward the correct output"
-        }
-      ]
-    },
     "canonical": {
-      "context": [],
+      "context": [
+        "CTX_other_model_s_predictions_converge_toward_correct"
+      ],
       "intervention": "INT_test_time_training_progresses",
       "reference": null,
       "eval_metric": "MET_gen_accuracy",

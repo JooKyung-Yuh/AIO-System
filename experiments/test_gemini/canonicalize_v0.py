@@ -171,6 +171,22 @@ MANIP_RE = re.compile(
     r"\b(vary|varying|ablat|ensembl|scal|swap|replace|remov|add|combin|"
     r"increase|decrease|with vs|independent|joint|augment)\w*", re.I)
 
+# Generic category hygiene (NOT VARC-figure-specific): a node LABELED eval_metric that names a
+# comparison TARGET / CONDITION (ground truth, correct/reference/target output) and carries NO
+# metric keyword is not a measurement — it is a context/condition, so it may legally sit in a
+# reference or context slot (both accept a C-node). Deliberately narrow: pass@k protocols,
+# scaling axes, and everything else keep their eval_metric label.
+CONDITION_RE = re.compile(r"ground[\s-]*truth|correct output|reference output|target output", re.I)
+METRIC_KW = re.compile(r"accuracy|acc\.|pass\s*@|\bscore\b|\brate\b|%|\bloss\b|\berror\b|\bf1\b|\bauc\b", re.I)
+
+
+def eval_reads_as_context(nid, byspan):
+    if not str(nid).startswith("E"):
+        return False
+    s = byspan.get(nid, {})
+    blob = f"{s.get('text','')} {s.get('note','')}"
+    return bool(CONDITION_RE.search(blob)) and not METRIC_KW.search(blob)
+
 
 def validate_cio_fields(consensus, byspan):
     """Enforce field-prefix discipline on each surviving CIO card. A violating value is NOT
@@ -182,7 +198,7 @@ def validate_cio_fields(consensus, byspan):
         mism = {}
         for field, allowed in FIELD_PREFIX.items():
             v = c.get(field)
-            if v and not str(v).startswith(allowed):
+            if v and not str(v).startswith(allowed) and not ("C" in allowed and eval_reads_as_context(v, byspan)):
                 s = byspan.get(v, {})
                 mism[field] = {"raw": v, "layer1_label": s.get("assigned_label"),
                                "text": s.get("text", "")}
@@ -191,7 +207,7 @@ def validate_cio_fields(consensus, byspan):
                                "layer1_label": s.get("assigned_label"),
                                "text": (s.get("text") or "")[:100]})
         ctx = c.get("context") or []
-        bad = [x for x in ctx if not str(x).startswith("C")]
+        bad = [x for x in ctx if not (str(x).startswith("C") or eval_reads_as_context(x, byspan))]
         if bad:
             mism["context"] = [{"raw": x, "layer1_label": byspan.get(x, {}).get("assigned_label"),
                                 "text": byspan.get(x, {}).get("text", "")} for x in bad]

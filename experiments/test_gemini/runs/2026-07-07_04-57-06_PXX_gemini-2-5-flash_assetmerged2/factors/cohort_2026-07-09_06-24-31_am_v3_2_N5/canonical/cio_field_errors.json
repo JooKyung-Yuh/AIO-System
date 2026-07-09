@@ -57,51 +57,9 @@
   },
   {
     "pattern": "P82",
-    "field": "reference",
-    "bad_value": "E36",
-    "layer1_label": "eval_metric",
-    "text": "Ground truth"
-  },
-  {
-    "pattern": "P82",
     "field": "context",
     "bad_value": [
       "A22"
-    ]
-  },
-  {
-    "pattern": "P73",
-    "field": "reference",
-    "bad_value": "E32",
-    "layer1_label": "eval_metric",
-    "text": "correct output"
-  },
-  {
-    "pattern": "P74",
-    "field": "reference",
-    "bad_value": "E32",
-    "layer1_label": "eval_metric",
-    "text": "correct output"
-  },
-  {
-    "pattern": "P78",
-    "field": "reference",
-    "bad_value": "E34",
-    "layer1_label": "eval_metric",
-    "text": "correct output"
-  },
-  {
-    "pattern": "P79",
-    "field": "reference",
-    "bad_value": "E34",
-    "layer1_label": "eval_metric",
-    "text": "correct output"
-  },
-  {
-    "pattern": "P85",
-    "field": "context",
-    "bad_value": [
-      "E39"
     ]
   },
   {
