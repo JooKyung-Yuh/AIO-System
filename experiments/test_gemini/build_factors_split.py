@@ -41,7 +41,7 @@ MODEL_NAME = "gemini-2.5-flash"
 PROMPTS = Path("./prompts")
 # Per-call prompt versions. Bump one and re-run to create a new, separately tagged cohort
 # (build_dir carries BUILD_TAG) so runs on different prompts never mix in one ensemble vote.
-CIO_PROMPT = "extract_cio_v2_1"
+CIO_PROMPT = "extract_cio_v2_2"
 AM_PROMPT = "extract_am_v3_1"
 LINK_PROMPT = "link_factors_v1"
 

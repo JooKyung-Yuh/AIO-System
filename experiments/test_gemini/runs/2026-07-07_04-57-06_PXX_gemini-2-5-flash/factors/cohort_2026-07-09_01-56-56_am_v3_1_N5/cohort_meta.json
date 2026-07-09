@@ -1,0 +1,12 @@
+{
+  "cohort_id": "cohort_2026-07-09_01-56-56_am_v3_1_N5",
+  "n": 5,
+  "prompts": {
+    "CIO_PROMPT": "extract_cio_v2_2",
+    "AM_PROMPT": "extract_am_v3_1",
+    "LINK_PROMPT": "link_factors_v1"
+  },
+  "started": "2026-07-09T01:56:56.595844+00:00",
+  "run_dir": "runs/2026-07-07_04-57-06_PXX_gemini-2-5-flash",
+  "canonical": true
+}

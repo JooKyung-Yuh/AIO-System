@@ -1,0 +1,657 @@
+{
+  "MECH_patchification_2d_pos_embed_incorporate_visual": {
+    "canonical_id": "MECH_patchification_2d_pos_embed_incorporate_visual",
+    "type": "mechanism",
+    "gloss": "patchification/2D pos embed incorporate visual inductive biases",
+    "representative": "M23",
+    "members": [
+      "M23",
+      "M24",
+      "M25"
+    ],
+    "n_members": 3,
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed",
+    "referenced_by": [
+      "P19",
+      "P20",
+      "P21",
+      "P22",
+      "P23",
+      "P25",
+      "P34",
+      "P35"
+    ],
+    "ref_count": 8,
+    "status": "tested",
+    "strengthened_by": [
+      "P20",
+      "P21",
+      "P22",
+      "P34",
+      "P35"
+    ],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "MECH_majority_voting_consolidates_multi_view_predictions": {
+    "canonical_id": "MECH_majority_voting_consolidates_multi_view_predictions",
+    "type": "mechanism",
+    "gloss": "majority voting consolidates multi-view predictions for accuracy",
+    "representative": "M27",
+    "members": [
+      "M27",
+      "M28",
+      "M32",
+      "M33",
+      "M42"
+    ],
+    "n_members": 5,
+    "votes": 4,
+    "confidence": 0.8,
+    "band": "observed",
+    "referenced_by": [
+      "P11",
+      "P18",
+      "P36",
+      "P38",
+      "P40",
+      "P41",
+      "P42",
+      "P43",
+      "P44",
+      "P45",
+      "P51",
+      "P62",
+      "P63",
+      "P65",
+      "P66",
+      "P73",
+      "P74",
+      "P78",
+      "P79"
+    ],
+    "ref_count": 19,
+    "status": "contested",
+    "strengthened_by": [
+      "P11",
+      "P18",
+      "P38",
+      "P40",
+      "P41",
+      "P42",
+      "P43",
+      "P45",
+      "P65",
+      "P66",
+      "P73",
+      "P78"
+    ],
+    "weakened_by": [
+      "P74",
+      "P79"
+    ],
+    "propose_test": false
+  },
+  "MECH_transformer_layers_focus_different_structures_depth": {
+    "canonical_id": "MECH_transformer_layers_focus_different_structures_depth",
+    "type": "mechanism",
+    "gloss": "Transformer layers focus on different structures by depth",
+    "representative": "M59",
+    "members": [
+      "M59",
+      "M60",
+      "M61",
+      "M62",
+      "M63",
+      "M64",
+      "M65",
+      "M66",
+      "M67",
+      "M68"
+    ],
+    "n_members": 10,
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed",
+    "referenced_by": [
+      "P49",
+      "P50",
+      "P51",
+      "P52",
+      "P54",
+      "P57",
+      "P83",
+      "P84"
+    ],
+    "ref_count": 8,
+    "status": "tested",
+    "strengthened_by": [
+      "P54",
+      "P57",
+      "P83",
+      "P84"
+    ],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "ASM_larger_models_current_setting_lead_overfitting": {
+    "canonical_id": "ASM_larger_models_current_setting_lead_overfitting",
+    "type": "assumption",
+    "gloss": "larger models in current setting lead to overfitting",
+    "representative": "A15",
+    "members": [
+      "A15"
+    ],
+    "n_members": 1,
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed",
+    "referenced_by": [
+      "P38"
+    ],
+    "ref_count": 1,
+    "status": "weakly-tested",
+    "strengthened_by": [],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "MECH_canvas_augmentations_introduce_translation_scale_invariance": {
+    "canonical_id": "MECH_canvas_augmentations_introduce_translation_scale_invariance",
+    "type": "mechanism",
+    "gloss": "canvas/augmentations introduce translation/scale invariance for generalization",
+    "representative": "M16",
+    "members": [
+      "M16",
+      "M19",
+      "M20",
+      "M22"
+    ],
+    "n_members": 4,
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed",
+    "referenced_by": [
+      "P26",
+      "P28",
+      "P34",
+      "P35",
+      "P78"
+    ],
+    "ref_count": 5,
+    "status": "tested",
+    "strengthened_by": [
+      "P26",
+      "P28",
+      "P34",
+      "P35"
+    ],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "MECH_average_pooling_aggregates_multi_pixel_canvas": {
+    "canonical_id": "MECH_average_pooling_aggregates_multi_pixel_canvas",
+    "type": "mechanism",
+    "gloss": "average pooling aggregates multi-pixel canvas predictions",
+    "representative": "M29",
+    "members": [
+      "M29"
+    ],
+    "n_members": 1,
+    "votes": 4,
+    "confidence": 0.8,
+    "band": "observed",
+    "referenced_by": [],
+    "ref_count": 0,
+    "status": "assumed",
+    "strengthened_by": [],
+    "weakened_by": [],
+    "propose_test": true
+  },
+  "MECH_method_learns_relations_between_different_tasks": {
+    "canonical_id": "MECH_method_learns_relations_between_different_tasks",
+    "type": "mechanism",
+    "gloss": "method learns relations between different tasks",
+    "representative": "M48",
+    "members": [
+      "M48"
+    ],
+    "n_members": 1,
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed",
+    "referenced_by": [
+      "P46",
+      "P47",
+      "P60",
+      "P63"
+    ],
+    "ref_count": 4,
+    "status": "tested",
+    "strengthened_by": [
+      "P60",
+      "P63"
+    ],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "MECH_visual_common_sense_learned_from_training": {
+    "canonical_id": "MECH_visual_common_sense_learned_from_training",
+    "type": "mechanism",
+    "gloss": "visual common sense learned from training data",
+    "representative": "M40",
+    "members": [
+      "M40"
+    ],
+    "n_members": 1,
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed",
+    "referenced_by": [
+      "P17",
+      "P30",
+      "P36",
+      "P59",
+      "P60",
+      "P61",
+      "P62",
+      "P63",
+      "P85",
+      "P86",
+      "P87"
+    ],
+    "ref_count": 11,
+    "status": "tested",
+    "strengthened_by": [
+      "P17",
+      "P30",
+      "P36",
+      "P59",
+      "P60",
+      "P61",
+      "P62"
+    ],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "MECH_attention_masks_encourage_foreground_focus_improving": {
+    "canonical_id": "MECH_attention_masks_encourage_foreground_focus_improving",
+    "type": "mechanism",
+    "gloss": "attention masks encourage foreground focus, improving accuracy",
+    "representative": "M54",
+    "members": [
+      "M54"
+    ],
+    "n_members": 1,
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed",
+    "referenced_by": [
+      "P53",
+      "P54"
+    ],
+    "ref_count": 2,
+    "status": "weakly-tested",
+    "strengthened_by": [],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "MECH_canvas_patchification_enriches_data_reduces_overfitting": {
+    "canonical_id": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+    "type": "mechanism",
+    "gloss": "canvas patchification enriches data, reduces overfitting, learns spatial priors",
+    "representative": "M10",
+    "members": [
+      "M10",
+      "M17",
+      "M18",
+      "M34",
+      "M36"
+    ],
+    "n_members": 5,
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed",
+    "referenced_by": [
+      "P22",
+      "P23",
+      "P24",
+      "P25"
+    ],
+    "ref_count": 4,
+    "status": "tested",
+    "strengthened_by": [
+      "P22",
+      "P23",
+      "P24",
+      "P25"
+    ],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "MECH_abstraction_inference_from_visual_learning_without": {
+    "canonical_id": "MECH_abstraction_inference_from_visual_learning_without",
+    "type": "mechanism",
+    "gloss": "abstraction/inference from visual learning without language",
+    "representative": "M7",
+    "members": [
+      "M50",
+      "M7"
+    ],
+    "n_members": 2,
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed",
+    "referenced_by": [
+      "P1",
+      "P11",
+      "P12",
+      "P16",
+      "P17",
+      "P18",
+      "P19",
+      "P29",
+      "P31",
+      "P36",
+      "P39",
+      "P41",
+      "P43",
+      "P44",
+      "P46",
+      "P47",
+      "P48",
+      "P49",
+      "P50",
+      "P51",
+      "P52",
+      "P59",
+      "P60",
+      "P61",
+      "P7",
+      "P70",
+      "P71",
+      "P72",
+      "P73",
+      "P74",
+      "P75",
+      "P76",
+      "P77",
+      "P78",
+      "P79",
+      "P8",
+      "P85",
+      "P86",
+      "P87",
+      "P9"
+    ],
+    "ref_count": 40,
+    "status": "contested",
+    "strengthened_by": [
+      "P1",
+      "P11",
+      "P12",
+      "P16",
+      "P17",
+      "P19",
+      "P29",
+      "P31",
+      "P44",
+      "P46",
+      "P47",
+      "P48",
+      "P49",
+      "P50",
+      "P51",
+      "P52",
+      "P7",
+      "P70",
+      "P71",
+      "P73",
+      "P75",
+      "P76",
+      "P78",
+      "P8",
+      "P85",
+      "P86",
+      "P87",
+      "P9"
+    ],
+    "weakened_by": [
+      "P72",
+      "P74",
+      "P77",
+      "P79"
+    ],
+    "propose_test": false
+  },
+  "ASM_arc_colors_not_real_world_colors": {
+    "canonical_id": "ASM_arc_colors_not_real_world_colors",
+    "type": "assumption",
+    "gloss": "ARC colors are not real-world colors",
+    "representative": "A6",
+    "members": [
+      "A6"
+    ],
+    "n_members": 1,
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed",
+    "referenced_by": [],
+    "ref_count": 0,
+    "status": "assumed",
+    "strengthened_by": [],
+    "weakened_by": [],
+    "propose_test": true
+  },
+  "MECH_model_reasons_attending_source_target_pixel": {
+    "canonical_id": "MECH_model_reasons_attending_source_target_pixel",
+    "type": "mechanism",
+    "gloss": "model reasons by attending to source-target pixel relationships",
+    "representative": "M44",
+    "members": [
+      "M44"
+    ],
+    "n_members": 1,
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed",
+    "referenced_by": [
+      "P48",
+      "P53",
+      "P54"
+    ],
+    "ref_count": 3,
+    "status": "tested",
+    "strengthened_by": [
+      "P53"
+    ],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "ASM_most_arc_tasks_unambiguous_some_have": {
+    "canonical_id": "ASM_most_arc_tasks_unambiguous_some_have",
+    "type": "assumption",
+    "gloss": "most ARC tasks unambiguous, some have multiple plausible rules",
+    "representative": "A20",
+    "members": [
+      "A20",
+      "A21"
+    ],
+    "n_members": 2,
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed",
+    "referenced_by": [
+      "P80",
+      "P81",
+      "P82"
+    ],
+    "ref_count": 3,
+    "status": "tested",
+    "strengthened_by": [
+      "P80",
+      "P81",
+      "P82"
+    ],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "ASM_single_pixel_error_makes_arc_prediction": {
+    "canonical_id": "ASM_single_pixel_error_makes_arc_prediction",
+    "type": "assumption",
+    "gloss": "single pixel error makes ARC prediction incorrect",
+    "representative": "A18",
+    "members": [
+      "A18"
+    ],
+    "n_members": 1,
+    "votes": 5,
+    "confidence": 1.0,
+    "band": "observed",
+    "referenced_by": [
+      "P38",
+      "P39",
+      "P41",
+      "P42",
+      "P44",
+      "P45"
+    ],
+    "ref_count": 6,
+    "status": "tested",
+    "strengthened_by": [
+      "P39"
+    ],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "ASM_auxiliary_tasks_translation_scale_invariant": {
+    "canonical_id": "ASM_auxiliary_tasks_translation_scale_invariant",
+    "type": "assumption",
+    "gloss": "auxiliary tasks are translation/scale invariant",
+    "representative": "A12",
+    "members": [
+      "A12"
+    ],
+    "n_members": 1,
+    "votes": 4,
+    "confidence": 0.8,
+    "band": "observed",
+    "referenced_by": [],
+    "ref_count": 0,
+    "status": "assumed",
+    "strengthened_by": [],
+    "weakened_by": [],
+    "propose_test": true
+  },
+  "MECH_scale_augmentation_yields_substantial_gain_due": {
+    "canonical_id": "MECH_scale_augmentation_yields_substantial_gain_due",
+    "type": "mechanism",
+    "gloss": "Scale augmentation yields substantial gain due to ViT bias",
+    "representative": "M37",
+    "members": [
+      "M37"
+    ],
+    "n_members": 1,
+    "votes": 1,
+    "confidence": 0.2,
+    "band": "uncertain",
+    "referenced_by": [
+      "P28",
+      "P34"
+    ],
+    "ref_count": 2,
+    "status": "weakly-tested",
+    "strengthened_by": [],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "ASM_multiple_test_tasks_cannot_assumed_available": {
+    "canonical_id": "ASM_multiple_test_tasks_cannot_assumed_available",
+    "type": "assumption",
+    "gloss": "Multiple test tasks cannot be assumed available simultaneously",
+    "representative": "A16",
+    "members": [
+      "A16",
+      "A19"
+    ],
+    "n_members": 2,
+    "votes": 1,
+    "confidence": 0.2,
+    "band": "uncertain",
+    "referenced_by": [
+      "P36"
+    ],
+    "ref_count": 1,
+    "status": "weakly-tested",
+    "strengthened_by": [],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "MECH_some_arc_tasks_solvable_from_scratch": {
+    "canonical_id": "MECH_some_arc_tasks_solvable_from_scratch",
+    "type": "mechanism",
+    "gloss": "Some ARC tasks are solvable from scratch",
+    "representative": "M41",
+    "members": [
+      "M41"
+    ],
+    "n_members": 1,
+    "votes": 1,
+    "confidence": 0.2,
+    "band": "uncertain",
+    "referenced_by": [
+      "P31",
+      "P63"
+    ],
+    "ref_count": 2,
+    "status": "weakly-tested",
+    "strengthened_by": [],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "MECH_model_interprets_ambiguous_rules_multiple_plausible": {
+    "canonical_id": "MECH_model_interprets_ambiguous_rules_multiple_plausible",
+    "type": "mechanism",
+    "gloss": "Model interprets ambiguous rules with multiple plausible guesses",
+    "representative": "M58",
+    "members": [
+      "M58"
+    ],
+    "n_members": 1,
+    "votes": 1,
+    "confidence": 0.2,
+    "band": "uncertain",
+    "referenced_by": [
+      "P80",
+      "P81",
+      "P82"
+    ],
+    "ref_count": 3,
+    "status": "weakly-tested",
+    "strengthened_by": [],
+    "weakened_by": [],
+    "propose_test": false
+  },
+  "MECH_classical_vision_backbones_can_address_arc": {
+    "canonical_id": "MECH_classical_vision_backbones_can_address_arc",
+    "type": "mechanism",
+    "gloss": "Classical vision backbones can address ARC effectively",
+    "representative": "M38",
+    "members": [
+      "M38"
+    ],
+    "n_members": 1,
+    "votes": 1,
+    "confidence": 0.2,
+    "band": "uncertain",
+    "referenced_by": [
+      "P19"
+    ],
+    "ref_count": 1,
+    "status": "weakly-tested",
+    "strengthened_by": [],
+    "weakened_by": [],
+    "propose_test": false
+  }
+}

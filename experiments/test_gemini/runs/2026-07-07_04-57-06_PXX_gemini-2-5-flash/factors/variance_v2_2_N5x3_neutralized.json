@@ -1,0 +1,174 @@
+{
+  "n_cohorts": 3,
+  "cohorts": [
+    "cohort_2026-07-09_01-56-56_am_v3_1_N5",
+    "cohort_2026-07-09_02-06-57_am_v3_1_N5",
+    "cohort_2026-07-09_02-15-20_am_v3_1_N5"
+  ],
+  "prompt_set": {
+    "am": "extract_am_v3_1",
+    "cio": "extract_cio_v2_2",
+    "link": "link_factors_v1"
+  },
+  "per_cohort": [
+    {
+      "cohort": "cohort_2026-07-09_01-56-56_am_v3_1_N5",
+      "n_builds": 5,
+      "assum": 0.85,
+      "mech": 0.79,
+      "cio": 0.958,
+      "link": 0.393,
+      "field_errors": 8,
+      "promoted": 2,
+      "comp_refs": 11,
+      "comp_total": 24,
+      "st_assumed": 3,
+      "st_contested": 2,
+      "st_tested": 9,
+      "propose_test": 3
+    },
+    {
+      "cohort": "cohort_2026-07-09_02-06-57_am_v3_1_N5",
+      "n_builds": 5,
+      "assum": 0.775,
+      "mech": 0.684,
+      "cio": 1.0,
+      "link": 0.428,
+      "field_errors": 10,
+      "promoted": 0,
+      "comp_refs": 5,
+      "comp_total": 24,
+      "st_assumed": 3,
+      "st_contested": 1,
+      "st_tested": 11,
+      "propose_test": 3
+    },
+    {
+      "cohort": "cohort_2026-07-09_02-15-20_am_v3_1_N5",
+      "n_builds": 5,
+      "assum": 0.85,
+      "mech": 0.79,
+      "cio": 0.938,
+      "link": 0.419,
+      "field_errors": 13,
+      "promoted": 2,
+      "comp_refs": 11,
+      "comp_total": 24,
+      "st_assumed": 3,
+      "st_contested": 2,
+      "st_tested": 8,
+      "propose_test": 3
+    }
+  ],
+  "mean_std": {
+    "assum": {
+      "mean": 0.825,
+      "std": 0.035,
+      "raw": [
+        0.85,
+        0.775,
+        0.85
+      ]
+    },
+    "mech": {
+      "mean": 0.755,
+      "std": 0.05,
+      "raw": [
+        0.79,
+        0.684,
+        0.79
+      ]
+    },
+    "cio": {
+      "mean": 0.965,
+      "std": 0.026,
+      "raw": [
+        0.958,
+        1.0,
+        0.938
+      ]
+    },
+    "link": {
+      "mean": 0.413,
+      "std": 0.015,
+      "raw": [
+        0.393,
+        0.428,
+        0.419
+      ]
+    },
+    "field_errors": {
+      "mean": 10.333,
+      "std": 2.055,
+      "raw": [
+        8,
+        10,
+        13
+      ]
+    },
+    "promoted": {
+      "mean": 1.333,
+      "std": 0.943,
+      "raw": [
+        2,
+        0,
+        2
+      ]
+    },
+    "comp_refs": {
+      "mean": 9,
+      "std": 2.828,
+      "raw": [
+        11,
+        5,
+        11
+      ]
+    },
+    "comp_total": {
+      "mean": 24,
+      "std": 0.0,
+      "raw": [
+        24,
+        24,
+        24
+      ]
+    },
+    "st_assumed": {
+      "mean": 3,
+      "std": 0.0,
+      "raw": [
+        3,
+        3,
+        3
+      ]
+    },
+    "st_contested": {
+      "mean": 1.667,
+      "std": 0.471,
+      "raw": [
+        2,
+        1,
+        2
+      ]
+    },
+    "st_tested": {
+      "mean": 9.333,
+      "std": 1.247,
+      "raw": [
+        9,
+        11,
+        8
+      ]
+    },
+    "propose_test": {
+      "mean": 3,
+      "std": 0.0,
+      "raw": [
+        3,
+        3,
+        3
+      ]
+    }
+  },
+  "note": "same-prompt cohort-to-cohort variance; a prompt change is signal only if it moves a metric by more than ~2x its std here."
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "pattern": "P59",
+    "node": "E18",
+    "layer1_label": "eval_metric",
+    "text": "Offline training data scaling: effect of varying"
+  },
+  {
+    "pattern": "P60",
+    "node": "E19",
+    "layer1_label": "eval_metric",
+    "text": "Offline training task diversity scaling: effect of varying"
+  }
+]

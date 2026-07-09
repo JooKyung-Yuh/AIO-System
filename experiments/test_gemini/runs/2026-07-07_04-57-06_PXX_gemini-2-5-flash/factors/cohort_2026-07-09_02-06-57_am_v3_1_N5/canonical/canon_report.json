@@ -1,0 +1,37 @@
+{
+  "n_builds": 5,
+  "before": {
+    "context": 81,
+    "intervention": 13,
+    "eval_metric": 19,
+    "am_atoms_union": 46
+  },
+  "after": {
+    "context": 70,
+    "intervention": 18,
+    "eval_metric": 4,
+    "am_clusters": 21
+  },
+  "am_cluster_bands": {
+    "observed": 13,
+    "supported": 8,
+    "uncertain": 0
+  },
+  "am_status": {
+    "weakly-tested": 6,
+    "tested": 11,
+    "assumed": 3,
+    "contested": 1
+  },
+  "propose_test_targets": [
+    "ASM_arc_colors_not_real_world_colors",
+    "ASM_auxiliary_tasks_translation_scale_invariant",
+    "MECH_average_pooling_aggregates_multi_pixel_canvas"
+  ],
+  "context_dropped": 2,
+  "merge_queue_pending": 0,
+  "cio_field_errors": 10,
+  "promoted_interventions": 0,
+  "link_jaccard_raw_baseline": 0.428,
+  "link_jaccard_on_canonical_am": 0.478
+}
