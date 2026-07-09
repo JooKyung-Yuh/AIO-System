@@ -1,0 +1,72 @@
+[
+  {
+    "pattern": "P20",
+    "field": "context",
+    "bad_value": [
+      "I50"
+    ]
+  },
+  {
+    "pattern": "P21",
+    "field": "context",
+    "bad_value": [
+      "I50"
+    ]
+  },
+  {
+    "pattern": "P73",
+    "field": "reference",
+    "bad_value": "E32",
+    "layer1_label": "eval_metric",
+    "text": "correct output"
+  },
+  {
+    "pattern": "P73",
+    "field": "context",
+    "bad_value": [
+      "I84"
+    ]
+  },
+  {
+    "pattern": "P74",
+    "field": "reference",
+    "bad_value": "E32",
+    "layer1_label": "eval_metric",
+    "text": "correct output"
+  },
+  {
+    "pattern": "P74",
+    "field": "context",
+    "bad_value": [
+      "I85"
+    ]
+  },
+  {
+    "pattern": "P78",
+    "field": "reference",
+    "bad_value": "E34",
+    "layer1_label": "eval_metric",
+    "text": "correct output"
+  },
+  {
+    "pattern": "P78",
+    "field": "context",
+    "bad_value": [
+      "I87"
+    ]
+  },
+  {
+    "pattern": "P79",
+    "field": "reference",
+    "bad_value": "E34",
+    "layer1_label": "eval_metric",
+    "text": "correct output"
+  },
+  {
+    "pattern": "P79",
+    "field": "context",
+    "bad_value": [
+      "I88"
+    ]
+  }
+]

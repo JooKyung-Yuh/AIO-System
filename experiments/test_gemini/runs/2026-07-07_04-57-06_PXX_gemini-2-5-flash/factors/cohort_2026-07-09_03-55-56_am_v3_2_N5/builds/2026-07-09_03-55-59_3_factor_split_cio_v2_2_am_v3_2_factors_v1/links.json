@@ -1,0 +1,352 @@
+[
+  {
+    "source_cio": "CIO_001",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "VARC achieves 60.4% accuracy, outperforming existing methods trained from scratch."
+  },
+  {
+    "source_cio": "CIO_002",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "VARC achieves 54.5% accuracy, substantially surpassing recurrent methods trained from scratch."
+  },
+  {
+    "source_cio": "CIO_003",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Combining VARC models through ensembling further improves accuracy to 60.4%."
+  },
+  {
+    "source_cio": "CIO_003",
+    "target_am": "AM_007",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Combining VARC models through ensembling further improves accuracy to 60.4%."
+  },
+  {
+    "source_cio": "CIO_007",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "VARC correctly solves these challenging tasks."
+  },
+  {
+    "source_cio": "CIO_008",
+    "target_am": "AM_019",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "TTT prediction becomes progressively more accurate, model finally generating correct prediction."
+  },
+  {
+    "source_cio": "CIO_009",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "U-Net variants achieve decent accuracy, suggesting problem addressed by classical vision backbones."
+  },
+  {
+    "source_cio": "CIO_010",
+    "target_am": "AM_004",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Vision priors cumulatively yield 27.7 improvement, canvas-based designs contribute 11.5 gain."
+  },
+  {
+    "source_cio": "CIO_010",
+    "target_am": "AM_003",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Canvas-based designs (c→f) contribute an 11.5 gain."
+  },
+  {
+    "source_cio": "CIO_011",
+    "target_am": "AM_003",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Canvas-based designs (c→f) contribute an 11.5 gain."
+  },
+  {
+    "source_cio": "CIO_011",
+    "target_am": "AM_004",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "These vision priors cumulatively yield 27.7 improvement."
+  },
+  {
+    "source_cio": "CIO_012",
+    "target_am": "AM_006",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Extending from 1D positional embedding to its 2D counterpart is beneficial."
+  },
+  {
+    "source_cio": "CIO_013",
+    "target_am": "AM_006",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Extending from 1D positional embedding to its 2D counterpart is beneficial."
+  },
+  {
+    "source_cio": "CIO_014",
+    "target_am": "AM_006",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Replacing 2D ROPE with 1D ROPE degrades accuracy by 3.5 points."
+  },
+  {
+    "source_cio": "CIO_015",
+    "target_am": "AM_002",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Patchification enables token set expansion to exponentially large number; Fig. 7(d-f) benefits."
+  },
+  {
+    "source_cio": "CIO_016",
+    "target_am": "AM_002",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "2x2 patchification gains 2.4 points, substantially enriching data space for learning."
+  },
+  {
+    "source_cio": "CIO_017",
+    "target_am": "AM_004",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Networks benefit greatly from translation/scale augmentations; similar observations in ARC."
+  },
+  {
+    "source_cio": "CIO_018",
+    "target_am": "AM_003",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "fully flexible translation augmentation on the canvas yields an additional gain of 2.9 points."
+  },
+  {
+    "source_cio": "CIO_018",
+    "target_am": "AM_004",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "fully flexible translation augmentation on the canvas yields an additional gain of 2.9 points."
+  },
+  {
+    "source_cio": "CIO_019",
+    "target_am": "AM_003",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Scale augmentation enabled by canvas yields substantial gain of 6.2 points."
+  },
+  {
+    "source_cio": "CIO_019",
+    "target_am": "AM_004",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Scale augmentation yields a substantial gain of 6.2 points."
+  },
+  {
+    "source_cio": "CIO_019",
+    "target_am": "AM_009",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "ViT lacks scale invariance bias, explaining substantial gain from scale augmentation."
+  },
+  {
+    "source_cio": "CIO_021",
+    "target_am": "AM_010",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Offline training greatly improves TTT, suggesting visual common sense learned from training set."
+  },
+  {
+    "source_cio": "CIO_022",
+    "target_am": "AM_010",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Offline training greatly improves TTT, suggesting visual common sense learned from training set."
+  },
+  {
+    "source_cio": "CIO_023",
+    "target_am": "AM_022",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Independent TTT performs better than joint, despite joint relying on stronger task availability assumption."
+  },
+  {
+    "source_cio": "CIO_024",
+    "target_am": "AM_007",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "multi-view inference further boosts to 49.8, thanks to majority voting."
+  },
+  {
+    "source_cio": "CIO_025",
+    "target_am": "AM_023",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Single pixel error invalidates prediction; this explains large gain from multi-view inference."
+  },
+  {
+    "source_cio": "CIO_026",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Our model compares favorably with powerful LLMs like Deepseek, Claude, o3, GPT-5."
+  },
+  {
+    "source_cio": "CIO_027",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Our method does not rely on internet-scale data and uses a much smaller model."
+  },
+  {
+    "source_cio": "CIO_028",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "our method substantially outperforms the recurrent models: HRM [53] and TRM [27]."
+  },
+  {
+    "source_cio": "CIO_029",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Our VARC (18M params) is ~10 points better than TRM on ARC-1."
+  },
+  {
+    "source_cio": "CIO_032",
+    "target_am": "AM_012",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Attention maps show model correctly reasons about source-target pixel relationships."
+  },
+  {
+    "source_cio": "CIO_033",
+    "target_am": "AM_012",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "it reveals which pixels receive the most attention in that layer."
+  },
+  {
+    "source_cio": "CIO_034",
+    "target_am": "AM_013",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Some layers attend to 3x3 neighborhood, reflecting pattern's core influence."
+  },
+  {
+    "source_cio": "CIO_034",
+    "target_am": "AM_014",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Later layers focus on outward-radiating rays, corresponding to rule extending colored pixels."
+  },
+  {
+    "source_cio": "CIO_036",
+    "target_am": "AM_015",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "This visualization suggests that our method attempts to learn the relations between different tasks."
+  },
+  {
+    "source_cio": "CIO_037",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Yields strong few-shot generalization, competitive with recent approaches, smaller than LLMs."
+  },
+  {
+    "source_cio": "CIO_038",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "emphasizing abstraction and reasoning emerging directly from image pixels."
+  },
+  {
+    "source_cio": "CIO_040",
+    "target_am": "AM_016",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "These designs encourage the model to pay more attention to foregrounds and therefore improve accuracy."
+  },
+  {
+    "source_cio": "CIO_041",
+    "target_am": "AM_015",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "tasks with similar semantics cluster together in the embedding space."
+  },
+  {
+    "source_cio": "CIO_045",
+    "target_am": "AM_017",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Model produces correct predictions in some views, but not retained after voting."
+  },
+  {
+    "source_cio": "CIO_049",
+    "target_am": "AM_024",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "The figure illustrates ambiguous ARC tasks."
+  },
+  {
+    "source_cio": "CIO_050",
+    "target_am": "AM_024",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "some may admit multiple plausible explanations or rules."
+  },
+  {
+    "source_cio": "CIO_051",
+    "target_am": "AM_018",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Model interprets ambiguous rule as 'going-through-only' or 'touching'."
+  },
+  {
+    "source_cio": "CIO_053",
+    "target_am": "AM_012",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Visually represents how attention is distributed across layers with varying activation patterns."
+  },
+  {
+    "source_cio": "CIO_054",
+    "target_am": "AM_019",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "As the test-time training progresses, the model's predictions gradually converge toward the correct output."
+  },
+  {
+    "source_cio": "CIO_055",
+    "target_am": "AM_019",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Early epochs produce coarse structures; later epochs refine color and spatial arrangement."
+  },
+  {
+    "source_cio": "CIO_056",
+    "target_am": "AM_019",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Visualization illustrates model adapting to task-specific transformations via few-shot test-time training."
+  },
+  {
+    "source_cio": "CIO_057",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Examples of test tasks successfully solved by VARC."
+  },
+  {
+    "source_cio": "CIO_059",
+    "target_am": "AM_001",
+    "direction": "strengthen",
+    "explicit": true,
+    "evidence": "Examples of test tasks successfully solved by VARC."
+  }
+]

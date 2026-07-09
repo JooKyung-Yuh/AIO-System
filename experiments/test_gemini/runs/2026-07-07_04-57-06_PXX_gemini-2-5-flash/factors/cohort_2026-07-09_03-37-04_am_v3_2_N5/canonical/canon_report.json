@@ -1,0 +1,36 @@
+{
+  "n_builds": 5,
+  "before": {
+    "context": 81,
+    "intervention": 33,
+    "eval_metric": 21,
+    "am_atoms_union": 38
+  },
+  "after": {
+    "context": 70,
+    "intervention": 34,
+    "eval_metric": 4,
+    "am_clusters": 23
+  },
+  "am_cluster_bands": {
+    "observed": 22,
+    "supported": 0,
+    "uncertain": 1
+  },
+  "am_status": {
+    "tested": 19,
+    "contested": 1,
+    "weakly-tested": 1,
+    "assumed": 2
+  },
+  "propose_test_targets": [
+    "MECH_average_pooling_aggregates_predictions_raw_grid",
+    "MECH_some_tasks_solvable_from_scratch_tabula"
+  ],
+  "context_dropped": 2,
+  "merge_queue_pending": 0,
+  "cio_field_errors": 13,
+  "promoted_interventions": 2,
+  "link_jaccard_raw_baseline": 0.477,
+  "link_jaccard_on_canonical_am": 0.499
+}
