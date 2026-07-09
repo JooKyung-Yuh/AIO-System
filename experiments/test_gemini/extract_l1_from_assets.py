@@ -46,23 +46,48 @@ def _span(nid, label, text, loc, note):
             "source_channel": "table_asset"}
 
 
+def split_metric(col):
+    """Separate a metric column header into (arm, metric): a comparison arm folded into the header
+    vs the measurement itself. 'single-view, pass@1' -> ('single-view', 'pass@1'); 'acc.' -> ('',
+    'acc.'); 'ARC-1' -> ('', 'ARC-1'). The metric is the part matching METRIC_RE; the remainder is
+    the arm (Table 2 folds the varied condition into its column headers)."""
+    parts = [p.strip() for p in re.split(r"[,;/]", col or "") if p.strip()]
+    if not parts:
+        return "", col or ""
+    metric = next((p for p in parts if METRIC_RE.search(p)), parts[-1])
+    arm = " ".join(p for p in parts if p != metric)
+    return arm, metric
+
+
 def table_spans(table):
-    """Deterministic C/E/P spans for one results table, shape-aware:
-      - metric columns (is_metric) -> eval_metric; their cells -> pattern
-      - identity columns -> the row's context (name); spec columns -> that context's note
+    """Deterministic C/E/I/P spans for one results table, shape-aware:
+      - metric column header -> (arm, metric): metric part -> eval_metric; folded arm -> intervention
+      - row identity (model/system name) -> intervention (the compared arm); spec cells -> context
+      - each numeric cell -> one pattern (labeled with its arm + metric + value)
       - a row with no numeric cell in any metric column is a section header -> skipped
-    Works for row-arm tables (Table 1/3: rows are arms) and column-arm tables (Table 2: the arm is
-    folded into the metric-column header, single row)."""
+    Emitting the compared arm as an intervention (not just context) is what lets the CIO stage fill
+    the intervention/reference slots with I-nodes instead of tripping the field-category guard."""
     tid = str(table.get("id", "Table"))
     cols = list(table.get("columns", []))
     metric_cols = [c for c in cols if is_metric(c)]
+    if not metric_cols:
+        return [], {"table": tid, "note": "no metric column detected", "patterns": 0}
     id_cols = [c for c in cols if c not in metric_cols]
     name_cols = [c for c in id_cols if (c or "").strip().lower() in IDENTITY_HEADERS] or id_cols[:1]
     spec_cols = [c for c in id_cols if c not in name_cols]
+    col_split = {mc: split_metric(mc) for mc in metric_cols}
 
-    spans, eval_ids = [], {}
-    if not metric_cols:
-        return spans, {"table": tid, "note": "no metric column detected", "patterns": 0}
+    spans, eval_ids, arm_ids = [], {}, {}
+
+    def emit_eval(metric):
+        if metric and metric not in eval_ids:
+            eval_ids[metric] = f"E_{_slug(tid)}_{_slug(metric)}"
+            spans.append(_span(eval_ids[metric], "eval_metric", metric, tid, ""))
+
+    def emit_arm(arm):
+        if arm and arm not in arm_ids:                          # the compared arm -> intervention
+            arm_ids[arm] = f"I_{_slug(tid)}_{_slug(arm)}"
+            spans.append(_span(arm_ids[arm], "intervention", arm, tid, ""))
 
     n_pat = 0
     for ri, row in enumerate(table.get("rows", [])):
@@ -72,20 +97,23 @@ def table_spans(table):
                         if str(row.get(c, "")).strip())
         specs = "; ".join(f"{c} {str(row[c]).strip()}" for c in spec_cols
                           if str(row.get(c, "")).strip())
-        ctx_text = name or specs or f"{tid} row {ri + 1}"
-        spans.append(_span(f"C_{_slug(tid)}_r{ri}", "context", ctx_text, tid, specs))
+        emit_arm(name)                                          # row-arm (Table 1/3: model/system)
+        if specs:                                               # spec cells -> the setting (context)
+            spans.append(_span(f"C_{_slug(tid)}_r{ri}", "context", name or f"{tid} row {ri+1}", tid, specs))
         for mc in metric_cols:
             val = str(row.get(mc, "")).strip()
             if not has_num(val):
                 continue
-            if mc not in eval_ids:
-                eval_ids[mc] = f"E_{_slug(tid)}_{_slug(mc)}"
-                spans.append(_span(eval_ids[mc], "eval_metric", mc, tid, ""))
-            text = f"{name + ' — ' if name else ''}{mc} = {val}"
-            spans.append(_span(f"P_{_slug(tid)}_r{ri}_{_slug(mc)}", "pattern", text, tid,
+            col_arm, metric = col_split[mc]
+            emit_eval(metric)
+            emit_arm(col_arm)                                   # col-arm (Table 2: single/multi-view)
+            arm_txt = name or col_arm
+            label = f"{arm_txt + ' — ' if arm_txt else ''}{metric} = {val}"
+            spans.append(_span(f"P_{_slug(tid)}_r{ri}_{_slug(mc)}", "pattern", label, tid,
                                f"cell: {mc} = {val}" + (f"; {specs}" if specs else "")))
             n_pat += 1
-    return spans, {"table": tid, "metric_cols": metric_cols, "patterns": n_pat}
+    return spans, {"table": tid, "patterns": n_pat, "interventions": len(arm_ids),
+                   "eval_metrics": len(eval_ids)}
 
 
 def main():
@@ -115,10 +143,11 @@ def main():
 
     def cnt(lab):
         return sum(1 for s in all_spans if s["assigned_label"] == lab)
-    print(f"asset spans: {len(all_spans)}  (pattern={cnt('pattern')}, eval_metric={cnt('eval_metric')}, "
-          f"context={cnt('context')}) -> {out}")
+    print(f"asset spans: {len(all_spans)}  (pattern={cnt('pattern')}, intervention={cnt('intervention')}, "
+          f"eval_metric={cnt('eval_metric')}, context={cnt('context')}) -> {out}")
     for r in report:
-        print(f"  {r.get('table')}: patterns={r.get('patterns', 0)}  {r.get('note','')}")
+        print(f"  {r.get('table')}: patterns={r.get('patterns', 0)}, "
+              f"interventions={r.get('interventions', 0)}  {r.get('note','')}")
 
 
 if __name__ == "__main__":
