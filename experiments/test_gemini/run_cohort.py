@@ -107,13 +107,21 @@ def main():
          "--run-dir", str(run_dir), "--builds-dir", str(builds_dir),
          "--auto", "--out", str(ensemble_path)], args.dry_run)
 
-    # --- Stage: canonicalization over this cohort ---
+    # --- Stage: canonicalization over this cohort (pass1 emits merge_queue -> LLM judge fills the
+    # decision cache -> pass2 consumes it and merges). The judge only decides yes/no; every merge
+    # is still applied by the deterministic union-find, and the cache freezes reruns. ---
     if not args.no_canonical:
-        print("[canonicalize]")
-        run([py, str(HERE / "canonicalize_v0.py"),
-             "--run-dir", str(run_dir), "--builds-dir", str(builds_dir),
-             "--ensemble", str(ensemble_path), "--out-dir", str(cohort / "canonical"),
-             "--ctx-min", str(args.ctx_min)], args.dry_run)
+        canon_dir = cohort / "canonical"
+        canon_cmd = [py, str(HERE / "canonicalize_v0.py"),
+                     "--run-dir", str(run_dir), "--builds-dir", str(builds_dir),
+                     "--ensemble", str(ensemble_path), "--out-dir", str(canon_dir),
+                     "--ctx-min", str(args.ctx_min)]
+        print("[canonicalize pass 1 — emit merge_queue]")
+        run(canon_cmd, args.dry_run)
+        print("[judge pending intervention pairs — LLM yes/no, cached]")
+        run([py, str(HERE / "canon_pair_judge.py"), "--canonical-dir", str(canon_dir)], args.dry_run)
+        print("[canonicalize pass 2 — consume cache, merge]")
+        run(canon_cmd, args.dry_run)
 
     meta = {"cohort_id": cohort_id, "n": args.n, "prompts": ps,
             "started": now.isoformat(), "run_dir": str(run_dir),

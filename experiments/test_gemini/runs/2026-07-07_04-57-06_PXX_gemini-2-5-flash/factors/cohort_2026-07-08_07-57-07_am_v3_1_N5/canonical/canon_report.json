@@ -8,7 +8,7 @@
   },
   "after": {
     "context": 76,
-    "intervention": 40,
+    "intervention": 39,
     "eval_metric": 4,
     "am_clusters": 21
   },
@@ -18,7 +18,7 @@
     "uncertain": 0
   },
   "context_dropped": 1,
-  "merge_queue_pending": 1,
+  "merge_queue_pending": 0,
   "cio_field_errors": 10,
   "promoted_interventions": 5,
   "link_jaccard_raw_baseline": 0.363,

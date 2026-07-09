@@ -269,6 +269,11 @@ def canonical_context(consensus, byspan):
 
 
 # ---------- Step C: intervention / reference (rule + cached confirm) ----------
+CAND_OVERLAP = 0.4   # was 0.6 — lower so more near-dupes reach the LLM judge (recall up); only an
+                     # EXACT token-set match still auto-merges without asking. Non-exact pairs at
+                     # or above this go to merge_queue -> canon_pair_judge decides yes/no (cached).
+
+
 def canonical_intervention(consensus, byspan, cache, merge_queue):
     ids = {cc["intervention"] for cc in consensus.values() if cc.get("intervention")}
     ids |= {cc["reference"] for cc in consensus.values() if cc.get("reference")}
@@ -283,14 +288,17 @@ def canonical_intervention(consensus, byspan, cache, merge_queue):
             ta, tb = byspan.get(a, {}).get("text", ""), byspan.get(b, {}).get("text", "")
             ov = tok_overlap(ta, tb)
             if norm_tokens(ta) == norm_tokens(tb):
-                uf.union(a, b)
-            elif ov >= 0.6:
+                uf.union(a, b)                       # exact token-set match: deterministic auto-merge
+            elif ov >= CAND_OVERLAP:
                 key = "|".join(sorted([a, b]))
-                if cache.get(key) == "yes":
-                    uf.union(a, b)
-                elif key not in cache:
+                decision = cache.get(key)
+                if decision == "yes":
+                    uf.union(a, b)                   # judged same (cached)
+                elif decision == "no":
+                    pass                             # judged different (cached) -> keep split
+                else:
                     merge_queue.append({"pair": [a, b], "overlap": round(ov, 2),
-                                        "a": ta[:80], "b": tb[:80]})
+                                        "a": ta[:240], "b": tb[:240]})   # -> canon_pair_judge
     clusters = collections.defaultdict(list)
     for i in ids:
         clusters[uf.find(i)].append(i)

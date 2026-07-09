@@ -1299,21 +1299,23 @@
       ],
       "ref_count": 1
     },
-    "INT_ensemble_result_aggregates_18m_vit_55m": {
-      "canonical_id": "INT_ensemble_result_aggregates_18m_vit_55m",
+    "INT_ensemble_one_vit_one_u_net": {
+      "canonical_id": "INT_ensemble_one_vit_one_u_net",
       "type": "intervention",
-      "gloss": "Our ensemble result aggregates an 18M ViT and a 55M U-Net, each with test-time t",
-      "representative": "C141",
+      "gloss": "we ensemble one ViT and one U-Net, each with test-time training run four times.",
+      "representative": "I65",
       "members": [
-        "C141"
+        "C141",
+        "I65"
       ],
-      "n_members": 1,
+      "n_members": 2,
       "referenced_by": [
         "P46",
         "P47",
+        "P51",
         "P52"
       ],
-      "ref_count": 3
+      "ref_count": 4
     },
     "INT_small_model_only_18_million_parameters": {
       "canonical_id": "INT_small_model_only_18_million_parameters",
@@ -1619,20 +1621,6 @@
         "P45"
       ],
       "ref_count": 2
-    },
-    "INT_ensemble_one_vit_one_u_net": {
-      "canonical_id": "INT_ensemble_one_vit_one_u_net",
-      "type": "intervention",
-      "gloss": "we ensemble one ViT and one U-Net, each with test-time training run four times.",
-      "representative": "I65",
-      "members": [
-        "I65"
-      ],
-      "n_members": 1,
-      "referenced_by": [
-        "P51"
-      ],
-      "ref_count": 1
     },
     "INT_visu_alize_these_400_embeddings_2d": {
       "canonical_id": "INT_visu_alize_these_400_embeddings_2d",
@@ -2379,7 +2367,7 @@
     "C138": "INT_llm_based_results_from_arc_agi",
     "C139": "INT_hrm_trm_varc_trained_from_scratch",
     "C140": "INT_single_model_result_based_vit_mean",
-    "C141": "INT_ensemble_result_aggregates_18m_vit_55m",
+    "C141": "INT_ensemble_one_vit_one_u_net",
     "C145": "CTX_training_controlled_setting_training_from_scratch_arc",
     "C150": "CTX_other_figure_11_visualizes_layer_wise_attention",
     "C151": "CTX_other_layer_wise_map_softmax_attention_map",
@@ -2446,6 +2434,7 @@
     "C113": "INT_u_net",
     "C121": "INT_observed_both_b_absolute_c_relative",
     "C13": "INT_recurrent_models_53_27",
+    "I65": "INT_ensemble_one_vit_one_u_net",
     "E18": "INT_offline_training_data_scaling_effect_varying",
     "E19": "INT_offline_training_task_diversity_scaling_effect",
     "I1": "INT_formulate_arc_within_vision_paradigm_framing",
@@ -2466,7 +2455,6 @@
     "I61": "INT_show_vits_varying_depths_widths",
     "I62": "INT_study_ttt_without_offline_training_ttt",
     "I63": "INT_also_examine_single_view_inference_accuracy",
-    "I65": "INT_ensemble_one_vit_one_u_net",
     "I66": "INT_visu_alize_these_400_embeddings_2d",
     "I77": "INT_only_original_arc_training_data_without",
     "I78": "INT_adding_10_100_1_000_pairs",

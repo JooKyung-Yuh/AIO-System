@@ -1068,7 +1068,7 @@
         "CTX_other_llm_based_results_from_arc_agi",
         "CTX_training_hrm_trm_varc_trained_from_scratch"
       ],
-      "intervention": "INT_ensemble_result_aggregates_18m_vit_55m",
+      "intervention": "INT_ensemble_one_vit_one_u_net",
       "reference": null,
       "eval_metric": "MET_arc1_accuracy",
       "observable": [
@@ -1112,7 +1112,7 @@
         "CTX_other_llm_based_results_from_arc_agi",
         "CTX_training_hrm_trm_varc_trained_from_scratch"
       ],
-      "intervention": "INT_ensemble_result_aggregates_18m_vit_55m",
+      "intervention": "INT_ensemble_one_vit_one_u_net",
       "reference": null,
       "eval_metric": "MET_arc1_accuracy",
       "observable": [
