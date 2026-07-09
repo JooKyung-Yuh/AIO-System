@@ -1,0 +1,121 @@
+[
+  {
+    "pattern": "P20",
+    "field": "context",
+    "bad_value": [
+      "I51"
+    ]
+  },
+  {
+    "pattern": "P22",
+    "field": "context",
+    "bad_value": [
+      "I52"
+    ]
+  },
+  {
+    "pattern": "P28",
+    "field": "context",
+    "bad_value": [
+      "I55"
+    ]
+  },
+  {
+    "pattern": "P39",
+    "field": "intervention",
+    "bad_value": "C132",
+    "layer1_label": "context",
+    "text": "as shown in Tab. 1 for the 66M ViT model."
+  },
+  {
+    "pattern": "P42",
+    "field": "intervention",
+    "bad_value": "P41",
+    "layer1_label": "pattern",
+    "text": "even without offline training, our TTT strategy can achieve nontrivial accuracy"
+  },
+  {
+    "pattern": "P45",
+    "field": "intervention",
+    "bad_value": "C136",
+    "layer1_label": "context",
+    "text": "we adopt multi-view inference by default."
+  },
+  {
+    "pattern": "P59",
+    "field": "intervention",
+    "bad_value": "E18",
+    "layer1_label": "eval_metric",
+    "text": "Offline training data scaling: effect of varying"
+  },
+  {
+    "pattern": "P60",
+    "field": "intervention",
+    "bad_value": "E19",
+    "layer1_label": "eval_metric",
+    "text": "Offline training task diversity scaling: effect of varying"
+  },
+  {
+    "pattern": "P82",
+    "field": "reference",
+    "bad_value": "E36",
+    "layer1_label": "eval_metric",
+    "text": "Ground truth"
+  },
+  {
+    "pattern": "P82",
+    "field": "context",
+    "bad_value": [
+      "A22"
+    ]
+  },
+  {
+    "pattern": "P73",
+    "field": "reference",
+    "bad_value": "E32",
+    "layer1_label": "eval_metric",
+    "text": "correct output"
+  },
+  {
+    "pattern": "P74",
+    "field": "reference",
+    "bad_value": "E32",
+    "layer1_label": "eval_metric",
+    "text": "correct output"
+  },
+  {
+    "pattern": "P78",
+    "field": "reference",
+    "bad_value": "E34",
+    "layer1_label": "eval_metric",
+    "text": "correct output"
+  },
+  {
+    "pattern": "P79",
+    "field": "reference",
+    "bad_value": "E34",
+    "layer1_label": "eval_metric",
+    "text": "correct output"
+  },
+  {
+    "pattern": "P85",
+    "field": "context",
+    "bad_value": [
+      "E39"
+    ]
+  },
+  {
+    "pattern": "P18",
+    "field": "context",
+    "bad_value": [
+      "A9"
+    ]
+  },
+  {
+    "pattern": "P81",
+    "field": "context",
+    "bad_value": [
+      "A21"
+    ]
+  }
+]
