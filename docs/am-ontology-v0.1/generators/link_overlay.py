@@ -3,7 +3,7 @@ Answers: applying the new ontology, what % of v2 links stay as real direct belie
 import json, glob, collections, re, sys
 from pathlib import Path
 
-BASE = Path("/home/elicer/JooKyung/AIO-System")
+BASE = Path(__file__).resolve().parents[3]   # generators/ -> am-ontology-v0.1/ -> docs/ -> repo root
 COH = BASE / "experiments/test_gemini/runs/2026-07-07_04-57-06_PXX_gemini-2-5-flash_assetmerged2/factors/cohort_2026-07-09_08-44-36_am_v3_2_N5"
 SPANS = BASE / "experiments/test_gemini/runs/2026-07-07_04-57-06_PXX_gemini-2-5-flash_assetmerged2/spans.json"
 ANNO = BASE / "docs/am-ontology-v0.1/am_ontology_v0.1_annotations.json"
@@ -82,7 +82,7 @@ meta = {
 OUT_JSON.write_text(json.dumps({"meta": meta, "links": overlay}, indent=2, ensure_ascii=False), encoding="utf-8")
 
 L = [f"# AM ontology v0.1 — link overlay 재해석 ({COH.name})", "",
-     "> prototype (docs-jk, gitignored). 코드/프롬프트 미변경. annotation overlay만 씌운 결정론 재분류.",
+     "> tracked team-review draft. 코드/프롬프트 미변경. annotation overlay만 씌운 결정론 재분류.",
      f"> annotation: `am_ontology_v0.1_annotations.json` · 대상 v2 links(card-level, 5빌드): **{total}**", "",
      "## 핵심 질문: 새 ontology 적용 시 몇 %가 진짜 direct belief_update로 남는가",
      f"### → **keep_direct = {meta['core_metric_direct_belief_update_share']}** ({cat['keep_direct']}/{total})", "",

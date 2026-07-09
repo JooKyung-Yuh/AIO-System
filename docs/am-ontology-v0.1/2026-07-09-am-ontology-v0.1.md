@@ -1,6 +1,6 @@
-# AM Ontology v0.1 — 설계문서 (draft, docs-jk 개인 검토용)
+# AM Ontology v0.1 — 설계문서 (tracked team-review draft)
 
-> 상태: **설계 고정 전용. 코드 변경 금지.** 팀 리뷰 후 tracked docs로 이동.
+> 상태: **tracked team-review draft. 코드 변경 금지.** (`docs/am-ontology-v0.1/`, 팀 리뷰용)
 > 근거: 2026-07-09 L2 link audit (arm-separated assetmerged2 + hygiene + `link_factors_v2` smoke).
 > 선행: asset-L1(coverage) → arm-separation → structural hygiene → `link_factors_v2`(precision)까지 닫힘.
 > 이 문서는 그 다음, **prompt로 안 풀리고 ontology로만 풀리는 문제**를 고정한다.
@@ -209,7 +209,7 @@ Qualifier(observation, 강등된 것 아님): —
 ---
 
 ## 다음 액션 (합의된 순서)
-1. ✅ **이 문서** (AM ontology v0.1, docs-jk)
+1. ✅ **이 문서** (AM ontology v0.1, tracked `docs/am-ontology-v0.1/`)
 2. 팀/검토자 읽고 **구조 동의** (특히 paper_thesis non-linkable, aggregate_claim 신설, observation-leaky 강등)
 3. **prototype**: 기존 canonical AM 23개를 새 타입으로 annotate하는 JSON 생성 (no LLM, 수동/규칙 혼합)
 4. **link graph 재해석**: 기존 링크를 새 ontology(rolls_up/qualifies 분리)로 다시 그려 precision 재추정

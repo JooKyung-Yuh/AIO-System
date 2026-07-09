@@ -2,6 +2,7 @@
   "meta": {
     "source": "cohort_2026-07-09_08-44-36_am_v3_2_N5",
     "total_v2_links": 133,
+    "granularity": "CARD-LEVEL (5빌드 vote-repeated multiset), NOT final consensus edges",
     "projected_counts": {
       "direct_belief_update (Observation->mechanism)": 52,
       "rolls_up (mechanism/aggregate->paper_thesis)": 10,
@@ -9,9 +10,15 @@
       "demoted qualitative_observation links": 24,
       "unresolved (aggregate_claim absent)": 21
     },
+    "unique_edges": {
+      "direct": 27,
+      "all": 66,
+      "note": "card-level direct 52 -> unique (observation,claim) 27; all 133 -> unique 66. precision은 unique 기준으로 봐야 함."
+    },
     "exhaustive_check": 133,
     "belief_update_share": "39%",
-    "new_aggregate_claims_needed": 3
+    "new_aggregate_claims_needed": 2,
+    "aggregate_manual_review": 1
   },
   "direct_edges": [
     {
@@ -708,16 +715,12 @@
           "the canvas-based designs (c–f) has a gain.",
           "the canvas-based designs (c→f) contribute an gain."
         ]
-      },
+      }
+    ],
+    "manual_review": [
       {
-        "proposed_id": "AGG_other_cumulative",
-        "gloss": "Other cumulative/combined result",
-        "claim_type": "aggregate_claim",
-        "would_absorb_links": 1,
-        "rolls_up_to": "MECH_visual_learning_enables_abstraction_inference_without",
-        "example_patterns": [
-          "performing TTT independently for each test task yields subst"
-        ]
+        "pattern_text": "performing TTT independently for each test task yields subst",
+        "reason": "single-link catch-all; leave unresolved, not a claim type"
       }
     ]
   }

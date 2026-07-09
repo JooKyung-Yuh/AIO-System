@@ -4,11 +4,11 @@ link/edge/scope policy deterministically from the assigned ontology_type."""
 import json, glob, collections, sys
 from pathlib import Path
 
-COH = Path("/home/elicer/JooKyung/AIO-System/experiments/test_gemini/runs/"
-           "2026-07-07_04-57-06_PXX_gemini-2-5-flash_assetmerged2/factors/"
-           "cohort_2026-07-09_08-44-36_am_v3_2_N5")
-OUT_JSON = Path("/home/elicer/JooKyung/AIO-System/docs/am-ontology-v0.1/am_ontology_v0.1_annotations.json")
-OUT_MD = Path("/home/elicer/JooKyung/AIO-System/docs/am-ontology-v0.1/2026-07-09-am-ontology-annotation-summary.md")
+BASE = Path(__file__).resolve().parents[3]   # generators/ -> am-ontology-v0.1/ -> docs/ -> repo root
+COH = BASE / ("experiments/test_gemini/runs/2026-07-07_04-57-06_PXX_gemini-2-5-flash_assetmerged2/"
+              "factors/cohort_2026-07-09_08-44-36_am_v3_2_N5")
+OUT_JSON = BASE / "docs/am-ontology-v0.1/am_ontology_v0.1_annotations.json"
+OUT_MD = BASE / "docs/am-ontology-v0.1/2026-07-09-am-ontology-annotation-summary.md"
 
 am = json.load(open(COH / "canonical/am_canonical.json"))
 reg = json.load(open(COH / "canonical/registry.json"))
@@ -118,7 +118,7 @@ OUT_JSON.write_text(json.dumps({"meta": meta, "annotations": annos}, indent=2, e
 
 # --- summary md ---
 L = [f"# AM ontology v0.1 — annotation summary ({COH.name})", "",
-     f"> prototype (docs-jk, gitignored). 코드 미변경. 기준본: `2026-07-09-am-ontology-v0.1.md`", "",
+     f"> tracked team-review draft. 코드 미변경. 기준본: `2026-07-09-am-ontology-v0.1.md`", "",
      f"- AM {len(annos)}개 전부 annotate. fan_in_v2 = {meta['fan_in_basis']}.",
      f"- resolved links {resolved}, excluded {excluded} (합 {resolved+excluded}). type 분포: {dict(type_counts)}", "",
      "## 타입별", ""]

@@ -1,6 +1,6 @@
 # AM ontology v0.1 — annotation summary (cohort_2026-07-09_08-44-36_am_v3_2_N5)
 
-> prototype (docs-jk, gitignored). 코드 미변경. 기준본: `2026-07-09-am-ontology-v0.1.md`
+> tracked team-review draft. 코드 미변경. 기준본: `2026-07-09-am-ontology-v0.1.md`
 
 - AM 23개 전부 annotate. fan_in_v2 = 5 v2 빌드의 card-level links를 canonical AM으로 resolve해 합산(=133, unresolved 0). ensemble nodes.links total(141)은 atom-level(각 link를 AM카드 member atoms로 확장)이라 granularity가 다름 — 133<141은 unresolved 제외가 아니라 card-vs-atom 차이..
 - resolved links 133, excluded 0 (합 133). type 분포: {'paper_thesis': 1, 'mechanism': 12, 'qualitative_observation': 3, 'assumption': 3, 'scope_condition': 2, 'limitation': 2}

@@ -1,6 +1,6 @@
 # AM ontology v0.1 — link overlay 재해석 (cohort_2026-07-09_08-44-36_am_v3_2_N5)
 
-> prototype (docs-jk, gitignored). 코드/프롬프트 미변경. annotation overlay만 씌운 결정론 재분류.
+> tracked team-review draft. 코드/프롬프트 미변경. annotation overlay만 씌운 결정론 재분류.
 > annotation: `am_ontology_v0.1_annotations.json` · 대상 v2 links(card-level, 5빌드): **133**
 
 ## 핵심 질문: 새 ontology 적용 시 몇 %가 진짜 direct belief_update로 남는가

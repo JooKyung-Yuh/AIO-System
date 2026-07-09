@@ -5,7 +5,7 @@ and the aggregate_claim GAP with proposed new claim candidates."""
 import json, collections, re
 from pathlib import Path
 
-BASE = Path("/home/elicer/JooKyung/AIO-System")
+BASE = Path(__file__).resolve().parents[3]   # generators/ -> am-ontology-v0.1/ -> docs/ -> repo root
 OV = json.load(open(BASE / "docs/am-ontology-v0.1/am_ontology_v0.1_link_overlay.json"))
 ANNO = {a["canonical_id"]: a for a in json.load(open(BASE / "docs/am-ontology-v0.1/am_ontology_v0.1_annotations.json"))["annotations"]}
 OUT_JSON = BASE / "docs/am-ontology-v0.1/am_ontology_v0.1_projection_preview.json"
@@ -56,12 +56,21 @@ for o in unres:
 GLOSS = {"AGG_vision_priors_jointly_yield_gain": "Vision priors jointly explain the accuracy gain (cumulative ablation)",
          "AGG_canvas_components_jointly_contribute": "Canvas-based design components jointly contribute to the gain",
          "AGG_other_cumulative": "Other cumulative/combined result"}
-proposed = [{"proposed_id": k, "gloss": GLOSS[k], "claim_type": "aggregate_claim",
-             "would_absorb_links": len(v), "rolls_up_to": THESIS,
-             "example_patterns": sorted(set(v))[:3]} for k, v in sorted(agg.items(), key=lambda kv: -len(kv[1]))]
+proposed, manual_review = [], []
+for k, v in sorted(agg.items(), key=lambda kv: -len(kv[1])):
+    if len(v) >= 2:                                          # single-link catch-all은 claim으로 승격 안 함
+        proposed.append({"proposed_id": k, "gloss": GLOSS[k], "claim_type": "aggregate_claim",
+                         "would_absorb_links": len(v), "rolls_up_to": THESIS, "example_patterns": sorted(set(v))[:3]})
+    else:
+        manual_review += [{"pattern_text": p, "reason": "single-link catch-all; leave unresolved, not a claim type"} for p in v]
+
+# reviewer 지적: 아래 count는 CARD-LEVEL(5빌드 vote-repeated multiset)이지 최종 consensus edge가 아님.
+unique_direct = len({(d["observation"], d["claim"]) for d in direct})
+unique_all = len({(o["pattern"], o["target"], o["category"]) for o in links})
 
 meta = {
     "source": OV["meta"]["source_cohort"], "total_v2_links": OV["meta"]["total_v2_links"],
+    "granularity": "CARD-LEVEL (5빌드 vote-repeated multiset), NOT final consensus edges",
     "projected_counts": {
         "direct_belief_update (Observation->mechanism)": len(direct),
         "rolls_up (mechanism/aggregate->paper_thesis)": len(rolls_up),
@@ -69,18 +78,24 @@ meta = {
         "demoted qualitative_observation links": sum(demoted.values()),
         "unresolved (aggregate_claim absent)": len(unres),
     },
+    "unique_edges": {"direct": unique_direct, "all": unique_all,
+                     "note": f"card-level direct {len(direct)} -> unique (observation,claim) {unique_direct}; "
+                             f"all 133 -> unique {unique_all}. precision은 unique 기준으로 봐야 함."},
     "exhaustive_check": len(direct) + len(qual) + sum(demoted.values()) + len(thesis_removed) + len(unres),
     "belief_update_share": f"{round(100*len(direct)/OV['meta']['total_v2_links'])}%",
     "new_aggregate_claims_needed": len(proposed),
+    "aggregate_manual_review": len(manual_review),
 }
 preview = {"meta": meta, "direct_edges": direct, "rolls_up_edges": rolls_up, "qualifier_edges": qual,
            "demoted_to_observation": demoted_nodes, "thesis_direct_removed": thesis_removed,
-           "unresolved_needing_aggregate_claim": {"count": len(unres), "proposed_aggregate_claims": proposed}}
+           "unresolved_needing_aggregate_claim": {"count": len(unres), "proposed_aggregate_claims": proposed,
+                                                   "manual_review": manual_review}}
 OUT_JSON.write_text(json.dumps(preview, indent=2, ensure_ascii=False), encoding="utf-8")
 
 L = [f"# AM ontology v0.1 — projection preview ({meta['source']})", "",
-     "> prototype (docs-jk, gitignored). **코드/프롬프트 미변경.** overlay를 새 ontology 그래프로 투영한 결정론 artifact.",
-     f"> 대상 v2 links: **{meta['total_v2_links']}** (card-level, 5빌드)", "",
+     "> tracked team-review draft. **코드/프롬프트 미변경.** overlay를 새 ontology 그래프로 투영한 결정론 artifact.",
+     f"> 대상 v2 links: **{meta['total_v2_links']}** (card-level, 5빌드 vote-repeated). ⚠️ 이 count는 최종 consensus edge가 아니라 multiset — "
+     f"unique (observation,claim) direct **{unique_direct}**, 전체 unique {unique_all}. precision은 unique 기준.", "",
      "## 새 ontology로 투영한 factor graph 구조", "",
      f"- **Observation → Claim(mechanism) direct**: {len(direct)}  ← 진짜 belief_update ({meta['belief_update_share']})",
      f"- **Claim → paper_thesis rolls_up**: {len(rolls_up)} mechanism (+ 신규 aggregate_claim {len(proposed)}개)",
@@ -111,7 +126,7 @@ L += ["", "## 판정 (preview가 말하는 것)",
       f"1. 133 link 5범주 소진: {meta['exhaustive_check']}=={meta['total_v2_links']} → {meta['exhaustive_check']==meta['total_v2_links']}",
       f"2. keep_direct 52만 belief_update: {len(direct)==52} ({len(direct)})",
       f"3. aggregate gap 대표패턴+신규 claim 제안: {len(proposed)}개 후보, {len(unres)} link 커버",
-      f"4. 코드/프롬프트 변경: 없음 (docs-jk artifact only)"]
+      f"4. 코드/프롬프트 변경: 없음 (tracked docs artifact only)"]
 OUT_MD.write_text("\n".join(L), encoding="utf-8")
 print(f"wrote {OUT_JSON.name} + {OUT_MD.name}")
 print(f"projected: direct={len(direct)} rolls_up={len(rolls_up)}mech qualifier={len(qual)} demoted={sum(demoted.values())} unresolved={len(unres)}")
