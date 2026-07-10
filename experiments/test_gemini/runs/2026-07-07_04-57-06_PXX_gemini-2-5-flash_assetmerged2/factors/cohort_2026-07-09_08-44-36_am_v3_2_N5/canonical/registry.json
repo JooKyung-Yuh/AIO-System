@@ -3077,7 +3077,9 @@
       "link_policy": "direct_link_allowed",
       "representative": "AGG_vision_priors_jointly_yield_gain",
       "members": [],
-      "n_members": 3,
+      "n_members": 0,
+      "n_supporting_observations": 3,
+      "band": "observed",
       "rolls_up_to": "MECH_visual_learning_enables_abstraction_inference_without",
       "referenced_by": [
         "P20",
@@ -3085,7 +3087,6 @@
         "P26"
       ],
       "ref_count": 3,
-      "band": "observed",
       "status": "tested",
       "strengthened_by": [
         "P20",
@@ -3104,14 +3105,15 @@
       "link_policy": "direct_link_allowed",
       "representative": "AGG_canvas_components_jointly_contribute",
       "members": [],
-      "n_members": 2,
+      "n_members": 0,
+      "n_supporting_observations": 2,
+      "band": "observed",
       "rolls_up_to": "MECH_visual_learning_enables_abstraction_inference_without",
       "referenced_by": [
         "P21",
         "P23"
       ],
       "ref_count": 2,
-      "band": "observed",
       "status": "tested",
       "strengthened_by": [
         "P21",

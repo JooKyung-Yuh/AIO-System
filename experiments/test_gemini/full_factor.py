@@ -61,7 +61,7 @@ def load_belief_edges(cohort):
 STATUS_MARK = {"tested": "✓ tested", "contested": "⚔ contested",
                "assumed": "? assumed", "weakly-tested": "~ weak"}
 BUCKET_KEY = {"direct": "beliefs", "reported_as_main_result": "reported",
-              "qualifier": "qualifiers", "demoted": "demoted"}
+              "unresolved_thesis_link": "unresolved", "qualifier": "qualifiers", "demoted": "demoted"}
 
 
 def render(cohort, run_dir):
@@ -80,7 +80,7 @@ def render(cohort, run_dir):
     factors = []
     for i, c in enumerate(pats, 1):
         prov = c.get("provenance") or {}
-        by_bucket = {"beliefs": [], "reported": [], "qualifiers": [], "demoted": []}
+        by_bucket = {"beliefs": [], "reported": [], "unresolved": [], "qualifiers": [], "demoted": []}
         for e in sorted(edges.get(c["pattern"], []),
                         key=lambda e: (e["bucket"], -e["n_builds"], e["target"], e["direction"])):
             rec = am_reg.get(e["target"], {})
@@ -102,6 +102,7 @@ def render(cohort, run_dir):
             "field_mismatch": list((c.get("field_mismatch") or {}).keys()) or None,
             "beliefs": by_bucket["beliefs"],
             "reported": by_bucket["reported"],
+            "unresolved": by_bucket["unresolved"],
             "qualifiers": by_bucket["qualifiers"],
             "demoted": by_bucket["demoted"],
         })
@@ -117,16 +118,16 @@ def to_md(factors, propose, unobserved_q, rolls_up, cohort_name):
     st_ct = collections.Counter(b["status"] for f in factors for b in f["beliefs"])
     pol_ct = collections.Counter()
     for f in factors:
-        for k in ("beliefs", "reported", "qualifiers", "demoted"):
+        for k in ("beliefs", "reported", "unresolved", "qualifiers", "demoted"):
             pol_ct[k] += len(f[k])
     pol_ct["rolls_up"] = len(rolls_up)
     lines = [f"# Full factor graph — {cohort_name}", "",
              f"{len(factors)} observations · {len(propose)} propose_test (untested direct claims) · "
              f"{len(unobserved_q)} unobserved qualifiers.",
              "Belief edges are link_policy-enforced: only **direct** edges (↑/↓) are genuine "
-             "Observation→mechanism|aggregate belief_update. reported_as_main_result (headline→thesis), "
-             "qualifier, demoted are re-routed and are **not** belief_update; aggregate_claim→thesis "
-             "rolls_up is listed separately.", ""]
+             "Observation→mechanism|aggregate belief_update. reported_as_main_result (audited headline→thesis), "
+             "unresolved_thesis_link (thesis edge still needing a specific mechanism), qualifier, demoted "
+             "are re-routed and are **not** belief_update; claim→thesis rolls_up is listed separately.", ""]
     lines.append("## Observations (φ) → beliefs (δ)")
     for f in factors:
         head = f"### {f['factor_id']} · {f['pattern']} · {f.get('pattern_class') or '?'}"
@@ -149,6 +150,8 @@ def to_md(factors, propose, unobserved_q, rolls_up, cohort_name):
             lines.append("    - _(no direct belief edge)_")
         for b in f["reported"]:
             lines.append(f"    - ★ _reported_as_main_result (headline, not belief)_ (n{b['n_builds']}) {b['gloss'][:58]}")
+        for b in f["unresolved"]:
+            lines.append(f"    - ⁇ _unresolved thesis link (needs specific mechanism)_ (n{b['n_builds']}) {b['gloss'][:52]}")
         for b in f["qualifiers"]:
             lines.append(f"    - ◇ _qualifier (not belief)_ (n{b['n_builds']}) {b['gloss'][:66]}")
         for b in f["demoted"]:
@@ -157,10 +160,11 @@ def to_md(factors, propose, unobserved_q, rolls_up, cohort_name):
             lines.append(f"- ⚠️ field mismatch: {f['field_mismatch']}")
         lines.append("")
     if rolls_up:
-        lines += ["## aggregate_claim → thesis (rolls_up)",
-                  "_cumulative-ablation observations roll up into a joint claim, which rolls up into the thesis._", ""]
+        lines += ["## claim → thesis (rolls_up)",
+                  "_supported claims (mechanism | aggregate_claim) roll up into the paper_thesis; "
+                  "n_supporting = observations backing that claim._", ""]
         for e in rolls_up:
-            lines.append(f"- ⤴ **{e['observation']}** → {e['target']}  (n{e['n_builds']})")
+            lines.append(f"- ⤴ **{e['observation']}** → {e['target']}  (n_supporting={e['n_supporting_observations']})")
         lines.append("")
     lines += ["## propose_test — untested direct claims (AIO differentiator)",
               "_direct_link_allowed beliefs asserted with zero observation — candidates for a test._", ""]

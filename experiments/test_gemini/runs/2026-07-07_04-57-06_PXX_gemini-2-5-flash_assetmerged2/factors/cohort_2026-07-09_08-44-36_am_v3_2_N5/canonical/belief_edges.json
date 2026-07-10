@@ -129,24 +129,26 @@
       "n_builds": 2
     },
     {
-      "observation": "P16",
+      "observation": "P49",
       "target": "MECH_visual_learning_enables_abstraction_inference_without",
       "direction": "strengthen",
       "edge_type": "reported_as_main_result",
+      "n_builds": 2
+    }
+  ],
+  "unresolved_thesis_link": [
+    {
+      "observation": "P16",
+      "target": "MECH_visual_learning_enables_abstraction_inference_without",
+      "direction": "strengthen",
+      "edge_type": "unresolved_thesis_link",
       "n_builds": 2
     },
     {
       "observation": "P48",
       "target": "MECH_visual_learning_enables_abstraction_inference_without",
       "direction": "strengthen",
-      "edge_type": "reported_as_main_result",
-      "n_builds": 2
-    },
-    {
-      "observation": "P49",
-      "target": "MECH_visual_learning_enables_abstraction_inference_without",
-      "direction": "strengthen",
-      "edge_type": "reported_as_main_result",
+      "edge_type": "unresolved_thesis_link",
       "n_builds": 2
     }
   ],
@@ -156,14 +158,84 @@
       "target": "MECH_visual_learning_enables_abstraction_inference_without",
       "direction": "rolls_up",
       "edge_type": "rolls_up",
-      "n_builds": 5
+      "n_supporting_observations": 2
     },
     {
       "observation": "AGG_vision_priors_jointly_yield_gain",
       "target": "MECH_visual_learning_enables_abstraction_inference_without",
       "direction": "rolls_up",
       "edge_type": "rolls_up",
-      "n_builds": 5
+      "n_supporting_observations": 3
+    },
+    {
+      "observation": "MECH_canvas_formulation_enables_augmentations_translation_scale",
+      "target": "MECH_visual_learning_enables_abstraction_inference_without",
+      "direction": "rolls_up",
+      "edge_type": "rolls_up",
+      "n_supporting_observations": 3
+    },
+    {
+      "observation": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+      "target": "MECH_visual_learning_enables_abstraction_inference_without",
+      "direction": "rolls_up",
+      "edge_type": "rolls_up",
+      "n_supporting_observations": 4
+    },
+    {
+      "observation": "MECH_early_layer_attention_reflects_pattern_core",
+      "target": "MECH_visual_learning_enables_abstraction_inference_without",
+      "direction": "rolls_up",
+      "edge_type": "rolls_up",
+      "n_supporting_observations": 1
+    },
+    {
+      "observation": "MECH_explicit_2d_positional_modeling_preserves_image",
+      "target": "MECH_visual_learning_enables_abstraction_inference_without",
+      "direction": "rolls_up",
+      "edge_type": "rolls_up",
+      "n_supporting_observations": 1
+    },
+    {
+      "observation": "MECH_increasing_model_size_improves_accuracy_enabling",
+      "target": "MECH_visual_learning_enables_abstraction_inference_without",
+      "direction": "rolls_up",
+      "edge_type": "rolls_up",
+      "n_supporting_observations": 1
+    },
+    {
+      "observation": "MECH_later_layer_attention_reflects_rule_extending",
+      "target": "MECH_visual_learning_enables_abstraction_inference_without",
+      "direction": "rolls_up",
+      "edge_type": "rolls_up",
+      "n_supporting_observations": 1
+    },
+    {
+      "observation": "MECH_majority_voting_consolidates_predictions_from_different",
+      "target": "MECH_visual_learning_enables_abstraction_inference_without",
+      "direction": "rolls_up",
+      "edge_type": "rolls_up",
+      "n_supporting_observations": 8
+    },
+    {
+      "observation": "MECH_model_handles_ambiguity_proposing_multiple_rule",
+      "target": "MECH_visual_learning_enables_abstraction_inference_without",
+      "direction": "rolls_up",
+      "edge_type": "rolls_up",
+      "n_supporting_observations": 2
+    },
+    {
+      "observation": "MECH_patchification_provides_locality_translation_invariance_inductive",
+      "target": "MECH_visual_learning_enables_abstraction_inference_without",
+      "direction": "rolls_up",
+      "edge_type": "rolls_up",
+      "n_supporting_observations": 1
+    },
+    {
+      "observation": "MECH_visual_common_sense_learned_from_offline",
+      "target": "MECH_visual_learning_enables_abstraction_inference_without",
+      "direction": "rolls_up",
+      "edge_type": "rolls_up",
+      "n_supporting_observations": 6
     }
   ],
   "qualifier": [

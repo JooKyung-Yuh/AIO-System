@@ -1,7 +1,7 @@
 # Full factor graph — cohort_2026-07-09_08-44-36_am_v3_2_N5
 
 100 observations · 2 propose_test (untested direct claims) · 3 unobserved qualifiers.
-Belief edges are link_policy-enforced: only **direct** edges (↑/↓) are genuine Observation→mechanism|aggregate belief_update. reported_as_main_result (headline→thesis), qualifier, demoted are re-routed and are **not** belief_update; aggregate_claim→thesis rolls_up is listed separately.
+Belief edges are link_policy-enforced: only **direct** edges (↑/↓) are genuine Observation→mechanism|aggregate belief_update. reported_as_main_result (audited headline→thesis), unresolved_thesis_link (thesis edge still needing a specific mechanism), qualifier, demoted are re-routed and are **not** belief_update; claim→thesis rolls_up is listed separately.
 
 ## Observations (φ) → beliefs (δ)
 ### F001 · P1 · primary_result · _Section 1_
@@ -45,7 +45,7 @@ Belief edges are link_policy-enforced: only **direct** edges (↑/↓) are genui
 - **context**: VARC
 - **observed**: correctly solves these challenging tasks. (up)
     - _(no direct belief edge)_
-    - ★ _reported_as_main_result (headline, not belief)_ (n2) Visual learning enables abstraction/inference without lang
+    - ⁇ _unresolved thesis link (needs specific mechanism)_ (n2) Visual learning enables abstraction/inference withou
 
 ### F008 · P18 · primary_result · _Section 3.5_
 - **context**: Test-time training (TTT).; Given a single new, unseen task T∈ Ttest from the test set, we perform inference by test-time training.; At inference time, we are given Demo={(xi, Yi)}m=1 with both input and output accessible; the model is required to make prediction for a given Xinfer in this new task T.; The test-time training followed by inference can be viewed abstractly as a function F(Xinfer | Demo)→ Yinfer.
@@ -258,7 +258,7 @@ Belief edges are link_policy-enforced: only **direct** edges (↑/↓) are genui
 - **intervention**: we compare with leading results using LLMs or recurrent models, on ARC-1 and ARC-2.
 - **observed**: Our model compares favorably with some of the most powerful LLMs at the time their results were reported: in-cluding Deepseek, Claude, o3, and GPT-5 (up)
     - _(no direct belief edge)_
-    - ★ _reported_as_main_result (headline, not belief)_ (n2) Visual learning enables abstraction/inference without lang
+    - ⁇ _unresolved thesis link (needs specific mechanism)_ (n2) Visual learning enables abstraction/inference withou
 
 ### F044 · P49 · comparison · _Section 5.3_
 - **context**: In the controlled setting of training from scratch on ARC data
@@ -601,11 +601,21 @@ Belief edges are link_policy-enforced: only **direct** edges (↑/↓) are genui
     - _(no direct belief edge)_
     - ∅ _demoted-observation (not belief)_ (n5) TTT visualization shows model adapting to task-specific tran
 
-## aggregate_claim → thesis (rolls_up)
-_cumulative-ablation observations roll up into a joint claim, which rolls up into the thesis._
+## claim → thesis (rolls_up)
+_supported claims (mechanism | aggregate_claim) roll up into the paper_thesis; n_supporting = observations backing that claim._
 
-- ⤴ **AGG_canvas_components_jointly_contribute** → MECH_visual_learning_enables_abstraction_inference_without  (n5)
-- ⤴ **AGG_vision_priors_jointly_yield_gain** → MECH_visual_learning_enables_abstraction_inference_without  (n5)
+- ⤴ **AGG_canvas_components_jointly_contribute** → MECH_visual_learning_enables_abstraction_inference_without  (n_supporting=2)
+- ⤴ **AGG_vision_priors_jointly_yield_gain** → MECH_visual_learning_enables_abstraction_inference_without  (n_supporting=3)
+- ⤴ **MECH_canvas_formulation_enables_augmentations_translation_scale** → MECH_visual_learning_enables_abstraction_inference_without  (n_supporting=3)
+- ⤴ **MECH_canvas_patchification_enriches_data_reduces_overfitting** → MECH_visual_learning_enables_abstraction_inference_without  (n_supporting=4)
+- ⤴ **MECH_early_layer_attention_reflects_pattern_core** → MECH_visual_learning_enables_abstraction_inference_without  (n_supporting=1)
+- ⤴ **MECH_explicit_2d_positional_modeling_preserves_image** → MECH_visual_learning_enables_abstraction_inference_without  (n_supporting=1)
+- ⤴ **MECH_increasing_model_size_improves_accuracy_enabling** → MECH_visual_learning_enables_abstraction_inference_without  (n_supporting=1)
+- ⤴ **MECH_later_layer_attention_reflects_rule_extending** → MECH_visual_learning_enables_abstraction_inference_without  (n_supporting=1)
+- ⤴ **MECH_majority_voting_consolidates_predictions_from_different** → MECH_visual_learning_enables_abstraction_inference_without  (n_supporting=8)
+- ⤴ **MECH_model_handles_ambiguity_proposing_multiple_rule** → MECH_visual_learning_enables_abstraction_inference_without  (n_supporting=2)
+- ⤴ **MECH_patchification_provides_locality_translation_invariance_inductive** → MECH_visual_learning_enables_abstraction_inference_without  (n_supporting=1)
+- ⤴ **MECH_visual_common_sense_learned_from_offline** → MECH_visual_learning_enables_abstraction_inference_without  (n_supporting=6)
 
 ## propose_test — untested direct claims (AIO differentiator)
 _direct_link_allowed beliefs asserted with zero observation — candidates for a test._
@@ -621,4 +631,4 @@ _flagged, but NOT propose_test targets: a qualifier is not a belief to strengthe
 - **ASM_multiple_unseen_tasks_cannot_assumed_simultaneously** — Multiple unseen tasks cannot be assumed simultaneously.  (_assumption_, 2 raw nodes)
 
 _direct belief edge status tally: {'tested': 12, 'weakly-tested': 5}_
-_edges by policy: {'beliefs': 17, 'reported': 4, 'qualifiers': 7, 'demoted': 6, 'rolls_up': 2}_
+_edges by policy: {'beliefs': 17, 'reported': 2, 'unresolved': 2, 'qualifiers': 7, 'demoted': 6, 'rolls_up': 12}_

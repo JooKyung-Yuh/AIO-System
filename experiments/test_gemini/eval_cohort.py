@@ -60,7 +60,7 @@ def summarize_across(cohort_dirs, out=None):
     shift larger than the std is signal. Pure deterministic aggregation — no LLM."""
     keys = ["assum", "mech", "cio", "link_raw", "field_errors", "promoted", "comp_refs", "comp_total",
             "st_assumed", "st_contested", "st_tested", "st_rollup", "st_qualifier", "st_demoted",
-            "be_direct", "be_reported", "be_rolls_up", "be_qualifier", "be_demoted",
+            "be_direct", "be_reported", "be_unresolved", "be_rolls_up", "be_qualifier", "be_demoted",
             "propose_test", "unobserved_qual"]
     acc = {k: [] for k in keys}
     per_cohort = []
@@ -95,6 +95,7 @@ def summarize_across(cohort_dirs, out=None):
             "st_demoted": amst.get("demoted_observation", 0),
             "be_direct": bep.get("direct", 0),
             "be_reported": bep.get("reported_as_main_result", 0),
+            "be_unresolved": bep.get("unresolved_thesis_link", 0),
             "be_rolls_up": bep.get("rolls_up", 0),
             "be_qualifier": bep.get("qualifier", 0),
             "be_demoted": bep.get("demoted", 0),

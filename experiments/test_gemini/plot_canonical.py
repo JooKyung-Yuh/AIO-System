@@ -34,6 +34,7 @@ TYPE_COLOR = {"mechanism": "#2a78d6", "assumption": "#7c4dff", "intervention": "
 ONTOLOGY_COLOR = {"mechanism": "#2a78d6", "aggregate_claim": "#1f9e8f", "paper_thesis": "#d4a017",
                   "assumption": "#7c4dff", "scope_condition": "#9c6ade", "precondition": "#b39ddb",
                   "limitation": "#c2185b", "qualitative_observation": "#898781"}
+ROLLUP = "#a8791f"                                        # claim -> thesis roll-up edge (thesis-gold family)
 BAND_ALPHA = {"observed": 0.9, "supported": 0.55, "uncertain": 0.28}
 
 
@@ -60,22 +61,25 @@ def location_order(run_dir):
 
 
 def load_belief_edges(cohort, n_builds_max=5):
-    """Read canonical/belief_edges.json (produced by canonicalize AFTER link_policy enforcement)
-    instead of recomputing raw ensemble links (which would re-mix thesis/qualifier/demoted as
-    'belief'). Returns (direct, nondirect):
-      direct    {(pattern, cam, direction): conf}  genuine Observation->mechanism belief_update
-      nondirect {(pattern, cam, bucket):    conf}  rolls_up / qualifier / demoted (NOT belief_update)
+    """Read canonical/belief_edges.json (link_policy-enforced) for the 4-column graph. Returns:
+      direct     {(pat, claim, dir): conf}     pat -> mechanism|aggregate (belief_update)
+      nd_claim   {(pat, claim, bucket): conf}   pat -> qualifier|demoted claim (NOT belief)
+      obs_thesis {(pat, thesis, bucket): conf}  pat -> thesis (reported_as_main_result | unresolved)
+      rollups    [(claim, thesis, n_supporting)] claim -> thesis (rolls_up, the 2-level edge)
     conf = n_builds / n_builds_max so edge opacity reflects reproducibility."""
     be = load(cohort / "canonical" / "belief_edges.json")
-    direct, nondirect = {}, {}
+    direct, nd_claim, obs_thesis, rollups = {}, {}, {}, []
     for e in be.get("direct", []):
         direct[(e["observation"], e["target"], e["direction"])] = e["n_builds"] / n_builds_max
-    # rolls_up (aggregate_claim->thesis) is claim-level: its source is an AM, not a CIO pattern, so it is
-    # skipped by the pattern->AM drawing loop; reported_as_main_result / qualifier / demoted are pattern-sourced.
-    for bucket in ("reported_as_main_result", "rolls_up", "qualifier", "demoted"):
+    for bucket in ("qualifier", "demoted"):
         for e in be.get(bucket, []):
-            nondirect[(e["observation"], e["target"], bucket)] = e["n_builds"] / n_builds_max
-    return direct, nondirect
+            nd_claim[(e["observation"], e["target"], bucket)] = e["n_builds"] / n_builds_max
+    for bucket in ("reported_as_main_result", "unresolved_thesis_link"):
+        for e in be.get(bucket, []):
+            obs_thesis[(e["observation"], e["target"], bucket)] = e["n_builds"] / n_builds_max
+    for e in be.get("rolls_up", []):
+        rollups.append((e["observation"], e["target"], e.get("n_supporting_observations", 0)))
+    return direct, nd_claim, obs_thesis, rollups
 
 
 # ------------------------------------------------------------- hub backbone
@@ -114,8 +118,8 @@ def plot_hubs(registry, out, top=30):
     plt.close(fig)
 
 
-# ----------------------------------------------------- location -> obs -> belief
-def plot_canonical_graph(cons, registry, direct, nondirect, loc_order, out):
+# -------------------------------------- location -> observation -> claim -> thesis (4 columns)
+def plot_canonical_graph(cons, registry, direct, nd_claim, obs_thesis, rollups, loc_order, out):
     import matplotlib.pyplot as plt
     from matplotlib.patches import FancyArrowPatch, Patch
     from matplotlib.lines import Line2D
@@ -131,37 +135,48 @@ def plot_canonical_graph(cons, registry, direct, nondirect, loc_order, out):
             locs.append(loc)
 
     am_reg = registry["am"]
+    thesis_ids = sorted(a for a, r in am_reg.items() if r.get("ontology_type") == "paper_thesis")
+    thesis_set = set(thesis_ids)
     out_votes = collections.Counter()
     for (pat, cam, d) in direct:
         out_votes[cam] += 1
-    ams = sorted(am_reg.keys(), key=lambda a: (-out_votes[a], a))
+    claims = sorted((a for a in am_reg if a not in thesis_set), key=lambda a: (-out_votes[a], a))
 
     def spaced(k):
         return [1 - (i + 0.5) / k for i in range(k)] if k else []
 
     y_loc = dict(zip(locs, spaced(len(locs))))
     y_pat = {c["pattern"]: y for c, y in zip(pats, spaced(len(pats)))}
-    y_am = dict(zip(ams, spaced(len(ams))))
-    X_LOC, X_PAT, X_AM = 0.0, 1.0, 2.0
+    y_claim = dict(zip(claims, spaced(len(claims))))
+    y_thesis = dict(zip(thesis_ids, [0.5] if len(thesis_ids) == 1 else spaced(len(thesis_ids))))
+    X_LOC, X_PAT, X_CLAIM, X_THESIS = 0.0, 1.0, 2.0, 3.0
 
-    fig, ax = plt.subplots(figsize=(15, max(9, 0.26 * len(pats))))
+    fig, ax = plt.subplots(figsize=(17, max(9, 0.26 * len(pats))))
 
-    for c in pats:
+    for c in pats:                                           # location -> observation
         loc = (c.get("provenance") or {}).get("location", "?")
         ax.add_patch(FancyArrowPatch((X_LOC, y_loc[loc]), (X_PAT, y_pat[c["pattern"]]),
-                     connectionstyle="arc3,rad=0.12", arrowstyle="-", lw=0.4,
-                     color=MUTED, alpha=0.16, zorder=1))
-    for (pat, cam, bucket), conf in nondirect.items():       # re-routed: not belief_update -> muted, dashed
-        if pat in y_pat and cam in y_am:
-            ax.add_patch(FancyArrowPatch((X_PAT, y_pat[pat]), (X_AM, y_am[cam]),
+                     connectionstyle="arc3,rad=0.12", arrowstyle="-", lw=0.4, color=MUTED, alpha=0.16, zorder=1))
+    for (pat, cam, bucket), conf in nd_claim.items():        # observation -> qualifier/demoted claim (not belief)
+        if pat in y_pat and cam in y_claim:
+            ax.add_patch(FancyArrowPatch((X_PAT, y_pat[pat]), (X_CLAIM, y_claim[cam]),
                          connectionstyle="arc3,rad=0.1", arrowstyle="-", lw=0.5, linestyle=(0, (2, 2)),
                          color=MUTED, alpha=0.10 + 0.28 * conf, zorder=2))
-    for (pat, cam, d), conf in direct.items():               # genuine Observation->mechanism belief_update
-        if pat in y_pat and cam in y_am:
+    for (pat, cam, d), conf in direct.items():               # observation -> mechanism/aggregate (belief_update)
+        if pat in y_pat and cam in y_claim:
             col = STRENGTHEN if d == "strengthen" else WEAKEN if d == "weaken" else MUTED
-            ax.add_patch(FancyArrowPatch((X_PAT, y_pat[pat]), (X_AM, y_am[cam]),
-                         connectionstyle="arc3,rad=0.1", arrowstyle="-", lw=0.7,
-                         color=col, alpha=0.18 + 0.5 * conf, zorder=3))
+            ax.add_patch(FancyArrowPatch((X_PAT, y_pat[pat]), (X_CLAIM, y_claim[cam]),
+                         connectionstyle="arc3,rad=0.1", arrowstyle="-", lw=0.7, color=col, alpha=0.18 + 0.5 * conf, zorder=3))
+    for (pat, tgt, bucket), conf in obs_thesis.items():      # observation -> thesis (headline/unresolved), skips claim col
+        if pat in y_pat and tgt in y_thesis:
+            ax.add_patch(FancyArrowPatch((X_PAT, y_pat[pat]), (X_THESIS, y_thesis[tgt]),
+                         connectionstyle="arc3,rad=0.22", arrowstyle="-", lw=0.5, linestyle=(0, (1, 2)),
+                         color=MUTED, alpha=0.12 + 0.3 * conf, zorder=2))
+    for (src, tgt, nsupp) in rollups:                        # claim -> thesis (rolls_up), the 2-level edge
+        if src in y_claim and tgt in y_thesis:
+            ax.add_patch(FancyArrowPatch((X_CLAIM, y_claim[src]), (X_THESIS, y_thesis[tgt]),
+                         connectionstyle="arc3,rad=0.15", arrowstyle="-|>", mutation_scale=8,
+                         lw=0.9, color=ROLLUP, alpha=0.6, zorder=4))
 
     for l, y in y_loc.items():
         ax.scatter(X_LOC, y, s=52, marker="s", color=BASELINE, edgecolors=MUTED, linewidths=0.5, zorder=3)
@@ -171,28 +186,31 @@ def plot_canonical_graph(cons, registry, direct, nondirect, loc_order, out):
         miss_ref = cls == "comparison" and not (c.get("canonical") or {}).get("reference")
         ax.scatter(X_PAT, y_pat[c["pattern"]], s=40,
                    color=COMPARISON_CLS if cls == "comparison" else PRIMARY_CLS,
-                   edgecolors=WEAKEN if miss_ref else "white",
-                   linewidths=1.1 if miss_ref else 0.4, zorder=3)
-    for a in ams:
+                   edgecolors=WEAKEN if miss_ref else "white", linewidths=1.1 if miss_ref else 0.4, zorder=3)
+    for a in claims:
         rec = am_reg[a]
-        v = out_votes[a]
-        ax.scatter(X_AM, y_am[a], s=70 + 120 * (rec.get("ref_count", 0) ** 0.5),
+        ax.scatter(X_CLAIM, y_claim[a], s=70 + 120 * (rec.get("ref_count", 0) ** 0.5),
                    color=ONTOLOGY_COLOR.get(rec.get("ontology_type"), TYPE_COLOR.get(rec.get("type"), INK)),
-                   alpha=BAND_ALPHA.get(rec.get("band"), 0.9),
-                   edgecolors=MUTED, linewidths=0.6, zorder=3)
-        ax.text(X_AM + 0.06, y_am[a], (rec.get("gloss") or a)[:34], va="center", ha="left",
-                fontsize=6.5, color=INK if v else MUTED)
+                   alpha=BAND_ALPHA.get(rec.get("band"), 0.9), edgecolors=MUTED, linewidths=0.6, zorder=3)
+        ax.text(X_CLAIM + 0.05, y_claim[a], (rec.get("gloss") or a)[:30], va="center", ha="left",
+                fontsize=6.3, color=INK if out_votes[a] else MUTED)
+    for a in thesis_ids:                                     # thesis column
+        rec = am_reg[a]
+        ax.scatter(X_THESIS, y_thesis[a], s=200, color=ONTOLOGY_COLOR["paper_thesis"],
+                   alpha=0.92, edgecolors=MUTED, linewidths=0.8, zorder=3)
+        ax.text(X_THESIS + 0.05, y_thesis[a], (rec.get("gloss") or a)[:34], va="center", ha="left",
+                fontsize=7, color=INK, weight="bold")
 
     for x, lab in ((X_LOC, "paper location"), (X_PAT, "observation (canonical CIO)"),
-                   (X_AM, "belief (canonical M/A)")):
-        ax.text(x, 1.03, lab, ha="center", va="bottom", fontsize=10, color=SECOND, weight="bold")
+                   (X_CLAIM, "claim (mechanism / aggregate / qualifier)"), (X_THESIS, "paper_thesis")):
+        ax.text(x, 1.03, lab, ha="center", va="bottom", fontsize=9.5, color=SECOND, weight="bold")
     legend = [
         Patch(facecolor=PRIMARY_CLS, edgecolor="none", label="primary_result"),
         Patch(facecolor=COMPARISON_CLS, edgecolor="none", label="comparison"),
-        Patch(facecolor="white", edgecolor=WEAKEN, label="comparison missing reference"),
         Patch(facecolor=STRENGTHEN, edgecolor="none", label="strengthen"),
         Patch(facecolor=WEAKEN, edgecolor="none", label="weaken"),
         Line2D([0], [0], color=MUTED, lw=1.0, linestyle=(0, (2, 2)), label="re-routed (not belief)"),
+        Line2D([0], [0], color=ROLLUP, lw=1.2, label="rolls_up → thesis"),
     ]
     leg1 = ax.legend(handles=legend, loc="lower center", bbox_to_anchor=(0.5, -0.04),
                      ncol=6, fontsize=8, frameon=False)
@@ -213,12 +231,12 @@ def plot_canonical_graph(cons, registry, direct, nondirect, loc_order, out):
         Line2D([0], [0], marker="o", linestyle="none", markersize=8, markeredgecolor="none",
                markerfacecolor=ONTOLOGY_COLOR["qualitative_observation"], label="demoted observation"),
     ]
-    ax.legend(handles=onto_legend, loc="upper right", bbox_to_anchor=(1.04, 1.0), fontsize=7.5,
+    ax.legend(handles=onto_legend, loc="upper right", bbox_to_anchor=(1.03, 1.0), fontsize=7.5,
               frameon=False, title="belief node type", title_fontsize=8)
-    ax.set_xlim(-0.6, 2.75)
+    ax.set_xlim(-0.6, 3.9)
     ax.set_ylim(-0.05, 1.1)
     ax.axis("off")
-    ax.set_title("AIO canonical factor graph — location → observation → belief",
+    ax.set_title("AIO canonical factor graph — location → observation → claim → thesis",
                  fontsize=13, color=INK, pad=6)
     fig.savefig(out, dpi=150, bbox_inches="tight")
     plt.close(fig)
@@ -270,7 +288,7 @@ def main():
     cohort = Path(args.cohort)
     cons = load(cohort / "canonical" / "cio_consensus.json")
     registry = load(cohort / "canonical" / "registry.json")
-    direct, nondirect = load_belief_edges(cohort)
+    direct, nd_claim, obs_thesis, rollups = load_belief_edges(cohort)
     loc_order = location_order(args.run_dir)
 
     try:
@@ -284,7 +302,7 @@ def main():
     out_dir = Path(args.out_dir) if args.out_dir else cohort / "plots"
     out_dir.mkdir(parents=True, exist_ok=True)
     plot_hubs(registry, out_dir / "canonical_hubs.png")
-    plot_canonical_graph(cons, registry, direct, nondirect, loc_order, out_dir / "canonical_graph.png")
+    plot_canonical_graph(cons, registry, direct, nd_claim, obs_thesis, rollups, loc_order, out_dir / "canonical_graph.png")
     plot_belief_tally(registry, direct, out_dir / "belief_tally.png")
     for name in ("canonical_hubs.png", "canonical_graph.png", "belief_tally.png"):
         print(f"saved: {out_dir / name}")

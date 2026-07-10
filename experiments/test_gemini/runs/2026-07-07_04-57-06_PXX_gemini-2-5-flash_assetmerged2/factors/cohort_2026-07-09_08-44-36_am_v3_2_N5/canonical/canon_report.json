@@ -42,8 +42,9 @@
   },
   "belief_edges_by_policy": {
     "direct": 17,
-    "reported_as_main_result": 4,
-    "rolls_up": 2,
+    "reported_as_main_result": 2,
+    "unresolved_thesis_link": 2,
+    "rolls_up": 12,
     "qualifier": 7,
     "demoted": 6
   },
