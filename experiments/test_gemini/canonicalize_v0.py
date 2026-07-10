@@ -476,11 +476,18 @@ def build_claim_graph(am_canon, am_edges, cfg):
       * a claims_roll_up_to_thesis id that is the thesis itself or not a direct_link_allowed claim."""
     aggs = cfg.get("aggregate_claims", []) or []
     rollup_ids = cfg.get("claims_roll_up_to_thesis", []) or []
-    if not aggs and not rollup_ids:
+    reported = set(cfg.get("reported_as_main_result_observations", []) or [])
+    if not aggs and not rollup_ids and not reported:     # a reported-only config still audits headlines
         return [], set(), None
     thesis_id = resolve_thesis_id(am_canon, cfg)
 
-    # ---- phase 1: validate everything, mutate nothing ----
+    # ---- phase 1: validate everything (incl. full aggregate schema), mutate nothing ----
+    for a in aggs:                                        # schema BEFORE mutation so a missing gloss/id can't
+        missing_fields = [f for f in ("id", "gloss", "observation_ids") if f not in a]   # KeyError after re-routing
+        if missing_fields:
+            raise ValueError(f"aggregate config missing required field(s) {missing_fields}: {a}")
+        if not isinstance(a["observation_ids"], list) or not a["observation_ids"]:
+            raise ValueError(f"aggregate {a['id']!r}: observation_ids must be a non-empty list")
     agg_ids, obs2agg = [], {}
     for a in aggs:
         aid = a["id"]
@@ -489,22 +496,24 @@ def build_claim_graph(am_canon, am_edges, cfg):
         if aid in agg_ids:
             raise ValueError(f"duplicate aggregate id {aid!r} in config")
         agg_ids.append(aid)
-        for pid in a.get("observation_ids", []):
+        for pid in a["observation_ids"]:
             if pid in obs2agg:
                 raise ValueError(f"observation {pid!r} assigned to two aggregates: {obs2agg[pid]} and {aid}")
             obs2agg[pid] = aid
     edge_pats = {p for e in am_edges.values() for (p, d) in e}   # patterns that carry a re-routable edge
     for a in aggs:
-        oids = a.get("observation_ids", [])
+        oids = a["observation_ids"]
         missing = [p for p in oids if p not in edge_pats]
-        if not oids:
-            raise ValueError(f"aggregate {a['id']!r} has no observation_ids")
         if len(missing) == len(oids):
             raise ValueError(f"aggregate {a['id']!r} matched zero belief edges (observation_ids={oids})")
         if missing:
             raise ValueError(f"aggregate {a['id']!r}: observation_ids with no re-routable belief edge: {missing}")
     will_be_direct = set(agg_ids) | {c for c, r in am_canon.items() if r.get("link_policy") == "direct_link_allowed"}
+    seen_rollup = set()
     for cid in rollup_ids:
+        if cid in seen_rollup:
+            raise ValueError(f"duplicate claims_roll_up_to_thesis id {cid!r}")
+        seen_rollup.add(cid)
         if cid == thesis_id:
             raise ValueError("claims_roll_up_to_thesis: the thesis cannot roll up into itself")
         if cid not in am_canon and cid not in set(agg_ids):
@@ -529,7 +538,7 @@ def build_claim_graph(am_canon, am_edges, cfg):
             "band": "observed" if mx >= 4 else "supported" if mx >= 2 else "uncertain",
             "rolls_up_to": thesis_id}
     rolls_up_pairs = [(cid, thesis_id) for cid in rollup_ids]
-    return rolls_up_pairs, set(cfg.get("reported_as_main_result_observations", []) or []), thesis_id
+    return rolls_up_pairs, reported, thesis_id
 
 
 def main():
@@ -711,6 +720,11 @@ def main():
                for e in belief_edges["reported_as_main_result"] + belief_edges["unresolved_thesis_link"]):
         raise RuntimeError("reported_as_main_result / unresolved_thesis_link must target the thesis")
 
+    # audit: configured headline ids that never matched an emitted thesis edge (the list is a superset,
+    # so surface the unused ones instead of silently ignoring them).
+    used_main = {e["observation"] for e in belief_edges["reported_as_main_result"]}
+    reported_unused = sorted(main_result_obs - used_main)
+
     am_band = collections.Counter(v["band"] for v in am_canon.values())
     report = {
         "n_builds": n,
@@ -727,6 +741,7 @@ def main():
         "am_ontology_types": dict(collections.Counter(v.get("ontology_type") for v in am_canon.values())),
         "am_link_policies": dict(collections.Counter(v.get("link_policy") for v in am_canon.values())),
         "belief_edges_by_policy": {k: len(v) for k, v in belief_edges.items()},
+        "reported_as_main_result_unused": reported_unused,
         "propose_test_direct_claims": sorted(cid for cid, v in am_canon.items() if v.get("propose_test")),
         "unobserved_qualifiers": sorted(cid for cid, v in am_canon.items() if v.get("unobserved_qualifier")),
         "context_dropped": len(dropped),

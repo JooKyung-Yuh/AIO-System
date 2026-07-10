@@ -48,6 +48,14 @@
     "qualifier": 7,
     "demoted": 6
   },
+  "reported_as_main_result_unused": [
+    "P1",
+    "P44",
+    "P46",
+    "P52",
+    "P8",
+    "P9"
+  ],
   "propose_test_direct_claims": [
     "MECH_attention_masks_loss_focus_improve_foreground",
     "MECH_average_pooling_aggregates_predictions_raw_grid"

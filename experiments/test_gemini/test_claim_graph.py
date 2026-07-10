@@ -147,6 +147,34 @@ check(set(am) == before_nodes, "no aggregate node added after a rejected config 
 check({c: {k: set(v) for k, v in e[c].items()} for c in list(e)} == before_edges,
       "am_edges unchanged after a rejected config (no partial mutation)")
 
+# a missing-gloss aggregate must be rejected in phase 1 (schema) BEFORE any edge is moved
+am, e = fresh()
+mg_nodes = set(am)
+mg_edges = {c: {k: set(v) for k, v in e[c].items()} for c in list(e)}
+results.append(expect_error(
+    lambda: build_claim_graph(am, e, {"aggregate_claims": [{"id": "AGG_x", "observation_ids": ["P20"]}]}),
+    "missing required field"))
+check(set(am) == mg_nodes, "missing-gloss: no aggregate node added (rejected before mutation)")
+check({c: {k: set(v) for k, v in e[c].items()} for c in list(e)} == mg_edges,
+      "missing-gloss: am_edges unchanged (rejected before mutation)")
+
+def empty_oids():
+    am, e = fresh()
+    build_claim_graph(am, e, {"aggregate_claims": [{"id": "AGG_x", "gloss": "g", "observation_ids": []}]})
+results.append(expect_error(empty_oids, "non-empty list"))
+
+def dup_rollup():
+    am, e = fresh()
+    build_claim_graph(am, e, {"claims_roll_up_to_thesis": ["MECH_a", "MECH_a"]})
+results.append(expect_error(dup_rollup, "duplicate claims_roll_up_to_thesis"))
+
+# a reported-only config must NOT be early-returned away — it still audits headlines
+am, e = fresh()
+rolls_r, main_r, tid_r = build_claim_graph(am, e, {"reported_as_main_result_observations": ["P12", "P49"]})
+check(main_r == {"P12", "P49"}, "reported-only config returns the audited set (not silently dropped)")
+check(tid_r == "THESIS", "reported-only config still resolves the thesis")
+check(rolls_r == [], "reported-only config produces no rolls_up")
+
 fails = [r for r in results if r]
 if fails:
     print("\n".join(fails))
