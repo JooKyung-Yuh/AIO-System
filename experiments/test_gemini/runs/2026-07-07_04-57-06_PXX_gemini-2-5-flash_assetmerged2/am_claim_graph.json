@@ -1,0 +1,31 @@
+{
+  "_note": "VARC-tuned claim-graph config (migration spec §2/§3, per-paper). Explicit ids only (no substring matching). canonicalize validates every field and FAILS FAST (ValueError) on: unknown/duplicate observation_ids, aggregate id collision, thesis cardinality != 1, a rollup id that is not a direct_link_allowed claim, or an aggregate that matched zero belief edges. Do NOT move into the system core. P24/P25 (2D-ROPE) are deliberately NOT aggregated: precision-audit flagged them as Fig7 ladder cross-links, an L1/link-v3 problem that must not be masked by claim reclassification.",
+  "paper_thesis_id": "MECH_visual_learning_enables_abstraction_inference_without",
+  "aggregate_claims": [
+    {
+      "id": "AGG_vision_priors_jointly_yield_gain",
+      "gloss": "Vision priors jointly explain the accuracy gain (cumulative ablation a->f)",
+      "observation_ids": ["P20", "P22", "P26"]
+    },
+    {
+      "id": "AGG_canvas_components_jointly_contribute",
+      "gloss": "Canvas-based design components jointly contribute to the gain (c->f)",
+      "observation_ids": ["P21", "P23"]
+    }
+  ],
+  "claims_roll_up_to_thesis": [
+    "MECH_canvas_formulation_enables_augmentations_translation_scale",
+    "MECH_canvas_patchification_enriches_data_reduces_overfitting",
+    "MECH_early_layer_attention_reflects_pattern_core",
+    "MECH_explicit_2d_positional_modeling_preserves_image",
+    "MECH_increasing_model_size_improves_accuracy_enabling",
+    "MECH_later_layer_attention_reflects_rule_extending",
+    "MECH_majority_voting_consolidates_predictions_from_different",
+    "MECH_model_handles_ambiguity_proposing_multiple_rule",
+    "MECH_patchification_provides_locality_translation_invariance_inductive",
+    "MECH_visual_common_sense_learned_from_offline",
+    "AGG_vision_priors_jointly_yield_gain",
+    "AGG_canvas_components_jointly_contribute"
+  ],
+  "reported_as_main_result_observations": ["P1", "P8", "P9", "P12", "P44", "P46", "P49", "P52"]
+}
