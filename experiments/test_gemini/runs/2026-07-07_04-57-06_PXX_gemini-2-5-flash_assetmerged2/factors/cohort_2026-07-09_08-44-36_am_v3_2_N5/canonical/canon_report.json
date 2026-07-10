@@ -10,19 +10,19 @@
     "context": 97,
     "intervention": 51,
     "eval_metric": 6,
-    "am_clusters": 23
+    "am_clusters": 25
   },
   "am_cluster_bands": {
-    "observed": 10,
+    "observed": 12,
     "supported": 13,
     "uncertain": 0
   },
   "am_status": {
-    "tested": 4,
+    "tested": 5,
     "rollup_target": 1,
     "qualifier": 4,
     "assumed": 5,
-    "weakly-tested": 6,
+    "weakly-tested": 7,
     "demoted_observation": 3
   },
   "am_ontology_types": {
@@ -31,17 +31,19 @@
     "assumption": 3,
     "qualitative_observation": 3,
     "scope_condition": 2,
-    "limitation": 2
+    "limitation": 2,
+    "aggregate_claim": 2
   },
   "am_link_policies": {
-    "direct_link_allowed": 12,
+    "direct_link_allowed": 14,
     "rolls_up_only": 1,
     "qualifier_only": 7,
     "no_direct_link": 3
   },
   "belief_edges_by_policy": {
     "direct": 17,
-    "rolls_up": 4,
+    "reported_as_main_result": 4,
+    "rolls_up": 2,
     "qualifier": 7,
     "demoted": 6
   },

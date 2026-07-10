@@ -112,21 +112,18 @@
     "confidence": 1.0,
     "band": "observed",
     "referenced_by": [
-      "P23",
       "P24",
       "P25",
-      "P26",
       "P27",
       "P28"
     ],
-    "ref_count": 6,
+    "ref_count": 4,
     "ontology_type": "mechanism",
     "link_policy": "direct_link_allowed",
     "status": "tested",
     "strengthened_by": [
       "P24",
       "P25",
-      "P26",
       "P28"
     ],
     "weakened_by": [],
@@ -295,22 +292,13 @@
     "confidence": 1.0,
     "band": "observed",
     "referenced_by": [
-      "P20",
-      "P21",
-      "P22",
-      "P23",
       "P25"
     ],
-    "ref_count": 5,
+    "ref_count": 1,
     "ontology_type": "mechanism",
     "link_policy": "direct_link_allowed",
-    "status": "tested",
-    "strengthened_by": [
-      "P20",
-      "P21",
-      "P22",
-      "P23"
-    ],
+    "status": "weakly-tested",
+    "strengthened_by": [],
     "weakened_by": [],
     "propose_test": false,
     "unobserved_qualifier": false
@@ -623,6 +611,58 @@
     "status": "weakly-tested",
     "strengthened_by": [
       "P29"
+    ],
+    "weakened_by": [],
+    "propose_test": false,
+    "unobserved_qualifier": false
+  },
+  "AGG_vision_priors_jointly_yield_gain": {
+    "canonical_id": "AGG_vision_priors_jointly_yield_gain",
+    "type": "aggregate_claim",
+    "gloss": "Vision priors jointly explain the accuracy gain (cumulative ablation a->f)",
+    "ontology_type": "aggregate_claim",
+    "link_policy": "direct_link_allowed",
+    "representative": "AGG_vision_priors_jointly_yield_gain",
+    "members": [],
+    "n_members": 3,
+    "rolls_up_to": "MECH_visual_learning_enables_abstraction_inference_without",
+    "referenced_by": [
+      "P20",
+      "P22",
+      "P26"
+    ],
+    "ref_count": 3,
+    "band": "observed",
+    "status": "tested",
+    "strengthened_by": [
+      "P20",
+      "P22",
+      "P26"
+    ],
+    "weakened_by": [],
+    "propose_test": false,
+    "unobserved_qualifier": false
+  },
+  "AGG_canvas_components_jointly_contribute": {
+    "canonical_id": "AGG_canvas_components_jointly_contribute",
+    "type": "aggregate_claim",
+    "gloss": "Canvas-based design components jointly contribute to the gain (c->f)",
+    "ontology_type": "aggregate_claim",
+    "link_policy": "direct_link_allowed",
+    "representative": "AGG_canvas_components_jointly_contribute",
+    "members": [],
+    "n_members": 2,
+    "rolls_up_to": "MECH_visual_learning_enables_abstraction_inference_without",
+    "referenced_by": [
+      "P21",
+      "P23"
+    ],
+    "ref_count": 2,
+    "band": "observed",
+    "status": "tested",
+    "strengthened_by": [
+      "P21",
+      "P23"
     ],
     "weakened_by": [],
     "propose_test": false,

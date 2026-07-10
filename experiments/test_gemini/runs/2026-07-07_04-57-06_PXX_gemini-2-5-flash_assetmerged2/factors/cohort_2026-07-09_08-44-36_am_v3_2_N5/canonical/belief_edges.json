@@ -1,6 +1,41 @@
 {
   "direct": [
     {
+      "observation": "P21",
+      "target": "AGG_canvas_components_jointly_contribute",
+      "direction": "strengthen",
+      "edge_type": "strengthen",
+      "n_builds": 5
+    },
+    {
+      "observation": "P23",
+      "target": "AGG_canvas_components_jointly_contribute",
+      "direction": "strengthen",
+      "edge_type": "strengthen",
+      "n_builds": 3
+    },
+    {
+      "observation": "P20",
+      "target": "AGG_vision_priors_jointly_yield_gain",
+      "direction": "strengthen",
+      "edge_type": "strengthen",
+      "n_builds": 4
+    },
+    {
+      "observation": "P22",
+      "target": "AGG_vision_priors_jointly_yield_gain",
+      "direction": "strengthen",
+      "edge_type": "strengthen",
+      "n_builds": 5
+    },
+    {
+      "observation": "P26",
+      "target": "AGG_vision_priors_jointly_yield_gain",
+      "direction": "strengthen",
+      "edge_type": "strengthen",
+      "n_builds": 3
+    },
+    {
       "observation": "P28",
       "target": "MECH_canvas_formulation_enables_augmentations_translation_scale",
       "direction": "strengthen",
@@ -36,43 +71,8 @@
       "n_builds": 3
     },
     {
-      "observation": "P26",
-      "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
-      "direction": "strengthen",
-      "edge_type": "strengthen",
-      "n_builds": 3
-    },
-    {
       "observation": "P28",
       "target": "MECH_canvas_patchification_enriches_data_reduces_overfitting",
-      "direction": "strengthen",
-      "edge_type": "strengthen",
-      "n_builds": 2
-    },
-    {
-      "observation": "P20",
-      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
-      "direction": "strengthen",
-      "edge_type": "strengthen",
-      "n_builds": 4
-    },
-    {
-      "observation": "P21",
-      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
-      "direction": "strengthen",
-      "edge_type": "strengthen",
-      "n_builds": 5
-    },
-    {
-      "observation": "P22",
-      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
-      "direction": "strengthen",
-      "edge_type": "strengthen",
-      "n_builds": 5
-    },
-    {
-      "observation": "P23",
-      "target": "MECH_explicit_2d_positional_modeling_preserves_image",
       "direction": "strengthen",
       "edge_type": "strengthen",
       "n_builds": 2
@@ -120,34 +120,50 @@
       "n_builds": 5
     }
   ],
-  "rolls_up": [
+  "reported_as_main_result": [
     {
       "observation": "P12",
       "target": "MECH_visual_learning_enables_abstraction_inference_without",
       "direction": "strengthen",
-      "edge_type": "rolls_up",
+      "edge_type": "reported_as_main_result",
       "n_builds": 2
     },
     {
       "observation": "P16",
       "target": "MECH_visual_learning_enables_abstraction_inference_without",
       "direction": "strengthen",
-      "edge_type": "rolls_up",
+      "edge_type": "reported_as_main_result",
       "n_builds": 2
     },
     {
       "observation": "P48",
       "target": "MECH_visual_learning_enables_abstraction_inference_without",
       "direction": "strengthen",
-      "edge_type": "rolls_up",
+      "edge_type": "reported_as_main_result",
       "n_builds": 2
     },
     {
       "observation": "P49",
       "target": "MECH_visual_learning_enables_abstraction_inference_without",
       "direction": "strengthen",
-      "edge_type": "rolls_up",
+      "edge_type": "reported_as_main_result",
       "n_builds": 2
+    }
+  ],
+  "rolls_up": [
+    {
+      "observation": "AGG_canvas_components_jointly_contribute",
+      "target": "MECH_visual_learning_enables_abstraction_inference_without",
+      "direction": "rolls_up",
+      "edge_type": "rolls_up",
+      "n_builds": 5
+    },
+    {
+      "observation": "AGG_vision_priors_jointly_yield_gain",
+      "target": "MECH_visual_learning_enables_abstraction_inference_without",
+      "direction": "rolls_up",
+      "edge_type": "rolls_up",
+      "n_builds": 5
     }
   ],
   "qualifier": [

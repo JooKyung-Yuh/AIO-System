@@ -1,0 +1,15 @@
+{
+  "_note": "VARC-tuned aggregate_claim definitions (migration spec §2/§3, per-paper). Cumulative-ablation observations that support a JOINT claim (not a single mechanism rung) are moved off their ladder-confused single-mechanism target onto the aggregate_claim, which rolls_up to the paper_thesis. Matched by observation pattern-text substring (cohort-stable). Do NOT move into the system core. P24/P25 (2D-ROPE/positional) are deliberately excluded: precision-audit flagged them as Fig7 ladder cross-links, an L1/link-v3 problem that must not be masked by claim reclassification.",
+  "aggregate_claims": [
+    {
+      "id": "AGG_vision_priors_jointly_yield_gain",
+      "gloss": "Vision priors jointly explain the accuracy gain (cumulative ablation a->f)",
+      "match_observation_text": ["cumulatively yield", "priors jointly", "(d-f) all benefit"]
+    },
+    {
+      "id": "AGG_canvas_components_jointly_contribute",
+      "gloss": "Canvas-based design components jointly contribute to the gain (c->f)",
+      "match_observation_text": ["canvas-based designs (c"]
+    }
+  ]
+}

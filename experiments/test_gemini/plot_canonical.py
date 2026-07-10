@@ -70,7 +70,9 @@ def load_belief_edges(cohort, n_builds_max=5):
     direct, nondirect = {}, {}
     for e in be.get("direct", []):
         direct[(e["observation"], e["target"], e["direction"])] = e["n_builds"] / n_builds_max
-    for bucket in ("rolls_up", "qualifier", "demoted"):
+    # rolls_up (aggregate_claim->thesis) is claim-level: its source is an AM, not a CIO pattern, so it is
+    # skipped by the pattern->AM drawing loop; reported_as_main_result / qualifier / demoted are pattern-sourced.
+    for bucket in ("reported_as_main_result", "rolls_up", "qualifier", "demoted"):
         for e in be.get(bucket, []):
             nondirect[(e["observation"], e["target"], bucket)] = e["n_builds"] / n_builds_max
     return direct, nondirect
@@ -195,13 +197,17 @@ def plot_canonical_graph(cons, registry, direct, nondirect, loc_order, out):
     leg1 = ax.legend(handles=legend, loc="lower center", bbox_to_anchor=(0.5, -0.04),
                      ncol=6, fontsize=8, frameon=False)
     ax.add_artist(leg1)
-    onto_legend = [
+    onto_legend = [                                          # one swatch per ontology_type color (1:1)
         Line2D([0], [0], marker="o", linestyle="none", markersize=8, markeredgecolor="none",
-               markerfacecolor=ONTOLOGY_COLOR["mechanism"], label="mechanism / aggregate (direct)"),
+               markerfacecolor=ONTOLOGY_COLOR["mechanism"], label="mechanism (direct)"),
+        Line2D([0], [0], marker="o", linestyle="none", markersize=8, markeredgecolor="none",
+               markerfacecolor=ONTOLOGY_COLOR["aggregate_claim"], label="aggregate_claim (direct)"),
         Line2D([0], [0], marker="o", linestyle="none", markersize=8, markeredgecolor="none",
                markerfacecolor=ONTOLOGY_COLOR["paper_thesis"], label="paper_thesis (rolls_up)"),
         Line2D([0], [0], marker="o", linestyle="none", markersize=8, markeredgecolor="none",
-               markerfacecolor=ONTOLOGY_COLOR["assumption"], label="qualifier (assumption / scope)"),
+               markerfacecolor=ONTOLOGY_COLOR["assumption"], label="assumption"),
+        Line2D([0], [0], marker="o", linestyle="none", markersize=8, markeredgecolor="none",
+               markerfacecolor=ONTOLOGY_COLOR["scope_condition"], label="scope_condition"),
         Line2D([0], [0], marker="o", linestyle="none", markersize=8, markeredgecolor="none",
                markerfacecolor=ONTOLOGY_COLOR["limitation"], label="limitation"),
         Line2D([0], [0], marker="o", linestyle="none", markersize=8, markeredgecolor="none",

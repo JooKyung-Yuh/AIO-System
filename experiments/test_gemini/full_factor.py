@@ -43,20 +43,25 @@ def _t(node_of, nid):
 
 def load_belief_edges(cohort):
     """Index canonical/belief_edges.json (produced by canonicalize AFTER link_policy enforcement) by
-    observation pattern. Each edge carries its policy bucket (direct / rolls_up / qualifier / demoted)
-    so the doc separates genuine Observation->mechanism belief from re-routed edges instead of
-    recomputing raw ensemble links (which would re-mix thesis/qualifier/demoted as 'belief')."""
+    observation pattern. Each edge carries its policy bucket (direct / reported_as_main_result /
+    qualifier / demoted) so the doc separates genuine Observation->mechanism belief from re-routed
+    edges instead of recomputing raw ensemble links. rolls_up edges are claim-level (aggregate_claim
+    -> paper_thesis, not sourced from a CIO observation) so they are returned separately."""
     be = load(cohort / "canonical" / "belief_edges.json")
     by_pat = collections.defaultdict(list)
     for bucket, rows in be.items():
+        if bucket == "rolls_up":
+            continue
         for e in rows:
             by_pat[e["observation"]].append({**e, "bucket": bucket})
-    return by_pat
+    rolls_up = sorted(be.get("rolls_up", []), key=lambda e: (e["target"], e["observation"]))
+    return by_pat, rolls_up
 
 
 STATUS_MARK = {"tested": "✓ tested", "contested": "⚔ contested",
                "assumed": "? assumed", "weakly-tested": "~ weak"}
-BUCKET_KEY = {"direct": "beliefs", "rolls_up": "rolls_up", "qualifier": "qualifiers", "demoted": "demoted"}
+BUCKET_KEY = {"direct": "beliefs", "reported_as_main_result": "reported",
+              "qualifier": "qualifiers", "demoted": "demoted"}
 
 
 def render(cohort, run_dir):
@@ -65,7 +70,7 @@ def render(cohort, run_dir):
     spans = load(Path(run_dir) / "spans.json")
     node_of = {s["node_id"]: {"text": s.get("text", ""), "note": s.get("note", "")} for s in spans}
     am_reg = registry["am"]
-    edges = load_belief_edges(cohort)
+    edges, rolls_up = load_belief_edges(cohort)
     loc_order = location_order(run_dir)
 
     def loc_rank(c):
@@ -75,7 +80,7 @@ def render(cohort, run_dir):
     factors = []
     for i, c in enumerate(pats, 1):
         prov = c.get("provenance") or {}
-        by_bucket = {"beliefs": [], "rolls_up": [], "qualifiers": [], "demoted": []}
+        by_bucket = {"beliefs": [], "reported": [], "qualifiers": [], "demoted": []}
         for e in sorted(edges.get(c["pattern"], []),
                         key=lambda e: (e["bucket"], -e["n_builds"], e["target"], e["direction"])):
             rec = am_reg.get(e["target"], {})
@@ -96,7 +101,7 @@ def render(cohort, run_dir):
             "canonical": c.get("canonical"),
             "field_mismatch": list((c.get("field_mismatch") or {}).keys()) or None,
             "beliefs": by_bucket["beliefs"],
-            "rolls_up": by_bucket["rolls_up"],
+            "reported": by_bucket["reported"],
             "qualifiers": by_bucket["qualifiers"],
             "demoted": by_bucket["demoted"],
         })
@@ -105,21 +110,23 @@ def render(cohort, run_dir):
                      key=lambda r: r.get("canonical_id", ""))
     unobserved_q = sorted((rec for rec in am_reg.values() if rec.get("unobserved_qualifier")),
                           key=lambda r: r.get("canonical_id", ""))
-    return factors, propose, unobserved_q, am_reg
+    return factors, propose, unobserved_q, rolls_up, am_reg
 
 
-def to_md(factors, propose, unobserved_q, cohort_name):
+def to_md(factors, propose, unobserved_q, rolls_up, cohort_name):
     st_ct = collections.Counter(b["status"] for f in factors for b in f["beliefs"])
     pol_ct = collections.Counter()
     for f in factors:
-        for k in ("beliefs", "rolls_up", "qualifiers", "demoted"):
+        for k in ("beliefs", "reported", "qualifiers", "demoted"):
             pol_ct[k] += len(f[k])
+    pol_ct["rolls_up"] = len(rolls_up)
     lines = [f"# Full factor graph — {cohort_name}", "",
              f"{len(factors)} observations · {len(propose)} propose_test (untested direct claims) · "
              f"{len(unobserved_q)} unobserved qualifiers.",
              "Belief edges are link_policy-enforced: only **direct** edges (↑/↓) are genuine "
-             "Observation→mechanism belief_update; rolls_up / qualifier / demoted are re-routed and "
-             "are **not** belief_update.", ""]
+             "Observation→mechanism|aggregate belief_update. reported_as_main_result (headline→thesis), "
+             "qualifier, demoted are re-routed and are **not** belief_update; aggregate_claim→thesis "
+             "rolls_up is listed separately.", ""]
     lines.append("## Observations (φ) → beliefs (δ)")
     for f in factors:
         head = f"### {f['factor_id']} · {f['pattern']} · {f.get('pattern_class') or '?'}"
@@ -140,14 +147,20 @@ def to_md(factors, propose, unobserved_q, cohort_name):
             lines.append(f"    - {arrow} _{mark}_ (n{b['n_builds']}) {b['gloss'][:70]}")
         if not f["beliefs"]:
             lines.append("    - _(no direct belief edge)_")
-        for b in f["rolls_up"]:
-            lines.append(f"    - ⤴ _rolls_up→thesis_ (n{b['n_builds']}) {b['gloss'][:66]}")
+        for b in f["reported"]:
+            lines.append(f"    - ★ _reported_as_main_result (headline, not belief)_ (n{b['n_builds']}) {b['gloss'][:58]}")
         for b in f["qualifiers"]:
             lines.append(f"    - ◇ _qualifier (not belief)_ (n{b['n_builds']}) {b['gloss'][:66]}")
         for b in f["demoted"]:
             lines.append(f"    - ∅ _demoted-observation (not belief)_ (n{b['n_builds']}) {b['gloss'][:60]}")
         if f["field_mismatch"]:
             lines.append(f"- ⚠️ field mismatch: {f['field_mismatch']}")
+        lines.append("")
+    if rolls_up:
+        lines += ["## aggregate_claim → thesis (rolls_up)",
+                  "_cumulative-ablation observations roll up into a joint claim, which rolls up into the thesis._", ""]
+        for e in rolls_up:
+            lines.append(f"- ⤴ **{e['observation']}** → {e['target']}  (n{e['n_builds']})")
         lines.append("")
     lines += ["## propose_test — untested direct claims (AIO differentiator)",
               "_direct_link_allowed beliefs asserted with zero observation — candidates for a test._", ""]
@@ -170,15 +183,16 @@ def main():
     ap.add_argument("--cohort", required=True, help="cohort dir (ensemble.json + canonical/)")
     args = ap.parse_args()
     cohort = Path(args.cohort)
-    factors, propose, unobserved_q, _ = render(cohort, args.run_dir)
+    factors, propose, unobserved_q, rolls_up, _ = render(cohort, args.run_dir)
     (cohort / "full_factor.json").write_text(
         json.dumps({"factors": factors,
                     "propose_test_direct_claims": [r.get("canonical_id") for r in propose],
-                    "unobserved_qualifiers": [r.get("canonical_id") for r in unobserved_q]},
+                    "unobserved_qualifiers": [r.get("canonical_id") for r in unobserved_q],
+                    "aggregate_rolls_up": rolls_up},
                    indent=2, ensure_ascii=False), encoding="utf-8")
-    (cohort / "full_factor.md").write_text(to_md(factors, propose, unobserved_q, cohort.name), encoding="utf-8")
-    print(f"{len(factors)} factors, {len(propose)} propose_test, {len(unobserved_q)} unobserved_qual "
-          f"-> {cohort/'full_factor.md'}")
+    (cohort / "full_factor.md").write_text(to_md(factors, propose, unobserved_q, rolls_up, cohort.name), encoding="utf-8")
+    print(f"{len(factors)} factors, {len(propose)} propose_test, {len(unobserved_q)} unobserved_qual, "
+          f"{len(rolls_up)} rolls_up -> {cohort/'full_factor.md'}")
 
 
 if __name__ == "__main__":

@@ -1,7 +1,7 @@
 # Full factor graph — cohort_2026-07-09_08-44-36_am_v3_2_N5
 
 100 observations · 2 propose_test (untested direct claims) · 3 unobserved qualifiers.
-Belief edges are link_policy-enforced: only **direct** edges (↑/↓) are genuine Observation→mechanism belief_update; rolls_up / qualifier / demoted are re-routed and are **not** belief_update.
+Belief edges are link_policy-enforced: only **direct** edges (↑/↓) are genuine Observation→mechanism|aggregate belief_update. reported_as_main_result (headline→thesis), qualifier, demoted are re-routed and are **not** belief_update; aggregate_claim→thesis rolls_up is listed separately.
 
 ## Observations (φ) → beliefs (δ)
 ### F001 · P1 · primary_result · _Section 1_
@@ -21,7 +21,7 @@ Belief edges are link_policy-enforced: only **direct** edges (↑/↓) are genui
 - **intervention**: Combining VARC models through ensembling [29]
 - **observed**: matching the reported average human performance [31] on the ARC-1 dataset. (flat)  [metric: accuracy]
     - _(no direct belief edge)_
-    - ⤴ _rolls_up→thesis_ (n2) Visual learning enables abstraction/inference without language.
+    - ★ _reported_as_main_result (headline, not belief)_ (n2) Visual learning enables abstraction/inference without lang
 
 ### F004 · P7 · primary_result · _Section 1_
 - **context**: Our framework, termed Vision ARC (VARC)
@@ -45,7 +45,7 @@ Belief edges are link_policy-enforced: only **direct** edges (↑/↓) are genui
 - **context**: VARC
 - **observed**: correctly solves these challenging tasks. (up)
     - _(no direct belief edge)_
-    - ⤴ _rolls_up→thesis_ (n2) Visual learning enables abstraction/inference without language.
+    - ★ _reported_as_main_result (headline, not belief)_ (n2) Visual learning enables abstraction/inference without lang
 
 ### F008 · P18 · primary_result · _Section 3.5_
 - **context**: Test-time training (TTT).; Given a single new, unseen task T∈ Ttest from the test set, we perform inference by test-time training.; At inference time, we are given Demo={(xi, Yi)}m=1 with both input and output accessible; the model is required to make prediction for a given Xinfer in this new task T.; The test-time training followed by inference can be viewed abstractly as a function F(Xinfer | Demo)→ Yinfer.
@@ -106,23 +106,23 @@ Belief edges are link_policy-enforced: only **direct** edges (↑/↓) are genui
 - **context**: ARC-1 evaluation set.; The model used is ViT-18M.
 - **intervention**: Entries (a-c) use a patch size of 1×1 on a 32×32 canvas, whereas entries (d-f) use a patch size of 2×2 on a 64×64 canvas.  _vs_  We start from a naïve baseline with components (b-f) removed.
 - **observed**: These vision priors cumulatively yield improvement (a→f)  [27.7 improvement] (up)  [metric: Accuracy]
-    - ↑ _✓ tested_ (n4) Explicit 2D positional modeling preserves image structure.
+    - ↑ _✓ tested_ (n4) Vision priors jointly explain the accuracy gain (cumulative ablation a
 - ⚠️ field mismatch: ['context']
 
 ### F018 · P21 · comparison · _Figure 7_
 - **context**: ARC-1 evaluation set.; The model used is ViT-18M.
 - **intervention**: Entries (a-c) use a patch size of 1×1 on a 32×32 canvas, whereas entries (d-f) use a patch size of 2×2 on a 64×64 canvas.
 - **observed**: the canvas-based designs (c→f) contribute an gain.  [11.5 gain] (up)  [metric: Accuracy]
-    - ↑ _✓ tested_ (n5) Explicit 2D positional modeling preserves image structure.
+    - ↑ _✓ tested_ (n5) Canvas-based design components jointly contribute to the gain (c->f)
 
 ### F019 · P22 · comparison · _Section 5.1_
 - **observed**: These priors jointly have a gain  [27.7 points] (up)
-    - ↑ _✓ tested_ (n5) Explicit 2D positional modeling preserves image structure.
+    - ↑ _✓ tested_ (n5) Vision priors jointly explain the accuracy gain (cumulative ablation a
 - ⚠️ field mismatch: ['context']
 
 ### F020 · P23 · comparison · _Section 5.1_
 - **observed**: the canvas-based designs (c–f) has a gain.  [11.5 points] (up)
-    - ↑ _✓ tested_ (n2) Explicit 2D positional modeling preserves image structure.
+    - ↑ _✓ tested_ (n3) Canvas-based design components jointly contribute to the gain (c->f)
 
 ### F021 · P24 · primary_result · _Section 5.1_
 - **context**: 2D positional embedding.; This is observed in both (b) absolute and (c) relative positional embeddings.
@@ -138,7 +138,7 @@ Belief edges are link_policy-enforced: only **direct** edges (↑/↓) are genui
 - **context**: Patchification.; A key design principle of our method is to prepare the input as a natural image.
 - **intervention**: we advance from 1×1 patches on a 32×32 canvas to 2×2 patches on a 64×64 canvas.
 - **observed**: The entries Fig. 7(d-f) all benefit from this design. (up)
-    - ↑ _✓ tested_ (n3) Canvas patchification enriches data, reduces overfitting, encourages s
+    - ↑ _✓ tested_ (n3) Vision priors jointly explain the accuracy gain (cumulative ablation a
 
 ### F024 · P27 · primary_result · _Section 5.1_
 - **intervention**: we advance from 1×1 patches on a 32×32 canvas to 2×2 patches on a 64×64 canvas.
@@ -258,14 +258,14 @@ Belief edges are link_policy-enforced: only **direct** edges (↑/↓) are genui
 - **intervention**: we compare with leading results using LLMs or recurrent models, on ARC-1 and ARC-2.
 - **observed**: Our model compares favorably with some of the most powerful LLMs at the time their results were reported: in-cluding Deepseek, Claude, o3, and GPT-5 (up)
     - _(no direct belief edge)_
-    - ⤴ _rolls_up→thesis_ (n2) Visual learning enables abstraction/inference without language.
+    - ★ _reported_as_main_result (headline, not belief)_ (n2) Visual learning enables abstraction/inference without lang
 
 ### F044 · P49 · comparison · _Section 5.3_
 - **context**: In the controlled setting of training from scratch on ARC data
 - **intervention**: we compare with leading results using LLMs or recurrent models, on ARC-1 and ARC-2.
 - **observed**: our method substantially outperforms the recur-rent models: HRM [53] and TRM [27]. (up)
     - _(no direct belief edge)_
-    - ⤴ _rolls_up→thesis_ (n2) Visual learning enables abstraction/inference without language.
+    - ★ _reported_as_main_result (headline, not belief)_ (n2) Visual learning enables abstraction/inference without lang
 
 ### F045 · P50 · comparison · _Section 5.3_
 - **context**: In the controlled setting of training from scratch on ARC data
@@ -601,6 +601,12 @@ Belief edges are link_policy-enforced: only **direct** edges (↑/↓) are genui
     - _(no direct belief edge)_
     - ∅ _demoted-observation (not belief)_ (n5) TTT visualization shows model adapting to task-specific tran
 
+## aggregate_claim → thesis (rolls_up)
+_cumulative-ablation observations roll up into a joint claim, which rolls up into the thesis._
+
+- ⤴ **AGG_canvas_components_jointly_contribute** → MECH_visual_learning_enables_abstraction_inference_without  (n5)
+- ⤴ **AGG_vision_priors_jointly_yield_gain** → MECH_visual_learning_enables_abstraction_inference_without  (n5)
+
 ## propose_test — untested direct claims (AIO differentiator)
 _direct_link_allowed beliefs asserted with zero observation — candidates for a test._
 
@@ -615,4 +621,4 @@ _flagged, but NOT propose_test targets: a qualifier is not a belief to strengthe
 - **ASM_multiple_unseen_tasks_cannot_assumed_simultaneously** — Multiple unseen tasks cannot be assumed simultaneously.  (_assumption_, 2 raw nodes)
 
 _direct belief edge status tally: {'tested': 12, 'weakly-tested': 5}_
-_edges by policy: {'beliefs': 17, 'rolls_up': 4, 'qualifiers': 7, 'demoted': 6}_
+_edges by policy: {'beliefs': 17, 'reported': 4, 'qualifiers': 7, 'demoted': 6, 'rolls_up': 2}_

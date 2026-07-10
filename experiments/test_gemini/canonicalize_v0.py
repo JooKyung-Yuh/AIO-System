@@ -549,17 +549,57 @@ def main():
     onto_path = run_dir / "am_ontology_overrides.json"
     assign_ontology_types(am_canon, load_json(onto_path) if onto_path.exists() else {})
 
+    # ---- aggregate_claim (migration spec §2/§3 — VARC-tuned, config-driven, no LLM). Cumulative-ablation
+    # observations that support a JOINT claim (not a single mechanism rung) are moved off their
+    # ladder-confused single-mechanism target onto a synthesized aggregate_claim that rolls_up to the
+    # paper_thesis. Matched by observation pattern-text substring (run-dir/am_aggregate_claims.json).
+    agg_path = run_dir / "am_aggregate_claims.json"
+    agg_cfg = (load_json(agg_path) if agg_path.exists() else {}).get("aggregate_claims", [])
+    thesis_id = next((cid for cid, r in am_canon.items() if r["ontology_type"] == "paper_thesis"), None)
+    obs2agg = {}
+    for a in agg_cfg:
+        subs = [s.lower() for s in a.get("match_observation_text", [])]
+        for pid, s in byspan.items():
+            if pid.startswith("P") and any(sub in (s.get("text") or "").lower() for sub in subs):
+                obs2agg[pid] = a["id"]
+        am_canon.setdefault(a["id"], {                   # synthesize the aggregate_claim node
+            "canonical_id": a["id"], "type": "aggregate_claim", "gloss": a["gloss"],
+            "ontology_type": "aggregate_claim", "link_policy": "direct_link_allowed",
+            "representative": a["id"], "members": [], "n_members": 0, "rolls_up_to": thesis_id})
+    agg_ids = {a["id"] for a in agg_cfg}
+    for cid in list(am_edges.keys()):                    # move matching belief edges onto the aggregate
+        if cid in agg_ids:
+            continue
+        for key in list(am_edges[cid].keys()):
+            agg = obs2agg.get(key[0])
+            if agg and agg != cid:
+                am_edges[agg][key] |= am_edges[cid].pop(key)
+    # recompute am referenced_by/ref_count from the post-reroute edges (aggregates gain the cumulative
+    # observations; their old single-mechanism targets lose them). registry["am"] is am_canon, so this
+    # updates the registry too. band for a synthesized aggregate follows its best-reproduced edge.
+    for cid, rec in am_canon.items():
+        pats = sorted({p for (p, d) in am_edges.get(cid, {})})
+        rec["referenced_by"], rec["ref_count"] = pats, len(pats)
+        if rec["ontology_type"] == "aggregate_claim":
+            mx = max((len(bs) for bs in am_edges.get(cid, {}).values()), default=0)
+            rec["band"] = "observed" if mx >= 4 else "supported" if mx >= 2 else "uncertain"
+            rec["n_members"] = len(pats)
+
     # ---- L2: enforce link_policy on belief edges (migration spec §3 + §4 success criteria). A direct
     # belief_update (strengthen/weaken) may target a direct_link_allowed AM (mechanism | aggregate_claim)
     # ONLY. Edges whose target is a paper_thesis / qualifier / demoted observation are re-routed to
     # explicit buckets (rolls_up / qualifier / demoted) so the direct graph carries only genuine
     # Observation->mechanism belief; strengthened_by/weakened_by stay empty for non-direct targets. The
     # STATUS_MIN_BUILDS reproducibility gate is applied uniformly, so every reported edge recurs. No LLM.
-    POLICY_BUCKET = {"rolls_up_only": "rolls_up", "qualifier_only": "qualifier", "no_direct_link": "demoted"}
-    POLICY_EDGE = {"rolls_up": "rolls_up", "qualifier": "qualifies", "demoted": "demoted"}
+    # a headline Observation->paper_thesis is reported_as_main_result (top-line result), NOT rolls_up;
+    # rolls_up is reserved for the synthesized aggregate_claim->thesis edges added after the loop.
+    POLICY_BUCKET = {"rolls_up_only": "reported_as_main_result", "qualifier_only": "qualifier",
+                     "no_direct_link": "demoted"}
+    POLICY_EDGE = {"reported_as_main_result": "reported_as_main_result", "qualifier": "qualifies",
+                   "demoted": "demoted"}
     POLICY_STATUS = {"rolls_up_only": "rollup_target", "qualifier_only": "qualifier",
                      "no_direct_link": "demoted_observation"}
-    belief_edges = {"direct": [], "rolls_up": [], "qualifier": [], "demoted": []}
+    belief_edges = {"direct": [], "reported_as_main_result": [], "rolls_up": [], "qualifier": [], "demoted": []}
     for cid, rec in am_canon.items():
         edges = am_edges.get(cid, {})
         repro = {(p, d): len(bs) for (p, d), bs in edges.items() if len(bs) >= STATUS_MIN_BUILDS}
@@ -581,14 +621,28 @@ def main():
             for (p, d), nb in repro.items():
                 belief_edges[bucket].append({"observation": p, "target": cid, "direction": d,
                                              "edge_type": POLICY_EDGE[bucket], "n_builds": nb})
+    # synthesized rolls_up: each aggregate_claim rolls up into the paper_thesis (spec §1). This is the
+    # ONLY producer of rolls_up edges; n_builds carries the aggregate's best-reproduced incoming edge.
+    for a in agg_cfg:
+        rec = am_canon.get(a["id"], {})
+        mx = max((len(bs) for bs in am_edges.get(a["id"], {}).values()), default=0)
+        if rec.get("rolls_up_to") and mx:
+            belief_edges["rolls_up"].append({"observation": a["id"], "target": rec["rolls_up_to"],
+                "direction": "rolls_up", "edge_type": "rolls_up", "n_builds": mx})
     for k in belief_edges:
         belief_edges[k].sort(key=lambda e: (e["target"], e["observation"], e["direction"]))
-    # success criteria (spec §4): direct edges only to direct_link_allowed AMs; paper_thesis direct = 0.
+    # success criteria (spec §4): direct edges only to direct_link_allowed AMs; paper_thesis direct = 0;
+    # rolls_up is aggregate_claim->thesis only; reported_as_main_result targets the thesis.
     assert all(am_canon[e["target"]]["link_policy"] == "direct_link_allowed" for e in belief_edges["direct"]), \
         "link_policy violation: a direct belief edge targets a non-direct AM"
     thesis_direct = sum(1 for e in belief_edges["direct"]
                         if am_canon[e["target"]]["ontology_type"] == "paper_thesis")
     assert thesis_direct == 0, f"paper_thesis direct edges must be 0, got {thesis_direct}"
+    assert all(am_canon.get(e["observation"], {}).get("ontology_type") == "aggregate_claim"
+               and am_canon[e["target"]]["ontology_type"] == "paper_thesis"
+               for e in belief_edges["rolls_up"]), "rolls_up must be aggregate_claim -> paper_thesis only"
+    assert all(am_canon[e["target"]]["ontology_type"] == "paper_thesis"
+               for e in belief_edges["reported_as_main_result"]), "reported_as_main_result must target the thesis"
 
     am_band = collections.Counter(v["band"] for v in am_canon.values())
     report = {
