@@ -450,45 +450,69 @@ def assign_ontology_types(am_canon, overrides):
 
 
 def resolve_thesis_id(am_canon, cfg):
-    """The single paper_thesis node the claim graph rolls up into. Explicit `paper_thesis_id` is
-    validated; otherwise exactly one paper_thesis must exist. Fail-fast on any other cardinality."""
-    thesis_nodes = [cid for cid, r in am_canon.items() if r.get("ontology_type") == "paper_thesis"]
-    tid = cfg.get("paper_thesis_id")
-    if tid is not None:
-        if am_canon.get(tid, {}).get("ontology_type") != "paper_thesis":
-            raise ValueError(f"paper_thesis_id {tid!r} is not a paper_thesis node")
-        return tid
+    """The single paper_thesis node the claim graph rolls up into. Policy: EXACTLY ONE paper_thesis
+    must exist; an explicit `paper_thesis_id`, if given, must name that node. Fail-fast otherwise, so a
+    two-thesis ontology can never be silently disambiguated by config."""
+    thesis_nodes = sorted(cid for cid, r in am_canon.items() if r.get("ontology_type") == "paper_thesis")
     if len(thesis_nodes) != 1:
         raise ValueError(f"expected exactly 1 paper_thesis, found {len(thesis_nodes)}: {thesis_nodes}")
+    tid = cfg.get("paper_thesis_id")
+    if tid is not None and tid != thesis_nodes[0]:
+        raise ValueError(f"paper_thesis_id {tid!r} does not match the sole paper_thesis {thesis_nodes[0]!r}")
     return thesis_nodes[0]
 
 
 def build_claim_graph(am_canon, am_edges, cfg):
     """Apply the VARC-tuned claim-graph config (migration spec §2/§3): create aggregate_claims from
     EXPLICIT observation_ids, re-route those observations' belief edges onto them, and resolve the
-    claim->thesis roll-ups + the audited reported_as_main_result list. Mutates am_canon (adds aggregate
-    nodes) and am_edges (re-routes). Returns (rolls_up_pairs, main_result_obs, thesis_id).
+    claim->thesis roll-ups + the audited reported_as_main_result list.
 
-    Fail-fast (ValueError) — no config error may pass silently:
-      * aggregate id collides with an existing canonical node,
-      * an observation_id is assigned to two aggregates,
-      * an aggregate matched zero re-routable belief edges (or a listed id has none),
-      * paper_thesis cardinality != 1,
-      * a claims_roll_up_to_thesis id is not a direct_link_allowed claim (or is the thesis itself)."""
+    VALIDATE-THEN-MUTATE: every config check runs BEFORE any change to am_canon / am_edges, so a
+    rejected config leaves both inputs untouched (safe to catch and retry). Fail-fast (ValueError) on:
+      * an aggregate id colliding with an existing node, or duplicated within the config,
+      * an observation_id assigned to two aggregates,
+      * an aggregate whose observation_ids have no (or only partial) re-routable belief edges,
+      * paper_thesis cardinality != 1 (see resolve_thesis_id),
+      * a claims_roll_up_to_thesis id that is the thesis itself or not a direct_link_allowed claim."""
     aggs = cfg.get("aggregate_claims", []) or []
     rollup_ids = cfg.get("claims_roll_up_to_thesis", []) or []
     if not aggs and not rollup_ids:
         return [], set(), None
     thesis_id = resolve_thesis_id(am_canon, cfg)
 
-    obs2agg = {}
+    # ---- phase 1: validate everything, mutate nothing ----
+    agg_ids, obs2agg = [], {}
     for a in aggs:
-        if a["id"] in am_canon:
-            raise ValueError(f"aggregate id {a['id']!r} collides with an existing canonical node")
+        aid = a["id"]
+        if aid in am_canon:
+            raise ValueError(f"aggregate id {aid!r} collides with an existing canonical node")
+        if aid in agg_ids:
+            raise ValueError(f"duplicate aggregate id {aid!r} in config")
+        agg_ids.append(aid)
         for pid in a.get("observation_ids", []):
             if pid in obs2agg:
-                raise ValueError(f"observation {pid!r} assigned to two aggregates: {obs2agg[pid]} and {a['id']}")
-            obs2agg[pid] = a["id"]
+                raise ValueError(f"observation {pid!r} assigned to two aggregates: {obs2agg[pid]} and {aid}")
+            obs2agg[pid] = aid
+    edge_pats = {p for e in am_edges.values() for (p, d) in e}   # patterns that carry a re-routable edge
+    for a in aggs:
+        oids = a.get("observation_ids", [])
+        missing = [p for p in oids if p not in edge_pats]
+        if not oids:
+            raise ValueError(f"aggregate {a['id']!r} has no observation_ids")
+        if len(missing) == len(oids):
+            raise ValueError(f"aggregate {a['id']!r} matched zero belief edges (observation_ids={oids})")
+        if missing:
+            raise ValueError(f"aggregate {a['id']!r}: observation_ids with no re-routable belief edge: {missing}")
+    will_be_direct = set(agg_ids) | {c for c, r in am_canon.items() if r.get("link_policy") == "direct_link_allowed"}
+    for cid in rollup_ids:
+        if cid == thesis_id:
+            raise ValueError("claims_roll_up_to_thesis: the thesis cannot roll up into itself")
+        if cid not in am_canon and cid not in set(agg_ids):
+            raise ValueError(f"claims_roll_up_to_thesis: {cid!r} is not a canonical node")
+        if cid not in will_be_direct:
+            raise ValueError(f"claims_roll_up_to_thesis: {cid!r} is not a direct_link_allowed claim")
+
+    # ---- phase 2: mutate (all checks passed, so no partial state is possible) ----
     for cid in list(am_edges.keys()):                    # move each listed observation's edges onto the aggregate
         for key in list(am_edges[cid].keys()):
             agg = obs2agg.get(key[0])
@@ -496,12 +520,6 @@ def build_claim_graph(am_canon, am_edges, cfg):
                 am_edges[agg][key] |= am_edges[cid].pop(key)
     for a in aggs:
         got = {p for (p, d) in am_edges.get(a["id"], {})}
-        missing = [p for p in a.get("observation_ids", []) if p not in got]
-        if not got:
-            raise ValueError(f"aggregate {a['id']!r} matched zero belief edges "
-                             f"(observation_ids={a.get('observation_ids')})")
-        if missing:
-            raise ValueError(f"aggregate {a['id']!r}: observation_ids with no re-routable belief edge: {missing}")
         mx = max((len(bs) for bs in am_edges[a["id"]].values()), default=0)
         am_canon[a["id"]] = {
             "canonical_id": a["id"], "type": "aggregate_claim", "gloss": a["gloss"],
@@ -510,16 +528,7 @@ def build_claim_graph(am_canon, am_edges, cfg):
             "n_supporting_observations": len(got),
             "band": "observed" if mx >= 4 else "supported" if mx >= 2 else "uncertain",
             "rolls_up_to": thesis_id}
-
-    rolls_up_pairs = []
-    for cid in rollup_ids:
-        if cid not in am_canon:
-            raise ValueError(f"claims_roll_up_to_thesis: {cid!r} is not a canonical node")
-        if cid == thesis_id:
-            raise ValueError("claims_roll_up_to_thesis: the thesis cannot roll up into itself")
-        if am_canon[cid].get("link_policy") != "direct_link_allowed":
-            raise ValueError(f"claims_roll_up_to_thesis: {cid!r} is not a direct_link_allowed claim")
-        rolls_up_pairs.append((cid, thesis_id))
+    rolls_up_pairs = [(cid, thesis_id) for cid in rollup_ids]
     return rolls_up_pairs, set(cfg.get("reported_as_main_result_observations", []) or []), thesis_id
 
 
@@ -686,19 +695,21 @@ def main():
             "edge_type": "rolls_up", "n_supporting_observations": am_canon[src].get("ref_count", 0)})
     for k in belief_edges:
         belief_edges[k].sort(key=lambda e: (e["target"], e["observation"], e["direction"]))
-    # success criteria (spec §4): direct edges only to direct_link_allowed AMs; paper_thesis direct = 0;
-    # rolls_up is (mechanism | aggregate) -> thesis; reported/unresolved target the thesis.
-    assert all(am_canon[e["target"]]["link_policy"] == "direct_link_allowed" for e in belief_edges["direct"]), \
-        "link_policy violation: a direct belief edge targets a non-direct AM"
+    # success criteria (spec §4). These are PRODUCTION invariants, so they raise explicitly rather than
+    # assert (which python -O would strip): direct edges only to direct_link_allowed AMs; paper_thesis
+    # direct = 0; rolls_up is (mechanism | aggregate) -> thesis; reported/unresolved target the thesis.
+    if not all(am_canon[e["target"]]["link_policy"] == "direct_link_allowed" for e in belief_edges["direct"]):
+        raise RuntimeError("link_policy violation: a direct belief edge targets a non-direct AM")
     thesis_direct = sum(1 for e in belief_edges["direct"]
                         if am_canon[e["target"]]["ontology_type"] == "paper_thesis")
-    assert thesis_direct == 0, f"paper_thesis direct edges must be 0, got {thesis_direct}"
-    assert all(am_canon[e["observation"]]["link_policy"] == "direct_link_allowed"
-               and am_canon[e["target"]]["ontology_type"] == "paper_thesis"
-               for e in belief_edges["rolls_up"]), "rolls_up must be (direct claim) -> paper_thesis only"
-    assert all(am_canon[e["target"]]["ontology_type"] == "paper_thesis"
-               for e in belief_edges["reported_as_main_result"] + belief_edges["unresolved_thesis_link"]), \
-        "reported_as_main_result / unresolved_thesis_link must target the thesis"
+    if thesis_direct != 0:
+        raise RuntimeError(f"paper_thesis direct edges must be 0, got {thesis_direct}")
+    if not all(am_canon[e["observation"]]["link_policy"] == "direct_link_allowed"
+               and am_canon[e["target"]]["ontology_type"] == "paper_thesis" for e in belief_edges["rolls_up"]):
+        raise RuntimeError("rolls_up must be (direct claim) -> paper_thesis only")
+    if not all(am_canon[e["target"]]["ontology_type"] == "paper_thesis"
+               for e in belief_edges["reported_as_main_result"] + belief_edges["unresolved_thesis_link"]):
+        raise RuntimeError("reported_as_main_result / unresolved_thesis_link must target the thesis")
 
     am_band = collections.Counter(v["band"] for v in am_canon.values())
     report = {

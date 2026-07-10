@@ -113,6 +113,40 @@ def partial_miss():
         {"id": "AGG_v", "gloss": "v", "observation_ids": ["P20", "P77"]}]})     # P20 matches, P77 does not
 results.append(expect_error(partial_miss, "no re-routable belief edge"))
 
+def dup_agg_id():
+    am, e = fresh()
+    build_claim_graph(am, e, {"aggregate_claims": [
+        {"id": "AGG_v", "gloss": "v", "observation_ids": ["P20"]},
+        {"id": "AGG_v", "gloss": "v2", "observation_ids": ["P22"]}]})           # same id declared twice
+results.append(expect_error(dup_agg_id, "duplicate aggregate id"))
+
+def two_thesis_explicit():                                                      # explicit id must NOT bypass cardinality
+    am, e = fresh()
+    am["THESIS2"] = {"canonical_id": "THESIS2", "ontology_type": "paper_thesis",
+                     "link_policy": "rolls_up_only", "gloss": "t2"}
+    build_claim_graph(am, e, {"paper_thesis_id": "THESIS",
+                              "aggregate_claims": [{"id": "AGG_v", "gloss": "v", "observation_ids": ["P20"]}]})
+results.append(expect_error(two_thesis_explicit, "exactly 1 paper_thesis"))
+
+def thesis_id_mismatch():
+    am, e = fresh()
+    build_claim_graph(am, e, {"paper_thesis_id": "MECH_a",                      # names a non-thesis node
+                              "aggregate_claims": [{"id": "AGG_v", "gloss": "v", "observation_ids": ["P20"]}]})
+results.append(expect_error(thesis_id_mismatch, "does not match the sole paper_thesis"))
+
+# validate-then-mutate: a config that fails a LATE check must leave am_canon / am_edges untouched
+am, e = fresh()
+before_nodes = set(am)
+before_edges = {c: {k: set(v) for k, v in e[c].items()} for c in list(e)}
+results.append(expect_error(
+    lambda: build_claim_graph(am, e, {
+        "aggregate_claims": [{"id": "AGG_v", "gloss": "v", "observation_ids": ["P20", "P22", "P26"]}],
+        "claims_roll_up_to_thesis": ["NOPE_not_a_node"]}),                      # aggregates valid, rollup bad
+    "not a canonical node"))
+check(set(am) == before_nodes, "no aggregate node added after a rejected config (no partial mutation)")
+check({c: {k: set(v) for k, v in e[c].items()} for c in list(e)} == before_edges,
+      "am_edges unchanged after a rejected config (no partial mutation)")
+
 fails = [r for r in results if r]
 if fails:
     print("\n".join(fails))
