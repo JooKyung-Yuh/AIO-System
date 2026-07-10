@@ -54,6 +54,7 @@
 - **direct precision audit은 manual audit이지 PDF gold validation 아님.**
 - **VARC prototype이지 아직 cross-paper generalization 아님.**
 - **generator는 docs 재생성기이며 production validator 아님.**
+- **aggregate_claim 흡수 수치는 granularity 의존**: 위 "20개 흡수"는 projection의 card-level(133 multiset) 기준. 실제 구현(MIN_BUILDS-gated 재현 그래프)에선 **cumulative 관측 5개 재배선**이 실제 숫자 — orphan thesis 흡수가 아니라, ladder-혼선으로 단일 mechanism에 잘못 붙은 direct edge를 joint claim으로 재배선하는 게 aggregate의 실제 역할. P24/P25(2D-ROPE)는 제외(link-v3 과제).
 
 ---
 
